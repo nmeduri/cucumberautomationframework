@@ -6,7 +6,7 @@
 trigger:
  branches:
   include:
-    - develop
+    - master
   
 pool:
   vmImage: 'ubuntu-latest'
@@ -33,6 +33,6 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: 'Publish Build Artifact'
         inputs:
-          targetPath: '$(Pipeline.Workspace)/s/target' 
-          artifactName: 'odp-root.zip'   
+          targetPath: '$(Pipeline.Workspace)/s/target/ODPRoot-1.0-SNAPSHOT.jar' 
+          artifactName: 'ODPRoot-1.0-SNAPSHOT.jar'   
   
