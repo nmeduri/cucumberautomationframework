@@ -1,0 +1,21 @@
+# QA Test Automation Pipeline for Adobe
+
+trigger:
+ branches:
+  include:
+    - develop
+ paths:
+  exclude:
+    - .azure-pipelines/*
+    - readme.md
+
+pool:
+  vmImage: 'ubuntu-latest'
+ 
+# invoke the shared template
+extends:
+  template: pipeline-template.yml
+  parameters:
+    rootFolder: . # TODO: replace with Adobe
+      
+  

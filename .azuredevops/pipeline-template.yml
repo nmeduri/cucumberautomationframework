@@ -1,0 +1,45 @@
+parameters:
+- name: rootFolder
+  type: string
+  default: .
+- name: testMatrix
+  type: object
+  default:
+    - name: bvt
+      folderTemplate: '{0}' # root folder for now, future: '{0}/{1}' ('rootfolder/name')
+    - name: regression
+      folderTemplate: '{0}'
+
+stages:
+- stage: ci_stage
+  displayName: CI
+  jobs:
+  
+  - ${{ if parameters.testMatrix[0] }}:
+    - ${{ each suite in parameters.testMatrix }}:
+   
+      - template: build_testartifacts.yml
+        parameters:
+          artifactName: ${{ suite.name }}
+          folderPath: ${{ format( suite.folderTemplate, parameters.rootFolder, suite.name) }}
+  
+# AdHoc stage
+# - intended to allow manual execution of these artifacts, to 
+#   test out the current changes to tests
+# - will require configuration / variable group to support it
+#- stage: adhoc
+#  displayName: Test
+#  dependsOn: ci_stage
+#  #condition: and(succeeded(), eq( variables['Build.Reason'], 'Manual'))
+#  jobs:
+#  
+#  - ${{ if parameters.testMatrix[0] }}:
+#    - ${{ each suite in parameters.testMatrix }}:
+#    
+#      - job: adhoc_${{ suite.name }}
+#        displayName: Execute ${{ suite.name }} against QA
+#        steps:
+#        - download: current
+#          artifact: ${{ suite.name }}
+#          displayName: Download artifact ${{ suite.name }}
+#        # TODO: use shared template for executing tests
