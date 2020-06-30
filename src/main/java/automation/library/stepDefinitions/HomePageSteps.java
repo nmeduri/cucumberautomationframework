@@ -4,6 +4,7 @@ package automation.library.stepDefinitions;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
+import automation.library.logdetail.Log;
 import automation.library.pageObjects.HomePage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -29,6 +30,7 @@ public class HomePageSteps {
 
 	@When("^User click on any product$")
 	public void user_click_on_any_product() throws Throwable {
+		
 		homePage.clickOnProduct();
 	}
 

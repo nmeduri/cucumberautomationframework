@@ -1,11 +1,17 @@
 package automation.library.managers;
 
 
-import automation.library.common.Property;
-import automation.library.cucumber.Constant;
+import java.io.File;
+import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import automation.library.common.Property;
+import automation.library.cucumber.Constant;
 
 /**
  * Class to get the driver path , reate/quit manager and get the wat duration
@@ -48,7 +54,6 @@ public abstract class DriverManager {
 		int duration;
 		try {
 			duration = property.getProperties(Constant.SELENIUM_CONFIGURATION).getInt("defaultWait");
-			//duration =	Property.getProperty(Constant.SELENIUM_CONFIGURATION, "defaultWait");
 		} catch (Exception e) {
 			duration = defaultWait;
 		}
@@ -59,9 +64,11 @@ public abstract class DriverManager {
 
 	public abstract void updateResults(String result);
 
-	public void closeDriver() {
+	public void closeDriver() throws IOException {
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// Now you can do whatever you need to do with it, for example copy somewhere
+		FileUtils.copyFile(scrFile, new File(Constant.BASE_PATH + "/screenshot/"+ System.currentTimeMillis() +".png"));
 		driver.close();
-		//driver.quit();
 	}
 
 }

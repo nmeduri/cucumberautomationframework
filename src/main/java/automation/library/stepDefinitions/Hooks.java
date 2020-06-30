@@ -1,6 +1,7 @@
 package automation.library.stepDefinitions;
 
 
+import java.io.IOException;
 import automation.library.cucumber.TestContext;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.After;
@@ -21,9 +22,8 @@ public class Hooks {
 	}
 
 	@After
-	public void AfterSteps() {
+	public void AfterSteps() throws IOException {
 		
 		DriverFactory.getInstance().driverManager().closeDriver();
 	}
-
 }

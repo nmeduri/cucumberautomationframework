@@ -1,20 +1,15 @@
 package automation.library.selenium.exec.driver.manager;
-
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import automation.library.managers.DriverManager;
-import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
-public class ChromeDriverManager extends DriverManager {
+public class HeadLessDriverManager extends DriverManager {
 
 	@Override
 	public void createDriver() {
-		WebDriverManager.chromedriver().setup(); 
-		driver = new ChromeDriver();
+		
+		WebDriverManager.phantomjs().setup();
+		driver = new PhantomJSDriver();
 	}
 
 	@Override

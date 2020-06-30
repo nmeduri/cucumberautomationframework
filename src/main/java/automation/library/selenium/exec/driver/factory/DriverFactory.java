@@ -10,16 +10,18 @@ import automation.library.logdetail.Log;
 import automation.library.managers.DriverManager;
 import automation.library.selenium.exec.driver.manager.ChromeDriverManager;
 import automation.library.selenium.exec.driver.manager.FirefoxDriverManager;
+import automation.library.selenium.exec.driver.manager.HeadLessDriverManager;
 
 public class DriverFactory {
 
 	Property prop;
 	private static DriverFactory instance = new DriverFactory();
+	ConfigFileReader configFileReader;
+
 	protected DriverFactory() {
 		prop = new Property();
+		configFileReader = new ConfigFileReader();
 	}
-
-	
 
 	public static DriverFactory getInstance() {
 		return instance;
@@ -48,21 +50,28 @@ public class DriverFactory {
 	}
 
 	public DriverManager setDM() {
-		
-		String browserType = ConfigFileReader.getProperty(Constant.SELENIUM_CONFIGURATION, "browser");
-        Log.message("Browser:- " + browserType, true);
-		switch (browserType) {
 
-		case "chrome":
-			driverManager.set(new ChromeDriverManager());
+		switch (configFileReader.getServerType()) {
+		case "saucelabs":
+			Log.message("sauce labs", true);
 			break;
-		case "firefox":
-			driverManager.set(new FirefoxDriverManager());
+		default:
+			switch (configFileReader.getBrowser()) {
+			case "chrome":
+				driverManager.set(new ChromeDriverManager());
+				break;
+			case "firefox":
+				driverManager.set(new FirefoxDriverManager());
+				break;
+			case "headless":
+				driverManager.set(new HeadLessDriverManager());
+				break;
+			}
+
 			break;
+
 		}
-
 		return driverManager.get();
-
 	}
 
 }

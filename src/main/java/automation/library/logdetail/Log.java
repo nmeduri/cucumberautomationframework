@@ -1,9 +1,6 @@
 package automation.library.logdetail;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
-
-import automation.library.cucumber.Constant;
 
 public class Log {
 	

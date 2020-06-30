@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.WebDriver;
+
 import automation.library.managers.PageObjectManager;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 
@@ -12,6 +14,7 @@ public class TestContext {
 	private DriverManager webDriverManager;
 	private PageObjectManager pageObjectManager;
 	public ScenarioContext scenarioContext;
+	private WebDriver driver;
 
 	private static List<TestContext> threads = new ArrayList<TestContext>();
 	

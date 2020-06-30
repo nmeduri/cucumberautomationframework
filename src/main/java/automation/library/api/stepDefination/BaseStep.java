@@ -1,28 +1,38 @@
 package automation.library.api.stepDefination;
 
 import automation.library.api.cucumber.TestContext;
-import automation.library.api.endpoint.RegisterEndPoint;
-import automation.library.api.endpoint.WeatherEndPoint;
+import automation.library.api.endpoint.CTBVTEndPoint;
+import automation.library.api.endpoint.CatalogVersionEndPoint;
+import automation.library.api.endpoint.CatalogsEndPoint;
+import automation.library.api.endpoint.CatalogsListEndPoint;
 
 public class BaseStep {
 
-	private String BASE_URL_WEATHER = "http://restapi.demoqa.com/utilities/weather/city";
-	private String BASE_URL_REGISTER = "http://restapi.demoqa.com/customer";
-
-	private WeatherEndPoint weatherEndPoint;
-	private RegisterEndPoint registerEndPoint;
+	
+	private CTBVTEndPoint ctbvtEndPoint;
+	private CatalogsListEndPoint catalogsListEndPoint;
+	private CatalogsEndPoint catalogEndPoint;
+	private CatalogVersionEndPoint catalogVersionEndPoint;
+	
 
 	public BaseStep(TestContext testContext) {
-		weatherEndPoint = testContext.getWeatherEndPoints();
-		registerEndPoint = testContext.getRegisterEndPoints();
+		ctbvtEndPoint = testContext.getCTBVTEndPoint();
 	}
 	
-	public WeatherEndPoint getWeatherEndPoint() {
-		return weatherEndPoint;
+	public CTBVTEndPoint getCTBVTEndPoint() {
+		return ctbvtEndPoint;
 	}
 	
-	public RegisterEndPoint getRegisterEndPoint() {
-		return registerEndPoint;
+	public CatalogsListEndPoint getCatalogsListEndPoint() {
+		return catalogsListEndPoint;
+	}
+	
+	public CatalogsEndPoint getCatalogEndPoint() {
+		return catalogEndPoint;
+	}
+	
+	public CatalogVersionEndPoint getCatalogVersionEndPoint() {
+		return catalogVersionEndPoint;
 	}
 
 }

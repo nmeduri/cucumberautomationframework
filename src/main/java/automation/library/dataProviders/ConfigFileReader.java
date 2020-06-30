@@ -6,44 +6,25 @@ import java.util.Properties;
 
 
 import org.apache.commons.configuration.PropertiesConfiguration;
+
+import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.enums.DriverType;
 import automation.library.enums.EnvironmentType;
+import automation.library.logdetail.Log;
 
 public class ConfigFileReader {
 
 	private Properties properties;
-	private final String propertyFilePath = Constant.SELENIUM_CONFIGURATION;
-	private Properties prop = null;
 
 	public ConfigFileReader(){
         
        
    }
 	
-	public PropertiesConfiguration getProperties(String propsPath) {
-		PropertiesConfiguration props = new PropertiesConfiguration();
-		InputStream is = null;
-	       try {
-	           this.prop = new Properties();
-	           is = this.getClass().getResourceAsStream(propsPath);
-	           props.load(is);
-	       }catch(Exception e){
-				return null;
-			}
-	       return props;
-	}
-	
-	public static String getProperty(String propsPath, String key) {
-		ConfigFileReader conf = new ConfigFileReader();
-		return conf.getProperties(propsPath).getString(key);
-	}
-
-	
 	public String getChromeDriverPath() {
 
-		//String driverPath = Constant.BASEPATH_RESOURCES + properties.getProperty("chromeDriverPath");
-		String driverPath = ConfigFileReader.getProperty(Constant.SELENIUM_CONFIGURATION, "chromeDriverPath");
+		String driverPath = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "chromeDriverPath");
 		if (driverPath != null)
 			return driverPath;
 		else
@@ -51,8 +32,7 @@ public class ConfigFileReader {
 	}
 
 	public String getGeckoDriverPath() {
-		String driverPath = ConfigFileReader.getProperty(Constant.SELENIUM_CONFIGURATION, "geckoDriverPath");
-		//String driverPath = Constant.BASEPATH_RESOURCES + properties.getProperty("geckoDriverPath");
+		String driverPath = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "geckoDriverPath");
 		if (driverPath != null)
 			return driverPath;
 		else
@@ -68,26 +48,51 @@ public class ConfigFileReader {
 	}
 
 	public String getApplicationUrl() {
-		//Property prop = new Property(Constant.SELENIUM_CONFIGURATION);
-		//String url = prop.getPropertyValue("url");
-		String url = ConfigFileReader.getProperty(Constant.SELENIUM_CONFIGURATION, "url");
+		String url = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "url");
 		if (url != null)
 			return url;
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
-	}
+		
+	} 
+	
+/*	public String getApplicationUrl() {
+		String environment = System.getenv("environment");
+		if (environment.equalsIgnoreCase("dev"))
+			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "devUrl");
+		else if(environment.equalsIgnoreCase("qa"))
+			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "qaUrl");
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+		
+	}   */
 
-	public DriverType getBrowser() {
-		String browserName = properties.getProperty("browser");
+	public String getBrowser() {
+		String browserName = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "browser");
+		Log.message("Browser:- " + browserName, true);
 		if (browserName == null || browserName.equals("chrome"))
-			return DriverType.CHROME;
+			return browserName;
 		else if (browserName.equalsIgnoreCase("firefox"))
-			return DriverType.FIREFOX;
-		else if (browserName.equals("iexplorer"))
-			return DriverType.INTERNETEXPLORE;
+			return browserName;
+		else if (browserName.equals("headless"))
+			return browserName;
 		else
 			throw new RuntimeException(
 					"Browser Name Key value in Configuration.properties is not matched : " + browserName);
+	}
+	
+	public String getServerType() {
+		
+		String serverType = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "serverType");
+		Log.message("Server Type:- " + serverType, true);
+		if (serverType == null || serverType.equals("saucelabs"))
+			return serverType;
+		else if (serverType == null || serverType.equals("default"))
+			return serverType;
+		else
+			throw new RuntimeException(
+					"Server Type Key value in Configuration.properties is not matched :" + serverType);
+		
 	}
 
 	public EnvironmentType getEnvironment() {

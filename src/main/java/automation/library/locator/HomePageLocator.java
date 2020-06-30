@@ -7,10 +7,18 @@ public class HomePageLocator {
 	
 	String sAutomative = Property.getProperty(Constant.OR_FILE, "automative");
 	
+	String sArrow = Property.getProperty(Constant.OR_FILE, "arrow");
+	
 	
 	public String getAutomativeLocator() {
 		
 		return sAutomative;
+	}
+	
+	public String getArrow() {
+		
+		return sArrow;
+		
 	}
 
 }
