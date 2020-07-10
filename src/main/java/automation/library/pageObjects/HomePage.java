@@ -1,4 +1,4 @@
-package automation.library.pageObjects;
+ package automation.library.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
@@ -21,13 +21,18 @@ public class HomePage extends PageObject {
 	}
 
 	public void navigateTo_HomePage() {
-		DriverFactory.getInstance().getDriver().get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
+		DriverFactory.getInstance().getDriver().get(FileReaderManager.getInstance().getConfigReader().getApplicationAdobeUrl());
+	}
+	
+	public void navigateToHomePage() {
+		DriverFactory.getInstance().getDriver().get(FileReaderManager.getInstance().getConfigReader().getApplicationSAPUrl());
 	}
 
 	public void clickOnProduct() throws Exception {
     
-		  // $(Loc.XPATH, testContext.getPageObjectManager().getHomePageLocator().getAutomativeLocator()).click();
-		 $(Loc.XPATH, testContext.getPageObjectManager().getHomePageLocator().getArrow()).click();
+		 $(Loc.XPATH, testContext.getPageObjectManager().getHomePageLocator().getAutomativeLocator()).click();
+		 //$(Loc.XPATH, testContext.getPageObjectManager().getHomePageLocator().getArrow()).click();
+
 		
 	}
 

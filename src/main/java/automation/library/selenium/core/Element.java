@@ -1,5 +1,7 @@
 package automation.library.selenium.core;
 
+import static org.junit.Assert.fail;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,6 +56,7 @@ public class Element {
 			this.element = null;
 			//Log.message("element not located: " + by.toString(), true);
 			Log.debug(e.getMessage());
+			fail();
 		}
 
 	}
@@ -68,8 +71,9 @@ public class Element {
 			this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
 			Log.debug("Element is found.");
 		} catch (Exception e) {
-			Log.debug("Element is not found.");
+			Log.message("Element is not found.", true);
 			Log.message(e.getMessage(), true);
+			fail();
 		}
 
 	}

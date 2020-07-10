@@ -7,3 +7,11 @@ Scenario: health check of API.
 	Given  Health check url is available. 
 	When  User hits the BVT api. 
 	Then User get the API Response. 
+	
+	
+	
+Scenario: health check of API. 
+	Given  Health check url is available. 
+	When  User hits the BVT api. 
+	Then User get the API Response. 
+	

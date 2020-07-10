@@ -2,7 +2,10 @@ Feature: Automated End2End Tests
 
 	Description: The purpose of this feature is to test End 2 End Integration.
 
-Scenario: Canadian Tire's Site Launch
-	Given User is on Home Page 
-	When User click on any product 
+	
+	
+	Scenario: SAP base url launch
+	Given SAP base url is up
+	When user launches the base url
+	Then SAP Base site is displayed
 	

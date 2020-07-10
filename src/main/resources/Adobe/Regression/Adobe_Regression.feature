@@ -2,7 +2,7 @@ Feature: Automated End2End Tests
 
 	Description: The purpose of this feature is to test End 2 End Integration.
 
-Scenario: Canadian Tire's Site Launch 
-	Given User is on Home Page 
-	When User click on any product 
-	
+	Scenario: Adobe author url launch
+	Given Adobe author url is up
+	When user launches the author url
+	Then Adobe author signin page is displayed

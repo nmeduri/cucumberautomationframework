@@ -13,9 +13,10 @@ public final class Adobe_Regression_Runner {
 			"classpath:Adobe/Regression/", 
 			"--glue", "automation.library.stepDefinitions", 
 			"--plugin", "pretty",
-			"--plugin", "json:cucumber.json", 
-			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
-			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" 
+			"--plugin", "json:cucumber.json",
+			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
+			"--plugin", "html:target/selenium-reports"
+
 		};
 
 	public static void main(String[] args) throws Throwable {

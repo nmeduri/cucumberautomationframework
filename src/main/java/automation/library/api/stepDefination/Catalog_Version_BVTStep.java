@@ -29,7 +29,7 @@ public class Catalog_Version_BVTStep extends BaseStep {
 	}
 
 
-	@Given("catalog version API is available")
+	@Given("catalog version API is available.")
 	public void catalog_version_api_is_available() {
 		
 		
@@ -48,7 +48,7 @@ public class Catalog_Version_BVTStep extends BaseStep {
 	public void user_gets_the_catalog_version_api_response() {
 		
 		Log.message("Status Code:- " + catalogVersionResponse.getStatusCode(), true);		
-		//Assert.assertEquals(200, catalogVersionResponse.getStatusCode());
+		Assert.assertEquals(200, catalogVersionResponse.getStatusCode());
 	}
 
 }

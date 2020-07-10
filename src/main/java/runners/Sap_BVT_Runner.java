@@ -11,9 +11,9 @@ public final class Sap_BVT_Runner {
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json", 
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
-			"--plugin", "junit:target/JunitReports/SAP_BVT.xml"
-	
-	
+			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",
+			"--plugin", "html:target/selenium-reports"
+		
 	};
 
 	public static void main(String[] args) throws Throwable {

@@ -56,6 +56,31 @@ public class ConfigFileReader {
 		
 	} 
 	
+	public String getApplicationSAPUrl() {
+	
+		String environment = System.getenv("environment");
+		if (environment.equalsIgnoreCase("D1"))
+			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "devAuthorUrl");
+		else if(environment.equalsIgnoreCase("D2"))
+			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "qaAuthorUrl");
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+		
+	}
+	
+	public String getApplicationAdobeUrl() {
+		
+		String environment = System.getenv("environment");
+		if (environment.equalsIgnoreCase("D1"))
+			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "devUrl");
+		else if(environment.equalsIgnoreCase("D2"))
+			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "qaUrl");
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+		
+	}
+	
+	
 /*	public String getApplicationUrl() {
 		String environment = System.getenv("environment");
 		if (environment.equalsIgnoreCase("dev"))
