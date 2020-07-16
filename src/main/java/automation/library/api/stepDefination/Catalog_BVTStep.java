@@ -2,11 +2,15 @@ package automation.library.api.stepDefination;
 import org.junit.Assert;
 
 import automation.library.api.cucumber.IRestResponse;
-import automation.library.api.cucumber.TestContext;
+import automation.library.api.endpoint.CTBVTEndPoint;
+import automation.library.api.endpoint.CatalogsEndPoint;
 import automation.library.api.pojo.response.CTBVT_Response;
 import automation.library.api.pojo.response.Catalog_BVT_Response;
 import automation.library.api.pojo.response.Catalogs_List_BVT_Response;
+import automation.library.common.Property;
+import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
+import automation.library.managers.FileReaderManager;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -19,26 +23,19 @@ import test.assertion.AssertionTest;
 
 public class Catalog_BVTStep extends BaseStep {
 
-
-	IRestResponse<Catalog_BVT_Response> catalogbvtResponse;
 	RequestSpecification request;
 	
-	public Catalog_BVTStep(TestContext testContext) {
-		super(testContext);
-	}
-
-
 	@Given("catalog API is available.")
 	public void catalog_api_is_available() {
 		
-		
+		url = getCatalogEndPoint().catalogs(FileReaderManager.getInstance().getAPIDataReader().getCatalogAPI());
 	}
 
-	@SuppressWarnings("static-access")
+	
 	@When("user hits the get catalog api.")
 	public void user_hits_the_get_catalog_api() {     
 
-		catalogbvtResponse = getCatalogEndPoint().getCatalogDetails();
+		response = getCatalogEndPoint().getCatalogDetails(url);
 		
 	}
 
@@ -46,8 +43,9 @@ public class Catalog_BVTStep extends BaseStep {
 	@Then("user gets the catalog API response.")
 	public void user_gets_the_catalog_api_response() {
 		
-		Log.message("Status Code:- " + catalogbvtResponse.getStatusCode(), true);		
-		Assert.assertEquals(200, catalogbvtResponse.getStatusCode());
+		Log.message("Status Code:- " + response.getStatusCode(), true);	
+		
+		Assert.assertEquals(200, response.getStatusCode());
 	}
 
 }

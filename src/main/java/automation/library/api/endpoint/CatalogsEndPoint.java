@@ -14,20 +14,19 @@ import io.restassured.specification.RequestSpecification;
 public class CatalogsEndPoint {
 
 	
+	private static String base_url;
 	private static Response response;
-	private static RequestSpecification request = RestAssured.given();
 
-	public CatalogsEndPoint(String baseUrl) {
-        RestAssured.baseURI = baseUrl;
-        request = RestAssured.given();
-        
+	public String catalogs(String baseUrl) {
+		base_url = baseUrl;
+		return base_url;
     }
+	
+	public Response getCatalogDetails(String url) {
 
-	public static IRestResponse<Catalog_BVT_Response> getCatalogDetails() {
-
-		response = request.get();
+		response = RestAssured.given().get(url);
 		Log.message("Response:- " + response.getBody().asString(), true);
-		return new RestResponse<Catalog_BVT_Response>(Catalog_BVT_Response.class, response);
+		return response;
 
 	}
 

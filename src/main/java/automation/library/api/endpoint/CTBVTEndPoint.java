@@ -11,21 +11,19 @@ import io.restassured.specification.RequestSpecification;
 
 public class CTBVTEndPoint {
 
-	
+	private static String base_url;
 	private static Response response;
-	private static RequestSpecification request = RestAssured.given();
 
-	public CTBVTEndPoint(String baseUrl) {
-        RestAssured.baseURI = baseUrl;
-        request = RestAssured.given();
-        
+	public String CT_BVT(String baseUrl) {
+		base_url = baseUrl;
+		return base_url;
     }
 
-	public static IRestResponse<CTBVT_Response> getCTBVTDetails() {
+	public Response getCTBVTDetails(String url) {
 
-		response = request.get();
+		response = RestAssured.given().get(url);
 		Log.message("Response:- " + response.getBody().asString(), true);
-		return new RestResponse<CTBVT_Response>(CTBVT_Response.class, response);
+		return response;
 
 	}
 
