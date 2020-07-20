@@ -44,11 +44,13 @@ public class HYB_OCCP_874_Verify_Additional_Warranty_Message_Is_Not_Null_And_Loc
 	@And("returned JSON should have additional warranty message name and its value in fr_ca locale")
 	public void returned_json_should_have_additonal_warranty_message() {
 
-		String sActualWarrantyAddionalMessage = response.jsonPath().get("warranty.additionalWarrantyMessage")
-				.toString();
+
+		
+				
 		Assert.assertEquals(
 				"Si cet article est défectueux, il est couvert par la garantie du fabricant. Dans le cas où aucune garantie n'est indiquée, cet article est couvert par une garantie de un an honorée dans tout magasin Canadian Tire.",
-				sActualWarrantyAddionalMessage);
+				response.jsonPath().get("warranty.additionalWarrantyMessage"));
+
 	}
 
 }

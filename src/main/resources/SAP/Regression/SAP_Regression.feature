@@ -45,5 +45,28 @@ Feature: Automated SAP Regression Suite - W1S2
         Then returned JSON should have warranty section without locale
         And returned JSON should have additional warranty message name and value
         And returned JSON should have additional warranty message name value should display in default locale as en
+       
+       Scenario: TC-1413 HYB:OCCP-874: Verify Warranty - Additional Warranty Message is null
+       Given occ api for warranty is available
+       When user hits the GET additional warranty api with locale en
+       Then returned JSON should have warranty section without additional Warranty Message name and value
+       
+       Scenario: TC-1347 HYB:OCCP-874: Verify Warranty is null
+       Given occ api for warranty is available
+       When user hits the GET api without locale
+       Then returned JSON should not have warranty section without names and values
+       
+       Scenario: TC-1348 HYB:OCCP-874: Verify Warranty Message is not null and locale is en
+        Given occ api for warranty is available
+		When user hits the GET api with locale en
+		Then returned JSON should have warranty section in en locale
+	    And returned JSON should have warranty message name and its value in en locale
+	    
+	    Scenario: TC-1346 HYB:OCCP-874: Verify Warranty - WarrantyMessage is not null
+	    Given occ api for warranty is available
+        When user hits the GET api without locale
+        Then returned JSON should have warranty section in en locale
+	    And returned JSON should have warranty message name and its value in en locale
+      
 
 	

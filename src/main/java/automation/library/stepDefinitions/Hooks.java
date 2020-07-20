@@ -7,6 +7,8 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.IOException;
 import automation.library.cucumber.TestContext;
+import automation.library.logdetail.Log;
+import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -29,13 +31,14 @@ public class Hooks {
 	@After
 
 	public void AfterSteps(Scenario scenario) throws IOException {
+		Log.message("Scenario:- " + scenario.getName(), true);
 		if (scenario.isFailed()) {
 			scenario.embed(
-					((TakesScreenshot) DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.BYTES),
+					((TakesScreenshot) PageObject.getDriver()).getScreenshotAs(OutputType.BYTES), 
 					"image/png");
 		}
 
-		//DriverFactory.getInstance().driverManager().closeDriver();
+		PageObject.getDriver().close();
 
 	}
 }

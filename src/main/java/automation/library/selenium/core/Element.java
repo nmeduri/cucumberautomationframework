@@ -67,7 +67,7 @@ public class Element {
 		this.by = by;
 
 		try {
-			wait = new WebDriverWait(driver, 10);
+			wait = new WebDriverWait(driver, 20);
 			this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
 			Log.debug("Element is found.");
 		} catch (Exception e) {

@@ -9,6 +9,8 @@ public class HomePageLocator {
 	
 	String sArrow = Property.getProperty(Constant.OR_FILE, "arrow");
 	
+	String sMenuIcon = Property.getProperty(Constant.OR_FILE, "menuIcon");
+	
 	
 	public String getAutomativeLocator() {
 		
@@ -19,6 +21,10 @@ public class HomePageLocator {
 		
 		return sArrow;
 		
+	}
+	
+	public String getMenuIcon() {
+		return sMenuIcon;
 	}
 
 }

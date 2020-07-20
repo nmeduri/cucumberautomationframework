@@ -15,14 +15,16 @@ public class HYB_API_EN_CA_End_Point {
     }
 
 	public Response getAPI_EN_CA(String sProductCode) {
-		response = RestAssured.given().get(base_url +  sProductCode + "?lang=en_ca");
+
+		response = RestAssured.given().get(base_url +  sProductCode + "/1212?fields=FULL&lang=en_ca");
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;
 
 	}
 	
 	public Response getAPI_EN_CAURL(String url, String sProductCode) {
-		response = RestAssured.given().get(url +  sProductCode + "?lang=en_ca");
+
+		response = RestAssured.given().get(url +  sProductCode + "/1212?fields=FULL&lang=en_ca");
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;
 

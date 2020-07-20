@@ -3,7 +3,6 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.common.Property;
-import automation.library.cucumber.TestContext;
 import automation.library.datatable.Data_Map;
 import automation.library.locator.HomePageLocator;
 import automation.library.pageObjects.HomePage;
@@ -17,13 +16,13 @@ public class PageObjectManager {
 	private HomePageLocator homePageLocator;
 	
 
-	public PageObjectManager(WebDriver driver) {
+	public PageObjectManager() {
 
-		this.driver = driver;
+		
 
 	}
 
-	public HomePage getHomePage() {
+	public HomePage getHomePage(WebDriver driver) throws Exception {
 
 		return (homePage == null) ? homePage = new HomePage(driver) : homePage;
 

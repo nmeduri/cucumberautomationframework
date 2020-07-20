@@ -4,8 +4,11 @@ package automation.library.stepDefinitions;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
-import automation.library.logdetail.Log;
+import automation.library.dataProviders.ConfigFileReader;
+import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
+import automation.library.selenium.core.PageObject;
+import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,32 +16,44 @@ public class HomePageSteps {
 
 	
 	TestContext testContext;
-    HomePage homePage;
-    private WebDriver driver;
+	HomePage homePage;
+	PageObjectManager pageObjectManager;
+	DriverFactory driverFactory;
+	ConfigFileReader configFileReader;
 
-	public HomePageSteps(TestContext context) {
+	private WebDriver driver;
+
+	public HomePageSteps(TestContext context) throws Exception {
 		testContext = context;
-		homePage =  testContext.getPageObjectManager().getHomePage();
-	
+		driverFactory = new DriverFactory();
+		configFileReader = new ConfigFileReader();
 	}
 
 	@Given("^Adobe author url is up$")
-	public void adobe_author_url_is_up() {
+	public void adobe_author_url_is_up() throws Exception {
+		driver = driverFactory.getDriver(configFileReader.getBrowser());
+		pageObjectManager = new PageObjectManager();
+		homePage = new HomePage(driver);
+		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
 		homePage.navigateTo_HomePage();
 		
 		
 	}
 	
 	@Given("^User is on Home Page.$")
-	public void user_is_on_Home_Pages() {
-		homePage.navigateToHomePage();
+	public void user_is_on_Home_Pages() throws Exception{
+		driver = driverFactory.getDriver(configFileReader.getBrowser());
+		pageObjectManager = new PageObjectManager();
+		homePage = new HomePage(driver);
+		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
+		homePage.navigateTo_HomePage();
 		
 		
 	}
 
 	@When("^user launches the author url$")
 	public void user_launches_the_author_url() throws Throwable {
-		
+		testContext.getPageObjectManager().getHomePage(PageObject.getDriver()).clickOnProduct();
 	}
 	
 	@Then("^Adobe author signin page is displayed$")
@@ -49,8 +64,12 @@ public class HomePageSteps {
 	
 	
 	@Given("^SAP base url is up$")
-	public void sap_base_url_is_up() {
-		homePage.navigateToHomePage();
+	public void sap_base_url_is_up() throws Exception {
+		driver = driverFactory.getDriver("chrome");
+		pageObjectManager = new PageObjectManager();
+		homePage = new HomePage(driver);
+		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
+		homePage.navigateTo_HomePage();
 		
 		
 	}

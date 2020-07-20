@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class FirefoxDriverManager extends DriverManager {
      
 	private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
-		    @Override
+		    //@Override
 		    public void createDriver() {
 		    	WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
@@ -17,7 +17,7 @@ public class FirefoxDriverManager extends DriverManager {
 		    }
 	
 
-	@Override
+	//@Override
 	public void updateResults(String result) {
 		// TODO Auto-generated method stub
 		

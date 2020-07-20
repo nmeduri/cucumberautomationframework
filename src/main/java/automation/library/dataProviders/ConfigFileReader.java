@@ -101,6 +101,8 @@ public class ConfigFileReader {
 			return browserName;
 		else if (browserName.equals("headless"))
 			return browserName;
+		else if (browserName.equals("headless mobile"))
+			return browserName;
 		else
 			throw new RuntimeException(
 					"Browser Name Key value in Configuration.properties is not matched : " + browserName);
@@ -112,7 +114,9 @@ public class ConfigFileReader {
 		Log.message("Server Type:- " + serverType, true);
 		if (serverType == null || serverType.equals("saucelabs"))
 			return serverType;
-		else if (serverType == null || serverType.equals("default"))
+		else if (serverType == null || serverType.equals("without headless"))
+			return serverType;
+		else if (serverType == null || serverType.equals("headless"))
 			return serverType;
 		else
 			throw new RuntimeException(

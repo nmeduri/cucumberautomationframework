@@ -18,7 +18,7 @@ import static automation.library.enums.Locator.getLocator;
 
 public class PageObject {
 
-	private WebDriver driver;
+	protected static WebDriver driver;
 	private WebDriverWait wait;
 	private Property property = new Property();
 
@@ -27,7 +27,7 @@ public class PageObject {
 		wait = new WebDriverWait(driver, getWaitDuration());
 	}
 	
-	 public WebDriver getDriver() {
+	 public static WebDriver getDriver() {
 	        Log.debug("obtaining the driver object for current thread");
 	        return driver;
 	    }

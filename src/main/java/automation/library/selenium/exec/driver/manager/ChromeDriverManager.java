@@ -9,15 +9,15 @@ import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class ChromeDriverManager extends DriverManager {
+public class ChromeDriverManager  extends DriverManager{
 
-	@Override
+	//@Override
 	public void createDriver() {
 		WebDriverManager.chromedriver().setup(); 
 		driver = new ChromeDriver();
 	}
 
-	@Override
+	//@Override
 	public void updateResults(String result) {
 		// TODO Auto-generated method stub
 

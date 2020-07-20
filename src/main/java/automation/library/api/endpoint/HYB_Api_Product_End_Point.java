@@ -17,7 +17,9 @@ public class HYB_Api_Product_End_Point {
 
 	public Response getApiProduct(String url, String sProductCode) {
 		
-		response = RestAssured.given().get(url +  sProductCode);
+
+		response = RestAssured.given().get(url +  sProductCode + "/1212?fields=FULL");
+
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;
 
