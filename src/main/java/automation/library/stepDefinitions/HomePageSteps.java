@@ -42,18 +42,12 @@ public class HomePageSteps {
 	
 	@Given("^User is on Home Page.$")
 	public void user_is_on_Home_Pages() throws Exception{
-		driver = driverFactory.getDriver(configFileReader.getBrowser());
-		pageObjectManager = new PageObjectManager();
-		homePage = new HomePage(driver);
-		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
-		homePage.navigateTo_HomePage();
-		
-		
+
 	}
 
 	@When("^user launches the author url$")
 	public void user_launches_the_author_url() throws Throwable {
-		testContext.getPageObjectManager().getHomePage(PageObject.getDriver()).clickOnProduct();
+		
 	}
 	
 	@Then("^Adobe author signin page is displayed$")
@@ -65,12 +59,6 @@ public class HomePageSteps {
 	
 	@Given("^SAP base url is up$")
 	public void sap_base_url_is_up() throws Exception {
-		driver = driverFactory.getDriver("chrome");
-		pageObjectManager = new PageObjectManager();
-		homePage = new HomePage(driver);
-		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
-		homePage.navigateTo_HomePage();
-		
 		
 	}
 

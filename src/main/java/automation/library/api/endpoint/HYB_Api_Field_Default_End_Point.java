@@ -9,14 +9,14 @@ public class HYB_Api_Field_Default_End_Point {
 	private static String base_url;
 	
 	
-	public static String HYB_Api_Field_Default(String baseUrl) {
+	public String HYB_Api_Field_Default(String baseUrl) {
 		base_url = baseUrl;
 		return base_url;
     }
 
-	public static Response getAPI_Field_Default(String sProductCode) {
-		
-		response = RestAssured.given().get(base_url  + sProductCode + "?fields=DEFAULT");
+	public Response getAPI_Field_Default(String url, String sProductCode) {
+		Log.message("URL:- " + url  + sProductCode + "?fields=DEFAULT", true);
+		response = RestAssured.given().get(url  + sProductCode + "/1212?fields=DEFAULT");
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;
 

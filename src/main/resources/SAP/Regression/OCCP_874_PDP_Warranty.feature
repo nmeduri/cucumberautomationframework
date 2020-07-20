@@ -1,4 +1,4 @@
-Feature: Automated SAP Regression Suite - W1S2
+Feature: OCCP_874_PDP_Warranty.feature
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-874
        

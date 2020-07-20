@@ -71,7 +71,7 @@ public class BaseStep {
 		return apiEnEndPoint;
 	}
 	
-	public HYB_Api_Field_Default_End_Point getHybApiFieldDefault() {
+	public HYB_Api_Field_Default_End_Point getApiFieldDefault() {
 		apiFieldDefault = new HYB_Api_Field_Default_End_Point();
 		return apiFieldDefault;
 	}
