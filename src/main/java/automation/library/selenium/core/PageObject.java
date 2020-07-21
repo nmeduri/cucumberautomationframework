@@ -10,6 +10,8 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +23,7 @@ public class PageObject {
 	protected static WebDriver driver;
 	private WebDriverWait wait;
 	private Property property = new Property();
+	public static List<String> value;
 
 	public PageObject(WebDriver driver) {
 		this.driver = driver;
@@ -93,7 +96,7 @@ public class PageObject {
 		}
 		return list;
 	}
-
+	
 	public Element $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);

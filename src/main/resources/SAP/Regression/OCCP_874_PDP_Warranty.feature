@@ -57,10 +57,10 @@ Feature: OCCP_874_PDP_Warranty.feature
        Then returned JSON should not have warranty section without names and values
        
        Scenario: TC-1348 HYB:OCCP-874: Verify Warranty Message is not null and locale is en
-        Given occ api for warranty is available
-		When user hits the GET api with locale en
-		Then returned JSON should have warranty section in en locale
-	    And returned JSON should have warranty message name and its value in en locale
+       Given occ api for warranty is available
+	   When user hits the GET api with locale en
+	   Then returned JSON should have warranty section in en locale
+	   And returned JSON should have warranty message name and its value in en locale
 	    
 	    Scenario: TC-1346 HYB:OCCP-874: Verify Warranty - WarrantyMessage is not null
 	    Given occ api for warranty is available
