@@ -29,6 +29,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	Response responseFRCA;
 	RequestSpecification request;
 	
+
 	@When("user hits the GET api of user manual link without locale")
 	public void user_hits_the_api_of_user_manual_link_without_locale() {
 
@@ -48,6 +49,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 		responseFRCA = response;
 	}
 	
+
 	@Then("user should able to see the product code in the JSON response")
 	public void user_should_be_able_to_see_product_code_in_the_response() {
 		

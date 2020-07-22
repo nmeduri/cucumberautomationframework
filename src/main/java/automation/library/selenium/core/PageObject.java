@@ -1,5 +1,6 @@
 package automation.library.selenium.core;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,11 +30,11 @@ public class PageObject {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, getWaitDuration());
 	}
-	
-	 public static WebDriver getDriver() {
-	        Log.debug("obtaining the driver object for current thread");
-	        return driver;
-	    }
+
+	public static WebDriver getDriver() {
+		Log.debug("obtaining the driver object for current thread");
+		return driver;
+	}
 
 	public Element $(By by) throws Exception {
 		return findElement(by);
@@ -67,7 +68,7 @@ public class PageObject {
 	}
 
 	public By $By(Loc type, String locator) throws Exception {
-		
+
 		By by = getLocator(Loc.XPATH, locator);
 		return by;
 
@@ -108,32 +109,42 @@ public class PageObject {
 		return element;
 
 	}
-	
+
 	public int getWaitDuration() {
-        final int defaultWait = 10;
-        int duration;
-        try {
-            duration = property.getProperties(Constant.SELENIUM_CONFIGURATION).getInt("defaultWait");
-            Log.debug("selenium getDriver() getWait() time set from environment properties: " + duration);
-        } catch (Exception e) {
-            duration = defaultWait;
-            Log.debug("selenium getDriver() getWait() time not available from environment properties...default applied : " + defaultWait);
-        }
-        return duration;
-    }
-	
+		final int defaultWait = 10;
+		int duration;
+		try {
+			duration = property.getProperties(Constant.SELENIUM_CONFIGURATION).getInt("defaultWait");
+			Log.debug("selenium getDriver() getWait() time set from environment properties: " + duration);
+		} catch (Exception e) {
+			duration = defaultWait;
+			Log.debug(
+					"selenium getDriver() getWait() time not available from environment properties...default applied : "
+							+ defaultWait);
+		}
+		return duration;
+	}
+
 	public void switchWindow(String parent) {
-        Log.debug("parent window handle:" + parent);
-        switching:
-        while (true) {
-            for (String handle : getDriver().getWindowHandles()) {
-                if (!handle.equals(parent)) {
-                    Log.debug("switching to window handle:" + handle);
-                    getDriver().switchTo().window(handle);
-                    break switching;
-                }
-            }
-        }
-    }
+		Log.debug("parent window handle:" + parent);
+		switching: while (true) {
+			for (String handle : getDriver().getWindowHandles()) {
+				if (!handle.equals(parent)) {
+					Log.debug("switching to window handle:" + handle);
+					getDriver().switchTo().window(handle);
+					break switching;
+				}
+			}
+		}
+	}
+
+	public static void verifyResponseValue(List<String> expectedValue, List<String> actualValue) {
+		
+		for(int i=0; i<actualValue.size(); i++) {
+			
+			Assert.assertEquals(expectedValue.get(i), actualValue.get(i));
+			
+			}
+	}
 
 }

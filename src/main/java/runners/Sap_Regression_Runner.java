@@ -9,7 +9,8 @@ public final class Sap_Regression_Runner {
 			"classpath:SAP/Regression/", 
 			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
-			"--plugin", "json:cucumber.json", 
+			"--tags", "@RegressionTest",
+			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",
 			"--plugin", "html:target/selenium-reports"
