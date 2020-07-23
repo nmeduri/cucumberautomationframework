@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import automation.library.common.Property;
@@ -82,6 +83,11 @@ public class DriverFactory {
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
+				break;
+			case "safari":
+				System.setProperty("webdriver.safari.driver", "SafariDriver.safariextz");
+				driver = new SafariDriver();
+				driver.manage().window().maximize();
 				break;
 			case "mobile-chrome":
 				WebDriverManager.chromedriver().setup();

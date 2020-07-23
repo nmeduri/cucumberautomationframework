@@ -23,9 +23,16 @@ public class HomePage extends PageObject {
 
 	}
 
-	public void navigateTo_HomePage() {
+	public void navigateTo_HomePage() throws Exception{
 		
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
+		Thread.sleep(5000);
+		Log.message("Driver:- " + driver.getTitle(), true);
+		
+		Thread.sleep(5000);
+		driver.findElement(By.className("global-store__content__section__arrow")).click();
+		Thread.sleep(5000);
+		Log.message("Driver:- " + driver.getTitle(), true);
 	}
 
 	public void clickOnProduct() throws Exception {

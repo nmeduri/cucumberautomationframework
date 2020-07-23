@@ -52,7 +52,7 @@ Feature: OCCP_874_PDP_Warranty.feature
         Then returned JSON should have warranty section without locale
         And returned JSON should have additional warranty message name and value
         And returned JSON should have additional warranty message name value should display in default locale as en
-       
+
         @RegressionTest
         Scenario: TC-1413 HYB:OCCP-874: Verify Warranty - Additional Warranty Message is null
         Given occ api is available

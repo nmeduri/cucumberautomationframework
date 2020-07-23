@@ -23,6 +23,7 @@ Feature: OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns.feature
 	    
 	    @RegressionTest
 	    Scenario: TC-1326 HYB:OCCP-870 : Verify Description (Product Romance Copy ) is not null in JSON Response
+
 	    Given occ api is available
 	    When user hits the API
 	    Then user should be able to see product Description and its value in en in JSON Response

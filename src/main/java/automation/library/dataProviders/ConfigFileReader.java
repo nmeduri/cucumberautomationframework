@@ -97,6 +97,8 @@ public class ConfigFileReader {
 		Log.message("Browser:- " + browserName, true);
 		if (browserName == null || browserName.equals("chrome"))
 			return browserName;
+		else if (browserName.equalsIgnoreCase("safari"))
+			return browserName;
 		else if (browserName.equalsIgnoreCase("firefox"))
 			return browserName;
 		else if (browserName.equals("headless"))

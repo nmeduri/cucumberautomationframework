@@ -97,7 +97,7 @@ public class PageObject {
 		}
 		return list;
 	}
-	
+
 	public Element $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);
@@ -139,12 +139,40 @@ public class PageObject {
 	}
 
 	public static void verifyResponseValue(List<String> expectedValue, List<String> actualValue) {
-		
-		for(int i=0; i<actualValue.size(); i++) {
-			
+
+		for (int i = 0; i < actualValue.size(); i++) {
+
+			Log.message("Actual value:- " + actualValue.get(i), true);
 			Assert.assertEquals(expectedValue.get(i), actualValue.get(i));
+
+		}
+	}
+
+	public static void verifySectionResponseNotNull(List<String> value) {
+
+		for (int i = 0; i < value.size(); i++) {
 			
-			}
+			Assert.assertNotEquals(null, value.get(i));
+
+		}
+
+	}
+	
+	public static void verifySectionResponseNull(List<String> value) {
+
+		for (int i = 0; i < value.size(); i++) {
+			
+			Log.message("Value:- " + value.get(i), true);
+			Assert.assertEquals("null", value.get(i));
+
+		}
+
+	}
+
+	public static void verifySectionValueResponseNotNull(List<String> value) {
+
+		Assert.assertTrue(value.contains(null));
+		
 	}
 
 }

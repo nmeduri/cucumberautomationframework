@@ -38,7 +38,7 @@ public class Hooks {
 					"image/png");
 		}
 
-		PageObject.getDriver().close();
+		PageObject.getDriver().quit();
 
 	}
 }
