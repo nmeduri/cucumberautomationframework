@@ -171,8 +171,17 @@ public class PageObject {
 
 	public static void verifySectionValueResponseNotNull(List<String> value) {
 
-		Assert.assertTrue(value.contains(null));
+		Assert.assertFalse(value.contains(null));
 		
+	}
+	
+	public static void verifyNotNullResponse(List<String> expectedValue, String actualValue) {
+		Assert.assertTrue(expectedValue.contains(actualValue));
+	}
+	
+	public static void verifyNullResponse(List<String> expectedValue, String actualValue) {
+		Assert.assertFalse(expectedValue.contains(actualValue));
+
 	}
 
 }

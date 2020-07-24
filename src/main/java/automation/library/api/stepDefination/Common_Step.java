@@ -53,5 +53,12 @@ public class Common_Step extends BaseStep{
 		Log.message("URL:- " + url, true);
 		response = getApiFieldDefault().getAPI_Field_Default(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1335());
 	}
+	
+	@When("user hits the api")
+	public void user_hits_the_api() {
+
+		Log.message("URL:- " + url, true);
+		response = getApiFieldDefault().getAPI_Field_Default(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1328());
+	}
 
 }

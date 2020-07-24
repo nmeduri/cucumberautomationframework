@@ -45,7 +45,7 @@ Feature: OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns.feature
 		@RegressionTest
 		Scenario: TC-1328 HYB:OCCP-870 - Verify Description is not null and language as en in JSON Response
 		Given occ api is available
-		When user hits the GET api with Default
+		When user hits the api
 		Then user should be able to see product description is not null
 		And user should be able to see product description and language as en in JSON response
 		

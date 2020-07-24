@@ -43,11 +43,40 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("response should have medias section with name and its value")
 	public void response_should_have_medias_section_with_name_and_its_value() {
 		
-		PageObject.verifySectionValueResponseNotNull(response.jsonPath().get("medias.name"));
+
+		List<String> mediaName = response.jsonPath().get("medias.name");
+		Assert.assertTrue(mediaName.contains("CANVAS Breton Patio Arm Chair"));
 		Assert.assertNotEquals(null, response.jsonPath().get("medias"));
 		
 	}
+
+	@Then("response JSON should have section medias with name and its value in english")
+	public void response_should_have_section_medias_with_name_and_value_in_en() {
+		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
+	}
 	
+	@Then("JSON should have medias section with name and its value in en CA")
+	public void response_should_have_medias_section_with_name_and_its_value_in_en_ca() {
+		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
+	}
+	
+	@Then("response JSON should have medias with name and value in fr_ca")
+	public void response_should_have_medias_section_with_name_and_value_in_fr_ca() {
+		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
+		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		
+	}
+	
+	@Then("response should have medias section without name and its value")
+	public void response_should_have_medias_section_without_name_and_its_value() {
+		List<String> mediaName = response.jsonPath().get("medias.name");
+		Log.message("Media Name:- " + mediaName, true);
+		Assert.assertTrue(mediaName.contains(null));
+		Assert.assertNotEquals(null, response.jsonPath().get("medias"));
+	}
+
 	@Then("medias section should have in response without mediaType name and its value")
 	public void response_should_have_medias_section_without_mediaType_name_and_its_value() {
 
@@ -75,7 +104,6 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 		mediaCode.add("Code3");
 		mediaCode.add("Code4");
 		mediaCode.add("Code8");
-
 		PageObject.verifyResponseValue(mediaCode, response.jsonPath().get("medias.code"));
 
 	}
