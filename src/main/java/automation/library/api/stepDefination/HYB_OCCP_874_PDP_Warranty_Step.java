@@ -110,19 +110,19 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 	public void returned_json_should_have_additonal_warranty_message() {
 		
 		String sActualWarrantyAddionalMessage = response.jsonPath().get("warranty.additionalWarrantyMessage").toString();
-		Assert.assertEquals("This product  carries a 1 year exchange warranty redeemable at any Canadian Tire store", sActualWarrantyAddionalMessage);
+		Assert.assertEquals("This product carries a 1 year exchange warranty redeemable at any Canadian Tire store", sActualWarrantyAddionalMessage);
 	}
 	
 	@And("returned JSON should have additional warranty message and value in en locale")
 	public void returned_response_should_have_additional_warranty_message_value_in_en_locale() {
 		String sActualWarrantyAddionalMessage = response.jsonPath().get("warranty.additionalWarrantyMessage").toString();
-		Assert.assertEquals("This product  carries a 1 year exchange warranty redeemable at any Canadian Tire store", sActualWarrantyAddionalMessage);
+		Assert.assertEquals("This product carries a 1 year exchange warranty redeemable at any Canadian Tire store", sActualWarrantyAddionalMessage);
 	}
 	
 	@And("returned JSON should have additional warranty message name value should display in default locale as en")
 	public void returned_response_should_have_addional_warranty_message_in_default_local_as_en() {
 
-		Assert.assertEquals("This product  carries a 1 year exchange warranty redeemable at any Canadian Tire store",
+		Assert.assertEquals("This product carries a 1 year exchange warranty redeemable at any Canadian Tire store",
 				response.jsonPath().get("warranty.additionalWarrantyMessage"));
 
 	}

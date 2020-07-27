@@ -168,6 +168,12 @@ public class PageObject {
 		}
 
 	}
+	
+	public static void verifySectionValueResponseNull(List<String> value) {
+		
+		Assert.assertTrue(value.contains(null));
+		
+	}
 
 	public static void verifySectionValueResponseNotNull(List<String> value) {
 

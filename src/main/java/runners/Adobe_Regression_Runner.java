@@ -15,7 +15,8 @@ public final class Adobe_Regression_Runner {
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
-			"--plugin", "html:target/selenium-reports"
+			"--plugin", "html:target/selenium-reports",
+			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html"
 
 		};
 

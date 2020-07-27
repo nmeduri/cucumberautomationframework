@@ -52,6 +52,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 
 	@Then("response JSON should have section medias with name and its value in english")
 	public void response_should_have_section_medias_with_name_and_value_in_en() {
+
 		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
 		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
 	}
@@ -86,6 +87,32 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 		Log.message("Section 'medias' is displayed without mediaType name and its value.", true);
 
 	}
+	
+	@Then("response JSON should have section medias with externalURL and its value")
+	public void response_should_have_section_medias_with_externalurl_and_its_value() {
+		List<String> mediaName = response.jsonPath().get("medias.url");
+		Assert.assertTrue(mediaName.contains("https://canadiantire.scene7.com/is/image/CanadianTire/0882184_1?defaultImage=image_na_EN&fmt=jpg&fit=constrain,1&wid=573&hei=499"));
+		Assert.assertNotEquals(null, response.jsonPath().get("medias"));
+	}
+	
+	@Then("response should have medias with damPath and its value")
+	public void response_should_have_medias_with_damPath_and_its_value() {
+		Log.message("Value:- " +response.jsonPath().get("medias.damPth"), true);
+		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.damPath"), "/content/dam/canadiantire/Cooking%20pan.PNG");
+		
+	}
+	
+	@Then("response should have medias without externalUrl and its value")
+	public void response_should_have_medias_without_external_url_and_its_value() {
+		
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.url"));
+	}
+	
+	@Then("response should have medias without damPath and its value")
+	public void response_should_have_medias_without_dampath_and_its_value() {
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.damPath"));
+	}
+	
 
 	@And("user able to see media section with code")
 	public void user_able_to_see_media_section_with_codes() {

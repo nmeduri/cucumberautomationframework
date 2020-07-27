@@ -61,3 +61,27 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         When user hits the GET api with locale as fr_ca
         Then response JSON should have medias with name and value in fr_ca
         
+        @RegressionTest
+        Scenario: TC-1471 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - externalURL is not null
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response JSON should have section medias with externalURL and its value
+        
+        @RegressionTest
+        Scenario: TC-1472 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - externalURL is null
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response should have medias without externalUrl and its value
+        
+        @RegressionTest
+        Scenario: TC-1473 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - damPath is not null 
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response should have medias with damPath and its value
+        
+        @RegressionTest
+        Scenario: TC-1474 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - damPath is null
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response should have medias without damPath and its value
+        
