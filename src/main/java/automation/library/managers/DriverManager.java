@@ -36,35 +36,6 @@ public  class DriverManager {
 	private Property property = new Property();
 	private ConfigFileReader configFileReader = new ConfigFileReader();
 
-	public WebDriver getDriver() throws Exception {
-
-		switch (configFileReader.getServerType()) {
-		case "saucelabs":
-			Log.message("sauce labs", true);
-			break;
-		default:
-			switch ("chrome") {
-			case "chrome":
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
-				//new ChromeDriverManager();
-				break;
-			case "firefox":
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
-				break;
-			case "headless":
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
-				break;
-			}
-			break;
-		}
-		return driver;
-
-	}
-	
-
 	public WebDriver returnDriver() {
 		return driver;
 	}

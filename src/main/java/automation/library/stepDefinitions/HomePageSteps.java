@@ -37,7 +37,6 @@ public class HomePageSteps {
 		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
 		homePage.navigateTo_HomePage();
 		
-		
 	}
 	
 	@Given("^User is on Home Page.$")

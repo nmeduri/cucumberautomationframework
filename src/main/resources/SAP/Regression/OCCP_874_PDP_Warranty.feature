@@ -2,7 +2,7 @@ Feature: OCCP_874_PDP_Warranty.feature
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-874
        
-       @RegressionTest
+        @RegressionTest
 		Scenario: TC-1415 HYB:OCCP-874: Verify additional warranty message is not null and locale is en_CA	
 	    Given occ api is available 
 		When user hits the GET api with locale as en_ca

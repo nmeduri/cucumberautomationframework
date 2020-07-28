@@ -85,3 +85,58 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         When user hits the GET api without locale
         Then response should have medias without damPath and its value
         
+        @RegressionTest
+        Scenario: TC-1475 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - order is not null
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response should have medias with order and its value
+        
+        @RegressionTest
+        Scenario: TC-1477 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - videoImageThumbnailURL is not null
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response should have medias section with videoImageThumbnailURL and its value
+        
+        @RegressionTest
+        Scenario: TC-1479 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - videoImageThumbnailDAMPath is not null 
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response should have medias section with videoImageThumbnailDAMPath and its value
+        
+        @RegressionTest
+        Scenario: TC-1481 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - alttext is not null 
+        Given occ api is available
+        When user hits the GET api without locale
+        Then response should have medisas section with alttext and value in english
+        
+        @RegressionTest
+        Scenario: TC-1483 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - alttext is not null and lang as eng
+        Given occ api is available 
+		When user hits the GET api with locale en
+		Then response should have medisas section with alttext and value in english
+		
+		@RegressionTest
+        Scenario: TC-1484 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - alttext is not null and lang as en_CA
+        Given occ api is available 
+		When user hits the GET api with locale as en_ca
+		Then response should have medisas section with alttext and value in english
+		
+		@RegressionTest
+		Scenario: TC-1485 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - alttext is not null and lang as fr_CA
+		Given occ api is available 
+		When user hits the GET api with locale as fr_ca
+		Then JSON response should have medias section with alttext and value in fr_CA
+		
+		@RegressionTest
+		Scenario: TC-1486 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - isPrimary is not null
+		Given occ api is available
+		When user hits the GET api without locale
+		Then response should have medias section with isPrimary and its value
+		
+		@RegressionTest
+		Scenario: TC-1488 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - isListingThumbnailImage is not null
+		Given occ api is available
+		When user hits the GET api without locale
+		Then JSON response should have medias section with isListingThumbnailImage and value
+        
+        
