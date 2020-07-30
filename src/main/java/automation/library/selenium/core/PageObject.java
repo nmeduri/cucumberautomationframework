@@ -189,5 +189,17 @@ public class PageObject {
 		Assert.assertFalse(expectedValue.contains(actualValue));
 
 	}
+	
+	public static void notNullAttributeInResponse(String actualValue) {
+		Assert.assertNotEquals(null, actualValue);
+	}
+	
+	public static void notNullAttributeInResponseInList(List<String> actualValue) {
+		Assert.assertNotEquals(null, actualValue);
+	}
+	
+	public static void verifyExpectedValue(String exepectedValue, String actualValue) {
+		Assert.assertEquals(exepectedValue, actualValue);
+	}
 
 }

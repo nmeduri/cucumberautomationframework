@@ -138,5 +138,4 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
 		Given occ api is available
 		When user hits the GET api without locale
 		Then JSON response should have medias section with isListingThumbnailImage and value
-        
-        
+  

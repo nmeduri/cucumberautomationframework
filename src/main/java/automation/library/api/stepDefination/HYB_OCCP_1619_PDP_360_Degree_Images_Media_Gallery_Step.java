@@ -96,7 +96,6 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("response should have medias with damPath and its value")
 	public void response_should_have_medias_with_damPath_and_its_value() {
 
-		Log.message("Value:- " +response.jsonPath().get("medias.damPth"), true);
 		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.damPath"), "/content/dam/canadiantire/Cooking%20pan.PNG");
 		
 	}
@@ -157,6 +156,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.altText"), "Fauteuil de jardin CANVAS Breton");
 		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
 	}
+
 
 	@And("user able to see media section with code")
 	public void user_able_to_see_media_section_with_codes() {
