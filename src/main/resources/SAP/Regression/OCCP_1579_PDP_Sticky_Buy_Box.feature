@@ -29,8 +29,8 @@ Feature: OCCP-1619 PDP: Sticky Buy Box
         When user hits the GET api without locale
         Then product price should be displayed in JSON response
         
-        @SmokeTest
-        Scenario: TC-1342 HYB:OCCP-1579: Verify product title and language as en_CA or fr_CA in JSON Response
+        @RegressionTest
+        Scenario: TC-1344 HYB:OCCP-1579: Verify product Price format when language as en_CA or fr_CA in JSON Response
         Given occ api is available
         When user hits the GET api with locale as fr_ca
         Then fr ca should product French text for PDP
