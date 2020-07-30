@@ -12,57 +12,126 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-# This script was intended to build Adobe separately from Sap
-# however, the current solution builds one project and produces all the artifacts
-# we need to revisit this to support ad-hoc build/tests. 
-# I'm commenting out the current build architecture and providing a basic compilation and publish
+parameters:
+
+- name: AEM_BVT
+  displayName: Run AEM Build Validation
+  type: boolean
+  default: false
+
+- name: AEM_Regression
+  displayName: Run AEM Regression Suite
+  type: boolean
+  default: false
+
+- name: SAP_BVT
+  displayName: Run SAP Build Validation
+  type: boolean
+  default: false
+
+- name: SAP_Regression
+  displayName: Run SAP Regression Suite
+  type: boolean
+  default: false
+
+- name: Environment
+  displayName: Environment name to run tests
+  type: string
+  default: D2
+  values:
+    - D1
+    - D2
 
 
-# TODO: Fix the old template when the solution is broken down into separate code folders
-# invoke the shared template
-#extends:
-#  template: pipeline-template.yml
-#  parameters:
-#    rootFolder: .
-#    testMatrix:
-#        - name: temp
-#          folderTemplate: '{0}'
-    
-# temporary basic compilation and publish
-steps:
-# build 
-- task: Maven@3
-  displayName: Maven build task
-  inputs:
-    mavenPomFile: ./pom.xml
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    goals: 'package'
-    options: '-DoutputDirectory=$(Build.StagingDirectory)'
-    
-# move files to appropriate subfolders
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.StagingDirectory)'
-    TargetFolder: '$(Build.StagingDirectory)\Adobe'
-    Contents: 'Adobe**.jar'
- 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: $(Build.StagingDirectory)
-    TargetFolder: $(Build.StagingDirectory)\Sap
-    Contents: 'Sap**.jar'
-  
-- task: PublishPipelineArtifact@1
-  displayName: Publish Adobe artifact
-  inputs:
-    targetPath: '$(Build.StagingDirectory)\Adobe' 
-    artifactName: 'Adobe'
-    
-- task: PublishPipelineArtifact@1
-  displayName: Publish Sap artifact
-  inputs:
-    targetPath: '$(Build.StagingDirectory)\Sap' 
-    artifactName: 'Sap'
+stages:
+
+  - stage: CI
+    jobs:
+      - job: CI
+        displayName: CI
+        steps:
+
+        # build 
+        - task: Maven@3
+          displayName: Maven build task
+          inputs:
+            mavenPomFile: ./pom.xml
+            mavenOptions: '-Xmx3072m'
+            javaHomeOption: 'JDKVersion'
+            jdkVersionOption: '1.8'
+            jdkArchitectureOption: 'x64'
+            goals: 'package'
+            options: '-DoutputDirectory=$(Build.StagingDirectory)'
+            
+        # move files to appropriate subfolders
+        - task: CopyFiles@2
+          inputs:
+            SourceFolder: '$(Build.StagingDirectory)'
+            TargetFolder: '$(Build.StagingDirectory)\Adobe'
+            Contents: 'Adobe**.jar'
+        
+        - task: CopyFiles@2
+          inputs:
+            SourceFolder: $(Build.StagingDirectory)
+            TargetFolder: $(Build.StagingDirectory)\Sap
+            Contents: 'Sap**.jar'
+          
+        - task: PublishPipelineArtifact@1
+          displayName: Publish Adobe artifact
+          inputs:
+            targetPath: '$(Build.StagingDirectory)\Adobe' 
+            artifactName: 'Adobe'
+            
+        - task: PublishPipelineArtifact@1
+          displayName: Publish Sap artifact
+          inputs:
+            targetPath: '$(Build.StagingDirectory)\Sap' 
+            artifactName: 'Sap'
+
+  - stage: Run_QA_Tests_Suites
+    dependsOn: CI
+    condition: and( succeeded(), in( 'True', '${{ parameters.AEM_BVT }}', '${{ parameters.AEM_Regression }}', '${{ parameters.SAP_BVT }}', '${{ parameters.SAP_Regression}}' ) )
+    jobs:
+      - job: Run_SAP_Tests_Suites
+        displayName: Run SAP Tests Suites
+        condition: in('True', '${{ parameters.SAP_BVT }}', '${{ parameters.SAP_Regression }}' )
+        variables:
+          - name: environment
+            value: ${{ parameters.Environment }}
+        steps:
+          - ${{ if eq(parameters.SAP_BVT, true) }}:
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Sap
+                    pattern: 'Sap_BVT*.jar'
+                    reportname: 'SAP BVT Extent Report'
+          - ${{ if eq(parameters.SAP_Regression, true) }}:
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Sap
+                    pattern: 'Sap_Regression*.jar'
+                    reportname: 'SAP Regression Extent Report'
+
+      - job: Run_AEM_Tests_Suites
+        displayName: Run AEM Tests Suites
+        condition: in('True', '${{ parameters.AEM_BVT }}', '${{ parameters.AEM_Regression }}' )
+        variables:
+          - name: environment
+            value: ${{ parameters.Environment }}
+        steps:
+          - ${{ if eq(parameters.AEM_BVT, true) }}:
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_BVT*.jar'
+                    reportname: 'Adobe BVT Extent Report'
+          - ${{ if eq(parameters.AEM_Regression, true) }}:
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression*.jar'
+                    reportname: 'Adobe Regression Extent Report'
