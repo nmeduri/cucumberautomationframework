@@ -201,5 +201,16 @@ public class PageObject {
 	public static void verifyExpectedValue(String exepectedValue, String actualValue) {
 		Assert.assertEquals(exepectedValue, actualValue);
 	}
+	
+	public static void verifyLanguageInList(String exepectedValue, String actualValue) {
+		Assert.assertTrue(exepectedValue.contains(actualValue));
+	}
+	
+	public static void verifyMultipleValue(List<String> request) {
+		
+		int size = request.size();
+		Log.message("Size:- " + size, true);
+		Assert.assertTrue(size > 1);
+	}
 
 }
