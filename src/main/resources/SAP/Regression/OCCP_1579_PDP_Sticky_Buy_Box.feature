@@ -1,4 +1,4 @@
-Feature: OCCP-1619 PDP: Sticky Buy Box
+Feature: OCCP-1579 PDP: Sticky Buy Box
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-1579
        
