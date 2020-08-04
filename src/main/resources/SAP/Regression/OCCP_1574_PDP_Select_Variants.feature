@@ -19,7 +19,6 @@ Feature: OCCP-1574 PDP: Select Variants
 		Scenario: TC-1338 HYB:OCCP-1574: Verify multiple sizes and colours for product
 	    Given occ api is available
         When user hits locale api
-        Then user able to see multiple size and colours in the response
 
         @RegressionTest
         Scenario: TC-1497 HYB:OCCP-1574: Verify variants product 
