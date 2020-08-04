@@ -51,7 +51,7 @@ public class HYB_OCCP_1583_PDP_Regular_Price_Step extends BaseStep {
 	
 	@Then("returned JSON should display price range")
 	public void returned_should_display_price_range() {
-		
+
 		Assert.assertNotNull(response.jsonPath().get("priceRange"));
 	}
  
