@@ -51,7 +51,7 @@ public class HYB_OCCP_871_PDP_Installations_Step extends BaseStep {
 	@And("returned JSON should have value in en ca")
 	public void returned_response_should_have_value_in_en_ca() {
 		
-		Assert.assertEquals("Service Installation Message", response.jsonPath().get("serviceInstallationMessage"));
+		Assert.assertEquals("Our Extended Warranty plans secure your products from defects & failures, year after year.", response.jsonPath().get("serviceInstallationMessage"));
 		
 	}
 	
@@ -59,14 +59,14 @@ public class HYB_OCCP_871_PDP_Installations_Step extends BaseStep {
 	
 	public void returned_response_should_have_value_in_default_locale_en(){
 		
-		Assert.assertEquals("Service Installation Message", response.jsonPath().get("serviceInstallationMessage"));
+		Assert.assertEquals("Our Extended Warranty plans secure your products from defects & failures, year after year.", response.jsonPath().get("serviceInstallationMessage"));
 		
 	}
 	
 	@And("returned JSON should have value in fr ca")
 	public void returned_response_should_have_value_in_fr_ca() {
 		
-		Assert.assertEquals("Message d'installation du service", response.jsonPath().get("serviceInstallationMessage"));
+		Assert.assertEquals(" Nos plans de garantie prolongée protègent vos produits contre les défauts et les pannes, année après année.", response.jsonPath().get("serviceInstallationMessage"));
 		
 	}
 	

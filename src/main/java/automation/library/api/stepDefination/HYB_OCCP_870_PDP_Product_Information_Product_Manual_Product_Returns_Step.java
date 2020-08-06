@@ -89,7 +89,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	public void user_should_able_to_see_the_product_brand_title_value() {
 		
 		Log.message("Brand:- "+ response.jsonPath().get("productBrand"), true);
-		Assert.assertEquals("Patio Arm Chair", response.jsonPath().get("productBrand"));
+		Assert.assertEquals("Yardworks", response.jsonPath().get("productBrand"));
 		Log.message("Product Brand Title's value is displayed in JSON Response", true);
 	}
 	
@@ -122,7 +122,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	
 	@Then("user should be able to see product description and language as en in JSON response")
 	public void user_should_be_able_to_see_product_description_and_langauge_as_en_in_response() {
-		Assert.assertTrue("CANVAS Bretons".contains(response.jsonPath().get("description")));
+		Assert.assertTrue("Yardworks 40V Cordless Snowthrower, 16-in".contains(response.jsonPath().get("description")));
 	}
 	
 	

@@ -55,12 +55,12 @@ public class HYB_OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseStep {
 	@Then("response JSON should have product title name and its value in fr ca")
 	public void response_should_have_product_title_name_and_its_value_in_fr_ca() {
 		Log.message("Name:-"  + response.jsonPath().get("name"), true);
-		PageObject.verifyExpectedValue("CANVAS Breton Patio Arm Chair po", response.jsonPath().get("name"));
+		PageObject.verifyExpectedValue("Souffleuse à neige sans fil Yardworks, 40 V, 16 po", response.jsonPath().get("name"));
 	}
 	
 	@Then("response should have product title name and its value in en ca")
 	public void response_should_have_product_title_name_and_its_value_in_en_ca() {
-		PageObject.verifyExpectedValue("CANVAS Breton Patio Arm Chair", response.jsonPath().get("name"));
+		PageObject.verifyExpectedValue("Yardworks 40V Cordless Snowthrower, 16-in", response.jsonPath().get("name"));
 	}
 	
 	@Then("en ca should produce English text for PDP")

@@ -148,7 +148,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("response should have medisas section with alttext and value in english")
 	public void response_should_have_medias_with_alttext_and_value_in_english() {
 		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.altText"), "CANVAS Breton Patio Arm Chair");
-		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
+		PageObject.verifyNullResponse(response.jsonPath().get("medias.altText"), "Fauteuil de jardin CANVAS Breton");
 	}
 	
 	@Then("JSON response should have medias section with alttext and value in fr_CA")
@@ -174,6 +174,9 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 		mediaCode.add("Code2");
 		mediaCode.add("Code3");
 		mediaCode.add("Code4");
+		mediaCode.add("Code5");
+		mediaCode.add("Code6");
+		mediaCode.add("Code7");
 		mediaCode.add("Code8");
 		PageObject.verifyResponseValue(mediaCode, response.jsonPath().get("medias.code"));
 
