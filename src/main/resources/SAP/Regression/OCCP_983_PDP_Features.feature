@@ -2,7 +2,7 @@ Feature: OCCP-983 PDP Features
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-983
        
-        @SmokeTest
+        @RegressionTest
 		Scenario: TC-1351 HYB:OCCP-983: Verify features are not null	
 	    Given occ api is available
         When user hits the GET api without locale

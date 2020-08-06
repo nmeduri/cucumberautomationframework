@@ -32,6 +32,11 @@ public class HYB_OCCP_1583_PDP_Regular_Price_Step extends BaseStep {
 
 	RequestSpecification request;
 	
+	@When("user hits api for variant option")
+	public void user_hits_locale_api_for_variant_option() {
+		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1364());
+	}
+	
 	@Then("returned JSON should display only price for different price type")
 	public void returned_should_display_only_price_for_different_price_type() {
 
@@ -53,6 +58,12 @@ public class HYB_OCCP_1583_PDP_Regular_Price_Step extends BaseStep {
 	public void returned_should_display_price_range() {
 
 		Assert.assertNotNull(response.jsonPath().get("priceRange"));
+		
+	}
+	
+	@Then("returned JSON Should display  only price")
+	public void returned_should_display_only_price() {
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("productPrices.value"));
 	}
  
 }

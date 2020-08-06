@@ -21,4 +21,8 @@ Feature: OCCP-1583 PDP: Regular Price
         When user hits locale api
         Then returned JSON should display price range
         
-  
+        @RegressionTest
+        Scenario: TC-1364 HYB:OCCP-1583:Verify display of price when Given product code is variant product code
+        Given occ api is available
+        When user hits api for variant option
+        Then returned JSON Should display  only price

@@ -69,5 +69,15 @@ public class HYB_OCCP_1574_PDP_Select_Variants_Step extends BaseStep {
 		PageObject.verifyMultipleValue(response.jsonPath().get("variantMatrix.elements.variantOption"));
 		
 	}
+	
+	@Then("variant sector should unavailable")
+	public void variant_sector_should_unavailable() {
+		Assert.assertNull(response.jsonPath().get("variantMatrix.elements.variantOption"));
+	}
+	
+	@And("sku id for the product is displayed")
+	public void sku_id_for_the_product_is_displayed() {
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("code"));
+	}
  
 }

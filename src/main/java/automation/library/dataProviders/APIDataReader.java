@@ -203,5 +203,14 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+	
+	public String get_product_tc_1364() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1364");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
 
 }
