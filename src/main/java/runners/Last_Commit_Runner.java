@@ -6,7 +6,7 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1574_PDP_Select_Variants.feature",
+			"classpath:SAP/Regression/OCCP_2999_PDP_Wishlist_Guest.feature",
 			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@RegressionTest",

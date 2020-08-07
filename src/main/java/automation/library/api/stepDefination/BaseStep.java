@@ -8,6 +8,7 @@ import automation.library.api.endpoint.CatalogsListEndPoint;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.api.endpoint.HYB_API_EN_End_Point;
 import automation.library.api.endpoint.HYB_API_FR_CA_End_Point;
+import automation.library.api.endpoint.HYB_API_Wishlist_End_Point;
 import automation.library.api.endpoint.HYB_Api_Field_Default_End_Point;
 import automation.library.api.endpoint.HYB_Api_Product_End_Point;
 import automation.library.api.endpoint.ProductInfoENEndPoint;
@@ -18,6 +19,7 @@ import io.restassured.response.Response;
 public class BaseStep {
 
 	public static Response response;
+	public static String guid;
 	public static String url;
 	private CTBVTEndPoint ctbvtEndPoint;
 	private CatalogsListEndPoint catalogsListEndPoint;
@@ -32,6 +34,7 @@ public class BaseStep {
 	private HYB_API_EN_End_Point apiEnEndPoint;
 	private HYB_Api_Field_Default_End_Point apiFieldDefault;
 	private HYB_Api_Product_End_Point apiProduct;
+	private HYB_API_Wishlist_End_Point wishlistAPI;
 
 
 	
@@ -79,6 +82,11 @@ public class BaseStep {
 	public HYB_Api_Product_End_Point getApiProduct() {
 		apiProduct = new HYB_Api_Product_End_Point();
 		return apiProduct;
+	}
+	
+	public HYB_API_Wishlist_End_Point wishListAPI() {
+		wishlistAPI = new HYB_API_Wishlist_End_Point();
+		return wishlistAPI;
 	}
 	
 

@@ -17,8 +17,8 @@ public class HYB_API_FR_CA_End_Point {
 
 	public Response getAPI_FR_CA(String url, String sProductCode) {
 
-		Log.message("API:- " + url +  sProductCode + "/363?fields=FULL&lang=fr_ca",true);
-		response = RestAssured.given().get(url +  sProductCode + "/363?fields=FULL&lang=fr_ca");
+		Log.message("API:- " + url + "/products/" +  sProductCode + "/363?fields=FULL&lang=fr_ca",true);
+		response = RestAssured.given().get(url + "/products/" +  sProductCode + "/363?fields=FULL&lang=fr_ca");
       
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;
