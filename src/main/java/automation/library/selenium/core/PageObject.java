@@ -185,8 +185,8 @@ public class PageObject {
 		Assert.assertTrue(expectedValue.contains(actualValue));
 	}
 	
-	public static void verifyNullResponse(List<String> expectedValue, String actualValue) {
-		Assert.assertFalse(expectedValue.contains(actualValue));
+	public static void verifyNullResponse(List<String> actualValue, String expectedValue) {
+		Assert.assertFalse(actualValue.contains(expectedValue));
 
 	}
 	
@@ -202,8 +202,20 @@ public class PageObject {
 		Assert.assertEquals(exepectedValue, actualValue);
 	}
 	
+	public static void verifyExpectedValueInList(List<String> actualValue, String expectedValue) {
+		Assert.assertTrue(actualValue.contains(expectedValue));
+	}
+	
 	public static void verifyLanguageInList(String exepectedValue, String actualValue) {
 		Assert.assertTrue(exepectedValue.contains(actualValue));
+	}
+	
+	public static void verifyNotExpectedValue(String exepectedValue, String actualValue) {
+		Assert.assertNotEquals(exepectedValue, actualValue);
+	}
+	
+	public static void vrifyNotNullObject(List<String> value) {
+		Assert.assertNotNull(value);
 	}
 	
 	public static void verifyMultipleValue(List<String> request) {

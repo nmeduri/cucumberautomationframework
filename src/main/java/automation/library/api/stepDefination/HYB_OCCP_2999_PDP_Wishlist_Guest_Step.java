@@ -42,6 +42,11 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		
 	}
 	
+	@When("user hits get wishlist api")
+	public void user_hits_get_wishlist_api() {
+		response = wishListAPI().get_HYB_Wishlist_API(url, guid);
+	}
+	
 	@Then("response should returned GUID") 
 	public void response_should_returned_guid() {
 		
@@ -52,12 +57,18 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		
 		}
 	
-	@Then("user hits add product api for empty guid")
+	@When("user hits add product api for empty guid")
 	public void user_hits_add_product_api_for_empty_guid() {
 		
 		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), "");
-		Log.message("response wishlist:- " + response, true);
 		
+	}
+	
+	@When("user hit add product api for guid")
+	public void user_hit_add_product_api_for_guid() {
+		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), guid);
+		Log.message("response wishlist:- " + response, true);
+
 	}
 	
 	@Then("should return 201 created")
@@ -73,12 +84,75 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		PageObject.verifyExpectedValue("409", Integer.toString(response.getStatusCode()));
 	}
 	
+	@Then("should return error message")
+	public void should_return_error_message() {
+		
+		PageObject.verifyExpectedValueInList(response.jsonPath().get("errors.type"), "AlreadyExistsError");
+	}
+	
+	@Then("returned JSON should have wishListData")
+	public void returned_should_have_wishListData() {
+		
+		Log.message("Response Wishlist:- " +response.getBody().asString(), true);
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("wishListData"));
+		
+	}
 	@And("user hits delete api for empty guid")
 	public void user_hits_delete_api_for_empty_guid() {
 		response = wishListAPI().delete_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), "");
 	}
 	
+	@And("wishListData container should have entries container")
+	public void wishlistData_container_should_have_entries_container() {
+		
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("wishListData.entries"));
+		
+	}
 	
+	@And("entries container should have rating section")
+	public void entries_container_should_have_rating_section() {
+		
+		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.rating").toString().replace("[", "").replace("]", ""));
+		
+	}
+	
+	@And("entries container should have container availableAction")
+	public void entries_container_should_have_container_availableAction() {
+		
+		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.availableActions").toString().replace("[", "").replace("]", ""));
+		
+	}
+	
+	@And("entries container should have section externalmedia")
+	public void entries_container_should_have_section_externalmedia() {
+		
+		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.externalMedia").toString().replace("[", "").replace("]", ""));
+		
+	}
+	
+	@Then("entries contains productCode")
+	public void entries_contains_productCode() {
+		
+		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.productCode").toString().replace("[", "").replace("]", ""));		
+	}
+	
+	@Then("entries should have name")
+	public void entries_should_have_name() {
+		
+		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.name").toString().replace("[", "").replace("]", ""));		
+	}
+	
+	@Then("entries should have addedDate")
+	public void entries_contains_addedDate() {
+		
+		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.addedDate").toString().replace("[", "").replace("]", ""));		
+	}
+	
+	@Then("entries should have productStatus")
+	public void entries_contains_productStatus() {
+		
+		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.productStatus").toString().replace("[", "").replace("]", ""));		
+	}
 	
 	
  

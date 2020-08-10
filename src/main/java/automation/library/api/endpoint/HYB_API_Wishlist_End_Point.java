@@ -39,5 +39,12 @@ public class HYB_API_Wishlist_End_Point {
 		return response;
 
 	}
+	
+	public Response get_HYB_Wishlist_API(String url, String guid) {
+		
+		response = RestAssured.given().get(url + "/users/anonymous/wishlist?" +  guid);
+		return response;
+
+	}
 
 }
