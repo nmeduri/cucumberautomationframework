@@ -52,20 +52,20 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("response JSON should have section medias with name and its value in english")
 	public void response_should_have_section_medias_with_name_and_value_in_en() {
 
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
-		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
 	}
 	
 	@Then("JSON should have medias section with name and its value in en CA")
 	public void response_should_have_medias_section_with_name_and_its_value_in_en_ca() {
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
-		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
 	}
 	
 	@Then("response JSON should have medias with name and value in fr_ca")
 	public void response_should_have_medias_section_with_name_and_value_in_fr_ca() {
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
-		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
 		
 	}
 	
@@ -96,7 +96,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("response should have medias with damPath and its value")
 	public void response_should_have_medias_with_damPath_and_its_value() {
 
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.damPath"), "/content/dam/canadiantire/Cooking%20pan.PNG");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.damPath"), "/content/dam/canadiantire/Cooking%20pan.PNG");
 		
 	}
 	
@@ -113,7 +113,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 
 	@Then("response should have medias with order and its value")
 	public void response_should_have_medias_with_order_and_its_value() {
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.order"), "1");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.order"), "1");
 	}
 	
 	@Then("response should have medias section with isPrimary and its value")
@@ -137,24 +137,24 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	
 	@Then("response should have medias section with videoImageThumbnailURL and its value")
 	public void response_should_have_medias_with_videoImageThumbnailURL_and_its_value() {
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.videoImageThumbnailURL"), "https://canadiantire.scene7.com/is/image/CanadianTire/0882184_1?&layer=comp&fit=constrain,1&wid=45&hei=45&fmt=jpg");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.videoImageThumbnailURL"), "https://canadiantire.scene7.com/is/image/CanadianTire/0882184_1?&layer=comp&fit=constrain,1&wid=45&hei=45&fmt=jpg");
 	}
 	
 	@Then("response should have medias section with videoImageThumbnailDAMPath and its value")
 	public void response_should_have_medias_with_videoImageThumbnailDAMPath_and_its_value() {
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.videoImageThumbnailDAMPath"), "https://canadiantire.scene7.com/is/image/CanadianTire/0882184_1?&layer=comp&fit=constrain,1&wid=45&hei=45&fmt=jpg");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.videoImageThumbnailDAMPath"), "https://canadiantire.scene7.com/is/image/CanadianTire/0882184_1?&layer=comp&fit=constrain,1&wid=45&hei=45&fmt=jpg");
 	}
 	
 	@Then("response should have medisas section with alttext and value in english")
 	public void response_should_have_medias_with_alttext_and_value_in_english() {
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.altText"), "CANVAS Breton Patio Arm Chair");
-		PageObject.verifyNullResponse(response.jsonPath().get("medias.altText"), "Fauteuil de jardin CANVAS Breton");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.altText"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.altText"), "Fauteuil de jardin CANVAS Breton");
 	}
 	
 	@Then("JSON response should have medias section with alttext and value in fr_CA")
 	public void response_should_have_medias_section_with_alttext_and_value_in_fr_CA() {
-		PageObject.verifyNotNullResponse(response.jsonPath().get("medias.altText"), "Fauteuil de jardin CANVAS Breton");
-		PageObject.verifyNullResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.altText"), "Fauteuil de jardin CANVAS Breton");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
 	}
 
 

@@ -52,7 +52,7 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		
 		PageObject.notNullAttributeInResponse(guid);
 		Log.message("Status Code:- " + response.getStatusCode(), true);
-		PageObject.verifyExpectedValue("201", Integer.toString(response.getStatusCode()));
+		PageObject.verifyExpectedResponseWithoutList("201", Integer.toString(response.getStatusCode()));
 		Log.message("guid:- " + guid, true);
 		
 		}
@@ -71,23 +71,49 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 
 	}
 	
+	@When("user hit add variant product api for guid")
+	public void user_hit_add_variant_product_api_for_guid() {
+		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), guid);
+		Log.message("response wishlist:- " + response, true);
+
+	}
+	
+	@When("user hit add base product api for guid")
+	public void user_hit_add_base_product_api_for_guid() {
+		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1709(), guid);
+		Log.message("response wishlist:- " + response, true);
+
+	}
+	
+	@When("user hit api add base product that have variant to wishlist guid")
+	public void user_hit_add_base_product_that_have_variant_to_wishlist_guid() {
+		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1710(), guid);
+	}
+	
 	@Then("should return 201 created")
 	public void should_return_201_created() {
 		
 		Log.message("Response:- " + response.getStatusCode(), true);
-		PageObject.verifyExpectedValue("201", Integer.toString(response.getStatusCode()));
+		PageObject.verifyExpectedResponseWithoutList("201", Integer.toString(response.getStatusCode()));
+	}
+	
+	@Then("should return 200 created")
+	public void should_return_200_created() {
+		
+		Log.message("Response:- " + response.getStatusCode(), true);
+		PageObject.verifyExpectedResponseWithoutList("200", Integer.toString(response.getStatusCode()));
 	}
 	
 	@Then("should return 409 status code")
 	public void should_return_409_status_code() {
 		Log.message("Response:- " + response.getStatusCode(), true);
-		PageObject.verifyExpectedValue("409", Integer.toString(response.getStatusCode()));
+		PageObject.verifyExpectedResponseWithoutList("409", Integer.toString(response.getStatusCode()));
 	}
 	
 	@Then("should return error message")
 	public void should_return_error_message() {
 		
-		PageObject.verifyExpectedValueInList(response.jsonPath().get("errors.type"), "AlreadyExistsError");
+		PageObject.verifyExpectedResponse(response.jsonPath().get("errors.type"), "AlreadyExistsError");
 	}
 	
 	@Then("returned JSON should have wishListData")
@@ -97,10 +123,20 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("wishListData"));
 		
 	}
+	
+	
 	@And("user hits delete api for empty guid")
 	public void user_hits_delete_api_for_empty_guid() {
 		response = wishListAPI().delete_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), "");
 	}
+	
+
+	@And("user hits delete api for guid")
+	public void user_hits_delete_api_for_guid() {
+		response = wishListAPI().delete_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), guid);
+	}
+	
+	
 	
 	@And("wishListData container should have entries container")
 	public void wishlistData_container_should_have_entries_container() {
@@ -152,6 +188,12 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 	public void entries_contains_productStatus() {
 		
 		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.productStatus").toString().replace("[", "").replace("]", ""));		
+	}
+	
+	@Then("user should not able to the base product which has variant to the wishlist")
+	public void user_should_not_able_to_the_base_product_which_has_variant_to_the_wishlist() {
+		
+		PageObject.verifyExpectedResponseWithoutList("Base product "+ FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1710() +" with variants cannot be added to wish list", response.jsonPath().get("errors.message").toString().replace("[", "").replace("]", ""));
 	}
 	
 	

@@ -9,7 +9,7 @@ public final class Last_Commit_Runner {
 			"classpath:SAP/Regression/OCCP_2999_PDP_Wishlist_Guest.feature",
 			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@RegressionTest",
+			"--tags", "@SmokeTest",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",

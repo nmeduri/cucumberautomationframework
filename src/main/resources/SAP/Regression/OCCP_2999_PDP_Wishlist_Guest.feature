@@ -74,4 +74,38 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         And entries should have name
         And entries should have addedDate
         And entries should have productStatus
+        
+        @RegressionTest
+        Scenario: TC-1622 HYB:OCCP-3003:OCCP-2999: Verify Status Code when invoking RemoveWishEntryList OCC API with Anonymous User
+        Given occ api is available
+        When user hits add wishlist api
+        Then response should returned GUID
+        When user hit add product api for guid
+        Then should return 201 created
+        And user hits delete api for guid
+        Then should return 200 created
+        
+        @RegressionTest
+        Scenario: TC-1710 HYB:OCCP-3003:OCCP-2999: add Base Product that have variants to the AddToWishlist OCC API for Anonymous User
+        Given occ api is available
+        When user hits add wishlist api
+        Then response should returned GUID
+        When user hit api add base product that have variant to wishlist guid
+        Then user should not able to the base product which has variant to the wishlist
+        
+        @RegressionTest
+        Scenario: TC-1711 HYB:OCCP-3003:OCCP-2999: add variant Product to the AddToWishlist OCC API for Anonymous User
+        Given occ api is available
+        When user hits add wishlist api
+        Then response should returned GUID
+        When user hit add variant product api for guid
+        Then should return 201 created
+        
+        @RegressionTest
+        Scenario: TC-1709 HYB:OCCP-3003:OCCP-2999: add Base Product that don’t have variants to the AddToWishlist OCC API for Anonymous User
+        Given occ api is available
+        When user hits add wishlist api
+        Then response should returned GUID
+        When user hit add base product api for guid
+        Then should return 201 created
   

@@ -158,17 +158,6 @@ public class PageObject {
 
 	}
 	
-	public static void verifySectionResponseNull(List<String> value) {
-
-		for (int i = 0; i < value.size(); i++) {
-			
-			Log.message("Value:- " + value.get(i), true);
-			Assert.assertEquals("null", value.get(i));
-
-		}
-
-	}
-	
 	public static void verifySectionValueResponseNull(List<String> value) {
 		
 		Assert.assertTrue(value.contains(null));
@@ -181,13 +170,12 @@ public class PageObject {
 		
 	}
 	
-	public static void verifyNotNullResponse(List<String> expectedValue, String actualValue) {
+	public static void verifyExpectedResponse(List<String> expectedValue, String actualValue) {
 		Assert.assertTrue(expectedValue.contains(actualValue));
 	}
 	
-	public static void verifyNullResponse(List<String> actualValue, String expectedValue) {
-		Assert.assertFalse(actualValue.contains(expectedValue));
-
+	public static void verifyLanguageInList(String exepectedValue, String actualValue) {
+		Assert.assertTrue(exepectedValue.contains(actualValue));
 	}
 	
 	public static void notNullAttributeInResponse(String actualValue) {
@@ -198,16 +186,8 @@ public class PageObject {
 		Assert.assertNotEquals(null, actualValue);
 	}
 	
-	public static void verifyExpectedValue(String exepectedValue, String actualValue) {
+	public static void verifyExpectedResponseWithoutList(String exepectedValue, String actualValue) {
 		Assert.assertEquals(exepectedValue, actualValue);
-	}
-	
-	public static void verifyExpectedValueInList(List<String> actualValue, String expectedValue) {
-		Assert.assertTrue(actualValue.contains(expectedValue));
-	}
-	
-	public static void verifyLanguageInList(String exepectedValue, String actualValue) {
-		Assert.assertTrue(exepectedValue.contains(actualValue));
 	}
 	
 	public static void verifyNotExpectedValue(String exepectedValue, String actualValue) {
@@ -221,7 +201,6 @@ public class PageObject {
 	public static void verifyMultipleValue(List<String> request) {
 		
 		int size = request.size();
-		Log.message("Size:- " + size, true);
 		Assert.assertTrue(size > 1);
 	}
 

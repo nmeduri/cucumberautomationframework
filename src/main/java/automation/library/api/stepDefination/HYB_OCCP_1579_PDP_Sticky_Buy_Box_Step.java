@@ -56,12 +56,12 @@ public class HYB_OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseStep {
 	@Then("response JSON should have product title name and its value in fr ca")
 	public void response_should_have_product_title_name_and_its_value_in_fr_ca() {
 		Log.message("Name:-"  + response.jsonPath().get("name"), true);
-		PageObject.verifyExpectedValue("Souffleuse à neige sans fil Yardworks, 40 V, 16 po", response.jsonPath().get("name"));
+		PageObject.verifyExpectedResponseWithoutList("Souffleuse à neige sans fil Yardworks, 40 V, 16 po", response.jsonPath().get("name"));
 	}
 	
 	@Then("response should have product title name and its value in en ca")
 	public void response_should_have_product_title_name_and_its_value_in_en_ca() {
-		PageObject.verifyExpectedValue("Yardworks 40V Cordless Snowthrower, 16-in", response.jsonPath().get("name"));
+		PageObject.verifyExpectedResponseWithoutList("Yardworks 40V Cordless Snowthrower, 16-in", response.jsonPath().get("name"));
 	}
 	
 	@Then("en ca should produce English text for PDP")
@@ -71,7 +71,7 @@ public class HYB_OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseStep {
 		char sPriceFirst = response.jsonPath().getString("productPrices.formattedValue").charAt(1);
 		Log.message("Character:- " + sPriceFirst, true);
 		String sPrice = Character.toString(sPriceFirst);
-		PageObject.verifyExpectedValue("$", sPrice);
+		PageObject.verifyExpectedResponseWithoutList("$", sPrice);
 	}
 	
 	@Then("fr ca should product French text for PDP")
@@ -82,13 +82,13 @@ public class HYB_OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseStep {
 		char sPriceLast = value.charAt(value.length() -2);
 		Log.message("Last Character:- " + sPriceLast, true);
 		String sPrice = Character.toString(sPriceLast);
-		PageObject.verifyExpectedValue("$", sPrice);
+		PageObject.verifyExpectedResponseWithoutList("$", sPrice);
 		
 	}
 	
 	@Then("product image should be displayed in JSON response")
 	public void product_image_should_be_displayed_in_response() {
-		PageObject.verifyExpectedValue("*****", response.jsonPath().get("image"));
+		PageObject.verifyExpectedResponseWithoutList("*****", response.jsonPath().get("image"));
 	}
 	
 
