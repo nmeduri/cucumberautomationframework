@@ -32,7 +32,7 @@ public class HYB_OCCP_1650_PDP_Product_Badges_Perfect_Gift_Step extends BaseStep
 
 	RequestSpecification request;
 	
-	@Then("user should be able to see badge value as Perfect Gift")
+	@Then("user should be able to see badge value as PERFECTGIFT")
 	public void user_should_be_able_to_see_badge_value_as_perfect_gift() {
 
 		Log.message("Response badge:- "  + response.jsonPath().get("badges"), true);
