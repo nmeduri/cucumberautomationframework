@@ -50,11 +50,7 @@ public class HYB_OCCP_983_PDP_Features_Step extends BaseStep {
 	public void retunred_response_should_displaye_description_value_in_locale_en() {
 		List<String> featureDescription = new ArrayList<String>();
 		featureDescription.add(
-				"CANVAS Breton Patio Arm Chair features sturdy, durable steel frames that promote long-lasting use");
-		featureDescription.add(
-				"Frame surfaces are treated with an electrodepostition coating for added rust-resistance, along with a weather-resistant high-performance powder-coating");
-		featureDescription.add(
-				"Hand-woven, all-weather wicker provides a comfortable, elegant appearance and durable craftsmanship");
+				"Yardworks 40V Snowthrower is ideal for smaller properties and clears snow easily without the hassle of gas or a cordPowered by an 40V 4Ah lithium-ion battery that is compatible across the entire 40V Yardworks/Greenworks programFoam grip ergonomic handle adds to the comfort and ease of use");
 
 		PageObject.verifyResponseValue(featureDescription, response.jsonPath().get("featureBullets.description"));
 
@@ -63,10 +59,7 @@ public class HYB_OCCP_983_PDP_Features_Step extends BaseStep {
 	@And("returned JSON should display description value in fr ca")
 	public void retunred_response_should_displaye_description_value_in_fr_ca() {
 		List<String> featureDescription=new ArrayList<String>();
-		featureDescription.add("Fauteuil de jardin CANVAS Breton robuste, durable, avec cadre en acier soudé pour une utilisation à long terme");
-		featureDescription.add("Surface de cadres avec revêtement électroappliqué pour une résistance accrue à la rouille, et revêtement peint par poudrage de haute performance pour une résistance accrue aux intempéries");
-		featureDescription.add("En osier tressé à la main, à l’épreuve des intempéries, offrant une apparence élégante, confortable et durable");
-
+		featureDescription.add("Tondeuse à plateau en poly 2-en-1 Yardworks 48 V 3 Ah alimentée par une pile de 48 V 3 Ah conçue pour un excellent rendementAvec plateau en poly de 43,2 cm (17 po) service intense, impact élevé qui rend la tondeuse légère et facile à manoeuvrerBatterie 48 V avec la nouvelle technologie AeroCore permettant à l'air circuler dans la pile, ce qui réduit le risque de surchauffe");
 		
 		PageObject.verifyResponseValue(featureDescription, response.jsonPath().get("featureBullets.description"));
 		

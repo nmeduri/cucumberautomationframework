@@ -45,6 +45,7 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 	@When("user hits get wishlist api")
 	public void user_hits_get_wishlist_api() {
 		response = wishListAPI().get_HYB_Wishlist_API(url, guid);
+		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	
 	@Then("response should returned GUID") 
@@ -60,7 +61,7 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 	@When("user hits add product api for empty guid")
 	public void user_hits_add_product_api_for_empty_guid() {
 		
-		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), "");
+		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), "''");
 		
 	}
 	
@@ -127,7 +128,7 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 	
 	@And("user hits delete api for empty guid")
 	public void user_hits_delete_api_for_empty_guid() {
-		response = wishListAPI().delete_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), "");
+		response = wishListAPI().delete_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), "''");
 	}
 	
 
@@ -169,6 +170,7 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 	@Then("entries contains productCode")
 	public void entries_contains_productCode() {
 		
+		Log.message("Product Code:- " + response.jsonPath().get("wishListData.entries.productCode"), true);
 		PageObject.verifyNotExpectedValue("null", response.jsonPath().get("wishListData.entries.productCode").toString().replace("[", "").replace("]", ""));		
 	}
 	

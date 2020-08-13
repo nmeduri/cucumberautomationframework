@@ -24,5 +24,15 @@ public class HYB_API_EN_End_Point {
 		return response;
 
 	}
+	
+	public Response get_Design_Outbound_API_EN(String url) {
+
+		Log.message("url:- " + url + "/catalogs/ctcCanadianTireProductCatalog/Online/categories/tools-hardware?fields=DEFAULT", true);
+		response = RestAssured.given().get(url + "/catalogs/ctcCanadianTireProductCatalog/Online/categories/tools-hardware?fields=DEFAULT");
+
+		Log.message("Response:- " + response.getBody().asString(), true);
+		return response;
+
+	}
 
 }

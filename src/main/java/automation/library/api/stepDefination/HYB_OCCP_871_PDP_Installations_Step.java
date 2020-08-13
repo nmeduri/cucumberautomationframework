@@ -66,7 +66,7 @@ public class HYB_OCCP_871_PDP_Installations_Step extends BaseStep {
 	@And("returned JSON should have value in fr ca")
 	public void returned_response_should_have_value_in_fr_ca() {
 		
-		Assert.assertEquals(" Nos plans de garantie prolongée protègent vos produits contre les défauts et les pannes, année après année.", response.jsonPath().get("serviceInstallationMessage"));
+		Assert.assertEquals("Nos plans de garantie prolongée protègent vos produits contre les défauts et les pannes, année après année.", response.jsonPath().get("serviceInstallationMessage"));
 		
 	}
 	

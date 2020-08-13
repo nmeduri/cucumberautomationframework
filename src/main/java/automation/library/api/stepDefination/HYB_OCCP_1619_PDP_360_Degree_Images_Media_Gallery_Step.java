@@ -65,7 +65,8 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("response JSON should have medias with name and value in fr_ca")
 	public void response_should_have_medias_section_with_name_and_value_in_fr_ca() {
 		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "Fauteuil de jardin CANVAS Breton");
-		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyExpectedFalseResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+
 		
 	}
 	
@@ -154,7 +155,8 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("JSON response should have medias section with alttext and value in fr_CA")
 	public void response_should_have_medias_section_with_alttext_and_value_in_fr_CA() {
 		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.altText"), "Fauteuil de jardin CANVAS Breton");
-		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+		PageObject.verifyExpectedFalseResponse(response.jsonPath().get("medias.name"), "CANVAS Breton Patio Arm Chair");
+
 	}
 
 
@@ -170,13 +172,10 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void user_should_be_able_to_see_media_section_with_code_and_its_value() {
 
 		List<String> mediaCode = new ArrayList<String>();
-		mediaCode.add("Code1");
+		mediaCode.add("code1");
 		mediaCode.add("Code2");
 		mediaCode.add("Code3");
 		mediaCode.add("Code4");
-		mediaCode.add("Code5");
-		mediaCode.add("Code6");
-		mediaCode.add("Code7");
 		mediaCode.add("Code8");
 		PageObject.verifyResponseValue(mediaCode, response.jsonPath().get("medias.code"));
 

@@ -102,7 +102,7 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 	@And("value should display in default locale as en")
 	public void value_should_display_in_default_locale_as_en() {
 
-		Assert.assertEquals("Expressed", response.jsonPath().get("warranty.warrantyType"));
+		Assert.assertEquals("expressed", response.jsonPath().get("warranty.warrantyType"));
 
 	}
 	
@@ -131,7 +131,7 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 	public void returned_json_should_have_additonal_warranty_message_fr_ca() {
 		
 		Assert.assertEquals(
-				" Je, soussigné, garantit par la présente que toute la main-d’œuvre et le matériel fournis et les travaux exécutés conjointement",
+				"Je, soussigné, garantit par la présente que toute la main-d’œuvre et le matériel fournis et les travaux exécutés conjointement",
 				response.jsonPath().get("warranty.additionalWarrantyMessage"));
 
 	}
@@ -157,7 +157,7 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 
 		Log.message("Warrany Message:- " + response.jsonPath().get("warranty.warrantyMessage"), true);
 		String sWarrantyMessage = response.jsonPath().get("warranty.warrantyMessage");
-		Assert.assertEquals("Si cet article est défectueux,du fabricant", sWarrantyMessage);
+		Assert.assertEquals("warca", sWarrantyMessage);
 		Assert.assertNotEquals(null, response.jsonPath().get("warranty.warrantyMessage"));
 	}
 	

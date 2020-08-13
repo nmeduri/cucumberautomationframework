@@ -174,6 +174,11 @@ public class PageObject {
 		Assert.assertTrue(expectedValue.contains(actualValue));
 	}
 	
+
+	public static void verifyExpectedFalseResponse(List<String> expectedValue, String actualValue) {
+		Assert.assertFalse(expectedValue.contains(actualValue));
+	}
+	
 	public static void verifyLanguageInList(String exepectedValue, String actualValue) {
 		Assert.assertTrue(exepectedValue.contains(actualValue));
 	}

@@ -242,7 +242,7 @@ public class APIDataReader {
 	
 	public String get_product_tc_1709() {
 
-		String getProduct = Property.getProperty(Constant.API_DATA, "get_product_tc_1709");
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1709");
 		if (getProduct != null)
 			return getProduct;
 		else

@@ -8,6 +8,7 @@ public class HYB_API_Wishlist_End_Point {
 	
 	private static String base_url;
 	private static Response response;
+	private static Response response1;
 	
 	
 	public String HYB_Wishlist_API(String baseUrl) {
@@ -42,7 +43,9 @@ public class HYB_API_Wishlist_End_Point {
 	
 	public Response get_HYB_Wishlist_API(String url, String guid) {
 		
-		response = RestAssured.given().get(url + "/users/anonymous/wishlist?" +  guid);
+		Log.message("Get Url:- " + url + "/users/anonymous/wishlist?guid=" +  guid , true);
+		response = RestAssured.given().get(url + "/users/anonymous/wishlist?guid=" +  guid);
+		Log.message("Get Response:- " + response.getBody().asString(), true);
 		return response;
 
 	}
