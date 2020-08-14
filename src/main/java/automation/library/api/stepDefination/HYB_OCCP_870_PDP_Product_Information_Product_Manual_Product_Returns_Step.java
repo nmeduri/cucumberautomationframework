@@ -11,6 +11,7 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
+import automation.library.selenium.core.PageObject;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -37,7 +38,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 
 	}
 	
-	@When("user hits the API")
+	@When("user hits the product info API")
 	public void user_hits_the_api() {     
  
 		response = getHybApiEN().getAPI_EN(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());
@@ -67,7 +68,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	@Then("user should be able to see product Description and its value in en in JSON Response")
 	public void user_should_be_able_to_see_product_description_and_its_value_in_en() {
 		
-		Assert.assertEquals("Yardworks 40V Cordless Snowthrower, 16-in", responseEN.jsonPath().get("description"));
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("description"));
 		Log.message("User is able to see product Description and its value in en.", true);
 	}
 	
@@ -96,7 +97,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	@And("user should be able to see product Description and its value in en_CA")
 	public void user_should_be_able_to_see_product_description_and_its_value_in_en_CA() {
 		
-		Assert.assertEquals("Souffleuse à neige sans fil Yardworks, 40 V, 16 po", responseENCA.jsonPath().get("description"));
+		PageObject.notNullAttributeInResponse(responseENCA.jsonPath().get("description"));
 		Log.message("User is able to see product Description and its value in en_CA.", true);
 	}
 	

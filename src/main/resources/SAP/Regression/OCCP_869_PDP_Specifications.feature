@@ -6,7 +6,7 @@ Feature: OCCP-869  PDP: Specifications
         @RegressionTest
 		Scenario: TC-1356 HYB:OCCP-869:Verify Product Specifications are not null 	
 	    Given occ api is available
-        When user hits locale api
+        When user hits GET api
         Then returned JSON should have specifications section
         And retunred JSON should have feature unit names and value
         

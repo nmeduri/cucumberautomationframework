@@ -65,7 +65,7 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		
 	}
 	
-	@When("user hit add product api for guid")
+	@When("user hits add product api for guid")
 	public void user_hit_add_product_api_for_guid() {
 		response = wishListAPI().put_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614(), guid);
 		Log.message("response wishlist:- " + response, true);
@@ -98,8 +98,8 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		PageObject.verifyExpectedResponseWithoutList("201", Integer.toString(response.getStatusCode()));
 	}
 	
-	@Then("should return 200 created")
-	public void should_return_200_created() {
+	@Then("should return 200 ok")
+	public void should_return_200_ok() {
 		
 		Log.message("Response:- " + response.getStatusCode(), true);
 		PageObject.verifyExpectedResponseWithoutList("200", Integer.toString(response.getStatusCode()));

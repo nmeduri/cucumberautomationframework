@@ -10,6 +10,7 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
+import automation.library.selenium.core.PageObject;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -146,10 +147,7 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 	
 	@And("returned JSON should have warranty message name and its value in en locale")
 	public void returned_response_should_have_warranty_messge_name_and_value_in_en_locale() {
-		Log.message("Warrany Message:- " + response.jsonPath().get("warranty.warrantyMessage"), true);
-		String sWarrantyMessage = response.jsonPath().get("warranty.warrantyMessage");
-		Assert.assertEquals("war", sWarrantyMessage);
-		Assert.assertNotEquals(null, response.jsonPath().get("warranty.warrantyMessage"));
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("warranty.warrantyMessage"));
 	}
 	
 	@And("returned JSON should have warranty name and its value in fr_ca locale")

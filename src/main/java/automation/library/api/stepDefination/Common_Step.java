@@ -55,7 +55,7 @@ public class Common_Step extends BaseStep {
 	@When("user hits the GET api with Default")
 	public void user_hits_the_api_with_default() {
 
-		Log.message("URL:- " + url, true);
+		
 		response = getApiFieldDefault().getAPI_Field_Default(url,
 				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1335());
 	}

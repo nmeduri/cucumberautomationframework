@@ -14,7 +14,6 @@ public final class Sap_Regression_Runner {
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",
 			"--plugin", "html:target/selenium-reports"
-		
 
 	};
 

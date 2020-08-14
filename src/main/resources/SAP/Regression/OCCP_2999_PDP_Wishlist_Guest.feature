@@ -38,7 +38,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         Given occ api is available
         When user hits add wishlist api
         Then response should returned GUID
-        When user hit add product api for guid
+        When user hits add product api for guid
         Then should return 201 created
         
         @RegressionTest
@@ -46,8 +46,8 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         Given occ api is available
         When user hits add wishlist api
         Then response should returned GUID
-        When user hit add product api for guid
-        When user hit add product api for guid
+        When user hits add product api for guid
+        When user hits add product api for guid
         Then should return error message
         
         @RegressionTest
@@ -55,7 +55,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         Given occ api is available
         When user hits add wishlist api
         Then response should returned GUID
-        When user hit add product api for guid
+        When user hits add product api for guid
         When user hits get wishlist api
         Then returned JSON should have wishListData
         And wishListData container should have entries container
@@ -68,7 +68,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         Given occ api is available
         When user hits add wishlist api
         Then response should returned GUID
-        When user hit add product api for guid
+        When user hits add product api for guid
         When user hits get wishlist api
         And entries contains productCode
         And entries should have name
@@ -80,10 +80,10 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         Given occ api is available
         When user hits add wishlist api
         Then response should returned GUID
-        When user hit add product api for guid
+        When user hits add product api for guid
         Then should return 201 created
         And user hits delete api for guid
-        Then should return 200 created
+        Then should return 200 ok
         
         @RegressionTest
         Scenario: TC-1710 HYB:OCCP-3003:OCCP-2999: add Base Product that have variants to the AddToWishlist OCC API for Anonymous User

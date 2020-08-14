@@ -55,5 +55,14 @@ public class Product_Info_EN_BVTStep extends BaseStep {
 		Assert.assertEquals(200, response.getStatusCode());
 
 	}
+	
+	@Then("user gets the Product Info EN list.")
+	public void user_gets_the_product_info_en_list() {
+		
+
+		Log.message("Status Code:- " + response.getStatusCode(), true);		
+		Assert.assertEquals(200, response.getStatusCode());
+
+	}
 
 }

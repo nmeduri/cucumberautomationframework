@@ -32,14 +32,14 @@ public class HYB_OCCP_1574_PDP_Select_Variants_Step extends BaseStep {
 
 	RequestSpecification request;
 	
-	@When("user hits locale api")
+	@When("user hits GET api")
 	public void user_hits_the_api_without_locale_1336() {
 
 		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1336());
 
 	}
 
-	@Then("user should be to see multiple color variant in the JSON response")
+	@Then("user should be able to see multiple color variant in the JSON response")
 	public void user_should_be_to_see_multiple_color_variant_int_the_JSON_response() {
 		
 		PageObject.verifyMultipleValue(response.jsonPath().get("variantMatrix.variantValueCategory.name"));
@@ -47,7 +47,7 @@ public class HYB_OCCP_1574_PDP_Select_Variants_Step extends BaseStep {
 		
 	}
 	
-	@Then("user should be to see multiple size variant in the JSON response")
+	@Then("user should be able to see multiple size variant in the JSON response")
 	public void user_should_be_to_see_multiple_size_variant_in_the_response() {
 		
 		Log.message("Size:- " + response.jsonPath().get("variantMatrix.elements.variantValueCategory.name"), true);

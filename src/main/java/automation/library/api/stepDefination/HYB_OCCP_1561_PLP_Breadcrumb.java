@@ -72,7 +72,7 @@ public class HYB_OCCP_1561_PLP_Breadcrumb extends BaseStep {
 	@And("user should be to see category url")
 	public void user_should_be_to_see_category_url() {
 		
-		PageObject.verifyExpectedResponseWithoutList("/canadiantire/catalogs/ctcCanadianTireProductCatalog/Online/categories/tools-hardware", response.jsonPath().get("name"));
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("name"));
 		
 	}
 	
@@ -86,7 +86,7 @@ public class HYB_OCCP_1561_PLP_Breadcrumb extends BaseStep {
 	@And("user able to see category url for fr ca in response")
 	public void user_should_be_to_see_category_url_for_fr_ca() {
 		
-		PageObject.verifyExpectedResponseWithoutList("/canadiantire/catalogs/ctcCanadianTireProductCatalog/Online/categories/tools-hardware", response.jsonPath().get("name"));
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("name"));
 		
 	}
  

@@ -21,6 +21,7 @@ public class CTBVTEndPoint {
 
 	public Response getCTBVTDetails(String url) {
 
+		Log.message("URL:- " + url, true);
 		response = RestAssured.given().get(url);
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;

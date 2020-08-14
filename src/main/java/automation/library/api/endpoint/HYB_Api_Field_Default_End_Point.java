@@ -15,8 +15,8 @@ public class HYB_Api_Field_Default_End_Point {
     }
 
 	public Response getAPI_Field_Default(String url, String sProductCode) {
-		Log.message("URL:- " + url + "/products/"  + sProductCode + "?fields=DEFAULT", true);
-		response = RestAssured.given().get(url + "/products/"  + sProductCode + "/1212?fields=DEFAULT");
+		Log.message("URL:- " + url + "/products/"  + sProductCode + "/363?fields=DEFAULT", true);
+		response = RestAssured.given().get(url + "/products/"  + sProductCode + "/363?fields=DEFAULT");
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;
 

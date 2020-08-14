@@ -43,9 +43,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@Then("response should have medias section with name and its value")
 	public void response_should_have_medias_section_with_name_and_its_value() {
 	
-		List<String> mediaName = response.jsonPath().get("medias.name");
-		Assert.assertTrue(mediaName.contains("CANVAS Breton Patio Arm Chair"));
-		Assert.assertNotEquals(null, response.jsonPath().get("medias"));
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("medias.name"));
 		
 	}
 
@@ -138,12 +136,12 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	
 	@Then("response should have medias section with videoImageThumbnailURL and its value")
 	public void response_should_have_medias_with_videoImageThumbnailURL_and_its_value() {
-		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.videoImageThumbnailURL"), "https://canadiantire.scene7.com/is/image/CanadianTire/0882184_1?&layer=comp&fit=constrain,1&wid=45&hei=45&fmt=jpg");
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("medias.videoImageThumbnailURL"));
 	}
 	
 	@Then("response should have medias section with videoImageThumbnailDAMPath and its value")
 	public void response_should_have_medias_with_videoImageThumbnailDAMPath_and_its_value() {
-		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.videoImageThumbnailDAMPath"), "https://canadiantire.scene7.com/is/image/CanadianTire/0882184_1?&layer=comp&fit=constrain,1&wid=45&hei=45&fmt=jpg");
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("medias.videoImageThumbnailDAMPath"));
 	}
 	
 	@Then("response should have medisas section with alttext and value in english")
@@ -172,11 +170,10 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void user_should_be_able_to_see_media_section_with_code_and_its_value() {
 
 		List<String> mediaCode = new ArrayList<String>();
-		mediaCode.add("code1");
-		mediaCode.add("Code2");
-		mediaCode.add("Code3");
-		mediaCode.add("Code4");
-		mediaCode.add("Code8");
+		mediaCode.add("CTC_333002187");
+		mediaCode.add("CTC_333002188");
+		mediaCode.add("CTC_333002186");
+		mediaCode.add("CTC_333002189");
 		PageObject.verifyResponseValue(mediaCode, response.jsonPath().get("medias.code"));
 
 	}

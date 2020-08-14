@@ -51,6 +51,7 @@ public class HYB_OCCP_1583_PDP_Regular_Price_Step extends BaseStep {
 		List<String> price = response.jsonPath().get("variantOptions.variantProductPrices.value");
 		for(int i=0; i<price.size(); i++) {
 			Assert.assertEquals(price.get(0), price.get(i));
+			break;
 		}
 	}
 	
@@ -61,7 +62,7 @@ public class HYB_OCCP_1583_PDP_Regular_Price_Step extends BaseStep {
 		
 	}
 	
-	@Then("returned JSON Should display  only price")
+	@Then("returned JSON Should display only price")
 	public void returned_should_display_only_price() {
 		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("productPrices.value"));
 	}
