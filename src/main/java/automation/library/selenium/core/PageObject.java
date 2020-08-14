@@ -191,6 +191,10 @@ public class PageObject {
 		Assert.assertNotEquals(null, actualValue);
 	}
 	
+	public static void notNullAttributeInResponseInListInteger(List<Integer> actualValue) {
+		Assert.assertNotEquals(null, actualValue);
+	}
+	
 	public static void verifyExpectedResponseWithoutList(String exepectedValue, String actualValue) {
 		Assert.assertEquals(exepectedValue, actualValue);
 	}

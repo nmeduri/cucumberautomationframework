@@ -28,7 +28,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
 
-public class HYB_OCCP_1648_PDP_Product_Badges_Exclusive extends BaseStep {
+public class HYB_OCCP_1648_PDP_Product_Badges_Exclusive_Step extends BaseStep {
 
 	RequestSpecification request;
 	

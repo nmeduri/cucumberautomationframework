@@ -6,7 +6,7 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1650_PDP_Product_Badges_Perfect_Gift.feature",
+			"classpath:SAP/BVT/SAP_BVT.feature",
 			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@SmokeTest",
