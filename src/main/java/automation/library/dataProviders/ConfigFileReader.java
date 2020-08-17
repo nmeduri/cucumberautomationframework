@@ -56,6 +56,22 @@ public class ConfigFileReader {
 		
 	} 
 	
+	public String getPDPUrl() {
+		String url = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "pdpUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+	}
+	
+	public String getSignUpUrl() {
+		String url = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "signUpUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");	
+	}
+	
 	public String getApplicationSAPUrl() {
 	
 		String environment = System.getenv("environment");

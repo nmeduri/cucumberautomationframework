@@ -3,11 +3,18 @@ package automation.library.api.endpoint;
 import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.cucumber.RestResponse;
 import automation.library.api.cucumber.Route;
-import automation.library.api.pojo.response.CTBVT_Response;
 import automation.library.logdetail.Log;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
+/*
+ * This class calls the URL of Catalog's APIs and
+ * Execute the APIs method
+ * 
+ * @author Shasahnk Bansal
+ * @date 24/06/2020s
+ */
 
 public class CTBVTEndPoint {
 

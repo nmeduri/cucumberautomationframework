@@ -4,8 +4,6 @@ import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.cucumber.RestResponse;
 import automation.library.api.cucumber.Route;
 import automation.library.api.pojo.response.CTBVT_Response;
-import automation.library.api.pojo.response.Catalog_BVT_Response;
-import automation.library.api.pojo.response.Catalogs_List_BVT_Response;
 import automation.library.api.pojo.response.Product_Info_EN_BVT_Response;
 import automation.library.api.pojo.response.Product_Info_FR_BVT_Response;
 import automation.library.logdetail.Log;
@@ -13,6 +11,13 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+/*
+ * This class calls the URL of Product Info's APIs and
+ * Execute the APIs method
+ * 
+ * @author Shasahnk Bansal
+ * @date 03/07/2020
+ */
 public class ProductInfoENEndPoint {
 
 	

@@ -3,7 +3,6 @@ import org.junit.Assert;
 
 import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.CTBVTEndPoint;
-import automation.library.api.pojo.response.CTBVT_Response;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;

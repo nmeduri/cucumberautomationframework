@@ -257,5 +257,13 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+	
+	public String getAuthorizationUrl() {
+		String url = Property.getProperty(Constant.API_DATA, "authorizationUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the apiData.properties file.");
+	}
 
 }

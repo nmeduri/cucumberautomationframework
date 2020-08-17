@@ -11,10 +11,18 @@ import automation.library.api.endpoint.HYB_API_FR_CA_End_Point;
 import automation.library.api.endpoint.HYB_API_Wishlist_End_Point;
 import automation.library.api.endpoint.HYB_Api_Field_Default_End_Point;
 import automation.library.api.endpoint.HYB_Api_Product_End_Point;
+import automation.library.api.endpoint.HYB_Authorization_EndPoint;
 import automation.library.api.endpoint.ProductInfoENEndPoint;
 import automation.library.api.endpoint.ProductInfoFREndPoint;
 import io.restassured.response.Response;
 
+/*
+ * This class calls the URL of Product Info's APIs and
+ * Execute the APIs method
+ * 
+ * @author Shasahnk Bansal
+ * @version 1.0 03/07/2020
+ */
 
 public class BaseStep {
 
@@ -25,16 +33,13 @@ public class BaseStep {
 	private CatalogsListEndPoint catalogsListEndPoint;
 	private CatalogsEndPoint catalogEndPoint;
 	private CatalogVersionEndPoint catalogVersionEndPoint;
-
-	private ProductInfoFREndPoint productInfoFREndPoint;
-	private ProductInfoENEndPoint productInfoENEndPoint;
-
 	private HYB_API_EN_CA_End_Point apiEnCaEndPoint;
 	private HYB_API_FR_CA_End_Point apiFrCaEndPoint;
 	private HYB_API_EN_End_Point apiEnEndPoint;
 	private HYB_Api_Field_Default_End_Point apiFieldDefault;
 	private HYB_Api_Product_End_Point apiProduct;
 	private HYB_API_Wishlist_End_Point wishlistAPI;
+	private HYB_Authorization_EndPoint authorizationAPI;
 
 
 	
@@ -87,6 +92,11 @@ public class BaseStep {
 	public HYB_API_Wishlist_End_Point wishListAPI() {
 		wishlistAPI = new HYB_API_Wishlist_End_Point();
 		return wishlistAPI;
+	}
+	
+	public HYB_Authorization_EndPoint getAuthorizationUrl() {
+		authorizationAPI = new HYB_Authorization_EndPoint();
+		return authorizationAPI;
 	}
 	
 

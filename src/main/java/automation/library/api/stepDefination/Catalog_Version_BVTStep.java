@@ -3,9 +3,6 @@ import org.junit.Assert;
 
 import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.CatalogVersionEndPoint;
-import automation.library.api.pojo.response.CTBVT_Response;
-import automation.library.api.pojo.response.Catalog_BVT_Response;
-import automation.library.api.pojo.response.Catalogs_List_BVT_Response;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;

@@ -6,7 +6,7 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/BVT/SAP_BVT.feature",
+			"classpath:SAP/Regression/OCCP_2344_Add_Wishlist_For_Authenticated_User_Generate_Oauth_Token.feature",
 			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@SmokeTest",

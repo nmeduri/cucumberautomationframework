@@ -17,7 +17,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         When user hits add wishlist api
         Then response should returned GUID
         
-        @RegressionTest
+        @SmokeTest
         Scenario: TC-1614 HYB:OCCP-3003:OCCP-2999: Verify Status Code when invoking AddToWishlist OCC API with Anonymous User and empty GUID	
 	    Given occ api is available
         When user hits add product api for empty guid

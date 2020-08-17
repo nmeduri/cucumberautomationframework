@@ -29,6 +29,16 @@ public class HomePageSteps {
 		configFileReader = new ConfigFileReader();
 	}
 
+//	@Given("^Adobe author url is up$")
+//	public void adobe_author_url_is_up() throws Exception {
+//		driver = driverFactory.getDriver(configFileReader.getBrowser());
+//		pageObjectManager = new PageObjectManager();
+//		homePage = new HomePage(driver);
+//		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
+//		homePage.navigateTo_HomePage();
+//		
+//	}
+	
 	@Given("^Adobe author url is up$")
 	public void adobe_author_url_is_up() throws Exception {
 		driver = driverFactory.getDriver(configFileReader.getBrowser());
