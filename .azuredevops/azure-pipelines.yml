@@ -50,6 +50,20 @@ stages:
       - job: CI
         displayName: CI
         steps:
+        
+        #copy lighthouse URLs files to be published
+        - task: CopyFiles@2
+          displayName: 'Copy lighthouse URL file'
+          inputs:
+            Contents: |
+              $(Pipeline.Workspace)/s/lighthouse_execution_urls.txt
+            TargetFolder: '$(Build.StagingDirectory)\Lighthouse' 
+
+        - task: PublishPipelineArtifact@1
+          displayName: Publish Lighthouse artifact
+          inputs:
+            targetPath: '$(Build.StagingDirectory)\Lighthouse' 
+            artifactName: 'Lighthouse'    
 
         # build 
         - task: Maven@3
