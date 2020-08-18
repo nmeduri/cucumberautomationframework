@@ -29,6 +29,7 @@ public class BaseStep {
 	public static Response response;
 	public static String guid;
 	public static String url;
+	public static String accessToken;
 	private CTBVTEndPoint ctbvtEndPoint;
 	private CatalogsListEndPoint catalogsListEndPoint;
 	private CatalogsEndPoint catalogEndPoint;

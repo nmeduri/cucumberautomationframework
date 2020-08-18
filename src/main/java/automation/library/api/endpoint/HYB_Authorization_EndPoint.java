@@ -5,11 +5,13 @@ import org.json.JSONObject;
 import automation.library.logdetail.Log;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
+import io.restassured.specification.RequestSpecification;
 public class HYB_Authorization_EndPoint {
 	
 	private static String base_url;
 	private static Response response;
+	private RequestSpecification request = RestAssured.given();
+
 	
 	public String HYB_Auth_Url(String baseUrl) {
 		base_url = baseUrl;
@@ -34,6 +36,22 @@ public class HYB_Authorization_EndPoint {
     	    
     	    Log.message("Oauth Token with type " + tokenType + "   " + accessToken, true);
 		return response;
+
+	}
+	
+	public Response getAPI_Field_Default(String url, String accessToken, String product) {
+		Log.message("API:- " + url + product, true);
+		request.header("Authorization", "Bearer " + accessToken);
+	    response = request.put(url + product);
+		return response;
+
+	}
+	
+	public Response delete_HYB_Add_Wishlist_API(String url, String accessToken, String product) {
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("API:- " + url + product,  true);
+		response = request.delete(url + product);
+	return response;
 
 	}
 

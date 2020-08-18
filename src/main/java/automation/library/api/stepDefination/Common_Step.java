@@ -28,22 +28,20 @@ public class Common_Step extends BaseStep {
 	
 	@Given("access token is available")
 	public void access_token_is_available() {
-		url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAuthorizationUrl());
+		url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getProductInfoAuthorizationUser());
+
 		
 	}
 	
 	@When("user generate token")
 	public void user_generate_token() {
+		response = getAuthorizationUrl().getAuthorizationToken(FileReaderManager.getInstance().getAPIDataReader().getAuthorizationUrl());
 		
-		response = getAuthorizationUrl().getAuthorizationToken(url);
 		
 		
 	}
 	
-	@Then("user get the token")
-	public void user_get_the_token() {
-		PageObject.notNullAttributeInResponse(response.jsonPath().get("access_token"));
-	}
+	
 
 	@When("user hits the GET api with locale as en_ca")
 	public void user_hits_the_api_with_locale_as_en_ca() {
@@ -92,5 +90,13 @@ public class Common_Step extends BaseStep {
 		response = getApiFieldDefault().getAPI_Field_Default(url,
 				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1328());
 	}
+	
+	@Then("user get the token")
+	public void user_get_the_token() {
+		accessToken = response.jsonPath().get("access_token");
+		PageObject.notNullAttributeInResponse(accessToken);
+	}
+	
+	
 
 }
