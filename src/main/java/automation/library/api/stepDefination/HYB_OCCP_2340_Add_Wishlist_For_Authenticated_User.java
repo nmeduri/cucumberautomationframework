@@ -37,6 +37,16 @@ public class HYB_OCCP_2340_Add_Wishlist_For_Authenticated_User extends BaseStep 
 		
 	}
 	
+	@When("user hits get api for authenticated user")
+	public void user_hits_get_api_for_authenticated_user() {
+		response = getAuthorizationUrl().get_Wishlist_API(url, accessToken);
+	}
+	
+	@When("user hits get api for unauthenticated user")
+	public void user_hits_get_api_for_unauthenticated_user() {
+		response = getAuthorizationUrl().get_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().getInvalidToken());
+	}
+	
 	@When("user hits the wishlist api for authenticated user")
 	public void user_hits_the_wishlist_api() {
 
@@ -66,6 +76,21 @@ public class HYB_OCCP_2340_Add_Wishlist_For_Authenticated_User extends BaseStep 
 		response = getAuthorizationUrl().getAPI_Field_Default(url, FileReaderManager.getInstance().getAPIDataReader().getInvalidToken() , FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1717());
 	}
 	
+	@When("user hits delete api for unauthorized token")
+	public void user_hits_delete_api_for_unauthorized_token() {
+		response = getAuthorizationUrl().delete_HYB_Add_Wishlist_API(url, FileReaderManager.getInstance().getAPIDataReader().getInvalidToken(), FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614());
+	}
+	
+	@When("user hits delete api for not found status")
+	public void user_hits_delete_api_for_not_found_status() {
+		response = getAuthorizationUrl().delete_HYB_Add_Wishlist_API(url, accessToken, "");
+	}
+	
+	@When("user hits get api for not found status")
+	public void user_hits_get_api_for_not_found_status() {
+		response = getAuthorizationUrl().get_Wishlist_API(url + "/Product", accessToken);
+	}
+	
 	@When("user access invalid wishlist api")
 	public void user_access_invalid_wishlist_api() {
 		response = getAuthorizationUrl().getAPI_Field_Default(FileReaderManager.getInstance().getAPIDataReader().getProductInfoInvalidAuthorizationUser(), accessToken , FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1715());
@@ -83,11 +108,13 @@ public class HYB_OCCP_2340_Add_Wishlist_For_Authenticated_User extends BaseStep 
 		PageObject.verifyExpectedResponseWithoutList("400", Integer.toString(response.getStatusCode()));
 	}
 	
-	@Then("should return 401 unauthorized")
-	public void should_return_401_unauthorized() {
+
+	@Then("should return 409 conflict")
+	public void should_return_409_conflict() {
 		
 		Log.message("Response:- " + response.getStatusCode(), true);
-		PageObject.verifyExpectedResponseWithoutList("401", Integer.toString(response.getStatusCode()));
+		PageObject.verifyExpectedResponseWithoutList("409", Integer.toString(response.getStatusCode()));
+
 	}
 	
 	@Then("should return 403_forbidden")

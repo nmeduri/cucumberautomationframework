@@ -1,4 +1,4 @@
-Feature: Health Check BVT API 
+Feature: Health Check BVT
 
 	Description: The purpose of this test to perform health check of API.
 
@@ -10,6 +10,6 @@ Feature: Health Check BVT API
 	
 	Scenario: Sign up url launch
 	Given sign up url is up
-	When sign up url is launched 
+	When sign up url is launched
 
 	

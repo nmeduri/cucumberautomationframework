@@ -40,17 +40,27 @@ public class HYB_Authorization_EndPoint {
 	}
 	
 	public Response getAPI_Field_Default(String url, String accessToken, String product) {
-		Log.message("API:- " + url + product, true);
+
+		Log.message("API:- " + url + "product/" + product, true);
 		request.header("Authorization", "Bearer " + accessToken);
-	    response = request.put(url + product);
+	    response = request.put(url + "product/" + product);
 		return response;
 
 	}
 	
 	public Response delete_HYB_Add_Wishlist_API(String url, String accessToken, String product) {
 		request.header("Authorization", "Bearer " + accessToken);
-		Log.message("API:- " + url + product,  true);
-		response = request.delete(url + product);
+		Log.message("API:- " + url + "product/" + product,  true);
+		response = request.delete(url + "product/" + product);
+	return response;
+
+	}
+	
+	public Response get_Wishlist_API(String url, String accessToken) {
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("API:- " + url,  true);
+		response = request.get(url);
+		Log.message("Response:- " + response.getBody().asString(), true);
 	return response;
 
 	}

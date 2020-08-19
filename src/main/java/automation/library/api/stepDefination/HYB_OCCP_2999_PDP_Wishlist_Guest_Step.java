@@ -102,6 +102,22 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 		PageObject.verifyExpectedResponseWithoutList("200", Integer.toString(response.getStatusCode()));
 	}
 	
+	@Then("should return 400 ok")
+	public void should_return_400_ok() {
+		
+		Log.message("Response:- " + response.getStatusCode(), true);
+		PageObject.verifyExpectedResponseWithoutList("400", Integer.toString(response.getStatusCode()));
+		
+	}
+	
+	@Then("should return 401 unauthorized")
+	public void should_return_400_unauthorized() {
+		
+		Log.message("Response:- " + response.getStatusCode(), true);
+		PageObject.verifyExpectedResponseWithoutList("401", Integer.toString(response.getStatusCode()));
+		
+	}
+	
 	@Then("should return 409 status code")
 	public void should_return_409_status_code() {
 		Log.message("Response:- " + response.getStatusCode(), true);
@@ -193,6 +209,23 @@ public class HYB_OCCP_2999_PDP_Wishlist_Guest_Step extends BaseStep {
 	public void user_should_not_able_to_the_base_product_which_has_variant_to_the_wishlist() {
 		
 		PageObject.verifyExpectedResponseWithoutList("Base product "+ FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1710() +" with variants cannot be added to wish list", response.jsonPath().get("errors.message").toString().replace("[", "").replace("]", ""));
+	}
+	
+	@Then("user should able to see availableActions container")
+	public void user_should_be_able_to_see_availableActions_container() {
+		PageObject.verifyNotExpectedValue("null, null", response.jsonPath().get("wishListData.entries.availableActions").toString().replace("[", "").replace("]", ""));	
+	}
+	
+	@And("user should be able to see isAddToCartEnabled")
+	public void user_should_be_able_to_see_isAddToCartEnabled() {
+		Log.message("Add To Cart Enabled:- " + response.jsonPath().get("wishListData.entries.availableActions.isAddToCartEnabled").toString().replace("[", "").replace("]", ""), true);
+		PageObject.verifyNotExpectedValue("null, null", response.jsonPath().get("wishListData.entries.availableActions.isAddToCartEnabled").toString().replace("[", "").replace("]", ""));
+	}
+	
+	@And("user should be able to see values")
+	public void user_should_be_able_to_see_values() {
+		Log.message("Values:- " + response.jsonPath().get("wishListData.entries.availableActions.values").toString().replace("[", "").replace("]", ""), true);
+		PageObject.verifyNotExpectedValue("null, null", response.jsonPath().get("wishListData.entries.availableActions.values").toString().replace("[", "").replace("]", ""));
 	}
 	
 	

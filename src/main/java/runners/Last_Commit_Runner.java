@@ -6,7 +6,7 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_2340_Add_Wishlist_For_Authenticated_User_Generate_Oauth_Token.feature",
+			"classpath:SAP/BVT/SAP_BVT.feature",
 			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@RegressionTest",
@@ -14,8 +14,6 @@ public final class Last_Commit_Runner {
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",
 			"--plugin", "html:target/selenium-reports"
-		
-
 	};
 
 	public static void main(String[] args) throws Throwable {

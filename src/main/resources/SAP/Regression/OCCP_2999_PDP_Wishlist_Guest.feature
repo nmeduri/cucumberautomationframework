@@ -17,7 +17,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         When user hits add wishlist api
         Then response should returned GUID
         
-        @SmokeTest
+        @RegressionTest
         Scenario: TC-1614 HYB:OCCP-3003:OCCP-2999: Verify Status Code when invoking AddToWishlist OCC API with Anonymous User and empty GUID	
 	    Given occ api is available
         When user hits add product api for empty guid
@@ -108,4 +108,15 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         Then response should returned GUID
         When user hit add base product api for guid
         Then should return 201 created
+        
+        @SmokeTest
+        Scenario: TC-1621 HYB:OCCP-3003:OCCP-2999: Verify getWishlist OCC API- json for availableActions container 
+        Given occ api is available
+        When user hits add wishlist api
+        Then response should returned GUID
+        When user hits add product api for guid
+        When user hits get wishlist api
+        Then user should able to see availableActions container
+        And user should be able to see isAddToCartEnabled
+        And user should be able to see values
   

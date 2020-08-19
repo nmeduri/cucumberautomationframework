@@ -36,5 +36,21 @@ public class HYB_OCCP_1648_PDP_Product_Badges_Exclusive_Step extends BaseStep {
 		PageObject.verifyExpectedResponse(response.jsonPath().get("badges"), "EXCLUSIVE");
 
 	}
+	
+	@Then("user should be able to see custom badge under badges container")
+	public void user_should_be_able_to_see_custom_badge_under_badges_container() {
+
+		Log.message("Response badge:- "  + response.jsonPath().get("badges"), true);
+		PageObject.verifyExpectedResponse(response.jsonPath().get("badges"), "CUSTOM");
+
+	}
+	
+	@Then("user should be able to see badge")
+	public void user_should_be_able_to_see_badge() {
+
+		Log.message("Response badge:- "  + response.jsonPath().get("badges"), true);
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("badges"));
+
+	}
  
 }

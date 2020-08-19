@@ -57,15 +57,15 @@ stages:
           inputs:
             Contents: |
               $(Pipeline.Workspace)/s/lighthouse_execution_urls.txt
-            TargetFolder: '$(Build.StagingDirectory)\Lighthouse' 
+            TargetFolder: '$(Build.StagingDirectory)\Lighthouse'
 
         - task: PublishPipelineArtifact@1
           displayName: Publish Lighthouse artifact
           inputs:
-            targetPath: '$(Build.StagingDirectory)\Lighthouse' 
-            artifactName: 'Lighthouse'    
+            targetPath: '$(Build.StagingDirectory)\Lighthouse'
+            artifactName: 'Lighthouse'
 
-        # build 
+        # build
         - task: Maven@3
           displayName: Maven build task
           inputs:
@@ -93,13 +93,13 @@ stages:
         - task: PublishPipelineArtifact@1
           displayName: Publish Adobe artifact
           inputs:
-            targetPath: '$(Build.StagingDirectory)\Adobe' 
+            targetPath: '$(Build.StagingDirectory)\Adobe'
             artifactName: 'Adobe'
             
         - task: PublishPipelineArtifact@1
           displayName: Publish Sap artifact
           inputs:
-            targetPath: '$(Build.StagingDirectory)\Sap' 
+            targetPath: '$(Build.StagingDirectory)\Sap'
             artifactName: 'Sap'
 
   - stage: Run_QA_Tests_Suites
