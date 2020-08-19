@@ -33,7 +33,9 @@ public class HYB_OCCP_2726_Bazaar_Voice_Tech_Enabler_Product_Rating_Reviews_Step
 	public void user_able_to_see_rating_values_as_numberofreviews() {
 
 		Log.message("Nuber of Reviews:- " + response.jsonPath().get("rating.numberOfReviews"), true);
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("rating.numberOfReviews"));
+		String numberReview = response.jsonPath().get("rating.numberOfReviews").toString();
+		PageObject.notNullAttributeInResponse(numberReview);
+		
 
 	}
 	

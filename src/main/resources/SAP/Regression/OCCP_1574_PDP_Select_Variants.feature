@@ -30,7 +30,7 @@ Feature: OCCP-1574 PDP: Select Variants
         @RegressionTest
         Scenario: TC-1339 HYB:OCCP-1574: Verify when the Product has no variants
         Given occ api is available
-        When user hits GET api
+        When user hits the GET method for no variant section
         Then variant sector should unavailable
         And sku id for the product is displayed
         

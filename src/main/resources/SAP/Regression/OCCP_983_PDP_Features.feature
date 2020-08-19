@@ -8,7 +8,6 @@ Feature: OCCP-983 PDP Features
         When user hits the GET api without locale
         Then returned JSON should display feature Bullets section
         And returned JSON should display feature description
-        And returned JSON should display description value in locale en
         
         @RegressionTest
         Scenario: TC-1353 HYB:OCCP-983: Verify features are not null and locale is en
@@ -16,7 +15,6 @@ Feature: OCCP-983 PDP Features
         When user hits the GET api with locale en
         Then returned JSON should display feature Bullets section
         And returned JSON should display feature description
-        And returned JSON should display description value in locale en
         
         @RegressionTest
         Scenario: TC-1354 HYB:OCCP-983: Verify features are not null and locale is en_CA
@@ -31,5 +29,4 @@ Feature: OCCP-983 PDP Features
         When user hits the GET api with locale as fr_ca
         Then returned JSON should display feature Bullets section
         And returned JSON should display feature description
-        And returned JSON should display description value in fr ca
 	

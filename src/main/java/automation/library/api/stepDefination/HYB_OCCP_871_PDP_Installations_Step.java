@@ -23,10 +23,10 @@ public class HYB_OCCP_871_PDP_Installations_Step extends BaseStep {
 	RequestSpecification request;
 	
 	
-	@When("user hits the GET method without locale for service installation api")
+	@When("user hits the GET method without locale for service installation")
 	public void user_hits_the_get_meethod_without_locale_for_service_installation_api() {
 
-		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1366());
+		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1365());
 
 	}
 

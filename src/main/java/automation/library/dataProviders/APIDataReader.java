@@ -273,6 +273,24 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+
+	public String get_product_tc_1365() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1365");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	
+	public String get_product_tc_1646() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1646");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
 	
 	public String getAuthorizationUrl() {
 		String url = Property.getProperty(Constant.API_DATA, "authorizationUrl");
@@ -306,5 +324,33 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("token not specified in the apiData.properties file.");
 	}
+	
+	public String get_product_tc_1339() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1339");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	
+	public String get_product_tc_1362() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1362");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	
+	public String get_product_tc_1363() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1363");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	
 
 }

@@ -50,12 +50,36 @@ public class Common_Step extends BaseStep {
 				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1415());
 
 	}
+	
+	@When("user hits the GET method with locale as en_ca for service installation")
+	public void user_hits_the_api_with_locale_as_en_ca_for_service_installation() {
+                   
+		response = getHybApiENCA().getAPI_EN_CAURL(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1365());
+
+	}
+	
+	@When("user hits the GET api with locale as en for service installation")
+	public void user_hits_the_api_with_locale_as_en_for_service_installation() {
+                   
+		response = getHybApiEN().getAPI_EN(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1365());
+
+	}
 
 	@When("user hits the GET api with locale as fr_ca")
 	public void user_hits_the_api_with_locale_as_fr_ca() {
 
 		response = getHybApiFRCA().getAPI_FR_CA(url,
 				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1416());
+
+	}
+	
+	@When("user hits the GET api as fr_ca for service installation")
+	public void user_hits_the_api_with_locale_as_fr_ca_for_service_installaation() {
+
+		response = getHybApiFRCA().getAPI_FR_CA(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1365());
 
 	}
 

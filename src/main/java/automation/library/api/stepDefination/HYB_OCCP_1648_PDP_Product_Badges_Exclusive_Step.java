@@ -29,7 +29,7 @@ public class HYB_OCCP_1648_PDP_Product_Badges_Exclusive_Step extends BaseStep {
 
 	RequestSpecification request;
 	
-	@Then("user should be able to see badge value as Exclusive")
+	@Then("user should be able to check badge value as Exclusive")
 	public void user_should_be_able_to_see_badge_value_as_Exclusive() {
 
 		Log.message("Response badge:- "  + response.jsonPath().get("badges"), true);

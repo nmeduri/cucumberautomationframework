@@ -29,7 +29,7 @@ public class HYB_OCCP_1652_PDP_Product_Badges_Top_Rated_Step extends BaseStep {
 
 	RequestSpecification request;
 	
-	@Then("user should be able to see badge value as Top Rated")
+	@Then("user should be able to verify badges as Top Rated in response")
 	public void user_should_be_able_to_see_badge_value_as_top_rated() {
 
 		Log.message("Response badge:- "  + response.jsonPath().get("badges"), true);

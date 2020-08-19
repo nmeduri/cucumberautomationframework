@@ -58,7 +58,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	@When("user hits the GET method with Default locale for product manaul link")
 	public void user_hits_the_api_with_default_for_product_manual_link() {
 
-		response = getApiFieldDefault().getAPI_Field_Default(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1335());
+		response = getApiFieldDefault().getAPI_Field_Default(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1331());
 	}
 
 	
@@ -121,6 +121,21 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	@Then("user should be able to see product description and language as en in JSON response")
 	public void user_should_be_able_to_see_product_description_and_langauge_as_en_in_response() {
 		Assert.assertTrue("Yardworks 40V Cordless Snowthrower, 16-in".contains(response.jsonPath().get("description")));
+	}
+	
+	@When("user hits GET with locale as fr ca for description")
+	public void user_hits_the_GET_api_with_locale_as_fr_ca_for_description() {     
+ 
+		
+		response = getHybApiFRCA().getAPI_FR_CA(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());
+	}
+	
+	@When("user hits GET method with locale as en ca for description")
+	public void user_hits_the_GET_method_with_locale_as_en_ca_for_description() {     
+ 
+		
+		response = getHybApiENCA().getAPI_EN_CAURL(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());
+		
 	}
 	
 	

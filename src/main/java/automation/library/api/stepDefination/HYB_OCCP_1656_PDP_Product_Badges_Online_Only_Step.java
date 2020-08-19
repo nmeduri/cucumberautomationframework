@@ -29,7 +29,14 @@ public class HYB_OCCP_1656_PDP_Product_Badges_Online_Only_Step extends BaseStep 
 
 	RequestSpecification request;
 	
-	@Then("user should be able to see badge value as Online Only")
+	@When("user hits GET method for product badges")
+	public void user_hits_get_method_for_product_badges() {
+
+		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1646());
+
+	}
+	
+	@Then("user should be able to check badge value onlineonly in JSON response")
 	public void user_should_be_able_to_see_badge_value_as_online_only() {
 
 		Log.message("Response badge:- "  + response.jsonPath().get("badges"), true);

@@ -85,7 +85,7 @@ public class HYB_OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseStep {
 	
 	@Then("product image should be displayed in JSON response")
 	public void product_image_should_be_displayed_in_response() {
-		PageObject.verifyExpectedResponseWithoutList("*****", response.jsonPath().get("image"));
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("image"));
 	}
 	
 

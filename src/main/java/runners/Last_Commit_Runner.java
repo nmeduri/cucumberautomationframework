@@ -6,10 +6,10 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/BVT/SAP_BVT.feature",
+			"classpath:SAP/Regression/OCCP_1583_PDP_Regular_Price.feature",
 			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@RegressionTest",
+			"--tags", "@SmokeTest",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",

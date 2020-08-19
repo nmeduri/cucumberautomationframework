@@ -35,6 +35,39 @@ public class HYB_OCCP_1574_PDP_Select_Variants_Step extends BaseStep {
 		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1336());
 
 	}
+	
+	@When("user hits the GET method for no variant section")
+	public void user_hits_the_api_without_locale_for_no_variant_section() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1339());
+		
+
+	}
+	
+	@When("user hits the GET api for base Product and have variants but price is same for all variants")
+	public void user_hits_the_api_for_base_product_and_have_variants_but_price_is_same_for_all_variants() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1362());
+		
+
+	}
+	
+	@When("user hits the GET api for base Product and have variants but price is different for all variants")
+	public void user_hits_the_api_for_base_product_and_have_variants_but_price_is_different_for_all_variants() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1363());
+		
+
+	}
+	
+	@When("user hits the GET api for given product code when product code is variant product code")
+	public void user_hits_the_api_for_given_product_code_when_product_code_is_variant_product_code() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1363());
+		
+
+	}
+
 
 	@Then("user should be able to see multiple color variant in the JSON response")
 	public void user_should_be_to_see_multiple_color_variant_int_the_JSON_response() {
