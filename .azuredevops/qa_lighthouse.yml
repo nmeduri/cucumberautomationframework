@@ -1,0 +1,55 @@
+parameters:
+- name: downloadId
+  type: string
+- name: downloadArtifact
+  type: string
+- name: workingDir
+  type: string
+- name: lighthouseDir
+  type: string
+- name: lighthouseUrls
+  type: string  
+- name: lighthouseArtifact
+  type: string 
+  
+steps:
+  - download: ${{ parameters.downloadId }}
+    artifact: ${{  parameters.downloadArtifact  }}
+    displayName: Download lighthouse URLS to be scanned Artifact
+
+  # install node
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '12.x'
+    displayName: 'Install Node.js'
+
+  # install npm lighthouse package
+  - script: |
+      npm install lighthouse-batch -g
+    displayName: 'install lighthouse package'  
+
+  # execute lighthouse batch
+  - script: |
+      lighthouse-batch -h -f $lighthouseUrls -o $lighthouseDir
+    displayName: 'Scan URLs to fetch lighthouse reports' 
+    workingDirectory: ${{ parameters.workingDir }}
+    env:
+        lighthouseDir: ${{ parameters.lighthouseDir }}
+        lighthouseUrls: ${{ parameters.lighthouseUrls }}
+
+  # zip
+  - task: ArchiveFiles@2
+    displayName: Zip lighthouse artifact
+    inputs:
+      rootFolderOrFile: ${{ parameters.lighthouseDir }}
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: ${{ parameters.lighthouseArtifact }}
+      replaceExistingArchive: true    
+
+  # publish lighthouse reports
+  - publish: ${{ parameters.lighthouseArtifact }}
+    artifact: Lighthouse_Reports   
+    displayName: Publish lighthouse artifact 
+    
+     

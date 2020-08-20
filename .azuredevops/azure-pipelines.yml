@@ -34,6 +34,11 @@ parameters:
   type: boolean
   default: false
 
+- name: Lighthouse_Execution
+  displayName: Run Lighthouse Scanning
+  type: boolean
+  default: false  
+
 - name: Environment
   displayName: Environment name to run tests
   type: string
@@ -104,7 +109,7 @@ stages:
 
   - stage: Run_QA_Tests_Suites
     dependsOn: CI
-    condition: and( succeeded(), in( 'True', '${{ parameters.AEM_BVT }}', '${{ parameters.AEM_Regression }}', '${{ parameters.SAP_BVT }}', '${{ parameters.SAP_Regression}}' ) )
+    condition: and( succeeded(), in( 'True', '${{ parameters.AEM_BVT }}', '${{ parameters.AEM_Regression }}', '${{ parameters.SAP_BVT }}', '${{ parameters.SAP_Regression}}', '${{ parameters.Lighthouse_Execution}}' ) )
     jobs:
       - job: Run_SAP_Tests_Suites
         displayName: Run SAP Tests Suites
@@ -149,3 +154,16 @@ stages:
                   - projname: Adobe
                     pattern: 'Adobe_Regression*.jar'
                     reportname: 'Adobe Regression Extent Report'
+
+      - job: Run_Lighthouse_Scanning
+        displayName: Run Lighthouse Scanning
+        condition: in('True', '${{ parameters.Lighthouse_Execution }}' )
+        steps:
+          - template: qa_lighthouse.yml
+            parameters:
+              downloadId: current
+              downloadArtifact: Lighthouse
+              workingDir: $(Pipeline.Workspace)/Lighthouse
+              lightHouseDir: $(Pipeline.Workspace)/Lighthouse/lighthouse
+              lightHouseUrls: $(Pipeline.Workspace)/Lighthouse/lighthouse_execution_urls.txt
+              lightHouseArtifact: $(Build.ArtifactStagingDirectory)/Lighthouse_Reports/lighthouse-$(Build.BuildId).zip           
