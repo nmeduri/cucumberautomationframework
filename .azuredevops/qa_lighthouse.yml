@@ -31,6 +31,7 @@ steps:
   # execute lighthouse batch
   - script: |
       lighthouse-batch -h -f $lighthouseUrls -o $lighthouseDir
+      lighthouse-batch --params "--emulated-form-factor=\"desktop"\" -h -f $lighthouseUrls -o $lighthouseDir/desktop
     displayName: 'Scan URLs to fetch lighthouse reports' 
     workingDirectory: ${{ parameters.workingDir }}
     env:
