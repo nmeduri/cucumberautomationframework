@@ -90,8 +90,7 @@ public class PDP_Page extends PageObject {
 	}
 	
 	public void dispalyProductTitle() throws Exception {
-		
-		Assert.assertTrue($display($(Loc.CLASSNAME, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Title())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Title()));
 	}
 	
 	public void verifyReturnPolicyDescription() throws Exception{
