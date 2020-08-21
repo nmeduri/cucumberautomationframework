@@ -66,12 +66,22 @@ public class DriverFactory {
 				options.addArguments("headless");
 				options.addArguments("window-size=1200x600");
 				driver = new ChromeDriver(options);
+				driver.manage().window().maximize();
 				break;
 			case "headless mobile":
 				Log.message("Head less", true);
 				WebDriverManager.phantomjs().setup();
 				driver = new PhantomJSDriver();
 				break;
+			case "mobile-chrome":
+				WebDriverManager.chromedriver().setup();
+				Map<String, String> mobileEmulation = new HashMap<>();
+				mobileEmulation.put("deviceName", "Nexus 5");
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("headless");
+				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+				driver = new ChromeDriver(chromeOptions);
+				break;	
 			}
 			break;
 		case "without headless":
@@ -79,6 +89,7 @@ public class DriverFactory {
 			case "chrome":
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				break;
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();

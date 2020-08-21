@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import automation.library.common.Property;
@@ -37,7 +38,7 @@ public class PageObject {
 	}
 
 	public Element $(By by) throws Exception {
-		return findElement(by);
+		return findElement(by);     
 	}
 
 	public Element findElement(By by) throws Exception {
@@ -59,6 +60,13 @@ public class PageObject {
 		return el;
 
 	}
+	
+	public List<Element> $$(Loc type, String locator) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
+        List<WebElement> els = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getLocator(type, locator)));
+        List<Element> elements = setElements(els);
+        return elements;
+    }
 
 	public Element $(ExpectedCondition<?> exp, int... delay) throws Exception {
 
@@ -97,17 +105,32 @@ public class PageObject {
 		}
 		return list;
 	}
+	
+	public String $getText(Element element) {
 
-	public Element $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
+		return element.getText();
 
-		Element ele = new Element(driver, exp, delay);
-		return ele;
+	}
+	
+	public boolean $display(Element element) {
+		
+		return element.display();
+		
+	}
+	
+	public Element $click(Element element) {
+		return element.click();
 	}
 
-	public Element $getText(Element element) {
+	public String $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
-		return element;
-
+		Element ele = new Element(driver, exp, delay);
+		return ele.getText();
+	}
+	
+	public String getTitle() {
+		String value = driver.getTitle();
+		return value;
 	}
 
 	public int getWaitDuration() {

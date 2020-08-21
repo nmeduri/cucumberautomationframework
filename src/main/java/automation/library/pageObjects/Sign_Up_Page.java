@@ -1,5 +1,6 @@
 package automation.library.pageObjects;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -34,5 +35,7 @@ public class Sign_Up_Page extends PageObject {
 	    $(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Add_To_Cart_Button()).click();
 	   
 	}
+	
+	
 
 }

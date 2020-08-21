@@ -8,6 +8,7 @@ public class Constant {
 	public static final String OR_FILE = "/ObjectRepository/OR.properties";
 	public static final String BASE_PATH = System.getProperty("user.dir");
 	public static final String API_DATA = "/config/" + apiDataFile();
+	public static final String DATA_FILE = "/config/" + dataFile();
 	
 	public static String configureFile;
 
@@ -26,6 +27,20 @@ public class Constant {
 			return configureFile;
 		} else {
 			configureFile = "API_Data_D2.properties";
+			Log.message("File:- " + configureFile, true);
+			return configureFile;
+		}
+
+	}
+	
+	public static String dataFile() {
+		String sEnvironment = System.getenv("environment");
+		if (sEnvironment.equalsIgnoreCase("D1")) {
+			configureFile = "dataFile_D1.properties";
+			Log.message("File:- " + configureFile, true);
+			return configureFile;
+		} else {
+			configureFile = "dataFile_D2.properties";
 			Log.message("File:- " + configureFile, true);
 			return configureFile;
 		}

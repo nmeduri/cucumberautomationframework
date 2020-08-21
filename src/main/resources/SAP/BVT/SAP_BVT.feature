@@ -27,7 +27,6 @@ Feature: Health Check BVT API
 	When  user hits the get catalog version api. 
 	Then user gets the catalog version API response. 
 
-    @SmokeTest
 	Scenario: TC-2089 Get product info - Badges
 	Given occ api is available
     When user hits the GET api with locale en

@@ -1,10 +1,12 @@
 package automation.library.stepDefinitions;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
+import automation.library.enums.Locator.Loc;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.PDP_Page;
@@ -25,11 +27,9 @@ public class SignUpPageSteps extends BaseClass{
 	
 	@Given("^sign up url is up$")
 	public void adobe_author_url_is_up() throws Exception {
-		driver = driverFactory.getDriver(configFileReader.getBrowser());
+		driver = driverFactory.getDriver(configFileReader.getWebBrowser());
 		pageObjectManager = new PageObjectManager();
-		signUpPage = new Sign_Up_Page(driver);
-		testContext.getPageObjectManager().getSignUpPage(PageObject.getDriver());
-		signUpPage.navigateTo_Sign_Up_Page();
+		testContext.getPageObjectManager().getSignUpPage(driver).navigateTo_Sign_Up_Page();
 		
 	}
 	

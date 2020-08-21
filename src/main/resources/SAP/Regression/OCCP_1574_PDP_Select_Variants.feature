@@ -9,6 +9,7 @@ Feature: OCCP-1574 PDP: Select Variants
         When user hits GET api
         Then user should be able to see multiple color variant in the JSON response
         
+        
         @RegressionTest
 		Scenario: TC-1337 HYB:OCCP-1574: Verify multiple sizes for a product
 	    Given occ api is available

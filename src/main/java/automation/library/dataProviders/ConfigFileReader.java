@@ -48,7 +48,7 @@ public class ConfigFileReader {
 	}
 
 	public String getApplicationUrl() {
-		String url = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "url");
+		String url = Property.getProperty(Constant.DATA_FILE, "url");
 		if (url != null)
 			return url;
 		else
@@ -57,7 +57,7 @@ public class ConfigFileReader {
 	} 
 	
 	public String getPDPUrl() {
-		String url = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "pdpUrl");
+		String url = Property.getProperty(Constant.DATA_FILE, "pdpUrl");
 		if (url != null)
 			return url;
 		else
@@ -65,7 +65,7 @@ public class ConfigFileReader {
 	}
 	
 	public String getSignUpUrl() {
-		String url = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "signUpUrl");
+		String url = Property.getProperty(Constant.DATA_FILE, "signUpUrl");
 		if (url != null)
 			return url;
 		else
@@ -76,9 +76,9 @@ public class ConfigFileReader {
 	
 		String environment = System.getenv("environment");
 		if (environment.equalsIgnoreCase("D1"))
-			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "devAuthorUrl");
+			return Property.getProperty(Constant.DATA_FILE, "devAuthorUrl");
 		else if(environment.equalsIgnoreCase("D2"))
-			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "qaAuthorUrl");
+			return Property.getProperty(Constant.DATA_FILE, "qaAuthorUrl");
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 		
@@ -88,9 +88,9 @@ public class ConfigFileReader {
 		
 		String environment = System.getenv("environment");
 		if (environment.equalsIgnoreCase("D1"))
-			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "devUrl");
+			return Property.getProperty(Constant.DATA_FILE, "devUrl");
 		else if(environment.equalsIgnoreCase("D2"))
-			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "qaUrl");
+			return Property.getProperty(Constant.DATA_FILE, "qaUrl");
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 		
@@ -124,6 +124,16 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException(
 					"Browser Name Key value in Configuration.properties is not matched : " + browserName);
+	}
+	
+	public String getWebBrowser() {
+		String webView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "webView");
+		return webView;
+	}
+	
+	public String getMobileView() {
+		String mobileView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "mobileView");
+		return mobileView;
 	}
 	
 	public String getServerType() {

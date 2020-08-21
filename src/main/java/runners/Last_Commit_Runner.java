@@ -6,8 +6,8 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1583_PDP_Regular_Price.feature",
-			"--glue", "automation.library.api.stepDefination", 
+			"classpath:ADOBE/BVT/CT_BVT.feature",
+			"--glue", "automation.library.stepDefinitions", 
 			"--plugin", "pretty",
 			"--tags", "@SmokeTest",
 			"--plugin", "json:cucumber.json",

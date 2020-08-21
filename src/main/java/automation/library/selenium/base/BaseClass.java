@@ -37,8 +37,6 @@ public class BaseClass {
 	protected PageObjectManager pageObjectManager;
 	protected DriverFactory driverFactory;
 	protected ConfigFileReader configFileReader;
-	protected PDP_Page pdpPage;
-	protected Sign_Up_Page signUpPage;
 	protected WebDriver driver;
 	
 

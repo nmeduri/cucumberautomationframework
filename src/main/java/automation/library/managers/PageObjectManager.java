@@ -19,10 +19,17 @@ public class PageObjectManager {
 	private Data_Map dataMap;
 	private HomePageLocator homePageLocator;
 	private PDP_PageLocator padpPageLocator;
+	private PageObject pageObject;
 
 	public PageObjectManager() {
 
 		
+
+	}
+	
+	public PageObject getPageObject(WebDriver driver) throws Exception {
+
+		return (pageObject == null) ? pageObject = new PageObject(driver) : pageObject;
 
 	}
 

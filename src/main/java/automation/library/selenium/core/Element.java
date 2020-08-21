@@ -39,10 +39,15 @@ public class Element {
 		this.element().click();
 		return this;
 	}
+	
+	public boolean display() {
+		boolean value = this.element.isDisplayed();
+		return value;
+	}
 
-	public Element getText() {
-		this.element.getText();
-		return this;
+	public String  getText() {
+		String value = element.getText();
+		return value;
 	}
 
 	public Element(WebDriver driver, ExpectedCondition<?> exp, int... delay) throws Exception {
