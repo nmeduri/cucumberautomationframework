@@ -101,6 +101,7 @@ public class PDPPageSteps extends BaseClass {
 	
 	@Then("the product title is displayed on the product")
 	public void the_product_title_is_displayed_on_the_product() throws Exception {
+
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).dispalyProductTitle();
 	}
 	
@@ -132,6 +133,11 @@ public class PDPPageSteps extends BaseClass {
 	@Then("the return policy opens in new tab")
 	public void the_return_policy_opens_in_new_tab() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyReturnPolicyInNewTab();
+	}
+	
+	@Then("the product code is displayed in buy box")
+	public void the_product_code_is_displayed_in_buy_box() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayProductCode();
 	}
 
 }

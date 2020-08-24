@@ -1,5 +1,6 @@
 package automation.library.selenium.exec.driver.factory;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -55,7 +58,11 @@ public class DriverFactory {
 
 		switch (configFileReader.getServerType()) {
 		case "saucelabs":
-			Log.message("sauce labs", true);
+			DesiredCapabilities caps = DesiredCapabilities.chrome();
+	        caps.setCapability("platform", "Windows 10");
+	        caps.setCapability("version", "latest");
+	        caps.setCapability("screenResolution", "800x600");
+            driver = new RemoteWebDriver(new URL("https://ctc_user2:8b6108d7-3479-4005-b1d9-9572f895093b@ondemand.us-west-1.saucelabs.com:443/wd/hub"), caps);
 			break;
 		case "headless":
 			switch (String) {

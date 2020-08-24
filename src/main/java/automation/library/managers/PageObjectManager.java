@@ -6,8 +6,10 @@ import automation.library.common.Property;
 import automation.library.datatable.Data_Map;
 import automation.library.locator.HomePageLocator;
 import automation.library.locator.PDP_PageLocator;
+import automation.library.locator.PLP_PageLocator;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.PDP_Page;
+import automation.library.pageObjects.PLP_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.selenium.core.PageObject;
 
@@ -18,8 +20,10 @@ public class PageObjectManager {
 	private Sign_Up_Page signUpPage;
 	private Data_Map dataMap;
 	private HomePageLocator homePageLocator;
-	private PDP_PageLocator padpPageLocator;
+	private PDP_PageLocator pdpPageLocator;
 	private PageObject pageObject;
+	private PLP_Page plpPage;
+	private PLP_PageLocator plpPageLocator;
 
 	public PageObjectManager() {
 
@@ -59,13 +63,25 @@ public class PageObjectManager {
 	
 	public PDP_PageLocator getPDPPageLocator() {
 		
-		return (padpPageLocator == null) ? padpPageLocator = new PDP_PageLocator() : padpPageLocator;
+		return (pdpPageLocator == null) ? pdpPageLocator = new PDP_PageLocator() : pdpPageLocator;
 		
 	}
 	
 	public Sign_Up_Page getSignUpPage(WebDriver driver) {
 		
 		return (signUpPage == null) ? signUpPage = new Sign_Up_Page(driver) : signUpPage;
+		
+	}
+	
+	public PLP_Page getPLPPage(WebDriver driver) throws Exception {
+		
+		return (plpPage == null) ? plpPage = new PLP_Page(driver) : plpPage;
+		
+	}
+	
+	public PLP_PageLocator getPLPLocatorPage() {
+		
+		return (plpPageLocator == null) ? plpPageLocator = new PLP_PageLocator() : plpPageLocator;
 		
 	}
 

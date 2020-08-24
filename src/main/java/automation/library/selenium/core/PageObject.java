@@ -2,6 +2,7 @@ package automation.library.selenium.core;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -18,7 +19,10 @@ import io.restassured.response.Response;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+
 import static automation.library.enums.Locator.getLocator;
+import static org.testng.Assert.fail;
 
 public class PageObject {
 
@@ -38,7 +42,7 @@ public class PageObject {
 	}
 
 	public Element $(By by) throws Exception {
-		return findElement(by);     
+		return findElement(by);
 	}
 
 	public Element findElement(By by) throws Exception {
@@ -60,13 +64,19 @@ public class PageObject {
 		return el;
 
 	}
-	
+
+	public WebElement $findElement(By by) throws Exception {
+
+		WebElement element = driver.findElement(by);
+		return element;
+	}
+
 	public List<Element> $$(Loc type, String locator) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
-        List<WebElement> els = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getLocator(type, locator)));
-        List<Element> elements = setElements(els);
-        return elements;
-    }
+		WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
+		List<WebElement> els = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getLocator(type, locator)));
+		List<Element> elements = setElements(els);
+		return elements;
+	}
 
 	public Element $(ExpectedCondition<?> exp, int... delay) throws Exception {
 
@@ -105,21 +115,11 @@ public class PageObject {
 		}
 		return list;
 	}
-	
+
 	public String $getText(Element element) {
 
 		return element.getText();
 
-	}
-	
-	public boolean $display(Element element) {
-		
-		return element.display();
-		
-	}
-	
-	public Element $click(Element element) {
-		return element.click();
 	}
 
 	public String $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
@@ -127,14 +127,59 @@ public class PageObject {
 		Element ele = new Element(driver, exp, delay);
 		return ele.getText();
 	}
-	
+
+	public boolean $display(Element element) {
+
+		return element.display();
+
+	}
+
+	public boolean $display(ExpectedCondition<WebElement> exp, int delay) throws Exception {
+
+		Element ele = new Element(driver, exp, delay);
+		return ele.display();
+	}
+
+	public void scrollDown(ExpectedCondition<WebElement> exp, int delay) throws Exception {
+
+		Element ele = new Element(driver, exp, delay);
+		ele.scrollDown();
+
+	}
+
+	public void scrollDown(By by, int delay) throws Exception {
+
+		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), delay);
+		ele.scrollDown();
+	}
+
+	public void performDropDown(By by, String type, String value) throws Exception {
+		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), getWaitDuration());
+		switch (type) {
+		case "selectByText":
+			ele.clickable().dropdown().selectByVisibleText(value);
+			break;
+		case "selectByIndex":
+			ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			break;
+		case "selectByValue":
+			ele.clickable().dropdown().selectByValue(value);
+			break;
+		}
+
+	}
+
+	public Element $click(Element element) {
+		return element.click();
+	}
+
 	public String getTitle() {
 		String value = driver.getTitle();
 		return value;
 	}
 
 	public int getWaitDuration() {
-		final int defaultWait = 10;
+		final int defaultWait = 40;
 		int duration;
 		try {
 			duration = property.getProperties(Constant.SELENIUM_CONFIGURATION).getInt("defaultWait");
@@ -148,17 +193,30 @@ public class PageObject {
 		return duration;
 	}
 
-	public void switchWindow(String parent) {
-		Log.debug("parent window handle:" + parent);
+	public void switchWindow() {
+		
+		String parentWindow = driver.getWindowHandle();
 		switching: while (true) {
 			for (String handle : getDriver().getWindowHandles()) {
-				if (!handle.equals(parent)) {
-					Log.debug("switching to window handle:" + handle);
+				if (!handle.equals(parentWindow)) {
+					Log.message("switching to window handle:" + handle, true);
 					getDriver().switchTo().window(handle);
 					break switching;
+				}else {
+					
 				}
 			}
 		}
+	}
+
+	public void switchOnChildWindow() {
+         
+		Set<String> allWindowHandles = PageObject.getDriver().getWindowHandles();
+		for (String handle : allWindowHandles) {
+			Log.message("Window Handles:- " + handle, true);
+			PageObject.getDriver().switchTo().window(handle);
+		}
+
 	}
 
 	public static void verifyResponseValue(List<String> expectedValue, List<String> actualValue) {
@@ -174,64 +232,63 @@ public class PageObject {
 	public static void verifySectionResponseNotNull(List<String> value) {
 
 		for (int i = 0; i < value.size(); i++) {
-			
+
 			Assert.assertNotEquals(null, value.get(i));
 
 		}
 
 	}
-	
+
 	public static void verifySectionValueResponseNull(List<String> value) {
-		
+
 		Assert.assertTrue(value.contains(null));
-		
+
 	}
 
 	public static void verifySectionValueResponseNotNull(List<String> value) {
 
 		Assert.assertFalse(value.contains(null));
-		
+
 	}
-	
+
 	public static void verifyExpectedResponse(List<String> expectedValue, String actualValue) {
 		Assert.assertTrue(expectedValue.contains(actualValue));
 	}
-	
 
 	public static void verifyExpectedFalseResponse(List<String> expectedValue, String actualValue) {
 		Assert.assertFalse(expectedValue.contains(actualValue));
 	}
-	
+
 	public static void verifyLanguageInList(String exepectedValue, String actualValue) {
 		Assert.assertTrue(exepectedValue.contains(actualValue));
 	}
-	
+
 	public static void notNullAttributeInResponse(String actualValue) {
 		Assert.assertNotEquals(null, actualValue);
 	}
-	
+
 	public static void notNullAttributeInResponseInList(List<String> actualValue) {
 		Assert.assertNotEquals(null, actualValue);
 	}
-	
+
 	public static void notNullAttributeInResponseInListInteger(List<Integer> actualValue) {
 		Assert.assertNotEquals(null, actualValue);
 	}
-	
+
 	public static void verifyExpectedResponseWithoutList(String exepectedValue, String actualValue) {
 		Assert.assertEquals(exepectedValue, actualValue);
 	}
-	
+
 	public static void verifyNotExpectedValue(String exepectedValue, String actualValue) {
 		Assert.assertNotEquals(exepectedValue, actualValue);
 	}
-	
+
 	public static void vrifyNotNullObject(List<String> value) {
 		Assert.assertNotNull(value);
 	}
-	
+
 	public static void verifyMultipleValue(List<String> request) {
-		
+
 		int size = request.size();
 		Assert.assertTrue(size > 1);
 	}

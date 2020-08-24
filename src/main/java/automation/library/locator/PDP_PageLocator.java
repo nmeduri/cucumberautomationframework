@@ -15,6 +15,7 @@ public class PDP_PageLocator {
 	String returnPolicyUnderResource = Property.getProperty(Constant.OR_FILE, "returnPolicyUnderResource");
 	String returnPolicyDescription = Property.getProperty(Constant.OR_FILE, "returnPolicyDescription");
 	String returnPolicyLink = Property.getProperty(Constant.OR_FILE, "returnPolicyLink");
+	String productCode = Property.getProperty(Constant.OR_FILE,  "productCode");
 	
 	
 	public String get_Add_To_Cart_Button() {
@@ -62,5 +63,8 @@ public class PDP_PageLocator {
 	public String get_Return_Policy_Link() {
 		return returnPolicyLink;
 	}
-
+	
+	public String get_Product_Code() {
+		return productCode;
+	}
 }

@@ -64,6 +64,16 @@ public class ConfigFileReader {
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
 	
+	public String getPLPUrl() {
+		String url = Property.getProperty(Constant.DATA_FILE, "plpUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+	}
+	
+	
+	
 	public String getSignUpUrl() {
 		String url = Property.getProperty(Constant.DATA_FILE, "signUpUrl");
 		if (url != null)
