@@ -36,7 +36,7 @@ public class PDPPageSteps extends BaseClass {
 	
 	@Given("pdp url is available") 
 	public void pdp_url_is_available() throws Exception {
-		driver = driverFactory.getDriver(configFileReader.getWebBrowser());
+		driver = driverFactory.getDriver(configFileReader.getBrowser());
 		pageObjectManager = new PageObjectManager();
 		testContext.getPageObjectManager().getPDPPage(driver).navigateTo_PDP_Page();
 	}

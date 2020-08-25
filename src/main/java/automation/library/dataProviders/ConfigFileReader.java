@@ -105,18 +105,6 @@ public class ConfigFileReader {
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 		
 	}
-	
-	
-/*	public String getApplicationUrl() {
-		String environment = System.getenv("environment");
-		if (environment.equalsIgnoreCase("dev"))
-			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "devUrl");
-		else if(environment.equalsIgnoreCase("qa"))
-			return Property.getProperty(Constant.SELENIUM_CONFIGURATION, "qaUrl");
-		else
-			throw new RuntimeException("url not specified in the Configuration.properties file.");
-		
-	}   */
 
 	public String getBrowser() {
 		String browserName = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "browser");
@@ -130,6 +118,8 @@ public class ConfigFileReader {
 		else if (browserName.equals("headless"))
 			return browserName;
 		else if (browserName.equals("headless mobile"))
+			return browserName;
+		else if (browserName.equalsIgnoreCase("mobile-chrome"))
 			return browserName;
 		else
 			throw new RuntimeException(

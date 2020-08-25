@@ -30,6 +30,8 @@ public class DriverFactory {
 	Property prop;
 	private static DriverFactory instance = new DriverFactory();
 	ConfigFileReader configFileReader;
+	public static String USERNAME = System.getenv("SAUCE_USERNAME");
+	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
 
 	public DriverFactory() {
 		prop = new Property();
@@ -56,13 +58,19 @@ public class DriverFactory {
 
 	public WebDriver getDriver(String String) throws Exception {
 
+		String URL = "https://" + USERNAME + ":" + API_KEY + "b@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 		switch (configFileReader.getServerType()) {
 		case "saucelabs":
-			DesiredCapabilities caps = DesiredCapabilities.chrome();
-	        caps.setCapability("platform", "Windows 10");
-	        caps.setCapability("version", "latest");
-	        caps.setCapability("screenResolution", "800x600");
-            driver = new RemoteWebDriver(new URL("https://ctc_user2:8b6108d7-3479-4005-b1d9-9572f895093b@ondemand.us-west-1.saucelabs.com:443/wd/hub"), caps);
+			switch (String) {
+			case "chrome":
+				Log.message("Sauce Lab Web" + String, true);
+				DesiredCapabilities caps = DesiredCapabilities.chrome();
+				caps.setCapability("platform", "Windows 10");
+				caps.setCapability("version", "latest");
+				caps.setCapability("screenResolution", "800x600");
+				driver = new RemoteWebDriver(new URL(URL), caps);
+				break;
+			}
 			break;
 		case "headless":
 			switch (String) {
@@ -81,6 +89,7 @@ public class DriverFactory {
 				driver = new PhantomJSDriver();
 				break;
 			case "mobile-chrome":
+				Log.message("Headless Mobile:- " + String, true);
 				WebDriverManager.chromedriver().setup();
 				Map<String, String> mobileEmulation = new HashMap<>();
 				mobileEmulation.put("deviceName", "Nexus 5");
@@ -88,7 +97,7 @@ public class DriverFactory {
 				chromeOptions.addArguments("headless");
 				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 				driver = new ChromeDriver(chromeOptions);
-				break;	
+				break;
 			}
 			break;
 		case "without headless":
@@ -108,6 +117,7 @@ public class DriverFactory {
 				driver.manage().window().maximize();
 				break;
 			case "mobile-chrome":
+				Log.message("Mobile:- " + String, true);
 				WebDriverManager.chromedriver().setup();
 				Map<String, String> mobileEmulation = new HashMap<>();
 				mobileEmulation.put("deviceName", "Nexus 5");
