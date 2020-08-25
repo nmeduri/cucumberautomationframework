@@ -58,7 +58,9 @@ public class DriverFactory {
 
 	public WebDriver getDriver(String String) throws Exception {
 
-		String URL = "https://" + USERNAME + ":" + API_KEY + "b@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+
+		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+
 		switch (configFileReader.getServerType()) {
 		case "saucelabs":
 			switch (String) {

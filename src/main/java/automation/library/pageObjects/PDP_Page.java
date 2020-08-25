@@ -96,7 +96,7 @@ public class PDP_Page extends PageObject {
 	public void displaySpecificationsLessThan8OnTheDesktop() {
 		List<Element> specification = $$(Loc.XPATH,
 				testContext.getPageObjectManager().getPDPPageLocator().get_Specifications_In_Tabular_Format());
-		Assert.assertTrue(specification.size() < 8);
+		Assert.assertTrue(specification.size() <= 8);
 
 	}
 

@@ -7,8 +7,6 @@ import java.util.stream.Stream;
 public final class Adobe_BVT_Runner {
 	
 	private static String[] defaultOptions = {
-
-
 			"classpath:Adobe/BVT/", "--glue", "automation.library.stepDefinitions", 
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json", 

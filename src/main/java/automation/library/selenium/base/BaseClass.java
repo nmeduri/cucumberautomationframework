@@ -13,8 +13,6 @@ import automation.library.api.endpoint.HYB_API_FR_CA_End_Point;
 import automation.library.api.endpoint.HYB_API_Wishlist_End_Point;
 import automation.library.api.endpoint.HYB_Api_Field_Default_End_Point;
 import automation.library.api.endpoint.HYB_Api_Product_End_Point;
-import automation.library.api.endpoint.ProductInfoENEndPoint;
-import automation.library.api.endpoint.ProductInfoFREndPoint;
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.managers.PageObjectManager;

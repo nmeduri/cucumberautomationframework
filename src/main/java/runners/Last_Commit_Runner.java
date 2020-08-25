@@ -6,10 +6,10 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
 
-			"classpath:ADOBE/BVT/CT_BVT.feature",
-			"--glue", "automation.library.stepDefinitions", 
+			
+			"classpath:SAP/Regression/OCCP_1561_PLP_Breadcrumb.feature","classpath:SAP/Regression/OCCP_1576_Product_Badges.feature",
+			"--glue", "automation.library.api.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@SmokeTest",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",

@@ -3,7 +3,6 @@ import org.junit.Assert;
 
 import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
-import automation.library.api.pojo.response.Product_Info_EN_BVT_Response;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
@@ -21,8 +20,6 @@ import test.assertion.AssertionTest;
 public class Product_Info_EN_BVTStep extends BaseStep {
 
 
-
-	IRestResponse<Product_Info_EN_BVT_Response> productInfoenBVTResponse;
 	RequestSpecification request;
 	
 
@@ -55,7 +52,6 @@ public class Product_Info_EN_BVTStep extends BaseStep {
 	@Then("user gets the Product Info EN list.")
 	public void user_gets_the_product_info_en_list() {
 		
-
 		Log.message("Status Code:- " + response.getStatusCode(), true);		
 		Assert.assertEquals(200, response.getStatusCode());
 
