@@ -2,14 +2,16 @@ package runners;
 
 import java.util.stream.Stream;
 
+import automation.library.logdetail.Log;
+
 public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
-
+             
 			
-			"classpath:SAP/Regression/OCCP_1561_PLP_Breadcrumb.feature","classpath:SAP/Regression/OCCP_1576_Product_Badges.feature",
-			"--glue", "automation.library.api.stepDefination", 
+			"--glue", "automation.library.stepDefination",
 			"--plugin", "pretty",
+			"--tags", "@SmokeTest",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",

@@ -20,7 +20,7 @@ Feature: OCCP-2340 Wishlist (Authenticated User)
         When user add base proudct which has variant to the wishlist
         Then user should not able to the base product which has variant to the wishlist
         
-        @SmokeTest
+        @RegressionTest
         Scenario: TC-1715 HYB:OCCP-2344:OCCP-2340: Add Wishlist for authenticated user - add variant product to wishlist
         Given access token is available
         When user hit add variant product api for authenticated user

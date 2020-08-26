@@ -1,4 +1,4 @@
-Feature: OCCP-1618  PDP: Specifications
+Feature: OCCP-1618  PDP Media Gallery Videos
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-1618
        

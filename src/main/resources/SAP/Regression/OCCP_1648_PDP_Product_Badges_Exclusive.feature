@@ -1,6 +1,6 @@
 Feature: OCCP-1648 PDP: Product Badges (Exclusive)
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-1579
+	Description: To test the HYBRIS Test Cases for the story OCCP-1648
        
 
         @RegressionTest

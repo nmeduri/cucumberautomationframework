@@ -1,6 +1,6 @@
-Feature: OCCP-869  PDP: Specifications
+Feature: OCCP_1580_PDP_Breadcrumb.feature
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-869
+	Description: To test the HYBRIS Test Cases for the story OCCP-1580
        
 
         @RegressionTest

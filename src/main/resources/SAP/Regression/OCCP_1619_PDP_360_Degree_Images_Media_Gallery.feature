@@ -66,7 +66,7 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         When user hits the GET api without locale
         Then response JSON should have section medias with externalURL and its value
         
-        @SmokeTest
+        @RegressionTest
         Scenario: TC-1472 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - externalURL is null
         Given occ api is available
         When user hits the GET api without locale

@@ -109,7 +109,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         When user hit add base product api for guid
         Then should return 201 created
         
-        @SmokeTest
+        @RegressionTest
         Scenario: TC-1621 HYB:OCCP-3003:OCCP-2999: Verify getWishlist OCC API- json for availableActions container 
         Given occ api is available
         When user hits add wishlist api

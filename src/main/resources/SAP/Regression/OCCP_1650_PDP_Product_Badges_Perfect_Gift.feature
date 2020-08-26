@@ -1,6 +1,6 @@
 Feature: OCCP-1650 PDP: Product Badges PERFECTGIFT
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-1579
+	Description: To test the HYBRIS Test Cases for the story OCCP-1650
        
 
         @RegressionTest

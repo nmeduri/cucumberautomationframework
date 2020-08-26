@@ -1,6 +1,6 @@
 Feature: OCCP-1574 PDP: Select Variants
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-1579
+	Description: To test the HYBRIS Test Cases for the story OCCP-1574
        
 
         @RegressionTest

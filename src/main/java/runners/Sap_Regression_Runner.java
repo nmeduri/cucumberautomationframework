@@ -7,9 +7,8 @@ public final class Sap_Regression_Runner {
 	private static String[] defaultOptions = {
 
 			"classpath:SAP/Regression/", 
-			"--glue", "automation.library.api.stepDefination", 
+			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@RegressionTest",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",

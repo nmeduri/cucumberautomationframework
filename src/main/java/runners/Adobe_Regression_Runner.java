@@ -11,7 +11,7 @@ public final class Adobe_Regression_Runner {
 
 
 			"classpath:Adobe/Regression/", 
-			"--glue", "automation.library.stepDefinitions", 
+			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,

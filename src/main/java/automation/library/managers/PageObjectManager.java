@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 
 import automation.library.common.Property;
 import automation.library.datatable.Data_Map;
+import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.HomePageLocator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
+import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
@@ -24,6 +26,8 @@ public class PageObjectManager {
 	private PageObject pageObject;
 	private PLP_Page plpPage;
 	private PLP_PageLocator plpPageLocator;
+	private Create_Your_Triangle_ID_Page_Locator createYourTriangleIDPageLocator;
+	private Create_Your_Triangle_ID_Page createYourTrianglePage;
 
 	public PageObjectManager() {
 
@@ -82,6 +86,18 @@ public class PageObjectManager {
 	public PLP_PageLocator getPLPLocatorPage() {
 		
 		return (plpPageLocator == null) ? plpPageLocator = new PLP_PageLocator() : plpPageLocator;
+		
+	}
+	
+	public Create_Your_Triangle_ID_Page_Locator getCreateTriangleIDPageLocatorPage() {
+		
+		return (createYourTriangleIDPageLocator == null) ? createYourTriangleIDPageLocator = new Create_Your_Triangle_ID_Page_Locator() : createYourTriangleIDPageLocator;
+		
+	}
+	
+	public Create_Your_Triangle_ID_Page getCreateTirangleIDPage(WebDriver driver) {
+		
+		return (createYourTrianglePage == null) ? createYourTrianglePage = new Create_Your_Triangle_ID_Page(driver) : createYourTrianglePage;
 		
 	}
 

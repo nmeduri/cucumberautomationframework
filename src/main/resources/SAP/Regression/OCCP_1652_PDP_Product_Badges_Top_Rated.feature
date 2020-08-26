@@ -1,6 +1,6 @@
 Feature: OCCP-1652 PDP: Product Badges (TOP RATED)
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-1579
+	Description: To test the HYBRIS Test Cases for the story OCCP-1652
        
 
         @RegressionTest
