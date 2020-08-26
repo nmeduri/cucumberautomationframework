@@ -18,6 +18,11 @@ steps:
 # only run if there are items
 - ${{ if parameters.items[0] }}:
 
+  # add sauce-labs credentials
+  - task: SODMain@0
+    inputs:
+      connectedServiceName: 'Sauce Labs ODP'
+
   # loop through items
   - ${{ each item in parameters.items }}:
 
