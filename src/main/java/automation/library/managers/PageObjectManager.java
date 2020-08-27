@@ -5,13 +5,21 @@ import org.openqa.selenium.WebDriver;
 import automation.library.common.Property;
 import automation.library.datatable.Data_Map;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
+import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
+import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.HomePageLocator;
+import automation.library.locator.Mailinator_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
+import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
+import automation.library.pageObjects.Email_Sent_Confirmation_Page;
+import automation.library.pageObjects.Get_Personalized_Offers_Page;
 import automation.library.pageObjects.HomePage;
+import automation.library.pageObjects.Mailinator_Page;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
+import automation.library.pageObjects.Registration_Email_Verification_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.selenium.core.PageObject;
 
@@ -28,7 +36,15 @@ public class PageObjectManager {
 	private PLP_PageLocator plpPageLocator;
 	private Create_Your_Triangle_ID_Page_Locator createYourTriangleIDPageLocator;
 	private Create_Your_Triangle_ID_Page createYourTrianglePage;
-
+	private Registration_Email_Verification_Page registrationEmailVerificationPage;
+	private Registration_Email_Verification_Locator registrationEmailVerificationLocator;
+	private Get_Personalized_Offers_Page getPersonalizedOffersPage;
+	private Get_Personalized_Offers_Page_Locator getPersonalizedOffersLocator;
+	private Email_Sent_Confirmation_Page getEmailSentConfirmationPage;
+	private Email_Sent_Confirmation_Page_Locator getEmailSentConfirmationLocator;
+	private Mailinator_Page getMailinatorPage;
+	private Mailinator_Page_Locator getMailinatorPageLocator;
+	
 	public PageObjectManager() {
 
 		
@@ -98,6 +114,54 @@ public class PageObjectManager {
 	public Create_Your_Triangle_ID_Page getCreateTirangleIDPage(WebDriver driver) {
 		
 		return (createYourTrianglePage == null) ? createYourTrianglePage = new Create_Your_Triangle_ID_Page(driver) : createYourTrianglePage;
+		
+	}
+	
+	public Registration_Email_Verification_Page getRegistrationEmailVerificationPage(WebDriver driver) {
+		
+		return (registrationEmailVerificationPage == null) ? registrationEmailVerificationPage = new Registration_Email_Verification_Page(driver) : registrationEmailVerificationPage;
+		
+	}
+	
+	public Registration_Email_Verification_Locator getRegistrationEmailVerificationLocator() {
+		
+		return (registrationEmailVerificationLocator == null) ? registrationEmailVerificationLocator = new Registration_Email_Verification_Locator() : registrationEmailVerificationLocator;
+		
+	}
+	
+   public Get_Personalized_Offers_Page getPersonalizedOffersPage(WebDriver driver) {
+		
+		return (getPersonalizedOffersPage == null) ? getPersonalizedOffersPage = new Get_Personalized_Offers_Page(driver) : getPersonalizedOffersPage;
+		
+	}
+	
+	public Get_Personalized_Offers_Page_Locator getPersonalizedOffersLocator() {
+		
+		return (getPersonalizedOffersLocator == null) ? getPersonalizedOffersLocator = new Get_Personalized_Offers_Page_Locator() : getPersonalizedOffersLocator;
+		
+	}
+	
+	public Email_Sent_Confirmation_Page getEmailSentConfirmationPage(WebDriver driver) {
+		
+		return (getEmailSentConfirmationPage == null) ? getEmailSentConfirmationPage = new Email_Sent_Confirmation_Page(driver) : getEmailSentConfirmationPage;
+		
+	}
+	
+	public Email_Sent_Confirmation_Page_Locator getEmailSentConfirmationLocator() {
+		
+		return (getEmailSentConfirmationLocator == null) ? getEmailSentConfirmationLocator = new Email_Sent_Confirmation_Page_Locator() : getEmailSentConfirmationLocator;
+		
+	}
+	
+	public Mailinator_Page getMailinatorPage(WebDriver driver) {
+		
+		return (getMailinatorPage == null) ? getMailinatorPage = new Mailinator_Page(driver) : getMailinatorPage;
+		
+	}
+	
+	public Mailinator_Page_Locator getMailinatorPageLocator() {
+		
+		return (getMailinatorPageLocator == null) ? getMailinatorPageLocator = new Mailinator_Page_Locator() : getMailinatorPageLocator;
 		
 	}
 

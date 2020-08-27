@@ -57,7 +57,7 @@ public class DriverFactory {
 	}
 
 	public WebDriver getDriver(String String) throws Exception {
-
+		ChromeOptions options = new ChromeOptions();
 
 		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 
@@ -72,14 +72,37 @@ public class DriverFactory {
 				caps.setCapability("screenResolution", "800x600");
 				driver = new RemoteWebDriver(new URL(URL), caps);
 				break;
-			}
+			
+		case "android-emulator": 
+			Log.message("Sauce Lab Web" + String, true);
+			DesiredCapabilities caps1 = DesiredCapabilities.android();
+			caps1.setCapability("appiumVersion", "1.9.1");
+			caps1.setCapability("deviceName","Android Emulator");
+			caps1.setCapability("deviceOrientation", "portrait");
+			caps1.setCapability("browserName", "Chrome");
+			caps1.setCapability("platformVersion", "8.0");
+			caps1.setCapability("platformName","Android");
+			driver = new RemoteWebDriver(new URL(URL), caps1);
+			break;
+			
+		case "mobile-chrome": 
+			Log.message("Sauce Lab Web" + String, true);
+			DesiredCapabilities caps11 = DesiredCapabilities.chrome();
+		    caps11.setCapability("testobject_platform_name", "android");
+		    caps11.setCapability("browserName","Chrome");
+		    caps11.setCapability("platformName", "android");
+		    caps11.setCapability("version","");
+		    caps11.setCapability("deviceName","Samsung_Galaxy_S5_real");
+		    caps11.setCapability("platform","platform");
+		    driver = new RemoteWebDriver(new URL(URL), caps11);
+			break;	
+		}
 			break;
 		case "headless":
 			switch (String) {
 			case "chrome":
 				Log.message("Head less", true);
 				WebDriverManager.chromedriver().setup();
-				ChromeOptions options = new ChromeOptions();
 				options.addArguments("headless");
 				options.addArguments("window-size=1200x600");
 				driver = new ChromeDriver(options);
@@ -100,6 +123,14 @@ public class DriverFactory {
 				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 				driver = new ChromeDriver(chromeOptions);
 				break;
+			case "chrome - widescreen":
+				Log.message("Head less", true);
+				WebDriverManager.chromedriver().setup();
+				options.addArguments("headless");
+				options.addArguments("window-size=1200x600");
+				driver = new ChromeDriver(options);
+				driver.manage().window().maximize();
+				break;		
 			}
 			break;
 		case "without headless":
@@ -127,6 +158,13 @@ public class DriverFactory {
 				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 				driver = new ChromeDriver(chromeOptions);
 				break;
+			case "chrome - widescreen":
+				Log.message("chrome - Wide Screen", true);
+				WebDriverManager.chromedriver().setup();
+				options.addArguments("window-size=2560x3500");
+				driver = new ChromeDriver(options);
+				driver.manage().window().maximize();
+				break;	
 			}
 			break;
 

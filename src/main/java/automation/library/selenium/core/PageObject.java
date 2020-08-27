@@ -133,12 +133,26 @@ public class PageObject {
 		return element.display();
 
 	}
+	
+	public void $enterData(Element element, String data) {
+		
+		element.sendKeys(data);
+		
+	}
 
 	public boolean $display(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);
 		return ele.display();
 	}
+	
+	public void $click(ExpectedCondition<WebElement> exp, int delay) throws Exception {
+
+		Element ele = new Element(driver, exp, delay);
+		ele.click();
+	}
+	
+	
 
 	public void scrollDown(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 

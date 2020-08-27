@@ -8,10 +8,10 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
              
-			
+			"classpath:Adobe/Regression/OCCP_1673_Account_Triangle_ID_Registration_Verification_Email_Confirmation.feature",
 			"--glue", "automation.library.stepDefination",
-			"--plugin", "pretty",
 			"--tags", "@SmokeTest",
+			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",

@@ -36,6 +36,7 @@ public class BaseClass {
 	protected DriverFactory driverFactory;
 	protected ConfigFileReader configFileReader;
 	protected WebDriver driver;
+	public static String emailVaue;
 	
 
 

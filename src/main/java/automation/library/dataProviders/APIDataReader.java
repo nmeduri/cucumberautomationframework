@@ -2,6 +2,8 @@ package automation.library.dataProviders;
 
 import java.util.Properties;
 
+import javax.management.RuntimeErrorException;
+
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 
@@ -359,6 +361,14 @@ public class APIDataReader {
 			return getProduct;
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	
+	public String get_Password_Detail() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "passwordData");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("Password Data not specified in the Data file.");
 	}
 	
 

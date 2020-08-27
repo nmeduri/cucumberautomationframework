@@ -121,6 +121,8 @@ public class ConfigFileReader {
 			return browserName;
 		else if (browserName.equalsIgnoreCase("mobile-chrome"))
 			return browserName;
+		else if(browserName.equalsIgnoreCase("wideScreenView"))
+			return browserName;
 		else
 			throw new RuntimeException(
 					"Browser Name Key value in Configuration.properties is not matched : " + browserName);
@@ -134,6 +136,11 @@ public class ConfigFileReader {
 	public String getMobileView() {
 		String mobileView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "mobileView");
 		return mobileView;
+	}
+	
+	public String getWideViewChrome() {
+		String wideView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "wideScreenView");
+		return wideView;
 	}
 	
 	public String getServerType() {

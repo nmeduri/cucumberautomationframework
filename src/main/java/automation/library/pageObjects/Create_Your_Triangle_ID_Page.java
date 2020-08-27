@@ -41,5 +41,29 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	public void display_Create_Your_Triangle_Header() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header()));
 	}
+	
+	public void enter_Email(String data) throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
+	}
+	
+	public void  enter_Password() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Password_Field()), FileReaderManager.getInstance().getDataReader().get_Password_Detail());
+	}
+	
+	public void enter_Retype_Password() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Retype_Password_Field()), FileReaderManager.getInstance().getDataReader().get_Retype_Password_Detail());
+	}
+	
+	public void enter_Incorrect_Retype_Password() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Retype_Password_Field()), FileReaderManager.getInstance().getDataReader().get_Incorrect_Retype_Password_Detail());
+	}
+	
+	public void display_Error_Message_Password_Do_Not_Match() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Inline_Error_Message_Password_Do_Not_Match()));
+	}
+	
+	public void click_Create_Button() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Button()));
+	}
 
 }
