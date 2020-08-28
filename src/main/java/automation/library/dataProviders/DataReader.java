@@ -58,5 +58,13 @@ public class DataReader {
 			throw new RuntimeException("Mailinator url not specified in the Data file.");
 	}
 	
+	public String get_Invalid_Email() {
+		String getEmail = Property.getProperty(Constant.DATA_FILE, "invalidEmailData");
+		if(getEmail != null)
+			return getEmail;
+		else
+			throw new RuntimeException("Invalid EmailData Data not specified in the Data file.");
+	}
+	
 
 }

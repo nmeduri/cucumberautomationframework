@@ -139,6 +139,10 @@ public class PageObject {
 		element.sendKeys(data);
 		
 	}
+	
+	public void $clearData(Element element) {
+		element.clear();
+	}
 
 	public boolean $display(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 

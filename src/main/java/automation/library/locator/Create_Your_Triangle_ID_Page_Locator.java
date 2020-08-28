@@ -13,6 +13,8 @@ public class Create_Your_Triangle_ID_Page_Locator {
 	String inlineErrorMessagePasswordDoNotMatch = Property.getProperty(Constant.OR_FILE, "inlineErrorMessagePasswordDoNotMatch");
 	String createButton = Property.getProperty(Constant.OR_FILE, "createButton");
 	String nextButton = Property.getProperty(Constant.OR_FILE, "nextButton");
+	String errorMessageInvalidEmail = Property.getProperty(Constant.OR_FILE, "errorMessageInvalidEmail");
+	String thisFieldIsRequired = Property.getProperty(Constant.OR_FILE, "thisFieldIsRequired");
 	
 	
 	public String get_Create_Your_Triangle_ID_Header() {
@@ -52,6 +54,18 @@ public class Create_Your_Triangle_ID_Page_Locator {
 	public String get_Next_Button() {
 		
 		return nextButton;
+		
+	}
+	
+	public String get_Error_Message_Invalid_Email() {
+		
+		return errorMessageInvalidEmail;
+		
+	}
+	
+	public String get_This_Field_Is_Required() {
+		
+		return thisFieldIsRequired;
 		
 	}
 }

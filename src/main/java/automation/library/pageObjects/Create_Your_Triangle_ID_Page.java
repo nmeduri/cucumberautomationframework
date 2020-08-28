@@ -43,6 +43,7 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	}
 	
 	public void enter_Email(String data) throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
 	}
 	
@@ -64,6 +65,14 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	public void click_Create_Button() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Button()));
+	}
+	
+	public void display_Error_Message_Invalid_Email() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Error_Message_Invalid_Email()));
+	}
+	
+	public void display_This_Field_Is_Required() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_This_Field_Is_Required()));
 	}
 
 }

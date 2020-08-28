@@ -138,6 +138,11 @@ public class ConfigFileReader {
 		return mobileView;
 	}
 	
+	public String getHeadlessMobile() {
+		String headlessMobile = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "headlessMobile");
+		return headlessMobile;
+	}
+	
 	public String getWideViewChrome() {
 		String wideView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "wideScreenView");
 		return wideView;

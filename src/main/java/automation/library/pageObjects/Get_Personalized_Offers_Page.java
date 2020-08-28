@@ -34,5 +34,37 @@ public class Get_Personalized_Offers_Page extends PageObject {
 	public void click_Next_Button() throws Exception {
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Next_Button())), 60);
 	}
+	
+	public void display_Header_Get_Personalized_Offers() throws Exception{
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Header_Get_Personalized_Offers_Page())), 60);
+	}
+	
+	public void display_CASL_Checkbox() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_CASL_Checkbox()));
+	}
+	
+	public void display_Opt_In() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Opt_In()));
+	}
+	
+	public void display_Email_Me_About_Offers_And_Sales() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Email_Me_About_Offers_And_Sales()));
+	}
+	
+	public void click_Tool_Tip_Email_Me_About_Offers_And_Sales() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Opt_In()));
+	}
+	
+	public void display_Message_Email_Me_About_Offers_And_Sales() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Message_Email_Me_About_Offers_And_Sales()));
+	}
+	
+	public void click_Tool_Tip_Close_Button() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Tool_Tip_Close_Button()));
+	}
+	
+	public void not_Display_Tool_Tip_Close_Button() throws Exception {
+		Assert.assertFalse($display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Message_Email_Me_About_Offers_And_Sales())));
+	}
 
 }

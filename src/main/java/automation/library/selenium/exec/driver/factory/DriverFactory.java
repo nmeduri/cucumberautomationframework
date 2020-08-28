@@ -96,6 +96,14 @@ public class DriverFactory {
 		    caps11.setCapability("platform","platform");
 		    driver = new RemoteWebDriver(new URL(URL), caps11);
 			break;	
+		case "chrome - widescreen":
+			DesiredCapabilities caps12 = DesiredCapabilities.chrome();
+			Log.message("Sauce Lab Web" + String, true);
+			caps12.setCapability("platform", "Windows 10");
+			caps12.setCapability("version", "latest");
+			caps12.setCapability("screenResolution", "1280x1024");
+			driver = new RemoteWebDriver(new URL(URL), caps12);
+			break;		
 		}
 			break;
 		case "headless":
@@ -108,20 +116,21 @@ public class DriverFactory {
 				driver = new ChromeDriver(options);
 				driver.manage().window().maximize();
 				break;
-			case "headless mobile":
+			case "headless-mobile":
 				Log.message("Head less", true);
 				WebDriverManager.phantomjs().setup();
 				driver = new PhantomJSDriver();
 				break;
 			case "mobile-chrome":
 				Log.message("Headless Mobile:- " + String, true);
-				WebDriverManager.chromedriver().setup();
-				Map<String, String> mobileEmulation = new HashMap<>();
-				mobileEmulation.put("deviceName", "Nexus 5");
-				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.addArguments("headless");
-				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-				driver = new ChromeDriver(chromeOptions);
+				DesiredCapabilities caps11 = DesiredCapabilities.chrome();
+			    caps11.setCapability("testobject_platform_name", "android");
+			    caps11.setCapability("browserName","Chrome");
+			    caps11.setCapability("platformName", "android");
+			    caps11.setCapability("version","");
+			    caps11.setCapability("deviceName","Samsung_Galaxy_S5_real");
+			    caps11.setCapability("platform","platform");
+			    driver = new RemoteWebDriver(new URL(URL), caps11);
 				break;
 			case "chrome - widescreen":
 				Log.message("Head less", true);

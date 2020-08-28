@@ -53,14 +53,14 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @Given("signup url is available on mobile")
     public void sign_up_url_is_available_on_mobile() throws Exception {
-   	 driver = driverFactory.getDriver(configFileReader.getMobileView());
+   	    driver = driverFactory.getDriver(configFileReader.getMobileView());
 		pageObjectManager = new PageObjectManager();
 		testContext.getPageObjectManager().getSignUpPage(driver).navigateTo_Sign_Up_Page();
     }
     
     @Given("sign-up url is available on wide screen chrome")
     public void sign_up_url_is_available_on_wide_screen() throws Exception {
-   	 driver = driverFactory.getDriver(configFileReader.getWideViewChrome());
+   	    driver = driverFactory.getDriver(configFileReader.getWideViewChrome());
 		pageObjectManager = new PageObjectManager();
 		testContext.getPageObjectManager().getSignUpPage(driver).navigateTo_Sign_Up_Page();
     }

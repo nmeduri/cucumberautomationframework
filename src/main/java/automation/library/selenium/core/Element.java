@@ -77,6 +77,11 @@ public class Element {
 		return this;
 	}
 	
+	public Element clear() {
+		this.element.clear();
+		return this;
+	}
+	
 	public Element scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", this.element());
