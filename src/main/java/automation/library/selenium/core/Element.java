@@ -77,6 +77,10 @@ public class Element {
 		return this;
 	}
 	
+	public String getAttribute(String data) {
+		return this.element.getAttribute(data);
+	}
+ 	
 	public Element clear() {
 		this.element.clear();
 		return this;

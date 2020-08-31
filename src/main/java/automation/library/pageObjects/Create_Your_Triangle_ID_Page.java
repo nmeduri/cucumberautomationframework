@@ -44,7 +44,7 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	public void enter_Email(String data) throws Exception {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()));
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());  
 	}
 	
 	public void  enter_Password() throws Exception {
@@ -73,6 +73,10 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	public void display_This_Field_Is_Required() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_This_Field_Is_Required()));
+	}
+	
+	public void click_Sign_In_Option() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Sign_In_Option()));
 	}
 
 }

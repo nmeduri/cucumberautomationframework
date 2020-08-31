@@ -1,0 +1,55 @@
+package automation.library.pageObjects;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import automation.library.cucumber.TestContext;
+import automation.library.enums.Locator.Loc;
+import automation.library.logdetail.Log;
+import automation.library.managers.FileReaderManager;
+import automation.library.managers.PageObjectManager;
+import automation.library.selenium.core.PageObject;
+import automation.library.selenium.exec.driver.factory.DriverFactory;
+
+public class Login_Page extends PageObject {
+
+	TestContext testContext;
+
+	public Login_Page(WebDriver driver) {
+
+		super(driver);
+		testContext = new TestContext();
+
+	}
+
+	public void navigateTo_Login_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Url());
+
+	}
+	
+	public void display_Welcome_To_Your_Triangle_Header() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Welcome_To_Your_Triangle_Header()));
+	}
+	
+	public void enterData_Email_Login_Page(String data) throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
+	}
+	
+	public void click_Sign_In_Button() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button()));	
+	}
+	
+	public void display_Welcome_Back_Page() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Welecom_Back_Header()));
+	}
+	
+	public void verify_EmailId_Prepopulated() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()));
+		String actualValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()), "value");
+		System.out.println("Value:- " + actualValue);
+		Assert.assertEquals(actualValue, FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data() + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
+	}
+
+}

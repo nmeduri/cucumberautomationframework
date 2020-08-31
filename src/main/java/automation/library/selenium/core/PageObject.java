@@ -121,7 +121,13 @@ public class PageObject {
 		return element.getText();
 
 	}
-
+	
+	public String $getAttributeValue(Element element, String attribute) {
+		
+		return element.getAttribute(attribute);
+		
+	}
+ 
 	public String $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);

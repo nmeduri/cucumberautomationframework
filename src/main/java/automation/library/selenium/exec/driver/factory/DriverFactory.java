@@ -122,7 +122,7 @@ public class DriverFactory {
 				driver = new PhantomJSDriver();
 				break;
 			case "mobile-chrome":
-				Log.message("Headless Mobile:- " + String, true);
+				Log.message("Head less", true);
 				DesiredCapabilities caps11 = DesiredCapabilities.chrome();
 			    caps11.setCapability("testobject_platform_name", "android");
 			    caps11.setCapability("browserName","Chrome");
@@ -131,7 +131,7 @@ public class DriverFactory {
 			    caps11.setCapability("deviceName","Samsung_Galaxy_S5_real");
 			    caps11.setCapability("platform","platform");
 			    driver = new RemoteWebDriver(new URL(URL), caps11);
-				break;
+				break;	
 			case "chrome - widescreen":
 				Log.message("Head less", true);
 				WebDriverManager.chromedriver().setup();

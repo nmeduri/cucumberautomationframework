@@ -34,5 +34,13 @@ public class Email_Sent_Confirmation_Page extends PageObject {
 	public void display_Message_Verification_Email_Sent() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getEmailSentConfirmationLocator().get_Message_Verification_Email_Sent()));
 	}
+	
+	public void click_Resend_Email_Verification() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getEmailSentConfirmationLocator().get_Resend_EMail_Verification()));
+	}
+	
+	public void display_Message_Resend_Verification_Email_Sent() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getEmailSentConfirmationLocator().get_Resend_Verification_Email_Sent_Message()));
+	}
 
 }

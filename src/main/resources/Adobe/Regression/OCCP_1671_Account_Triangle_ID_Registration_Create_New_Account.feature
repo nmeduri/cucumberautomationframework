@@ -2,7 +2,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1671
 	
-	@RegressionTest
+	@RegressionTesT
 	Scenario: TC-608 Verify the ability of a user to create new Triangle ID account
 	Given sign up url is available
 	When sign up page is displayed
@@ -181,7 +181,27 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	And close the tooltip
 	Then user is able to close the tooltip
 	Then verfiy CASL appear dynamically on registration model
+
+	@RegressionTest
+	Scenario: TC-616 Verify the ability of a user to log in with already existing credentials via Sign In option on the screen
+	Given sign up url is available
+	When sign up page is displayed
+	And user click on sign on option
+	Then login page is displayed
 	
+	@RegressionTest
+	Scenario: TC-616 Verify the ability of a user to log in with already existing credentials via Sign In option on the screen (Mobile)
+	Given signup url is available on mobile
+	When sign up page is displayed
+	And user click on sign on option
+	Then login page is displayed
+	
+	@RegressionTest
+	Scenario: TC-616 Verify the ability of a user to log in with already existing credentials via Sign In option on the screen (Wide Screen - chrome)
+	Given sign-up url is available on wide screen chrome
+	When sign up page is displayed
+	And user click on sign on option
+	Then login page is displayed
 	
 	
 	

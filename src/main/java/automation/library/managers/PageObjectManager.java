@@ -8,6 +8,7 @@ import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.HomePageLocator;
+import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
@@ -16,12 +17,14 @@ import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Get_Personalized_Offers_Page;
 import automation.library.pageObjects.HomePage;
+import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
 import automation.library.pageObjects.Registration_Email_Verification_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.selenium.core.PageObject;
+import automation.library.stepDefination.LogInPageSteps;
 
 public class PageObjectManager {
 
@@ -44,6 +47,8 @@ public class PageObjectManager {
 	private Email_Sent_Confirmation_Page_Locator getEmailSentConfirmationLocator;
 	private Mailinator_Page getMailinatorPage;
 	private Mailinator_Page_Locator getMailinatorPageLocator;
+	private Login_Page loginPage;
+	private Login_Page_Locator loginPageLocator;
 	
 	public PageObjectManager() {
 
@@ -164,5 +169,18 @@ public class PageObjectManager {
 		return (getMailinatorPageLocator == null) ? getMailinatorPageLocator = new Mailinator_Page_Locator() : getMailinatorPageLocator;
 		
 	}
+	
+	public Login_Page getLoginPage(WebDriver driver) {
+		
+		
+		return (loginPage == null) ? loginPage = new Login_Page(driver) : loginPage;
+	}
+	
+	public Login_Page_Locator getLoginPageLocator() {
+		
+		return (loginPageLocator == null) ? loginPageLocator = new Login_Page_Locator() : loginPageLocator;
+		
+	}
+	
 
 }

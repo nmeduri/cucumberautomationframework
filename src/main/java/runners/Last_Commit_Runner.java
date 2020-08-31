@@ -8,9 +8,9 @@ public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
              
-			"classpath:Adobe/Regression/OCCP_1673_Account_Triangle_ID_Registration_Verification_Email_Confirmation.feature",
+			"classpath:Adobe/Regression/OCCP_1756_Email_Not_Verified_And_User_Is_Trying_To_Login.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@SmokeTest",
+			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

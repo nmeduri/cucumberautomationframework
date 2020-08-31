@@ -66,5 +66,21 @@ public class DataReader {
 			throw new RuntimeException("Invalid EmailData Data not specified in the Data file.");
 	}
 	
+	public String get_Login_Url() {
+		String getLoginUrl = Property.getProperty(Constant.DATA_FILE, "loginUrl");
+		if(getLoginUrl != null)
+			return getLoginUrl;
+		else 
+			throw new RuntimeException("Login url not specified in the Data file.");
+	}
+	
+	public String get_Valid_Email_Data() {
+		String email = Property.getProperty(Constant.DATA_FILE, "validEmailData");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
+	
 
 }
