@@ -27,7 +27,7 @@ public class HYB_API_FR_CA_End_Point {
 	public Response getAPI_FR_CA(String url, String sProductCode) {
 
 		Log.message("API:- " + url + "/products/" +  sProductCode + "/363?fields=FULL&lang=fr_ca",true);
-		response = RestAssured.given().get(url + "/products/" +  sProductCode + "/363?fields=FULL&lang=fr_ca");
+		response = RestAssured.given().get(url + "/products/" +  sProductCode + "/363?fields=FULL&baseStoreId=ctr&lang=fr_ca");
       
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;
@@ -37,7 +37,7 @@ public class HYB_API_FR_CA_End_Point {
 	public Response get_Design_Outbound_API_FR_CA(String url) {
 
 		Log.message("url:- " + url + "/catalogs/ctcCanadianTireProductCatalog/Online/categories/tools-hardware?fields=FULL&lang=fr_ca", true);
-		response = RestAssured.given().get(url + "/catalogs/ctcCanadianTireProductCatalog/Online/categories/tools-hardware?fields=FULL&lang=fr_ca");
+		response = RestAssured.given().get(url + "/catalogs/ctcCanadianTireProductCatalog/Online/categories/tools-hardware?fields=FULL&baseStoreId=ctr&lang=fr_ca");
 
 		Log.message("Response:- " + response.getBody().asString(), true);
 		return response;

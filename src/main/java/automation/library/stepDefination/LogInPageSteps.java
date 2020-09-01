@@ -1,12 +1,15 @@
 package automation.library.stepDefination;
 
 
+import java.util.Random;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.enums.Locator.Loc;
+import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
@@ -82,6 +85,31 @@ public class LogInPageSteps extends BaseClass{
 	@Then("message verification email is displayed")
 	public void message_verification_email_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getEmailSentConfirmationPage(PageObject.getDriver()).display_Message_Resend_Verification_Email_Sent();
+	}
+	
+	@And("user enter invalid credential email")
+    public void user_enter_invalid_crendtials_email() throws Exception {
+		Random rand = new Random(); 
+    	int number = rand.nextInt();
+    	String value = "test" + Integer.toString(number);
+		emailVaue = value.replace("-", "");
+		Log.message("Email Value:- " + emailVaue, true);
+   	    testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enter_Invalid_Data_Email_Login_Page(emailVaue + ".com");
+    }
+	
+	@Then("an inline error is displayed")
+	public void an_inline_error_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Inline_Error_Message_Invalid_Credentials();
+	}
+	
+	@And("user enter invalid password")
+	public void user_enter_invalid_password() throws Exception {
+		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Incorrect_Retype_Password_Detail());
+	}
+	
+	@Then("message field required is displayed")
+	public void message_field_required_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).display_This_Field_Is_Required();
 	}
 
 }

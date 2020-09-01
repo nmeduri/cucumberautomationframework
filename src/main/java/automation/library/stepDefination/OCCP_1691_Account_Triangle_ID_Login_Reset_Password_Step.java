@@ -82,12 +82,12 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @Then("user enter password")
     public void user_enter_password() throws Exception {
-   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password();
+   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Password_Detail());
     }
     
     @And("user enter retype password")
     public void user_enter_retype_password() throws Exception {
-   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Retype_Password();
+   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Retype_Password(FileReaderManager.getInstance().getDataReader().get_Retype_Password_Detail());
     }
     
     @And("user enter invalid retype password")

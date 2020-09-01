@@ -6,6 +6,7 @@ import automation.library.common.Property;
 import automation.library.datatable.Data_Map;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
+import automation.library.locator.ForgotPasswordPageLocator;
 import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.HomePageLocator;
 import automation.library.locator.Login_Page_Locator;
@@ -15,6 +16,7 @@ import automation.library.locator.PLP_PageLocator;
 import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
+import automation.library.pageObjects.Forgot_Password_Page;
 import automation.library.pageObjects.Get_Personalized_Offers_Page;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.Login_Page;
@@ -49,6 +51,8 @@ public class PageObjectManager {
 	private Mailinator_Page_Locator getMailinatorPageLocator;
 	private Login_Page loginPage;
 	private Login_Page_Locator loginPageLocator;
+	private Forgot_Password_Page getForgotPasswordPage;
+	private ForgotPasswordPageLocator getForgotPasswordLocator;
 	
 	public PageObjectManager() {
 
@@ -181,6 +185,19 @@ public class PageObjectManager {
 		return (loginPageLocator == null) ? loginPageLocator = new Login_Page_Locator() : loginPageLocator;
 		
 	}
+	
+	public Forgot_Password_Page getForgotPasswordPage(WebDriver driver) {
+		
+		return (getForgotPasswordPage == null) ? getForgotPasswordPage = new Forgot_Password_Page(driver) : getForgotPasswordPage;
+		
+	}
+	
+	public ForgotPasswordPageLocator getForgotPasswordLocator() {
+		
+		return (getForgotPasswordLocator == null) ? getForgotPasswordLocator = new ForgotPasswordPageLocator() : getForgotPasswordLocator;
+		
+	}
+ 	
 	
 
 }

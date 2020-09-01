@@ -7,10 +7,9 @@ import automation.library.logdetail.Log;
 public final class Last_Commit_Runner {
 	
 	private static String[] defaultOptions = {
-             
-			"classpath:Adobe/Regression/OCCP_1756_Email_Not_Verified_And_User_Is_Trying_To_Login.feature",
+            
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@RegressionTest",
+			"--tags", "@SmokeTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

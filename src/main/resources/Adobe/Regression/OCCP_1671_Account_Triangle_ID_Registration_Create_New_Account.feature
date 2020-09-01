@@ -203,6 +203,33 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	And user click on sign on option
 	Then login page is displayed
 	
+	@RegressionTest
+	Scenario: TC-613 Verify an inline error message is displayed when user re-enters the password incorrectly in the field on the screen 
+	Given sign up url is available
+	When sign up page is displayed
+	And user enter email
+	And user enter password
+	And user enter invalid retype password
+	Then message password do not match is displayed
+	And the option to procced to the next screen is not selectable
 	
+	@RegressionTest
+	Scenario: TC-613 Verify an inline error message is displayed when user re-enters the password incorrectly in the field on the screen (Mobile)
+	Given signup url is available on mobile
+	When sign up page is displayed
+	And user enter email
+	And user enter password
+	And user enter invalid retype password
+	Then message password do not match is displayed
+	And the option to procced to the next screen is not selectable
 	
+	@RegressionTest
+	Scenario: TC-613 Verify an inline error message is displayed when user re-enters the password incorrectly in the field on the screen (Wide Screen - chrome)
+	Given sign-up url is available on wide screen chrome
+	When sign up page is displayed
+	And user enter email
+	And user enter password
+	And user enter invalid retype password
+	Then message password do not match is displayed
+	And the option to procced to the next screen is not selectable
 	

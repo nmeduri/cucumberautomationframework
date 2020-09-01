@@ -47,12 +47,12 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());  
 	}
 	
-	public void  enter_Password() throws Exception {
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Password_Field()), FileReaderManager.getInstance().getDataReader().get_Password_Detail());
+	public void  enter_Password(String data) throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Password_Field()), data);
 	}
 	
-	public void enter_Retype_Password() throws Exception {
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Retype_Password_Field()), FileReaderManager.getInstance().getDataReader().get_Retype_Password_Detail());
+	public void enter_Retype_Password(String data) throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Retype_Password_Field()), data);
 	}
 	
 	public void enter_Incorrect_Retype_Password() throws Exception {
@@ -77,6 +77,10 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	public void click_Sign_In_Option() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Sign_In_Option()));
+	}
+	
+	public void display_Password_Do_Not_Match() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Message_Password_Do_Not_Match()));
 	}
 
 }

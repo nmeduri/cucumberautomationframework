@@ -37,5 +37,20 @@ public class OCCP_1760_LogIn_Welcome_Back_Message_Steps extends BaseClass{
 	public void verify_email_id_is_prepopulated() throws Exception {
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verify_EmailId_Prepopulated();
 	}
+	
+	@And("user click on switch account")
+	public void user_click_on_switch_account() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).click_Switch_Account();
+	}
+	
+	@Then("populated email id is not displayed")
+	public void populated_email_id_is_not_displayed() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verify_EmailID_Not_Prepopulated();
+	}
+	
+	@Then("populated password is not displayed")
+	public void populated_password_is_not_displayed() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verify_Password_Not_Prepopulated();
+	}
 
 }

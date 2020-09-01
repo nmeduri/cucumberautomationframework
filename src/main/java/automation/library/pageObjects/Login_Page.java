@@ -37,6 +37,10 @@ public class Login_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
 	}
 	
+	public void enter_Invalid_Data_Email_Login_Page(String data) throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()), data);
+	}
+	
 	public void click_Sign_In_Button() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button()));	
 	}
@@ -48,8 +52,37 @@ public class Login_Page extends PageObject {
 	public void verify_EmailId_Prepopulated() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()));
 		String actualValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()), "value");
-		System.out.println("Value:- " + actualValue);
 		Assert.assertEquals(actualValue, FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data() + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
 	}
+	
+	public void click_Switch_Account() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Switch_Account_Button()));
+	}
+	
+	public void verify_EmailID_Not_Prepopulated() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()));
+		String actualValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()), "value");
+		Assert.assertNotEquals(actualValue, FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data() + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
+	}
+	
+	public void verify_Password_Not_Prepopulated() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Password_Field()));
+		String actualValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Password_Field()), "value");
+		Assert.assertNotEquals(actualValue, FileReaderManager.getInstance().getDataReader().get_Password_Detail());
+	}
+	
+	public void click_Forgot_Password() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Forgot_Password()));
+	}
+	
+	public void display_Inline_Error_Message_Invalid_Credentials() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Inline_Error_Message_Invalid_Credentials()));
+	}
+	
+	public void display_Message_Forgot_Password_Required() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Message_Field_Required()));
+	}
+	
+	
 
 }

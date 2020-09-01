@@ -98,4 +98,9 @@ public class OCCP_1671_Account_Triangle_ID_Registration_Create_New_Account_Step 
     public void user_is_able_to_the_close_the_tooltip() throws Exception {
     	testContext.getPageObjectManager().getPersonalizedOffersPage(PageObject.getDriver()).not_Display_Tool_Tip_Close_Button();
     }
+    
+    @Then("message password do not match is displayed")
+    public void message_password_do_not_match_is_displayed() throws Exception {
+    	testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).display_Password_Do_Not_Match();
+    }
 }
