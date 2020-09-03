@@ -4,12 +4,13 @@ import java.util.stream.Stream;
 
 import automation.library.logdetail.Log;
 
-public final class Last_Commit_Runner {
+public final class Latest_Commit_Runner {
 	
 	private static String[] defaultOptions = {
             
-			
+			"classpath:Adobe/Regression/OCCP_1672_Login_Forgot_Password.feature",
 			"--glue", "automation.library.stepDefination",
+			"--tags", "@SmokeTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

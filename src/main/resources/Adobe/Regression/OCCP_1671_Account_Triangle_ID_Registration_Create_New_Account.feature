@@ -2,7 +2,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1671
 	
-	@RegressionTesT
+	@RegressionTest
 	Scenario: TC-608 Verify the ability of a user to create new Triangle ID account
 	Given sign up url is available
 	When sign up page is displayed

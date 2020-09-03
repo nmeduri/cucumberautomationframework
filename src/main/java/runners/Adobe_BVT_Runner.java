@@ -3,6 +3,8 @@ package runners;
 
 import java.util.stream.Stream;
 
+import automation.library.selenium.base.BaseClass;
+
 
 public final class Adobe_BVT_Runner {
 	

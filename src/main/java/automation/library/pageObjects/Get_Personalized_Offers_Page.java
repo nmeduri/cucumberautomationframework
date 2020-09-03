@@ -66,5 +66,21 @@ public class Get_Personalized_Offers_Page extends PageObject {
 	public void not_Display_Tool_Tip_Close_Button() throws Exception {
 		Assert.assertFalse($display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Message_Email_Me_About_Offers_And_Sales())));
 	}
+	
+	public void display_CASL_Subscription_Toogle_Off_Bydefault() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_CASL_Subscription_Toogle_Off_Bydefault()));
+	}
+	
+	public void click_CASL_Subscription_Toogle_Off_Button() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_CASL_Subscription_Toogle_Button()));
+	}
+	
+	public void verify_Able_Click_On_CASL_Subscription_Toogle_Off_Button() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Able_CASL_Subscription_Toogle_Button()));
+	}
+	
+	public void verify_Off_Subscription_Toogle_Button() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Off_CASL_Subscription_Toogle_Button()));
+	}
 
 }

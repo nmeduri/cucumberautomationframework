@@ -24,7 +24,6 @@ public class Login_Page extends PageObject {
 	}
 
 	public void navigateTo_Login_Page() throws Exception {
-
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Url());
 
 	}
@@ -42,7 +41,7 @@ public class Login_Page extends PageObject {
 	}
 	
 	public void click_Sign_In_Button() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button()));	
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button()));
 	}
 	
 	public void display_Welcome_Back_Page() throws Exception {

@@ -232,6 +232,10 @@ public class PageObject {
 			}
 		}
 	}
+	
+	public void switchFrameByString(String frameName) {
+		getDriver().switchTo().frame(frameName);
+	}
 
 	public void switchOnChildWindow() {
          

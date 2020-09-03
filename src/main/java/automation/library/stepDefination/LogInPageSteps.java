@@ -69,11 +69,11 @@ public class LogInPageSteps extends BaseClass{
 	@And("user click on sign in button")
 	public void user_click_on_sign_in_button() throws Exception {
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).click_Sign_In_Button();
-		Thread.sleep(5000);
 	}	
 	
 	@When("user is navigate on login page")
 	public void user_is_navigate_on_login_page() throws Exception {
+		Thread.sleep(5000);
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page();
 	}
 	

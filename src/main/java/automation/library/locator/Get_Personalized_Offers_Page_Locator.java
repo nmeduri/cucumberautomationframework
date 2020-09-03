@@ -14,6 +14,10 @@ public class Get_Personalized_Offers_Page_Locator {
 	String emailMeAboutOffersAndSales = Property.getProperty(Constant.OR_FILE, "emailMeAboutOffersAndSales");
 	String messageEmailMeAboutOffersAndSales = Property.getProperty(Constant.OR_FILE, "messageEmailMeAboutOffersAndSales");
 	String toopTipCloseButton = Property.getProperty(Constant.OR_FILE, "toopTipCloseButton");
+	String caslSubscriptionToogleOffBydefault = Property.getProperty(Constant.OR_FILE, "caslSubscriptionToogleOffBydefault");
+	String caslSubscriptionToogleButton = Property.getProperty(Constant.OR_FILE, "caslSubscriptionToogleButton");
+	String ableClickCASLSubscriptionToogle = Property.getProperty(Constant.OR_FILE, "ableClickCASLSubscriptionToogle");
+	String offCASLSubscriptionToogleButton = Property.getProperty(Constant.OR_FILE, "offCASLSubscriptionToogleButton");
 
 	
 	public String get_Next_Button() {
@@ -44,5 +48,21 @@ public class Get_Personalized_Offers_Page_Locator {
 	
 	public String get_Tool_Tip_Close_Button() {
 		return toopTipCloseButton;	
+	}
+	
+	public String get_CASL_Subscription_Toogle_Off_Bydefault() {
+		return caslSubscriptionToogleOffBydefault;
+	}
+	
+	public String get_CASL_Subscription_Toogle_Button() {
+		return caslSubscriptionToogleButton;
+	}
+	
+	public String get_Able_CASL_Subscription_Toogle_Button() {
+		return ableClickCASLSubscriptionToogle;
+	}
+	
+	public String get_Off_CASL_Subscription_Toogle_Button() {
+		return offCASLSubscriptionToogleButton;
 	}
 }

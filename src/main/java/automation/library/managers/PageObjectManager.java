@@ -14,6 +14,7 @@ import automation.library.locator.Mailinator_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
 import automation.library.locator.Registration_Email_Verification_Locator;
+import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Forgot_Password_Page;
@@ -25,6 +26,7 @@ import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
 import automation.library.pageObjects.Registration_Email_Verification_Page;
 import automation.library.pageObjects.Sign_Up_Page;
+import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
 import automation.library.stepDefination.LogInPageSteps;
 
@@ -53,6 +55,8 @@ public class PageObjectManager {
 	private Login_Page_Locator loginPageLocator;
 	private Forgot_Password_Page getForgotPasswordPage;
 	private ForgotPasswordPageLocator getForgotPasswordLocator;
+	private Your_Email_Has_Been_Verified_Page getYourEmailHasBeenVerifiedPage;
+	private Your_Email_Has_Been_Verified_PageLocator getYourEmailHasBeenVerifiedLocator;
 	
 	public PageObjectManager() {
 
@@ -196,6 +200,14 @@ public class PageObjectManager {
 		
 		return (getForgotPasswordLocator == null) ? getForgotPasswordLocator = new ForgotPasswordPageLocator() : getForgotPasswordLocator;
 		
+	}
+	
+	public Your_Email_Has_Been_Verified_Page getYourEmailHasBeenVerifiedPage(WebDriver driver) {
+		return (getYourEmailHasBeenVerifiedPage == null) ? getYourEmailHasBeenVerifiedPage = new Your_Email_Has_Been_Verified_Page(driver) : getYourEmailHasBeenVerifiedPage;
+	}
+	
+	public Your_Email_Has_Been_Verified_PageLocator getYourEmailHasBeenVerifiedLocator() {
+		return (getYourEmailHasBeenVerifiedLocator == null) ? getYourEmailHasBeenVerifiedLocator = new Your_Email_Has_Been_Verified_PageLocator() : getYourEmailHasBeenVerifiedLocator;
 	}
  	
 	

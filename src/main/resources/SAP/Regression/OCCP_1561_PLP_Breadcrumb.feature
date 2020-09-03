@@ -2,7 +2,7 @@ Feature: OCCP-1561 PLP-Breadcrumb
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-1561
        
-        @RegressionTest
+        @SmokeTest
         Scenario: TC-1633 HYB-OCCP-2499-OCCP-1561: Design outbound API for Categories for locale en
         Given occ api is available
         When user hits design outbound api

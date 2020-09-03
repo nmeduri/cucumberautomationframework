@@ -33,5 +33,21 @@ public class Forgot_Password_Page extends PageObject {
 	public void display_Header_Forgot_Password_Page() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Header_Forgot_Password_Page()));
 	}
+	
+	public void click_Back_To_Sign_In() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Back_To_Sign_In()));
+	}
+	
+	public void enterData_Email(String data) throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Email_Forgot_Password()), data);
+	}
+	
+	public void click_Send_Button() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Send_Button()));
+	}
+	
+	public void displayMessageInvalidForgotPasswordEmail() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Invalid_Forgot_Password_Email_Message()));
+	}
 
 }

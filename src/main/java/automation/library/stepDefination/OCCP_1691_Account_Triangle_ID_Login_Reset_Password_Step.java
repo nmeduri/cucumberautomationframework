@@ -149,4 +149,6 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     public void user_click_on_sign_on_option() throws Exception {
     	testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).click_Sign_In_Option();
     }
+    
+    
 }
