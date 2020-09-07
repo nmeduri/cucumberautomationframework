@@ -3,6 +3,7 @@ package automation.library.api.endpoint;
 import org.json.JSONObject;
 
 import automation.library.logdetail.Log;
+import automation.library.managers.FileReaderManager;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -24,7 +25,7 @@ public class HYB_Authorization_EndPoint {
 	    	.auth().preemptive().basic("trusted_client", "secret")
 	    	.contentType("application/x-www-form-urlencoded").log().all()
 	    	.formParam("grant_type", "password")
-	    	.formParam("username", "praful.rajawat@cantire.com")
+	    	.formParam("username", FileReaderManager.getInstance().getAPIDataReader().get_Authenticated_User())
 	    	.formParam("password", "nimda")
 	    	     .when()
 	    	.post(url);

@@ -371,5 +371,13 @@ public class APIDataReader {
 			throw new RuntimeException("Password Data not specified in the Data file.");
 	}
 	
+	public String get_Authenticated_User() {
+		String user = Property.getProperty(Constant.API_DATA, "authenticateduser");
+		if(user != null)
+			return user;
+		else
+			throw new RuntimeException("User Data not specified in the Data file.");
+	}
+	
 
 }
