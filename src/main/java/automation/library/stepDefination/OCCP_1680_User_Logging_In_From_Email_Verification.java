@@ -33,7 +33,7 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
 
 	public OCCP_1680_User_Logging_In_From_Email_Verification(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		
 		configFileReader = new ConfigFileReader();
 	}
 	

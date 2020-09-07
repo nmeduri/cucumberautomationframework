@@ -118,5 +118,4 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
         When user hits get wishlist api
         Then user should able to see availableActions container
         And user should be able to see isAddToCartEnabled
-        And user should be able to see values
   

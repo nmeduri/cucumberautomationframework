@@ -1,5 +1,6 @@
 package automation.library.selenium.core;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -30,6 +31,7 @@ public class PageObject {
 	private WebDriverWait wait;
 	private Property property = new Property();
 	public static List<String> value;
+	public static PropertiesConfiguration configuration = new PropertiesConfiguration();
 
 	public PageObject(WebDriver driver) {
 		this.driver = driver;

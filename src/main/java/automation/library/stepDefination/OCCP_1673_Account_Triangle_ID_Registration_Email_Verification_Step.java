@@ -34,7 +34,7 @@ public class OCCP_1673_Account_Triangle_ID_Registration_Email_Verification_Step 
 
 	public OCCP_1673_Account_Triangle_ID_Registration_Email_Verification_Step(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		
 		configFileReader = new ConfigFileReader();
 	}
 	

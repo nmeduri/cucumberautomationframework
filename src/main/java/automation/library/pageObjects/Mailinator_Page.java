@@ -32,7 +32,7 @@ public class Mailinator_Page extends PageObject {
 	}
 	
 	public void navigate_To_Mailinator() {
-		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Mailinator_Url());
+		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getDataReader().get_Mailinator_Url());
 	}
 	
 	public void enterUserInMailinatorInbox(String data) throws Exception {
@@ -58,8 +58,13 @@ public class Mailinator_Page extends PageObject {
 		Assert.assertEquals("Verify your Triangle ID email address", $getText($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address_On_Mobile())));
 	}
 	
+	public void clickVerifyEmailAddressOn_Mobile() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address_On_Mobile())), 50);
+	}
+	
 	public void click_Here_To_Verify_Email() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("msg_body");
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email()), 5);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email()));
 	}
 

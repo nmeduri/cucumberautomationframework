@@ -82,5 +82,38 @@ public class DataReader {
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
 	
+	public String get_Quantity() {
+		String quantity = Property.getProperty(Constant.DATA_FILE, "quantity");
+		if(quantity != null)
+			return quantity;
+		else
+			throw new RuntimeException("Quantity Data not specified in the Data file.");
+	}
+	
+	public String get_Quantity_Greater_Than_Maximum_Quantity() {
+		String quantity = Property.getProperty(Constant.DATA_FILE, "quantityGreaterThanMaximumQuantity");
+		if(quantity != null)
+			return quantity;
+		else
+			throw new RuntimeException("Quantity Data not specified in the Data file.");
+	}
+	
+	public String get_Quantity_Not_Integer() {
+		String quantityNotInteger = Property.getProperty(Constant.DATA_FILE, "quantityNotInteger");
+		if(quantityNotInteger != null)
+			return quantityNotInteger;
+		else
+			throw new RuntimeException("Quantity Data not specified in the Data file.");
+	}
+	
+	
+	public String get_Quantity_Zero() {
+		String quantityNotInteger = Property.getProperty(Constant.DATA_FILE, "quantityZero");
+		if(quantityNotInteger != null)
+			return quantityNotInteger;
+		else
+			throw new RuntimeException("Quantity Data not specified in the Data file.");
+	}
+	
 
 }

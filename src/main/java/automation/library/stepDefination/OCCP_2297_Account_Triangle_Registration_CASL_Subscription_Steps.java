@@ -24,7 +24,7 @@ public class OCCP_2297_Account_Triangle_Registration_CASL_Subscription_Steps ext
 
 	public OCCP_2297_Account_Triangle_Registration_CASL_Subscription_Steps(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		
 		configFileReader = new ConfigFileReader();
 	}
 	

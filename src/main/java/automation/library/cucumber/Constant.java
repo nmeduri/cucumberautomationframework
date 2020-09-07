@@ -21,6 +21,7 @@ public class Constant {
 	
 	public static String apiDataFile() {
 		String sEnvironment = System.getenv("environment");
+		Log.message("Environment:- " + sEnvironment, true);
 		if (sEnvironment.equalsIgnoreCase("D1")) {
 			configureFile = "API_Data_D1.properties";
 			Log.message("File:- " + configureFile, true);

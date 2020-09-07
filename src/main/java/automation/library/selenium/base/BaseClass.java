@@ -4,6 +4,7 @@ package automation.library.selenium.base;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,7 @@ import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
+import automation.library.stepDefination.SignUpPageSteps;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import io.restassured.response.Response;
@@ -49,6 +51,8 @@ public class BaseClass {
 	protected ConfigFileReader configFileReader;
 	protected WebDriver driver;
 	public static String emailVaue;
+	public static PropertiesConfiguration conf = new PropertiesConfiguration();
+	
 
 
 }

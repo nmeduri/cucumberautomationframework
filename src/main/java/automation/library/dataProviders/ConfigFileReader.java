@@ -76,6 +76,7 @@ public class ConfigFileReader {
 	
 	public String getSignUpUrl() {
 		String url = Property.getProperty(Constant.DATA_FILE, "signUpUrl");
+		Log.message("URL:- " + url, true);
 		if (url != null)
 			return url;
 		else
@@ -120,6 +121,8 @@ public class ConfigFileReader {
 		else if (browserName.equals("headless mobile"))
 			return browserName;
 		else if (browserName.equalsIgnoreCase("mobile-chrome"))
+			return browserName;
+		else if (browserName.equalsIgnoreCase("chrome - widescreen"))
 			return browserName;
 		else if(browserName.equalsIgnoreCase("wideScreenView"))
 			return browserName;

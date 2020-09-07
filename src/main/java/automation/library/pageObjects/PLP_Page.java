@@ -32,7 +32,7 @@ public class PLP_Page extends PageObject {
 
 	public void navigateTo_PLP_Page() throws Exception {
 
-		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getPLPUrl());
+		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPLPUrl());
 
 	}
 	

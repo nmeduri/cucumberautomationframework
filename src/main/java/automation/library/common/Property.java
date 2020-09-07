@@ -6,11 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Properties;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 
 import automation.library.cucumber.Constant;
+import automation.library.logdetail.Log;
 
 public class Property {
 
@@ -20,7 +22,7 @@ public class Property {
 	 */
 
 	private Properties prop = null;
-
+	private final static Properties configProp = new Properties();
 	public Property() {
 
 	}
@@ -38,24 +40,17 @@ public class Property {
 		return props;
 	}
 	
-	public PropertiesConfiguration setProperties(String filePath) {
-		PropertiesConfiguration props = new PropertiesConfiguration();
-		InputStream is = null;
-		try {
-
-			is = this.getClass().getResourceAsStream(filePath);
-			props.load(is);
-		} catch (Exception e) {
-			return null;
-		}
-		return props;
+	public static void flush(String path) throws Exception {
+	    try (final OutputStream outputstream 
+	                = new FileOutputStream(path);) {
+	        configProp.store(outputstream,"File Updated");
+	        outputstream.close();
+	    }
 	}
 	
-	public static void setProperty(String propsPath, String key, String value) {
-		Property property = new Property();
-		
-		property.getProperties(propsPath).setProperty(key, value);
-	}
+	public static void setProperty(String key, String value){
+		  configProp.setProperty(key, value);
+		}
 	
 //	public static void writeData(File file) throws Exception {
 //		FileOutputStream fileOut = new FileOutputStream(file);

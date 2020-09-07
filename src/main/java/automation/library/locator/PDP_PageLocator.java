@@ -16,6 +16,10 @@ public class PDP_PageLocator {
 	String returnPolicyDescription = Property.getProperty(Constant.OR_FILE, "returnPolicyDescription");
 	String returnPolicyLink = Property.getProperty(Constant.OR_FILE, "returnPolicyLink");
 	String productCode = Property.getProperty(Constant.OR_FILE,  "productCode");
+	String incrementQunatity = Property.getProperty(Constant.OR_FILE, "incrementQunatity");
+	String decrementQuantity = Property.getProperty(Constant.OR_FILE, "decrementQuantity");
+	String quantityBox = Property.getProperty(Constant.OR_FILE, "quantityBox");
+	String decrementButtonDisabled = Property.getProperty(Constant.OR_FILE, "decrementButtonDisabled");
 	
 	
 	public String get_Add_To_Cart_Button() {
@@ -66,5 +70,21 @@ public class PDP_PageLocator {
 	
 	public String get_Product_Code() {
 		return productCode;
+	}
+	
+	public String get_Select_Increment_Quantity() {
+		return incrementQunatity;
+	}
+	
+	public String get_Decrement_Quantity() {
+		return decrementQuantity;
+	}
+	
+	public String get_Quantity_Box() {
+		return quantityBox;
+	}
+	
+	public String get_Quantity_Decrement_Disabled() {
+		return decrementButtonDisabled;
 	}
 }

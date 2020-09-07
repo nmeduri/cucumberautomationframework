@@ -3,14 +3,16 @@ package runners;
 
 import java.util.stream.Stream;
 
+import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
 
 
-public final class Adobe_BVT_Runner {
+public final class Adobe_BVT_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
 			"classpath:Adobe/BVT/", "--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
+			"--tags", "@WebView",
 			"--plugin", "json:cucumber.json", 
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/Adobe_BVT.xml",
@@ -19,6 +21,10 @@ public final class Adobe_BVT_Runner {
 		};
 
 	public static void main(String[] args) throws Throwable {
+		Adobe_BVT_Runner ls = new Adobe_BVT_Runner();
+		String className = ls.getClass().getSimpleName();
+		Log.message("Class Name:- " + className, true);
+		conf.setProperty("className", className);
 		Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
 		cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 		

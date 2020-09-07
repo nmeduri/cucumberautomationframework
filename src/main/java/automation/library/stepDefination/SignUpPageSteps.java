@@ -21,15 +21,14 @@ public class SignUpPageSteps extends BaseClass{
 
 	public SignUpPageSteps(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Given("^sign up url is up$")
 	public void adobe_author_url_is_up() throws Exception {
-		driver = driverFactory.getDriver(configFileReader.getWebBrowser());
-		pageObjectManager = new PageObjectManager();
-		testContext.getPageObjectManager().getSignUpPage(driver).navigateTo_Sign_Up_Page();
+		
+		testContext.getPageObjectManager().getSignUpPage().navigateTo_Sign_Up_Page();
 		
 	}
 	

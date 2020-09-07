@@ -24,33 +24,33 @@ public class OCCP_1760_LogIn_Welcome_Back_Message_Steps extends BaseClass{
 
 	public OCCP_1760_LogIn_Welcome_Back_Message_Steps(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Then("welcome back page is displayed")
 	public void welcome_back_page_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Welcome_Back_Page();
+		testContext.getPageObjectManager().getLoginPage().display_Welcome_Back_Page();
 	}
 	
 	@And("verify email id is prepopulated")
 	public void verify_email_id_is_prepopulated() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verify_EmailId_Prepopulated();
+		testContext.getPageObjectManager().getLoginPage().verify_EmailId_Prepopulated();
 	}
 	
 	@And("user click on switch account")
 	public void user_click_on_switch_account() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).click_Switch_Account();
+		testContext.getPageObjectManager().getLoginPage().click_Switch_Account();
 	}
 	
 	@Then("populated email id is not displayed")
 	public void populated_email_id_is_not_displayed() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verify_EmailID_Not_Prepopulated();
+		testContext.getPageObjectManager().getLoginPage().verify_EmailID_Not_Prepopulated();
 	}
 	
 	@Then("populated password is not displayed")
 	public void populated_password_is_not_displayed() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verify_Password_Not_Prepopulated();
+		testContext.getPageObjectManager().getLoginPage().verify_Password_Not_Prepopulated();
 	}
 
 }

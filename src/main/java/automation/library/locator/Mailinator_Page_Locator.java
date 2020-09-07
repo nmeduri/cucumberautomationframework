@@ -12,6 +12,7 @@ public class Mailinator_Page_Locator {
     String verifyYourEmailAddress = Property.getProperty(Constant.OR_FILE, "verifyYourEmailAddress");
     String verifyYourEmailAddressOnMobile = Property.getProperty(Constant.OR_FILE, "verifyYourEmailAddressOnMobile");
     String clickHereToVerifyEmail = Property.getProperty(Constant.OR_FILE, "clickHereToVerifyEmail");
+    String gotItButton = Property.getProperty(Constant.OR_FILE, "gotItButton");
 	
 	public String get_Public_Mailinator_Inbox_Field() {
 		return enterPublicMailinatorInboxField;	
@@ -31,5 +32,9 @@ public class Mailinator_Page_Locator {
 	
 	public String get_Click_Here_To_Verify_Email() {
 		return clickHereToVerifyEmail;
+	}
+	
+	public String get_Got_Button() {
+		return gotItButton;
 	}
 }

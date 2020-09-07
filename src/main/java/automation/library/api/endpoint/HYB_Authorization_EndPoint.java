@@ -31,6 +31,7 @@ public class HYB_Authorization_EndPoint {
     	
 
     	    JSONObject jsonObject = new JSONObject(response.getBody().asString());
+    	    Log.message("Response:- " + jsonObject, true);
     	    String accessToken = jsonObject.get("access_token").toString();
     	    String tokenType = jsonObject.get("token_type").toString();
     	    

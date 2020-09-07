@@ -13,6 +13,7 @@ import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
+import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.selenium.base.BaseClass;
@@ -23,58 +24,56 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 public class LogInPageSteps extends BaseClass{
-
+	
+       Login_Page loginPage;
 	public LogInPageSteps(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		loginPage = testContext.getPageObjectManager().getLoginPage();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Given("login url is available")
     public void login_url_is_available() throws Exception {
-   	    driver = driverFactory.getDriver(configFileReader.getBrowser());
-		pageObjectManager = new PageObjectManager();
-		testContext.getPageObjectManager().getLoginPage(driver).navigateTo_Login_Page();
+   	    
+		loginPage.navigateTo_Login_Page();
     }
 	
 	@Given("log in url is available on mobile")
     public void sign_up_url_is_available_on_mobile() throws Exception {
-   	    driver = driverFactory.getDriver(configFileReader.getMobileView());
-		pageObjectManager = new PageObjectManager();
-		testContext.getPageObjectManager().getLoginPage(driver).navigateTo_Login_Page();
+   	    
+		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
     }
     
     @Given("log-in url is available on wide screen chrome")
     public void sign_up_url_is_available_on_wide_screen() throws Exception {
-   	    driver = driverFactory.getDriver(configFileReader.getWideViewChrome());
-		pageObjectManager = new PageObjectManager();
-		testContext.getPageObjectManager().getLoginPage(driver).navigateTo_Login_Page();
+   	    
+		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
     }
 	
 	@When("login page is displayed")
 	public void login_url_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Welcome_To_Your_Triangle_Header();
+		testContext.getPageObjectManager().getLoginPage().display_Welcome_To_Your_Triangle_Header();
 	}
 	
 	@When("enter email detail")
 	public void enter_email_detail() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data());
+		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data());
 	}
 	
 	@And("user enter username")
 	public void user_enter_username() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(emailVaue);
+		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(emailVaue);
 	}
 	
 	@And("user click on sign in button")
 	public void user_click_on_sign_in_button() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).click_Sign_In_Button();
+		testContext.getPageObjectManager().getLoginPage().click_Sign_In_Button();
 	}	
 	
 	@When("user is navigate on login page")
 	public void user_is_navigate_on_login_page() throws Exception {
 		Thread.sleep(5000);
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page();
+		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
 	}
 	
 	@When("user click resend email verification")
@@ -94,12 +93,12 @@ public class LogInPageSteps extends BaseClass{
     	String value = "test" + Integer.toString(number);
 		emailVaue = value.replace("-", "");
 		Log.message("Email Value:- " + emailVaue, true);
-   	    testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enter_Invalid_Data_Email_Login_Page(emailVaue + ".com");
+   	    testContext.getPageObjectManager().getLoginPage().enter_Invalid_Data_Email_Login_Page(emailVaue + ".com");
     }
 	
 	@Then("an inline error is displayed")
 	public void an_inline_error_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Inline_Error_Message_Invalid_Credentials();
+		testContext.getPageObjectManager().getLoginPage().display_Inline_Error_Message_Invalid_Credentials();
 	}
 	
 	@And("user enter invalid password")

@@ -32,6 +32,7 @@ import automation.library.stepDefination.LogInPageSteps;
 
 public class PageObjectManager {
 
+	private WebDriver driver;
 	private HomePage homePage;
 	private PDP_Page pdpPage;
 	private Sign_Up_Page signUpPage;
@@ -58,9 +59,9 @@ public class PageObjectManager {
 	private Your_Email_Has_Been_Verified_Page getYourEmailHasBeenVerifiedPage;
 	private Your_Email_Has_Been_Verified_PageLocator getYourEmailHasBeenVerifiedLocator;
 	
-	public PageObjectManager() {
+	public PageObjectManager(WebDriver driver) {
 
-		
+		this.driver = driver;
 
 	}
 	
@@ -70,13 +71,13 @@ public class PageObjectManager {
 
 	}
 
-	public HomePage getHomePage(WebDriver driver) throws Exception {
+	public HomePage getHomePage() throws Exception {
 
 		return (homePage == null) ? homePage = new HomePage(driver) : homePage;
 
 	}
 	
-	public PDP_Page getPDPPage(WebDriver driver) throws Exception {
+	public PDP_Page getPDPPage() throws Exception {
 		
 		return (pdpPage == null) ? pdpPage = new PDP_Page(driver) : pdpPage;
 		
@@ -100,13 +101,13 @@ public class PageObjectManager {
 		
 	}
 	
-	public Sign_Up_Page getSignUpPage(WebDriver driver) {
+	public Sign_Up_Page getSignUpPage() {
 		
 		return (signUpPage == null) ? signUpPage = new Sign_Up_Page(driver) : signUpPage;
 		
 	}
 	
-	public PLP_Page getPLPPage(WebDriver driver) throws Exception {
+	public PLP_Page getPLPPage() throws Exception {
 		
 		return (plpPage == null) ? plpPage = new PLP_Page(driver) : plpPage;
 		
@@ -178,7 +179,7 @@ public class PageObjectManager {
 		
 	}
 	
-	public Login_Page getLoginPage(WebDriver driver) {
+	public Login_Page getLoginPage() {
 		
 		
 		return (loginPage == null) ? loginPage = new Login_Page(driver) : loginPage;

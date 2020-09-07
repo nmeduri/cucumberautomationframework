@@ -3,9 +3,10 @@ package runners;
 import java.util.stream.Stream;
 
 import automation.library.logdetail.Log;
+import automation.library.selenium.base.BaseClass;
 
-public final class Last_Commit_Runner {
-	
+public final class Last_Commit_Runner extends BaseClass {
+	public static String name;
 	private static String[] defaultOptions = {
             
 			
@@ -18,7 +19,12 @@ public final class Last_Commit_Runner {
 	};
 
 	public static void main(String[] args) throws Throwable {
-        
+		Last_Commit_Runner ls = new Last_Commit_Runner();
+		String className = ls.getClass().getSimpleName();
+		name = className;
+		conf.setProperty("className", className);
+		conf.getProperty("className");
+		Log.message("Class Name:- " + conf.getProperty("className"), true );
 		Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
 		cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	}

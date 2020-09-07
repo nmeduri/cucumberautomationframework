@@ -74,6 +74,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void response_should_have_medias_section_without_mediaType_name_and_its_value() {
 
 		List<String> resp = response.jsonPath().get("medias.mediaType");
+		Log.message("Media Type:- " + resp, true);
 		Assert.assertTrue(resp.contains(null));
 		Log.message("Section 'medias' is displayed without mediaType name and its value.", true);
 
@@ -112,7 +113,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void response_should_have_medias_with_isPrimary_and_its_value() {
 		Log.message("isPrimary:- " + response.jsonPath().get("medias.isPrimary"), true);
 		List<String> resp = response.jsonPath().get("medias.isPrimary");
-		Assert.assertTrue(resp.contains(true));
+		Assert.assertFalse(resp.contains(null));
 	}
 	
 	@Then("JSON response should have medias section with isListingThumbnailImage and value")

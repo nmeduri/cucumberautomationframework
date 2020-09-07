@@ -22,6 +22,8 @@ import automation.library.dataProviders.ConfigFileReader;
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
 import automation.library.managers.PageObjectManager;
+import automation.library.pageObjects.Mailinator_Page;
+import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.selenium.base.BaseClass;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
@@ -37,32 +39,32 @@ import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
 
 public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends BaseClass {
+	
+	Sign_Up_Page signUpPage;
+	Mailinator_Page malinagorPage;
 
 	public OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		signUpPage = testContext.getPageObjectManager().getSignUpPage();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Given("sign up url is available")
     public void sign_up_url_is_available() throws Exception {
-   	    driver = driverFactory.getDriver(configFileReader.getBrowser());
-		pageObjectManager = new PageObjectManager();
-		testContext.getPageObjectManager().getSignUpPage(driver).navigateTo_Sign_Up_Page();
+   	    
+		signUpPage.navigateTo_Sign_Up_Page();
     }
     
     @Given("signup url is available on mobile")
     public void sign_up_url_is_available_on_mobile() throws Exception {
-   	    driver = driverFactory.getDriver(configFileReader.getMobileView());
-		pageObjectManager = new PageObjectManager();
-		testContext.getPageObjectManager().getSignUpPage(driver).navigateTo_Sign_Up_Page();
+   	    
+		testContext.getPageObjectManager().getSignUpPage().navigateTo_Sign_Up_Page();
     }
     
     @Given("sign-up url is available on wide screen chrome")
     public void sign_up_url_is_available_on_wide_screen() throws Exception {
-   	    driver = driverFactory.getDriver(configFileReader.getWideViewChrome());
-		pageObjectManager = new PageObjectManager();
-		testContext.getPageObjectManager().getSignUpPage(driver).navigateTo_Sign_Up_Page();
+   	    
+		testContext.getPageObjectManager().getSignUpPage().navigateTo_Sign_Up_Page();
     }
     
     @When("sign up page is displayed")
@@ -122,7 +124,7 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @And("mailinator url is available")
     public void mailinator_url_is_available() throws Exception {
-      	 testContext.getPageObjectManager().getMailinatorPage(driver).navigate_To_Mailinator();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).navigate_To_Mailinator();
        }
     
     @And("user enter detail in mailinator inbox")
@@ -143,6 +145,11 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     @Then("user has received the verification email on mobile")
     public void the_user_has_received_the_verification_email_on_mobile() throws Exception {
     	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayVerifyEmailAddressOn_Mobile();
+    }
+    
+    @Then("user tap on verification email on mobile")
+    public void user_click_tap_on_verification_email() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickVerifyEmailAddressOn_Mobile();
     }
     
     @And("user click on sign on option")

@@ -2,7 +2,10 @@ package runners;
 
 import java.util.stream.Stream;
 
-public final class Sap_Regression_Runner {
+import automation.library.logdetail.Log;
+import automation.library.selenium.base.BaseClass;
+
+public final class Sap_Regression_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
 
@@ -17,7 +20,10 @@ public final class Sap_Regression_Runner {
 	};
 
 	public static void main(String[] args) throws Throwable {
-        
+		Sap_Regression_Runner ls = new Sap_Regression_Runner();
+		String className = ls.getClass().getSimpleName();
+		Log.message("Class Name:- " + className, true);
+		conf.setProperty("className", className);
 		Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));
 		cucumber.api.cli.Main.main(cucumberOptions.toArray(String[]::new));
 	}

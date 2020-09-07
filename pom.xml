@@ -329,25 +329,6 @@
 						</goals>
 					</execution>
 					<execution>
-						<id>build-Adobe_Regression_Runner</id>
-						<configuration>
-							<appendAssemblyId>false</appendAssemblyId>
-							<archive>
-								<manifest>
-									<mainClass>runners.Adobe_Regression_Runner</mainClass>
-								</manifest>
-							</archive>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-							<finalName>Adobe_Regression_Runner</finalName>
-						</configuration>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-					<execution>
 						<id>build-Last_Commit_Runner</id>
 						<configuration>
 							<appendAssemblyId>false</appendAssemblyId>
@@ -366,6 +347,88 @@
 							<goal>single</goal>
 						</goals>
 					</execution>
+					
+					<execution>
+						<id>build-Adobe_Regression_Mobile_Runner</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>runners.Adobe_Regression_Mobile_Runner</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<finalName>Adobe_Regression_Mobile_Runner</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+					
+					<execution>
+						<id>build-Adobe_Regression_Web_Runner</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>runners.Adobe_Regression_Web_Runner</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<finalName>Adobe_Regression_Web_Runner</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+					
+					<execution>
+						<id>build-Adobe_Regression_Wide_Screen_Runner</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>runners.Adobe_Regression_Wide_Screen_Runner</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<finalName>Adobe_Regression_Wide_Screen_Runner</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+					
+					<execution>
+						<id>build-Adobe_Regression_Runner</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>runners.Adobe_Regression_Runner</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<finalName>Adobe_Regression_Runner</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+					
+					
 				</executions>
 			</plugin>
 

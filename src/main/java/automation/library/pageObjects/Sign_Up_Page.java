@@ -25,8 +25,8 @@ public class Sign_Up_Page extends PageObject {
 	}
 
 	public void navigateTo_Sign_Up_Page() throws Exception{
-		
-		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getSignUpUrl());
+		Log.message("URL:- " + FileReaderManager.getInstance().getConfigReader().getSignUpUrl(), true);
+		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getSignUpUrl());
 		
 	}
 

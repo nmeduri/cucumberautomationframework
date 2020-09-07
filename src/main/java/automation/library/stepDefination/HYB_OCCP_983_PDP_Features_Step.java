@@ -37,9 +37,8 @@ public class HYB_OCCP_983_PDP_Features_Step extends BaseStep {
 
 	@And("returned JSON should display feature description")
 	public void returned_response_should_display_feature_description() {
-
-		Assert.assertNotEquals(null, response.jsonPath().get("featureBullets.description"));
-		Log.message("Section 'Feature Bullets' is displayed in JSON response.", true);
+		List<String> featureBulletsDescription = response.jsonPath().get("featureBullets.description");
+		Assert.assertFalse(featureBulletsDescription.contains(null));
 
 	}
 

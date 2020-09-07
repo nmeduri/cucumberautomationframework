@@ -44,7 +44,6 @@ Feature: Health Check BVT API
 	And returned JSON should have warranty message name and its value in en locale
 	When user hits the GET api with locale en
 	Then returned JSON should display feature Bullets section
-    And returned JSON should display feature description
     When user hits the GET api with locale en
     Then user should be able to see multiple color variant in the JSON response  
     

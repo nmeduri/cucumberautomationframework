@@ -24,7 +24,7 @@ public class Login_Page extends PageObject {
 	}
 
 	public void navigateTo_Login_Page() throws Exception {
-		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Url());
+		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Url());
 
 	}
 	

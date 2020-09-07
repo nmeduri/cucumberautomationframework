@@ -1,9 +1,11 @@
 package automation.library.selenium.exec.driver.factory;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,21 +21,28 @@ import automation.library.cucumber.Constant;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.logdetail.Log;
 import automation.library.managers.DriverManager;
+import automation.library.selenium.base.BaseClass;
 import automation.library.selenium.exec.driver.manager.ChromeDriverManager;
+import automation.library.selenium.exec.driver.manager.ChromeDriver_Headless_Manager;
+import automation.library.selenium.exec.driver.manager.ChromeWideScreen_Headless_DriverManager;
 import automation.library.selenium.exec.driver.manager.FirefoxDriverManager;
 import automation.library.selenium.exec.driver.manager.HeadLessDriverManager;
+import automation.library.selenium.exec.driver.manager.MobileChromeDriverManager;
+import automation.library.selenium.exec.driver.manager.Mobile_Chrome_Sauce_Lab_DriverManager;
+import automation.library.selenium.exec.driver.manager.SAP_Headless_DriverManager;
+import automation.library.selenium.exec.driver.manager.Web_Chrome_Sauce_Lab_DriverManager;
+import automation.library.selenium.exec.driver.manager.WideScreenChromeDriverManager;
+import automation.library.selenium.exec.driver.manager.Wide_Screen_Sauce_Lab_DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class DriverFactory {
+public class DriverFactory extends BaseClass {
 
 	protected static WebDriver driver;
 	Property prop;
 	private static DriverFactory instance = new DriverFactory();
 	ConfigFileReader configFileReader;
-	public static String USERNAME = System.getenv("SAUCE_USERNAME");
-	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
 
-	public DriverFactory() {
+	protected DriverFactory() {
 		prop = new Property();
 		configFileReader = new ConfigFileReader();
 	}
@@ -42,10 +51,18 @@ public class DriverFactory {
 		return instance;
 	}
 
-	ThreadLocal<DriverManager> driverManager = new ThreadLocal<DriverManager>();
+	ThreadLocal<DriverManager> driverManager = new ThreadLocal<DriverManager>() {
+		protected DriverManager initialValue() {
+			return setDM();
+		}
+	};
 
 	public DriverManager driverManager() {
 		return driverManager.get();
+	}
+
+	public WebDriver getDriver() {
+		return driverManager.get().getDriver();
 	}
 
 	public WebDriver returnDriver() {
@@ -56,132 +73,76 @@ public class DriverFactory {
 		return driverManager.get().getWait();
 	}
 
-	public WebDriver getDriver(String String) throws Exception {
-		ChromeOptions options = new ChromeOptions();
-
-		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
-
+	public DriverManager setDM() {
+		
+		String String = (java.lang.String) conf.getProperty("className");
+		Log.message("String:- " + String, true);
 		switch (configFileReader.getServerType()) {
 		case "saucelabs":
-			switch (String) {
-			case "chrome":
-				Log.message("Sauce Lab Web" + String, true);
-				DesiredCapabilities caps = DesiredCapabilities.chrome();
-				caps.setCapability("platform", "Windows 10");
-				caps.setCapability("version", "latest");
-				caps.setCapability("screenResolution", "800x600");
-				driver = new RemoteWebDriver(new URL(URL), caps);
+			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner")) {
+				Log.message("Sauce Lab" + String, true);
+				driverManager.set(new Web_Chrome_Sauce_Lab_DriverManager());
 				break;
-			
-		case "android-emulator": 
-			Log.message("Sauce Lab Web" + String, true);
-			DesiredCapabilities caps1 = DesiredCapabilities.android();
-			caps1.setCapability("appiumVersion", "1.9.1");
-			caps1.setCapability("deviceName","Android Emulator");
-			caps1.setCapability("deviceOrientation", "portrait");
-			caps1.setCapability("browserName", "Chrome");
-			caps1.setCapability("platformVersion", "8.0");
-			caps1.setCapability("platformName","Android");
-			driver = new RemoteWebDriver(new URL(URL), caps1);
-			break;
-			
-		case "mobile-chrome": 
-			Log.message("Sauce Lab Web" + String, true);
-			DesiredCapabilities caps11 = DesiredCapabilities.chrome();
-		    caps11.setCapability("testobject_platform_name", "android");
-		    caps11.setCapability("browserName","Chrome");
-		    caps11.setCapability("platformName", "android");
-		    caps11.setCapability("version","");
-		    caps11.setCapability("deviceName","Samsung_Galaxy_S5_real");
-		    caps11.setCapability("platform","platform");
-		    driver = new RemoteWebDriver(new URL(URL), caps11);
-			break;	
-		case "chrome - widescreen":
-			DesiredCapabilities caps12 = DesiredCapabilities.chrome();
-			Log.message("Sauce Lab Web" + String, true);
-			caps12.setCapability("platform", "Windows 10");
-			caps12.setCapability("version", "latest");
-			caps12.setCapability("screenResolution", "1280x1024");
-			driver = new RemoteWebDriver(new URL(URL), caps12);
-			break;		
-		}
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
+				Log.message("Sauce Lab" + String, true);
+				driverManager.set(new Mobile_Chrome_Sauce_Lab_DriverManager());
+				break;
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
+				Log.message("Sauce Lab" + String, true);
+				driverManager.set(new Wide_Screen_Sauce_Lab_DriverManager());
+				break;
+			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
+				driverManager.set(new SAP_Headless_DriverManager());
+				break;
+			}
 			break;
 		case "headless":
-			switch (String) {
-			case "chrome":
-				Log.message("Head less", true);
-				WebDriverManager.chromedriver().setup();
-				options.addArguments("headless");
-				options.addArguments("window-size=1200x600");
-				driver = new ChromeDriver(options);
-				driver.manage().window().maximize();
+			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner")) {
+				Log.message("Heeadless " + String, true);
+				driverManager.set(new ChromeDriver_Headless_Manager());
 				break;
-			case "headless-mobile":
-				Log.message("Head less", true);
-				WebDriverManager.phantomjs().setup();
-				driver = new PhantomJSDriver();
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
+				Log.message("Heeadless " + String, true);
+				driverManager.set(new Mobile_Chrome_Sauce_Lab_DriverManager());
 				break;
-			case "mobile-chrome":
-				Log.message("Head less", true);
-				DesiredCapabilities caps11 = DesiredCapabilities.chrome();
-			    caps11.setCapability("testobject_platform_name", "android");
-			    caps11.setCapability("browserName","Chrome");
-			    caps11.setCapability("platformName", "android");
-			    caps11.setCapability("version","");
-			    caps11.setCapability("deviceName","Samsung_Galaxy_S5_real");
-			    caps11.setCapability("platform","platform");
-			    driver = new RemoteWebDriver(new URL(URL), caps11);
-				break;	
-			case "chrome - widescreen":
-				Log.message("Head less", true);
-				WebDriverManager.chromedriver().setup();
-				options.addArguments("headless");
-				options.addArguments("window-size=1200x600");
-				driver = new ChromeDriver(options);
-				driver.manage().window().maximize();
-				break;		
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
+				Log.message("Heeadless " + String, true);
+				driverManager.set(new ChromeWideScreen_Headless_DriverManager());
+				break;
+			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
+				driverManager.set(new SAP_Headless_DriverManager());
+				break;
 			}
 			break;
 		case "without headless":
-			switch (String) {
-			case "chrome":
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
+			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner")) {
+				Log.message("Without Heeadless " + String, true);
+				driverManager.set(new ChromeDriverManager());
 				break;
-			case "firefox":
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
+				Log.message("Without Heeadless " + String, true);
+				driverManager.set(new MobileChromeDriverManager());
+				break;
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
+				Log.message("Without Heeadless " + String, true);
+				driverManager.set(new WideScreenChromeDriverManager());
+				break;
+			} else if (String.equalsIgnoreCase("firefox")) {
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
 				break;
-			case "safari":
+			} else if (String.equalsIgnoreCase("safari")) {
 				System.setProperty("webdriver.safari.driver", "SafariDriver.safariextz");
 				driver = new SafariDriver();
 				driver.manage().window().maximize();
 				break;
-			case "mobile-chrome":
-				Log.message("Mobile:- " + String, true);
-				WebDriverManager.chromedriver().setup();
-				Map<String, String> mobileEmulation = new HashMap<>();
-				mobileEmulation.put("deviceName", "Nexus 5");
-				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-				driver = new ChromeDriver(chromeOptions);
+			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
+				Log.message("Without Heeadless " + String, true);
+				driverManager.set(new SAP_Headless_DriverManager());
 				break;
-			case "chrome - widescreen":
-				Log.message("chrome - Wide Screen", true);
-				WebDriverManager.chromedriver().setup();
-				options.addArguments("window-size=2560x3500");
-				driver = new ChromeDriver(options);
-				driver.manage().window().maximize();
-				break;	
 			}
-			break;
-
-		default:
 
 		}
-		return driver;
-
+		return driverManager.get();
 	}
-
 }

@@ -49,7 +49,7 @@ public class PDP_Page extends PageObject {
 
 	public void navigateTo_PDP_Page() throws Exception {
 
-		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
+		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 
 	}
 
@@ -138,5 +138,90 @@ public class PDP_Page extends PageObject {
 						$By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Code())),
 				5));
 	}
+	
+	public void clickIncremenQuantitytButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Select_Increment_Quantity()));
+	}
+	
+	public void clickDecrementQuantityButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Decrement_Quantity()));
+	}
+	
+	public void getValueQuantityBox() throws Exception {
+		String value = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
+		configuration.setProperty("quantityBox", value);
+	}
+	
+	public void verifyUpdatedQuantityByOne() throws Exception {
+		String quantity = (java.lang.String) configuration.getProperty("quantityBox");
+		int quantityValue = Integer.parseInt(quantity);
+		String expectedQuantity = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
+		int expectedQuantityValue = Integer.parseInt(expectedQuantity);
+		Assert.assertEquals(expectedQuantityValue, quantityValue + 1);
+	}
+	
+   public void verifyUpdatedDecrementQuantityByOne() throws Exception {
+	   String expectedQuantity = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
+	   int expectedQuantityValue = Integer.parseInt(expectedQuantity);
+	   String quantity = (java.lang.String) configuration.getProperty("quantityBox");
+	   int quantityValue = Integer.parseInt(quantity);
+	   Assert.assertEquals(expectedQuantityValue, quantityValue);
+   }	
+   
+   public void signDecrementDisabledWhenQuantityOne() throws Exception {
+	   String quantiy = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
+	   int quantiyValue = Integer.parseInt(quantiy);
+	   Assert.assertEquals(quantiyValue, 1);
+   }
+   
+   public void displayDecrementSignDisabled() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Decrement_Disabled()));
+   }
+   
+   public void enterUpdatedQuantityInTheBoxThatIsGreaterThanZeroAndLessThanMaximumQuantity() throws Exception {
+	   
+	   int quantity = Integer.parseInt(FileReaderManager.getInstance().getDataReader().get_Quantity());
+	   if(quantity > 0 && quantity <= 99) {
+		 $clearData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box())); 
+		 $enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), FileReaderManager.getInstance().getDataReader().get_Quantity());
+	   }else {
+		   Log.message("Invlaid Quantity", true);
+	   }   
+   }
+   
+   public void displayUpdatedQuantity() throws Exception {
+	   String quantity = FileReaderManager.getInstance().getDataReader().get_Quantity();
+	   String updatedQuantity = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
+	   Assert.assertEquals(quantity, updatedQuantity);
+   }
+   
+   public void enterQuantityGreaterThanMaxixmum() throws Exception {
+	   $clearData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box())); 
+	   $enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), FileReaderManager.getInstance().getDataReader().get_Quantity_Greater_Than_Maximum_Quantity());
+   }
+   
+   public void verifyQuantityGreaterThanMaximumNotUpdate() throws Exception {
+	   $clearData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()));
+	   Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Quantity_Greater_Than_Maximum_Quantity(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value"));
+   }
+   
+   public void enterNotIntegerNumberInQuantityBox() throws Exception {
+	   $clearData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()));
+	   $enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), FileReaderManager.getInstance().getDataReader().get_Quantity_Not_Integer());
+   }
+   
+   public void verifyNotAllowedNotIntegerValue() throws Exception {
+	   Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Quantity_Not_Integer(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value"));
+   }
+   
+   public void enterQuantityZeroInQuantityBox() throws Exception {
+	   $clearData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()));
+	   $enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), FileReaderManager.getInstance().getDataReader().get_Quantity_Zero());
+   }
+   
+   public void verifyNotAllowedZeroValue() throws Exception {
+	   Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Quantity_Zero(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value"));
+   }
+   
 
 }

@@ -29,7 +29,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * Class to get the driver path , reate/quit manager and get the wat duration
  */
-public  class DriverManager {
+public abstract  class DriverManager {
 
 	protected static WebDriver driver;
 	protected WebDriverWait wait;
@@ -39,6 +39,15 @@ public  class DriverManager {
 	public WebDriver returnDriver() {
 		return driver;
 	}
+	
+	public WebDriver getDriver() {
+		if (driver == null) {
+			createDriver();
+		}
+		return driver;
+	}
+	
+	protected abstract void createDriver();
 
 	public WebDriverWait getWait() {
 		if (wait == null) {

@@ -23,13 +23,13 @@ public class OCCP_1169_Login_After_Email_Verification_Performed_Steps extends Ba
 
 	public OCCP_1169_Login_After_Email_Verification_Performed_Steps(TestContext context) throws Exception {
 		testContext = context;
-		driverFactory = new DriverFactory();
+		
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@And("user click on forgot password")
 	public void user_click_on_forgot_password() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).click_Forgot_Password();
+		testContext.getPageObjectManager().getLoginPage().click_Forgot_Password();
 	}
 	
 	@Then("forgot password page is displayed")
