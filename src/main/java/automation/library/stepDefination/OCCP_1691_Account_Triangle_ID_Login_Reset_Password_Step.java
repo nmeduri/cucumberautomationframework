@@ -157,5 +157,45 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     	testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).click_Sign_In_Option();
     }
     
+    @And("select the privacy charter option")
+    public void select_the_privacy_charter_option() throws Exception {
+    	testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).click_Privacy_Charter();
+    }
+    
+    @Then("user is taken to canadian tire privacy charter screen")
+    public void user_is_taken_to_canadian_tire_privacy_charter_screen() throws Exception {
+    	testContext.getPageObjectManager().getPrivacyPage().display_Header_Privacy_Charter();
+    }
+    
+    @And("the header of the overlay is sticky and remain visible")
+    public void the_header_of_the_overlay_is_sticky_and_remain_visible() throws Exception {
+    	testContext.getPageObjectManager().getPrivacyPage().display_Header_Privacy_Charter();
+    }
+    
+    @Then("user is able to scroll and read throught the privacy charter condition")
+    public void user_is_able_to_scroll_and_read_throught_the_privacy_charter_condition() throws Exception {
+    	testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+    }
+    
+    @And("download the privacy charter")
+    public void downlaod_the_privacy_charter() throws Exception {
+    	testContext.getPageObjectManager().getPrivacyPage().clickPrivacyCharterDownloadLink();
+    }
+    
+    @Then("user is able to download the charter in pdf format") 
+    public void user_is_able_to_download_the_charter_in_pdf_format() throws Exception {
+    	testContext.getPageObjectManager().getPrivacyPage().verifyDowloadPrivacyChartedInPDFFormat();
+    }
+    
+    @And("delete the downloaded file in pdf format")
+    public void delete_the_downloaded_file_in_pdf_format() throws Exception {
+    	testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).deleteFiles(Constant.BASE_PATH, ".pdf");
+    }
+    
+    @Then("verfiy the download privacy charter document in pdf format")
+    public void verify_the_download_privacy_charter_document_in_pdf_format() throws Exception {
+       testContext.getPageObjectManager().getPrivacyPage().verifyDownloadPrivacyFileInPDFFormat();	
+    }
+    
     
 }

@@ -210,8 +210,17 @@ public class PDP_Page extends PageObject {
 	   $enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), FileReaderManager.getInstance().getDataReader().get_Quantity_Not_Integer());
    }
    
+   public void enterDecimalNumberInQuantityBox() throws Exception {
+	   $clearData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()));
+	   $enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), FileReaderManager.getInstance().getDataReader().get_Quantity_In_Decimal());
+   }
+   
    public void verifyNotAllowedNotIntegerValue() throws Exception {
 	   Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Quantity_Not_Integer(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value"));
+   }
+   
+   public void verifyNotAllowedNotDecimalValue() throws Exception {
+	   Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Quantity_In_Decimal(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value"));
    }
    
    public void enterQuantityZeroInQuantityBox() throws Exception {
@@ -222,6 +231,20 @@ public class PDP_Page extends PageObject {
    public void verifyNotAllowedZeroValue() throws Exception {
 	   Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Quantity_Zero(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value"));
    }
+   
+   public void clickWishlistButton() throws Exception {
+	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Wishlist_Button()));
+   }
+   
+   public void displayErrorWishlist() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Error_Message_Wishlist()));
+   }
+   
+   public void scrollDown() throws Exception {
+	   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+   }
+   
+   
    
 
 }

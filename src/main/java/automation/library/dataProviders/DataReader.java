@@ -115,5 +115,13 @@ public class DataReader {
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
 	
+	
+	public String get_Quantity_In_Decimal() {
+		String quantityNotInteger = Property.getProperty(Constant.DATA_FILE, "decimalNumbuerInQuantity");
+		if(quantityNotInteger != null)
+			return quantityNotInteger;
+		else
+			throw new RuntimeException("Quantity Data not specified in the Data file.");
+	}
 
 }

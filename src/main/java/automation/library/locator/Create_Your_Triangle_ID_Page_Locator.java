@@ -17,6 +17,7 @@ public class Create_Your_Triangle_ID_Page_Locator {
 	String thisFieldIsRequired = Property.getProperty(Constant.OR_FILE, "thisFieldIsRequired");
 	String signInOption = Property.getProperty(Constant.OR_FILE, "signInOption");
 	String messagePasswordDoNotMatch = Property.getProperty(Constant.OR_FILE, "messagePasswordDoNotMatch");
+	String privacyCharter = Property.getProperty(Constant.OR_FILE, "privacyCharter");
 	
 	
 	public String get_Create_Your_Triangle_ID_Header() {
@@ -81,5 +82,9 @@ public class Create_Your_Triangle_ID_Page_Locator {
 		
 		return messagePasswordDoNotMatch;
 		
+	}
+	
+	public String get_Privacy_Charter() {
+		return privacyCharter;
 	}
 }

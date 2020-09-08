@@ -17,7 +17,12 @@ public class WideScreenChromeDriverManager  extends DriverManager{
 
 	//@Override
 	public void createDriver() {
+		Map<String, Object> prefsMap = new HashMap<String, Object>();
+		prefsMap.put("profile.default_content_settings.popups", 0);
+		  prefsMap.put("download.default_directory", System.getProperty("user.dir"));
+		  
 		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("prefs", prefsMap);
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("window-size=2560x3500");
 		driver = new ChromeDriver(options);

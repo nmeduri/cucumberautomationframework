@@ -61,5 +61,9 @@ public class PLP_Page extends PageObject {
 	public void displayProductCardTitle() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Title()));
 	}
+	
+	public void displaySortByOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_By_Option()));
+	}
 
 }

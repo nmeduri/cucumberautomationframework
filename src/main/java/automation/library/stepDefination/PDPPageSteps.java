@@ -192,9 +192,19 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().enterNotIntegerNumberInQuantityBox();
 	}
 	
+	@And("enter decimal number in quantity box")
+	public void enter_decimal_number_in_quantity_box() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().enterDecimalNumberInQuantityBox();
+	}
+	
 	@Then("^user do not allowed  to enter the number that is not integer value$")
 	public void user_do_not_allowed_to_enter_the_number_that_is_not_ingeger_value() throws Exception{
 		testContext.getPageObjectManager().getPDPPage().verifyNotAllowedNotIntegerValue();
+	}
+	
+	@Then("user is not able to enter decimal value in quantity box")
+	public void user_is_not_able_to_enter_decimal_value_in_quantity_box() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifyNotAllowedNotDecimalValue();
 	}
 	
 	@And("enter number Zero in the quantity box")
@@ -205,6 +215,16 @@ public class PDPPageSteps extends BaseClass {
 	@Then("user is not allowed to enter zero number")
 	public void user_is_not_allowed_to_enter_zero_number() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().verifyNotAllowedZeroValue();
+	}
+	
+	@And("click the wishlist item")
+	public void click_the_wishlist_item() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().clickWishlistButton();
+	}
+	
+	@Then("an error message is displayed prompting user to select all variant first")
+	public void an_error_messsage_is_displayed_prompting_user_to_select_all_variant_first() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayErrorWishlist();
 	}
 
 }

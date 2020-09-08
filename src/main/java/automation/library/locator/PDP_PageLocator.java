@@ -20,6 +20,8 @@ public class PDP_PageLocator {
 	String decrementQuantity = Property.getProperty(Constant.OR_FILE, "decrementQuantity");
 	String quantityBox = Property.getProperty(Constant.OR_FILE, "quantityBox");
 	String decrementButtonDisabled = Property.getProperty(Constant.OR_FILE, "decrementButtonDisabled");
+	String wishListButton = Property.getProperty(Constant.OR_FILE, "wishListButton");
+	String errorMessageWishlist = Property.getProperty(Constant.OR_FILE, "errorMessageWishlist");
 	
 	
 	public String get_Add_To_Cart_Button() {
@@ -86,5 +88,13 @@ public class PDP_PageLocator {
 	
 	public String get_Quantity_Decrement_Disabled() {
 		return decrementButtonDisabled;
+	}
+	
+	public String get_Wishlist_Button() {
+		return wishListButton;
+	}
+	
+	public String get_Error_Message_Wishlist() {
+		return errorMessageWishlist;
 	}
 }

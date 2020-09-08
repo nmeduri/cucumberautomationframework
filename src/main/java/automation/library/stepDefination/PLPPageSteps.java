@@ -65,5 +65,15 @@ public class PLPPageSteps extends BaseClass {
 	public void plp_page_is_visible_in_list_view() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().displayListView();
 	}
+	
+	@And("scroll down the window below the view point")
+	public void scroll_down_the_window_below_the_view_point() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+	}
+	
+	@Then("the sorting option remains displayed at the top of the page in the sticky nav")
+	public void the_sorting_option_remains_displayed_at_the_top_of_the_page_in_the_sticky_nav() throws Exception {
+	   testContext.getPageObjectManager().getPLPPage().displaySortByOption();	
+	}
 
 }

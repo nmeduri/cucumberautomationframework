@@ -18,5 +18,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	Then greater than maximum quantity is not updated in the quantity box
 	And enter number in quantity box that is not integer
 	Then user do not allowed  to enter the number that is not integer value
+	And enter decimal number in quantity box
+	Then user is not able to enter decimal value in quantity box
 	And enter number Zero in the quantity box
 	Then user is not allowed to enter zero number

@@ -10,6 +10,7 @@ public class PLP_PageLocator {
 	String productCardImage =  Property.getProperty(Constant.OR_FILE, "productCardImage");
 	String listViewButton = Property.getProperty(Constant.OR_FILE, "listViewButton");
 	String productCardTitle = Property.getProperty(Constant.OR_FILE, "productCardTitle");
+	String sortByOption = Property.getProperty(Constant.OR_FILE, "sortByOption");
 	
 	
 	public String get_List_View() {
@@ -33,5 +34,9 @@ public class PLP_PageLocator {
 	
 	public String get_Product_Card_Title() {
 		return productCardTitle;
+	}
+	
+	public String get_Sort_By_Option() {
+		return sortByOption;
 	}
 }

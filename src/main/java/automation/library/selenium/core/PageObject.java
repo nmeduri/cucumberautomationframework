@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import automation.library.common.ExtensionFilter;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.enums.Locator.Loc;
@@ -17,6 +18,8 @@ import automation.library.logdetail.Log;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
+import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -194,6 +197,11 @@ public class PageObject {
 		}
 
 	}
+	
+	public void scrollDownByCoordinates() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+	}
 
 	public Element $click(Element element) {
 		return element.click();
@@ -234,6 +242,39 @@ public class PageObject {
 			}
 		}
 	}
+	
+	@SuppressWarnings("unused")
+	public boolean isFileDownloaded(String downloadPath, String fileName) throws Exception {
+		int j;
+		Thread.sleep(7000);
+		boolean flag = false;
+	    File dir = new File(downloadPath);
+	    File[] dir_contents = dir.listFiles();
+	    Log.message("Dir:- " + dir_contents[15].getName(), true);
+	    Log.message("length:- " + dir_contents.length, true);
+	    for (j = 0; j < dir_contents.length; j++) {
+	    	Log.message("Dir:- " + dir_contents[j].getName(), true);
+	        if (dir_contents[j].getName().contains(fileName))
+	            return flag=true;
+	            }
+
+	    return flag;
+	}
+	
+	public void deleteFiles( String directory, String extension ) {
+	    ExtensionFilter filter = new ExtensionFilter(extension);
+	    File dir = new File(directory);
+
+	    String[] list = dir.list(filter);
+	    File file;
+	    if (list.length == 0) return;
+
+	    for (int i = 0; i < list.length; i++) {
+	      //file = new File(directory + list[i]);
+	      file = new File(directory, list[i]);
+	      System.out.print(file + "  deleted : " + file.delete());
+	    }
+	   }
 	
 	public void switchFrameByString(String frameName) {
 		getDriver().switchTo().frame(frameName);

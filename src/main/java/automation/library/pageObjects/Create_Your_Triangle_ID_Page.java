@@ -82,5 +82,9 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	public void display_Password_Do_Not_Match() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Message_Password_Do_Not_Match()));
 	}
+	
+	public void click_Privacy_Charter() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Privacy_Charter()));
+	}
 
 }

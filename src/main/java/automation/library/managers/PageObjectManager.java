@@ -13,6 +13,7 @@ import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
+import automation.library.locator.Privacy_Charter_Page_Locator;
 import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
@@ -24,6 +25,7 @@ import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
+import automation.library.pageObjects.Privacy_Charter_Page;
 import automation.library.pageObjects.Registration_Email_Verification_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
@@ -58,6 +60,8 @@ public class PageObjectManager {
 	private ForgotPasswordPageLocator getForgotPasswordLocator;
 	private Your_Email_Has_Been_Verified_Page getYourEmailHasBeenVerifiedPage;
 	private Your_Email_Has_Been_Verified_PageLocator getYourEmailHasBeenVerifiedLocator;
+	private Privacy_Charter_Page getPrivacyCharterPage;
+	private Privacy_Charter_Page_Locator getPrivacyCharterLocator;
 	
 	public PageObjectManager(WebDriver driver) {
 
@@ -209,6 +213,14 @@ public class PageObjectManager {
 	
 	public Your_Email_Has_Been_Verified_PageLocator getYourEmailHasBeenVerifiedLocator() {
 		return (getYourEmailHasBeenVerifiedLocator == null) ? getYourEmailHasBeenVerifiedLocator = new Your_Email_Has_Been_Verified_PageLocator() : getYourEmailHasBeenVerifiedLocator;
+	}
+	
+	public Privacy_Charter_Page getPrivacyPage() {
+		return (getPrivacyCharterPage == null) ? getPrivacyCharterPage = new Privacy_Charter_Page(driver) : getPrivacyCharterPage;
+	}
+	
+	public Privacy_Charter_Page_Locator getPrivacyPageLocator() {
+		return (getPrivacyCharterLocator == null) ? getPrivacyCharterLocator = new Privacy_Charter_Page_Locator() : getPrivacyCharterLocator;
 	}
  	
 	
