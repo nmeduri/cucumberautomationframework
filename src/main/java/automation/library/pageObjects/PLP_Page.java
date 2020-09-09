@@ -12,6 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import automation.library.cucumber.TestContext;
 import automation.library.enums.Locator.Loc;
@@ -23,6 +24,7 @@ import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import edu.emory.mathcs.backport.java.util.Collections;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
+
 
 public class PLP_Page extends PageObject {
 
@@ -73,7 +75,11 @@ public class PLP_Page extends PageObject {
 	public void displayProductCardTitle() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Title()));
 	}
-	
+		
+	public void clickOnPriceLowToHigh() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Low_To_High()));
+	}
+		
 	public void displaySortByOption() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_By_Option()));
 	}
@@ -118,5 +124,14 @@ public class PLP_Page extends PageObject {
 	public void select_Customer_Rating_High_To_Low() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Customer_Rating_High_To_Low()));
 	}
-
+	
+//--Dinesh
+	public void verifyPriceLowToHigh() throws Exception {
+		ArrayList<Float> priceFloat = new ArrayList<Float>();
+		priceFloat.addAll(productPrice());
+		for (int i = 0; i < priceFloat.size() - 1; i++) {
+			Log.message("Number:- " + priceFloat.get(i) + "--" + "--" + priceFloat.get(i + 1), true);
+			Assert.assertTrue(priceFloat.get(i) <= priceFloat.get(i + 1));
+	}
+}
 }

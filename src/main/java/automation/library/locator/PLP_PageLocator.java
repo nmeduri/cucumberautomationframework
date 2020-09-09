@@ -1,5 +1,9 @@
 package automation.library.locator;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 
@@ -10,6 +14,7 @@ public class PLP_PageLocator {
 	String productCardImage =  Property.getProperty(Constant.OR_FILE, "productCardImage");
 	String listViewButton = Property.getProperty(Constant.OR_FILE, "listViewButton");
 	String productCardTitle = Property.getProperty(Constant.OR_FILE, "productCardTitle");
+	String pricelowToHigh = Property.getProperty(Constant.OR_FILE, "pricelowToHigh");
 	String sortByOption = Property.getProperty(Constant.OR_FILE, "sortByOption");
 	String priceHighToLow = Property.getProperty(Constant.OR_FILE, "priceHighToLow");
 	String prductPrice = Property.getProperty(Constant.OR_FILE, "prductPrice");
@@ -38,6 +43,11 @@ public class PLP_PageLocator {
 	
 	public String get_Product_Card_Title() {
 		return productCardTitle;
+	}
+	
+	
+	public String get_Price_Low_To_High() {
+		return pricelowToHigh;
 	}
 	
 	public String get_Sort_By_Option() {

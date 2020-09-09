@@ -66,7 +66,7 @@ public class Property {
 		
 		return property.getProperties(propsPath).getString(key);
 	}
-
+	
 	public String getPropertyValue(String key) {
 		return this.prop.getProperty(key);
 	}
