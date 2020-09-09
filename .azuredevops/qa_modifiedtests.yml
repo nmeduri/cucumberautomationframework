@@ -1,0 +1,84 @@
+# Run QA Modified tests
+
+parameters:
+- name: searchpattern
+  type: string
+  default: .feature
+  
+- name: filename
+  type: string
+  default: feature_filenames.txt
+
+steps:
+
+# add sauce-labs credentials
+- task: SODMain@0
+  inputs:
+    connectedServiceName: 'Sauce Labs ODP'
+    
+# Get encoded project name
+- bash: |
+        projectname=$(echo $(System.TeamProject) | sed 's/ /%20/g')
+        echo "##vso[task.setvariable variable=projectname]$projectname"
+  displayName: Get encoded project name if spaces
+
+# Get Changes files for a build
+- bash: |
+        echo ${projectname}
+        echo ${projectname1}
+        Commits=$(curl -s -H "Authorization: Bearer ${system_accesstoken}" -H "Content-Type:application/json" "$(System.CollectionUri)/$(projectname)/_apis/build/builds/$(Build.BuildId)/changes?api-version=5.1" | jq -r '.value[] .location' | awk -F / '{print $NF}')
+        for commitid in ${Commits[*]}; do
+          filename=$(curl -s -H "Authorization: Bearer ${system_accesstoken}" -H "Content-Type:application/json" "$(System.CollectionUri)/$(projectname)/_apis/git/repositories/$(Build.Repository.ID)/commits/$commitid/changes?api-version=5.1" | jq -r '.changes[] .item.path' | cut -c 21- | grep "\${{ parameters.searchpattern }}$")
+          echo ${filename} >> ${{ parameters.filename }}
+        done
+        sed -i '/^$/d' ${{ parameters.filename }}
+        sed -i 's/[[:blank:]]\+/\n/g' ${{ parameters.filename }}
+        sed -i 's/^/classpath:/' ${{ parameters.filename }}
+        featurefilenames=$(cat ${{ parameters.filename }} | paste -s -d " ")
+        echo "Modified Tests are : ${featurefilenames}"
+        echo "##vso[task.setvariable variable=featurefilenames]$featurefilenames"       
+  env:
+    system_accesstoken: $(System.AccessToken)
+  displayName: Get Changed Files Name
+
+# Run modifed tests in D1      
+- bash: |
+        cd $(Build.StagingDirectory) && java -jar Last_Commit_Runner.jar $(featurefilenames)
+        if [ $? = 0 ] ; then
+          echo "All test cases executed successfully"
+        else
+          echo "##vso[task.logissue type=warning]Test cases have been failed. Please check the issue and do not merge the PR directly"
+          echo "##vso[task.complete result=SucceededWithIssues;]"
+        fi
+  displayName: Run only modified tests in D1
+  env:
+    environment: D1
+
+# Publish D1 extent report
+- task: PublishPipelineArtifact@1
+  displayName: Publish Modified Tests Extent Report for D1 Environment
+  inputs:
+    targetPath: '$(Build.StagingDirectory)/cucumber-reports/'
+    artifact: Modified Tests Extent Report for D1
+    publishLocation: 'pipeline'
+
+# Run modified tests in D2          
+- bash: |
+        cd $(Build.StagingDirectory) && java -jar Last_Commit_Runner.jar $(featurefilenames)
+        if [ $? = 0 ] ; then
+          echo "All test cases executed successfully"
+        else
+          echo "##vso[task.logissue type=warning]Test cases have been failed. Please check the issue and do not merge the PR directly"
+          echo "##vso[task.complete result=SucceededWithIssues;]"
+        fi
+  displayName: Run only modified tests in D2
+  env:
+    environment: D2
+
+# Publish D2 extent report
+- task: PublishPipelineArtifact@1
+  displayName: Publish Modified Tests Extent Report for D2 Environment
+  inputs:
+    targetPath: '$(Build.StagingDirectory)/cucumber-reports/'
+    artifact: Modified Tests Extent Report for D2
+    publishLocation: 'pipeline'

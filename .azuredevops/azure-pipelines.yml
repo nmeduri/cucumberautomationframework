@@ -107,6 +107,9 @@ stages:
             targetPath: '$(Build.StagingDirectory)\Sap'
             artifactName: 'Sap'
 
+        - ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
+          - template: qa_modifiedtests.yml
+
   - stage: Run_QA_Tests_Suites
     dependsOn: CI
     condition: and( succeeded(), in( 'True', '${{ parameters.AEM_BVT }}', '${{ parameters.AEM_Regression }}', '${{ parameters.SAP_BVT }}', '${{ parameters.SAP_Regression}}', '${{ parameters.Lighthouse_Execution}}' ) )
