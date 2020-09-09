@@ -75,5 +75,29 @@ public class PLPPageSteps extends BaseClass {
 	public void the_sorting_option_remains_displayed_at_the_top_of_the_page_in_the_sticky_nav() throws Exception {
 	   testContext.getPageObjectManager().getPLPPage().displaySortByOption();	
 	}
-
+	
+	@And("click on sort by option")
+	public void click_on_sort_by_option() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().clickSortByOption();
+	}
+	
+	@And("Select sort option price high to low")
+	public void slect_sort_option_price_high_to_low() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().selectPriceHighToLow();
+	}
+	
+	@And("user click on close button")
+	public void user_click_on_close_button() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().clickCloseButton();
+	}
+	
+	@Then("all products results are rearranged from highest to lowest price")
+	public void all_products_results_are_rearranged_from_highest_to_lowest_price() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().verifyPriceHighToLow();
+	}
+	
+	@And("select sorting option Newest Arrivals")
+	public void select_sorting_option_newest_arrivals() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().select_New_Arrivals();
+	}
 }

@@ -11,7 +11,10 @@ public class PLP_PageLocator {
 	String listViewButton = Property.getProperty(Constant.OR_FILE, "listViewButton");
 	String productCardTitle = Property.getProperty(Constant.OR_FILE, "productCardTitle");
 	String sortByOption = Property.getProperty(Constant.OR_FILE, "sortByOption");
-	
+	String priceHighToLow = Property.getProperty(Constant.OR_FILE, "priceHighToLow");
+	String prductPrice = Property.getProperty(Constant.OR_FILE, "prductPrice");
+	String closeButtonMobile = Property.getProperty(Constant.OR_FILE, "closeButtonMobile");
+	String newArrivals = Property.getProperty(Constant.OR_FILE, "newArrivals");
 	
 	public String get_List_View() {
 		
@@ -38,5 +41,21 @@ public class PLP_PageLocator {
 	
 	public String get_Sort_By_Option() {
 		return sortByOption;
+	}
+	
+	public String get_Price_High_To_Low() {
+		return priceHighToLow;
+	}
+	
+	public String get_Product_Price() {
+		return prductPrice;
+	}
+	
+	public String get_Close_Button() {
+		return closeButtonMobile;
+	}
+	
+	public String get_New_Arrivals() {
+		return newArrivals;
 	}
 }

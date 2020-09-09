@@ -244,6 +244,13 @@ public class PDP_Page extends PageObject {
 	   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
    }
    
+   public void displayBadgeInStoreClearnce() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badge_In_Store_Clearnce()));
+   }
+   
+   public void displayBadgeSelectStyleSize() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badge_Select_Style_Size()));
+   }
    
    
 

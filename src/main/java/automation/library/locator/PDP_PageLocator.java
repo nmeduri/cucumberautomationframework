@@ -22,6 +22,8 @@ public class PDP_PageLocator {
 	String decrementButtonDisabled = Property.getProperty(Constant.OR_FILE, "decrementButtonDisabled");
 	String wishListButton = Property.getProperty(Constant.OR_FILE, "wishListButton");
 	String errorMessageWishlist = Property.getProperty(Constant.OR_FILE, "errorMessageWishlist");
+	String badgeInStoreClearnce = Property.getProperty(Constant.OR_FILE, "badgeInStoreClearnce");
+	String badgeSelectStyleSize = Property.getProperty(Constant.OR_FILE, "badgeSelectStyleSize");
 	
 	
 	public String get_Add_To_Cart_Button() {
@@ -97,4 +99,12 @@ public class PDP_PageLocator {
 	public String get_Error_Message_Wishlist() {
 		return errorMessageWishlist;
 	}
-}
+	
+	public String get_Badge_In_Store_Clearnce() {
+		return badgeInStoreClearnce;
+	}
+	
+	public String get_Badge_Select_Style_Size() {
+		return badgeSelectStyleSize;
+	}
+ }

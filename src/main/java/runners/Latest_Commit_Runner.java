@@ -14,7 +14,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
             
-			"classpath:Adobe/Regression/OCCP_1750_Registration_Privacy_Charter_Display.feature",
+			"classpath:Adobe/Regression/OCCP_862_PLP_Sorting.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@SmokeTest",
 			"--plugin", "pretty",

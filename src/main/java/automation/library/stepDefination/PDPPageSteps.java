@@ -226,5 +226,15 @@ public class PDPPageSteps extends BaseClass {
 	public void an_error_messsage_is_displayed_prompting_user_to_select_all_variant_first() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().displayErrorWishlist();
 	}
+	
+	@Then("the editable badge label displays in store clearnce")
+	public void the_editable_badge_label_displays_in_store_clearnce() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayBadgeInStoreClearnce();
+	}
+	
+	@And("an additional editable disclaimer displays only select style size badge")
+	public void an_additional_editable_disclaimer_displays_only_select_style_size_badge() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayBadgeSelectStyleSize();
+	}
 
 }
