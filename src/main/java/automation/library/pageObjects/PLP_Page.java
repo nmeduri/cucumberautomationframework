@@ -114,5 +114,9 @@ public class PLP_Page extends PageObject {
 	public void clickCloseButton() throws Exception {
 		$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getPLPLocatorPage().get_Close_Button()));
 	}
+	
+	public void select_Customer_Rating_High_To_Low() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Customer_Rating_High_To_Low()));
+	}
 
 }

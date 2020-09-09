@@ -252,6 +252,14 @@ public class PDP_Page extends PageObject {
 	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badge_Select_Style_Size()));
    }
    
+   public void select_Product_Variant() throws Exception {
+	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Variant()));
+   }
+   
+   public void select_Disable_Size() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Disable_Size()));
+	}
+   
    
 
 }

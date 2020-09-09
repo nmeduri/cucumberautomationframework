@@ -25,18 +25,25 @@ Feature: OCCP-862 PLP Sorting
     And Select sort option price high to low
     And user click on close button
     Then all products results are rearranged from highest to lowest price
-    
+
     @RegressionTest @WebView 
     Scenario: TC-347 Verify the functionality of the Newest Arrivals sorting option on a PLP
     Given plp url is available
     When plp is displayed
     And click on sort by option
     And select sorting option Newest Arrivals
-    
-    @RegressionTest @MobileView @SmokeTest
+
+    @RegressionTest @MobileView
     Scenario: TC-347 Verify the functionality of the Newest Arrivals sorting option on a PLP
     Given plp url is available
     When plp is displayed
     And click on sort by option
     And select sorting option Newest Arrivals
     And user click on close button
+    
+    
+    Scenario: TC-348 Verify the functionality of the Customer Ratings High to Low sorting option on a PLP
+    Given plp url is available
+    When plp is displayed
+    And click on sort by option
+    And select the sorting option customer ratings high to low

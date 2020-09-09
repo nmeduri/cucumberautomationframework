@@ -100,4 +100,9 @@ public class PLPPageSteps extends BaseClass {
 	public void select_sorting_option_newest_arrivals() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().select_New_Arrivals();
 	}
+	
+	@And("select the sorting option customer ratings high to low")
+	public void select_the_sorting_option_customer_ratings_high_to_low() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().select_Customer_Rating_High_To_Low();
+	}
 }

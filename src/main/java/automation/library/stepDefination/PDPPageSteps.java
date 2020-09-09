@@ -236,5 +236,15 @@ public class PDPPageSteps extends BaseClass {
 	public void an_additional_editable_disclaimer_displays_only_select_style_size_badge() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().displayBadgeSelectStyleSize();
 	}
+	
+	@And("user select product variant")
+	public void user_select_product_variant() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().select_Product_Variant();
+	}
+	
+	@And("select some variants but keep some unselected size")
+	public void select_some_variants_but_keep_some_unselected_size() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().select_Product_Variant();
+	}
 
 }
