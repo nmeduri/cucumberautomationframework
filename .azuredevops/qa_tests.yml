@@ -36,18 +36,19 @@ steps:
             if [ $? = 0 ] ; then
                 echo "All tests cases executed successfully"
             else
-                echo "##vso[task.logissue type=warning]BVT/Regression test cases have been failed. Please check."
+                echo "##vso[task.logissue type=warning]${testName} Tests have been failed. Please check."
                 echo "##vso[task.complete result=SucceededWithIssues;]"
             fi
             echo "##vso[task.setvariable variable=workingDir]${workingDir}"
             echo "##vso[task.setvariable variable=reportName]${reportName}"
 
-      displayName: Execute BVT/Regression Test Suite
+      displayName: Execute ${{ item.testname }} Test Suite
       env:
         workingDir: $(Pipeline.Workspace)/${{ item.projname }}
         searchPattern: ${{ item.pattern }}
         environment: $(environment)
         reportName: ${{ item.reportname }}
+        testName: ${{ item.testname }}
 
 # Publish Junit Report
 - task: PublishTestResults@2
@@ -59,7 +60,7 @@ steps:
 
 # Publish Extent Report
 - task: PublishPipelineArtifact@1
-  displayName: $(reportName)
+  displayName: Extent Report
   inputs:
     targetPath: '$(workingDir)/cucumber-reports/'
     artifact: '$(reportName)'

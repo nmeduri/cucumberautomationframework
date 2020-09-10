@@ -128,6 +128,7 @@ stages:
                   - projname: Sap
                     pattern: 'Sap_BVT*.jar'
                     reportname: 'SAP BVT Extent Report'
+                    testname: 'SAP BVT'
           - ${{ if eq(parameters.SAP_Regression, true) }}:
             - template: qa_tests.yml
               parameters:
@@ -135,6 +136,7 @@ stages:
                   - projname: Sap
                     pattern: 'Sap_Regression*.jar'
                     reportname: 'SAP Regression Extent Report'
+                    testname: 'SAP Regression'
 
       - job: Run_AEM_Tests_Suites
         displayName: Run AEM Tests Suites
@@ -150,13 +152,29 @@ stages:
                   - projname: Adobe
                     pattern: 'Adobe_BVT*.jar'
                     reportname: 'Adobe BVT Extent Report'
+                    testname: 'Adobe BVT'
           - ${{ if eq(parameters.AEM_Regression, true) }}:
             - template: qa_tests.yml
               parameters:
                 items:
                   - projname: Adobe
-                    pattern: 'Adobe_Regression*.jar'
-                    reportname: 'Adobe Regression Extent Report'
+                    pattern: 'Adobe_Regression_Mobile*.jar'
+                    reportname: 'Adobe Regression Mobile Extent Report'
+                    testname: 'Adobe Regression Mobile'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web*.jar'
+                    reportname: 'Adobe Regression Web Extent Report'
+                    testname: 'Adobe Regression Web'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Wide_Screen*.jar'
+                    reportname: 'Adobe Regression Wide Screen Extent Report'
+                    testname: 'Adobe Regression Wide Screen'
 
       - job: Run_Lighthouse_Scanning
         displayName: Run Lighthouse Scanning
