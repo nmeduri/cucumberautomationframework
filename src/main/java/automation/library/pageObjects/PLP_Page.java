@@ -14,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import automation.library.common.Property;
+import automation.library.cucumber.Constant;
 import automation.library.cucumber.TestContext;
 import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
@@ -30,6 +32,7 @@ public class PLP_Page extends PageObject {
 
 	TestContext testContext;
 	List<Float> productPrice = new ArrayList<Float>();
+	ArrayList<Integer> rating = new ArrayList<Integer>();
 	List<Float> price = new ArrayList<Float>();
 
 	public PLP_Page(WebDriver driver) {
@@ -125,6 +128,26 @@ public class PLP_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Customer_Rating_High_To_Low()));
 	}
 	
+	public List<Integer> rating() throws Exception {
+		List<Element> productContainer = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_productContainer());
+		for(int i=0; i<productContainer.size(); i++) {
+			List<Element> ratingCustomer = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_productContainerThree() + String.valueOf(i) +
+					testContext.getPageObjectManager().getPLPLocatorPage().get_ratingOne() +
+					testContext.getPageObjectManager().getPLPLocatorPage().get_ratingThree());
+			rating.add(ratingCustomer.size());		
+		}
+		return rating;
+	}
+	
+	public void verifyRatingHighToLow() throws Exception {
+		ArrayList<Integer> customerRating = new ArrayList<Integer>();
+		customerRating.addAll(rating());
+		for (int i = 0; i < customerRating.size() - 1; i++) {
+			Log.message("Number:- " + customerRating.get(i) + "--" + "--" + customerRating.get(i + 1), true);
+			Assert.assertTrue(customerRating.get(i) >= customerRating.get(i + 1));
+		}
+	}
+
 //--Dinesh
 	public void verifyPriceLowToHigh() throws Exception {
 		ArrayList<Float> priceFloat = new ArrayList<Float>();

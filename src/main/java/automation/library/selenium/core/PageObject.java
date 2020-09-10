@@ -54,6 +54,13 @@ public class PageObject {
 		Element el = new Element(driver, by);
 		return el;
 	}
+	
+	public List<WebElement> findElements(String locator) {
+        
+            List<WebElement> els = driver.findElements(By.xpath(locator));
+            return els;
+        
+    }
 
 	public WebDriverWait getWait() throws Exception {
 

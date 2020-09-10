@@ -21,6 +21,11 @@ public class PLP_PageLocator {
 	String closeButtonMobile = Property.getProperty(Constant.OR_FILE, "closeButtonMobile");
 	String newArrivals = Property.getProperty(Constant.OR_FILE, "newArrivals");
 	String customerRatingsHighToLow = Property.getProperty(Constant.OR_FILE, "customerRatingsHighToLow");
+	String productContainer = Property.getProperty(Constant.OR_FILE, "productContainerOne")+","+Property.getProperty(Constant.OR_FILE, "productContainerTwo");
+	String productContainerThree = Property.getProperty(Constant.OR_FILE, "productContainerThree");
+	String ratingOne = Property.getProperty(Constant.OR_FILE, "ratingOne");
+	String ratingThree = Property.getProperty(Constant.OR_FILE, "ratingThree");
+	String productContainerOne = Property.getProperty(Constant.OR_FILE, "productContainerOne");
 	
 	public String get_List_View() {
 		
@@ -72,5 +77,25 @@ public class PLP_PageLocator {
 	
 	public String get_Customer_Rating_High_To_Low() {
 		return customerRatingsHighToLow;
+	}
+	
+	public String get_productContainer() {
+		return productContainer;
+	}
+	
+	public String get_productContainerThree() {
+		return productContainerThree;
+	}
+	
+	public String get_ratingOne() {
+		return ratingOne;
+	}
+	
+	public String get_ratingThree() {
+		return ratingThree;
+	}
+	
+	public String get_productContainerOne() {
+		return productContainerOne;
 	}
 }

@@ -13,8 +13,8 @@ import automation.library.selenium.base.BaseClass;
 public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
-  
-			"classpath:Adobe/Regression/OCCP_1578_Select_Quantity_Box_Is_Available.feature",
+
+			"classpath:Adobe/Regression/OCCP_1750_Registration_Privacy_Charter_Display.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@SmokeTest",
 			"--plugin", "pretty",

@@ -105,4 +105,9 @@ public class PLPPageSteps extends BaseClass {
 	public void select_the_sorting_option_customer_ratings_high_to_low() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().select_Customer_Rating_High_To_Low();
 	}
+	
+	@Then("All the product results are rearranged from highest customer ratings high to lowest customer ratings")
+	public void all_the_product_results_are_rearranged_from_highest_customer_ratings_high_to_lowest_customer_ratings() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().verifyRatingHighToLow();
+	}
 }

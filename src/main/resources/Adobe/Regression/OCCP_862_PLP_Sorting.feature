@@ -43,24 +43,34 @@ Feature: OCCP-862 PLP Sorting
 
 #Dinesh
     @RegressionTest @WebView @WideScreen 
-		Scenario: TC-346 Verify the functionality of the 'Price Low to High' sorting option on a PLP
-		Given plp url is available
-		When user clicks on the 'Sort by' 
-		And user selects ‘Price Low to High' as sorting option
-		Then all the product results should be rearranged from lowest to highest price
+	Scenario: TC-346 Verify the functionality of the 'Price Low to High' sorting option on a PLP
+	Given plp url is available
+	When user clicks on the 'Sort by' 
+	And user selects ‘Price Low to High' as sorting option
+	Then all the product results should be rearranged from lowest to highest price
 		
-		@MobileView @SmokeTest
-		Scenario: TC-346 Verify the functionality of the 'Price Low to High' sorting option on a PLP
-		Given plp url is available
-		When user clicks on the 'Sort by' 
-		And user selects ‘Price Low to High' as sorting option
-		And user click on close button
-		Then all the product results should be rearranged from lowest to highest price
+	@MobileView
+	Scenario: TC-346 Verify the functionality of the 'Price Low to High' sorting option on a PLP
+	Given plp url is available
+	When user clicks on the 'Sort by' 
+	And user selects ‘Price Low to High' as sorting option
+	And user click on close button
+	Then all the product results should be rearranged from lowest to highest price
     
-    @Webview
+    @RegressionTest @Webview @WideScreen
     Scenario: TC-348 Verify the functionality of the Customer Ratings High to Low sorting option on a PLP
     Given plp url is available
     When plp is displayed
     And click on sort by option
     And select the sorting option customer ratings high to low
-
+    Then All the product results are rearranged from highest customer ratings high to lowest customer ratings
+    
+    
+    @RegressionTest @MobileView
+    Scenario: TC-348 Verify the functionality of the Customer Ratings High to Low sorting option on a PLP
+    Given plp url is available
+    When plp is displayed
+    And click on sort by option
+    And select the sorting option customer ratings high to low
+    And user click on close button
+    Then All the product results are rearranged from highest customer ratings high to lowest customer ratings
