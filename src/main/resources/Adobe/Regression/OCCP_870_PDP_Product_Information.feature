@@ -30,5 +30,22 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     Given pdp url is available
     When pdp page is displayed for the product
     Then the product title is displayed on the product   
-
+    
+    @RegressionTest @MobileView
+    Scenario: TC-1312 Verify the product code is displayed on the PDP in Mobile
+    Given pdp url is available
+    When pdp page is displayed for the product
+    Then the product code is displayed in buy box
+    
+    @RegressionTest @WideScreen
+    Scenario: TC-1316 Verify the product title is displayed on the PDP for a given product in Widescreen 
+    Given pdp url is available
+    When pdp page is displayed for the product
+    Then the product title is displayed on the product 
+    
+    @RegressionTest @WideScreen
+    Scenario: TC-1321 Verify the product code is displayed on the PDP in Widescreen 
+    Given pdp url is available
+    When pdp page is displayed for the product
+    Then the product code is displayed in buy box
 	

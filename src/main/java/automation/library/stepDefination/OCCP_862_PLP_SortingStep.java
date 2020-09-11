@@ -29,12 +29,12 @@ public class OCCP_862_PLP_SortingStep extends BaseClass {
 	
 	}
 	
-	@When("user clicks on the 'Sort by' ")
+	@When("user clicks on the Sort by ")
 	public void user_clicks_on_sortBy() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().clickSortByOption();
 		}
 	
-	@And("user selects ‘Price Low to High' as sorting option")
+	@And("user selects Price Low to High as sorting option")
 	public void user_selects_price_low_to_high() throws Exception {
 		
 		testContext.getPageObjectManager().getPLPPage().clickOnPriceLowToHigh();

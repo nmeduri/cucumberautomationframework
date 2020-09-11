@@ -17,9 +17,7 @@ Feature: OCCP-1750 Account Registration Privacy Charter Display
 	Then sign up page is displayed
 	And select the privacy charter option
 	Then user is taken to canadian tire privacy charter screen
-	And download the privacy charter	
-	Then user is able to download the charter in pdf format
-	And delete the downloaded file in pdf format
+	Then verfiy the download privacy charter document in pdf format
 	
 	@RegressionTest @MobileView
 	Scenario: TC-604 Verify the ability of a user to download the privacy charter in PDF format 

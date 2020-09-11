@@ -37,7 +37,7 @@ Feature: Health Check BVT
     Then the product title is displayed on the product 
     
     @WebView @MobileView @WideScreen
-    Scenario: TC-110 Verify the product code is displayed on the PDP
+    Scenario: TC-3080 Verify the product code is displayed on the PDP
     Given pdp url is available
     When pdp page is displayed for the product
     Then the product code is displayed in buy box

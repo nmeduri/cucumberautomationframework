@@ -3,6 +3,7 @@ package automation.library.stepDefination;
 
 import java.util.Set;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
@@ -30,9 +31,14 @@ public class PLPPageSteps extends BaseClass {
 	
 	@Given("^plp url is available$")
 	public void plp_url_is_availabe() throws Exception {
-		
 		plpPage.navigateTo_PLP_Page();
-		
+		JavascriptExecutor js = (JavascriptExecutor) PageObject.getDriver();
+		js.executeScript("window.scrollBy(0,250)", "");
+	}
+	
+	@And("scroll up to page")
+	public void scroll_up_to_page() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollUpByCoordinates();
 	}
 	
 	@When("^plp is displayed$")

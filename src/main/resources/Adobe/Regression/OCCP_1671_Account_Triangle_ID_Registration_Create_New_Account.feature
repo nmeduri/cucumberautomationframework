@@ -14,8 +14,8 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	Then verfiy CASL appear dynamically on registration model
 	Then verfiy opt-in appear dynamically on registration model
 	Then verify user sees the option to optn in optional marketing offers and sales flyer subscription
-	And user click on next button
-	And email verification sent confirmation screen is displayed
+	#And user click on next button
+	#And email verification sent confirmation screen is displayed
 	
 #	@RegressionTest @WebView @MobileView @WideScreen
 #	Scenario: TC-609 Verify an inline error message is displayed when user enters an invalid email ID on the screen

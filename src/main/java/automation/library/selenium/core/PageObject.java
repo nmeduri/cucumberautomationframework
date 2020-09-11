@@ -209,6 +209,11 @@ public class PageObject {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
 	}
+	
+	public void scrollUpByCoordinates() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-1000)", "");
+	}
 
 	public Element $click(Element element) {
 		return element.click();

@@ -11,6 +11,25 @@ Feature: OCCP-874 PDP Specifications
     And the specifications are displayed in tabular format
     And the specifications are displayed with title and values for each specification as individual rows
     And the specifications are less than 8 on the Desktop
-      
+    
+    @RegressionTest @MobileView
+    Scenario: TC-102 Verify product specifications are displayed on PDP for mobile (less than 8 specifications)
+    Given pdp url is available
+    When pdp page is displayed for the product
+    Then the specifications section is displayed
+    And the section title specifications is displayed
+    And the specifications are displayed in tabular format
+    And the specifications are displayed with title and values for each specification as individual rows
+    And the specifications are less than 8 on the Desktop  
+    
+    @RegressionTest @WidwView
+    Scenario: TC-1383 Verify product specifications are displayed on PDP for Widescreen (less than 8 specifications) 
+    Given pdp url is available
+    When pdp page is displayed for the product
+    Then the specifications section is displayed
+    And the section title specifications is displayed
+    And the specifications are displayed in tabular format
+    And the specifications are displayed with title and values for each specification as individual rows
+    And the specifications are less than 8 on the Desktop 
 
 	
