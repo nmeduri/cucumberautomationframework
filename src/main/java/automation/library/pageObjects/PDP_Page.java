@@ -260,6 +260,19 @@ public class PDP_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Disable_Size()));
 	}
    
+   public void displayStickyAddToCart() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Sticky_Add_To_Cart()));
+	}
    
-
+   public void scrollDownToStickyAddToCart() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Specifications_Title()), 5);
+	}
+   
+   public void displayFeaturesSection() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Features_Section()));
+	}
+   
+   public void displayFeaturesInBulletList() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Features_In_Bullet_List()));
+	}
 }
