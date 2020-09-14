@@ -14,9 +14,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_870_PDP_Product_Information.feature",
+			"classpath:Adobe/Regression/OCCP_871_PDP_Installations.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@SmokeTest",
+			"--tags", "@MobileView",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

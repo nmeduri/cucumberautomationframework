@@ -27,6 +27,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	Scenario: TC-87 Verify the functionality of the quantity box when all variants are selected 
 	Given pdp url is available
     When pdp page is displayed for the product
+    And scroll up to page
     And user select product variant
     And user print the quantity of the quantity box
     And click the increment sign of the quantity box
@@ -49,6 +50,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	Scenario: TC-86 Verify an error is dislpayed when user has not selected a variant before adding to cart 
 	Given pdp url is available
     When pdp page is displayed for the product
+    And scroll up to page
     And select some variants but keep some unselected size
     And user clicks on add to cart button
     Then an error message is displayed prompting user to select all variant first

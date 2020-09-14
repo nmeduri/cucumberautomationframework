@@ -22,6 +22,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	And user enter retype password
 	And user click on create button
 	Then get personalized offers page is displayed
+	And scroll up to page
 	And user click on toggle CASL subscription button
 	Then user is able to click toggle CASL subscription button
 	
@@ -34,6 +35,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	And user enter retype password
 	And user click on create button
 	Then get personalized offers page is displayed
+	And scroll up to page
 	And user select tool tip icon next to email me about offer and sales
 	Then verify tool tip message email me about offer and sales is displayed
 	And close the tooltip
@@ -48,6 +50,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	And user enter retype password
 	And user click on create button
 	Then get personalized offers page is displayed
+	And scroll up to page
 	And user click on toggle CASL subscription button
 	Then user is able to click toggle CASL subscription button
 	And user click on toggle CASL subscription button

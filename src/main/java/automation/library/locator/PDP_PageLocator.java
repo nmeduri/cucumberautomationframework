@@ -26,6 +26,18 @@ public class PDP_PageLocator {
 	String badgeSelectStyleSize = Property.getProperty(Constant.OR_FILE, "badgeSelectStyleSize");
 	String variantProduct = Property.getProperty(Constant.OR_FILE, "variantProduct");
 	String disableSize = Property.getProperty(Constant.OR_FILE, "disableSize");
+	String getItInstalled = Property.getProperty(Constant.OR_FILE, "getItInstalled");
+	String messageAvailableAtCheck = Property.getProperty(Constant.OR_FILE, "messageAvailableAtCheck");
+	String installationIcon = Property.getProperty(Constant.OR_FILE, "installationIcon");
+	String toolTipIconInstallation = Property.getProperty(Constant.OR_FILE, "toolTipIconInstallation");
+	String toolTipMessageInstallationPDP = Property.getProperty(Constant.OR_FILE, "toolTipMessageInstallationPDP");
+	String closeButtonToolTipInstallationPDP = Property.getProperty(Constant.OR_FILE, "closeButtonToolTipInstallationPDP");
+	String romanceCopySection = Property.getProperty(Constant.OR_FILE, "romanceCopySection");
+	String romanceCopySectionTitle = Property.getProperty(Constant.OR_FILE, "romanceCopySectionTitle");
+	String romanceCopyContent = Property.getProperty(Constant.OR_FILE, "romanceCopyContent");
+	String productManualTitle = Property.getProperty(Constant.OR_FILE, "productManualTitle");
+	String productManualDescription = Property.getProperty(Constant.OR_FILE, "productManualDescription");
+	String productManualLink = Property.getProperty(Constant.OR_FILE, "productManualLink");
 	String stickyAddToCart = Property.getProperty(Constant.OR_FILE, "stickyAddToCart");
 	String featuresSection = Property.getProperty(Constant.OR_FILE, "featuresSection");
 	String featuresBulletIcon = Property.getProperty(Constant.OR_FILE, "featuresBulletIcon");
@@ -122,6 +134,54 @@ public class PDP_PageLocator {
 		return disableSize;
 	}
 	
+	public String get_It_Installed() {
+		return getItInstalled;
+	}
+	
+	public String get_Message_Available_At_Check() {
+		return messageAvailableAtCheck;
+	}
+	
+	public String get_Installation_Icon() {
+		return installationIcon;
+	}
+	
+	public String get_Tool_Tip_Icon_Installation() {
+		return toolTipIconInstallation;
+	}
+	
+	public String get_Tool_Tip_Message_Installation_Indicator() {
+		return toolTipMessageInstallationPDP;
+	}
+	
+	public String get_Close_Button_Tool_Tip_Installation_Indicator() {
+		return closeButtonToolTipInstallationPDP;
+	}
+	
+	public String get_Romance_Copy_Section() {
+		return romanceCopySection;
+	}
+	
+	public String get_Romance_Copy_Section_Title() {
+		return romanceCopySectionTitle;
+	}
+	
+	public String get_Romance_Copy_Content() {
+		return romanceCopyContent;
+	}
+	
+	public String get_Product_Manual_Title() {
+		return productManualTitle;
+	}
+	
+	public String get_Product_Manual_Description() {
+		return productManualDescription;
+	}
+	
+	public String get_Product_Manual_Link() {
+		return productManualLink;
+	}
+  
 	public String get_Sticky_Add_To_Cart() {
 		return stickyAddToCart;
 	}
@@ -135,3 +195,4 @@ public class PDP_PageLocator {
 	}
 	
  }
+

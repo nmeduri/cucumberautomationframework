@@ -225,7 +225,7 @@ public class PageObject {
 	}
 
 	public int getWaitDuration() {
-		final int defaultWait = 40;
+		final int defaultWait = 20;
 		int duration;
 		try {
 			duration = property.getProperties(Constant.SELENIUM_CONFIGURATION).getInt("defaultWait");

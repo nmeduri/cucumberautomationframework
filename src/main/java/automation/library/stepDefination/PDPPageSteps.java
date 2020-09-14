@@ -246,5 +246,97 @@ public class PDPPageSteps extends BaseClass {
 	public void select_some_variants_but_keep_some_unselected_size() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().select_Product_Variant();
 	}
+	
+	@Then("Get it installed indicator is displayed on the pdp")
+	public void get_it_installed_indicator_is_displayed_on_the_pdp() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Get_It_Installed();
+	}
+	
+	@And("message available at checkout is displayed on the pdp")
+	public void message_available_at_checkout_is_displayed_on_the_pdp() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Message_Available_At_Check();
+	}
+	
+	@And("installation icon is displayed on pdp")
+	public void installaion_icon_is_displayed_on_pdp() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Installation_Icon();
+	}
+	
+	@And("tool tip icon is displayed on installation indicator")
+	public void tool_tip_icon_is_displayed_on_installation_indicator() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Tool_Tip_Icon_Installation();
+	}
+	
+	@And("click on tool tip icon")
+	public void click_on_tool_tip_icon() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().click_Tool_Tip_Icon();
+	}
+	
+	@Then("tool tip box opens and tool tip message along with close button is displayed")
+	public void tool_tip_box_opens_and_tool_tip_message_along_with_close_buitton_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Tool_Tip_Message_Installation_Indicator();
+		testContext.getPageObjectManager().getPDPPage().display_Close_Button_Tool_Tip_Icon_Installation_Indicator();
+	}
+	
+	@Then("tool tip is closed")
+	public void tool_tip_is_closed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().not_Display_Tool_Tip_Message_Installation_Indicator();
+	}
+	
+	@And("click on close button on installation indicator")
+	public void click_on_close_button_on_installation_indicator() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().click_Close_Button_Tool_Tip_Icon_Installation_Indicator();
+	}
+	
+	@When("user clicks on any where")
+	public void user_clicks_on_anywhere() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().click_Tool_Tip_Icon();
+	}
+	
+	@Then("the romance copy section is displayed")
+	public void the_romance_copy_section_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Romance_Copy_Section();
+	}
+	
+	@And("romance copy section title is displayed")
+	public void romance_copy_section_title_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Romance_Copy_Section_Title();
+	}
+	
+	@And("romance copy content is displayed")
+	public void romance_copy_content_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Romance_Copy_Content();
+	}
+	
+	@Then("product manual title is displayed")
+	public void product_manual_title_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Product_Manual_Title();
+	}
+	
+	@And("product manual description is displayed")
+	public void product_manual_description_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Product_Manual_Description();
+	}
+	
+	@And("product manual link is displayed")
+	public void product_manual_link_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().display_Product_Manual_Link();
+	}
+	
+	@And("user save the product manual link url")
+	public void user_save_the_product_manual_link_url() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().get_URL_Product_Manual_Link();
+	}
+	
+	@And("user is click on product manual link")
+	public void user_is_click_on_product_manual_link() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().click_Product_Manual_Link();
+	}
+	
+	@Then("product manual pdf opens in new tab")
+	public void product_manual_pdf_opens_in_new_tab() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		testContext.getPageObjectManager().getPDPPage().verify_PDF_In_New_Tab();
+	}
 
 }

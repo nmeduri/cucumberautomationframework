@@ -83,7 +83,7 @@ public class DriverFactory extends BaseClass {
 				Log.message("Sauce Lab" + String, true);
 				driverManager.set(new Web_Chrome_Sauce_Lab_DriverManager());
 				break;
-			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner")) {
 				Log.message("Sauce Lab" + String, true);
 				driverManager.set(new Mobile_Chrome_Sauce_Lab_DriverManager());
 				break;

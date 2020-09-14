@@ -28,6 +28,7 @@ public class ChromeDriverManager  extends DriverManager{
 		
 		WebDriverManager.chromedriver().setup(); 
 		driver = new ChromeDriver(option);
+		driver.manage().window().maximize();
 	}
 
 	//@Override

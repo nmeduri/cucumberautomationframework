@@ -9,7 +9,7 @@ Feature: OCCP-862 PLP Sorting
     And scroll down the window below the view point
     Then the sorting option remains displayed at the top of the page in the sticky nav
     
-    @RegressionTest @WebView 
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-345 Verify the functionality of the Price High to Low sorting option on a PLP
     Given plp url is available
     When plp is displayed
@@ -27,10 +27,11 @@ Feature: OCCP-862 PLP Sorting
     And user click on close button
     Then all products results are rearranged from highest to lowest price
 
-    @RegressionTest @WebView 
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-347 Verify the functionality of the Newest Arrivals sorting option on a PLP
     Given plp url is available
     When plp is displayed
+    And scroll up to page
     And click on sort by option
     And select sorting option Newest Arrivals
 
@@ -65,6 +66,7 @@ Feature: OCCP-862 PLP Sorting
     Scenario: TC-348 Verify the functionality of the Customer Ratings High to Low sorting option on a PLP
     Given plp url is available
     When plp is displayed
+    And scroll up to page
     And click on sort by option
     And select the sorting option customer ratings high to low
     Then All the product results are rearranged from highest customer ratings high to lowest customer ratings

@@ -3,6 +3,7 @@ package automation.library.pageObjects;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,6 +23,7 @@ import net.bytebuddy.implementation.bytecode.constant.TextConstant;
 public class PDP_Page extends PageObject {
 
 	TestContext testContext;
+	public static PropertiesConfiguration conf = new PropertiesConfiguration();
 
 	public PDP_Page(WebDriver driver) {
 
@@ -260,6 +262,85 @@ public class PDP_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Disable_Size()));
 	}
    
+   public void display_Get_It_Installed() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_It_Installed()));
+   }
+   
+   public void display_Message_Available_At_Check() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Message_Available_At_Check()));
+   }
+   
+   public void display_Installation_Icon() throws Exception {
+	   $display($(Loc.CLASSNAME, testContext.getPageObjectManager().getPDPPageLocator().get_Installation_Icon()));
+   }
+   
+   public void display_Tool_Tip_Icon_Installation() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Icon_Installation()));
+   }
+   
+   public void click_Tool_Tip_Icon() throws Exception {
+	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Icon_Installation()));
+   }
+   
+   public void display_Tool_Tip_Message_Installation_Indicator() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Message_Installation_Indicator()));
+   }
+   
+   public void not_Display_Tool_Tip_Message_Installation_Indicator() throws Exception {
+	   Assert.assertFalse($display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Message_Installation_Indicator())));
+   }
+   
+   public void display_Close_Button_Tool_Tip_Icon_Installation_Indicator() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Close_Button_Tool_Tip_Installation_Indicator()));
+   }
+   
+   public void click_Close_Button_Tool_Tip_Icon_Installation_Indicator() throws Exception {
+	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Close_Button_Tool_Tip_Installation_Indicator()));
+   }
+   
+   public void click_Product_Title() throws Exception {
+	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Title()));
+   }
+   
+   public void display_Romance_Copy_Section() throws Exception {
+	   $display($(Loc.ID, testContext.getPageObjectManager().getPDPPageLocator().get_Romance_Copy_Section()));
+   }
+   
+   public void display_Romance_Copy_Section_Title() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Romance_Copy_Section_Title()));
+   }
+   
+   public void display_Romance_Copy_Content() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Romance_Copy_Content()));
+   }
+   
+   public void display_Product_Manual_Title() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Manual_Title()));
+   }
+   
+   public void display_Product_Manual_Description() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Manual_Description()));
+   }
+   
+   public void display_Product_Manual_Link() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Manual_Link()));
+   }
+
+   public void click_Product_Manual_Link() throws Exception {
+	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Manual_Link()));
+   }
+   
+   public void get_URL_Product_Manual_Link() throws Exception {
+	   String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Manual_Link()), "href");
+	   Log.message("URL:- " + url, true);
+	   conf.setProperty("pdfUrl", url);
+   }
+   
+   public void verify_PDF_In_New_Tab() throws Exception {
+	   String expectedUrl = (java.lang.String) conf.getProperty("pdfUrl");
+	   Assert.assertEquals(expectedUrl, PageObject.getDriver().getCurrentUrl());
+   }
+
    public void displayStickyAddToCart() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Sticky_Add_To_Cart()));
 	}
