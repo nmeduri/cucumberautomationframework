@@ -43,6 +43,7 @@ public abstract  class DriverManager {
 	public WebDriver getDriver() {
 		if (driver == null) {
 			createDriver();
+			driver.manage().window().maximize();
 		}
 		return driver;
 	}

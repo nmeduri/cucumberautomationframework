@@ -14,7 +14,8 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_871_PDP_Installations.feature",
+			"classpath:SAP/Regression/OCCP_1670_PDP_Special_Buy_Price.feature",
+
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@MobileView",
 			"--plugin", "pretty",

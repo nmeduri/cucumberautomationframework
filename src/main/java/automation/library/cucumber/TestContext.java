@@ -24,6 +24,7 @@ public class TestContext {
 	}
 	public DriverManager getWebDriverManager() {
 		return webDriverManager;
+		
 	}
 
 	public PageObjectManager getPageObjectManager() {
