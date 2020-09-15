@@ -358,4 +358,8 @@ public class PDP_Page extends PageObject {
    public void displayFeaturesInBulletList() throws Exception {
 	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Features_In_Bullet_List()));
 	}
+   
+   public void displayProductPrice() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Unit_Price()));
+	}
 }
