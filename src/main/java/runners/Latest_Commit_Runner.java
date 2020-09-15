@@ -14,10 +14,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1670_PDP_Special_Buy_Price.feature",
-
+			"classpath:Adobe/Regression/OCCP_1760_Login_Welcome_Back_Message.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@MobileView",
+			"--tags", "@WebView",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
@@ -26,8 +25,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	};
 
 	public static void main(String[] args) throws Throwable {
-		
-		
+	
 		Latest_Commit_Runner ls = new Latest_Commit_Runner();
 		String className = ls.getClass().getSimpleName();
 		name = className;

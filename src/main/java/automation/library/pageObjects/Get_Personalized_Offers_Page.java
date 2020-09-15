@@ -32,7 +32,7 @@ public class Get_Personalized_Offers_Page extends PageObject {
 	}
 	
 	public void click_Next_Button() throws Exception {
-		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Next_Button())), 60);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Next_Button())), 60);
 	}
 	
 	public void display_Header_Get_Personalized_Offers() throws Exception{

@@ -13,6 +13,7 @@ Feature: OCCP-862 PLP Sorting
     Scenario: TC-345 Verify the functionality of the Price High to Low sorting option on a PLP
     Given plp url is available
     When plp is displayed
+    And scroll up to page
     And click on sort by option 
     And Select sort option price high to low
     Then all products results are rearranged from highest to lowest price
@@ -48,6 +49,7 @@ Feature: OCCP-862 PLP Sorting
     @RegressionTest @WebView @WideScreen 
 	Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
 	Given plp url is available
+	And scroll up to page
 	When user clicks on the Sort by 
 	And user selects Price Low to High as sorting option
 	Then all the product results should be rearranged from lowest to highest price

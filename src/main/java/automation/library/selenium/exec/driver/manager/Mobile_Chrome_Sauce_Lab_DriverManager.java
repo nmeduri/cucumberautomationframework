@@ -27,8 +27,9 @@ public class Mobile_Chrome_Sauce_Lab_DriverManager  extends DriverManager{
 		caps11.setCapability("browserName", "Chrome");
 		caps11.setCapability("platformName", "android");
 		caps11.setCapability("version", "");
-		caps11.setCapability("deviceName", "Samsung_Galaxy_S5_real");
+		caps11.setCapability("deviceName", "Samsung_Galaxy_Note_10_plus_real_us");
 		caps11.setCapability("platform", "platform");
+	    
 		try {
 			driver = new RemoteWebDriver(new URL(URL), caps11);
 		} catch (MalformedURLException e) {

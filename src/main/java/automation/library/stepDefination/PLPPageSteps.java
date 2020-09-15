@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
+import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
@@ -39,6 +40,7 @@ public class PLPPageSteps extends BaseClass {
 	@And("scroll up to page")
 	public void scroll_up_to_page() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollUpByCoordinates();
+		
 	}
 	
 	@When("^plp is displayed$")

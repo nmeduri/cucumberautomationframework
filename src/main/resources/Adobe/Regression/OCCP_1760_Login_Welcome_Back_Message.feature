@@ -1,4 +1,3 @@
-
 Feature: OCCP-1760 Welcome Back Message
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1760
@@ -9,6 +8,7 @@ Feature: OCCP-1760 Welcome Back Message
 	When enter email detail
 	And user enter password
 	And user click on sign in button
+	And link reward screen is displayed
 	When user is navigate on login page
 	Then welcome back page is displayed
 	And verify email id is prepopulated

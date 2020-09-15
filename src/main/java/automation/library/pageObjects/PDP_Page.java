@@ -279,11 +279,13 @@ public class PDP_Page extends PageObject {
    }
    
    public void click_Tool_Tip_Icon() throws Exception {
-	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Icon_Installation()));
+
+	   $click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Icon_Installation())), 30);
    }
    
    public void display_Tool_Tip_Message_Installation_Indicator() throws Exception {
-	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Message_Installation_Indicator()));
+	   $display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Message_Installation_Indicator())), 10);
+
    }
    
    public void not_Display_Tool_Tip_Message_Installation_Indicator() throws Exception {

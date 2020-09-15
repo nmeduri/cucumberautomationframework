@@ -10,7 +10,8 @@ import automation.library.selenium.base.BaseClass;
 public final class Adobe_BVT_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
-			"classpath:Adobe/BVT/", "--glue", "automation.library.stepDefination", 
+			"classpath:Adobe/BVT/", 
+			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@WebView",
 			"--plugin", "json:cucumber.json", 

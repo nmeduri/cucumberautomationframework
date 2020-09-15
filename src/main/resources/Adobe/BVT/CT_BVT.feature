@@ -19,10 +19,11 @@ Feature: Health Check BVT
     And the specifications are displayed with title and values for each specification as individual rows
     And the specifications are less than 8 on the Desktop
     
-    @WebView @MobileView @WideScreen
+    @WebView @MobileView @WideScreen @SmokeTest
     Scenario: TC-2589 Verify the return policy link is displayed on the PDP for a given product
     Given pdp url is available
     When pdp page is displayed for the product
+    And scroll up to page
     Then a link to the return policy section is displayed on the pdp under the resources sub section
     Then the return policy section title is displayed
     And verify the return policy description is displayed
@@ -48,6 +49,8 @@ Feature: Health Check BVT
     When plp is displayed
     Then plp page is visible in grid view
     And product card displays the product primary image
+    And scroll up to page
+    And scroll up to page
     Then user clicks on list view button
     Then plp page is visible in list view
     And product card displays the product primary image
@@ -56,8 +59,10 @@ Feature: Health Check BVT
     Scenario: TC-2592 Verify the product card displays the product title on PLP
     Given plp url is available
     When plp is displayed
+    And scroll up to page
     Then plp page is visible in grid view
     And product card displays the product card title
+    And scroll up to page
     Then user clicks on list view button
     Then plp page is visible in list view
     And product card displays the product card title

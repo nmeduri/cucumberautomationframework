@@ -212,7 +212,7 @@ public class PageObject {
 	
 	public void scrollUpByCoordinates() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,-1000)", "");
+		js.executeScript("window.scrollBy(0,-2000)", "");
 	}
 
 	public Element $click(Element element) {
@@ -225,7 +225,8 @@ public class PageObject {
 	}
 
 	public int getWaitDuration() {
-		final int defaultWait = 20;
+		final int defaultWait = 10;
+
 		int duration;
 		try {
 			duration = property.getProperties(Constant.SELENIUM_CONFIGURATION).getInt("defaultWait");

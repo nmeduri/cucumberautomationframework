@@ -15,6 +15,7 @@ public class Login_Page_Locator {
 	String forgotPassword = Property.getProperty(Constant.OR_FILE, "forgotPassword");
 	String inlineErrorMessageInvalidCredentials = Property.getProperty(Constant.OR_FILE, "inlineErrorMessageInvalidCredentials");
 	String messageFieldRequired = Property.getProperty(Constant.OR_FILE, "messageFieldRequired");
+	String linkRewards = Property.getProperty(Constant.OR_FILE, "linkRewards");
 	
 	public String get_Welcome_To_Your_Triangle_Header() {
 		
@@ -51,5 +52,9 @@ public class Login_Page_Locator {
 	
 	public String get_Message_Field_Required() {
 		return messageFieldRequired;
+	}
+	
+	public String get_Link_Rewards() {
+		return linkRewards;
 	}
 }

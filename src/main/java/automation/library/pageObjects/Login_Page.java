@@ -25,8 +25,14 @@ public class Login_Page extends PageObject {
 	}
 
 	public void navigateTo_Login_Page() throws Exception {
+		
 		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Url());
 
+	}
+	
+	public void displayLinkRewards() throws Exception {
+		
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Link_Rewards()));
 	}
 	
 	public void display_Welcome_To_Your_Triangle_Header() throws Exception {

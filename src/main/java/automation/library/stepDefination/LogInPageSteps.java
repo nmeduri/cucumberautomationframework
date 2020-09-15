@@ -77,6 +77,11 @@ public class LogInPageSteps extends BaseClass{
 		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
 	}
 	
+	@And("link reward screen is displayed")
+	public void displayLinkRewardScreen() throws Exception {
+		testContext.getPageObjectManager().getLoginPage().displayLinkRewards();
+	}
+	
 	@When("user click resend email verification")
 	public void user_click_resend_email_verification() throws Exception {
 		testContext.getPageObjectManager().getEmailSentConfirmationPage(PageObject.getDriver()).click_Resend_Email_Verification();
