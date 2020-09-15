@@ -32,8 +32,8 @@ public class HYB_OCCP_1580_PDP_Breadcrumb_Step extends BaseStep {
 	@Then("user should be able to find category code and name")
 	public void user_should_be_able_to_find_category_code_and_name() {
 
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("categories.code"));
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("categories.name"));
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("ctcCategories.id"));
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("ctcCategories.name"));
 
 	}
  

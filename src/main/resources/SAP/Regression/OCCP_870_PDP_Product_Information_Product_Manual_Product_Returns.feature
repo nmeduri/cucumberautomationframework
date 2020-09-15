@@ -11,7 +11,7 @@ Feature: OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns.feature
 	    @RegressionTest
 	    Scenario: TC-1335 HYB:OCCP-870 : Verify display of User Manual for Product is not available	
 	    Given occ api is available 
-		When user hits the GET api with Default
+		When user hit the GET api for user manual
 	    Then User Manual link is not displayed
 	    
 	    @RegressionTest

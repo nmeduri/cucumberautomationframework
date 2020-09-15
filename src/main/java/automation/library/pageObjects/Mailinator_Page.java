@@ -53,7 +53,7 @@ public class Mailinator_Page extends PageObject {
 	}
 	
 	public void displayVerifyEmailAddressOn_Mobile() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address_On_Mobile())), 50);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address_On_Mobile())), 60);
 		Assert.assertEquals("Verify your Triangle ID email address", $getText($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address_On_Mobile())));
 	}
 	

@@ -65,7 +65,7 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	}
 	
 	public void click_Create_Button() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Button())), 20);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Button())), 40);
 	}
 	
 	public void display_Error_Message_Invalid_Email() throws Exception {

@@ -37,7 +37,7 @@ public class HYB_OCCP_983_PDP_Features_Step extends BaseStep {
 
 	@And("returned JSON should display feature description")
 	public void returned_response_should_display_feature_description() {
-		List<String> featureBulletsDescription = response.jsonPath().get("featureBullets.description");
+		List<String> featureBulletsDescription = response.jsonPath().get("featureBullets");
 		Assert.assertFalse(featureBulletsDescription.contains(null));
 
 	}
@@ -48,7 +48,7 @@ public class HYB_OCCP_983_PDP_Features_Step extends BaseStep {
 		featureDescription.add(
 				"Yardworks 40V Snowthrower is ideal for smaller properties and clears snow easily without the hassle of gas or a cordPowered by an 40V 4Ah lithium-ion battery that is compatible across the entire 40V Yardworks/Greenworks programFoam grip ergonomic handle adds to the comfort and ease of use");
 
-		PageObject.verifyResponseValue(featureDescription, response.jsonPath().get("featureBullets.description"));
+		PageObject.verifyResponseValue(featureDescription, response.jsonPath().get("featureBullets"));
 
 	}
 	
@@ -57,8 +57,7 @@ public class HYB_OCCP_983_PDP_Features_Step extends BaseStep {
 		List<String> featureDescription=new ArrayList<String>();
 		featureDescription.add("Tondeuse à plateau en poly 2-en-1 Yardworks 48 V 3 Ah alimentée par une pile de 48 V 3 Ah conçue pour un excellent rendementAvec plateau en poly de 43,2 cm (17 po) service intense, impact élevé qui rend la tondeuse légère et facile à manoeuvrerBatterie 48 V avec la nouvelle technologie AeroCore permettant à l'air circuler dans la pile, ce qui réduit le risque de surchauffe");
 		
-		PageObject.verifyResponseValue(featureDescription, response.jsonPath().get("featureBullets.description"));
-		
+		PageObject.verifyResponseValue(featureDescription, response.jsonPath().get("featureBullets"));
 		
 		
 	}

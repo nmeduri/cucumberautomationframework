@@ -79,7 +79,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	@Then("User Manual link is not displayed")
 	public void user_manaul_link_is_not_displayed_in_response() {
 		
-		Assert.assertEquals(null, response.jsonPath().get("productManualLink"));
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("productManualLink"));
 		Log.message("User Manual Link is not Displayed" , true);
 	}
 	

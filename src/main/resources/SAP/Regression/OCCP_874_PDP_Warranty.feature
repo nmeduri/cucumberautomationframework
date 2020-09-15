@@ -56,13 +56,13 @@ Feature: OCCP_874_PDP_Warranty.feature
         @RegressionTest
         Scenario: TC-1413 HYB:OCCP-874: Verify Warranty - Additional Warranty Message is null
         Given occ api is available
-        When user hits the GET additional warranty api with locale en
+        When user hit GET warranty type api without locale
         Then returned JSON should have warranty section without additional Warranty Message name and value
        
         @RegressionTest
         Scenario: TC-1347 HYB:OCCP-874: Verify Warranty is null
         Given occ api is available
-        When user hits the GET api without locale
+        When user hit GET warranty type api without locale
         Then returned JSON should not have warranty section without names and values
        
         @RegressionTest

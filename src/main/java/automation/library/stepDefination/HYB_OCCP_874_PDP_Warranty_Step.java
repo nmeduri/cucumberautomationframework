@@ -77,9 +77,7 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 		
 		
 		Assert.assertEquals(null, response.jsonPath().get("warranty.warrantyMessage"));
-		Log.message("'Warranty Message and Value' are not displayed.", true);
-		Assert.assertEquals(null, response.jsonPath().get("warranty"));
-		Log.message("Warranty section is not displayed without names and values.", true);
+		
 		
 	}
 	
@@ -93,7 +91,7 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 	public void returned_response_have_warranty_type() {
 
 		Log.message("Warranty Type :- " + response.jsonPath().get("warranty.warrantyType"), true);
-		Assert.assertNotEquals(null, response.jsonPath().get("warranty.warrantyType"));
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("warranty.warrantyType"));
 		Log.message("Section 'Warranty Type' is Displayed.", true);
 	}
 

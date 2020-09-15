@@ -4,6 +4,7 @@ package automation.library.pageObjects;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
 import automation.library.enums.Locator.Loc;
@@ -31,8 +32,7 @@ public class Login_Page extends PageObject {
 	}
 	
 	public void displayLinkRewards() throws Exception {
-		
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Link_Rewards()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Link_Rewards())), 40);
 	}
 	
 	public void display_Welcome_To_Your_Triangle_Header() throws Exception {

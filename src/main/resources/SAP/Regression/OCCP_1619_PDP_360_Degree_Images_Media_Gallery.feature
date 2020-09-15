@@ -27,7 +27,7 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         @RegressionTest
         Scenario: TC-1465 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - mediaType is null 
         Given occ api is available
-        When user hits the GET api without locale
+        When user hits to GET api
         Then medias section should have in response without mediaType name and its value
         
         @RegressionTest
@@ -39,7 +39,7 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         @RegressionTest
         Scenario: TC-1467 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - name is null
         Given occ api is available
-        When user hits the GET api without locale
+        When user hits to GET api
         Then response should have medias section without name and its value
         
         @RegressionTest
@@ -69,7 +69,7 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         @RegressionTest
         Scenario: TC-1472 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - externalURL is null
         Given occ api is available
-        When user hits the GET api without locale
+        When user hits to GET api
         Then response should have medias without externalUrl and its value
         
         @RegressionTest
@@ -81,7 +81,7 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         @RegressionTest
         Scenario: TC-1474 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - damPath is null
         Given occ api is available
-        When user hits the GET api without locale
+        When user hits to GET api
         Then response should have medias without damPath and its value
         
         @RegressionTest

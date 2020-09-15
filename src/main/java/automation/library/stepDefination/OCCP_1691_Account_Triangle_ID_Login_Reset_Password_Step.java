@@ -115,6 +115,7 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @And("user click on next button")
     public void user_click_on_next_button() throws Exception {
+    	
      testContext.getPageObjectManager().getPersonalizedOffersPage(PageObject.getDriver()).click_Next_Button();
     }
     

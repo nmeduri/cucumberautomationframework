@@ -75,6 +75,12 @@ public class Common_Step extends BaseStep {
 
 	}
 	
+	@When("user hit GET warranty type api without locale")
+	public void user_hit_get_warranty_type_api_without_locale() {
+		response = getHybApiFRCA().getAPI_FR_CA(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1364());
+	}
+	
 	@When("user hits the GET api as fr_ca for service installation")
 	public void user_hits_the_api_with_locale_as_fr_ca_for_service_installaation() {
 
@@ -87,6 +93,14 @@ public class Common_Step extends BaseStep {
 	public void user_hits_the_api_without_locale() {
 
 		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1411());
+		
+
+	}
+	
+	@When("user hits to GET api")
+	public void user_hits_to_api_without_locale() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1410());
 		
 
 	}
@@ -105,6 +119,12 @@ public class Common_Step extends BaseStep {
 		
 		response = getApiFieldDefault().getAPI_Field_Default(url,
 				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1335());
+	}
+	
+	@When("user hit the GET api for user manual")
+	public void user_hit_the_GET_api_for_user_manual() {
+		response = getApiFieldDefault().getAPI_Field_Default(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1365());
 	}
 
 	@When("user hits the api")

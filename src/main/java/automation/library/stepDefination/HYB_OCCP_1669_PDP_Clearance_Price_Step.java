@@ -16,7 +16,7 @@ import io.restassured.specification.RequestSpecification;
 public class HYB_OCCP_1669_PDP_Clearance_Price_Step extends BaseStep {
 	RequestSpecification request;
 	
-	@When("user hits the GET method for base product has no variant section")
+	@When("user hits to GET method for base product has no variant section")
 	public void user_hits_the_api_without_locale_for_no_variant_section() {
 		
 		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1941());
@@ -29,13 +29,13 @@ public class HYB_OCCP_1669_PDP_Clearance_Price_Step extends BaseStep {
 		Assert.assertTrue(list.contains("IN_STORE_CLEARANCE"));
 	}
 	
-	@When("user hits the GET method for base product has variant with same prices")
+	@When("user hit the GET method for base product has variant with same prices")
 	public void user_hits_the_GET_method_for_base_product_has_variant_with_same_prices() {	
 		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1942());
 
 	}
 	
-	@When("user hits the GET method for base product has variant with different prices")
+	@When("user hits the GET api for base product has variant with different prices")
 	public void user_hits_the_GET_method_for_base_product_has_variant_with_different_prices() {
 		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1943());
 

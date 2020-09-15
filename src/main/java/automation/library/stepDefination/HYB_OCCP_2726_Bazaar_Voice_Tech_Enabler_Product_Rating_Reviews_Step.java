@@ -39,23 +39,23 @@ public class HYB_OCCP_2726_Bazaar_Voice_Tech_Enabler_Product_Rating_Reviews_Step
 
 	}
 	
-	@And("user should be able to see rating value as averageRating")
+	@And("user is able to see rating value as averageRating")
 	public void user_should_be_able_to_see_rating_value_as_averageRating() {
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("rating.averageRating"));
+		PageObject.notNullAttributeInResponse(Float.toString(response.jsonPath().get("rating.averageRating")));
 	}
 	
 	
-	@Then("user able to see rating values as numberOfReviews for CA FR")
+	@Then("user should be able to see rating values as numberOfReviews for CA FR")
 	public void user_able_to_see_rating_values_as_numberofreviews_ca_fr() {
 
 		Log.message("Nuber of Reviews:- " + response.jsonPath().get("rating.numberOfReviews"), true);
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("rating.numberOfReviews"));
+		PageObject.notNullAttributeInResponse(Integer.toString(response.jsonPath().get("rating.numberOfReviews")));
 
 	}
 	
 	@And("user should be able to see rating value as averageRating CA FR")
 	public void user_should_be_able_to_see_rating_value_as_averageRating_ca_fr() {
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("rating.averageRating"));
+		PageObject.notNullAttributeInResponse(Float.toString(response.jsonPath().get("rating.averageRating")));
 	}
  
 }

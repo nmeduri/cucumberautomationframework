@@ -10,7 +10,7 @@ public final class Sap_BVT_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 
 			"classpath:SAP/BVT/", 
-			"--glue", "automation.library.stepDefination", 
+			"--glue", "automation.library.stepDefination",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json", 
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
