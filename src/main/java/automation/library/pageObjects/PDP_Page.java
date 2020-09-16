@@ -1,5 +1,7 @@
 package automation.library.pageObjects;
 
+import static org.testng.Assert.fail;
+
 import java.util.List;
 import java.util.Set;
 
@@ -34,7 +36,7 @@ public class PDP_Page extends PageObject {
 
 	public void display_PDP_Page() throws Exception {
 
-		Assert.assertEquals("PDP", testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle());
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
 
 	}
 
@@ -359,6 +361,56 @@ public class PDP_Page extends PageObject {
 	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Features_In_Bullet_List()));
 	}
    
+   public void displaySpecificationsEightSpecifications() {
+		List<Element> specification = $$(Loc.XPATH,
+				testContext.getPageObjectManager().getPDPPageLocator().get_Specifications_In_Tabular_Format());
+		Assert.assertTrue(specification.size() == 6);
+	}
+   
+   public void displayViewMoreSpecifications() throws Exception {
+	   $display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_View_More_Specifications())), 10);
+   }
+   
+   public void clickViewMoreSpecifications() throws Exception {
+	   $click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_View_More_Specifications())), 10);
+   }
+   
+   public void clickViewLessSpecifications() throws Exception {
+	   $click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_View_Less_Specifications())), 10);
+   }
+   
+   public void displayRemainingListOfSpecifications() throws Exception {
+	   $display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Specifications_In_Tabular_Format())), 10);
+	   List<Element> specification = $$(Loc.XPATH,
+				testContext.getPageObjectManager().getPDPPageLocator().get_Specifications_In_Tabular_Format());
+	   Log.message("specification.size():- " + specification.size(), true);
+		Assert.assertTrue(specification.size() > 6);
+   }
+   
+   public void notDisplayViewMoreSpecifications() throws Exception {
+	   try {
+		   $display($$$$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_View_More_Specifications(), 1));
+		   Log.message("View more specification is displayed.", true); 
+		   fail();
+	   }catch(Exception e) {
+		   Log.message("View more specification is not displayed.", true);  
+	   }	      
+   }
+   
+   public void displayViewLessSpecifications() throws Exception {
+	   $display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_View_Less_Specifications())), 10);
+   }
+   
+   public void notDisplayViewLessSpecifications() throws Exception {
+	   try {
+		   $display($$$$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_View_Less_Specifications(), 1));
+		   Log.message("View more specification is displayed.", true); 
+		   fail();
+	   }catch(Exception e) {
+		   Log.message("View more specification is not displayed.", true);  
+	   } 
+   }
+
    public void displayProductPrice() throws Exception {
 	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Unit_Price()));
 	}

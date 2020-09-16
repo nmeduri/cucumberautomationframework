@@ -59,7 +59,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     And romance copy section title is displayed
     And romance copy content is displayed
     
-    @RegressionTest @WebView @SmokeTest
+    @RegressionTest @WebView
     Scenario: TC-109 Verify the product manual is displayed on the PDP for a given product 
     Given pdp url is available
     When pdp page is displayed for the product

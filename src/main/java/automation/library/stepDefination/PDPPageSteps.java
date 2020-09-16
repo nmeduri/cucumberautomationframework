@@ -338,5 +338,45 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		//testContext.getPageObjectManager().getPDPPage().verify_PDF_In_New_Tab();
 	}
+	
+	@Then("verify the first 8 specifications are displayed on the PDP")
+	public void verify_the_first_8_specifications_are_displayed_on_the_pdp() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displaySpecificationsEightSpecifications();
+	}
+	
+	@Then("verify the view more specifications hyperlink is displayed")
+	public void verify_the_view_more_specifications_hyperlink_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayViewMoreSpecifications();
+	}
+	
+	@And("click on view more specifications hyperlink")
+	public void click_on_view_more_specifications_hyper_link() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().clickViewMoreSpecifications();
+	}
+	
+	@Then("verify the remaining list of the specifications displays on the pdp")
+	public void verify_the_remaining_list_of_the_specifications_displays_on_the_pdp() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayRemainingListOfSpecifications();
+	}
+	
+	@Then("view more specifications is not displayed any more")
+	public void view_more_specifications_is_not_displayed_any_more() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().notDisplayViewMoreSpecifications();
+	}
+	
+	@Then("view less specifications is displayed")
+	public void view_less_specifications_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayViewLessSpecifications();
+	}
+	
+	@And("click on view less specifications hyperlink")
+	public void click_on_view_less_specifications_hyper_link() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().clickViewLessSpecifications();
+	}
+	
+	@Then("view less specifications is not displayed")
+	public void view_less_specifications_is_not_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().notDisplayViewLessSpecifications();
+	}
 
 }

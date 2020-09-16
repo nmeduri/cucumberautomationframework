@@ -135,6 +135,22 @@ public class Element {
 
 	}
 	
+	public Element(WebDriver driver, By by, int timeunit) throws Exception {
+
+		this.driver = driver;
+		this.by = by;
+
+		try {
+			wait = new WebDriverWait(driver, timeunit);
+			this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+			Log.debug("Element is found.");
+		} catch (Exception e) {
+			Log.message("Element is not found.", true);
+			Log.message(e.getMessage(), true);
+		}
+
+	}
+	
 	public Element clickable(int... retries) {
         try {
             this.element = wait.until(ExpectedConditions.elementToBeClickable(this.element));

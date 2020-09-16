@@ -17,7 +17,7 @@ public final class Adobe_Regression_Wide_Screen_Runner extends BaseClass {
 			"classpath:Adobe/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@WideScreen",
+			"--tags", "@SmokeTest",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

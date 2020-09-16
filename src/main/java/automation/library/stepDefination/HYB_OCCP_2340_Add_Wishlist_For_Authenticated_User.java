@@ -31,7 +31,6 @@ public class HYB_OCCP_2340_Add_Wishlist_For_Authenticated_User extends BaseStep 
 	
 	@When("user hits add product api for authenticated user")
 	public void user_hits_add_product_api() {
-
 		
 		response = getAuthorizationUrl().getAPI_Field_Default(url, accessToken, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1614());
 		

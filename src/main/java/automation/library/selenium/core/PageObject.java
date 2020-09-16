@@ -76,6 +76,13 @@ public class PageObject {
 		return el;
 
 	}
+	
+	public Element $$$$(Loc type, String locator, int timeunit) throws Exception {
+
+		Element el = new Element(driver, getLocator(type, locator), timeunit);
+		return el;
+
+	}
 
 	public WebElement $findElement(By by) throws Exception {
 

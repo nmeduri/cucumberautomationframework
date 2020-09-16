@@ -136,7 +136,7 @@ public class Common_Step extends BaseStep {
 	}
 	
 	@Then("user get the token")
-	public void user_get_the_token() {
+	public void user_get_the_token() {  
 		accessToken = response.jsonPath().get("access_token");
 		PageObject.notNullAttributeInResponse(accessToken);
 	}

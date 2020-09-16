@@ -41,6 +41,8 @@ public class PDP_PageLocator {
 	String stickyAddToCart = Property.getProperty(Constant.OR_FILE, "stickyAddToCart");
 	String featuresSection = Property.getProperty(Constant.OR_FILE, "featuresSection");
 	String featuresBulletIcon = Property.getProperty(Constant.OR_FILE, "featuresBulletIcon");
+	String viewMoreSpecificationsButton = Property.getProperty(Constant.OR_FILE, "viewMoreSpecificationsButton");
+	String viewLessSpecificationButton = Property.getProperty(Constant.OR_FILE, "viewLessSpecificationButton");
 	String prductUnitPrice = Property.getProperty(Constant.OR_FILE, "prductUnitPrice");
 	
 	
@@ -193,6 +195,14 @@ public class PDP_PageLocator {
 	
 	public String get_Features_In_Bullet_List() {
 		return featuresBulletIcon;
+	}
+	
+	public String get_View_More_Specifications() {
+		return viewMoreSpecificationsButton;
+	}
+	
+	public String get_View_Less_Specifications() {
+		return viewLessSpecificationButton;
 	}
 	
 	public String get_Product_Unit_Price() {
