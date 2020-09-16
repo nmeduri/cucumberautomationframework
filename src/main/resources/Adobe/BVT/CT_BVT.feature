@@ -51,6 +51,7 @@ Feature: Health Check BVT
     And product card displays the product primary image
     And scroll up to page
     And scroll up to page
+    And scroll up to page
     Then user clicks on list view button
     Then plp page is visible in list view
     And product card displays the product primary image

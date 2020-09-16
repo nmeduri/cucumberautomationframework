@@ -16,9 +16,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 
 
-			"classpath:SAP/Regression/OCCP_1670_PDP_Special_Buy_Price.feature",
+			"classpath:SAP/Regression/OCCP_2340_Add_Wishlist_For_Authenticated_User_Generate_Oauth_Token.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@SmokeTest",
+			"--tags", "@Dummy",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

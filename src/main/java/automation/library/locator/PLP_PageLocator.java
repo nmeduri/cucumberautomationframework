@@ -26,6 +26,9 @@ public class PLP_PageLocator {
 	String ratingOne = Property.getProperty(Constant.OR_FILE, "ratingOne");
 	String ratingThree = Property.getProperty(Constant.OR_FILE, "ratingThree");
 	String productContainerOne = Property.getProperty(Constant.OR_FILE, "productContainerOne");
+	String primaryImage = Property.getProperty(Constant.OR_FILE, "primaryImage");
+	String productBrand = Property.getProperty(Constant.OR_FILE, "productBrand");
+	String primaryImageMobile = Property.getProperty(Constant.OR_FILE, "primaryImageMobile");
 	
 	public String get_List_View() {
 		
@@ -97,5 +100,17 @@ public class PLP_PageLocator {
 	
 	public String get_productContainerOne() {
 		return productContainerOne;
+	}
+	
+	public String get_Primary_Image() {
+		return primaryImage;
+	}
+	
+	public String get_Product_Brand() {
+		return productBrand;
+	}
+	
+	public String get_Primary_Image_Mobile() {
+		return primaryImageMobile;
 	}
 }

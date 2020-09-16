@@ -118,4 +118,40 @@ public class PLPPageSteps extends BaseClass {
 	public void all_the_product_results_are_rearranged_from_highest_customer_ratings_high_to_lowest_customer_ratings() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().verifyRatingHighToLow();
 	}
+	
+	@And("hovers primary image area A")
+	public void hovers_primary_image_area_a() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().mouseHoverOnPrimaryImage();
+	}
+	
+	@Then("secondary image is displayed")
+	public void secondary_image_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displaySecondaryImage();
+	}
+	
+	@And("move coursor away from image area")
+	public void move_cursor_away_from_image_area() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().moveCursor();
+	}
+	
+	@Then("the image must switch back to the primary image")
+	public void the_image_must_switch_back_to_the_primary_imate() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().verifySwitchOnPrimaryImage();
+	}
+
+	
+	@Then("the mobile primary image must switch back to the primary image")
+	public void the_mobile_primary_image_must_switch_back_to_the_primary_imate() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().verifySwitchOnPrimaryMobileImage();
+	}
+	
+	@And("hovers on mobile in primary image area A")
+	public void hovers_on_mobile_in_primary_image_area_a() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().mouseHoverOnMobilePrimaryImage();
+	}
+	
+	@Then("mobile secondary image is displayed")
+	public void mobile_secondary_image_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayMobileSecondaryImage();
+	}
 }

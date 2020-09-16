@@ -141,6 +141,13 @@ public class Common_Step extends BaseStep {
 		PageObject.notNullAttributeInResponse(accessToken);
 	}
 	
+	@Given("access-token is available")
+	public void accesstoken_is_available() {
+		url = getAuthorizationUrl().HYB_Auth_Url("https://api.c0onq03u1z-canadiant2-d2-public.model-t.cc.commerce.ondemand.com/rest/v2/CTR/users/current/carts?fields=FULL");
+
+		
+	}
+	
 	
 
 }

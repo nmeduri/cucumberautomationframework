@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -156,6 +157,52 @@ public class PLP_Page extends PageObject {
 		for (int i = 0; i < priceFloat.size() - 1; i++) {
 			Log.message("Number:- " + priceFloat.get(i) + "--" + "--" + priceFloat.get(i + 1), true);
 			Assert.assertTrue(priceFloat.get(i) <= priceFloat.get(i + 1));
+	  }	
+    }
+	
+	public void mouseHoverOnPrimaryImage() throws Exception {
+		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
+		configuration.setProperty("primaryImage", primaryImage);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()));
+		$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image())));
 	}
-}
+	
+	public void mouseHoverOnMobilePrimaryImage() throws Exception {
+		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
+		configuration.setProperty("primaryImage", primaryImage);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()));
+		$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile())));
+	}
+	
+	public void displaySecondaryImage() throws Exception {
+		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
+		String expectedImage = primaryImage.replace("_a", "_b");
+		String secondaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
+		Assert.assertEquals(expectedImage, secondaryImage);
+	}
+	
+	public void displayMobileSecondaryImage() throws Exception {
+		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
+		String expectedImage = primaryImage.replace("_a", "_b");
+		String secondaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
+		Assert.assertEquals(expectedImage, secondaryImage);
+	}
+	
+	public void moveCursor() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_By_Option()));
+	}
+	
+	public void verifySwitchOnPrimaryImage() throws Exception {
+		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
+		String previousImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
+		Assert.assertEquals(primaryImage, previousImage);
+	}
+	
+	public void verifySwitchOnPrimaryMobileImage() throws Exception {
+		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
+		String previousImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
+		Assert.assertEquals(primaryImage, previousImage);
+	}
+	
+	
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -211,6 +212,16 @@ public class PageObject {
 		}
 
 	}
+	
+	public void $mouseHover(WebElement element) {
+		Actions actions = new Actions(driver);
+    	actions.moveToElement(element).perform();
+	}
+ 
+   public void $moveCursor() {
+	   Actions action = new Actions(driver);
+	   action.moveByOffset(50, 35).perform();
+   }
 	
 	public void scrollDownByCoordinates() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
