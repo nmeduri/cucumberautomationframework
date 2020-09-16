@@ -14,9 +14,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_1760_Login_Welcome_Back_Message.feature",
+			"classpath:SAP/Regression/OCCP_1670_PDP_Special_Buy_Price.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@WebView",
+			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
