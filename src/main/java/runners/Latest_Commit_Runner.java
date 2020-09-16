@@ -15,9 +15,10 @@ public final class Latest_Commit_Runner extends BaseClass{
 	private static String[] defaultOptions = {
 
 
+
 			"classpath:SAP/Regression/OCCP_1670_PDP_Special_Buy_Price.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@RegressionTest",
+			"--tags", "@SmokeTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

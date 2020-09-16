@@ -74,7 +74,7 @@ Feature: OCCP-862 PLP Sorting
     Then All the product results are rearranged from highest customer ratings high to lowest customer ratings
     
     
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView 
     Scenario: TC-348 Verify the functionality of the Customer Ratings High to Low sorting option on a PLP
     Given plp url is available
     When plp is displayed

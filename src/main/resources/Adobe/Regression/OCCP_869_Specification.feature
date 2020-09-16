@@ -31,10 +31,9 @@ Feature: OCCP-869 PDP Specifications
     And the specifications are displayed in tabular format
     And the specifications are displayed with title and values for each specification as individual rows
     And the specifications are less than 8 on the Desktop 
-    
-    
-    @RegressionTest @MobieView @WideScreen @SmokeTest
-    Scenario: TC-103, TC-104 Verify product specifications are displayed on PDP for desktop (more than 8 specifications) 
+   
+    @RegressionTest @MobieView @WideScreen
+    Scenario: TC-103, TC-104, TC-1384 Verify product specifications are displayed on PDP for desktop (more than 8 specifications) 
     Given pdp url is available
     When pdp page is displayed for the product
     Then the specifications section is displayed
@@ -43,7 +42,7 @@ Feature: OCCP-869 PDP Specifications
     Then verify the view more specifications hyperlink is displayed
     And click on view more specifications hyperlink
     Then verify the remaining list of the specifications displays on the pdp
-    #Then view more specifications is not displayed any more
+    Then view more specifications is not displayed any more
     Then view less specifications is displayed
     And click on view less specifications hyperlink
     Then verify the first 8 specifications are displayed on the PDP

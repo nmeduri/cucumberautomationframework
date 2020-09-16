@@ -26,7 +26,7 @@ public class HYB_OCCP_1670_PDP_Special_Buy_Price_step extends BaseStep {
 	
 	@Then("user should to see Special Buy badge under badges container")
 	public void user_should_to_see_Special_Buy_badge_under_badges_container() {
-
+        
 		Log.message("Response badge:- "  + response.jsonPath().get("badges"), true);
 		PageObject.verifyExpectedResponse(response.jsonPath().get("badges"), "SPECIALBUY");
 

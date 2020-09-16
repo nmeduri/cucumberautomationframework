@@ -414,4 +414,48 @@ public class PDP_Page extends PageObject {
    public void displayProductPrice() throws Exception {
 	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Product_Unit_Price()));
 	}
+   
+   public void displaySwatchWithSize() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Swatch_With_Size()));
+   }
+   
+   public void displaySizeLabel() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Size_Label()));
+   }
+   
+   public void displayUnavailableSize() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Unavailable_Size()));
+   }
+   
+   public void clickAvailableSize() throws Exception {
+	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Available_Size()));
+   }
+   
+   public void displaySelectedSize() throws Exception {
+	   String size = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Selected_Size()));
+	   configuration.setProperty("selectedSize", size);
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Selected_Size()));
+   }
+   
+   public void verifySelectedSizeLabel() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Selected_Size_Title()));
+	   String selectedSizeTitle = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Selected_Size_Title()));
+	   String expectedSize = (java.lang.String) configuration.getProperty("selectedSize");
+	   Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Size_Label())) + selectedSizeTitle,$getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Size_Label())) + expectedSize);
+   }
+   
+   public void displayColourSelectorFirst() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Colour_Selector_First()));
+   }
+   
+   public void displaySizeSelectorSecond() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Size_Selector_Second()));
+   }
+   
+   public void displayDefaultColor() throws Exception {
+	   String[] selectedColor = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Selected_Color()), "aria-label").split(" ");
+	   String selectedColorTitle = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Selected_Color_Title()));
+	   Assert.assertTrue(selectedColorTitle.contains(selectedColor[1]));
+   }
+   
 }

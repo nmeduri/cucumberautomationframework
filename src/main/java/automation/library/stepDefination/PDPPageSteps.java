@@ -379,4 +379,49 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().notDisplayViewLessSpecifications();
 	}
 
+	
+	@Then("the swatch with sizes is displayed")
+	public void the_swatch_with_sizes_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displaySwatchWithSize();
+	}
+	
+	@Then("the size label is displayed")
+	public void the_size_label_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displaySizeLabel();
+	}
+	
+	@Then("unavailabe size is displayed")
+	public void unavailabe_size_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayUnavailableSize();
+	}
+	
+	@And("select one of the available size")
+	public void select_one_of_the_available_size() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().clickAvailableSize();
+	}
+	
+	@Then("available size is successfully selected")
+    public void available_size_is_successfully_selected() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displaySelectedSize();
+	}
+	
+	@Then("the lable of selected size is displayed")
+	public void the_label_of_selected_size_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifySelectedSizeLabel();
+	}
+	
+	@Then("the colour selector is displayed first")
+	public void the_colour_selector_is_displayed_first() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayColourSelectorFirst();
+	}
+	
+	@Then("the size selector is displayed second")
+	public void the_size_selector_is_displayed_second() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displaySizeSelectorSecond();
+	}
+	
+	@And("a default color is displayed")
+	public void a_default_color_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayDefaultColor();
+	}
 }

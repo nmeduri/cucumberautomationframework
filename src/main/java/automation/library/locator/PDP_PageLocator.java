@@ -44,7 +44,16 @@ public class PDP_PageLocator {
 	String viewMoreSpecificationsButton = Property.getProperty(Constant.OR_FILE, "viewMoreSpecificationsButton");
 	String viewLessSpecificationButton = Property.getProperty(Constant.OR_FILE, "viewLessSpecificationButton");
 	String prductUnitPrice = Property.getProperty(Constant.OR_FILE, "prductUnitPrice");
-	
+	String swatchWithSize = Property.getProperty(Constant.OR_FILE, "swatchWithSize");
+	String sizeLabel = Property.getProperty(Constant.OR_FILE, "sizeLabel");
+	String unavailableSize = Property.getProperty(Constant.OR_FILE, "unavailableSize");
+	String availabeSize = Property.getProperty(Constant.OR_FILE, "availabeSize");
+	String selectedSize = Property.getProperty(Constant.OR_FILE, "selectedSize");
+	String selectedSizeTitle = Property.getProperty(Constant.OR_FILE, "selectedSizeTitle");
+	String colourSelectorFirst = Property.getProperty(Constant.OR_FILE, "colourSelectorFirst");
+	String sizeSelectorSecond = Property.getProperty(Constant.OR_FILE, "sizeSelectorSecond");
+	String selectedColor = Property.getProperty(Constant.OR_FILE, "selectedColor");
+	String sectedColorTitle = Property.getProperty(Constant.OR_FILE, "sectedColorTitle");
 	
 	
 	public String get_Add_To_Cart_Button() {
@@ -207,6 +216,46 @@ public class PDP_PageLocator {
 	
 	public String get_Product_Unit_Price() {
 		return prductUnitPrice;
+	}
+	
+	public String get_Swatch_With_Size() {
+		return swatchWithSize;
+	}
+	
+	public String get_Size_Label() {
+		return sizeLabel;
+	}
+	
+	public String get_Unavailable_Size() {
+		return unavailableSize;
+	}
+	
+	public String get_Available_Size() {
+		return availabeSize;
+	}
+	
+	public String get_Selected_Size() {
+		return selectedSize;
+	}
+	
+	public String get_Selected_Size_Title() {
+		return selectedSizeTitle;
+	}
+	
+	public String get_Colour_Selector_First() {
+		return colourSelectorFirst;
+	}
+	
+	public String get_Size_Selector_Second() {
+		return sizeSelectorSecond;
+	}
+	
+	public String get_Selected_Color() {
+		return selectedColor;
+	}
+	
+	public String get_Selected_Color_Title() {
+		return sectedColorTitle;
 	}
  }
 

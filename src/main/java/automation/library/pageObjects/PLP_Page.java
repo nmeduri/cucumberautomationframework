@@ -131,6 +131,7 @@ public class PLP_Page extends PageObject {
 	public List<Integer> rating() throws Exception {
 		List<Element> productContainer = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_productContainer());
 		for(int i=0; i<productContainer.size(); i++) {
+			
 			List<Element> ratingCustomer = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_productContainerThree() + String.valueOf(i) +
 					testContext.getPageObjectManager().getPLPLocatorPage().get_ratingOne() +
 					testContext.getPageObjectManager().getPLPLocatorPage().get_ratingThree());
