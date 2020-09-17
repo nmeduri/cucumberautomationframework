@@ -36,7 +36,7 @@ public class Forgot_Password_Page extends PageObject {
 	}
 	
 	public void click_Back_To_Sign_In() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Back_To_Sign_In()));
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Back_To_Sign_In())), 10);
 	}
 	
 	public void enterData_Email(String data) throws Exception {

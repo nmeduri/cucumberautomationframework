@@ -19,7 +19,7 @@ Feature: Health Check BVT
     And the specifications are displayed with title and values for each specification as individual rows
     And the specifications are less than 8 on the Desktop
     
-    @WebView @MobileView @WideScreen @SmokeTest
+    @WebView @MobileView @WideScreen
     Scenario: TC-2589 Verify the return policy link is displayed on the PDP for a given product
     Given pdp url is available
     When pdp page is displayed for the product

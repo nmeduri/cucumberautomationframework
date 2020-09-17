@@ -58,6 +58,11 @@ public class PLPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPLPPage().clickOnListViewButton();
 		}
 	
+	@Then("^user click on list view button on mobile$")
+	public void user_clicks_on_list_view_button_on_mobile() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().clickListViewMobile();
+		}
+	
 	@And("^product card displays the product primary image$")
 	public void product_card_displays_the_product_primary_image() throws Exception {
 		
@@ -153,5 +158,31 @@ public class PLPPageSteps extends BaseClass {
 	@Then("mobile secondary image is displayed")
 	public void mobile_secondary_image_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().displayMobileSecondaryImage();
+	}
+	
+	@Then("primary image is displayed in grid view")
+	public void primary_image_is_displayed_in_grid_view() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayPrimaryProductImage();
+	}
+	
+	@And("user click on grid view button")
+	public void user_click_on_grid_view_button() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().clickGridViewButton();
+	}
+	
+	@And("user clicks on grid view button Mobile")
+	public void user_clicks_on_grid_view_button_mobile() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().clickGridViewButtonMobile();
+	}
+	
+	@And("secondary image and more appears over primary image")
+	public void secondary_image_and_more_appears_over_primary_image() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().hoverOnProductContainsMoreThanFourColor();
+	}
+	
+	@Then("secondary image appears on hover and product card does not display any number of color")
+	public void secondary_image_appears_on_hover_and_product_card_does_not_display_number_of_color() throws Exception {
+		PageObject.getDriver().navigate().refresh();
+		testContext.getPageObjectManager().getPLPPage().displayProductCardReview();
 	}
 }

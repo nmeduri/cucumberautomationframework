@@ -136,6 +136,7 @@ public class PLP_Page extends PageObject {
 			List<Element> ratingCustomer = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_productContainerThree() + String.valueOf(i) +
 					testContext.getPageObjectManager().getPLPLocatorPage().get_ratingOne() +
 					testContext.getPageObjectManager().getPLPLocatorPage().get_ratingThree());
+			Log.message("Xpath:- "  + testContext.getPageObjectManager().getPLPLocatorPage().get_productContainerThree() + String.valueOf(i) +testContext.getPageObjectManager().getPLPLocatorPage().get_ratingOne() + testContext.getPageObjectManager().getPLPLocatorPage().get_ratingThree(), true);
 			rating.add(ratingCustomer.size());		
 		}
 		return rating;
@@ -204,5 +205,67 @@ public class PLP_Page extends PageObject {
 		Assert.assertEquals(primaryImage, previousImage);
 	}
 	
+	public void clickListViewMobile() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button_Mobile())), 5);
+		
+	}
+	
+	public void displayPrimaryProductImage() throws Exception {
+		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
+		Assert.assertTrue(primaryImage.contains("_a"));
+	}
+	
+	public void clickGridViewButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View_Button()));
+	}
+	
+	public void clickGridViewButtonMobile() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View_Button_Mobile())), 3);
+	}
+	
+	public void hoverOnProductContainsMoreThanFourColor() throws Exception {
+		String getPrimaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
+		String expectedImage = getPrimaryImage.replace("_a", "_b");
+		List<Element> secondaryImageList = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image());
+		List<WebElement> primaryImage = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()));
+		List<Element> colorNumber = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Color_Number());
+		for(int i=0; i<colorNumber.size(); i++) {
+			String[] color = $getText(colorNumber.get(i)).split(" ");	
+			if(Integer.parseInt(color[0]) > 6) {
+				$mouseHover(primaryImage.get(i));
+				String secondaryImage = $getAttributeValue(secondaryImageList.get(0), "src");
+				Log.message("Secondary Image:- " + secondaryImage, true);
+				Assert.assertEquals(expectedImage, secondaryImage);
+				Assert.assertTrue($display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_More_Color())));
+				break;
+			}
+		}
+	}
+	
+	public void displayProductCardReview() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image())), 5);
+		String getPrimaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
+		Log.message("Primary Image:- " + getPrimaryImage,  true);
+		String expectedImage = getPrimaryImage.replace("_a", "_b");
+		Log.message("Primary Expected Image:- " + expectedImage,  true);
+		List<Element> secondaryImageList = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image());
+		List<WebElement> primaryImage = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()));	
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Review()));
+		List<Element> productCardReview = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Review());
+		for(int i=0; i<productCardReview.size(); i++) {
+			if($getText(productCardReview.get(i)).equalsIgnoreCase("")) {
+				Log.message("Number :- " +i, true);
+				$mouseHover(primaryImage.get(i));
+				String secondaryImage = $getAttributeValue(secondaryImageList.get(i), "src");
+				Log.message("Secondary Image:- " + secondaryImage, true);
+				Log.message("Expected Image:- " + expectedImage, true);
+				Assert.assertTrue(expectedImage.contains("_b"));
+				break;
+			}else {
+				Log.message("Products have variants", true);
+				fail();
+			}
+		}
+	}
 	
 }

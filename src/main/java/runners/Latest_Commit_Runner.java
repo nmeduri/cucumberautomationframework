@@ -14,11 +14,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-
-
-			"classpath:SAP/Regression/OCCP_2340_Add_Wishlist_For_Authenticated_User_Generate_Oauth_Token.feature",
+			"classpath:Adobe/Regression/OCCP_861_PLP_Product_Card.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@Dummy",
+			"--tags", "@WebView",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

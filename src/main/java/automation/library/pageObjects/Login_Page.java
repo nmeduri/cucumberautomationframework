@@ -36,7 +36,7 @@ public class Login_Page extends PageObject {
 	}
 	
 	public void display_Welcome_To_Your_Triangle_Header() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Welcome_To_Your_Triangle_Header()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Welcome_To_Your_Triangle_Header())), 40);
 	}
 	
 	public void enterData_Email_Login_Page(String data) throws Exception {

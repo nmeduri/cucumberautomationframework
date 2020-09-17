@@ -29,6 +29,12 @@ public class PLP_PageLocator {
 	String primaryImage = Property.getProperty(Constant.OR_FILE, "primaryImage");
 	String productBrand = Property.getProperty(Constant.OR_FILE, "productBrand");
 	String primaryImageMobile = Property.getProperty(Constant.OR_FILE, "primaryImageMobile");
+	String listViewButtonMobile = Property.getProperty(Constant.OR_FILE, "listViewButtonMobile");
+	String gridViewButton = Property.getProperty(Constant.OR_FILE, "gridViewButton"); 
+	String gridViewButtonMobile = Property.getProperty(Constant.OR_FILE, "gridViewButtonMobile");
+	String colorNumberTitle = Property.getProperty(Constant.OR_FILE, "colorNumberTitle");
+	String moreColor = Property.getProperty(Constant.OR_FILE, "moreColor");
+	String productCardReview = Property.getProperty(Constant.OR_FILE, "productCardReview");
 	
 	public String get_List_View() {
 		
@@ -112,5 +118,29 @@ public class PLP_PageLocator {
 	
 	public String get_Primary_Image_Mobile() {
 		return primaryImageMobile;
+	}
+	
+	public String get_List_View_Button_Mobile() {
+		return listViewButtonMobile;
+	}
+	
+	public String get_Grid_View_Button() {
+		return gridViewButton;
+	}
+	
+	public String get_Grid_View_Button_Mobile() {
+		return gridViewButtonMobile;
+	}
+	
+	public String get_Color_Number() {
+		return colorNumberTitle;
+	}
+	
+	public String get_More_Color() {
+		return moreColor;
+	}
+	
+	public String get_Product_Card_Review() {
+		return productCardReview;
 	}
 }
