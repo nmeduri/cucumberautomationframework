@@ -35,6 +35,9 @@ public class PLP_PageLocator {
 	String colorNumberTitle = Property.getProperty(Constant.OR_FILE, "colorNumberTitle");
 	String moreColor = Property.getProperty(Constant.OR_FILE, "moreColor");
 	String productCardReview = Property.getProperty(Constant.OR_FILE, "productCardReview");
+	String productCardVariant = Property.getProperty(Constant.OR_FILE, "productCardVariant");
+	String selectProductVariant = Property.getProperty(Constant.OR_FILE, "selectProductVariant");
+	String numberOfColours = Property.getProperty(Constant.OR_FILE, "numberOfColours");
 	
 	public String get_List_View() {
 		
@@ -142,5 +145,17 @@ public class PLP_PageLocator {
 	
 	public String get_Product_Card_Review() {
 		return productCardReview;
+	}
+	
+	public String get_Product_Variant() {
+		return productCardVariant;
+	}
+	
+	public String get_Selected_Product_Variant() {
+		return selectProductVariant;
+	}
+	
+	public String get_Number_Of_Colour() {
+		return numberOfColours;
 	}
 }

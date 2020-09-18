@@ -54,6 +54,8 @@ public class PDP_PageLocator {
 	String sizeSelectorSecond = Property.getProperty(Constant.OR_FILE, "sizeSelectorSecond");
 	String selectedColor = Property.getProperty(Constant.OR_FILE, "selectedColor");
 	String sectedColorTitle = Property.getProperty(Constant.OR_FILE, "sectedColorTitle");
+	String specialBuy = Property.getProperty(Constant.OR_FILE, "specialBuy");
+	String colorVariant = Property.getProperty(Constant.OR_FILE, "containsClass") + "," + Property.getProperty(Constant.OR_FILE, "colorVariantPDP");
 	
 	
 	public String get_Add_To_Cart_Button() {
@@ -256,6 +258,14 @@ public class PDP_PageLocator {
 	
 	public String get_Selected_Color_Title() {
 		return sectedColorTitle;
+	}
+	
+	public String get_Special_Buy() {
+		return specialBuy;
+	}
+	
+	public String get_Color_Variant() {
+		return  colorVariant;
 	}
  }
 

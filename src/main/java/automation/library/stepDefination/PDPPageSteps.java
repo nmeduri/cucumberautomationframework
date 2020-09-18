@@ -424,4 +424,19 @@ public class PDPPageSteps extends BaseClass {
 	public void a_default_color_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().displayDefaultColor();
 	}
+	
+	@Then("special buy is displayed")
+	public void special_buy_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displaySpecialBuy();
+	}
+	
+	@Then("the badge is displayed in pink color")
+	public void the_badge_is_displayed_in_pink_color() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifyColorCode();
+	}
+	
+	@Then("the badge persists and displays for all variants of the product")
+	public void the_badge_persissts_and_displays_for_all_variants_of_the_product() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displaySpecialBuyForAllVariant();
+	}
 }

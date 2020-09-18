@@ -18,4 +18,24 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     And Select sort option price high to low
     And scroll up to page
     Then secondary image appears on hover and product card does not display any number of color
+    
+    @RegressionTest @WebView
+    Scenario: TC-1372 Verify the selection of Product Variant from the Product Card
+    Given plp url is available
+    When plp is displayed
+    And scroll up to page
+    And hovers primary image area A
+    Then secondary image is displayed
+    And click on the variant thumbnails on the product card
+    Then user is visually indicated that the thumbnail is selected
+    Then primary product image is updated to selected variant image
+    
+    @RegressionTest @WebView
+    Scenario: TC-1371 Verify display of number of colour variants on Product Card
+    Given plp url is available
+    When plp is displayed
+    And scroll up to page
+    And hovers primary image area A
+    Then verify the display of number of colours option on the product card
+    Then verify number colours is dislayed  where number of color variants availabe for the product
 	

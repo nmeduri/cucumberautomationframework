@@ -52,8 +52,8 @@ public class PLP_Page extends PageObject {
 
 	public void display_PLP_Page() throws Exception {
 
-		Assert.assertEquals("Automation_PLP",
-				testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle());
+		Assert.assertTrue("Automation_PLP".contains(testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle())
+				);
 
 	}
 
@@ -266,6 +266,32 @@ public class PLP_Page extends PageObject {
 				fail();
 			}
 		}
+	}
+	
+	public void clickProductCardVariant() throws Exception {
+		String productImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
+		configuration.setProperty("previousSelectedProductImage", productImage);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Variant()));
+	}
+	
+	public void displaySelectedProductVariant() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Selected_Product_Variant()));
+	}
+	
+	public void displaySelectedProductImage() throws Exception {
+		String previousSelectedProductImage = (java.lang.String) configuration.getProperty("previousSelectedProductImage");
+		Log.message("previousSelectedProductImage:- " + previousSelectedProductImage, true);
+		String selectedProductImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
+		Log.message("Image Value:- " + selectedProductImage, true);
+		Assert.assertNotEquals(previousSelectedProductImage, selectedProductImage);
+	}
+	
+	public void displayNumberOfColours() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Number_Of_Colour()));
+	}
+	
+	public void displayNumberOfColoursVariant() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Number_Of_Colour()));
 	}
 	
 }

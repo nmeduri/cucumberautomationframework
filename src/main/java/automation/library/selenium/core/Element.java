@@ -80,6 +80,10 @@ public class Element {
 	public String getAttribute(String data) {
 		return this.element.getAttribute(data);
 	}
+	
+	public String getCSSValue(String data) {
+		return this.element.getCssValue(data);
+	}
  	
 	public Element clear() {
 		this.element.clear();

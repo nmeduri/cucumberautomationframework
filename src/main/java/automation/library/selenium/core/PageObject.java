@@ -147,6 +147,10 @@ public class PageObject {
 		return element.getAttribute(attribute);
 		
 	}
+	
+	public String $getCSSValue(Element element, String attribute) {
+		return element.getCSSValue(attribute);
+	}
  
 	public String $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
@@ -394,6 +398,23 @@ public class PageObject {
 		int size = request.size();
 		Assert.assertTrue(size > 1);
 	}
+	
+	public void verifyColorCode(String expectedColor, String actualColor) throws Exception{
+
+		
+		String[] hexValue = actualColor.replace("rgba(", "").replace(")", "").split(",");
+
+		int hexValue1=Integer.parseInt(hexValue[0]);
+		hexValue[1] = hexValue[1].trim();
+		int hexValue2=Integer.parseInt(hexValue[1]);
+		hexValue[2] = hexValue[2].trim();
+		int hexValue3=Integer.parseInt(hexValue[2]);
+
+		String color = String.format("#%02x%02x%02x", hexValue1, hexValue2, hexValue3);
+        Log.message("Actual Color:- " + color, true);
+        Log.message("Expected Color:- " + expectedColor, true);
+		Assert.assertEquals(expectedColor, color);
+		}
 
 
 	

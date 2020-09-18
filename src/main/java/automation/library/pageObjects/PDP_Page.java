@@ -458,4 +458,21 @@ public class PDP_Page extends PageObject {
 	   Assert.assertTrue(selectedColorTitle.contains(selectedColor[1]));
    }
    
+   public void displaySpecialBuy() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Special_Buy()));
+	   }
+   
+   public void verifyColorCode() throws Exception {
+	   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Special_Buy()), "background-color"); 
+	   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#ffe0df", colorValue);
+   }
+   
+   public void displaySpecialBuyForAllVariant() throws Exception {
+	   List<Element> li = $$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Color_Variant());
+	   for(int i=0; i<li.size(); i++) {
+		   li.get(i).click();
+		   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Special_Buy()));
+	   }
+   }
+   
 }

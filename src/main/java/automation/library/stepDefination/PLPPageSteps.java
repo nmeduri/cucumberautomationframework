@@ -185,4 +185,29 @@ public class PLPPageSteps extends BaseClass {
 		PageObject.getDriver().navigate().refresh();
 		testContext.getPageObjectManager().getPLPPage().displayProductCardReview();
 	}
+	
+	@And("click on the variant thumbnails on the product card")
+	public void click_on_the_variant_thumbnails_on_the_product_card() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().clickProductCardVariant();
+	}
+	
+	@Then("user is visually indicated that the thumbnail is selected")
+	public void user_is_visually_indicated_that_the_thumbnail_is_selected() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displaySelectedProductVariant();
+	}
+	
+	@Then("primary product image is updated to selected variant image")
+	public void primary_product_image_is_updated_to_selected_variant_image() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displaySelectedProductImage();
+	}
+	
+	@Then("verify the display of number of colours option on the product card")
+	public void verify_the_display_of_number_of_colours_option_on_the_product_card() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayNumberOfColours();
+	}
+	
+	@Then("verify number colours is dislayed  where number of color variants availabe for the product")
+	public void verify_number_colours_is_displayed_where_number_of_color_variants_available_for_the_product() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayNumberOfColoursVariant();
+	}
 }
