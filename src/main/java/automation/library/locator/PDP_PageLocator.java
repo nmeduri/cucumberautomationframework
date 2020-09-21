@@ -56,6 +56,13 @@ public class PDP_PageLocator {
 	String sectedColorTitle = Property.getProperty(Constant.OR_FILE, "sectedColorTitle");
 	String specialBuy = Property.getProperty(Constant.OR_FILE, "specialBuy");
 	String colorVariant = Property.getProperty(Constant.OR_FILE, "containsClass") + "," + Property.getProperty(Constant.OR_FILE, "colorVariantPDP");
+	String pinkColor = Property.getProperty(Constant.OR_FILE, "pinkColor");
+	String scentSweetWater = Property.getProperty(Constant.OR_FILE, "scentSweetWater");
+	String sizeSeven = Property.getProperty(Constant.OR_FILE, "sizeSeven");
+	String itemAddedWishlistMessage = Property.getProperty(Constant.OR_FILE, "itemAddedWishlistMessage");
+	String wishlistBadge = Property.getProperty(Constant.OR_FILE, "wishlistBadge");
+	String wishListIconPDP = Property.getProperty(Constant.OR_FILE, "wishListIconPDP");
+	String defaultStateWishListIcon = Property.getProperty(Constant.OR_FILE, "defaultStateWishListIcon");
 	
 	
 	public String get_Add_To_Cart_Button() {
@@ -266,6 +273,34 @@ public class PDP_PageLocator {
 	
 	public String get_Color_Variant() {
 		return  colorVariant;
+	}
+	
+	public String get_Pink_Color() {
+		return pinkColor;
+	}
+	
+	public String get_Sweet_Water() {
+		return scentSweetWater;
+	}
+	
+	public String get_Size_Seven() {
+		return sizeSeven;
+	}
+	
+	public String get_Added_WishList_Message() {
+		return itemAddedWishlistMessage;
+	}
+	
+	public String get_Wishlist_Badge() {
+		return wishlistBadge;
+	}
+	
+	public String get_WishList_Icon() {
+		return wishListIconPDP;
+	}
+	
+	public String get_Default_State_WishList_Icon() {
+		return defaultStateWishListIcon;
 	}
  }
 

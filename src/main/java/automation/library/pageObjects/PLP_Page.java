@@ -294,4 +294,23 @@ public class PLP_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Number_Of_Colour()));
 	}
 	
+	public void displayProductCard() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card()));
+	}
+	
+	public void displayProductBrand() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+	}
+	
+	public void clickProductBrand() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+	}
+	
+	public void notClickableProductBrand() throws Exception {
+		$notClickable($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+	}
+	
+	public void displayReviewStars() throws Exception {
+		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getPLPLocatorPage().get_Review_Star()));
+	}
 }

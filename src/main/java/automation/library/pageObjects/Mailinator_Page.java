@@ -62,9 +62,29 @@ public class Mailinator_Page extends PageObject {
 	}
 	
 	public void click_Here_To_Verify_Email() throws Exception {
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("msg_body");
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email()), 5);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("msg_body");
+		PageObject.getDriver().switchTo().frame("msg_body");
+		Thread.sleep(3000);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email()), 5);
+		PageObject.getDriver().findElement(By.xpath("(//a[contains(@href, 'canadiantire.ca/en/')])[1]")).click();
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email()));
+	}
+	
+	public void displayResentEmail() throws Exception {
+		List<Element> list = $$(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address());
+		Assert.assertEquals(list.size(), 2);
+	}
+	
+	public void clickPreviousEmail() throws Exception {
+		List<Element> list = $$(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address());
+		$click(list.get(1));
+	}
+	
+	public void clickOnClickHere() throws Exception {
+		
+		PageObject.getDriver().switchTo().frame("msg_body");
+        Thread.sleep(5000);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here())));
 	}
 
 }

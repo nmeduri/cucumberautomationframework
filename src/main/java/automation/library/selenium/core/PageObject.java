@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Set;
 
 import static automation.library.enums.Locator.getLocator;
+import static org.junit.Assert.fail;
 import static org.testng.Assert.fail;
 
 public class PageObject {
@@ -244,6 +245,10 @@ public class PageObject {
 	public String getTitle() {
 		String value = driver.getTitle();
 		return value;
+	}
+	
+	public void $notClickable(Element element) {
+		element.notClickable(element);
 	}
 
 	public int getWaitDuration() {

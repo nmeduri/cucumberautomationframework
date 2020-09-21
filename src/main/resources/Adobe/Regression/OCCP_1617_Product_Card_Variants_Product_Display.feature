@@ -38,4 +38,12 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     And hovers primary image area A
     Then verify the display of number of colours option on the product card
     Then verify number colours is dislayed  where number of color variants availabe for the product
+    
+    @RegressionTest @WebView
+    Scenario: TC-1370 Verify display of Brand Name on Product Card
+    Given plp url is available
+    When plp is displayed
+    Then the product card is displayed for the product
+    And the product card name  on the product card is displayed
+    And product brand is not clickable
 	

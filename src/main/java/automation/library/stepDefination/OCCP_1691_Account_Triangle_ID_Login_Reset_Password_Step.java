@@ -126,32 +126,37 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @And("mailinator url is available")
     public void mailinator_url_is_available() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).navigate_To_Mailinator();
+    	testContext.getPageObjectManager().getMailinatorPage().navigate_To_Mailinator();
        }
     
     @And("user enter detail in mailinator inbox")
     public void user_enter_detail_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(emailVaue);
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(emailVaue);
+    }
+    
+    @And("user enter reset password email detail in mailinator inbox")
+    public void user_enter_reset_email_details_in_mailinator_inbox() throws Exception {
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_For_Reset_Password());
     }
     
     @And("user click on go button")
     public void user_click_on_go_button() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickGoButton();	
+    	testContext.getPageObjectManager().getMailinatorPage().clickGoButton();	
     }
     
     @Then("the user has received the verification email")
     public void the_user_has_received_the_verification_email() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayVerifyEmailAddress();
+    	testContext.getPageObjectManager().getMailinatorPage().displayVerifyEmailAddress();
     }
     
     @Then("user has received the verification email on mobile")
     public void the_user_has_received_the_verification_email_on_mobile() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayVerifyEmailAddressOn_Mobile();
+    	testContext.getPageObjectManager().getMailinatorPage().displayVerifyEmailAddressOn_Mobile();
     }
     
     @Then("user tap on verification email on mobile")
     public void user_click_tap_on_verification_email() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickVerifyEmailAddressOn_Mobile();
+    	testContext.getPageObjectManager().getMailinatorPage().clickVerifyEmailAddressOn_Mobile();
     }
     
     @And("user click on sign on option")
@@ -197,6 +202,27 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     @Then("verfiy the download privacy charter document in pdf format")
     public void verify_the_download_privacy_charter_document_in_pdf_format() throws Exception {
        testContext.getPageObjectManager().getPrivacyPage().verifyDownloadPrivacyFileInPDFFormat();	
+    }
+    
+    
+    @And("select Resend email verification")
+    public void select_resend_email_verification() throws Exception {
+    	testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).clickResendEmailVerification();
+    }
+    
+    @Then("verification email is resent to the user")
+    public void verification_email_is_resent_to_the_user() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage().displayResentEmail();
+    }
+    
+    @And("user click on previous mail")
+    public void user_click_on_previous_mail() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage().clickPreviousEmail();
+    }
+    
+    @Then("user enter new credenatials")
+    public void user_enter_credentials() throws Exception {
+   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_New_Password_Detail());
     }
     
     

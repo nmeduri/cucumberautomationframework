@@ -210,4 +210,24 @@ public class PLPPageSteps extends BaseClass {
 	public void verify_number_colours_is_displayed_where_number_of_color_variants_available_for_the_product() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().displayNumberOfColoursVariant();
 	}
+	
+	@Then("the product card is displayed for the product")
+	public void the_product_card_is_displayed_for_the_product() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayProductCard();
+	}
+	
+	@And("the product card name  on the product card is displayed")
+	public void the_product_card_name_on_the_product_card_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayProductBrand();
+	}
+	
+	@And("product brand is not clickable")
+	public void product_brand_is_not_clickable() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().notClickableProductBrand();
+	}
+	
+	@And("review stars are displayed")
+	public void review_stars_are_displayed() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayReviewStars();
+	}
 }

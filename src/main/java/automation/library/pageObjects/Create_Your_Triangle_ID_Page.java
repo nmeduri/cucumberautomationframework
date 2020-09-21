@@ -1,6 +1,8 @@
 
 package automation.library.pageObjects;
 
+import static org.testng.Assert.fail;
+
 import java.util.List;
 import java.util.Set;
 
@@ -86,6 +88,23 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	public void click_Privacy_Charter() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Privacy_Charter())), 20);
+	}
+	
+	public void clickResendEmailVerification() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Resend_Email_Verification()));
+	}
+	
+	public void clickJoinNowButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Join_Now()));
+	}
+	
+	public void verifyLoginWithNewPassword() throws Exception {
+		try {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Invalid_Login_Password()));
+			fail();
+		}catch(Exception e) {
+		
+		}
 	}
 
 }

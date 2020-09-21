@@ -222,6 +222,11 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().clickWishlistButton();
 	}
 	
+	@And("the default state of wishlist icon is displayed")
+	public void display_Wishlist_Icon() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayDefaultStateWishlistIcon();
+	}
+	
 	@Then("an error message is displayed prompting user to select all variant first")
 	public void an_error_messsage_is_displayed_prompting_user_to_select_all_variant_first() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().displayErrorWishlist();
@@ -438,5 +443,30 @@ public class PDPPageSteps extends BaseClass {
 	@Then("the badge persists and displays for all variants of the product")
 	public void the_badge_persissts_and_displays_for_all_variants_of_the_product() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().displaySpecialBuyForAllVariant();
+	}
+	
+	@Then("the in store only badge is applicable to all variants and remains displayed")
+	public void the_in_store_only_badge_is_applicable_to_all_varaiants_and_remains_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayInStoreBuyForAllVariant();
+	}
+	
+	@Then("the badge is displayed in Yellow color")
+	public void the_badge_is_displayed_in_yellow_color() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifyInStoreBageColorCode();
+	}
+	
+	@And("user select product")
+	public void user_select_product() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().selectProduct();
+	}
+	
+	@Then("item is successfully added into wish list")
+	public void item_is_successfully_added_into_wish_list() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().displayItemAddedWishlistMessage();
+	}
+	
+	@Then("wishlist icon becomes active in red color")
+	public void wishlist_icon_becomes_active_in_red_color() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifyWishListIconColor();
 	}
 }

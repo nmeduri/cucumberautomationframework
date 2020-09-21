@@ -37,6 +37,11 @@ public class OCCP_1672_Login_Forgot_Password_Steps extends BaseClass{
 		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_Invalid_Email());
 	}
 	
+	@And("user fill emaildetails for forgot password")
+	public void user_enter_email_details_for_forgot_password() throws Exception {
+		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_For_Reset_Password());
+	}
+	
 	@And("user click on send button")
 	public void user_click_on_send_button() throws Exception {
 		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).click_Send_Button();
@@ -46,5 +51,19 @@ public class OCCP_1672_Login_Forgot_Password_Steps extends BaseClass{
 	public void user_friendly_inline_error_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).displayMessageInvalidForgotPasswordEmail();
 	}
-
+	
+	@And("user click resend-passowrd link")
+	public void user_click_resend_password_link() throws Exception {
+		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).clickResendPasswordLink();
+	}
+	
+	@Then("email sent password screen is displayed")
+    public void display_Reset_Passowrd_Email_Sent_Screen() throws Exception {
+		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).displayResetPassowrdScreen();
+	}
+	
+	@Then("the email address is not popualated")
+	public void the_email_address_is_not_populated() throws Exception {
+		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).verifyEmailFieldNotPopulated();
+	}
 }

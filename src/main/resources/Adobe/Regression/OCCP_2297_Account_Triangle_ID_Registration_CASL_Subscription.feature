@@ -3,7 +3,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	Description: To test the ADOBE Test Cases for the story OCCP-2297
 	
 	@RegressionTest @WebView @MobileView @WideScreen
-	Scenario: TC-1417 Verify Email subscription is toggled off by default when user is registering with a new email on CASL subscription screen
+	Scenario: TC-1417, TC-1418 Verify Email subscription is toggled off by default when user is registering with a new email on CASL subscription screen
 	Given sign up url is available
 	When sign up page is displayed
 	And user enter email

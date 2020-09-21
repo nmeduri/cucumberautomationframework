@@ -1,4 +1,3 @@
-
 Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1671
@@ -70,6 +69,19 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	When sign up page is displayed
 	And user click on sign on option
 	Then login page is displayed
+	
+	@RegressionTest @WideScreen @WebView @MobileView
+	Scenario: TC-610 Verify the user receives a reset password email when already registered email ID is entered on the screen 
+	Given login url is available
+	When login page is displayed
+	And user click on forgot password
+	And user fill emaildetails for forgot password
+	And user click on send button
+	And user click resend-passowrd link
+	When mailinator url is available
+	Then user enter reset password email detail in mailinator inbox
+	And user click on go button
+	And user click on verification email
 	
 #	@RegressionTest
 #	Scenario: TC-613 Verify an inline error message is displayed when user re-enters the password incorrectly in the field on the screen 

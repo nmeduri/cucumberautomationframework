@@ -116,5 +116,15 @@ public class LogInPageSteps extends BaseClass{
 	public void message_field_required_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).display_This_Field_Is_Required();
 	}
+	
+	@And("user click on join now")
+	public void user_click_on_join_now() throws Exception {
+		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).clickJoinNowButton();
+	}
+	
+	@Then("sucessfully logged in with new password")
+	public void successfully_logged_in_with_new_password() throws Exception {
+		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).verifyLoginWithNewPassword();
+	}
 
 }

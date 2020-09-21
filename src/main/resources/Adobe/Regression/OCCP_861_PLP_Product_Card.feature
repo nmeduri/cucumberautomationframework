@@ -111,3 +111,12 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And user clicks on grid view button Mobile
     Then plp page is visible in grid view
     Then primary image is displayed in grid view
+    
+    @RegressionTest @WebView
+    Scenario: TC-164 Verify the product card in list view displays the product feautures on PLP on Desktop 	12538 - One Digital Platform – 
+    Given plp url is available
+    When plp is displayed
+    And scroll up to page
+    And the product card name  on the product card is displayed
+    And review stars are displayed
+    

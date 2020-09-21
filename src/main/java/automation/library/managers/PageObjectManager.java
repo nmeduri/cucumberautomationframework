@@ -16,6 +16,7 @@ import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
 import automation.library.locator.Privacy_Charter_Page_Locator;
 import automation.library.locator.Registration_Email_Verification_Locator;
+import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
@@ -28,6 +29,7 @@ import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
 import automation.library.pageObjects.Privacy_Charter_Page;
 import automation.library.pageObjects.Registration_Email_Verification_Page;
+import automation.library.pageObjects.Reset_Password_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
@@ -63,6 +65,8 @@ public class PageObjectManager {
 	private Your_Email_Has_Been_Verified_PageLocator getYourEmailHasBeenVerifiedLocator;
 	private Privacy_Charter_Page getPrivacyCharterPage;
 	private Privacy_Charter_Page_Locator getPrivacyCharterLocator;
+	private Reset_Password_Page getResetPasswordPage;
+	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
 	
 	public PageObjectManager(WebDriver driver) {
 
@@ -172,7 +176,7 @@ public class PageObjectManager {
 		
 	}
 	
-	public Mailinator_Page getMailinatorPage(WebDriver driver) {
+	public Mailinator_Page getMailinatorPage() {
 		
 		return (getMailinatorPage == null) ? getMailinatorPage = new Mailinator_Page(driver) : getMailinatorPage;
 		
@@ -222,6 +226,14 @@ public class PageObjectManager {
 	
 	public Privacy_Charter_Page_Locator getPrivacyPageLocator() {
 		return (getPrivacyCharterLocator == null) ? getPrivacyCharterLocator = new Privacy_Charter_Page_Locator() : getPrivacyCharterLocator;
+	}
+	
+	public Reset_Password_Page getResetPasswordPage() {
+		return (getResetPasswordPage == null) ? getResetPasswordPage = new Reset_Password_Page(driver) : getResetPasswordPage;
+	}
+	
+	public Reset_Your_Password_Page_Locator getResetPasswordLocatorPage() {
+		return (getPrivacyCharterLocator == null) ? getResetPassword_Page_Locator = new Reset_Your_Password_Page_Locator() : getResetPassword_Page_Locator;
 	}
  	
 	

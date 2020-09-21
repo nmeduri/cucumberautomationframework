@@ -100,7 +100,7 @@ public class Element {
 		boolean value = this.element.isDisplayed();
 		return value;
 	}
-
+	
 	public String  getText() {
 		String value = element.getText();
 		return value;
@@ -137,6 +137,17 @@ public class Element {
 			fail();
 		}
 
+	}
+	
+	public Element notClickable(Element element) {
+		try {
+			this.element = wait.until(ExpectedConditions.elementToBeClickable(this.element));
+			this.element.click();
+			fail();
+		}catch(Exception e) {
+			Log.message("Element not clickable", true);
+		}
+		return this;
 	}
 	
 	public Element(WebDriver driver, By by, int timeunit) throws Exception {

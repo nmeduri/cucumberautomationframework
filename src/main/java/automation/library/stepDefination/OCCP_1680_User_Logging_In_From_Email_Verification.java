@@ -39,17 +39,47 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
 	
 	@And("user click on verification email")
     public void user_click_on_verification_email() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickVerifyEmailAddress();
+    	testContext.getPageObjectManager().getMailinatorPage().clickVerifyEmailAddress();
     }
 	
 	@And("user click on here to verify email link")
     public void use_click_on_here_to_verify_email_link() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).click_Here_To_Verify_Email();
+    	testContext.getPageObjectManager().getMailinatorPage().click_Here_To_Verify_Email();
     }
     
     @Then("page your email has been verified displayed")
     public void page_your_email_has_been_verified_displayed() throws Exception {
     	testContext.getPageObjectManager().getYourEmailHasBeenVerifiedPage(PageObject.getDriver()).display_Your_Page_Has_been_Verified();
+    }
+    
+    @And("user click on click here on reset your password")
+    public void user_click_on_click_here_on_reset_your_password() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage().clickOnClickHere();
+    }
+    
+    @And("user enter new password")
+    public void user_enter_new_password() throws Exception {
+    	testContext.getPageObjectManager().getResetPasswordPage().enterNewPassword();
+    }
+    
+    @And("user enter re-type password")
+    public void user_enter_retype_password() throws Exception {
+    	testContext.getPageObjectManager().getResetPasswordPage().enterRetypeNewPassword();
+    }
+    
+    @And("user tap on sign in button")
+    public void user_tap_on_sign_in_button() throws Exception {
+    	testContext.getPageObjectManager().getResetPasswordPage().clickSignInButton();
+    }
+    
+    @And("user click on reset password button")
+    public void user_click_on_reset_password_button() throws Exception {
+    	testContext.getPageObjectManager().getResetPasswordPage().clickResetPasswordButton();
+    }
+    
+    @Then("user is navigated to password reset confirmation screen")
+    public void user_is_navigated_to_passowrd_reset_confirmation_screen() throws Exception {
+    	testContext.getPageObjectManager().getResetPasswordPage().displayResetPasswordScreen();
     }
  
 }

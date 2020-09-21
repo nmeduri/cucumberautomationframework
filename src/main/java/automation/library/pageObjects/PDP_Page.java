@@ -239,6 +239,14 @@ public class PDP_Page extends PageObject {
    public void clickWishlistButton() throws Exception {
 	   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Wishlist_Button()));
    }
+
+   public void dispalyWishlistIcon() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishList_Icon()));
+   }
+   
+   public void displayDefaultStateWishlistIcon() throws Exception {
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Default_State_WishList_Icon()));
+   }
    
    public void displayErrorWishlist() throws Exception {
 	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Error_Message_Wishlist()));
@@ -475,4 +483,42 @@ public class PDP_Page extends PageObject {
 	   }
    }
    
+   public void displayInStoreBuyForAllVariant() throws Exception {
+	   List<Element> li = $$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Color_Variant());
+	   for(int i=0; i<li.size(); i++) {
+		   li.get(i).click();
+		   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badge_In_Store_Clearnce()));
+	   }
+   }
+   
+   public void verifyInStoreBageColorCode() throws Exception {
+	   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badge_In_Store_Clearnce()), "background-color"); 
+	   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#ffd92a", colorValue);
+   }
+   
+
+	
+	public void selectProduct() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Pink_Color()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Sweet_Water()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Size_Seven()));
+	}
+	
+	public void displayItemAddedWishlistMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Added_WishList_Message()));
+	}
+	
+	public void wishlistIconInDefaultState() throws Exception {
+		try {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Wishlist_Badge()));
+			fail();
+		}catch(Exception e) {
+			
+		}
+	}
+	
+	public void verifyWishListIconColor() throws Exception {
+		   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishList_Icon()), "background-color"); 
+		   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("00000", colorValue);
+	   }
 }

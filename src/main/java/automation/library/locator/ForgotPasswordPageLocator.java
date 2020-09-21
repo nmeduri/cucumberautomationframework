@@ -11,6 +11,8 @@ public class ForgotPasswordPageLocator {
 	String emailForgotPassword = Property.getProperty(Constant.OR_FILE, "emailForgotPassword");
 	String sendButton = Property.getProperty(Constant.OR_FILE, "sendButton");
 	String invalidForgotPasswordEmailMessage = Property.getProperty(Constant.OR_FILE, "invalidForgotPasswordEmailMessage");
+	String resendPasswordLink = Property.getProperty(Constant.OR_FILE, "resendPasswordLink");
+	String resetPasswordEmailSent = Property.getProperty(Constant.OR_FILE, "resetPasswordEmailSent");
 	
 	public String get_Header_Forgot_Password_Page() {
 		
@@ -32,6 +34,14 @@ public class ForgotPasswordPageLocator {
 	
 	public String get_Invalid_Forgot_Password_Email_Message() {
 		return invalidForgotPasswordEmailMessage;
+	}
+	
+	public String get_Resend_Password_Link() throws Exception {
+		return resendPasswordLink;
+	}
+	
+	public String get_Reset_Password_Email_Sent() throws Exception {
+		return resetPasswordEmailSent;
 	}
 
 }

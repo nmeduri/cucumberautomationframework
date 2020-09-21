@@ -26,6 +26,23 @@ public class DataReader {
 			throw new RuntimeException("Password Data not specified in the Data file.");
 	}
 	
+	public String get_New_Password_Detail() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "newPassword");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("Password Data not specified in the Data file.");
+	}
+	
+	
+	public String get_UserName_For_Reset_Password() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameForResetPassword");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("UserName Data not specified in the Data file.");
+	}
+	
 	public String get_Retype_Password_Detail() {
 		String getRetypePassword = Property.getProperty(Constant.DATA_FILE, "retypePasswordData");
 		if(getRetypePassword != null)
