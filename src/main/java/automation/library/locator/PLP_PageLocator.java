@@ -26,9 +26,15 @@ public class PLP_PageLocator {
 	String ratingOne = Property.getProperty(Constant.OR_FILE, "ratingOne");
 	String ratingThree = Property.getProperty(Constant.OR_FILE, "ratingThree");
 	String productContainerOne = Property.getProperty(Constant.OR_FILE, "productContainerOne");
+	String customerRating = Property.getProperty(Constant.OR_FILE, "customerRating");
+	String zeroProductContainerRating = Property.getProperty(Constant.OR_FILE, "zeroProductContainerRating");
 	String primaryImage = Property.getProperty(Constant.OR_FILE, "primaryImage");
 	String productBrand = Property.getProperty(Constant.OR_FILE, "productBrand");
 	String primaryImageMobile = Property.getProperty(Constant.OR_FILE, "primaryImageMobile");
+	String breadcrumb = Property.getProperty(Constant.OR_FILE, "breadcrumb");
+	String homePathInBreadcrumb = Property.getProperty(Constant.OR_FILE, "homePathInBreadcrumb");
+	String breadcrumbMobile = Property.getProperty(Constant.OR_FILE, "breadcrumbMobile");
+	String lastBreadcrumb = Property.getProperty(Constant.OR_FILE, "lastBreadcrumb");
 	String listViewButtonMobile = Property.getProperty(Constant.OR_FILE, "listViewButtonMobile");
 	String gridViewButton = Property.getProperty(Constant.OR_FILE, "gridViewButton"); 
 	String gridViewButtonMobile = Property.getProperty(Constant.OR_FILE, "gridViewButtonMobile");
@@ -113,6 +119,13 @@ public class PLP_PageLocator {
 		return productContainerOne;
 	}
 	
+	public String get_customerRating() {
+		return customerRating;
+	}
+
+	public String get_product_Container0_Rating() {
+		return zeroProductContainerRating;
+	}
 	public String get_Primary_Image() {
 		return primaryImage;
 	}
@@ -123,6 +136,22 @@ public class PLP_PageLocator {
 	
 	public String get_Primary_Image_Mobile() {
 		return primaryImageMobile;
+	}
+	
+	public String get_Breadcrumb() {
+		return breadcrumb;
+	}
+	
+	public String get_Homepage_In_Breadcrumb_Path() {
+		return homePathInBreadcrumb;
+	}
+	
+	public String get_Mobile_Breadcrumb() {
+		return breadcrumbMobile;
+	}
+	
+	public String get_Last_Breadcrumb() {
+		return lastBreadcrumb;
 	}
 	
 	public String get_List_View_Button_Mobile() {

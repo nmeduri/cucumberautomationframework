@@ -421,7 +421,20 @@ public class PageObject {
 		Assert.assertEquals(expectedColor, color);
 		}
 
+	public boolean isClickable(By locator)      
+	{
+	    try
+	    {
+	        WebDriverWait wait = new WebDriverWait(driver, 5);
+			wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+			
+	        return true;
+	    }
+	    catch (Exception e)
+	    {
+	        return false;
+	    }
+	}
 
-	
-	
 }
+	

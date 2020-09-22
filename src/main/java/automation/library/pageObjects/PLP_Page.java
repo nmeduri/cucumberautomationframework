@@ -3,6 +3,7 @@ package automation.library.pageObjects;
 import static org.testng.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -167,6 +168,18 @@ public class PLP_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()));
 		$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image())));
 	}
+
+	    
+		public void notDisplayRatingSection() throws Exception {
+		     try {
+		         $display($$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_product_Container0_Rating(), 1));
+		         Log.message("Rating Section is displayed.", true);
+		         fail();
+		     }catch(Exception e) {
+		         Log.message("Rating Section is not displayed.", true); 
+		     }     
+		}
+
 	
 	public void mouseHoverOnMobilePrimaryImage() throws Exception {
 		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
@@ -205,6 +218,60 @@ public class PLP_Page extends PageObject {
 		Assert.assertEquals(primaryImage, previousImage);
 	}
 	
+	 public void displayBreadcrumb() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Breadcrumb()));
+			Log.message("breadcrumb is displayed", true);	
+		}
+	 
+	 public ArrayList<String> getBreadcrumbsHeirarchy() throws Exception {
+		 ArrayList<String> breadcrumbsList = new ArrayList<String>();
+		 Element breadcrumbEle = $$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Breadcrumb(),1);
+		 breadcrumbsList.add($getText(breadcrumbEle));
+		return breadcrumbsList;	
+		}
+	 
+	 public void verifyBreadcrumbsHeirarchy() throws Exception {
+		 List<String> expected =  Arrays.asList("Home\n" + "Tools & Hardware\n" + "Power Tools\n" + "Drills & Drivers\n" + "Hammer Drills" );
+		 List<String> actual = getBreadcrumbsHeirarchy();
+		 Assert.assertEquals(expected,actual );	
+		}
+	 
+	 public void verifyHomepageDisplayInBreadcrumb() throws Exception {
+		 Element breadcrumbEle = $$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Homepage_In_Breadcrumb_Path(),1);
+		 String expected =  "Home";
+		 String actual = $getText(breadcrumbEle);
+		 Assert.assertEquals(expected,actual );	
+		}
+	 
+	 public ArrayList<String> getBreadcrumbsHeirarchyInMobile() throws Exception {
+		 ArrayList<String> breadcrumbsList = new ArrayList<String>();
+		 Element breadcrumbEle = $$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb(),1);
+		 breadcrumbsList.add($getText(breadcrumbEle));
+		return breadcrumbsList;	
+		}
+	 
+	 public void displayMobileBreadcrumb() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb()));
+			Log.message("breadcrumb is displayed in mobile", true);	
+		}
+	 
+	 public void verifyBreadcrumbsHeirarchyInMobile() throws Exception {
+		 List<String> expected =  Arrays.asList("Home\n" + "Drills & Drivers");
+		 List<String> actual = getBreadcrumbsHeirarchyInMobile();
+		 Assert.assertEquals(expected,actual );	
+		}
+	 
+	 public void verifyLastBreadcrumbClickable() throws Exception {
+		 By lastbreadcrumbEle = $By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Last_Breadcrumb());
+		 boolean clickable = testContext.getPageObjectManager().getPageObject(driver).isClickable(lastbreadcrumbEle);
+		 if(clickable == true) {
+			 Log.message("element is clickable", true);
+			 }
+		 else {
+			 Log.message("element is not clickable", true);
+		 }
+	 }
+	 
 	public void clickListViewMobile() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button_Mobile())), 5);
 		
