@@ -34,6 +34,53 @@ public class DataReader {
 			throw new RuntimeException("Password Data not specified in the Data file.");
 	}
 	
+	public String get_UserName_For_One() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameOne");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("UserName Data not specified in the Data file.");
+	}
+	
+	public String get_UserName_Two() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameTwo");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("UserName Data not specified in the Data file.");
+	}
+	
+	public String get_UserName_Three() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernamethree");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("UserName Data not specified in the Data file.");
+	}
+	
+	public String get_UserName_Six() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameSix");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("UserName Data not specified in the Data file.");
+	}
+	
+	public String get_UserName_Four() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameForResetPassword");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("UserName Data not specified in the Data file.");
+	}
+	
+	public String get_Username_Five() {
+		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameFive");
+		if(getPassword != null)
+			return getPassword;
+		else
+			throw new RuntimeException("UserName Data not specified in the Data file.");
+	}
 	
 	public String get_UserName_For_Reset_Password() {
 		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameForResetPassword");

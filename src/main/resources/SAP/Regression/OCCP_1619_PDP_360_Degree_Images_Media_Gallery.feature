@@ -16,7 +16,7 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         Then response JSON should have medias section
         And  user able to see media section with code
         
-        @RegressionTest @SmokeTest
+        @RegressionTest
         Scenario: TC-1464 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - mediaType is not null
         Given occ api is available
         When user hits the GET api without locale

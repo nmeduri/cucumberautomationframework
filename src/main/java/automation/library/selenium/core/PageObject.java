@@ -270,10 +270,12 @@ public class PageObject {
 	public void switchWindow() {
 		
 		String parentWindow = driver.getWindowHandle();
+		Log.message("Parent Window:-" + parentWindow, true);
 		switching: while (true) {
 			for (String handle : getDriver().getWindowHandles()) {
 				if (!handle.equals(parentWindow)) {
 					Log.message("switching to window handle:" + handle, true);
+					configuration.setProperty("childWindow", handle);
 					getDriver().switchTo().window(handle);
 					break switching;
 				}else {

@@ -4,6 +4,7 @@ import static org.testng.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.junit.Assert;
 
@@ -59,12 +60,16 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     
     @And("user enter new password")
     public void user_enter_new_password() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().enterNewPassword();
+    	Random rand = new Random(); 
+    	int number = rand.nextInt(999);
+    	String value = "Test@" + Integer.toString(number);
+    	password = value;
+    	testContext.getPageObjectManager().getResetPasswordPage().enterNewPassword(password);
     }
     
     @And("user enter re-type password")
     public void user_enter_retype_password() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().enterRetypeNewPassword();
+    	testContext.getPageObjectManager().getResetPasswordPage().enterRetypeNewPassword(password);
     }
     
     @And("user tap on sign in button")

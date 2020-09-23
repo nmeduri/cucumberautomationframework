@@ -208,6 +208,13 @@ public class PLP_Page extends PageObject {
 		Assert.assertEquals(expectedImage, secondaryImage);
 	}
 	
+	public void displayNotMobileSecondaryImage() throws Exception {
+		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
+		String expectedImage = primaryImage.replace("_a", "_b");
+		String secondaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
+		Assert.assertNotEquals(expectedImage, secondaryImage);
+	}
+	
 	public void moveCursor() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_By_Option()));
 	}
@@ -380,7 +387,8 @@ public class PLP_Page extends PageObject {
 	}
 	
 	public void notClickableProductBrand() throws Exception {
-		$notClickable($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
 	}
 	
 	public void displayReviewStars() throws Exception {

@@ -7,8 +7,10 @@ import automation.library.common.Property;
 import automation.library.datatable.Data_Map;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
+import automation.library.locator.Footer_PageLocator;
 import automation.library.locator.ForgotPasswordPageLocator;
 import automation.library.locator.Get_Personalized_Offers_Page_Locator;
+import automation.library.locator.Header_Page_Locator;
 import automation.library.locator.HomePageLocator;
 import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
@@ -20,8 +22,10 @@ import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
+import automation.library.pageObjects.Footer_Page;
 import automation.library.pageObjects.Forgot_Password_Page;
 import automation.library.pageObjects.Get_Personalized_Offers_Page;
+import automation.library.pageObjects.Header_Page;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
@@ -67,6 +71,10 @@ public class PageObjectManager {
 	private Privacy_Charter_Page_Locator getPrivacyCharterLocator;
 	private Reset_Password_Page getResetPasswordPage;
 	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
+	private Header_Page getHeaderPage;
+	private Header_Page_Locator getHeaderPageLocator;
+	private Footer_Page getFooterPage;
+	private Footer_PageLocator getFooterPageLocator;
 	
 	public PageObjectManager(WebDriver driver) {
 
@@ -234,6 +242,23 @@ public class PageObjectManager {
 	
 	public Reset_Your_Password_Page_Locator getResetPasswordLocatorPage() {
 		return (getPrivacyCharterLocator == null) ? getResetPassword_Page_Locator = new Reset_Your_Password_Page_Locator() : getResetPassword_Page_Locator;
+	}
+	
+	public Header_Page getHeaderPage() {
+		return (getHeaderPage == null) ? getHeaderPage = new Header_Page(driver) : getHeaderPage;
+	}
+	
+	public Header_Page_Locator get_Header_Locator_Page() {
+		return (getHeaderPageLocator == null) ? getHeaderPageLocator = new Header_Page_Locator() : getHeaderPageLocator;
+				
+	}
+	
+	public Footer_Page getFooterPage() {
+		return (getFooterPage == null) ? getFooterPage = new Footer_Page(driver) : getFooterPage;
+	}
+	
+	public Footer_PageLocator getFooterPageLocator() {
+		return (getFooterPageLocator == null) ? getFooterPageLocator = new Footer_PageLocator() : getFooterPageLocator;
 	}
  	
 	

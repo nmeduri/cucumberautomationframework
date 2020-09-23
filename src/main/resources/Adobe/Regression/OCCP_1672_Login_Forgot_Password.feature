@@ -54,7 +54,7 @@ Feature: OCCP-1672 Login Forgot Password
 	And user click on send button
 	Then email sent password screen is displayed
 	
-	@RegressionTest @WideScreen @WebView @MobileView @SmokeTest
+	@RegressionTest @WideScreen @WebView @MobileView
 	Scenario: TC-1439 Verify the user's ability to receive a link to reset password over the email (Email Not Entered)
 	Given login url is available
 	When login page is displayed

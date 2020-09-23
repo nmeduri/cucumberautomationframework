@@ -39,7 +39,37 @@ public class OCCP_1672_Login_Forgot_Password_Steps extends BaseClass{
 	
 	@And("user fill emaildetails for forgot password")
 	public void user_enter_email_details_for_forgot_password() throws Exception {
-		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_For_Reset_Password());
+	testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_For_Reset_Password());
+	}
+	
+	@And("user six fill emaildetails for forgot password")
+	public void user_six_enter_email_details_for_forgot_password() throws Exception {
+	testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_Six());
+	}
+	
+	@And("user five fill emaildetails for forgot password")
+	public void user_five_enter_email_details_for_forgot_password() throws Exception {
+	testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_Username_Five());
+	}
+	
+	@And("user one fill emaildetails for forgot password")
+	public void user_one_enter_email_details_for_forgot_password() throws Exception {
+	testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_For_One());
+	}
+	
+	@And("user two fill emaildetails for forgot password")
+	public void user_two_enter_email_details_for_forgot_password() throws Exception {
+	testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_Two());
+	}
+	
+	@And("user three fill emaildetails for forgot password")
+	public void user_three_enter_email_details_for_forgot_password() throws Exception {
+	testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_Three());
+	}
+	
+	@And("user four fill emaildetails for forgot password")
+	public void user_four_enter_email_details_for_forgot_password() throws Exception {
+	testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_UserName_Four());
 	}
 	
 	@And("user click on send button")

@@ -41,8 +41,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     When pdp page is displayed for the product
     Then the default state of wishlist icon is displayed
     
-    
-    @RegressionTest @WebView @MobileView @WideScreen @SmokeTest
+    @RegressionTest @WebView @MobileView @WideScreen
     Scenario: TC-1400 Verify the default state of the wishlist icon is displayed when guest user has not selected the variant previously added to the wishlist 
     Given pdp url is available
     When pdp page is displayed for the product

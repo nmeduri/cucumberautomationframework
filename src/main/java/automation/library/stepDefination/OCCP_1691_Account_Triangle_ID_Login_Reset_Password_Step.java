@@ -73,6 +73,13 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
    	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).display_Create_Your_Triangle_Header();
     }
     
+    @And("switch on parent frame")
+    public void switch_on_parent_frame() throws Exception {
+    	testContext.getPageObjectManager().getResetPasswordPage().closeChildWindow();
+    	
+      	
+    }
+    
     @Then("user enter email")
     public void user_enter_email() throws Exception {
     	Random rand = new Random(); 
@@ -137,6 +144,36 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     @And("user enter reset password email detail in mailinator inbox")
     public void user_enter_reset_email_details_in_mailinator_inbox() throws Exception {
     	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_For_Reset_Password());
+    }
+    
+    @And("user one enter reset password email detail in mailinator inbox")
+    public void user_one_enter_reset_email_details_in_mailinator_inbox() throws Exception {
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_For_One());
+    }
+    
+    @And("user two enter reset password email detail in mailinator inbox")
+    public void user_two_enter_reset_email_details_in_mailinator_inbox() throws Exception {
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Two());
+    }
+    
+    @And("user three enter reset password email detail in mailinator inbox")
+    public void user_three_enter_reset_email_details_in_mailinator_inbox() throws Exception {
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Three());
+    }
+    
+    @And("user four enter reset password email detail in mailinator inbox")
+    public void user_four_enter_reset_email_details_in_mailinator_inbox() throws Exception {
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Four());
+    }
+    
+    @And("user five enter reset password email detail in mailinator inbox")
+    public void user_five_enter_reset_email_details_in_mailinator_inbox() throws Exception {
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_Username_Five());
+    }
+    
+    @And("user six enter reset password email detail in mailinator inbox")
+    public void user_six_enter_reset_email_details_in_mailinator_inbox() throws Exception {
+    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Six());
     }
     
     @And("user click on go button")
@@ -222,7 +259,8 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @Then("user enter new credenatials")
     public void user_enter_credentials() throws Exception {
-   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_New_Password_Detail());
+    	Log.message("New Credentials Password:- " + FileReaderManager.getInstance().getDataReader().get_New_Password_Detail(), true);
+   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(password);
     }
     
     

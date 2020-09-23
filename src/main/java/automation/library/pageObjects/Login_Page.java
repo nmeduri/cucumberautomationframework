@@ -58,7 +58,7 @@ public class Login_Page extends PageObject {
 	public void verify_EmailId_Prepopulated() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()));
 		String actualValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()), "value");
-		Assert.assertEquals(actualValue, FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data() + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
+		Assert.assertTrue(actualValue.contains(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data() + FileReaderManager.getInstance().getDataReader().get_Email_Detail()));
 	}
 	
 	public void click_Switch_Account() throws Exception {

@@ -28,7 +28,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	Given pdp url is available
     When pdp page is displayed for the product
     And scroll up to page
-    And user select product variant
+    And select product variant
     And user print the quantity of the quantity box
     And click the increment sign of the quantity box
     Then the updated quantity must be incremented by One

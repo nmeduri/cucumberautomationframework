@@ -14,8 +14,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-
-			"classpath:Adobe/Regression/OCCP_2999_PDP_Wishlist.feature",
+			"classpath:Adobe/Regression/OCCP_1030_Simple_Footer.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@SmokeTest",
 			"--plugin", "pretty",

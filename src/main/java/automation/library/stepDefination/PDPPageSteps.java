@@ -242,7 +242,7 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().displayBadgeSelectStyleSize();
 	}
 	
-	@And("user select product variant")
+	@And("select product variant")
 	public void user_select_product_variant() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().select_Product_Variant();
 	}

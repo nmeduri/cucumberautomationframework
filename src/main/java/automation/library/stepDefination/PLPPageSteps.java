@@ -160,6 +160,11 @@ public class PLPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPLPPage().displayMobileSecondaryImage();
 	}
 	
+	@Then("secondary image is not displayed")
+	public void secondary_image_is_not_displayed() throws Exception {
+		testContext.getPageObjectManager().getPLPPage().displayNotMobileSecondaryImage();
+	}
+	
 	@Then("primary image is displayed in grid view")
 	public void primary_image_is_displayed_in_grid_view() throws Exception {
 		testContext.getPageObjectManager().getPLPPage().displayPrimaryProductImage();

@@ -51,6 +51,7 @@ public class BaseClass {
 	protected ConfigFileReader configFileReader;
 	protected WebDriver driver;
 	public static String emailVaue;
+	public static String password;
 	public static PropertiesConfiguration conf = new PropertiesConfiguration();
 	
 

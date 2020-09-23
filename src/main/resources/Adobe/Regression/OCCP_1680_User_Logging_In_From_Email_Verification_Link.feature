@@ -2,7 +2,7 @@ Feature: OCCP-1680 User logging in from Email Verification Link
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1680
 	
-	@RegressionTest @WebView @WideScreen @R
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-1437 Verify the user is automatically logged in after clicking on the email confirmation link
 	Given sign up url is available
 	Then sign up page is displayed
@@ -17,8 +17,8 @@ Feature: OCCP-1680 User logging in from Email Verification Link
 	And user click on go button
 	Then the user has received the verification email
 	And user click on verification email
-	#And user click on here to verify email link
-	#Then page your email has been verified displayed
+	And user click on here to verify email link
+	Then page your email has been verified displayed
 	
 	@RegressionTest @MobileView
 	Scenario: TC-1437 Verify the user is automatically logged in after clicking on the email confirmation link (Mobile)

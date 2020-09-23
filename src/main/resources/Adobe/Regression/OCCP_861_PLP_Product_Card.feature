@@ -131,3 +131,10 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And the product card name  on the product card is displayed
     And review stars are displayed
     
+    @RegressionTest @MobileView
+    Scenario: TC-173 Verify the Secondary Image does not appear on Hover on Card in Mobile Breakpoint
+	Given plp url is available
+    When plp is displayed
+    And scroll up to page
+    And hovers on mobile in primary image area A
+    Then secondary image is not displayed

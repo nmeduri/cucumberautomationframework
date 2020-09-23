@@ -31,14 +31,21 @@ public class Reset_Password_Page extends PageObject {
 
 	}
 	
-	public void enterNewPassword() throws Exception {
+	public void enterNewPassword(String data) throws Exception {
+		Log.message("New Password:- " + FileReaderManager.getInstance().getDataReader().get_New_Password_Detail(), true);
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getResetPasswordLocatorPage().get_New_Password())), 40);
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getResetPasswordLocatorPage().get_New_Password()), FileReaderManager.getInstance().getDataReader().get_New_Password_Detail());
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getResetPasswordLocatorPage().get_New_Password()), data);
 	}
 	
-	public void enterRetypeNewPassword() throws Exception {
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getResetPasswordLocatorPage().get_Retype_New_Password()), FileReaderManager.getInstance().getDataReader().get_New_Password_Detail());
+	public void enterRetypeNewPassword(String data) throws Exception {
+		Log.message("New Password:- " + FileReaderManager.getInstance().getDataReader().get_New_Password_Detail(), true);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getResetPasswordLocatorPage().get_Retype_New_Password()), data);
+	}
+	
+	public void closeChildWindow() throws Exception {
+		String String = (java.lang.String) configuration.getProperty("childWindow");
+    	PageObject.getDriver().switchTo().window(String).close();
 	}
 	
 	public void clickResetPasswordButton() throws Exception {
