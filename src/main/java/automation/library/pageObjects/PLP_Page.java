@@ -169,17 +169,23 @@ public class PLP_Page extends PageObject {
 		$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image())));
 	}
 
-	    
-		public void notDisplayRatingSection() throws Exception {
-		     try {
-		         $display($$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_product_Container0_Rating(), 1));
-		         Log.message("Rating Section is displayed.", true);
-		         fail();
-		     }catch(Exception e) {
-		         Log.message("Rating Section is not displayed.", true); 
-		     }     
+	
+	public void notDisplayRatingSection() throws Exception {
+		List<Element> productContainer = $$(Loc.XPATH,testContext.getPageObjectManager().getPLPLocatorPage().get_Each_Product_Container()); 
+		for( int i=0; i<productContainer.size(); i++) {
+			try {
+			List<Element> customerRating = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Container()+String.valueOf(i)+ "']" +testContext.getPageObjectManager().getPLPLocatorPage().get_customerRating());
+			rating.add(customerRating.size()); 
+			if(rating.size()>=1) {
+				$display($$$$(Loc.XPATH,testContext.getPageObjectManager().getPLPLocatorPage().get_Container()+String.valueOf(i) + testContext.getPageObjectManager().getPLPLocatorPage().get_Reviews_Button(), 1));
+				}
+			}
+			catch(Exception e) {
+				Log.message("For Container" + i + ":- Rating section is not displayed", true);
+				}
+			rating.clear();
+			}
 		}
-
 	
 	public void mouseHoverOnMobilePrimaryImage() throws Exception {
 		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
