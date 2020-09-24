@@ -12,6 +12,7 @@ public class HYB_Authorization_EndPoint {
 	private static String base_url;
 	private static Response response;
 	private RequestSpecification request = RestAssured.given();
+	private String POST_PARAMS;
 
 	
 	public String HYB_Auth_Url(String baseUrl) {
@@ -60,6 +61,7 @@ public class HYB_Authorization_EndPoint {
 	
 	public Response get_Wishlist_API(String url, String accessToken) {
 		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Token 2:- " + accessToken,  true);
 		Log.message("API:- " + url,  true);
 		response = request.get(url);
 		Log.message("Response:- " + response.getBody().asString(), true);
@@ -67,4 +69,86 @@ public class HYB_Authorization_EndPoint {
 
 	}
 
+	public Response get_Addtocart_Post_API(String url, String accessToken) {
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Token 2:- " + accessToken,  true);
+		Log.message("API:- " + url,  true);
+		response = request.post(url);
+		Log.message("Response:- " + response.getBody().asString(), true);
+		return response;
+
+	}
+	public Response post_HYB_AddToCart_API(String url, String guid, String accessToken) {
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Get Url:- " + url + "?guid=" +  guid , true);
+		response = request.post(url + "?guid="+ guid);
+		Log.message("Get Response:- " + response.getBody().asString(), true);
+		return response;
+
+	}
+	public Response put_HYB_AddToCart_API_Invalid_url(String url, String guid, String accessToken) {
+		request.header("Authorization", "Bearer " + accessToken);
+		
+		Log.message("Get Url:- " + url + "0e?guid=" +  guid, true);
+		response = request.put(url + "0e?guid="+ guid);
+		Log.message("Get Response:- " + response.getBody().asString(), true);
+		return response;
+	}
+	public Response put_API_Field_Default(String url, String accessToken, String product) {
+
+		Log.message("API:- " + url + "/product/" + product, true);
+		request.header("Authorization", "Bearer " + accessToken);
+	    response = request.put(url + "/product/" + product);
+		return response;
+
+	}
+	public Response get_Addtocart_Put_API(String url, String accessToken) {
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Token 2:- " + accessToken,  true);
+		Log.message("API:- " + url,  true);
+		response = request.put(url);
+		Log.message("Response:- " + response.getBody().asString(), true);
+	return response;
+
+	}
+	public Response post_HYB_AddToCart_RegUserAPI(String url, String code, String product1, String product2, String accessToken) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \""+product1+""+"\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        },\n" + 
+				"        {\n" + 
+				"            \"product\": {\n"
+				+ "                \"code\": \""+product2+""+"\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"    ]\n" + 
+				"}";
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("API:- " + url  + code +"/entries?fields=DEFAULT&baseStoreId=ctr", true);
+		response = request.post(url + code+ "/entries?fields=DEFAULT&baseStoreId=ctr");
+		return response;	
+	}
+	public Response get_Addtocart_GuestUser_Post_API(String url) {
+		Log.message("API:- " + url,  true);
+		response = request.post(url);
+		Log.message("Response:- " + response.getBody().asString(), true);
+		return response;
+
+	}
+	
+	
 }

@@ -5,6 +5,7 @@ import automation.library.api.endpoint.CTBVTEndPoint;
 import automation.library.api.endpoint.CatalogVersionEndPoint;
 import automation.library.api.endpoint.CatalogsEndPoint;
 import automation.library.api.endpoint.CatalogsListEndPoint;
+import automation.library.api.endpoint.HYB_API_AddToCart_End_Point;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.api.endpoint.HYB_API_EN_End_Point;
 import automation.library.api.endpoint.HYB_API_FR_CA_End_Point;
@@ -39,6 +40,8 @@ public class BaseStep {
 	private HYB_Api_Product_End_Point apiProduct;
 	private HYB_API_Wishlist_End_Point wishlistAPI;
 	private HYB_Authorization_EndPoint authorizationAPI;
+	private HYB_API_AddToCart_End_Point addToCartAPI;
+	public static String code;
 
 
 	
@@ -98,6 +101,9 @@ public class BaseStep {
 		return authorizationAPI;
 	}
 	
-
+	public HYB_API_AddToCart_End_Point AddtocartAPI() {
+		addToCartAPI = new HYB_API_AddToCart_End_Point();
+		return addToCartAPI;
+	}
 
 }

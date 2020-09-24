@@ -35,9 +35,7 @@ public class Common_Step extends BaseStep {
 	
 	@When("user generate token")
 	public void user_generate_token() {
-		response = getAuthorizationUrl().getAuthorizationToken(FileReaderManager.getInstance().getAPIDataReader().getAuthorizationUrl());
-		
-		
+		response = getAuthorizationUrl().getAuthorizationToken(FileReaderManager.getInstance().getAPIDataReader().getAuthorizationUrl());	
 		
 	}
 	
@@ -136,18 +134,11 @@ public class Common_Step extends BaseStep {
 	}
 	
 	@Then("user get the token")
-	public void user_get_the_token() {  
+	public void user_get_the_token() {
 		accessToken = response.jsonPath().get("access_token");
 		PageObject.notNullAttributeInResponse(accessToken);
+		Log.message("AccessToken :"+accessToken, true);
 	}
-	
-	@Given("access-token is available")
-	public void accesstoken_is_available() {
-		url = getAuthorizationUrl().HYB_Auth_Url("https://api.c0onq03u1z-canadiant2-d2-public.model-t.cc.commerce.ondemand.com/rest/v2/CTR/users/current/carts?fields=FULL");
-
-		
-	}
-	
 	
 
 }

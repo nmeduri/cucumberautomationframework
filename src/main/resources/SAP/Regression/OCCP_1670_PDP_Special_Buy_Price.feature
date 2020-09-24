@@ -29,7 +29,7 @@ Feature: OCCP_1670_PDP: Special Buy Price
 				When user hits the GET method for baseproduct has variants and price is different for all variants
 				Then user should to see Special Buy badge under badges container
 				And Regular Price is displayed
-				
+
 				@RegressionTest
         Scenario: TC-1957 HYB:OCCP-1670: Verify Special buy price when User selects a variant product(use variant product)
         Given occ api is available
@@ -44,5 +44,4 @@ Feature: OCCP_1670_PDP: Special Buy Price
 				Then user should to see Special Buy badge under badges container
 				And Regular Price is displayed
 				And Color variant is displayed
-				
 				
