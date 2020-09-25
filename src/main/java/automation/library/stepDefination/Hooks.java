@@ -17,6 +17,9 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
+/**
+ * This file contains the precondions
+ */
 public class Hooks {
 
 	TestContext testContext;

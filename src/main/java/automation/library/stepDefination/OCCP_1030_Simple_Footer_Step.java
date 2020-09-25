@@ -20,6 +20,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+
+/**
+ * This file contains the scenario of user stories OCCP-1030
+ */
 public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 
 	Footer_Page footerPage;

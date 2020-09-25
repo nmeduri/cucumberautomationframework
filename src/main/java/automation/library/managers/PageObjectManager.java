@@ -4,14 +4,15 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.common.Property;
-import automation.library.datatable.Data_Map;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Footer_PageLocator;
 import automation.library.locator.ForgotPasswordPageLocator;
+import automation.library.locator.Get_A_New_Triangle_Rewards_Card_Locator;
 import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.Header_Page_Locator;
 import automation.library.locator.HomePageLocator;
+import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
 import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
@@ -24,9 +25,11 @@ import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Footer_Page;
 import automation.library.pageObjects.Forgot_Password_Page;
+import automation.library.pageObjects.Get_A_New_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Get_Personalized_Offers_Page;
 import automation.library.pageObjects.Header_Page;
 import automation.library.pageObjects.HomePage;
+import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
 import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
 import automation.library.pageObjects.PDP_Page;
@@ -39,13 +42,15 @@ import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
 import automation.library.stepDefination.LogInPageSteps;
 
+/**
+ * Class to get Instance of Page & Locator Class
+ */
 public class PageObjectManager {
 
 	private WebDriver driver;
 	private HomePage homePage;
 	private PDP_Page pdpPage;
 	private Sign_Up_Page signUpPage;
-	private Data_Map dataMap;
 	private HomePageLocator homePageLocator;
 	private PDP_PageLocator pdpPageLocator;
 	private PageObject pageObject;
@@ -75,6 +80,10 @@ public class PageObjectManager {
 	private Header_Page_Locator getHeaderPageLocator;
 	private Footer_Page getFooterPage;
 	private Footer_PageLocator getFooterPageLocator;
+	private Link_Your_Triangle_Rewards_account_Page getLinkYourTriangleRewardsAccountPage;
+	private Link_Your_Triangle_Rewards_Account_Locator getLinkYourTriangleAccountLocator;
+	private Get_A_New_Triangle_Rewards_Card_Page getAnewTriangleRewardsPage;
+	private Get_A_New_Triangle_Rewards_Card_Locator getAnewTriangleRewardsCardLocator;
 	
 	public PageObjectManager(WebDriver driver) {
 
@@ -82,186 +91,230 @@ public class PageObjectManager {
 
 	}
 	
+	/** Returns Instance of Page Object File */
 	public PageObject getPageObject(WebDriver driver) throws Exception {
 
 		return (pageObject == null) ? pageObject = new PageObject(driver) : pageObject;
 
 	}
 
+	/** Returns Instance of Home File */
 	public HomePage getHomePage() throws Exception {
 
 		return (homePage == null) ? homePage = new HomePage(driver) : homePage;
 
 	}
 	
+	/** Returns Instance of PDP File */
 	public PDP_Page getPDPPage() throws Exception {
 		
 		return (pdpPage == null) ? pdpPage = new PDP_Page(driver) : pdpPage;
 		
 	}
-
-	public Data_Map getDataMapPage() {
-
-		return (dataMap == null) ? dataMap = new Data_Map() : dataMap;
-
-	}
 	
+	/** Returns Instance of Home Locator File */
 	public HomePageLocator getHomePageLocator() {
 		
 		return (homePageLocator == null) ? homePageLocator = new HomePageLocator() : homePageLocator;
 		
 	}
 	
+	/** Returns Instance of PDP Page File */
 	public PDP_PageLocator getPDPPageLocator() {
 		
 		return (pdpPageLocator == null) ? pdpPageLocator = new PDP_PageLocator() : pdpPageLocator;
 		
 	}
 	
+	/** Returns Instance of Sign up Page File */
 	public Sign_Up_Page getSignUpPage() {
 		
 		return (signUpPage == null) ? signUpPage = new Sign_Up_Page(driver) : signUpPage;
 		
 	}
 	
+	/** Returns Instance of PLP Page File */
 	public PLP_Page getPLPPage() throws Exception {
 		
 		return (plpPage == null) ? plpPage = new PLP_Page(driver) : plpPage;
 		
 	}
 	
+	/** Returns Instance of PLP Locator File */
 	public PLP_PageLocator getPLPLocatorPage() {
 		
 		return (plpPageLocator == null) ? plpPageLocator = new PLP_PageLocator() : plpPageLocator;
 		
 	}
 	
+	/** Returns Instance of Create Your Triangle ID Locator File */
 	public Create_Your_Triangle_ID_Page_Locator getCreateTriangleIDPageLocatorPage() {
 		
 		return (createYourTriangleIDPageLocator == null) ? createYourTriangleIDPageLocator = new Create_Your_Triangle_ID_Page_Locator() : createYourTriangleIDPageLocator;
 		
 	}
 	
+	/** Returns Instance of Create Your Triangle ID File */
 	public Create_Your_Triangle_ID_Page getCreateTirangleIDPage(WebDriver driver) {
 		
 		return (createYourTrianglePage == null) ? createYourTrianglePage = new Create_Your_Triangle_ID_Page(driver) : createYourTrianglePage;
 		
 	}
 	
+	/** Returns Instance of Registration Email Verification File */
 	public Registration_Email_Verification_Page getRegistrationEmailVerificationPage(WebDriver driver) {
 		
 		return (registrationEmailVerificationPage == null) ? registrationEmailVerificationPage = new Registration_Email_Verification_Page(driver) : registrationEmailVerificationPage;
 		
 	}
 	
+	/** Returns Instance of Registration Email Verification Locator File */
 	public Registration_Email_Verification_Locator getRegistrationEmailVerificationLocator() {
 		
 		return (registrationEmailVerificationLocator == null) ? registrationEmailVerificationLocator = new Registration_Email_Verification_Locator() : registrationEmailVerificationLocator;
 		
 	}
 	
+	/** Returns Instance of Get Personalized Offers File */
    public Get_Personalized_Offers_Page getPersonalizedOffersPage(WebDriver driver) {
 		
 		return (getPersonalizedOffersPage == null) ? getPersonalizedOffersPage = new Get_Personalized_Offers_Page(driver) : getPersonalizedOffersPage;
 		
 	}
 	
+   /** Returns Instance of Get Personalized Offers Locator File */
 	public Get_Personalized_Offers_Page_Locator getPersonalizedOffersLocator() {
 		
 		return (getPersonalizedOffersLocator == null) ? getPersonalizedOffersLocator = new Get_Personalized_Offers_Page_Locator() : getPersonalizedOffersLocator;
 		
 	}
 	
+	/** Returns Instance of Email Sent Confirmation File */
 	public Email_Sent_Confirmation_Page getEmailSentConfirmationPage(WebDriver driver) {
 		
 		return (getEmailSentConfirmationPage == null) ? getEmailSentConfirmationPage = new Email_Sent_Confirmation_Page(driver) : getEmailSentConfirmationPage;
 		
 	}
 	
+	/** Returns Instance of Email Sent Confirmation Locator File */
 	public Email_Sent_Confirmation_Page_Locator getEmailSentConfirmationLocator() {
 		
 		return (getEmailSentConfirmationLocator == null) ? getEmailSentConfirmationLocator = new Email_Sent_Confirmation_Page_Locator() : getEmailSentConfirmationLocator;
 		
 	}
 	
+	/** Returns Instance of Mailinator File */
 	public Mailinator_Page getMailinatorPage() {
 		
 		return (getMailinatorPage == null) ? getMailinatorPage = new Mailinator_Page(driver) : getMailinatorPage;
 		
 	}
 	
+	/** Returns Instance of Mailinator Locator File */
 	public Mailinator_Page_Locator getMailinatorPageLocator() {
 		
 		return (getMailinatorPageLocator == null) ? getMailinatorPageLocator = new Mailinator_Page_Locator() : getMailinatorPageLocator;
 		
 	}
 	
+	/** Returns Instance of Login File */
 	public Login_Page getLoginPage() {
 		
 		
 		return (loginPage == null) ? loginPage = new Login_Page(driver) : loginPage;
 	}
 	
+	/** Returns Instance of Login Locator File */
 	public Login_Page_Locator getLoginPageLocator() {
 		
 		return (loginPageLocator == null) ? loginPageLocator = new Login_Page_Locator() : loginPageLocator;
 		
 	}
 	
+	/** Returns Instance of Forgot Password File */
 	public Forgot_Password_Page getForgotPasswordPage(WebDriver driver) {
 		
 		return (getForgotPasswordPage == null) ? getForgotPasswordPage = new Forgot_Password_Page(driver) : getForgotPasswordPage;
 		
 	}
 	
+	/** Returns Instance of Forgog Password Locator File */
 	public ForgotPasswordPageLocator getForgotPasswordLocator() {
 		
 		return (getForgotPasswordLocator == null) ? getForgotPasswordLocator = new ForgotPasswordPageLocator() : getForgotPasswordLocator;
 		
 	}
 	
+	/** Returns Instance of Email Has Been Verified File */
 	public Your_Email_Has_Been_Verified_Page getYourEmailHasBeenVerifiedPage(WebDriver driver) {
 		return (getYourEmailHasBeenVerifiedPage == null) ? getYourEmailHasBeenVerifiedPage = new Your_Email_Has_Been_Verified_Page(driver) : getYourEmailHasBeenVerifiedPage;
 	}
 	
+	/** Returns Instance of Email Has Been Verified Locator File */
 	public Your_Email_Has_Been_Verified_PageLocator getYourEmailHasBeenVerifiedLocator() {
 		return (getYourEmailHasBeenVerifiedLocator == null) ? getYourEmailHasBeenVerifiedLocator = new Your_Email_Has_Been_Verified_PageLocator() : getYourEmailHasBeenVerifiedLocator;
 	}
 	
+	/** Returns Instance of Privacy Charter File */
 	public Privacy_Charter_Page getPrivacyPage() {
 		return (getPrivacyCharterPage == null) ? getPrivacyCharterPage = new Privacy_Charter_Page(driver) : getPrivacyCharterPage;
 	}
 	
+	/** Returns Instance of Privacy Charter Locator File */
 	public Privacy_Charter_Page_Locator getPrivacyPageLocator() {
 		return (getPrivacyCharterLocator == null) ? getPrivacyCharterLocator = new Privacy_Charter_Page_Locator() : getPrivacyCharterLocator;
 	}
 	
+	/** Returns Instance of Reset Passsword File */
 	public Reset_Password_Page getResetPasswordPage() {
 		return (getResetPasswordPage == null) ? getResetPasswordPage = new Reset_Password_Page(driver) : getResetPasswordPage;
 	}
 	
+	/** Returns Instance of Reset Password Locator File */
 	public Reset_Your_Password_Page_Locator getResetPasswordLocatorPage() {
 		return (getPrivacyCharterLocator == null) ? getResetPassword_Page_Locator = new Reset_Your_Password_Page_Locator() : getResetPassword_Page_Locator;
 	}
 	
+	/** Returns Instance of Header File */
 	public Header_Page getHeaderPage() {
 		return (getHeaderPage == null) ? getHeaderPage = new Header_Page(driver) : getHeaderPage;
 	}
 	
+	/** Returns Instance of Header Locator File */
 	public Header_Page_Locator get_Header_Locator_Page() {
 		return (getHeaderPageLocator == null) ? getHeaderPageLocator = new Header_Page_Locator() : getHeaderPageLocator;
 				
 	}
 	
+	/** Returns Instance of Footer File */
 	public Footer_Page getFooterPage() {
 		return (getFooterPage == null) ? getFooterPage = new Footer_Page(driver) : getFooterPage;
 	}
 	
+	/** Returns Instance of Footer Locator File */
 	public Footer_PageLocator getFooterPageLocator() {
 		return (getFooterPageLocator == null) ? getFooterPageLocator = new Footer_PageLocator() : getFooterPageLocator;
 	}
  	
+	/** Returns Instance of Link Your Triangle Rewards Account Locator File */
+	public Link_Your_Triangle_Rewards_account_Page getLinkYourTriangleRewardsAccountPage() {
+		return (getLinkYourTriangleRewardsAccountPage == null) ? getLinkYourTriangleRewardsAccountPage = new Link_Your_Triangle_Rewards_account_Page(driver) : getLinkYourTriangleRewardsAccountPage;
+	}
 	
+	/** Returns Instance of Link Your Triangle Rewards Account Locator File */
+	public Link_Your_Triangle_Rewards_Account_Locator getLinkYourTriangleRewardsAccountLocator() {
+		return (getLinkYourTriangleAccountLocator == null) ? new Link_Your_Triangle_Rewards_Account_Locator() : getLinkYourTriangleAccountLocator;
+	}
+	
+	/** Returns Instance of Get A New Triangle Rewards Card File */
+	public Get_A_New_Triangle_Rewards_Card_Page getANewTriangleRewardsCardPage() {
+		return (getAnewTriangleRewardsPage == null) ? getAnewTriangleRewardsPage = new Get_A_New_Triangle_Rewards_Card_Page(driver) : getAnewTriangleRewardsPage;
+	}
+	
+	/** Returns Instance of Get A New Triangle Rewards Card Locator File */
+	public Get_A_New_Triangle_Rewards_Card_Locator getANewTriangleRewardsCardLocator() {
+		return (getAnewTriangleRewardsCardLocator == null) ? getAnewTriangleRewardsCardLocator = new Get_A_New_Triangle_Rewards_Card_Locator() : getAnewTriangleRewardsCardLocator;
+	}
 
 
 }

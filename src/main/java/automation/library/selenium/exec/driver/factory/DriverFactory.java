@@ -35,6 +35,10 @@ import automation.library.selenium.exec.driver.manager.WideScreenChromeDriverMan
 import automation.library.selenium.exec.driver.manager.Wide_Screen_Sauce_Lab_DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+/**
+ * This file contains the Driver Manage Engine 
+ */
+
 public class DriverFactory extends BaseClass {
 
 	protected static WebDriver driver;
@@ -57,22 +61,28 @@ public class DriverFactory extends BaseClass {
 		}
 	};
 
+	/** return driver manager */
 	public DriverManager driverManager() {
 		return driverManager.get();
 	}
 
+	/** return driver */
 	public WebDriver getDriver() {
 		return driverManager.get().getDriver();
 	}
 
+	/** return driver */
 	public WebDriver returnDriver() {
 		return driverManager.get().returnDriver();
 	}
 
+	
+	/** return wait */
 	public WebDriverWait getWait() {
 		return driverManager.get().getWait();
 	}
 
+	/** This function call to server and browser */
 	public DriverManager setDM() {
 		
 		String String = (java.lang.String) conf.getProperty("className");

@@ -14,7 +14,6 @@ import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
@@ -38,7 +37,9 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
-
+/**
+ * This file contains the scenario of user stories OCCP-1691
+ */
 public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends BaseClass {
 	
 	Sign_Up_Page signUpPage;
@@ -74,10 +75,9 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     }
     
     @And("switch on parent frame")
-    public void switch_on_parent_frame() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().closeChildWindow();
-    	
-      	
+    public void switch_on_parent_window() throws Exception {
+    	testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+    	testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
     }
     
     @Then("user enter email")
@@ -259,7 +259,7 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @Then("user enter new credenatials")
     public void user_enter_credentials() throws Exception {
-    	Log.message("New Credentials Password:- " + FileReaderManager.getInstance().getDataReader().get_New_Password_Detail(), true);
+    	Log.message("New Credentials Password:- " + password, true);
    	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(password);
     }
     

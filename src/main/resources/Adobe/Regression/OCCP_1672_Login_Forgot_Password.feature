@@ -32,7 +32,7 @@ Feature: OCCP-1672 Login Forgot Password
 	And user click on go button
 	And user click on verification email
 	
-	@RegressionTest @MobileView
+	@RegressionTest @WebView @WideView @MobileView
 	Scenario: TC-1442 Verify the user is able to resend reset password link on the email from the screen
 	Given login url is available
 	When login page is displayed
@@ -40,19 +40,7 @@ Feature: OCCP-1672 Login Forgot Password
 	And user fill emaildetails for forgot password
 	And user click on send button
 	And user click resend-passowrd link
-	When mailinator url is available
-	Then user enter reset password email detail in mailinator inbox
-	And user click on go button
-	And user tap on verification email on mobile
-	
-	@RegressionTest @WideScreen @WebView @MobileView
-	Scenario: TC-1442 Verify the user is able to resend reset password link on the email from the screen
-	Given login url is available
-	When login page is displayed
-	And user click on forgot password
-	And user fill emaildetails for forgot password
-	And user click on send button
-	Then email sent password screen is displayed
+	Then the user views a confirmation message that email was resent
 	
 	@RegressionTest @WideScreen @WebView @MobileView
 	Scenario: TC-1439 Verify the user's ability to receive a link to reset password over the email (Email Not Entered)

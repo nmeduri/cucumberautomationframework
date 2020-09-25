@@ -13,7 +13,10 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
-
+/**
+ * This class implements the function for read/write to Data from Property file.
+ * 
+ */
 public class Property {
 
 	/**

@@ -14,7 +14,9 @@ import automation.library.logdetail.Log;
 import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+/**
+ * This file create driver of chrome (Web - Sauce Labs)
+ */
 
 public class Web_Chrome_Sauce_Lab_DriverManager  extends DriverManager{
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");

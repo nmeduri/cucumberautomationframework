@@ -18,6 +18,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of PDP Page
+ */
+
 public class PDPPageSteps extends BaseClass {
       PDP_Page pdpPage;
 	public PDPPageSteps(TestContext context) throws Exception {
@@ -64,11 +69,6 @@ public class PDPPageSteps extends BaseClass {
 	@When("^pdp url is launched$")
 	public void user_launches_the_author_url() throws Throwable {
 		
-	}
-	
-	@When("user clicks on add to cart button")
-	public void user_clicks_on_add_to_cart_button() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().clickOnAddToCartButton();
 	}
 	
 	@And("the warranty information of the product is correct")
@@ -142,80 +142,7 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().clickIncremenQuantitytButton();
 	}
 	
-	@And("user print the quantity of the quantity box")
-	public void user_print_the_quantity_of_the_quantity_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().getValueQuantityBox();
-	}
 	
-	@Then("the updated quantity must be incremented by One")
-	public void the_updated_quantity_must_be_incremented_by_one() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyUpdatedQuantityByOne();
-	}
-	
-	@And("click the decrement sign of the quantity box")
-	public void click_the_decrement_sign_of_the_quantity_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().clickDecrementQuantityButton();
-	}
-	
-	@Then("updated quantity must be decremented by One")
-	public void updated_quantity_must_be_decremented_by_one() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyUpdatedDecrementQuantityByOne();
-	}
-	
-	@Then("verify sign decrement is disabled when the quantity is One")
-	public void verify_Sign_Decrement_Is_Disabled_When_The_Quantity_Is_One() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayDecrementSignDisabled();
-	}
-	
-	@And("enter an integer number in the quantity box that is greate than Zero and is equal to or less than maximum quantity for product")
-    public void enter_an_integer_number_in_the_quantity_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().enterUpdatedQuantityInTheBoxThatIsGreaterThanZeroAndLessThanMaximumQuantity();
-	}
-	
-	@Then("updated quantity is displayed in the quantity box")
-	public void udpated_quantity_is_displayed_in_the_quantity_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayUpdatedQuantity();
-	}
-	
-	@And("user enter number in the quantity box that is greater than maximum quantity")
-	public void user_enter_number_in_the_quantity_box_that_is_greater_than_maximum_quantity() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().enterQuantityGreaterThanMaxixmum();
-	}
-	
-	@Then("greater than maximum quantity is not updated in the quantity box")
-	public void greater_Than_Maximum_Quantity_Is_Not_Updated_In_The_Quantity_Box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyQuantityGreaterThanMaximumNotUpdate();
-	}
-	
-	@And("enter number in quantity box that is not integer")
-	public void enter_number_in_quantity_box_that_is_not_integer() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().enterNotIntegerNumberInQuantityBox();
-	}
-	
-	@And("enter decimal number in quantity box")
-	public void enter_decimal_number_in_quantity_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().enterDecimalNumberInQuantityBox();
-	}
-	
-	@Then("^user do not allowed  to enter the number that is not integer value$")
-	public void user_do_not_allowed_to_enter_the_number_that_is_not_ingeger_value() throws Exception{
-		testContext.getPageObjectManager().getPDPPage().verifyNotAllowedNotIntegerValue();
-	}
-	
-	@Then("user is not able to enter decimal value in quantity box")
-	public void user_is_not_able_to_enter_decimal_value_in_quantity_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyNotAllowedNotDecimalValue();
-	}
-	
-	@And("enter number Zero in the quantity box")
-	public void enter_number_zero_in_the_quantity_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().enterQuantityZeroInQuantityBox();
-	}
-	
-	@Then("user is not allowed to enter zero number")
-	public void user_is_not_allowed_to_enter_zero_number() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyNotAllowedZeroValue();
-	}
 	
 	@And("click the wishlist item")
 	public void click_the_wishlist_item() throws Exception {
@@ -227,28 +154,8 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().displayDefaultStateWishlistIcon();
 	}
 	
-	@Then("an error message is displayed prompting user to select all variant first")
-	public void an_error_messsage_is_displayed_prompting_user_to_select_all_variant_first() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayErrorWishlist();
-	}
-	
-	@Then("the editable badge label displays in store clearnce")
-	public void the_editable_badge_label_displays_in_store_clearnce() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayBadgeInStoreClearnce();
-	}
-	
-	@And("an additional editable disclaimer displays only select style size badge")
-	public void an_additional_editable_disclaimer_displays_only_select_style_size_badge() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayBadgeSelectStyleSize();
-	}
-	
 	@And("select product variant")
 	public void user_select_product_variant() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().select_Product_Variant();
-	}
-	
-	@And("select some variants but keep some unselected size")
-	public void select_some_variants_but_keep_some_unselected_size() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().select_Product_Variant();
 	}
 	
@@ -383,37 +290,6 @@ public class PDPPageSteps extends BaseClass {
 	public void view_less_specifications_is_not_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().notDisplayViewLessSpecifications();
 	}
-
-	
-	@Then("the swatch with sizes is displayed")
-	public void the_swatch_with_sizes_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySwatchWithSize();
-	}
-	
-	@Then("the size label is displayed")
-	public void the_size_label_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySizeLabel();
-	}
-	
-	@Then("unavailabe size is displayed")
-	public void unavailabe_size_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayUnavailableSize();
-	}
-	
-	@And("select one of the available size")
-	public void select_one_of_the_available_size() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().clickAvailableSize();
-	}
-	
-	@Then("available size is successfully selected")
-    public void available_size_is_successfully_selected() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySelectedSize();
-	}
-	
-	@Then("the lable of selected size is displayed")
-	public void the_label_of_selected_size_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifySelectedSizeLabel();
-	}
 	
 	@Then("the colour selector is displayed first")
 	public void the_colour_selector_is_displayed_first() throws Exception {
@@ -428,31 +304,6 @@ public class PDPPageSteps extends BaseClass {
 	@And("a default color is displayed")
 	public void a_default_color_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().displayDefaultColor();
-	}
-	
-	@Then("special buy is displayed")
-	public void special_buy_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySpecialBuy();
-	}
-	
-	@Then("the badge is displayed in pink color")
-	public void the_badge_is_displayed_in_pink_color() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyColorCode();
-	}
-	
-	@Then("the badge persists and displays for all variants of the product")
-	public void the_badge_persissts_and_displays_for_all_variants_of_the_product() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySpecialBuyForAllVariant();
-	}
-	
-	@Then("the in store only badge is applicable to all variants and remains displayed")
-	public void the_in_store_only_badge_is_applicable_to_all_varaiants_and_remains_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayInStoreBuyForAllVariant();
-	}
-	
-	@Then("the badge is displayed in Yellow color")
-	public void the_badge_is_displayed_in_yellow_color() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyInStoreBageColorCode();
 	}
 	
 	@And("user select product")

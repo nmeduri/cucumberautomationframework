@@ -1,7 +1,10 @@
 package automation.library.cucumber;
 
 import automation.library.logdetail.Log;
-
+/**
+ * This file contains the path of Properties file
+ * 
+ */
 public class Constant {
 
 	public static final String SELENIUM_CONFIGURATION = "/config/Configuration.properties";

@@ -9,7 +9,9 @@ import automation.library.logdetail.Log;
 import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+/**
+ * This file create driver of chrome (Headless - Wide Screen)
+ */
 
 public class ChromeWideScreen_Headless_DriverManager  extends DriverManager{
 

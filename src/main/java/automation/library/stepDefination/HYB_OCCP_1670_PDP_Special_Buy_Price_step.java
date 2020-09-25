@@ -12,6 +12,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
 
+/**
+ * This file contains the scenario of user stories OCCP-1670
+ */
+
 public class HYB_OCCP_1670_PDP_Special_Buy_Price_step extends BaseStep {
 
 	RequestSpecification request;

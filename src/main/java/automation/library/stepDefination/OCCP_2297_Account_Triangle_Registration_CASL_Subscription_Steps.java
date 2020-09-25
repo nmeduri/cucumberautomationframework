@@ -20,6 +20,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of user stories OCCP-2297
+ */
+
 public class OCCP_2297_Account_Triangle_Registration_CASL_Subscription_Steps extends BaseClass{
 
 	public OCCP_2297_Account_Triangle_Registration_CASL_Subscription_Steps(TestContext context) throws Exception {

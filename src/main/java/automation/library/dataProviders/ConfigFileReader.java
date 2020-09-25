@@ -9,9 +9,12 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
-import automation.library.enums.DriverType;
-import automation.library.enums.EnvironmentType;
 import automation.library.logdetail.Log;
+
+/**
+ * gets Configuration Data of Project
+ * 
+ */
 
 public class ConfigFileReader {
 
@@ -22,6 +25,11 @@ public class ConfigFileReader {
        
    }
 	
+	/**
+	 * gets Chrome Driver Path
+	 * 
+	 */
+	
 	public String getChromeDriverPath() {
 
 		String driverPath = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "chromeDriverPath");
@@ -30,6 +38,11 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("driverPath not specified in the Configuration.properties file.");
 	}
+	
+	/**
+	 * gets Gecko Driver Path
+	 * 
+	 */
 
 	public String getGeckoDriverPath() {
 		String driverPath = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "geckoDriverPath");
@@ -38,6 +51,11 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("driverPath not specified in the Configuration.properties file.");
 	}
+	
+	/**
+	 * gets implicity Wait
+	 * 
+	 */
 
 	public long getImplicitlyWait() {
 		String implicitlyWait = properties.getProperty("implicitlyWait");
@@ -46,6 +64,11 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");
 	}
+	
+	/**
+	 * gets application url
+	 * 
+	 */
 
 	public String getApplicationUrl() {
 		String url = Property.getProperty(Constant.DATA_FILE, "url");
@@ -56,6 +79,11 @@ public class ConfigFileReader {
 		
 	} 
 	
+	/**
+	 * gets pdp url
+	 * 
+	 */
+	
 	public String getPDPUrl() {
 		String url = Property.getProperty(Constant.DATA_FILE, "pdpUrl");
 		if (url != null)
@@ -63,6 +91,11 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
+	
+	/**
+	 * gets plp url
+	 * 
+	 */
 	
 	public String getPLPUrl() {
 		String url = Property.getProperty(Constant.DATA_FILE, "plpUrl");
@@ -72,7 +105,10 @@ public class ConfigFileReader {
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
 	
-	
+	/**
+	 * gets Sign In url
+	 * 
+	 */
 	
 	public String getSignUpUrl() {
 		String url = Property.getProperty(Constant.DATA_FILE, "signUpUrl");
@@ -82,6 +118,11 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");	
 	}
+	
+	/**
+	 * gets Application url
+	 * 
+	 */
 	
 	public String getApplicationSAPUrl() {
 	
@@ -95,6 +136,11 @@ public class ConfigFileReader {
 		
 	}
 	
+	/**
+	 * gets Adobe Application url
+	 * 
+	 */
+	
 	public String getApplicationAdobeUrl() {
 		
 		String environment = System.getenv("environment");
@@ -106,6 +152,11 @@ public class ConfigFileReader {
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 		
 	}
+	
+	/**
+	 * gets browser data
+	 * 
+	 */
 
 	public String getBrowser() {
 		String browserName = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "browser");
@@ -131,25 +182,50 @@ public class ConfigFileReader {
 					"Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
 	
+	/**
+	 * gets web browser
+	 * 
+	 */
+	
 	public String getWebBrowser() {
 		String webView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "webView");
 		return webView;
 	}
+	
+	/**
+	 * gets mobile broser
+	 * 
+	 */
 	
 	public String getMobileView() {
 		String mobileView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "mobileView");
 		return mobileView;
 	}
 	
+	/**
+	 * gets Headless Mobile View
+	 * 
+	 */
+	
 	public String getHeadlessMobile() {
 		String headlessMobile = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "headlessMobile");
 		return headlessMobile;
 	}
 	
+	/**
+	 * gets Wide view chrome
+	 * 
+	 */
+	
 	public String getWideViewChrome() {
 		String wideView = Property.getProperty(Constant.SELENIUM_CONFIGURATION, "wideScreenView");
 		return wideView;
 	}
+	
+	/**
+	 * gets Server details as Sauce labs, headless, without headless
+	 * 
+	 */
 	
 	public String getServerType() {
 		
@@ -166,17 +242,10 @@ public class ConfigFileReader {
 					"Server Type Key value in Configuration.properties is not matched :" + serverType);
 		
 	}
-
-	public EnvironmentType getEnvironment() {
-		String environmentName = properties.getProperty("environment");
-		if (environmentName == null || environmentName.equalsIgnoreCase("local"))
-			return EnvironmentType.LOCAL;
-		else if (environmentName.equals("remote"))
-			return EnvironmentType.REMOTE;
-		else
-			throw new RuntimeException(
-					"Environment Type Key value in Configuration.properties is not matched : " + environmentName);
-	}
+	/**
+	 * gets browser window size
+	 * 
+	 */
 
 	public Boolean getBrowserWindowSize() {
 		String windowSize = properties.getProperty("windowMaximize");
@@ -184,6 +253,11 @@ public class ConfigFileReader {
 			return Boolean.valueOf(windowSize);
 		return true;
 	}
+	
+	/**
+	 * gets test data resource path
+	 * 
+	 */
 
 	public String getTestDataResourcePath() {
 		String testDataResourcePath = properties.getProperty("testDataResourcePath");
@@ -193,6 +267,11 @@ public class ConfigFileReader {
 			throw new RuntimeException(
 					"Test Data Resource Path not specified in the Configuration.properties file for the Key:testDataResourcePath");
 	}
+	
+	/**
+	 * gets report path
+	 * 
+	 */
 
 	public String getReportConfigPath() {
 		String reportConfigPath = properties.getProperty("reportConfigPath");

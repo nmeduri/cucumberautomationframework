@@ -6,6 +6,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+/**
+ * This file create driver for Firefox
+ */
+
 public class FirefoxDriverManager extends DriverManager {
      
 	private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";

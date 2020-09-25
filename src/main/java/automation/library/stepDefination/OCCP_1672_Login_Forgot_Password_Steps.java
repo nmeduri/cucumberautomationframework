@@ -19,6 +19,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of user stories OCCP-1672
+ */
+
 public class OCCP_1672_Login_Forgot_Password_Steps extends BaseClass{
 
 	public OCCP_1672_Login_Forgot_Password_Steps(TestContext context) throws Exception {
@@ -95,5 +100,10 @@ public class OCCP_1672_Login_Forgot_Password_Steps extends BaseClass{
 	@Then("the email address is not popualated")
 	public void the_email_address_is_not_populated() throws Exception {
 		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).verifyEmailFieldNotPopulated();
+	}
+	
+	@Then("the user views a confirmation message that email was resent")
+	public void the_user_views_a_confirmation_message_that_email_was_resent() throws Exception {
+		testContext.getPageObjectManager().getForgotPasswordPage(PageObject.getDriver()).displayConfirmationResentMessage();
 	}
 }

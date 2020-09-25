@@ -29,6 +29,10 @@ import automation.library.selenium.exec.driver.factory.DriverFactory;
 import edu.emory.mathcs.backport.java.util.Collections;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
 
+/**
+ * This file contains the functions of PLP Page
+ * 
+ */
 
 public class PLP_Page extends PageObject {
 
@@ -44,6 +48,7 @@ public class PLP_Page extends PageObject {
 
 	}
 
+	/** This function navigate to PLP Page */
 	public void navigateTo_PLP_Page() throws Exception {
 
 		DriverFactory.getInstance().getDriver().navigate()
@@ -51,6 +56,7 @@ public class PLP_Page extends PageObject {
 
 	}
 
+	/** This function is verify that PLP Page is displayed */
 	public void display_PLP_Page() throws Exception {
 
 		Assert.assertTrue("Automation_PLP".contains(testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle())
@@ -58,45 +64,55 @@ public class PLP_Page extends PageObject {
 
 	}
 
+	/** This function is verify that List View is displayed */
 	public void displayListView() throws Exception {
 		Assert.assertTrue(
 				$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View())));
 	}
 
+	/** This function is verify that Grid View is displayed */
 	public void displayGridView() throws Exception {
 		Assert.assertTrue(
 				$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View())));
 	}
 
+	/** This function is verify that product card image is displayed */
 	public void displayProductCardImage() throws Exception {
 		Assert.assertTrue($display(
 				$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Image())));
 	}
 
+	/** This function click on list view button */
 	public void clickOnListViewButton() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
 	}
 
+	/** This function is verify that Title 'Product Card Title' is displayed */
 	public void displayProductCardTitle() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Title()));
 	}
 		
+	/** This function click on price low to high */
 	public void clickOnPriceLowToHigh() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Low_To_High()));
 	}
 		
+	/** This function is verify that Sort By Option is displayed */
 	public void displaySortByOption() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_By_Option()));
 	}
 
+	/** This function click on sort by option */
 	public void clickSortByOption() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_By_Option()));
 	}
 
+	/** select price hight to low */
 	public void selectPriceHighToLow() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_High_To_Low()));
 	}
 
+	/** return product price */
 	public List<Float> productPrice() throws Exception {
 		PageObject.getDriver().navigate().refresh();
 		List<Element> price = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Price());
@@ -106,7 +122,7 @@ public class PLP_Page extends PageObject {
 		return productPrice;
 	}
 	
-	
+	/** This function is verify that price hight to low is displayed */
 	public void verifyPriceHighToLow() throws Exception {
 		ArrayList<Float> priceFloat = new ArrayList<Float>();
 		priceFloat.addAll(productPrice());
@@ -118,18 +134,22 @@ public class PLP_Page extends PageObject {
 
 	}
 	
+	/** select new arrivals */
 	public void select_New_Arrivals() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_New_Arrivals()));
 	}
 	
+	/** This function click on close button */
 	public void clickCloseButton() throws Exception {
 		$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getPLPLocatorPage().get_Close_Button()));
 	}
 	
+	/** select customer rating high to low  */
 	public void select_Customer_Rating_High_To_Low() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Customer_Rating_High_To_Low()));
 	}
 	
+	/** return customer rating */
 	public List<Integer> rating() throws Exception {
 		List<Element> productContainer = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_productContainer());
 		for(int i=0; i<productContainer.size(); i++) {
@@ -143,6 +163,7 @@ public class PLP_Page extends PageObject {
 		return rating;
 	}
 	
+	/** This function is verify that rating high to low is displayed */
 	public void verifyRatingHighToLow() throws Exception {
 		ArrayList<Integer> customerRating = new ArrayList<Integer>();
 		customerRating.addAll(rating());
@@ -153,6 +174,7 @@ public class PLP_Page extends PageObject {
 	}
 
 //--Dinesh
+	/** This function is verify that price low to high is displayed */
 	public void verifyPriceLowToHigh() throws Exception {
 		ArrayList<Float> priceFloat = new ArrayList<Float>();
 		priceFloat.addAll(productPrice());
@@ -162,6 +184,7 @@ public class PLP_Page extends PageObject {
 	  }	
     }
 	
+	/** mouse hover on primary image */
 	public void mouseHoverOnPrimaryImage() throws Exception {
 		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
 		configuration.setProperty("primaryImage", primaryImage);
@@ -169,7 +192,7 @@ public class PLP_Page extends PageObject {
 		$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image())));
 	}
 
-	
+	/** This function is verify that rating section is not displayed */
 	public void notDisplayRatingSection() throws Exception {
 		List<Element> productContainer = $$(Loc.XPATH,testContext.getPageObjectManager().getPLPLocatorPage().get_Each_Product_Container()); 
 		for( int i=0; i<productContainer.size(); i++) {
@@ -181,12 +204,12 @@ public class PLP_Page extends PageObject {
 				}
 			}
 			catch(Exception e) {
-				Log.message("For Container" + i + ":- Rating section is not displayed", true);
+				//Log.message("For Container" + i + ":- Rating section is not displayed", true);
 				}
 			rating.clear();
 			}
 		}
-	
+	/** mouse hover on primary image */
 	public void mouseHoverOnMobilePrimaryImage() throws Exception {
 		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
 		configuration.setProperty("primaryImage", primaryImage);
@@ -194,6 +217,7 @@ public class PLP_Page extends PageObject {
 		$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile())));
 	}
 	
+	/** This function is verify that secondary image is displayed */
 	public void displaySecondaryImage() throws Exception {
 		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
 		String expectedImage = primaryImage.replace("_a", "_b");
@@ -201,6 +225,7 @@ public class PLP_Page extends PageObject {
 		Assert.assertEquals(expectedImage, secondaryImage);
 	}
 	
+	/** This function is verify that secondary is displayed */
 	public void displayMobileSecondaryImage() throws Exception {
 		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
 		String expectedImage = primaryImage.replace("_a", "_b");
@@ -208,6 +233,7 @@ public class PLP_Page extends PageObject {
 		Assert.assertEquals(expectedImage, secondaryImage);
 	}
 	
+	/** This function is verify that secondary image is not displayed */
 	public void displayNotMobileSecondaryImage() throws Exception {
 		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
 		String expectedImage = primaryImage.replace("_a", "_b");
@@ -215,27 +241,32 @@ public class PLP_Page extends PageObject {
 		Assert.assertNotEquals(expectedImage, secondaryImage);
 	}
 	
+	/** move to cursor */
 	public void moveCursor() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_By_Option()));
 	}
 	
+	/** This function is verify that verify switch on  primary image */
 	public void verifySwitchOnPrimaryImage() throws Exception {
 		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
 		String previousImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
 		Assert.assertEquals(primaryImage, previousImage);
 	}
 	
+	/** This function is verify that switch on primary image */
 	public void verifySwitchOnPrimaryMobileImage() throws Exception {
 		String primaryImage = (java.lang.String) configuration.getProperty("primaryImage");
 		String previousImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
 		Assert.assertEquals(primaryImage, previousImage);
 	}
 	
+	/** This function is verify that breadcrumbs is displayed */
 	 public void displayBreadcrumb() throws Exception {
 			$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Breadcrumb()));
 			Log.message("breadcrumb is displayed", true);	
 		}
 	 
+	 /** return  breadcrumbs list */
 	 public ArrayList<String> getBreadcrumbsHeirarchy() throws Exception {
 		 ArrayList<String> breadcrumbsList = new ArrayList<String>();
 		 Element breadcrumbEle = $$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Breadcrumb(),1);
@@ -243,12 +274,14 @@ public class PLP_Page extends PageObject {
 		return breadcrumbsList;	
 		}
 	 
+	 /** This function is verify breadcrumbs heirarchy */
 	 public void verifyBreadcrumbsHeirarchy() throws Exception {
 		 List<String> expected =  Arrays.asList("Home\n" + "Tools & Hardware\n" + "Power Tools\n" + "Drills & Drivers\n" + "Hammer Drills" );
 		 List<String> actual = getBreadcrumbsHeirarchy();
 		 Assert.assertEquals(expected,actual );	
 		}
 	 
+	 /** This function is verify that 'Home' is displayed in breadcrumbs */
 	 public void verifyHomepageDisplayInBreadcrumb() throws Exception {
 		 Element breadcrumbEle = $$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Homepage_In_Breadcrumb_Path(),1);
 		 String expected =  "Home";
@@ -256,6 +289,7 @@ public class PLP_Page extends PageObject {
 		 Assert.assertEquals(expected,actual );	
 		}
 	 
+	 /** return breadcrumbs list */
 	 public ArrayList<String> getBreadcrumbsHeirarchyInMobile() throws Exception {
 		 ArrayList<String> breadcrumbsList = new ArrayList<String>();
 		 Element breadcrumbEle = $$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb(),1);
@@ -263,17 +297,20 @@ public class PLP_Page extends PageObject {
 		return breadcrumbsList;	
 		}
 	 
+	 /** This function is verify that breadcrumbs is displayed */
 	 public void displayMobileBreadcrumb() throws Exception {
 			$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb()));
 			Log.message("breadcrumb is displayed in mobile", true);	
 		}
 	 
+	 /** This function is verify that breadcrumbs heirarchy */
 	 public void verifyBreadcrumbsHeirarchyInMobile() throws Exception {
 		 List<String> expected =  Arrays.asList("Home\n" + "Drills & Drivers");
 		 List<String> actual = getBreadcrumbsHeirarchyInMobile();
 		 Assert.assertEquals(expected,actual );	
 		}
 	 
+	 /** This function is verify that last breadcrumbs is clickable */
 	 public void verifyLastBreadcrumbClickable() throws Exception {
 		 By lastbreadcrumbEle = $By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Last_Breadcrumb());
 		 boolean clickable = testContext.getPageObjectManager().getPageObject(driver).isClickable(lastbreadcrumbEle);
@@ -285,24 +322,29 @@ public class PLP_Page extends PageObject {
 		 }
 	 }
 	 
+	 /** This function click on list view */
 	public void clickListViewMobile() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button_Mobile())), 5);
 		
 	}
 	
+	/** This function is verify that primary product image is displayed */
 	public void displayPrimaryProductImage() throws Exception {
 		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
 		Assert.assertTrue(primaryImage.contains("_a"));
 	}
 	
+	/** click on grid view */
 	public void clickGridViewButton() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View_Button()));
 	}
 	
+	/** click on grid view button */
 	public void clickGridViewButtonMobile() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View_Button_Mobile())), 3);
 	}
 	
+	/** This function is verify that Product contains more than four color */
 	public void hoverOnProductContainsMoreThanFourColor() throws Exception {
 		String getPrimaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
 		String expectedImage = getPrimaryImage.replace("_a", "_b");
@@ -322,6 +364,7 @@ public class PLP_Page extends PageObject {
 		}
 	}
 	
+	/** This function is verify that product card review is displayed */
 	public void displayProductCardReview() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image())), 5);
 		String getPrimaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
@@ -348,16 +391,19 @@ public class PLP_Page extends PageObject {
 		}
 	}
 	
+	/** click on product card variant */
 	public void clickProductCardVariant() throws Exception {
 		String productImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
 		configuration.setProperty("previousSelectedProductImage", productImage);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Variant()));
 	}
 	
+	/** This function is verify that 'selected product variant' is displayed */
 	public void displaySelectedProductVariant() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Selected_Product_Variant()));
 	}
 	
+	/** This function is verify that 'selected product image' is displayed */
 	public void displaySelectedProductImage() throws Exception {
 		String previousSelectedProductImage = (java.lang.String) configuration.getProperty("previousSelectedProductImage");
 		Log.message("previousSelectedProductImage:- " + previousSelectedProductImage, true);
@@ -366,31 +412,38 @@ public class PLP_Page extends PageObject {
 		Assert.assertNotEquals(previousSelectedProductImage, selectedProductImage);
 	}
 	
+	/** This function is verify that Number of colors are displayed */
 	public void displayNumberOfColours() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Number_Of_Colour()));
 	}
 	
+	/** This function is verify that number of variants are displayed */
 	public void displayNumberOfColoursVariant() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Number_Of_Colour()));
 	}
 	
+	/** This function is verify that product card is displayed */
 	public void displayProductCard() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card()));
 	}
 	
+	/** This function is verify that product brand is displayed */
 	public void displayProductBrand() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
 	}
 	
+	/** click on product brand */
 	public void clickProductBrand() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
 	}
 	
+	/** This function is verify that product brand is not clickable */
 	public void notClickableProductBrand() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
 	}
 	
+	/** This function is verify that Review stars are displayed */
 	public void displayReviewStars() throws Exception {
 		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getPLPLocatorPage().get_Review_Star()));
 	}

@@ -6,7 +6,9 @@ import java.util.stream.Stream;
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
 import cucumber.api.CucumberOptions;
-
+/**
+ * This file execute the scenarios of Adobe Regression (Mobile)
+ */
 
 public final class Adobe_Regression_Mobile_Runner extends BaseClass {
 	

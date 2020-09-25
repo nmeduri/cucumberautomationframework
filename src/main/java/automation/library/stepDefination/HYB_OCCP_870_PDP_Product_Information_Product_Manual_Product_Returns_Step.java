@@ -3,7 +3,6 @@ import java.util.List;
 
 import org.junit.Assert;
 
-import automation.library.api.cucumber.IRestResponse;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
@@ -19,6 +18,10 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
+
+/**
+ * This file contains the scenario of user stories OCCP-870
+ */
 
 public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns_Step extends BaseStep {
 

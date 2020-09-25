@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
 import automation.library.selenium.core.PageObject;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -12,6 +13,9 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+/**
+ * This class contains the common scenario
+ */ 
 public class Common_Step extends BaseStep {
 
 	RequestSpecification request;
@@ -38,8 +42,6 @@ public class Common_Step extends BaseStep {
 		response = getAuthorizationUrl().getAuthorizationToken(FileReaderManager.getInstance().getAPIDataReader().getAuthorizationUrl());	
 		
 	}
-	
-	
 
 	@When("user hits the GET api with locale as en_ca")
 	public void user_hits_the_api_with_locale_as_en_ca() {

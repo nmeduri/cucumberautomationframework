@@ -12,6 +12,11 @@ import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of the Home Page
+ */
+
 public class HomePageSteps {
 
 	
@@ -29,16 +34,6 @@ public class HomePageSteps {
 		configFileReader = new ConfigFileReader();
 		homePage =  testContext.getPageObjectManager().getHomePage();
 	}
-
-//	@Given("^Adobe author url is up$")
-//	public void adobe_author_url_is_up() throws Exception {
-//		driver = driverFactory.getDriver(configFileReader.getBrowser());
-//		pageObjectManager = new PageObjectManager();
-//		homePage = new HomePage(driver);
-//		testContext.getPageObjectManager().getHomePage(PageObject.getDriver());
-//		homePage.navigateTo_HomePage();
-//		
-//	}
 	
 	@Given("^Adobe author url is up$")
 	public void adobe_author_url_is_up() throws Exception {

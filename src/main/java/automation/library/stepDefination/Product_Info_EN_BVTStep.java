@@ -1,7 +1,6 @@
 package automation.library.stepDefination;
 import org.junit.Assert;
 
-import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
@@ -16,6 +15,10 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
+
+/**
+ * This file contains the scenario of Product Info EN BVT
+ */
 
 public class Product_Info_EN_BVTStep extends BaseStep {
 

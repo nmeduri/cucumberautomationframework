@@ -2,6 +2,7 @@ Feature: OCCP-1711 Login Forgot Password
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1711
 
+    @RegressionTest @WebView
 	Scenario: TC-635, TC-630 Verify the ability of a user to create a new account from 
 	Given login url is available
 	When login page is displayed
@@ -20,8 +21,9 @@ Feature: OCCP-1711 Login Forgot Password
 	Then user tap on sign in button
 	And user click on join now
 	Then sign up page is displayed
-	#And switch on parent frame
+	And switch on parent frame
 	
+	@RegressionTest @MobileView
 	Scenario: TC-635 TC-630 Verify the ability of a user to create a new account from 
 	Given login url is available
 	When login page is displayed
@@ -44,6 +46,7 @@ Feature: OCCP-1711 Login Forgot Password
 	And user click on join now
 	Then sign up page is displayed
 	
+	@RegressionTest @WebView
 	Scenario:  TC-636 Verify an inline error is displayed when email ID is not entered in the correct format 
 	Given login url is available
 	When login page is displayed
@@ -68,7 +71,7 @@ Feature: OCCP-1711 Login Forgot Password
 	And user enter re-type password
 	And user click on reset password button
 	Then user tap on sign in button
-	When enter email detail
+	When enter reset email detail
 	And user enter new credenatials
     And user click on sign in button
 	Then sucessfully logged in with new password

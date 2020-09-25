@@ -63,49 +63,80 @@ public class Element {
         return duration;
     }
 
+    /**
+     * Returns element
+     */
 	public WebElement element() {
 		return element;
 	}
 
+	/**
+     * Returns sendkeys
+     */
 	public Element sendKeys(String val) {
 		this.element().sendKeys(val);
 		return this;
 	}
 
+	/**
+     * click function
+     */
 	public Element click() {
 		this.element().click();
 		return this;
 	}
 	
+	/**
+     * Returns attribute value
+     */
 	public String getAttribute(String data) {
 		return this.element.getAttribute(data);
 	}
 	
+	/**
+     * Returns CSS Value
+     */
 	public String getCSSValue(String data) {
 		return this.element.getCssValue(data);
 	}
  	
+	/**
+     * clear data
+     */
 	public Element clear() {
 		this.element.clear();
 		return this;
 	}
 	
+	/**
+     * scroll down
+     */
 	public Element scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", this.element());
 		return this;
 	}
 	
+	/**
+     * Returns duration for specified waits
+     */
 	public boolean display() {
 		boolean value = this.element.isDisplayed();
 		return value;
 	}
 	
+	
+	/**
+     * Returns get text of element
+     */
 	public String  getText() {
 		String value = element.getText();
 		return value;
 	}
 
+	/**
+     * Returns Expection conditions of wait
+     */
 	public Element(WebDriver driver, ExpectedCondition<?> exp, int... delay) throws Exception {
 
 		this.driver = driver;
@@ -122,6 +153,9 @@ public class Element {
 
 	}
 
+	/**
+     * locate to element using By
+     */
 	public Element(WebDriver driver, By by) throws Exception {
 
 		this.driver = driver;
@@ -139,6 +173,9 @@ public class Element {
 
 	}
 	
+	/**
+     * no clickable
+     */
 	public Element notClickable(Element element) {
 		try {
 			this.element = wait.until(ExpectedConditions.elementToBeClickable(this.element));
@@ -166,6 +203,9 @@ public class Element {
 
 	}
 	
+	/**
+     * clickable
+     */
 	public Element clickable(int... retries) {
         try {
             this.element = wait.until(ExpectedConditions.elementToBeClickable(this.element));
@@ -214,6 +254,9 @@ public class Element {
         return refind;
     }
 	
+	/**
+     * return drop down value
+     */
 	public Select dropdown(int... retries) {
         Select sel = null;
         try {

@@ -9,16 +9,6 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     And scroll up to page
     And secondary image and more appears over primary image
     
-    @RegresionTest @WebView @WideScreen
-    Scenario: TC-1373 Verify the behaviour on hovering on Product Card when no Variants available
-    Given plp url is available
-    When plp is displayed
-    And scroll up to page
-    And click on sort by option 
-    And Select sort option price high to low
-    And scroll up to page
-    Then secondary image appears on hover and product card does not display any number of color
-    
     @RegressionTest @WebView
     Scenario: TC-1372 Verify the selection of Product Variant from the Product Card
     Given plp url is available
@@ -46,4 +36,14 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     Then the product card is displayed for the product
     And the product card name  on the product card is displayed
     And product brand is not clickable
+    
+    @RegresionTest @WebView @WideScreen
+    Scenario: TC-1373 Verify the behaviour on hovering on Product Card when no Variants available
+    Given plp url is available
+    When plp is displayed
+    And scroll up to page
+    And click on sort by option 
+    And Select sort option price high to low
+    And scroll up to page
+    Then secondary image appears on hover and product card does not display any number of color
 	

@@ -12,6 +12,11 @@ import automation.library.managers.PageObjectManager;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 
+/**
+ * This file contains the functions of Sign Up Page
+ * 
+ */
+
 public class Sign_Up_Page extends PageObject {
 	
 	TestContext testContext;
@@ -24,12 +29,14 @@ public class Sign_Up_Page extends PageObject {
 
 	}
 
+	/** This function navigate to sign up page */
 	public void navigateTo_Sign_Up_Page() throws Exception{
 		Log.message("URL:- " + FileReaderManager.getInstance().getConfigReader().getSignUpUrl(), true);
 		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getSignUpUrl());
 		
 	}
 
+	/** This function click on add to cart button */
 	public void clickOnAddToCartButton() throws Exception {
 
 	    $(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Add_To_Cart_Button()).click();

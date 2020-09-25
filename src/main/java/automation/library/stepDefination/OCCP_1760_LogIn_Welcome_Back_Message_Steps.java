@@ -21,6 +21,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of user stories OCCP-1760
+ */
+
 public class OCCP_1760_LogIn_Welcome_Back_Message_Steps extends BaseClass{
 
 	public OCCP_1760_LogIn_Welcome_Back_Message_Steps(TestContext context) throws Exception {

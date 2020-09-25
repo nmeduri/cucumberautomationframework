@@ -8,6 +8,3 @@ Feature: OCCP-1647 Product Badges Clearnce
     When pdp page is displayed for the product
     Then the editable badge label displays in store clearnce
     And an additional editable disclaimer displays only select style size badge
-	
-	
-	

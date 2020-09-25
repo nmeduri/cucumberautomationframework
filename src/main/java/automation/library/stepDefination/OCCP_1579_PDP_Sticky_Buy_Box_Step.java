@@ -23,6 +23,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+/**
+ * This file contains the scenario of user stories OCCP-1579
+ */
+
 public class OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseClass   {
 		PDP_Page pdpPage;
 		

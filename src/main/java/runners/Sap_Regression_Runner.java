@@ -4,7 +4,9 @@ import java.util.stream.Stream;
 
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
-
+/**
+ * This file execute the scenarios of SAP Regression
+ */
 public final class Sap_Regression_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {

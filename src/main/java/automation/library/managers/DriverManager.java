@@ -49,6 +49,7 @@ public abstract  class DriverManager {
 	
 	protected abstract void createDriver();
 
+	/** Returns duration for wait */ 
 	public WebDriverWait getWait() {
 		if (wait == null) {
 			wait = new WebDriverWait(driver, getWaitDuration());
@@ -56,6 +57,7 @@ public abstract  class DriverManager {
 		return wait;
 	}
 
+	/** Returns path of Driver */
 	public String getDriverPath(String drivername) {
 		String driver = drivername
 				+ (System.getProperty("os.name").split(" ")[0].equalsIgnoreCase("Windows") ? ".exe" : "");
@@ -77,6 +79,7 @@ public abstract  class DriverManager {
 		return duration;
 	}
 
+	/** close edriver */
 	public static void closeDriver(WebDriver driver) throws Exception {
 
 		driver.close();

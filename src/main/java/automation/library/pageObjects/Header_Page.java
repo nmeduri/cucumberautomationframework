@@ -19,6 +19,10 @@ import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
 
+/**
+ * This file contains the functions of Header Page
+ * 
+ */
 public class Header_Page extends PageObject {
 
 	
@@ -31,14 +35,17 @@ public class Header_Page extends PageObject {
 
 	}
 	
+	/** This function click on Account */
 	public void clickOnAccount() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account()));
 	}
 	
+	/** This function click on Sign in */
 	public void clickSignIn() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Sign_In_Header()));
 	}
 	
+	/** This function click on Header */
 	public void clickRegistration() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Registration_Header()));
 	}

@@ -46,7 +46,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	And enter number Zero in the quantity box
 	Then user is not allowed to enter zero number
 	
-	@RegressionTest @WebView @MobileView
+	@RegressionTest @MobileView 
 	Scenario: TC-86 Verify an error is dislpayed when user has not selected a variant before adding to cart 
 	Given pdp url is available
     When pdp page is displayed for the product

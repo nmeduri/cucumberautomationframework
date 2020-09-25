@@ -7,6 +7,9 @@ import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
 import cucumber.api.CucumberOptions;
 
+/**
+ * This file execute the scenarios of Adobe Regression (Web)
+ */
 
 public final class Adobe_Regression_Web_Runner extends BaseClass {
 	

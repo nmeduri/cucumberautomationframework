@@ -10,7 +10,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import automation.library.cucumber.Constant;
 import automation.library.managers.DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+/**
+ * This file create driver of chrome (Headless)
+ */
 
 public class ChromeDriverManager  extends DriverManager{
 

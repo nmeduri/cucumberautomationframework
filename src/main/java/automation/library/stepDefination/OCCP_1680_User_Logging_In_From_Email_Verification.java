@@ -8,7 +8,6 @@ import java.util.Random;
 
 import org.junit.Assert;
 
-import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
@@ -29,7 +28,9 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
-
+/**
+ * This file contains the scenario of user stories OCCP-1680
+ */
 public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass {
 
 	public OCCP_1680_User_Logging_In_From_Email_Verification(TestContext context) throws Exception {
@@ -47,6 +48,11 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     public void use_click_on_here_to_verify_email_link() throws Exception {
     	testContext.getPageObjectManager().getMailinatorPage().click_Here_To_Verify_Email();
     }
+	
+	@And("user is able to see click on here to verify email link")
+    public void user_is_able_to_see_click_on_here_to_verify_email_link() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage().display_Here_To_Verify_Email();
+    }
     
     @Then("page your email has been verified displayed")
     public void page_your_email_has_been_verified_displayed() throws Exception {
@@ -56,6 +62,16 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     @And("user click on click here on reset your password")
     public void user_click_on_click_here_on_reset_your_password() throws Exception {
     	testContext.getPageObjectManager().getMailinatorPage().clickOnClickHere();
+    }
+    
+    @And("user is able to see click here")
+    public void user_is_able_to_see_click_here() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage().displayClickHere();
+    }
+    
+    @And("user is able to verify click here on mobile")
+    public void user_is_able_to_veify_click_here_on_mobile() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage().displayClickHereMobile();
     }
     
     @And("user enter new password")

@@ -18,7 +18,10 @@ import automation.library.selenium.core.Element;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
-
+/**
+ * This file contains the functions of Email Sent Confirmation Page
+ * 
+ */
 public class Email_Sent_Confirmation_Page extends PageObject {
 
 	
@@ -31,14 +34,17 @@ public class Email_Sent_Confirmation_Page extends PageObject {
 
 	}
 	
+	/** This function is verify that message 'Verification Email Sent' is displayed */
 	public void display_Message_Verification_Email_Sent() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getEmailSentConfirmationLocator().get_Message_Verification_Email_Sent()));
 	}
 	
+	/** This function click on re-send email verification */
 	public void click_Resend_Email_Verification() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getEmailSentConfirmationLocator().get_Resend_EMail_Verification()));
 	}
 	
+	/** This function is verify that message 'Resend Verification Email Sent' is displayed */
 	public void display_Message_Resend_Verification_Email_Sent() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getEmailSentConfirmationLocator().get_Resend_Verification_Email_Sent_Message()));
 	}

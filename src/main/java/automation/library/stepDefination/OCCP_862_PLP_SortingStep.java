@@ -19,6 +19,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of user stories OCCP-862
+ */
+
 public class OCCP_862_PLP_SortingStep extends BaseClass {
 
 	PLP_Page plpPage;

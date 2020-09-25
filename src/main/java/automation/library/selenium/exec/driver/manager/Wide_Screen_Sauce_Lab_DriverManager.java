@@ -15,6 +15,9 @@ import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+/**
+ * This file create driver of chrome (Wide - Sauce Labs)
+ */
 
 public class Wide_Screen_Sauce_Lab_DriverManager  extends DriverManager{
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");

@@ -17,6 +17,11 @@ import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of Sign Up Page
+ */
+
 public class SignUpPageSteps extends BaseClass{
 
 	public SignUpPageSteps(TestContext context) throws Exception {

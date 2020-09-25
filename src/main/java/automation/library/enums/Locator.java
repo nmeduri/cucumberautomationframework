@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebElement;
 
+/**
+ * This file contains the Locator Name of Web Driver
+ * 
+ */
 public class Locator {
 
 	public static enum Loc {

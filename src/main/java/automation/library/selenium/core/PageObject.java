@@ -30,6 +30,10 @@ import static automation.library.enums.Locator.getLocator;
 import static org.junit.Assert.fail;
 import static org.testng.Assert.fail;
 
+/**
+ * This class call the function from Element class
+ */
+
 public class PageObject {
 
 	protected static WebDriver driver;
@@ -48,15 +52,18 @@ public class PageObject {
 		return driver;
 	}
 
+	/** return locate element */
 	public Element $(By by) throws Exception {
 		return findElement(by);
 	}
 
+	/** return locate element using driver*/
 	public Element findElement(By by) throws Exception {
 		Element el = new Element(driver, by);
 		return el;
 	}
 	
+	/** return Element list */
 	public List<WebElement> findElements(String locator) {
         
             List<WebElement> els = driver.findElements(By.xpath(locator));
@@ -64,6 +71,7 @@ public class PageObject {
         
     }
 
+	/** return wait  */
 	public WebDriverWait getWait() throws Exception {
 
 		Log.debug("obtaining the wait object for current thread");
@@ -72,6 +80,7 @@ public class PageObject {
 
 	}
 
+	/** return locate element using Locator */
 	public Element $(Loc type, String locator) throws Exception {
 
 		Element el = new Element(driver, getLocator(type, locator));
@@ -79,6 +88,7 @@ public class PageObject {
 
 	}
 	
+	/** return locate element with specific time unit*/
 	public Element $$$$(Loc type, String locator, int timeunit) throws Exception {
 
 		Element el = new Element(driver, getLocator(type, locator), timeunit);
@@ -86,12 +96,14 @@ public class PageObject {
 
 	}
 
+	/** return locate element using find element */
 	public WebElement $findElement(By by) throws Exception {
 
 		WebElement element = driver.findElement(by);
 		return element;
 	}
 
+	/** return Element list using locator */
 	public List<Element> $$(Loc type, String locator) {
 		WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
 		List<WebElement> els = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getLocator(type, locator)));
@@ -99,6 +111,7 @@ public class PageObject {
 		return elements;
 	}
 
+	/** return explicity wait  */
 	public Element $(ExpectedCondition<?> exp, int... delay) throws Exception {
 
 		Element el = new Element(driver, exp, delay);
@@ -106,13 +119,15 @@ public class PageObject {
 
 	}
 
+	/** return element using By */
 	public By $By(Loc type, String locator) throws Exception {
 
 		By by = getLocator(Loc.XPATH, locator);
 		return by;
 
 	}
-
+	
+	/** return locate element list using expected conditions */
 	public List<Element> $findElements(ExpectedCondition<List<WebElement>> exp, int delay) {
 
 		try {
@@ -129,6 +144,7 @@ public class PageObject {
 
 	}
 
+	/** return element list */
 	public List<Element> setElements(List<WebElement> els) {
 		List<Element> list = new ArrayList<Element>();
 		for (WebElement el : els) {
@@ -137,50 +153,59 @@ public class PageObject {
 		return list;
 	}
 
+	/** return get text of element */
 	public String $getText(Element element) {
 
 		return element.getText();
 
 	}
 	
+	/** return get attribute value of element */
 	public String $getAttributeValue(Element element, String attribute) {
 		
 		return element.getAttribute(attribute);
 		
 	}
 	
+	/** return css value of element */
 	public String $getCSSValue(Element element, String attribute) {
 		return element.getCSSValue(attribute);
 	}
  
+	/** return get text of element using expected conditions */
 	public String $getText(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);
 		return ele.getText();
 	}
 
+	/** return display conditon */
 	public boolean $display(Element element) {
 
 		return element.display();
 
 	}
 	
+	/** enter detail */
 	public void $enterData(Element element, String data) {
 		
 		element.sendKeys(data);
 		
 	}
 	
+	/** clear field */
 	public void $clearData(Element element) {
 		element.clear();
 	}
 
+	/** return display condition with expected condition */
 	public boolean $display(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);
 		return ele.display();
 	}
 	
+	/** click on element with expected conditions */
 	public void $click(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);
@@ -188,7 +213,7 @@ public class PageObject {
 	}
 	
 	
-
+	/** scroll down to page with expected conditions */
 	public void scrollDown(ExpectedCondition<WebElement> exp, int delay) throws Exception {
 
 		Element ele = new Element(driver, exp, delay);
@@ -196,12 +221,14 @@ public class PageObject {
 
 	}
 
+	/** return locate element */
 	public void scrollDown(By by, int delay) throws Exception {
 
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), delay);
 		ele.scrollDown();
 	}
 
+	/** drop down */
 	public void performDropDown(By by, String type, String value) throws Exception {
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), getWaitDuration());
 		switch (type) {
@@ -217,40 +244,47 @@ public class PageObject {
 		}
 
 	}
-	
+	/** mouse hover */
 	public void $mouseHover(WebElement element) {
 		Actions actions = new Actions(driver);
     	actions.moveToElement(element).perform();
 	}
- 
+	
+	/** move to cursor */
    public void $moveCursor() {
 	   Actions action = new Actions(driver);
 	   action.moveByOffset(50, 35).perform();
    }
 	
+   /** scroll down by coordinates */
 	public void scrollDownByCoordinates() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
 	}
 	
+	/** scroll up by coordinates */
 	public void scrollUpByCoordinates() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-5000)", "");
 	}
 
+	/** click on element */
 	public Element $click(Element element) {
 		return element.click();
 	}
 
+	/** return title */
 	public String getTitle() {
 		String value = driver.getTitle();
 		return value;
 	}
 	
+	/** not clickable */
 	public void $notClickable(Element element) {
 		element.notClickable(element);
 	}
 
+	/** return specific wait */
 	public int getWaitDuration() {
 		final int defaultWait = 10;
 
@@ -267,9 +301,11 @@ public class PageObject {
 		return duration;
 	}
 
+	/** switch on child window */
 	public void switchWindow() {
 		
 		String parentWindow = driver.getWindowHandle();
+		configuration.setProperty("parentWindow", parentWindow);
 		Log.message("Parent Window:-" + parentWindow, true);
 		switching: while (true) {
 			for (String handle : getDriver().getWindowHandles()) {
@@ -285,6 +321,7 @@ public class PageObject {
 		}
 	}
 	
+	/** file download */
 	@SuppressWarnings("unused")
 	public boolean isFileDownloaded(String downloadPath, String fileName) throws Exception {
 		int j;
@@ -303,6 +340,7 @@ public class PageObject {
 	    return flag;
 	}
 	
+	/** delete files */
 	public void deleteFiles( String directory, String extension ) {
 	    ExtensionFilter filter = new ExtensionFilter(extension);
 	    File dir = new File(directory);
@@ -318,10 +356,12 @@ public class PageObject {
 	    }
 	   }
 	
+	/** switch frame */
 	public void switchFrameByString(String frameName) {
 		getDriver().switchTo().frame(frameName);
 	}
 
+	/** switch on child window */
 	public void switchOnChildWindow() {
          
 		Set<String> allWindowHandles = PageObject.getDriver().getWindowHandles();
@@ -332,6 +372,7 @@ public class PageObject {
 
 	}
 
+	/** verify response value */
 	public static void verifyResponseValue(List<String> expectedValue, List<String> actualValue) {
 
 		for (int i = 0; i < actualValue.size(); i++) {
@@ -342,6 +383,7 @@ public class PageObject {
 		}
 	}
 
+	/** verify response not null */
 	public static void verifySectionResponseNotNull(List<String> value) {
 
 		for (int i = 0; i < value.size(); i++) {
@@ -352,60 +394,73 @@ public class PageObject {
 
 	}
 
+	/** verify response null in list*/
 	public static void verifySectionValueResponseNull(List<String> value) {
 
 		Assert.assertTrue(value.contains(null));
 
 	}
 
+	/** verify response not null in list */
 	public static void verifySectionValueResponseNotNull(List<String> value) {
 
 		Assert.assertFalse(value.contains(null));
 
 	}
 
+	/** verify expected response */
 	public static void verifyExpectedResponse(List<String> expectedValue, String actualValue) {
 		Assert.assertTrue(expectedValue.contains(actualValue));
 	}
 
+	/** verify expected response for false condition*/
 	public static void verifyExpectedFalseResponse(List<String> expectedValue, String actualValue) {
 		Assert.assertFalse(expectedValue.contains(actualValue));
 	}
 
+	/** compare expected and actual value */
 	public static void verifyLanguageInList(String exepectedValue, String actualValue) {
 		Assert.assertTrue(exepectedValue.contains(actualValue));
 	}
 
+	/** verify  response not null*/
 	public static void notNullAttributeInResponse(String actualValue) {
 		Assert.assertNotEquals(null, actualValue);
 	}
 
+	/** verify  response not null in list*/
 	public static void notNullAttributeInResponseInList(List<String> actualValue) {
 		Assert.assertNotEquals(null, actualValue);
 	}
 
+	/** verify  response not null in list for Integer value*/
 	public static void notNullAttributeInResponseInListInteger(List<Integer> actualValue) {
 		Assert.assertNotEquals(null, actualValue);
 	}
 
+	/** verify  expected conditions */
 	public static void verifyExpectedResponseWithoutList(String exepectedValue, String actualValue) {
 		Assert.assertEquals(exepectedValue, actualValue);
 	}
 
+	/** verify  expected conditions */
 	public static void verifyNotExpectedValue(String exepectedValue, String actualValue) {
 		Assert.assertNotEquals(exepectedValue, actualValue);
 	}
 
+	/** verify  response not null*/
 	public static void vrifyNotNullObject(List<String> value) {
 		Assert.assertNotNull(value);
 	}
 
+	/** verify  size of multiple value */
 	public static void verifyMultipleValue(List<String> request) {
 
 		int size = request.size();
 		Assert.assertTrue(size > 1);
 	}
 	
+	/** verify  color code */
 	public void verifyColorCode(String expectedColor, String actualColor) throws Exception{
 
 		
@@ -423,6 +478,7 @@ public class PageObject {
 		Assert.assertEquals(expectedColor, color);
 		}
 
+	/** verify element is clickable */
 	public boolean isClickable(By locator)      
 	{
 	    try
@@ -436,6 +492,18 @@ public class PageObject {
 	    {
 	        return false;
 	    }
+	}
+	
+	/** close child window */
+	public void closeChildWindow() throws Exception {
+		String String = (java.lang.String) configuration.getProperty("childWindow");
+    	PageObject.getDriver().switchTo().window(String).close();
+	}
+	
+	/** switch on parent window */
+	public void parentWindow() throws Exception {
+		String String = (java.lang.String) configuration.getProperty("parentWindow");
+		PageObject.getDriver().switchTo().window(String);
 	}
 
 }

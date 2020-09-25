@@ -3,8 +3,10 @@ package automation.library.stepDefination;
 
 
 import java.util.Random;
+import java.util.Set;
 
 import org.junit.Assert;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
@@ -24,6 +26,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of Login Page
+ */
+
 public class LogInPageSteps extends BaseClass{
 	
        Login_Page loginPage;
@@ -38,6 +45,26 @@ public class LogInPageSteps extends BaseClass{
    	    
 		loginPage.navigateTo_Login_Page();
     }
+	
+	@And("Remove Cookies")
+	public void remove_cookies() throws Exception {
+		Set<Cookie> allCookies = PageObject.getDriver().manage().getCookies();
+		Log.message("Cookies Size:- " + allCookies.size(), true);
+		for(Cookie cookie : allCookies) {
+			Log.message("Name:- " + cookie.getName(), true);
+			Log.message("Name:- " + cookie.getDomain(), true);
+			Log.message("Name:- " + cookie.getPath(), true);
+			Log.message("Name:- " + cookie.getValue(), true);
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getName());
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getDomain());
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getPath());
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getValue());
+		}
+		PageObject.getDriver().manage().deleteAllCookies();
+		PageObject.getDriver().manage().getCookies().clear();
+		Set<Cookie> allCookiesafter = PageObject.getDriver().manage().getCookies();
+		Log.message("After Cookies Size:- " + allCookiesafter.size(), true);
+	}
 	
 	@Given("log in url is available on mobile")
     public void sign_up_url_is_available_on_mobile() throws Exception {
@@ -61,6 +88,11 @@ public class LogInPageSteps extends BaseClass{
 		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data());
 	}
 	
+	@When("enter reset email detail")
+	public void enter_reset_email_detail() throws Exception {
+		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_UserName_Three());
+	}
+	
 	@And("user enter username")
 	public void user_enter_username() throws Exception {
 		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(emailVaue);
@@ -73,7 +105,6 @@ public class LogInPageSteps extends BaseClass{
 	
 	@When("user is navigate on login page")
 	public void user_is_navigate_on_login_page() throws Exception {
-		Thread.sleep(5000);
 		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
 	}
 	
@@ -116,15 +147,6 @@ public class LogInPageSteps extends BaseClass{
 	public void message_field_required_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).display_This_Field_Is_Required();
 	}
-	
-	@And("user click on join now")
-	public void user_click_on_join_now() throws Exception {
-		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).clickJoinNowButton();
-	}
-	
-	@Then("sucessfully logged in with new password")
-	public void successfully_logged_in_with_new_password() throws Exception {
-		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).verifyLoginWithNewPassword();
-	}
+
 
 }

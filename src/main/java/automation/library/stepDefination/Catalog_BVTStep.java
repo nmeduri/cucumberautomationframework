@@ -1,7 +1,6 @@
 package automation.library.stepDefination;
 import org.junit.Assert;
 
-import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.CTBVTEndPoint;
 import automation.library.api.endpoint.CatalogsEndPoint;
 import automation.library.common.Property;
@@ -17,6 +16,10 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
+
+/**
+ * This class verify the scenario of Catalog
+ */
 
 public class Catalog_BVTStep extends BaseStep {
 

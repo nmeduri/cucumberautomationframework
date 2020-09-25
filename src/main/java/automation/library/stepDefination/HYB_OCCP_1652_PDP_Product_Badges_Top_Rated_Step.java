@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.junit.Assert;
 
-import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
@@ -24,6 +23,10 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
+
+/**
+ * This file contains the scenario of user stories OCCP-1652
+ */
 
 public class HYB_OCCP_1652_PDP_Product_Badges_Top_Rated_Step extends BaseStep {
 

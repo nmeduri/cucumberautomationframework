@@ -14,7 +14,6 @@ import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-import automation.library.api.cucumber.IRestResponse;
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
@@ -36,6 +35,10 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
+
+/**
+ * This file contains the scenario of user stories OCCP-1671
+ */
 
 public class OCCP_1671_Account_Triangle_ID_Registration_Create_New_Account_Step extends BaseClass {
 

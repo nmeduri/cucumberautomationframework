@@ -6,6 +6,10 @@ import java.util.stream.Stream;
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
 
+/**
+ * This file execute the scenarios of Health check
+ */
+
 public final class Last_Commit_Runner extends BaseClass {
 	public static String name;
 	private static String[] defaultOptions = {

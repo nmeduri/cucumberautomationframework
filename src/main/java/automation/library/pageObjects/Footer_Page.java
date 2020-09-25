@@ -30,6 +30,10 @@ import cucumber.api.java8.Pa;
 import edu.emory.mathcs.backport.java.util.Collections;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
 
+/**
+ * This file contains the functions of Footer Page
+ * 
+ */
 
 public class Footer_Page extends PageObject {
 
@@ -45,24 +49,29 @@ public class Footer_Page extends PageObject {
 
 	}
 	
+	/** This function is verify that Legal Disclaimer is displayed */
 	public void displayLegalDisclaimer() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer()));
 	}
 	
+	/** This function click on view more */
 	public void clickViewMore() throws Exception {
 		$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
 	}
 	
+	/** This function is verify that Reset of Legal Disclaimer is displayed */
 	public void displayRestOfLegalDisclaimer() throws Exception {
 		String sText = $getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer()));
 		Log.message("Text:- " + sText, true);
 		assertFalse(sText.contains("..."));
 	}
 	
+	/** This function is verify that View Less is displayed */
 	public void displayViewLess() throws Exception {
 		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
 	}
 	
+	/** This function is verify that View More is not displayed */
 	public void notDisplayViewMore() throws Exception {
 		try {
 			$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));

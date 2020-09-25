@@ -19,6 +19,11 @@ import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
 
+/**
+ * This file contains the functions of PLP Page
+ * 
+ */
+
 public class Registration_Email_Verification_Page extends PageObject {
 
 

@@ -23,6 +23,11 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+
+/**
+ * This file contains the scenario of user stories OCCP-1583
+ */
+
 public class OCCP_1583_PDP_Regular_Price_Step extends BaseClass   {
 		PDP_Page pdpPage;
 		

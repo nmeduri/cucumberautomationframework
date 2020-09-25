@@ -18,7 +18,9 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
+/**
+ * This file contains the scenario of user stories OCCP-861
+ */
 public class OCCP_861_PLP_Product_Card_Step extends BaseClass {
 	PLP_Page plpPage;
 	public OCCP_861_PLP_Product_Card_Step(TestContext context) throws Exception {

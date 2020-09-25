@@ -2,7 +2,7 @@ Feature: OCCP-1561 PLP Breadcrumb
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1561
 	
-	  @RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen
     Scenario: TC-119 Verify Breadcrumb is displayed on PLP for Desktop/Desktop Wide view
     Given plp url is available
     When plp is displayed

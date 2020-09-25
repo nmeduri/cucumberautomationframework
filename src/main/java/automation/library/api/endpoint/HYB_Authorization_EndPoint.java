@@ -7,6 +7,15 @@ import automation.library.managers.FileReaderManager;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
+/*
+ * This class generate the tokens for Authorization APIs.
+ * Execute the APIs method
+ * 
+ * @author Shasahnk Bansal
+ * @date 07/07/2020
+ */
+
 public class HYB_Authorization_EndPoint {
 	
 	private static String base_url;

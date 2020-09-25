@@ -9,7 +9,9 @@ import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
+/**
+ * This file create driver of chrome (Headless)
+ */
 public class ChromeDriver_Headless_Manager  extends DriverManager{
 
 	//@Override

@@ -11,7 +11,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+/**
+ * This file create driver for chrome (Mobile)
+ */
 
 public class MobileChromeDriverManager  extends DriverManager{
 

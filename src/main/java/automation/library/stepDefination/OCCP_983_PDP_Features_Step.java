@@ -18,6 +18,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+/**
+ * This file contains the scenario of user stories OCCP-983
+ */
+
 public class OCCP_983_PDP_Features_Step extends BaseClass {
       PDP_Page pdpPage;
 	public OCCP_983_PDP_Features_Step(TestContext context) throws Exception {

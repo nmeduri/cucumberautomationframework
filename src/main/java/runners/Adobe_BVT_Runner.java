@@ -5,7 +5,9 @@ import java.util.stream.Stream;
 
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
-
+/**
+ * This file execute the scenarios of Adobe BVT
+ */
 
 public final class Adobe_BVT_Runner extends BaseClass {
 	

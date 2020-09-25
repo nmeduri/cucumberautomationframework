@@ -5,6 +5,10 @@ import java.util.stream.Stream;
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
 
+/**
+ * This file execute the scenarios of SAP BVT 
+ */
+
 public final class Sap_BVT_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
