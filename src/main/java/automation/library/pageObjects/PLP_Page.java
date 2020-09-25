@@ -439,8 +439,12 @@ public class PLP_Page extends PageObject {
 	
 	/** This function is verify that product brand is not clickable */
 	public void notClickableProductBrand() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+       try {
+   		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+   		fail();
+       }catch(Exception e) {
+    	   
+       }
 	}
 	
 	/** This function is verify that Review stars are displayed */

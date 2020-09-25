@@ -2,7 +2,7 @@ Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verificatio
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1751
 		
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-1428 Verify the ability of a user to resend verification email if required for account registration of Triangle ID 
 	Given sign up url is available
 	When sign up page is displayed
@@ -38,6 +38,6 @@ Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verificatio
 	Then user enter detail in mailinator inbox
 	And user click on go button
 	Then user has received the verification email on mobile
-	Then verification email is resent to the user
-	And user click on previous mail
-	And user is able to see click on here to verify email link
+	Then verificationemail is resent to the user
+	#And user click on previous mail
+	#And user is able to see click on here to verify email link

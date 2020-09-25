@@ -252,6 +252,11 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     	testContext.getPageObjectManager().getMailinatorPage().displayResentEmail();
     }
     
+    @Then("verificationemail is resent to the user")
+    public void verification_email_is_resent_to_the_user_mobile() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage().displayResentEmailMobile();
+    }
+    
     @And("user click on previous mail")
     public void user_click_on_previous_mail() throws Exception {
     	testContext.getPageObjectManager().getMailinatorPage().clickPreviousEmail();

@@ -41,11 +41,13 @@ public class Mailinator_Page extends PageObject {
 	
 	/** This function enter user name */
 	public void enterUserInMailinatorInbox(String data) throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Mailinator_Inbox_Field()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Mailinator_Inbox_Field()), data);;
 	}
 	
 	/** This function click on Go Button */
 	public void clickGoButton() throws Exception {
+		$display($(Loc.ID, testContext.getPageObjectManager().getMailinatorPageLocator().get_Go_Button()));
 		$click($(Loc.ID, testContext.getPageObjectManager().getMailinatorPageLocator().get_Go_Button()));
 	}
 	
@@ -93,6 +95,14 @@ public class Mailinator_Page extends PageObject {
 		Assert.assertEquals(list.size(), 2);
 	}
 	
+	/** This function is verify that 'Resent Email' is displayed */
+	public void displayResentEmailMobile() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_More_Email())), 4);
+		List<Element> list = $$(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_More_Email());
+		Log.message("Size:- " + list.size(), true);
+		Assert.assertTrue(list.size() > 1);
+	}
+	
 	/** This function click on previous email */
 	public void clickPreviousEmail() throws Exception {
 		List<Element> list = $$(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address());
@@ -118,5 +128,10 @@ public class Mailinator_Page extends PageObject {
 		PageObject.getDriver().switchTo().frame("msg_body");
 		Thread.sleep(2000);
 		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0];", $findElement(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_Mobile())));
+	}
+	
+	/** This function is verify to Moment Ago is displayed */
+	public void displayMomentAgo() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Moment_Ago())), 10);
 	}
 }

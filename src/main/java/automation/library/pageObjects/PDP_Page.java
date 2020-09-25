@@ -165,6 +165,7 @@ public class PDP_Page extends PageObject {
 	
 	/** This function click on Increment Quantity Button */
 	public void clickIncremenQuantitytButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Select_Increment_Quantity()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Select_Increment_Quantity()));
 	}
 	
@@ -183,6 +184,7 @@ public class PDP_Page extends PageObject {
 	public void verifyUpdatedQuantityByOne() throws Exception {
 		String quantity = (java.lang.String) configuration.getProperty("quantityBox");
 		int quantityValue = Integer.parseInt(quantity);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()));
 		String expectedQuantity = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
 		int expectedQuantityValue = Integer.parseInt(expectedQuantity);
 		Assert.assertEquals(expectedQuantityValue, quantityValue + 1);

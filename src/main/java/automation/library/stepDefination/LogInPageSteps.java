@@ -6,7 +6,9 @@ import java.util.Random;
 import java.util.Set;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.cucumber.TestContext;
@@ -48,22 +50,7 @@ public class LogInPageSteps extends BaseClass{
 	
 	@And("Remove Cookies")
 	public void remove_cookies() throws Exception {
-		Set<Cookie> allCookies = PageObject.getDriver().manage().getCookies();
-		Log.message("Cookies Size:- " + allCookies.size(), true);
-		for(Cookie cookie : allCookies) {
-			Log.message("Name:- " + cookie.getName(), true);
-			Log.message("Name:- " + cookie.getDomain(), true);
-			Log.message("Name:- " + cookie.getPath(), true);
-			Log.message("Name:- " + cookie.getValue(), true);
-			PageObject.getDriver().manage().deleteCookieNamed(cookie.getName());
-			PageObject.getDriver().manage().deleteCookieNamed(cookie.getDomain());
-			PageObject.getDriver().manage().deleteCookieNamed(cookie.getPath());
-			PageObject.getDriver().manage().deleteCookieNamed(cookie.getValue());
-		}
-		PageObject.getDriver().manage().deleteAllCookies();
-		PageObject.getDriver().manage().getCookies().clear();
-		Set<Cookie> allCookiesafter = PageObject.getDriver().manage().getCookies();
-		Log.message("After Cookies Size:- " + allCookiesafter.size(), true);
+		testContext.getPageObjectManager().getLoginPage().clear_browser_history();
 	}
 	
 	@Given("log in url is available on mobile")
@@ -86,6 +73,11 @@ public class LogInPageSteps extends BaseClass{
 	@When("enter email detail")
 	public void enter_email_detail() throws Exception {
 		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data());
+	}
+	
+	@And("clear email detail")
+	public void clear_email_detail() throws Exception {
+		testContext.getPageObjectManager().getLoginPage().clear_Email_Login_Page();
 	}
 	
 	@When("enter reset email detail")

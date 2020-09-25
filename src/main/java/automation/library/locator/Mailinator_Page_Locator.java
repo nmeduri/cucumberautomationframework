@@ -18,7 +18,9 @@ public class Mailinator_Page_Locator {
     String gotItButton = Property.getProperty(Constant.OR_FILE, "gotItButton");
     String clickHere = Property.getProperty(Constant.OR_FILE, "clickHere");
     String clickHereMobile = Property.getProperty(Constant.OR_FILE, "clickHereMobile")  + Property.getProperty(Constant.OR_FILE, "clickHereMobileTwo");
-	
+	String verifyYourMoreEmailAddressOnMobile = Property.getProperty(Constant.OR_FILE, "verifyYourMoreEmailAddressOnMobile");
+	String momentAgo = Property.getProperty(Constant.OR_FILE, "momentAgoOne") + "," + Property.getProperty(Constant.OR_FILE, "momentAgoTwo");
+
     /**
 	 * gets Locator - Public Mailinator Inbox Field
 	 * 
@@ -89,5 +91,21 @@ public class Mailinator_Page_Locator {
 	
 	public String get_Click_Here_Mobile() {
 		return clickHereMobile;
+	}
+	
+	/**
+	 * gets Locator - Email (Mobile)
+	 * 
+	 */
+	public String get_More_Email() {
+		return verifyYourMoreEmailAddressOnMobile;
+	}
+	
+	/**
+	 * gets Locator - Moment Ago
+	 * 
+	 */
+	public String get_Moment_Ago() {
+		return momentAgo;
 	}
 }

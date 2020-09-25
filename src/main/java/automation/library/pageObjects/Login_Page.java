@@ -1,8 +1,12 @@
 
 package automation.library.pageObjects;
 
+import java.util.Set;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -50,6 +54,11 @@ public class Login_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
 	}
 	
+	/** This function clear to email detail */
+	public void clear_Email_Login_Page() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()));
+	}
+	
 	/** This function enter invalid email detail */
 	public void enter_Invalid_Data_Email_Login_Page(String data) throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()), data);
@@ -93,6 +102,7 @@ public class Login_Page extends PageObject {
 	
 	/** This function click on forgot password */
 	public void click_Forgot_Password() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Forgot_Password()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Forgot_Password()));
 	}
 	
@@ -104,6 +114,29 @@ public class Login_Page extends PageObject {
 	/** This function is verify that message 'Forgot Password Required' is displayed */
 	public void display_Message_Forgot_Password_Required() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Message_Field_Required()));
+	}
+	
+	public void clear_browser_history() throws Exception {
+		PageObject.getDriver().get("chrome://settings/clearBrowserData");
+		Thread.sleep(3000);
+		PageObject.getDriver().findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
+		Thread.sleep(10000);
+		Set<Cookie> allCookies = PageObject.getDriver().manage().getCookies();
+		Log.message("Cookies Size:- " + allCookies.size(), true);
+		for(Cookie cookie : allCookies) {
+			Log.message("Name:- " + cookie.getName(), true);
+			Log.message("Name:- " + cookie.getDomain(), true);
+			Log.message("Name:- " + cookie.getPath(), true);
+			Log.message("Name:- " + cookie.getValue(), true);
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getName());
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getDomain());
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getPath());
+			PageObject.getDriver().manage().deleteCookieNamed(cookie.getValue());
+		}
+		PageObject.getDriver().manage().deleteAllCookies();
+		PageObject.getDriver().manage().getCookies().clear();
+		Set<Cookie> allCookiesafter = PageObject.getDriver().manage().getCookies();
+		Log.message("After Cookies Size:- " + allCookiesafter.size(), true);
 	}
 	
 	
