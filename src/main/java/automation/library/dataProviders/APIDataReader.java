@@ -781,7 +781,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
-
+	/**
+	 * gets Guest user Create Cart API
+	 * 
+	 */
 	public String getCreteCart_GuestUser_API() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "guestUserCreateCart");
@@ -790,7 +793,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
-	
+	/**
+	 * gets Authenticated user Create Cart API
+	 * 
+	 */
 	public String getCreateCart_RegisteredUser_API() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "registeredUserCreateCart");
@@ -799,6 +805,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
+	/**
+	 * gets Add to Cart API
+	 * 
+	 */
 	public String getAddToCartInformationAPI() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "AddToCart");
@@ -807,6 +817,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
+	/**
+	 * gets Invalid Add to Cart API
+	 * 
+	 */
 	public String getInvalidAddToCartInformationAPI() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "InvalidAddToCart");
@@ -815,6 +829,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
+	/**
+	 * gets product data of TC-2174
+	 * 
+	 */
 	public String get_product_tc_2174() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_2174");
@@ -823,6 +841,46 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+	/**
+	 * gets product data of TC-2381
+	 * 
+	 */
+	public String get_product_tc_2381() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_2381");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-2382
+	 * 
+	 */
+	public String get_product_tc_2382() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_2382");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3035
+	 * 
+	 */
+	public String get_product_tc_3035() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3035");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-2167
+	 * 
+	 */
 	public String get_product_tc_2167() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_2167");
@@ -831,7 +889,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
-	
+	/**
+	 * gets product data of TC-2167_P2
+	 * 
+	 */
 	public String get_product_tc_2167_P2() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_2167_P2");
@@ -840,6 +901,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+	/**
+	 * gets 404 Add to Cart API
+	 * 
+	 */
 	public String getAddToCartInformationAPI_404() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "AddToCart_404");
@@ -848,7 +913,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
-
+	/**
+	 * gets product data of TC-1944
+	 * 
+	 */
 	public String get_product_tc_1944() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1944");
@@ -857,6 +925,10 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+	/**
+	 * gets PDP product API
+	 * 
+	 */
 	public String get_pdp_product_API() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "pdpproductapi");

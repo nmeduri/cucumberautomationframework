@@ -3,11 +3,12 @@ package automation.library.api.endpoint;
 import automation.library.logdetail.Log;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+
 /*
  * This class calls the URL of Add to Cart APIs and
  * Execute the APIs method
- 
  */
+
 public class HYB_API_AddToCart_End_Point {
 	private static String base_url;
 	private static Response response;

@@ -141,6 +141,13 @@ public class Common_Step extends BaseStep {
 		PageObject.notNullAttributeInResponse(accessToken);
 		Log.message("AccessToken :"+accessToken, true);
 	}
-	
+
+	/*@Given("Cart occ api is available")
+	public void cart_occ_api_is_availeble() {
+
+		url = getHybApiENCA()
+				.HYB_API_EN_CA(FileReaderManager.getInstance().getAPIDataReader().getCreateCartInformationAPI());
+
+	}*/
 
 }

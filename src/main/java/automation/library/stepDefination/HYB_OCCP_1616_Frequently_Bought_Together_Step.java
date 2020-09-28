@@ -1,3 +1,4 @@
+
 package automation.library.stepDefination;
 import org.junit.Assert;
 
@@ -87,5 +88,5 @@ public class HYB_OCCP_1616_Frequently_Bought_Together_Step extends BaseStep{
 	public void authenticated_user_Add_to_cart_api_404() {
 		url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAddToCartInformationAPI_404());	
 	}
-	
+
 }

@@ -97,12 +97,27 @@ public class HYB_Authorization_EndPoint {
 	}
 	public Response put_HYB_AddToCart_API_Invalid_url(String url, String guid, String accessToken) {
 		request.header("Authorization", "Bearer " + accessToken);
-		
 		Log.message("Get Url:- " + url + "0e?guid=" +  guid, true);
 		response = request.put(url + "0e?guid="+ guid);
 		Log.message("Get Response:- " + response.getBody().asString(), true);
 		return response;
 	}
+		
+	public Response get_HYB_Add_Product_API(String url, String product, String accessToken) {
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("API:- " + url + "/products/" + product +"/363?fields=FULL&baseStoreId=ctr", true);
+		response = request.get(url + "/products/" + product +"/363?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	/*public Response get_HYB_Product_API(String url, String product) {
+		request.header("Authorization", "Bearer ");
+		Log.message("API:- " + url + "/products/" + product +"/363?fields=FULL&baseStoreId=ctr", true);
+		response = request.get(url + "/products/" + product +"/363?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+=======*/
+		
+	
 	public Response put_API_Field_Default(String url, String accessToken, String product) {
 
 		Log.message("API:- " + url + "/product/" + product, true);
