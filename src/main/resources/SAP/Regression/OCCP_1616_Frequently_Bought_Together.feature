@@ -3,7 +3,7 @@ Feature: OCCP_1616: Frequently Bought Together
 	Description: To test the HYBRIS Test Cases for the story OCCP-1616
 	  					
 				@RegressionTest
-        Scenario: TC-2167 Create Cart and Add to Cart e - Authenticated user -generate oauth token
+        Scenario: TC-2167 HYB:OCCP-1616:Create Cart and Add to Cart e - Authenticated user -generate oauth token
     		Given Registered user create cart access token is available
     		When user generate token
     		Then user get the token

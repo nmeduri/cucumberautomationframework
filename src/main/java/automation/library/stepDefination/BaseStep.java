@@ -1,3 +1,4 @@
+
 package automation.library.stepDefination;
 
 
@@ -41,7 +42,7 @@ public class BaseStep {
 	private HYB_API_Wishlist_End_Point wishlistAPI;
 	private HYB_Authorization_EndPoint authorizationAPI;
 	private HYB_API_AddToCart_End_Point addToCartAPI;
-
+	public static String code;
 
 	
 	/** return instance of CTBVT Endpoint */
@@ -117,3 +118,4 @@ public class BaseStep {
 	}
 
 }
+
