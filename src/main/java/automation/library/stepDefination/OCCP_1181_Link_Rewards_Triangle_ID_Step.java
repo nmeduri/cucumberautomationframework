@@ -63,5 +63,30 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 	public void verify_clicks_on_continue_button() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage().cickContinueButton();
 	}
+	
+	@Then("rewards terms and conditions should be displayed")
+	public void rewards_terms_and_conditions_should_be_displaye() throws Exception {
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().displayHeaderRewardsTermsAndConditions();
+	}
+	
+	@And("register card button is displayed on terms and conditions page")
+	public void verify_click_on_register_card_button_on_terms_and_conditions() throws Exception {
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().clickRegisterCardButton();
+	}
+	
+	@Then("cancel button is displayed on terms and conditions page")
+	public void cancel_button_is_displayed_on_terms_and_conditions_page() throws Exception {
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().displayCancdlButton();
+	}
+	
+	@And("verify when click on cancel button")
+	public void verify_when_click_on_cancel_button() throws Exception {
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().clickCancdlButton();
+	}
+	
+	@Then("user should be navigate to the previous screen as complete your your profile screen")
+	public void user_should_be_navigate_to_the_previous_screen_as_complete_your_profile_screen() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage().displayGetNewRewardsCardTitle();
+	}
 }
 	

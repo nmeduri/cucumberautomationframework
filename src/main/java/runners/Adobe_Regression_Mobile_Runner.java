@@ -8,12 +8,10 @@ import automation.library.selenium.base.BaseClass;
 import cucumber.api.CucumberOptions;
 /**
  * This file execute the scenarios of Adobe Regression (Mobile)
-<<<<<<< HEAD
  */ 
 
 
 public final class Adobe_Regression_Mobile_Runner extends BaseClass {
-	
 	private static String[] defaultOptions = {
 
 			"classpath:Adobe/Regression/", 

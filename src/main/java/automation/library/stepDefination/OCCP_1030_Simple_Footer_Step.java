@@ -70,8 +70,18 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage().displayEditableTextLegal();
 	}
 	
+	@Then("link legal should be underlined")
+	public void link_should_be_undelined() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayEditableTextLegal();
+	}
+	
 	@Then("editable clickable text Terms and conditions is displayed")
 	public void editable_clickable_text_terms_and_conditions_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayEditableTextTermsAndConditions();
+	}
+	
+	@Then("link terms and conditions should be underlined")
+	public void link_terms_and_conditions_should_be_underlined() throws Exception {
 		testContext.getPageObjectManager().getFooterPage().displayEditableTextTermsAndConditions();
 	}
 	
@@ -80,14 +90,39 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage().displayEditableTextPrivacyAndPolicy();
 	}
 	
+	@Then("link privacy and policy should be underlined")
+	public void link_privacy_and_policy_should_be_underlined() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayEditableTextPrivacyAndPolicy();
+	}
+	
 	@Then("editable clickable text site map is displayed")
 	public void editable_clickable_text_site_map_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getFooterPage().displayEditableTextSiteMap();
 	}
 	
-	@Then("editable clickable text accessbility is displayed")
+	@Then("link site map should be underlined")
+	public void link_site_map_should_be_underlined() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayEditableTextSiteMap();
+	}
+	
+	@Then("editable clickable text accessibility is displayed")
 	public void editable_clickable_text_accessbility_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getFooterPage().displayEditableTextAccessibility();
+	}
+	
+	@Then("link accessibility should be underlined")
+	public void link_accessibility_should_be_underlined() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayEditableTextAccessibility();
+	}
+	
+	@And("in simple footer access and click on accessibility")
+	public void in_simple_footer_access_and_click_on_accessibility() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().clickOnAccessibility();
+	}
+	
+	@And("in simple footer access and click on legal")
+	public void in_simple_footer_access_and_click_on_legal() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().clickOnlegal();
 	}
 	
 	@Then("editable clickable text view more is displayed")
@@ -103,6 +138,26 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 	@Then("copy right text is displayed")
 	public void copy_right_text_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getFooterPage().displayCopyRight();
+	}
+	
+	@Then("user should be navigated to the page where detailed accessibility information is displayed")
+	public void user_should_be_navigated_to_the_page_where_detailed_accessibility_information_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().verifyLinkNavigateOnAccessibility();
+	}
+	
+	@Then("in footer access and click on text and conditions")
+	public void in_footer_access_and_click_on_text_and_conditions() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().clickOnTermsAndConditions();
+	}
+	
+	@Then("user navigate to the page where detailed terms and conditions information is displayed")
+	public void user_navigate_to_the_page_where_detailed_terms_and_conditions_information_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().verifyLinkNavigateOnTermsAndConditions();
+	}
+	
+	@Then("user should be navigate on legal information")
+	public void user_should_be_navigate_on_legal_information() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().verifyLinkNavigateOnLegalInformation();
 	}
 	
 	

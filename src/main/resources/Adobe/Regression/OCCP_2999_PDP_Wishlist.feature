@@ -27,7 +27,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     And click the wishlist item
     Then item is successfully added into wish list 
     
-    @RegressionTest @WebView 
+    @RegressionTest @WebView
     Scenario: TC-282 Verify the behavior of the page when a guest user adds variants to a product already added to the guest user's wishlist
     Given pdp url is available
     When pdp page is displayed for the product

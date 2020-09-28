@@ -117,6 +117,7 @@ public class Login_Page extends PageObject {
 	}
 	
 	public void clear_browser_history() throws Exception {
+		try {
 		PageObject.getDriver().get("chrome://settings/clearBrowserData");
 		Thread.sleep(3000);
 		PageObject.getDriver().findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
@@ -137,6 +138,9 @@ public class Login_Page extends PageObject {
 		PageObject.getDriver().manage().getCookies().clear();
 		Set<Cookie> allCookiesafter = PageObject.getDriver().manage().getCookies();
 		Log.message("After Cookies Size:- " + allCookiesafter.size(), true);
+		}catch(Exception e) {
+			
+		}
 	}
 	
 	

@@ -75,7 +75,7 @@ public class Mailinator_Page extends PageObject {
 	
 	/** This function click on click here to verify email */
 	public void click_Here_To_Verify_Email() throws Exception {
-		Thread.sleep(2000);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath("//*[text()='Got it!']")));
 		PageObject.getDriver().switchTo().frame("msg_body");
 		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email())));
 	}

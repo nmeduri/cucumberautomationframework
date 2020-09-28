@@ -21,6 +21,7 @@ public class Footer_PageLocator {
 	String accessibility = Property.getProperty(Constant.OR_FILE, "accessibility");
 	String candianTireLogoFooter = Property.getProperty(Constant.OR_FILE, "candianTireLogoFooter");
 	String copyRightText = Property.getProperty(Constant.OR_FILE, "copyRightText");
+	String termsAndConditionsFooter = Property.getProperty(Constant.OR_FILE, "termsAndConditionsFooter");
 	
 	/**
 	 * gets Locator - Legal Disclaimer
@@ -119,6 +120,15 @@ public class Footer_PageLocator {
 
 	public String get_Copy_Right_Text() {
 		return copyRightText;
+	}
+	
+	/**
+	 * gets Locator - Terms And Conditions (Footer)
+	 * 
+	 */
+	
+	public String get_Terms_And_Conditions_Footer() {
+		return termsAndConditionsFooter;
 	}
  }
 

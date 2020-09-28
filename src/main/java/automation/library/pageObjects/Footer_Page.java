@@ -158,8 +158,58 @@ public class Footer_Page extends PageObject {
 	    Assert.assertTrue(value.contains("underline"));
 	}
 	
+	/** This function is verify that copy right is displayed */
 	public void displayCopyRight() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Copy_Right_Text()));
 	}
+	
+	/** This function click on accessibility */
+	public void clickOnAccessibility() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()), "href");
+		configuration.setProperty("urlAccessibility", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()));
+	}
 
+	/** This function is verify that Link is successfully navigate on Accessibility */
+	public void verifyLinkNavigateOnAccessibility() throws Exception {
+		String expectedUrl = (java.lang.String) configuration.getProperty("urlAccessibility");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+	}
+	
+	/** This function click on terms and conditions */
+	public void clickOnTermsAndConditions() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Footer()), "href");
+		configuration.setProperty("urlTermsAndCondtions", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Footer())); 
+	}
+	
+	/** This function is verify that Link is successfully navigate on Terms and Conditions */
+	public void verifyLinkNavigateOnTermsAndConditions() throws Exception {
+		String expectedUrl = (java.lang.String) configuration.getProperty("urlTermsAndCondtions");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+	}
+	
+	/** This function click on legal */
+	public void clickOnlegal() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal()));
+	}
+	
+	/** This function is verify that Link is successfully navigate legal information */
+	public void verifyLinkNavigateOnLegalInformation() throws Exception {
+		String expectedUrl = (java.lang.String) configuration.getProperty("urlLink");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
 }

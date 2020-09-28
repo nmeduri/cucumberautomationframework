@@ -14,8 +14,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1616_Frequently_Bought_Together.feature",
-
+			"classpath:Adobe/Regression/OCCP_1030_Simple_Footer.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@RegressionTest",
 			"--plugin", "pretty",

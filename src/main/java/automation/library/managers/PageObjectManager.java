@@ -17,9 +17,11 @@ import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
+import automation.library.locator.Primary_Navigation_Page_Locator;
 import automation.library.locator.Privacy_Charter_Page_Locator;
 import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.locator.Reset_Your_Password_Page_Locator;
+import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
@@ -34,9 +36,11 @@ import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
+import automation.library.pageObjects.Primary_Navigation_Page;
 import automation.library.pageObjects.Privacy_Charter_Page;
 import automation.library.pageObjects.Registration_Email_Verification_Page;
 import automation.library.pageObjects.Reset_Password_Page;
+import automation.library.pageObjects.Rewards_Terms_Conditions_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
@@ -84,6 +88,10 @@ public class PageObjectManager {
 	private Link_Your_Triangle_Rewards_Account_Locator getLinkYourTriangleAccountLocator;
 	private Get_A_New_Triangle_Rewards_Card_Page getAnewTriangleRewardsPage;
 	private Get_A_New_Triangle_Rewards_Card_Locator getAnewTriangleRewardsCardLocator;
+	private Primary_Navigation_Page getPrimaryNavigationPage;
+	private Primary_Navigation_Page_Locator getPrimaryNavigationPageLocator;
+	private Rewards_Terms_Conditions_Page getRewardsTermsAndConditionsPage;
+	private Rewards_Terms_Conditions_Page_Locator getRewardsTermsAndCondtionsLocator;
 	
 	public PageObjectManager(WebDriver driver) {
 
@@ -314,6 +322,26 @@ public class PageObjectManager {
 	/** Returns Instance of Get A New Triangle Rewards Card Locator File */
 	public Get_A_New_Triangle_Rewards_Card_Locator getANewTriangleRewardsCardLocator() {
 		return (getAnewTriangleRewardsCardLocator == null) ? getAnewTriangleRewardsCardLocator = new Get_A_New_Triangle_Rewards_Card_Locator() : getAnewTriangleRewardsCardLocator;
+	}
+	
+	/** Returns Instance of Primary Navigation Page File */
+	public Primary_Navigation_Page getPrimaryNavigationPage() {
+		return (getPrimaryNavigationPage == null) ? getPrimaryNavigationPage = new Primary_Navigation_Page(driver) : getPrimaryNavigationPage;
+	}
+	
+	/** Returns Instance of Primary Navigation Locator File */
+	public Primary_Navigation_Page_Locator getPrimaryNavigationLocator() {
+		return (getPrimaryNavigationPageLocator == null) ? getPrimaryNavigationPageLocator = new Primary_Navigation_Page_Locator() : getPrimaryNavigationPageLocator;
+	}
+	
+	/** Returns Instance of Rewards Terms And Conditions Locator File */
+	public Rewards_Terms_Conditions_Page_Locator getRewardsTermsAndConditionsLocator() {
+		return (getRewardsTermsAndCondtionsLocator == null) ? getRewardsTermsAndCondtionsLocator = new Rewards_Terms_Conditions_Page_Locator() : getRewardsTermsAndCondtionsLocator;
+	}
+	
+	/** Returns Instance of Rewards Terms And Conditions Page File */
+	public Rewards_Terms_Conditions_Page getRewardsTermsAndCondtionsPage() {
+		return (getRewardsTermsAndConditionsPage == null) ? getRewardsTermsAndConditionsPage = new Rewards_Terms_Conditions_Page(driver) : getRewardsTermsAndConditionsPage;
 	}
 
 
