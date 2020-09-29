@@ -14,9 +14,10 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_1030_Simple_Footer.feature",
+
+			"classpath:Adobe/Regression/OCCP_3212_Link_Existing_Triangle_Rewards_Card_Error_Cases_Deactivated_Card.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@RegressionTest",
+			"--tags", "@SmokeTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

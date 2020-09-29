@@ -288,19 +288,6 @@ public class DataReader {
 	}
 	
 	/**
-	 * gets Deactivated card number
-	 * 
-	 */
-	
-	public String get_Deactivated_Card_Number() {
-		String cardNo = Property.getProperty(Constant.DATA_FILE, "deactivatedCardNo");
-		if(cardNo != null)
-			return cardNo;
-		else
-			throw new RuntimeException("Deactivated Card Number not specified in the Data file.");
-	}
-	
-	/**
 	 * gets First Name
 	 * 
 	 */
@@ -376,6 +363,19 @@ public class DataReader {
 			return phoneNumber;
 		else
 			throw new RuntimeException("Phone Number Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Deactivated card number
+	 * 
+	 */
+	
+	public String get_Deactivated_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "deactivatedCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Deactivated Card Number not specified in the Data file.");
 	}
 
 }

@@ -13,6 +13,7 @@ public class Rewards_Terms_Conditions_Page_Locator {
 	String headerRewardsTermsAndConditions = Property.getProperty(Constant.OR_FILE, "headerRewardsTermsAndConditions");
 	String buttonRegisterCard = Property.getProperty(Constant.OR_FILE, "buttonRegisterCard");
 	String cancelButtonRegisterCard = Property.getProperty(Constant.OR_FILE, "cancelButtonRegisterCard");
+	String rewardsLink = Property.getProperty(Constant.OR_FILE, "rewardsLink");
 	
 	
 	/**
@@ -31,15 +32,21 @@ public class Rewards_Terms_Conditions_Page_Locator {
 	public String get_Button_Register_Card() {
 		return buttonRegisterCard;
 	}
-	
 
-	
 	/**
 	 * gets Locator - Cancel Button
 	 * 
 	 */
 	public String get_Cancel_Button() {
 		return cancelButtonRegisterCard;
+	}
+	
+	/**
+	 * gets Locator - Register Link
+	 * 
+	 */
+	public String get_Rewards_Link() {
+		return rewardsLink;
 	}
  }
 

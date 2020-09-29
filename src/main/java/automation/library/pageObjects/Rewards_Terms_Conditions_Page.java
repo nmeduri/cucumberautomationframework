@@ -74,4 +74,10 @@ public class Rewards_Terms_Conditions_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getRewardsTermsAndConditionsLocator().get_Cancel_Button()));
 	}
 	
+	/** This function is verify that file open in .pdf format */
+	public void verifyRewardsLinkInPdf() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getRewardsTermsAndConditionsLocator().get_Rewards_Link()));
+		String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getRewardsTermsAndConditionsLocator().get_Rewards_Link()), "href");
+		Assert.assertTrue(href.contains(".pdf"));
+	}
 }

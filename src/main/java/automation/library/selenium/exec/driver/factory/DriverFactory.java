@@ -27,9 +27,12 @@ import automation.library.selenium.exec.driver.manager.ChromeDriver_Headless_Man
 import automation.library.selenium.exec.driver.manager.ChromeWideScreen_Headless_DriverManager;
 import automation.library.selenium.exec.driver.manager.FirefoxDriverManager;
 import automation.library.selenium.exec.driver.manager.HeadLessDriverManager;
+import automation.library.selenium.exec.driver.manager.IPadChromeDriverManager;
+import automation.library.selenium.exec.driver.manager.IPadHeadlessChromeDriverManager;
 import automation.library.selenium.exec.driver.manager.MobileChromeDriverManager;
 import automation.library.selenium.exec.driver.manager.Mobile_Chrome_Sauce_Lab_DriverManager;
 import automation.library.selenium.exec.driver.manager.SAP_Headless_DriverManager;
+import automation.library.selenium.exec.driver.manager.Tablet_Chrome_Sauce_Lab_DriverManager;
 import automation.library.selenium.exec.driver.manager.Web_Chrome_Sauce_Lab_DriverManager;
 import automation.library.selenium.exec.driver.manager.WideScreenChromeDriverManager;
 import automation.library.selenium.exec.driver.manager.Wide_Screen_Sauce_Lab_DriverManager;
@@ -104,6 +107,9 @@ public class DriverFactory extends BaseClass {
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
 				driverManager.set(new SAP_Headless_DriverManager());
 				break;
+			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
+				Log.message("Without Headless " + String, true);
+				driverManager.set(new Tablet_Chrome_Sauce_Lab_DriverManager());
 			}
 			break;
 		case "headless":
@@ -122,6 +128,9 @@ public class DriverFactory extends BaseClass {
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
 				driverManager.set(new SAP_Headless_DriverManager());
 				break;
+			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
+				Log.message("Without Headless " + String, true);
+				driverManager.set(new IPadHeadlessChromeDriverManager());
 			}
 			break;
 		case "without headless":
@@ -147,9 +156,12 @@ public class DriverFactory extends BaseClass {
 				driver.manage().window().maximize();
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
-				Log.message("Without Heeadless " + String, true);
+				Log.message("Without Headless " + String, true);
 				driverManager.set(new SAP_Headless_DriverManager());
 				break;
+			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
+				Log.message("Without Headless " + String, true);
+				driverManager.set(new IPadChromeDriverManager());
 			}
 
 		}

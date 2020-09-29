@@ -1,6 +1,8 @@
 package automation.library.stepDefination;
 
 
+import static org.testng.Assert.fail;
+
 import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
@@ -71,7 +73,7 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 	
 	@And("register card button is displayed on terms and conditions page")
 	public void verify_click_on_register_card_button_on_terms_and_conditions() throws Exception {
-		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().clickRegisterCardButton();
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().displayRegisterCardButton();
 	}
 	
 	@Then("cancel button is displayed on terms and conditions page")
@@ -87,6 +89,21 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 	@Then("user should be navigate to the previous screen as complete your your profile screen")
 	public void user_should_be_navigate_to_the_previous_screen_as_complete_your_profile_screen() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage().displayGetNewRewardsCardTitle();
+	}
+	
+	@And("clicks on register card button")
+	public void clicks_on_register_card_button() throws Exception {
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().clickRegisterCardButton();
+	}
+	
+	@Then("user should taken to success screen")
+	public void user_should_taken_to_success_screen() throws Exception {
+		fail();
+	}
+	
+	@Then("terms and conditions should open user's browser whether pdf")
+	public void terms_and_conditions_should_open_users_browser_whether_pdf() throws Exception {
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage().verifyRewardsLinkInPdf();
 	}
 }
 	

@@ -23,7 +23,7 @@ import automation.library.selenium.exec.driver.factory.DriverFactory;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
 
 /**
- * This file contains the functions of Mailinator Page
+ * This file contains the functions of PDP Page
  * 
  */
 

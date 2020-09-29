@@ -12,6 +12,7 @@ import automation.library.locator.Get_A_New_Triangle_Rewards_Card_Locator;
 import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.Header_Page_Locator;
 import automation.library.locator.HomePageLocator;
+import automation.library.locator.Link_Your_Existing_Triangle_Rewards_Card_PageLocator;
 import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
 import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
@@ -31,6 +32,7 @@ import automation.library.pageObjects.Get_A_New_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Get_Personalized_Offers_Page;
 import automation.library.pageObjects.Header_Page;
 import automation.library.pageObjects.HomePage;
+import automation.library.pageObjects.Link_Your_Existing_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
 import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
@@ -92,6 +94,8 @@ public class PageObjectManager {
 	private Primary_Navigation_Page_Locator getPrimaryNavigationPageLocator;
 	private Rewards_Terms_Conditions_Page getRewardsTermsAndConditionsPage;
 	private Rewards_Terms_Conditions_Page_Locator getRewardsTermsAndCondtionsLocator;
+	private Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingRewardsPage;
+	private Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingRewardsLocator;
 	
 	public PageObjectManager(WebDriver driver) {
 
@@ -342,6 +346,14 @@ public class PageObjectManager {
 	/** Returns Instance of Rewards Terms And Conditions Page File */
 	public Rewards_Terms_Conditions_Page getRewardsTermsAndCondtionsPage() {
 		return (getRewardsTermsAndConditionsPage == null) ? getRewardsTermsAndConditionsPage = new Rewards_Terms_Conditions_Page(driver) : getRewardsTermsAndConditionsPage;
+	}
+	
+	public Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingTriangleRewardsCardPage() {
+		return (getLinkYourExistingRewardsPage == null) ? getLinkYourExistingRewardsPage = new Link_Your_Existing_Triangle_Rewards_Card_Page(driver) : getLinkYourExistingRewardsPage;
+	}
+	
+	public Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingTriangleRewardsAccountLocaoter() {
+		return (getLinkYourExistingRewardsLocator == null) ? getLinkYourExistingRewardsLocator = new Link_Your_Existing_Triangle_Rewards_Card_PageLocator() : getLinkYourExistingRewardsLocator; 
 	}
 
 

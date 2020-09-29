@@ -428,6 +428,26 @@
 						</goals>
 					</execution>
 					
+					<execution>
+						<id>build-Adobe_Regression_Tablet_Runner</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>runners.Adobe_Regression_Tablet_Runner</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<finalName>Adobe_Regression_Tablet_Runner</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+					
 					
 				</executions>
 			</plugin>
