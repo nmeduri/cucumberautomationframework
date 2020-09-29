@@ -12,12 +12,6 @@ import io.restassured.specification.RequestSpecification;
 public class OCCP_3657_Add_new_enum_codes_to_CTCMediaTypeEnum_Step extends BaseStep{
 	RequestSpecification request;
 	
-	@Given("Product api is available")
-	public void Product_api_is_available() {
-		url = getHybApiENCA()
-				.HYB_API_EN_CA(FileReaderManager.getInstance().getAPIDataReader().get_pdp_product_API());
-	}
-	
 	@Given("User user hits the GET method for product api")
 	public void user_hits_product_api() {
 		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3035());

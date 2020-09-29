@@ -13,7 +13,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
 
-public class OCCP_1649_PDP_Product_Badges_Limited_Stock_step extends BaseStep{
+public class HYB_OCCP_1649_PDP_Product_Badges_Limited_Stock_step extends BaseStep{
 
 	RequestSpecification request;
 
