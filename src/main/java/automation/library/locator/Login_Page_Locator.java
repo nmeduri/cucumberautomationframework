@@ -33,6 +33,7 @@ public class Login_Page_Locator {
 	 * 
 	 */
 	
+	
 	public String get_Welcome_To_Your_Triangle_Header() {
 		
 		return welcomeToYourTriangleHeader;
