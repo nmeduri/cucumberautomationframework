@@ -65,7 +65,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then error message is displayed informing card is deactivated
 	And user verify's error text
 	
-	@RegressionTest @WideScreen 
+	#@RegressionTest @WideScreen 
 	Scenario: TC-2401, Verify the UI of Link Cards screen screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email detail
@@ -80,7 +80,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then cancel button should be present in the error screen
 	And error image should be present in the error screen
 	
-	@RegressionTest @WebView @SmokeTest
+	@RegressionTest @WebView
 	Scenario: TC-3052 Verfiy the display of screen when Card is Deactivated on Desktop
 	Given login url is available
 	When enter email detail
@@ -97,4 +97,79 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then user should navigate to link existing triangle card screen without prepopulated data
 	And verify when user click on cancel button
 	Then link card screen should be displayed
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2390 Verfiy the display of screen when Card is Deactivated in Mobile view
+	Given login url is available
+	When enter email detail
+	And user enter password
+	And user click on sign in button
+	Then link card screen should be displayed
+	And user cick on triangle rewards card
+	And verify when user enters a loyalty card number that is deactivated
+	Then user should be able to enter the loyalty card number successfully which is deactivated
+	And user click on continue button
+	Then verify an error message appears informing that card is deactivated
+	Then try again button should be present in the error screen
+	And verify when user click on try again button
+	Then user should navigate to link existing triangle card screen without prepopulated data
+	And verify when user click on cancel button
+	Then link card screen should be displayed
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2391 Verify the Error image on screen when Card is Deactivated in Mobile view
+	Given login url is available
+	When enter email detail
+	And user enter password
+	And user click on sign in button
+	Then link card screen should be displayed
+	And user cick on triangle rewards card
+	And verify when user enters a loyalty card number that is deactivated
+	Then user should be able to enter the loyalty card number successfully which is deactivated
+	And user click on continue button
+	Then verify an error message appears informing that card is deactivated
+	And verify error image on screen
+	Then user should be able to see the error image on screen
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2392 Verify the ErrorText on screen when Card is Deactivated in Mobile view
+	Given login url is available
+	When enter email detail
+	And user enter password
+	And user click on sign in button
+	Then link card screen should be displayed
+	And user cick on triangle rewards card
+	And verify when user enters a loyalty card number that is deactivated
+	Then user should be able to enter the loyalty card number successfully which is deactivated
+	And user click on continue button
+	Then verify an error message appears informing that card is deactivated
+	Then user should be able to see the error text on screen
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2393 Verify the 'Try Again' button on screen when Card is Deactivated in Mobile view
+	Given login url is available
+	When enter email detail
+	And user enter password
+	And user click on sign in button
+	Then link card screen should be displayed
+	And user cick on triangle rewards card
+	And verify when user enters a loyalty card number that is deactivated
+	Then user should be able to enter the loyalty card number successfully which is deactivated
+	And user click on continue button
+	Then verify an error message appears informing that card is deactivated
+	Then try again button should be present in the error screen
+	
+	@RegressionTest @MobileView @SmokeTest
+	Scenario: TC-2394 Verify the 'Cancel' button on screen when Card is Deactivated in Mobile view
+	Given login url is available
+	When enter email detail
+	And user enter password
+	And user click on sign in button
+	Then link card screen should be displayed
+	And user cick on triangle rewards card
+	And verify when user enters a loyalty card number that is deactivated
+	Then user should be able to enter the loyalty card number successfully which is deactivated
+	And user click on continue button
+	Then verify an error message appears informing that card is deactivated
+	And user is able to see the click link on screen
 	

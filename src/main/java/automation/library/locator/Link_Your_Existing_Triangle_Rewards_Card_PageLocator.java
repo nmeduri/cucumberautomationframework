@@ -15,6 +15,8 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String tryAgainButton = Property.getProperty(Constant.OR_FILE, "tryAgainButton");
 	String cancelButtonExistingCard = Property.getProperty(Constant.OR_FILE, "cancelButtonExistingCard");
 	String deactivatedErrorMessage = Property.getProperty(Constant.OR_FILE, "deactivatedErrorMessage");
+	String errorImage = Property.getProperty(Constant.OR_FILE, "errorImage");
+	String deactivatedErrorText = Property.getProperty(Constant.OR_FILE, "deactivatedErrorText");
 	
 	/**
 	 * gets Locator - Enter Card number
@@ -59,6 +61,23 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	
 	public String get_Deactivated_Error_Message() {
 		return deactivatedErrorMessage;
+	}
+	
+	/**
+	 * gets Locator - Error Image
+	 * 
+	 */
+	
+	public String get_Error_Image() {
+		return errorImage;
+	}
+	
+	/**
+	 * gets Locator - Deactivated Error Text
+	 * 
+	 */
+	public String get_Deactivated_Error_Text() {
+		return deactivatedErrorText;
 	}
  }
 

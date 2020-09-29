@@ -18,7 +18,6 @@ public class Link_Your_Triangle_Rewards_Account_Locator {
 	String triangleRewardCard = Property.getProperty(Constant.OR_FILE, "triangleRewardCard");
 	String errorImage = Property.getProperty(Constant.OR_FILE, "errorImage");
 	String triangleIdLogo = Property.getProperty(Constant.OR_FILE, "triangleIdLogo");
-	String deactivatedErrorText = Property.getProperty(Constant.OR_FILE, "deactivatedErrorText");
 	
 	/**
 	 * gets Locator - Link Your Triangle Rewards Account (Title)
@@ -66,13 +65,5 @@ public class Link_Your_Triangle_Rewards_Account_Locator {
 	
 	public String get_TriangleId_Logo() {
 		return triangleIdLogo;
-	}
-	
-	/**
-	 * gets Locator - Deactivated Error Text
-	 * 
-	 */
-	public String get_Deactivated_Error_Text() {
-		return deactivatedErrorText;
 	}
  }

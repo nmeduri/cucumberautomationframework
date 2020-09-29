@@ -95,10 +95,28 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button()));
 	}
 	
+	/** This function is verify that click button is displayed */
+	public void displayClickButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button()));
+	}
 	/** This function verify that Deactivated Error message is displayed */
 	public void display_Deactivated_Error_Message() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Deactivated_Error_Message()));
 	}
 	
+	/** This function verify that Error Image is displayed */
+	public void display_Error_Image() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Error_Image()));
+	}
+	
+	/** This function verify that user is able to see error image */
+	public void displayErrorImageNotBlank() throws Exception {
+		Assert.assertNotEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Error_Image()), "src"), "");
+	}
+	
+	/** This function verify that Deactivated Error Text is displayed */
+	public void verify_Deactivated_Error_Text() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Deactivated_Error_Text()));	
+	}
 	
 }

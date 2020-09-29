@@ -63,7 +63,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	Then rewards terms and conditions should be displayed
 	Then terms and conditions should open user's browser whether pdf
 	
-	@RegressionTest @WebView @SmokeTest
+	@RegressionTest @WebView
 	Scenario: TC-2487 Verfiy Download T&C and Displaying Rewards T&C on Desktop 
 	Given login url is available
 	When enter email detail

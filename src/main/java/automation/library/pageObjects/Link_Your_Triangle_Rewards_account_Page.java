@@ -74,11 +74,6 @@ public class Link_Your_Triangle_Rewards_account_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Triangle_Reward_Card())), 40);
 	}
 	
-	/** This function verify that Error Image is displayed */
-	public void display_Error_Image() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Error_Image()));
-	}
-	
 	/** This function verify that Triangle ID Logo is displayed */
 	public void display_TriangleId_Logo() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_TriangleId_Logo()));
@@ -86,7 +81,7 @@ public class Link_Your_Triangle_Rewards_account_Page extends PageObject {
 	
 	/** This function verify that Deactivated Error Text is displayed */
 	public void verify_Deactivated_Error_Text() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Deactivated_Error_Text()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Deactivated_Error_Text()));
 		
 		
 	}

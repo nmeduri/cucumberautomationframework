@@ -88,12 +88,12 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 	
 	@Then("error image should be present in the error screen")
 	public void display_of_error_image() throws Exception {
-		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().display_Error_Image();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Error_Image();
 	}
 	
 	@And("user verify's error text")
 	public void user_verify_error__text() throws Exception {
-		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().verify_Deactivated_Error_Text();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verify_Deactivated_Error_Text();
 	}
 	
 	@Then("triangle id logo is displayed on screen")
@@ -119,6 +119,26 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 	@And("verify when user click on cancel button")
 	public void verify_when_user_click_on_cancel_button() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().click_Cancel_Button();
+	}
+	
+	@And("user is able to see the click link on screen")
+	public void user_is_able_to_see_the_click_link_on_screen() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().displayClickButton();
+	}
+	
+	@Then("user should be able to see the error image on screen")
+	public void user_should_be_able_to_see_the_error_image_on_screen() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().displayErrorImageNotBlank();
+	}
+	
+	@And("verify error image on screen")
+	public void verify_error_image_on_screen() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Error_Image();
+	}
+	
+	@Then("user should be able to see the error text on screen")
+	public void user_should_be_able_to_see_the_error_text_on_screen() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verify_Deactivated_Error_Text();
 	}
 
 
