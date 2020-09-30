@@ -65,6 +65,11 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage().displayThreeLinesLegalDisclaimer();
 	}
 	
+	@Then("first 3 lines of the authored legal disclaimer text should be displayed in mobile")
+	public void first_three_lines_of_the_disclaimer_text_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayThreeLinesLegalDisclaimerMobile();
+	}
+	
 	@Then("editable clickable text legal is displayed")
 	public void editable_clickable_text_legal_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getFooterPage().displayEditableTextLegal();
@@ -130,6 +135,11 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage().displayEditableViewMore();
 	}
 	
+	@Then("view more is displayed")
+	public void view_more_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayViewMore();
+	}
+	
 	@Then("editable clickable text view less is displayed")
 	public void editable_clickable_text_view_less_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getFooterPage().displayEditableViewLess();
@@ -158,6 +168,11 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 	@Then("user should be navigate on legal information")
 	public void user_should_be_navigate_on_legal_information() throws Exception {
 		testContext.getPageObjectManager().getFooterPage().verifyLinkNavigateOnLegalInformation();
+	}
+	
+	@And("complete disclaimer text should not be displayed")
+	public void complete_disclaimer_text_should_not_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().notDisplayRestOfLegalDisclaimer();
 	}
 	
 	

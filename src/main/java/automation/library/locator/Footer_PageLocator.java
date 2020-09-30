@@ -22,6 +22,11 @@ public class Footer_PageLocator {
 	String candianTireLogoFooter = Property.getProperty(Constant.OR_FILE, "candianTireLogoFooter");
 	String copyRightText = Property.getProperty(Constant.OR_FILE, "copyRightText");
 	String termsAndConditionsFooter = Property.getProperty(Constant.OR_FILE, "termsAndConditionsFooter");
+	String viewMore = Property.getProperty(Constant.OR_FILE, "viewMore");
+	String viewLessNotDisplay = Property.getProperty(Constant.OR_FILE, "viewLessNotDisplay");
+	String viewMoreNotDisplay = Property.getProperty(Constant.OR_FILE, "viewMoreNotDisplay");
+	String footerLink = Property.getProperty(Constant.OR_FILE, "footerLink");
+	String copyRightInformation = Property.getProperty(Constant.OR_FILE, "copyRightInformation");
 	
 	/**
 	 * gets Locator - Legal Disclaimer
@@ -129,6 +134,39 @@ public class Footer_PageLocator {
 	
 	public String get_Terms_And_Conditions_Footer() {
 		return termsAndConditionsFooter;
+	}
+	
+	/**
+	 * gets Locator - view less (Not Display)
+	 * 
+	 */
+	
+	public String get_Not_Dispay_View_Less() {
+		return viewLessNotDisplay;
+	}
+	
+	/**
+	 * gets Locator - view more (Not Display)
+	 * 
+	 */
+	public String get_Not_Display_View_More() {
+		return viewMoreNotDisplay;
+	}
+	
+	/**
+	 * gets Locator - Footer
+	 * 
+	 */
+	public String get_Footer_Link() {
+		return footerLink;
+	}
+	
+	/**
+	 * gets Locator - Copy Right Information
+	 * 
+	 */
+	public String get_Copy_Right_Information() {
+		return copyRightInformation;
 	}
  }
 

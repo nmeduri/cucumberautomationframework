@@ -44,11 +44,13 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enter first name detail */
 	public void enter_First_Name(String data) throws Exception {
+		$click($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name()));
 		$enterData($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name()), data);
 	}
 	
 	/** This function enter last name detail */
 	public void enter_Last_Name(String data) throws Exception {
+		$click($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Last_Name()));
 		$enterData($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Last_Name()), data);
 	}
 	
@@ -59,6 +61,7 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enter city detail */
 	public void enter_City(String data) throws Exception {
+		$click($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_City_Rewards()));
 		$enterData($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_City_Rewards()), data);
 	}
 	
@@ -70,11 +73,13 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enter postal code */
 	public void enter_Postal_Code(String data) throws Exception {
+		$click($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Postal_Code_Rewards()));
 		$enterData($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Postal_Code_Rewards()), data);
 	}
 	
 	/** This function enter phone number */
 	public void enter_Phone_Number(String data) throws Exception {
+		$click($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Number()));
 		$enterData($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Number()), data);
 	}
 	

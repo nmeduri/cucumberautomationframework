@@ -1,6 +1,7 @@
 package automation.library.pageObjects;
 
 import static org.junit.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import java.util.ArrayList;
@@ -56,34 +57,54 @@ public class Footer_Page extends PageObject {
 	
 	/** This function click on view more */
 	public void clickViewMore() throws Exception {
-		$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
 	}
 	
 	/** This function is verify that Reset of Legal Disclaimer is displayed */
 	public void displayRestOfLegalDisclaimer() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer()));
 		String sText = $getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer()));
 		Log.message("Text:- " + sText, true);
 		assertFalse(sText.contains("..."));
 	}
 	
+	/** This function is verify that Reset of Legal Disclaimer is not displayed */
+	public void notDisplayRestOfLegalDisclaimer() throws Exception {
+		String sText = $getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer()));
+		Log.message("Text:- " + sText, true);
+		assertTrue(sText.contains("..."));
+	}
+	
 	/** This function is verify that View Less is displayed */
 	public void displayViewLess() throws Exception {
-		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
+	}
+	
+	/** This function click on view less */
+	public void clickViewLess() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
 	}
 	
 	/** This function is verify that View More is not displayed */
 	public void notDisplayViewMore() throws Exception {
-		try {
-			$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
-			fail();
-		}catch(Exception e) {
-			
-		}
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Not_Display_View_More()));
 	}
 	
+	/** This function is verify that View Less is not displayed */
+	public void notDisplayViewLess() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Not_Dispay_View_Less()));
+	}
+	
+	/** This function is verify that disclaimer is displayed in three lines */
 	public void displayThreeLinesLegalDisclaimer() throws Exception {
 		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer_Row()), "height");
 		Assert.assertTrue(value.contains("45"));
+	}
+	
+	/** This function is verify that disclaimer is displayed in three lines */
+	public void displayThreeLinesLegalDisclaimerMobile() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer_Row()), "height");
+		Assert.assertTrue(value.contains("60"));
 	}
 	
 	public void displayEditableTextLegal() throws Exception {
@@ -142,18 +163,22 @@ public class Footer_Page extends PageObject {
 	
 	public void displayEditableViewMore() throws Exception {
 		$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tire_Logo()));
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.className(testContext.getPageObjectManager().getFooterPageLocator().get_View_More())));
-		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
-		String value = $getCSSValue($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()), "text-decoration");
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_View_More())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()), "text-decoration");
 		Log.message("Value:- " + value, true);
 	    Assert.assertTrue(value.contains("underline"));
 	}
 	
+	public void displayViewMore() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
+	}
+	
 	public void displayEditableViewLess() throws Exception {
 		$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tire_Logo()));
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.className(testContext.getPageObjectManager().getFooterPageLocator().get_View_Less())));
-		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
-		String value = $getCSSValue($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()), "text-decoration");
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_View_Less())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()), "text-decoration");
 		Log.message("Value:- " + value, true);
 	    Assert.assertTrue(value.contains("underline"));
 	}
@@ -211,5 +236,25 @@ public class Footer_Page extends PageObject {
 		Log.message("Actual Url:- " + actualUrl, true);
 		Assert.assertEquals(expectedUrl, actualUrl);
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
+	
+	/** This function is verify that canadian tire logo is displayed */
+	public void displayCanadianTireLogo() throws Exception {
+		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tire_Logo()));
+	}
+	
+	/** This function is verify that copy right text is displayed */
+	public void displayCopyRightText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Copy_Right_Text()));
+	}
+	
+	/** This function is verify that footer link is displayed*/
+	public void displayFooterLink() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Link()));
+	}
+	
+	/** This function is verify that copy right informationn is displayed*/
+	public void displayCopyRightInformation() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Copy_Right_Information()));
 	}
 }

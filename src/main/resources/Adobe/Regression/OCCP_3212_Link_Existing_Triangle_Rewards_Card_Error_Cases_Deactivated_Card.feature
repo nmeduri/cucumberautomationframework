@@ -159,7 +159,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then verify an error message appears informing that card is deactivated
 	Then try again button should be present in the error screen
 	
-	@RegressionTest @MobileView @SmokeTest
+	@RegressionTest @MobileView
 	Scenario: TC-2394 Verify the 'Cancel' button on screen when Card is Deactivated in Mobile view
 	Given login url is available
 	When enter email detail
