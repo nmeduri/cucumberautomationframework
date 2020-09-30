@@ -3,6 +3,7 @@ package automation.library.api.endpoint;
 import automation.library.logdetail.Log;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 /*
  * This class calls the URL of Product Info EN's APIs and
@@ -17,7 +18,7 @@ public class HYB_API_EN_End_Point {
 	
 	private static String base_url;
 	private static Response response;
-	
+	private RequestSpecification request = RestAssured.given();
 	
 	public String HYB_API_EN(String baseUrl) {
 		base_url = baseUrl;
@@ -43,5 +44,32 @@ public class HYB_API_EN_End_Point {
 		return response;
 
 	}
-
+	public Response post_HYB_ProductList_EN(String url,String product1, String product2, String product3) {
+		String bodyvalue="{\n" + 
+				"  \"productCodes\": [\n" + 
+				"    \""+product1+"\""+",\""+product2+ "\""+",\""+ product3+ "\""+"\n" + 
+				"  ]\n" + 
+				"}";
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer ");
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("API:- " + url  +"363?fields=FULL&baseStoreId=CTR&lang=en", true);
+		response = request.post(url + "363?fields=FULL&baseStoreId=CTR&lang=en");
+		return response;	
+	}
+	
+	public Response post_HYB_VariantProductList_EN(String url,String product1, String product2) {
+		String bodyvalue="{\n" + 
+				"  \"productCodes\": [\n" + 
+				"    \""+product1+"\""+",\""+product2+"\""+"\n" + 
+				"  ]\n" + 
+				"}";
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("API:- " + url  +"363?fields=FULL&baseStoreId=CTR&lang=en", true);
+		response = request.post(url + "363?fields=FULL&baseStoreId=CTR&lang=en");
+		return response;	
+	}
 }

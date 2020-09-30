@@ -21,7 +21,7 @@ public class HYB_Authorization_EndPoint {
 	private static String base_url;
 	private static Response response;
 	private RequestSpecification request = RestAssured.given();
-	private String POST_PARAMS;
+	
 
 	
 	public String HYB_Auth_Url(String baseUrl) {

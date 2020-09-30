@@ -4,6 +4,7 @@ package automation.library.api.endpoint;
 import automation.library.logdetail.Log;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 /*
  * This class calls the URL of Product Info's APIs and
@@ -17,6 +18,7 @@ public class HYB_Api_Product_End_Point {
 
 	private static Response response;
 	private static String base_url;
+	private RequestSpecification request = RestAssured.given();
 	
 	
 	public static String HYB_Api_Product(String baseUrl) {

@@ -961,4 +961,77 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+	/**
+	 * gets PLP Product Information API
+	 * 
+	 */
+	
+	public String get_PLP_ProductInformationAPI() {
+
+		String productInfo = Property.getProperty(Constant.API_DATA, "plpProductApi");
+		if (productInfo != null)
+			return productInfo;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3098_P1
+	 * 
+	 */
+	public String get_product_tc_3098_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3098_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3098_P2
+	 * 
+	 */
+	public String get_product_tc_3098_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3098_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3098_P3
+	 * 
+	 */
+	public String get_product_tc_3098_P3() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3098_P3");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3099_P1
+	 * 
+	 */
+	public String get_product_tc_3099_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3099_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3099_P2
+	 * 
+	 */
+	public String get_product_tc_3099_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3099_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
 }
