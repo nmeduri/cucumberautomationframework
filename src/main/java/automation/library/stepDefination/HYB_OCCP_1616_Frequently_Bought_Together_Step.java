@@ -59,18 +59,18 @@ public class HYB_OCCP_1616_Frequently_Bought_Together_Step extends BaseStep{
 		Log.message("Section 'guid' is displayed in JSON response.", true);
 	}
 	
-	@Given("user hits add to Cart api for authenticated user")
+	@When("user hits add to Cart api for authenticated user")
 	public void user_hits_Add_to_Cart_api() {
 		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2167(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2167_P2(), accessToken);
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	
-	@Given("Authenticated user Add to cart api")
+	@When("Authenticated user Add to cart api")
 	public void authenticated_user_Add_to_cart_api() {
 		url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAddToCartInformationAPI());	
 	}
 	
-	@Given("Status 403 Authenticated user Add to cart access token is available")
+	@When("Status 403 Authenticated user Add to cart access token is available")
 	public void authenticated_user_Add_to_cart_access_token_is_available_status_403() {
 		url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getInvalidAddToCartInformationAPI());	
 	}
@@ -79,10 +79,9 @@ public class HYB_OCCP_1616_Frequently_Bought_Together_Step extends BaseStep{
 	public void user_hits_inavlid_token() {
 		response = getAuthorizationUrl().get_Addtocart_Put_API(url, FileReaderManager.getInstance().getAPIDataReader().getInvalidToken());
 	}
-	@Given("400 status code when user hits add to Cart api for authenticated user")
+	@When("400 status code when user hits add to Cart api for authenticated user")
 	public void user_hits_Add_to_Cart_api_400_Status_Code() {
 		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2174(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2167_P2(), accessToken);
-
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	@Given("404 status code when user hits add to Cart api")

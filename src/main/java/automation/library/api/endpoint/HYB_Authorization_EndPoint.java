@@ -173,6 +173,36 @@ public class HYB_Authorization_EndPoint {
 		return response;
 
 	}
-	
+	public Response post_HYB_AddToCart_RegUserAPI_WithoutBaseStoreID(String url, String code, String product1, String product2, String accessToken) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \""+product1+""+"\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        },\n" + 
+				"        {\n" + 
+				"            \"product\": {\n"
+				+ "                \"code\": \""+product2+""+"\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"    ]\n" + 
+				"}";
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("API:- " + url  + code +"/entries?fields=DEFAULT", true);
+		response = request.post(url + code+ "/entries?fields=DEFAULT");
+		return response;	
+	}
 	
 }

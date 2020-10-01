@@ -11,7 +11,7 @@ Feature: OCCP_1616: Frequently Bought Together
     		When user hits the POST api for create cart
     		Then response JSON should have code
     		When Authenticated user Add to cart api
-    		Then user hits add to Cart api for authenticated user
+    		When user hits add to Cart api for authenticated user
     		Then should return 200 ok   	
     		
     		@RegressionTest
@@ -50,7 +50,7 @@ Feature: OCCP_1616: Frequently Bought Together
     		When user hits the POST api for create cart
     		Then response JSON should have code
     		When Authenticated user Add to cart api
-    		Then 400 status code when user hits add to Cart api for authenticated user
+    		When 400 status code when user hits add to Cart api for authenticated user
     		Then should return 400 bad request
         
         @RegressionTest

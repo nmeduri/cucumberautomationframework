@@ -36,5 +36,14 @@ public class HYB_Api_Product_End_Point {
 		return response;
 
 	}
+	public Response getApiProduct_WithoutBaseStoreID(String url, String sProductCode) {
+		
+        Log.message("API:- " + url + "/products/" +  sProductCode + "/363?fields=FULL", true);
+		response = RestAssured.given().get(url + "/products/" +  sProductCode + "/363?fields=FULL");
+        
+		Log.message("Response:- " + response.getBody().asString(), true);
+		return response;
+
+	}
 
 }
