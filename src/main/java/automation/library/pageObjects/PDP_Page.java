@@ -619,4 +619,132 @@ public class PDP_Page extends PageObject {
 		   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishList_Icon()), "background-color"); 
 		   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#000000", colorValue);
 	   }
+	public void display_PencilBanner() throws Exception {
+
+		//$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PencilBanner()));
+		Assert.assertTrue($display(
+				$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PencilBanner())));
+	}
+	public void display_AccountLink() throws Exception {
+		//DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Account_link()));
+	}
+	public void display_PreferencesOption() throws Exception {
+Thread.sleep(2000);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PreferencesOption()));
+	}
+	public void display_WishListOption() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishlistOption()));
+	}
+	public void display_PersonalInfoOption() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PersonalInfoOption()));
+	}
+	public void display_OrderHistory() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_OrderHistory()));
+	}
+	public void display_PaymentInfo() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PaymentInfo()));
+	}
+	public void display_Address() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Address()));
+	}
+	public void display_Reward() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Reward()));
+	}
+	public void display_Preference() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Preference()));
+	}
+	public void display_MadeForLife() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_MadeForLifeText()));
+	}
+	public void display_CustomerServicePage() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CustomerService_Page()));
+	}
+	public void display_CreditOffered() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CreditOfferedText()));
+	}
+	public void display_CustomerService() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CustomerService()));
+	}
+	public void click_CustomerService() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CustomerService()));
+	}
+	public void display_Language() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Language()));
+	}
+	public void Click_Language() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Language()));
+	}
+	public void Click_AccountLink() throws Exception {
+		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Account_link()));
+	}
+	public void Click_PreferencesOption() throws Exception {
+Thread.sleep(2000);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PreferencesOption()));
+	}
+	public void Click_WishListOption() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishlistOption()));
+	}
+	public void Click_PersonalInfoOption() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PersonalInfoOption()));
+	}
+	public void Click_OrderHistory() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_OrderHistory()));
+	}
+	public void Click_PaymentInfo() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PaymentInfo()));
+	}
+	public void Click_Address() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Address()));
+	}
+	public void Click_Reward() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Reward()));
+	}
+	public void Click_Preference() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Preference()));
+	}
+	public void display_SignIn() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignInOption()));
+	}
+	public void display_Registration() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_RegistrationOption()));
+	}
+	public void Click_HiLink() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_HiLink()));
+	}
+	public void display_SignOut() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignOutOption()));
+	}
+	public void click_SignOut() throws Exception {
+
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignOutOption()));
+	}
+
+	
 }

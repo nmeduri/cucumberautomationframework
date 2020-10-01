@@ -12,6 +12,7 @@ import automation.library.locator.Get_A_New_Triangle_Rewards_Card_Locator;
 import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.Header_Page_Locator;
 import automation.library.locator.HomePageLocator;
+import automation.library.locator.Link_reward_ProfileScreen_page_Locator;
 import automation.library.locator.Link_Your_Existing_Triangle_Rewards_Card_PageLocator;
 import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
 import automation.library.locator.Login_Page_Locator;
@@ -32,6 +33,7 @@ import automation.library.pageObjects.Get_A_New_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Get_Personalized_Offers_Page;
 import automation.library.pageObjects.Header_Page;
 import automation.library.pageObjects.HomePage;
+import automation.library.pageObjects.Link_reward_ProfileScreen_page;
 import automation.library.pageObjects.Link_Your_Existing_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
 import automation.library.pageObjects.Login_Page;
@@ -82,6 +84,10 @@ public class PageObjectManager {
 	private Privacy_Charter_Page_Locator getPrivacyCharterLocator;
 	private Reset_Password_Page getResetPasswordPage;
 	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
+
+	private Link_reward_ProfileScreen_page getLink_reward_ProfileScreen_page;
+	private Link_reward_ProfileScreen_page_Locator getLink_reward_ProfileScreen_page_Locator;
+
 	private Header_Page getHeaderPage;
 	private Header_Page_Locator getHeaderPageLocator;
 	private Footer_Page getFooterPage;
@@ -286,7 +292,13 @@ public class PageObjectManager {
 	public Reset_Your_Password_Page_Locator getResetPasswordLocatorPage() {
 		return (getPrivacyCharterLocator == null) ? getResetPassword_Page_Locator = new Reset_Your_Password_Page_Locator() : getResetPassword_Page_Locator;
 	}
-	
+ 	
+	public Link_reward_ProfileScreen_page getLink_reward_ProfileScreen_page(WebDriver driver) {
+		return (getLink_reward_ProfileScreen_page == null) ? getLink_reward_ProfileScreen_page = new Link_reward_ProfileScreen_page(driver) : getLink_reward_ProfileScreen_page;
+	}
+	public Link_reward_ProfileScreen_page_Locator getLink_reward_ProfileScreen_page_Locator() {
+		return (getLink_reward_ProfileScreen_page_Locator == null) ? getLink_reward_ProfileScreen_page_Locator = new Link_reward_ProfileScreen_page_Locator() : getLink_reward_ProfileScreen_page_Locator;
+	}
 	/** Returns Instance of Header File */
 	public Header_Page getHeaderPage() {
 		return (getHeaderPage == null) ? getHeaderPage = new Header_Page(driver) : getHeaderPage;

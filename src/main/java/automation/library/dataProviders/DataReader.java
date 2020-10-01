@@ -286,7 +286,33 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
-	
+	/**
+	 * gets First Name
+	 * 
+	 */
+
+	public String get_FirstName() {
+		String getFN = Property.getProperty(Constant.DATA_FILE, "FirstName");
+		if(getFN != null)
+			return getFN;
+		else
+			throw new RuntimeException("First Name Data not specified in the Data file.");
+	}
+	public String get_invalid_FirstName() {
+		String getIFN = Property.getProperty(Constant.DATA_FILE, "InvalidFirstName");
+		if(getIFN != null)
+			return getIFN;
+		else
+			throw new RuntimeException("Invalid First Name Data not specified in the Data file.");
+	}
+	public String get_invalid_LastName() {
+		String getILN = Property.getProperty(Constant.DATA_FILE, "InvalidLastName");
+		if(getILN != null)
+			return getILN;
+		else
+			throw new RuntimeException("Invalid Last Name Data not specified in the Data file.");
+	}
+
 	/**
 	 * gets First Name
 	 * 
@@ -363,6 +389,22 @@ public class DataReader {
 			return phoneNumber;
 		else
 			throw new RuntimeException("Phone Number Data not specified in the Data file.");
+
+	}
+
+	public String get_LastName() {
+		String getLN = Property.getProperty(Constant.DATA_FILE, "LastName");
+		if(getLN != null)
+			return getLN;
+		else
+			throw new RuntimeException("Last Name Data not specified in the Data file.");
+	}
+	public String get_Address() {
+		String getAddress = Property.getProperty(Constant.DATA_FILE, "Address");
+		if(getAddress != null)
+			return getAddress;
+		else
+			throw new RuntimeException("Address Data not specified in the Data file.");
 	}
 	
 	/**
@@ -378,4 +420,41 @@ public class DataReader {
 			throw new RuntimeException("Deactivated Card Number not specified in the Data file.");
 	}
 
+	public String get_City() {
+		String getCity = Property.getProperty(Constant.DATA_FILE, "City");
+		if(getCity != null)
+			return getCity;
+		else
+			throw new RuntimeException("City Data not specified in the Data file.");
+	}
+	public String get_Province() {
+		String getProvince = Property.getProperty(Constant.DATA_FILE, "Province");
+		if(getProvince != null)
+			return getProvince;
+		else
+			throw new RuntimeException("Province Data not specified in the Data file.");
+	}
+	public String get_Postal() {
+		String getPostal = Property.getProperty(Constant.DATA_FILE, "PostalCode");
+		if(getPostal != null)
+			return getPostal;
+		else
+			throw new RuntimeException("Postal code Data not specified in the Data file.");
+	}
+	public String get_PhnNo() {
+		String getPhn = Property.getProperty(Constant.DATA_FILE, "Phone");
+		if(getPhn != null)
+			return getPhn;
+		else
+			throw new RuntimeException("Phone No Data not specified in the Data file.");
+	}
+	public String get_YOB() {
+		String getYOB = Property.getProperty(Constant.DATA_FILE, "YOB");
+		if(getYOB != null)
+			return getYOB;
+		else
+			throw new RuntimeException("YOB Data not specified in the Data file.");
+	}
+	
+	
 }

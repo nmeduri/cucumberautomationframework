@@ -66,6 +66,27 @@ public class PDP_PageLocator {
 	String wishlistBadge = Property.getProperty(Constant.OR_FILE, "wishlistBadge");
 	String wishListIconPDP = Property.getProperty(Constant.OR_FILE, "wishListIconPDP");
 	String defaultStateWishListIcon = Property.getProperty(Constant.OR_FILE, "defaultStateWishListIcon");
+	String AccountLink= Property.getProperty(Constant.OR_FILE, "Account");
+	String PreferencesOption= Property.getProperty(Constant.OR_FILE, "Preferences");
+	String PencilBanner=Property.getProperty(Constant.OR_FILE, "PencilBanner");
+	String WishListOption=Property.getProperty(Constant.OR_FILE, "WishListOption");
+	String PersonalInfoOption=Property.getProperty(Constant.OR_FILE, "PencilBanner");
+	String OrderHistory=Property.getProperty(Constant.OR_FILE, "OrderHistory");
+	String PaymentInfo=Property.getProperty(Constant.OR_FILE, "PaymentInfo");
+	String Address=Property.getProperty(Constant.OR_FILE, "Address");
+	String Reward=Property.getProperty(Constant.OR_FILE, "Reward");
+	String Preference=Property.getProperty(Constant.OR_FILE, "Preference");			
+	String MadeForLife=Property.getProperty(Constant.OR_FILE, "MadeForLife");
+	String CreditOffered=Property.getProperty(Constant.OR_FILE, "CreditOffered");
+	String CustomerService=Property.getProperty(Constant.OR_FILE, "CustomerService");
+	String Language=Property.getProperty(Constant.OR_FILE, "Language");
+	String CustomerServicePage=Property.getProperty(Constant.OR_FILE, "CustomerServicePage");
+	String SignIn=Property.getProperty(Constant.OR_FILE, "SignIn");
+	String Registration=Property.getProperty(Constant.OR_FILE, "Registration");
+	String HiLink=Property.getProperty(Constant.OR_FILE, "HiLink");
+	String SignOut=Property.getProperty(Constant.OR_FILE, "SignOut");
+	
+	
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -594,6 +615,65 @@ public class PDP_PageLocator {
 	
 	public String get_Default_State_WishList_Icon() {
 		return defaultStateWishListIcon;
+	}
+	
+	public String get_PencilBanner() {
+		return PencilBanner;
+	}
+	public String get_Account_link() {
+		return AccountLink;
+	}
+	
+	public String get_PreferencesOption() {
+		return PreferencesOption;
+	}
+	public String get_WishlistOption() {
+		return WishListOption;
+	}
+	public String get_PersonalInfoOption() {
+		return PersonalInfoOption;
+	}
+	public String get_OrderHistory() {
+		return OrderHistory;
+	}
+	public String get_PaymentInfo() {
+		return PaymentInfo;
+	}
+	public String get_Reward() {
+		return Reward;
+	}
+	public String get_Address() {
+		return Address;
+	}
+	public String get_Preference() {
+		return Preference;
+	}
+	public String get_MadeForLifeText() {
+		return MadeForLife;
+	}
+	public String get_CreditOfferedText() {
+		return CreditOffered;
+	}
+	public String get_CustomerService() {
+		return CustomerService;
+	}
+	public String get_Language() {
+		return Language;
+	}
+	public String get_CustomerService_Page() {
+		return CustomerServicePage;
+	}	
+	public String get_SignInOption() {
+		return SignIn;
+	}
+	public String get_RegistrationOption() {
+		return Registration;
+	}
+	public String get_HiLink() {
+		return HiLink;
+	}
+	public String get_SignOutOption() {
+		return SignOut;
 	}
  }
 
