@@ -1,7 +1,7 @@
 Feature: OCCP-1181 Link Rewards Triangle
 	Description: To test the ADOBE Test Cases for the story OCCP-1030
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2485 Verfiy displaying Rewards Terms&Conditions screen on Desktop
 	Given login url is available
 	When enter email detail
@@ -18,7 +18,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	And verify when click on cancel button
 	Then user should be navigate to the previous screen as complete your your profile screen
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2486 Verfiy Saving the consent on this step and feeding it back to Gigya profile  Displaying Rewards T&C on Desktop
 	Given sign up url is available
 	Then sign up page is displayed
@@ -49,7 +49,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	And clicks on register card button
 	Then user should taken to success screen
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2487 Verfiy Download T&C and Displaying Rewards T&C on Desktop 
 	Given login url is available
 	When enter email detail
@@ -63,7 +63,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	Then rewards terms and conditions should be displayed
 	Then terms and conditions should open user's browser whether pdf
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2487 Verfiy Download T&C and Displaying Rewards T&C on Desktop 
 	Given login url is available
 	When enter email detail

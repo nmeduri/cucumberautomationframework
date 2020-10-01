@@ -619,6 +619,20 @@ public class PDP_Page extends PageObject {
 		   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishList_Icon()), "background-color"); 
 		   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#000000", colorValue);
 	   }
+	
+	/** This function is verify that quantity box is visible */
+	public void verifyQuantityBoxVisible() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box())), 2);
+	}
+	
+	/** This function is verify that quantiy value is defaulted to one*/
+	public void verifyQuantityValueDefaultedToOne() throws Exception {
+		String value = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
+		Assert.assertEquals("1", value);
+	}
+	
+	
+	
 	public void display_PencilBanner() throws Exception {
 
 		//$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PencilBanner()));
@@ -629,8 +643,8 @@ public class PDP_Page extends PageObject {
 		//DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Account_link()));
 	}
+	
 	public void display_PreferencesOption() throws Exception {
-Thread.sleep(2000);
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PreferencesOption()));
 	}
 	public void display_WishListOption() throws Exception {

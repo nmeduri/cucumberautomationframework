@@ -1,5 +1,7 @@
 package automation.library.selenium.exec.driver.factory;
 
+import static org.testng.Assert.fail;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -27,6 +29,7 @@ import automation.library.selenium.exec.driver.manager.ChromeDriver_Headless_Man
 import automation.library.selenium.exec.driver.manager.ChromeWideScreen_Headless_DriverManager;
 import automation.library.selenium.exec.driver.manager.FirefoxDriverManager;
 import automation.library.selenium.exec.driver.manager.HeadLessDriverManager;
+import automation.library.selenium.exec.driver.manager.HeadlessFirefoxDriverManager;
 import automation.library.selenium.exec.driver.manager.IPadChromeDriverManager;
 import automation.library.selenium.exec.driver.manager.IPadHeadlessChromeDriverManager;
 import automation.library.selenium.exec.driver.manager.MobileChromeDriverManager;
@@ -34,6 +37,7 @@ import automation.library.selenium.exec.driver.manager.Mobile_Chrome_Sauce_Lab_D
 import automation.library.selenium.exec.driver.manager.SAP_Headless_DriverManager;
 import automation.library.selenium.exec.driver.manager.Tablet_Chrome_Sauce_Lab_DriverManager;
 import automation.library.selenium.exec.driver.manager.Web_Chrome_Sauce_Lab_DriverManager;
+import automation.library.selenium.exec.driver.manager.Web_Firefox_Sauce_Lab_DriverManager;
 import automation.library.selenium.exec.driver.manager.WideScreenChromeDriverManager;
 import automation.library.selenium.exec.driver.manager.Wide_Screen_Sauce_Lab_DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -108,8 +112,12 @@ public class DriverFactory extends BaseClass {
 				driverManager.set(new SAP_Headless_DriverManager());
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
-				Log.message("Without Headless " + String, true);
+				Log.message("Headless " + String, true);
 				driverManager.set(new Tablet_Chrome_Sauce_Lab_DriverManager());
+			}else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
+				Log.message("Without Heeadless " + String, true);
+				driverManager.set(new Web_Firefox_Sauce_Lab_DriverManager());
+				break;
 			}
 			break;
 		case "headless":
@@ -128,9 +136,13 @@ public class DriverFactory extends BaseClass {
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
 				driverManager.set(new SAP_Headless_DriverManager());
 				break;
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
+				Log.message("Without Heeadless " + String, true);
+				driverManager.set(new HeadlessFirefoxDriverManager());
+				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
 				Log.message("Without Headless " + String, true);
-				driverManager.set(new IPadHeadlessChromeDriverManager());
+				driverManager.set(new Tablet_Chrome_Sauce_Lab_DriverManager());
 			}
 			break;
 		case "without headless":
@@ -146,9 +158,9 @@ public class DriverFactory extends BaseClass {
 				Log.message("Without Heeadless " + String, true);
 				driverManager.set(new WideScreenChromeDriverManager());
 				break;
-			} else if (String.equalsIgnoreCase("firefox")) {
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
+			} else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
+				Log.message("Without Heeadless " + String, true);
+				driverManager.set(new FirefoxDriverManager());
 				break;
 			} else if (String.equalsIgnoreCase("safari")) {
 				System.setProperty("webdriver.safari.driver", "SafariDriver.safariextz");
@@ -162,9 +174,15 @@ public class DriverFactory extends BaseClass {
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
 				Log.message("Without Headless " + String, true);
 				driverManager.set(new IPadChromeDriverManager());
+			}else {
+				Log.message("browser not found", true);
+				return null;
 			}
+			}
+			
+			
 
-		}
+		
 		return driverManager.get();
 	}
 }

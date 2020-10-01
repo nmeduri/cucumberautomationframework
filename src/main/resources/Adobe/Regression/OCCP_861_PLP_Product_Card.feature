@@ -2,7 +2,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
 
 	Description: To test the ADOBE Test Cases for the story OCCP-861
        
-    @RegressionTest @WebView
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-156 Verify the product card displays the product title on PLP 
     Given plp url is available
     When plp is displayed
@@ -15,7 +15,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     Then plp page is visible in list view
     And product card displays the product card title
 	
-   @RegressionTest @WebView @MobileView
+   @RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-161 Verify the system doesn't display the ratings and review section on PLP when the customer rating is 0 for a given product
 	Given plp url is available
     When plp is displayed
@@ -26,7 +26,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
    And scroll up to page
    Then rating and review section should not be displayed if customer rating is zero 
     
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-156 Verify the product card displays the product title on PLP (Mobile)
     Given plp url is available
     When plp is displayed
@@ -69,7 +69,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     Then plp page is visible in list view
     Then primary image is displayed in grid view
     
-     @RegressionTest @MobileView
+     @RegressionTest @MobileView @TabletView
     Scenario: TC-162 Verify the product card displays the product primary image on PLP (Mobile)
     Given plp url is available
     When plp is displayed
@@ -89,7 +89,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     Then user clicks on list view button
     Then plp page is visible in list view
     
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-169 Verify the system has the ability to switch between views (grid to list)  (Mobile)
     Given plp url is available
     When plp is displayed
@@ -111,7 +111,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     Then plp page is visible in grid view
     Then primary image is displayed in grid view
 
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-170 Verify the system has the ability to switch between views (list to grid) (Mobile)
     Given plp url is available
     When plp is displayed
@@ -123,7 +123,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     Then plp page is visible in grid view
     Then primary image is displayed in grid view
     
-    @RegressionTest @WebView
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-164 Verify the product card in list view displays the product feautures on PLP on Desktop 	12538 - One Digital Platform – 
     Given plp url is available
     When plp is displayed
@@ -131,7 +131,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And the product card name  on the product card is displayed
     And review stars are displayed
     
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-173 Verify the Secondary Image does not appear on Hover on Card in Mobile Breakpoint
 	Given plp url is available
     When plp is displayed

@@ -2,7 +2,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1578
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1436 Verify the ability of a user to update the quantity of a product on PDP
 	Given pdp url is available
     When pdp page is displayed for the product
@@ -23,7 +23,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	And enter number Zero in the quantity box
 	Then user is not allowed to enter zero number
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-87 Verify the functionality of the quantity box when all variants are selected 
 	Given pdp url is available
     When pdp page is displayed for the product
@@ -46,7 +46,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	And enter number Zero in the quantity box
 	Then user is not allowed to enter zero number
 	
-	@RegressionTest @MobileView 
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-86 Verify an error is dislpayed when user has not selected a variant before adding to cart 
 	Given pdp url is available
     When pdp page is displayed for the product
@@ -54,5 +54,18 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
     And select some variants but keep some unselected size
     And user clicks on add to cart button
     Then an error message is displayed prompting user to select all variant first
+    
+    @RegressionTest @WebView @WideView @SmokeTest
+    Scenario: TC-85 Verify quantity box is displayed for products on PDP page
+    Given pdp url is available
+    When pdp page is displayed for the product
+    Then the quantity box is visible
+    And the quantity value is defaulted to one
+    And click the increment sign of the quantity box
+    Then the updated quantity must be incremented by One
+    And click the decrement sign of the quantity box
+    Then updated quantity must be decremented by One
+    Then verify sign decrement is disabled when the quantity is One
+    Then quantity selector box is visible and user is able to click plus and minus
     
     

@@ -11,7 +11,7 @@ Feature: OCCP-1561 PLP Breadcrumb
     And breadcrumb is based on category hierarchy in Hybris
     And main root homepage is also displayed in the path
     
-    @RegressionTest @MobileView 
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-119 Verify the breadcrumb to return to previous page is displayed when user is on PLP on mobile
     Given plp url is available
     When plp is displayed

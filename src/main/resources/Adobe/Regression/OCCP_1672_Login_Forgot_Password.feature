@@ -2,7 +2,7 @@ Feature: OCCP-1672 Login Forgot Password
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1672
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1440 Verify the user has the ability to go back to Login screen while resetting password
 	Given login url is available
 	When login page is displayed
@@ -10,7 +10,7 @@ Feature: OCCP-1672 Login Forgot Password
 	And user click back to sign in
 	Then login page is displayed
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1441 Verify the user is informed with user-friendly inline error that the email entered in is not in the correct format
 	Given login url is available
 	When login page is displayed
@@ -32,7 +32,7 @@ Feature: OCCP-1672 Login Forgot Password
 	And user click on go button
 	And user click on verification email
 	
-	@RegressionTest @WebView @WideView @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-1442 Verify the user is able to resend reset password link on the email from the screen
 	Given login url is available
 	When login page is displayed
@@ -42,7 +42,7 @@ Feature: OCCP-1672 Login Forgot Password
 	And user click resend-passowrd link
 	Then the user views a confirmation message that email was resent
 	
-	@RegressionTest @WideScreen @WebView @MobileView
+	@RegressionTest @WideScreen @WebView @MobileView @TabletView
 	Scenario: TC-1439 Verify the user's ability to receive a link to reset password over the email (Email Not Entered)
 	Given login url is available
 	When login page is displayed

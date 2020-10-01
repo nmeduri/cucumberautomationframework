@@ -21,7 +21,7 @@ Feature: OCCP-1680 User logging in from Email Verification Link
 	Then page your email has been verified displayed
 	And switch on parent frame
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-1437 Verify the user is automatically logged in after clicking on the email confirmation link (Mobile)
 	Given signup url is available on mobile
 	Then sign up page is displayed

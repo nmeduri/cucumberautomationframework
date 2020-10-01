@@ -21,7 +21,7 @@ Feature: OCCP-871 PDP Installations
 	Then tool tip box opens and tool tip message along with close button is displayed 
 	And user clicks on any where
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
     Scenario: TC-116, TC-1303 Verify the functionality of the PDP page when a product is eligible for service installation  
     Given pdp url is available
     When pdp page is displayed for the product

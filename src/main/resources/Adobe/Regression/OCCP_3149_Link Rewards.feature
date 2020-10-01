@@ -2,7 +2,7 @@ Feature: OCCP-3149 Link Rewards
   
   Description: To test the ADOBE Test Cases for the story OCCP-3149
 
-@Regression @MobileView @WideScreen 
+@Regression @MobileView
   Scenario: TC-2137,2141 Verify the Field level validations on the Complete Your Profile screen on Mobile
    Given login url is available
 	 When enter email detail
@@ -13,7 +13,7 @@ Feature: OCCP-3149 Link Rewards
    And do not enter mandatory fields and click on Continue button
    Then enter invalid details for the input fields and click on continue button
     
-  @Regression @MobileView @WideScreen @SmokeTest
+  @Regression @MobileView
  Scenario: TC-2138,2142 Verify the T&C and Success screen details on Mobile
   Given login url is available
 	When enter email detail
@@ -29,7 +29,7 @@ Feature: OCCP-3149 Link Rewards
 
    
     
- @Regression @WideScreen    
+ @Regression @WideScreen  @WebView  
   Scenario: TC-2140 Verify the details on Complete your profile screen on Widescreen
   Given login url is available
 	When enter email detail

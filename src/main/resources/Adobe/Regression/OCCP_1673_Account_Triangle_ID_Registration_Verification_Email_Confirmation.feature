@@ -17,7 +17,7 @@ Feature: OCCP-1673 Account/Triangle ID - Registration Verification Email Confirm
 	And user click on go button
 	Then the user has received the verification email
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-599 Verify the system sends the user an email with email verification link when they select Create upon successfully entering all the information on the account creation screen (Mobile)
 	Given signup url is available on mobile
 	Then sign up page is displayed

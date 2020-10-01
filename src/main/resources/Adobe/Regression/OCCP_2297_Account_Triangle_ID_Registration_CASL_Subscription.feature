@@ -2,7 +2,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 
 	Description: To test the ADOBE Test Cases for the story OCCP-2297
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1417, TC-1418 Verify Email subscription is toggled off by default when user is registering with a new email on CASL subscription screen
 	Given sign up url is available
 	When sign up page is displayed
@@ -13,7 +13,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	Then get personalized offers page is displayed
 	Then verify the CASL-subscription is toggled off by default
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1419 Verify the ability of a user to turn the subscription toggle on to opt into CASL 
 	Given sign up url is available
 	When sign up page is displayed
@@ -26,7 +26,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	And user click on toggle CASL subscription button
 	Then user is able to click toggle CASL subscription button
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1421 Verify the ability of a user to view the tooltip on the CASL subscription screen to learn more about the program
 	Given sign up url is available
 	When sign up page is displayed
@@ -41,7 +41,7 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	And close the tooltip
 	Then user is able to close the tooltip
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1420 Verify the ability of a user to turn the subscription toggle off to opt out of CASL
 	Given sign up url is available
 	When sign up page is displayed

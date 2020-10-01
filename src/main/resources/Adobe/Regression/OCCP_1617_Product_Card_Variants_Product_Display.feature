@@ -9,7 +9,7 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     And scroll up to page
     And secondary image and more appears over primary image
     
-    @RegressionTest @WebView
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-1372 Verify the selection of Product Variant from the Product Card
     Given plp url is available
     When plp is displayed
@@ -20,7 +20,7 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     Then user is visually indicated that the thumbnail is selected
     Then primary product image is updated to selected variant image
     
-    @RegressionTest @WebView
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-1371 Verify display of number of colour variants on Product Card
     Given plp url is available
     When plp is displayed
@@ -29,7 +29,7 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     Then verify the display of number of colours option on the product card
     Then verify number colours is dislayed  where number of color variants availabe for the product
     
-    @RegressionTest @WebView
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-1370 Verify display of Brand Name on Product Card
     Given plp url is available
     When plp is displayed

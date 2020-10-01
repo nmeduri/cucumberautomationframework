@@ -15,7 +15,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then editable clickable text view more is displayed
 	Then view less should not be displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2785 Verification of clicking of View More - Mobile 
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -29,7 +29,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then view more is displayed
 	Then view less should not be displayed
 	
-	@RegressionTest @WideScreen 
+	@RegressionTest @WideScreen @WebView
 	Scenario: TC-2783, TC-2782 Verification of display of Legal Disclaimer Text - Desktop Wide AND Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -37,14 +37,14 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then first three lines of the authored legal disclaimer text should be displayed
 	Then view more is displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2781 Verification of display of Legal Disclaimer Text - Mobile 
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then first 3 lines of the authored legal disclaimer text should be displayed in mobile
 	Then view more is displayed
 	
-	@RegressionTest @WideScreen @WebView @MobileView
+	@RegressionTest @WideScreen @WebView @MobileView @TabletView
 	Scenario: TC-2779, TC-2778, TC-2777 Verification of display of Footer - Desktop Wide 
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -53,7 +53,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then copy right label should be displayed
 	Then editable clickable text view more is displayed
 	
-	@RegressionTest @WideScreen @WebView @MobileView @SmokeTest
+	@RegressionTest @WideScreen @WebView @MobileView @TabletView
 	Scenario: TC-2775, TC-2774 Verification of display of Footer - Desktop Wide
 	Given pdp url is available
 	When pdp page is displayed for the product

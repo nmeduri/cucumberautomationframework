@@ -110,4 +110,21 @@ public class OCCP_1578_Select_Quantity_Box_Is_Available_Steps extends BaseClass 
 	public void an_error_messsage_is_displayed_prompting_user_to_select_all_variant_first() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().displayErrorWishlist();
 	}
+	
+	@Then("the quantity box is visible")
+	public void the_qunatity_box_is_visible() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifyQuantityBoxVisible();
+	}
+	
+	@And("the quantity value is defaulted to one")
+	public void the_quantity_value_is_defaulted_to_one() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifyQuantityValueDefaultedToOne();
+	}
+	
+	@Then("quantity selector box is visible and user is able to click plus and minus")
+	public void quantity_selector_box_is_visible_and_user_is_able_to_click_plus_and_minus() throws Exception {
+		testContext.getPageObjectManager().getPDPPage().verifyQuantityBoxVisible();
+		testContext.getPageObjectManager().getPDPPage().clickIncremenQuantitytButton();
+		testContext.getPageObjectManager().getPDPPage().clickDecrementQuantityButton();
+	}
 }

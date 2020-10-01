@@ -2,7 +2,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1671
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-608 Verify the ability of a user to create new Triangle ID account
 	Given sign up url is available
 	When sign up page is displayed
@@ -17,7 +17,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	#And user click on next button
 	#And email verification sent confirmation screen is displayed
 	
-	#@RegressionTest @WebView @MobileView @WideScreen 
+	#@RegressionTest @WebView @MobileView @WideScreen  @TabletView
 	Scenario: TC-609 Verify an inline error message is displayed when user enters an invalid email ID on the screen
 	Given sign up url is available
 	When sign up page is displayed
@@ -26,7 +26,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	And user enter email
 	And user enter password
 	
-	#@RegressionTest @WebView @MobileView @WideScreen
+	#@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-611 Verify an inline error message is displayed when email ID is not entered on the screen
 	Given sign up url is available
 	When sign up page is displayed
@@ -36,7 +36,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	Then an inline error should display
 	And the option to procced to the next screen is not selectable
 	
-	@RegressionTest @WebView @MobileView @WideScreen 
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView 
 	Scenario: TC-614 Verify the user's ability to provide CASL consent to opt into sales and offer flyers
 	Given sign up url is available
 	When sign up page is displayed
@@ -47,7 +47,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	Then get personalized offers page is displayed
 	Then verfiy CASL appear dynamically on registration model
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-615 Verify the user's ability to learn about CASL opt in via tool tip message
 	Given sign up url is available
 	When sign up page is displayed
@@ -65,7 +65,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	
 	
 
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-616 Verify the ability of a user to log in with already existing credentials via Sign In option on the screen
 	Given sign up url is available
 	When sign up page is displayed
@@ -86,7 +86,7 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	And user click on verification email
 	And user is able to see click here
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-610 Verify the user receives a reset password email when already registered email ID is entered on the screen 
 	Given login url is available
 	When login page is displayed

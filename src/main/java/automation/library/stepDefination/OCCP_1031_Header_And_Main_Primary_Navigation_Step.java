@@ -45,4 +45,53 @@ public class OCCP_1031_Header_And_Main_Primary_Navigation_Step extends BaseClass
 		testContext.getPageObjectManager().getPrimaryNavigationPage().displayPrimaryNavigationAfterPencilBanner();
 	}
 	
+	@Then("in primary navigation verify the options present")
+	public void in_primary_navigation_verify_the_options_present() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().displayBannerLogo();
+		testContext.getPageObjectManager().getHeaderPage().displayStoreBar();
+		testContext.getPageObjectManager().getHeaderPage().displaySearchBar();
+		testContext.getPageObjectManager().getHeaderPage().displayWishlistIcon();
+		testContext.getPageObjectManager().getHeaderPage().displayCartIcon();
+	}
+	
+	@And("store name is displayed")
+	public void store_name_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().displayStoreName();
+	}
+	
+	@And("store status is displayed")
+	public void store_status_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().displayStoreStatus();
+	}
+	
+	@And("closing hours is displayd")
+	public void closing_hours_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().displayClosingHours();
+	}
+	
+	@And("chervon is displayed")
+	public void chervon_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().displayChervon();
+	}
+	
+	@And("click on wish list icon")
+	public void click_on_wish_list_icon() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().clickWishlistIcon();
+	}
+	
+	@Then("on clicking user should be redirected to configured page")
+	public void on_clicking_user_should_be_redirected_to_configured_page() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().verifyWishListRedirectedToConfigurePage();
+	}
+	
+	@And("click on cart icon")
+	public void click_on_cart_icon() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().clickCartIcon();
+	}
+	
+	@Then("on clicking user redirect to cart page")
+	public void on_clicking_user_redirect_to_cart_page() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage().verifyCartRedirectedToConfigurePage();
+	}
+	
 }

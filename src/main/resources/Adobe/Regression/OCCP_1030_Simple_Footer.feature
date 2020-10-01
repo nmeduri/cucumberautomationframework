@@ -10,7 +10,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
 	Then view less is displayed
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2846 Verification of Legal Disclaimer property - Desktop 
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -41,7 +41,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then editable clickable text view less is displayed
 	Then copy right text is displayed
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2845 Verification of clicking of text "Accessibility" - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -55,7 +55,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	And in footer access and click on text and conditions
 	Then user navigate to the page where detailed terms and conditions information is displayed
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2848 Verification of hovering over a link - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -65,7 +65,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then link site map should be underlined
 	Then link accessibility should be underlined
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2850 Verification of clicking of text Legal - Desktop Wide
 	Given pdp url is available
 	When pdp page is displayed for the product

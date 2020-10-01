@@ -2,7 +2,7 @@ Feature: OCCP-862 PLP Sorting
 
 	Description: To test the ADOBE Test Cases for the story OCCP-862
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-40 Verify the sticky navigation feature of filter menu
 	Given plp url is available
     When plp is displayed
@@ -18,7 +18,7 @@ Feature: OCCP-862 PLP Sorting
     And Select sort option price high to low
     Then all products results are rearranged from highest to lowest price
     
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-345 Verify the functionality of the Price High to Low sorting option on a PLP (Mobile)
     Given plp url is available
     When plp is displayed
@@ -36,7 +36,7 @@ Feature: OCCP-862 PLP Sorting
     And click on sort by option
     And select sorting option Newest Arrivals
 
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-347 Verify the functionality of the Newest Arrivals sorting option on a PLP
     Given plp url is available
     When plp is displayed
@@ -54,7 +54,7 @@ Feature: OCCP-862 PLP Sorting
 	And user selects Price Low to High as sorting option
 	Then all the product results should be rearranged from lowest to highest price
 		
-	@MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
 	Given plp url is available
 	When plp is displayed
@@ -74,7 +74,7 @@ Feature: OCCP-862 PLP Sorting
     Then All the product results are rearranged from highest customer ratings high to lowest customer ratings
     
     
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-348 Verify the functionality of the Customer Ratings High to Low sorting option on a PLP
     Given plp url is available
     When plp is displayed

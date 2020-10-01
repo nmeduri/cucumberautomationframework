@@ -8,7 +8,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     When pdp page is displayed for the product
     Then the product title is displayed on the product 
     
-    @RegressionTest @WebView
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-108 Verify the return policy link is displayed on the PDP for a given product 
     Given pdp url is available
     When pdp page is displayed for the product
@@ -27,19 +27,19 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     When pdp page is displayed for the product
     Then the product code is displayed in buy box
     
-    @RegresionTest @MobileView
+    @RegresionTest @MobileView @TabletView
     Scenario: TC-1307 Verify the product title is displayed on the PDP for a given product in Mobile  
     Given pdp url is available
     When pdp page is displayed for the product
     Then the product title is displayed on the product   
     
-    @RegressionTest @MobileView
+    @RegressionTest @MobileView @TabletView
     Scenario: TC-1312 Verify the product code is displayed on the PDP in Mobile
     Given pdp url is available
     When pdp page is displayed for the product
     Then the product code is displayed in buy box
     
-    @RegressionTest @WideScreen
+    @RegressionTest @WideScreen @WebView
     Scenario: TC-1316 Verify the product title is displayed on the PDP for a given product in Widescreen 
     Given pdp url is available
     When pdp page is displayed for the product
@@ -51,7 +51,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     When pdp page is displayed for the product
     Then the product code is displayed in buy box
     
-    @RegressionTest @WideScreen
+    @RegressionTest @WideScreen @WebView
     Scenario: TC-1317 Verify the product romance copy is displayed on the PDP for a given product in Widescreen
     Given pdp url is available
     When pdp page is displayed for the product
@@ -59,7 +59,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     And romance copy section title is displayed
     And romance copy content is displayed
     
-    @RegressionTest @WebView
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-109 Verify the product manual is displayed on the PDP for a given product 
     Given pdp url is available
     When pdp page is displayed for the product

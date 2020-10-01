@@ -2,7 +2,7 @@ Feature: OCCP-1647 Product Badges Clearnce
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1647
 	
-	@RegressionTest @WebView @MobileView @WideScreen
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1296 Verify additional editable disclaimer Only Select Styles/Sizes is displayed when only select variants are on clearance at a store
 	Given pdp url is available
     When pdp page is displayed for the product

@@ -25,7 +25,7 @@ Feature: OCCP-1756 Email not verified and User is trying to Login
 	And user click on go button
 	Then the user has received the verification email
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-640 Verify the user is prompted to perform email verification if the verification has not been done already (Mobile)
 	Given signup url is available on mobile
 	When sign up page is displayed

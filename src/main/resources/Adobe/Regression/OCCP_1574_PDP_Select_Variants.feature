@@ -2,7 +2,7 @@ Feature: OCCP-1574 PDP: Select Variant
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1574
 	
-	@RegressionTest @WebView @WideScreen @MobileView
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-328 Verify the display of the PDP when a product has multiple sizes available with no size guide 
 	Given pdp url is available
 	When pdp page is displayed for the product
