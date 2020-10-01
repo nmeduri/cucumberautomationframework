@@ -54,35 +54,4 @@ public class Link_Your_Triangle_Rewards_account_Page extends PageObject {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Triangle_Reward_Card())), 40);
 	}
 	
-	/** This function clicks on Try Again button */
-	public void click_TryAgain_Button() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_TryAgain_Button()));
-	}
-	
-	
-	public void display_Existing_Card_Screen() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()));
-	}
-	
-	/** This function verify that Cancel button is displayed */
-	public void display_Cancel_Button() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button())),40);
-	}
-	
-	/** This function verify that Triangle Reward card is displayed */
-	public void display_Triangle_Reward_Card() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Triangle_Reward_Card())), 40);
-	}
-	
-	/** This function verify that Triangle ID Logo is displayed */
-	public void display_TriangleId_Logo() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_TriangleId_Logo()));
-	}
-	
-	/** This function verify that Deactivated Error Text is displayed */
-	public void verify_Deactivated_Error_Text() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Deactivated_Error_Text()));
-		
-		
-	}
 }

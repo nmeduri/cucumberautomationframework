@@ -36,7 +36,7 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().click_Triangle_Reward_Card();
 	}
 	
-	@And("user enter card number that is deactivated")
+	@And("user enters a loyalty card number that is deactivated")
 	public void user_enter__deactivated_card_number() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().enterData_Deactivated_Card_Number();
 	}
@@ -51,24 +51,14 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().click_Continue_Button();
 	}
 	
-	@Then("error message is displayed informing card is deactivated")
+	@Then("verify an error message is displayed informing card is deactivated")
 	public void display_card_deactivated_error_message() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Deactivated_Error_Message();
-	}
-	
-	@And("user click on try again")
-	public void user_click_on_tryagain_button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().click_TryAgain_Button();
 	}
 	
 	@Then("user should navigate to link existing triangle card screen without prepopulated data")
 	public void navigate_to_link_existing_card_screen() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verify_CardNo_Not_Prepopulated();
-	}
-	
-	@And("user click on cancel button")
-	public void user_click_on__button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().click_Cancel_Button();
 	}
 	
 	@Then("try again button should be present in the error screen")
@@ -78,12 +68,12 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 	
 	@Then("cancel button should be present in the error screen")
 	public void display_of_cancel_button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().display_Cancel_Button();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Cancel_Button();
 	}
 	
 	@Then("user should navigate to link cards screen")
 	public void navigate_to_link_cards_screen() throws Exception {
-		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().display_Triangle_Reward_Card();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Triangle_Reward_Card();
 	}
 	
 	@Then("error image should be present in the error screen")
@@ -91,14 +81,14 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Error_Image();
 	}
 	
-	@And("user verify's error text")
+	@And("user verify's error text present in the error screen")
 	public void user_verify_error__text() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verify_Deactivated_Error_Text();
 	}
 	
 	@Then("triangle id logo is displayed on screen")
 	public void display_of_triangleId_logo() throws Exception {
-		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().display_TriangleId_Logo();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_TriangleId_Logo();
 	}
 	
 	@Then("user should be able to enter the loyalty card number successfully which is deactivated")
