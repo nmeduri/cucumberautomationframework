@@ -2,7 +2,7 @@ Feature: OCCP-3212 Account/Triangle ID - Link Rewards  Link Existing Triangle Re
 
 Description: To test the ADOBE Test Cases for the story OCCP-3212
 
-    @RegressionTest @WebView @WideScreen 
+  @RegressionTest @WebView @WideScreen 
 	Scenario: TC-2396, TC-2385 Verfiy the display of Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email detail

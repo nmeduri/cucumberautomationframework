@@ -234,6 +234,21 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage().clickLegalPlusButton();
 	}
 	
+	@And("user clicks on custom support 'minus' section")
+	public void click_on_custom_support_minus_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().clickMinusButton();
+	}
+	
+	@Then("the sub section should be collapsed to the original view and expanded sub-section links should not be displayed")
+	public void custom_support_section_should_collapse_and_links_should_not_display() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().NotdisplaySubsectionLinks();
+	}
+	
+	@And("the 'plus' sign should be displayed instead of 'minus' sign")
+	public void plus_should_be_displayed_instead_of_minus() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().displayCustomSupportPlusButton();
+	}
+	
 	
 	
 	

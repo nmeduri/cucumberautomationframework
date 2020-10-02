@@ -517,6 +517,45 @@ public class Footer_Page extends PageObject {
 	public void displayCopyRightInformation() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Copy_Right_Information()));
 	}
+	
+	/** This function click on "-" button */
+	public void clickMinusButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button()));
+	}
+	
+	/** This function is to verify that expanded subsection is collapsed and links not displayed */
+	public void NotdisplaySubsectionLinks() throws Exception {
+		try {
+			$display($$$$(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Expanded_Subsection_Links(),1));
+			   Log.message("Expanded subsection is not collapsed and links are displayed.", true); 
+			   fail();
+		   }
+		catch(Exception e) {
+			   Log.message("Expanded subsection is collapsed and links are not displayed", true);
+		   }
+		
+		}
+	
+	/** This function is to verify that Custom Support "+" button is displayed */
+	public void displayCustomSupportPlusButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Custom_Support_Plus_Button()));
+	}
+	
+	/** This function is to verify that Services & Solutions "+" button is displayed */
+	public void displayServicesAndSolutionPlusButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Services_And_Solutions_Plus_Button()));
+	}
+	
+	/** This function is to verify that About Us "+" button is displayed */
+	public void displayAboutUsPlusButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Us_Plus_Button()));
+	}
+	
+	/** This function is to verify that Legal "+" button is displayed */
+	public void displayLegalPlusButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Plus_Button()));
+	}
+	
 }
 	
 	
