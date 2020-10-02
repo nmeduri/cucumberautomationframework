@@ -1,7 +1,7 @@
 Feature: OCCP-1027 Footer : Footer Links
 	Description: To test the ADOBE Test Cases for the story OCCP-1027
 	
-	@RegressionTest @WebView @WideView 
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2096, TC-2112 User views the links displayed on Footer-desktop/desktop wide
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -22,7 +22,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And about us section is displayed
 	And legal section is displayed
 	
-	@RegressionTest @WebView @WideView 
+	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2097, TC-2113 User views the "Customer Support " Section
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -37,7 +37,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for product recalls is displayed
 	And clickable text link for safety data sheets is displayed
 	
-	@RegressionTest @WebView @WideView 
+	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2098, Tc-2114 User views the "Services & Solutions" Section
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -52,7 +52,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for tested for life is displayed
 	And clickable text link for gift registry is displayed
 	
-	@RegressionTest @WebView @WideView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2099, Tc-2115 User views the "About Us" Section
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -66,7 +66,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for flyer sign up is displayed
 	And clickable text link for sustainability is displayed
 		
-	@RegressionTest @WebView @WideView
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2100, Tc-2116 User views the "Legal" Section
 	Given pdp url is available
 	When pdp page is displayed for the product
