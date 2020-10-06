@@ -9,7 +9,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     And click the wishlist item
     Then an error message is displayed prompting user to select all variant first
     
-    @RegressionTest @WebView @MobileView @WideScreen @TabletView
+    @RegressionTest @WebView @MobileView @WideScreen @TabletView @SmokeTest
 	Scenario: TC-279 Verify a guest user is able to add products to the wishlist
 	Given pdp url is available
     When pdp page is displayed for the product

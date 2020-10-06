@@ -6,6 +6,7 @@ import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -79,6 +80,8 @@ public class Login_Page extends PageObject {
 	public void verify_EmailId_Prepopulated() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()));
 		String actualValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Stored_Email()), "value");
+		Log.message("Actual Value:- " + actualValue, true);
+		Log.message(("Expected" + FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data() + FileReaderManager.getInstance().getDataReader().get_Email_Detail()), true);
 		Assert.assertTrue(actualValue.contains(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data() + FileReaderManager.getInstance().getDataReader().get_Email_Detail()));
 	}
 	
@@ -118,11 +121,31 @@ public class Login_Page extends PageObject {
 	}
 	
 	public void clear_browser_history() throws Exception {
-		try {
-		PageObject.getDriver().get("chrome://settings/clearBrowserData");
-		Thread.sleep(3000);
-		PageObject.getDriver().findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
-		Thread.sleep(10000);
+//		try {
+//		PageObject.getDriver().get("chrome:settings/clearBrowserData");
+//		Thread.sleep(3000);
+//		PageObject.getDriver().findElement(By.xpath("settings-ui")).sendKeys(Keys.ENTER);
+//		Thread.sleep(20000);
+//		Set<Cookie> allCookies = PageObject.getDriver().manage().getCookies();
+//		Log.message("Cookies Size:- " + allCookies.size(), true);
+//		for(Cookie cookie : allCookies) {
+//			Log.message("Name:- " + cookie.getName(), true);
+//			Log.message("Name:- " + cookie.getDomain(), true);
+//			Log.message("Name:- " + cookie.getPath(), true);
+//			Log.message("Name:- " + cookie.getValue(), true);
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getName());
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getDomain());
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getPath());
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getValue());
+//		}
+//		PageObject.getDriver().manage().deleteAllCookies();
+//		PageObject.getDriver().manage().getCookies().clear();
+//		Set<Cookie> allCookiesafter = PageObject.getDriver().manage().getCookies();
+//		Log.message("After Cookies Size:- " + allCookiesafter.size(), true);
+//		}catch(Exception e) {
+//			
+//		} 
+		
 		Set<Cookie> allCookies = PageObject.getDriver().manage().getCookies();
 		Log.message("Cookies Size:- " + allCookies.size(), true);
 		for(Cookie cookie : allCookies) {
@@ -139,11 +162,49 @@ public class Login_Page extends PageObject {
 		PageObject.getDriver().manage().getCookies().clear();
 		Set<Cookie> allCookiesafter = PageObject.getDriver().manage().getCookies();
 		Log.message("After Cookies Size:- " + allCookiesafter.size(), true);
-		}catch(Exception e) {
-			
-		}
+		
+
+//		final String dialogSelector = "#dialogOverlay-0 > groupbox:nth-child(1) > browser:nth-child(2)";
+//
+//	    final String acceptDialogScript = "const browser = document.querySelector(" + dialogSelector + ");"
+//	            + "browser.contentDocument.documentElement.querySelector('#clearButton').click();";
+//
+//		JavascriptExecutor js = (JavascriptExecutor)driver;
+//		PageObject.getDriver().get("about:preferences#searchResults");
+//		Thread.sleep(3000);
+//		PageObject.getDriver().findElement(By.cssSelector("#clearSiteDataButton")).click();
+//		Thread.sleep(3000);
+//		PageObject.getDriver().findElement(By.id("clearButton")).sendKeys(Keys.ENTER);
+//		
+//		js.executeScript(acceptDialogScript);
 	}
 	
+//	public void clear_browser_history() throws Exception {
+//		try {
+//		PageObject.getDriver().get("chrome://settings/clearBrowserData");
+//		Thread.sleep(3000);
+//		PageObject.getDriver().findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
+//		Thread.sleep(10000);
+//		Set<Cookie> allCookies = PageObject.getDriver().manage().getCookies();
+//		Log.message("Cookies Size:- " + allCookies.size(), true);
+//		for(Cookie cookie : allCookies) {
+//			Log.message("Name:- " + cookie.getName(), true);
+//			Log.message("Name:- " + cookie.getDomain(), true);
+//			Log.message("Name:- " + cookie.getPath(), true);
+//			Log.message("Name:- " + cookie.getValue(), true);
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getName());
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getDomain());
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getPath());
+//			PageObject.getDriver().manage().deleteCookieNamed(cookie.getValue());
+//		}
+//		PageObject.getDriver().manage().deleteAllCookies();
+//		PageObject.getDriver().manage().getCookies().clear();
+//		Set<Cookie> allCookiesafter = PageObject.getDriver().manage().getCookies();
+//		Log.message("After Cookies Size:- " + allCookiesafter.size(), true);
+//		}catch(Exception e) {
+//			
+//		}
+//	}
 	
 
 }

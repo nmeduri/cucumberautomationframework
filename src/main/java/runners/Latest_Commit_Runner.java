@@ -9,12 +9,12 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
-
+	
 public final class Latest_Commit_Runner extends BaseClass{
-	public static String name;
+	public static String name;	
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1578_Select_Quantity_Box_Is_Available.feature",
+			"classpath:Adobe/Regression/OCCP_1181_Link_Rewards_Triangle_ID.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@SmokeTest",
 			"--plugin", "pretty",

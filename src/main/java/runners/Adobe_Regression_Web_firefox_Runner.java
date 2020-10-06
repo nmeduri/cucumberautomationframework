@@ -16,7 +16,7 @@ public final class Adobe_Regression_Web_firefox_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 
 
-			"classpath:Adobe/Regression/", 
+			"classpath:Adobe/Regression/",
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@WebView",

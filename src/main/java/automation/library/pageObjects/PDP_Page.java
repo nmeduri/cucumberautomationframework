@@ -443,9 +443,11 @@ public class PDP_Page extends PageObject {
    
    /** This function is verify  8 specifications are displayed  */
    public void displaySpecificationsEightSpecifications() {
+	   
 		List<Element> specification = $$(Loc.XPATH,
 				testContext.getPageObjectManager().getPDPPageLocator().get_Specifications_In_Tabular_Format());
-		Assert.assertTrue(specification.size() == 6);
+		Log.message("Size:- " + specification.size(), true);
+		Assert.assertTrue(specification.size() == 7);
 	}
    
    /** This function is verify that view more displayed */

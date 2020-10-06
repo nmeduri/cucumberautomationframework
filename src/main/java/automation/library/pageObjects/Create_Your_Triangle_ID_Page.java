@@ -46,7 +46,7 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	/** This function is verify that Header create your triangle is displayed */
 	public void display_Create_Your_Triangle_Header() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header())), 15);
 	}
 	
 	/** This function enter email detail in the email field */
@@ -77,7 +77,7 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	/** This function click on crate button */
 	public void click_Create_Button() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Button())), 40);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Button())));
 	}
 	
 	/** This function is verify that error message is displayed for invalid Email */

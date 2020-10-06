@@ -14,26 +14,23 @@ import automation.library.logdetail.Log;
 import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 /**
- * This file create driver of Chrome (Sauce Labs)
+ * This file create driver of chrome (Wide - Sauce Labs)
  */
 
-public class Mobile_Chrome_Sauce_Lab_DriverManager  extends DriverManager{
+public class Sauce_Lab_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");
 	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
 	//@Override
 	public void createDriver() {
 		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
-		DesiredCapabilities caps11 = DesiredCapabilities.chrome();
-		caps11.setCapability("testobject_platform_name", "android");
-		caps11.setCapability("browserName", "Chrome");
-		caps11.setCapability("platformName", "android");
-		caps11.setCapability("version", "");
-		caps11.setCapability("deviceName", "Samsung_Galaxy_Note_10_plus_real_us");
-		caps11.setCapability("platform", "platform");
-	    
+		DesiredCapabilities caps12 = DesiredCapabilities.chrome();
+		caps12.setCapability("platform", "Windows 10");
+		caps12.setCapability("version", "latest");
+		caps12.setCapability("screenResolution", "1280x1024");
 		try {
-			driver = new RemoteWebDriver(new URL(URL), caps11);
+			driver = new RemoteWebDriver(new URL(URL), caps12);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

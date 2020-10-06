@@ -24,26 +24,24 @@ import automation.library.dataProviders.ConfigFileReader;
 import automation.library.logdetail.Log;
 import automation.library.managers.DriverManager;
 import automation.library.selenium.base.BaseClass;
-import automation.library.selenium.exec.driver.manager.ChromeDriverManager;
-import automation.library.selenium.exec.driver.manager.ChromeDriver_Headless_Manager;
-import automation.library.selenium.exec.driver.manager.ChromeWideScreen_Headless_DriverManager;
-import automation.library.selenium.exec.driver.manager.FirefoxDriverManager;
-import automation.library.selenium.exec.driver.manager.HeadLessDriverManager;
-import automation.library.selenium.exec.driver.manager.HeadlessFirefoxDriverManager;
-import automation.library.selenium.exec.driver.manager.IPadChromeDriverManager;
-import automation.library.selenium.exec.driver.manager.IPadHeadlessChromeDriverManager;
-import automation.library.selenium.exec.driver.manager.MobileChromeDriverManager;
-import automation.library.selenium.exec.driver.manager.Mobile_Chrome_Sauce_Lab_DriverManager;
-import automation.library.selenium.exec.driver.manager.SAP_Headless_DriverManager;
-import automation.library.selenium.exec.driver.manager.SafariDriverManager;
-import automation.library.selenium.exec.driver.manager.Tablet_Chrome_Sauce_Lab_DriverManager;
-import automation.library.selenium.exec.driver.manager.Web_Chrome_Sauce_Lab_DriverManager;
-import automation.library.selenium.exec.driver.manager.Web_Edge_Sauce_Lab_DriverManager;
-import automation.library.selenium.exec.driver.manager.Web_Firefox_Sauce_Lab_DriverManager;
-import automation.library.selenium.exec.driver.manager.Web_IE_Sauce_Lab_DriverManager;
-import automation.library.selenium.exec.driver.manager.Web_Safari_Sauce_Lab_DriverManager;
-import automation.library.selenium.exec.driver.manager.WideScreenChromeDriverManager;
-import automation.library.selenium.exec.driver.manager.Wide_Screen_Sauce_Lab_DriverManager;
+import automation.library.selenium.exec.driver.manager.Without_Headless_Chrome_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Headless_Chrome_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Headless_Chrome_Wide_Screen_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Without_Headless_Firefox_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Without_Headless_Ipad_Chrome_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Without_Headless_Chrome_Mobile_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_Chrome_Mobile_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_Chrome_Wide_Screen_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.SAP_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Without_Headless_Safari_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_Chrome_Tablet_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_Chrome_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_Edge_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_Firefox_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_IE_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Sauce_Lab_Safari_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Without_Headless_Chrome_Wide_Screen_Driver_Manager;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
@@ -102,95 +100,87 @@ public class DriverFactory extends BaseClass {
 		case "saucelabs":
 			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner")) {
 				Log.message("Sauce Lab" + String, true);
-				driverManager.set(new Web_Chrome_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Chrome_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
 				Log.message("Sauce Lab" + String, true);
-				driverManager.set(new Mobile_Chrome_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Chrome_Mobile_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
 				Log.message("Sauce Lab" + String, true);
-				driverManager.set(new Wide_Screen_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Chrome_Wide_Screen_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
-				driverManager.set(new SAP_Headless_DriverManager());
+				driverManager.set(new SAP_Driver_Manager());
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
 				Log.message("Headless " + String, true);
-				driverManager.set(new Tablet_Chrome_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Chrome_Tablet_Driver_Manager());
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
 				Log.message("Without Heeadless " + String, true);
-				driverManager.set(new Web_Firefox_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Firefox_Driver_Manager());
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Web_Safari_Runner")) {
-				driverManager.set(new Web_Safari_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Safari_Driver_Manager());
 				break;
 			}
 			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Internet_Explore_Runner")) {
 				Log.message("Without Headless " + String, true);
-				driverManager.set(new Web_IE_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_IE_Driver_Manager());
 			}
 			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Edge_Runner")) {
 				Log.message("Without Headless " + String, true);
-				driverManager.set(new Web_Edge_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Edge_Driver_Manager());
 			}
 			break;
 		case "headless":
 			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner")) {
 				Log.message("Heeadless " + String, true);
-				driverManager.set(new ChromeDriver_Headless_Manager());
+				driverManager.set(new Headless_Chrome_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
 				Log.message("Heeadless " + String, true);
-				driverManager.set(new Mobile_Chrome_Sauce_Lab_DriverManager());
+				driverManager.set(new Sauce_Lab_Chrome_Mobile_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
 				Log.message("Heeadless " + String, true);
-				driverManager.set(new ChromeWideScreen_Headless_DriverManager());
+				driverManager.set(new Headless_Chrome_Wide_Screen_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
-				driverManager.set(new SAP_Headless_DriverManager());
-				break;
-			} else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
-				Log.message("Without Heeadless " + String, true);
-				driverManager.set(new HeadlessFirefoxDriverManager());
+				driverManager.set(new SAP_Driver_Manager());
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
 				Log.message("Without Headless " + String, true);
-				driverManager.set(new Tablet_Chrome_Sauce_Lab_DriverManager());
-			}
-			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Safari_Runner")) {
-				driverManager.set(new Web_Safari_Sauce_Lab_DriverManager());
-				break;
+				driverManager.set(new Sauce_Lab_Chrome_Tablet_Driver_Manager());
 			}
 			break;
 		case "without headless":
 			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner")) {
 				Log.message("Without Heeadless " + String, true);
-				driverManager.set(new ChromeDriverManager());
+				driverManager.set(new Without_Headless_Chrome_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
 				Log.message("Without Heeadless " + String, true);
-				driverManager.set(new MobileChromeDriverManager());
+				driverManager.set(new Without_Headless_Chrome_Mobile_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
 				Log.message("Without Heeadless " + String, true);
-				driverManager.set(new WideScreenChromeDriverManager());
+				driverManager.set(new Without_Headless_Chrome_Wide_Screen_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
 				Log.message("Without Heeadless " + String, true);
-				driverManager.set(new FirefoxDriverManager());
+				driverManager.set(new Without_Headless_Firefox_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Web_Safari_Runner")) {
-				driverManager.set(new SafariDriverManager());
+				driverManager.set(new Without_Headless_Safari_Driver_Manager());
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
 				Log.message("Without Headless " + String, true);
-				driverManager.set(new SAP_Headless_DriverManager());
+				driverManager.set(new SAP_Driver_Manager());
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
 				Log.message("Without Headless " + String, true);
-				driverManager.set(new IPadChromeDriverManager());
+				driverManager.set(new Without_Headless_Ipad_Chrome_Driver_Manager());
 			}else {
 				Log.message("browser not found", true);
 				return null;

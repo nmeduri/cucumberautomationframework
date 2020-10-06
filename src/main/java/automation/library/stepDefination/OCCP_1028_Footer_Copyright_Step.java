@@ -65,5 +65,15 @@ public class OCCP_1028_Footer_Copyright_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage().displayCopyRightInformation();
 	}
 	
+	@And("in footer hover on any link on footer")
+	public void in_footer_hover_on_any_link_on_footer() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().verifyUnderlinkeOnAnyLink();
+	}
+	
+	@And("in footerhover on any link on footer")
+	public void in_footerhover_on_any_link_on_footer() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().verifyUnderlinkeOnAnyLinkOnMobile();
+	}
+	
 	
 }

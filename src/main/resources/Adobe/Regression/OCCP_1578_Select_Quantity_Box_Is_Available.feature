@@ -55,7 +55,7 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
     And user clicks on add to cart button
     Then an error message is displayed prompting user to select all variant first
     
-    @RegressionTest @WebView @WideScreen @SmokeTest
+    @RegressionTest @WebView @WideScreen
     Scenario: TC-85 Verify quantity box is displayed for products on PDP page
     Given pdp url is available
     When pdp page is displayed for the product

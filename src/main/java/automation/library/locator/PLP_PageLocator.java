@@ -47,8 +47,8 @@ public class PLP_PageLocator {
 	String getProductContainer = Property.getProperty(Constant.OR_FILE, "getProductContainer");
 	String getContainer = Property.getProperty(Constant.OR_FILE, "getContainer");
 	String totalReviewsButton = Property.getProperty(Constant.OR_FILE, "ratingOne") + Property.getProperty(Constant.OR_FILE, "totalReviewsButton");
-	String productCardVariant = Property.getProperty(Constant.OR_FILE, "productCardVariant");
-	String selectProductVariant = Property.getProperty(Constant.OR_FILE, "selectProductVariant");
+	String productCardVariant = Property.getProperty(Constant.OR_FILE, "productCardVariant") + "," + Property.getProperty(Constant.OR_FILE, "productCardVariantTwo");
+	String selectProductVariant = Property.getProperty(Constant.OR_FILE, "productCardVariant") + "," + Property.getProperty(Constant.OR_FILE, "selectProductVariant");
 	String numberOfColours = Property.getProperty(Constant.OR_FILE, "numberOfColours");
 	String productCard = Property.getProperty(Constant.OR_FILE, "productCard");
 	String reviewsStars = Property.getProperty(Constant.OR_FILE, "reviewsStars");

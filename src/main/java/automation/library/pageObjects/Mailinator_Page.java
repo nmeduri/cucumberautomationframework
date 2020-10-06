@@ -89,7 +89,10 @@ public class Mailinator_Page extends PageObject {
 	
 	/** This function is verify that 'Resent Email' is displayed */
 	public void displayResentEmail() throws Exception {
-		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address())), 4);
+		Thread.sleep(3000);
+		PageObject.getDriver().navigate().refresh();
+		Thread.sleep(2000);
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address())), 10);
 		List<Element> list = $$(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address());
 		Log.message("Size:- " + list.size(), true);
 		Assert.assertEquals(list.size(), 2);

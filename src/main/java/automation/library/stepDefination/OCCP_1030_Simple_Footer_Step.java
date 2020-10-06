@@ -175,5 +175,25 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage().notDisplayRestOfLegalDisclaimer();
 	}
 	
+	@And("click on privacy policy")
+	public void click_on_privacy_policy() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().clickPrivacyPolicy();
+	}
+	
+	@Then("user navigate on privacy policy page where detailed privacy policy information is displayed")
+	public void user_navigate_on_privacy_policy_page_where_detailed_privacy_policy_information_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().verifyLinkNavigateOnPrivacyPolicy();
+	}
+	
+	@And("in simple footer and click on site map")
+	public void in_simple_footer_and_click_on_site_map() throws Exception {
+		testContext.getPageObjectManager().getFooterPage().clickSiteMap();
+	}
+	
+	@Then("user is navigate on site map page where detailed site map information is displayed")
+	public void user_is_navigate_on_site_map_page_where_detailed_site_map_information_is_displayed() throws Exception {
+		
+	}
+	
 	
 }

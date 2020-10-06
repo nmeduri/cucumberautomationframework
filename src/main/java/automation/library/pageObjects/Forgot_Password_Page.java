@@ -72,7 +72,7 @@ public class Forgot_Password_Page extends PageObject {
 	
 	/** This function is verify that Email is not populated in the field */
 	public void verifyEmailFieldNotPopulated() throws Exception {
-		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Email_Forgot_Password()), "value"), "");
+		Assert.assertEquals("", $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Email_Forgot_Password()), "value"));
 	}
 	
 	public void displayConfirmationResentMessage() throws Exception {

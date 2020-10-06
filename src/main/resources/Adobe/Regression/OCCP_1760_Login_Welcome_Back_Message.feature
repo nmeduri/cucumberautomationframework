@@ -9,6 +9,14 @@ Feature: OCCP-1760 Welcome Back Message
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
+	
+	@RegressionTest @WebView @MobileView @WideScreen @TabletView
+	Scenario: TC-657 TC-658 Verify the login screen includes message (First name NOT available)
+	Given login url is available
+	When enter email detail
+	And user enter password
+	And user click on sign in button
+	Then link card screen should be displayed
 	When user is navigate on login page
 	Then welcome back page is displayed
 	And verify email id is prepopulated

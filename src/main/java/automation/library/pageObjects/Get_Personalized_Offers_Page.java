@@ -43,7 +43,7 @@ public class Get_Personalized_Offers_Page extends PageObject {
 	
 	/** This function is verify that Header 'Get Personalized Offers' is displayed */
 	public void display_Header_Get_Personalized_Offers() throws Exception{
-		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Header_Get_Personalized_Offers_Page())), 60);
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Header_Get_Personalized_Offers_Page())), 80);
 	}
 	
 	/** This function is verify that CASL Checkbox is displayed */

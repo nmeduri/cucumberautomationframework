@@ -2,7 +2,7 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1617
 	
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen @SmokeTest
 	Scenario: TC-1374 Verify the thumbnail truncation when more than 4 variants are available
 	Given plp url is available
     When plp is displayed

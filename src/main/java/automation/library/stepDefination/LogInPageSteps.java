@@ -78,6 +78,7 @@ public class LogInPageSteps extends BaseClass{
 	@And("clear email detail")
 	public void clear_email_detail() throws Exception {
 		testContext.getPageObjectManager().getLoginPage().clear_Email_Login_Page();
+		testContext.getPageObjectManager().getLoginPage().clear_Email_Login_Page();
 	}
 	
 	@When("enter reset email detail")

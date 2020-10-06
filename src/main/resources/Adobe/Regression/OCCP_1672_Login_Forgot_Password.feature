@@ -45,6 +45,8 @@ Feature: OCCP-1672 Login Forgot Password
 	@RegressionTest @WideScreen @WebView @MobileView @TabletView
 	Scenario: TC-1439 Verify the user's ability to receive a link to reset password over the email (Email Not Entered)
 	Given login url is available
+	When Remove Cookies
+	Given login url is available
 	When login page is displayed
 	And clear email detail
 	And user click on forgot password

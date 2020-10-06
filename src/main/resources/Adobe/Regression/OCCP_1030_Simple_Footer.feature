@@ -1,8 +1,8 @@
 Feature: OCCP-1030 Footer : Simple Footer
 	Description: To test the ADOBE Test Cases for the story OCCP-1030
 	
-	@RegressionTest @WideScreen
-	Scenario: TC-2856 Verification of clicking of text "View More" - Desktop Wide 
+	@RegressionTest @WideScreen @MobileView
+	Scenario: TC-2856, TC-2838 Verification of clicking of text "View More" - Desktop Wide 
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then ligal disclaimer is displayed
@@ -11,10 +11,16 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then view less is displayed
 	
 	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2846 Verification of Legal Disclaimer property - Desktop 
+	Scenario: TC-2846, TC-2855 Verification of Legal Disclaimer property - Desktop 
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then first three lines of the authored legal disclaimer text should be displayed
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2837 Verification of Legal Disclaimer property - Mobile
+	Given pdp url is available
+	When pdp page is displayed for the product
+	Then first 3 lines of the authored legal disclaimer text should be displayed in mobile
 	
 	
 	@RegressionTest @WebView
@@ -26,11 +32,11 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
 	Then view less is displayed
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView 
 	Scenario: TC-2840 Verification of options present in Simple Footer - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
-	Then editable clickable text legal is displayed
+	#Then editable clickable text legal is displayed
 	Then editable clickable text Terms and conditions is displayed
 	Then editable clickable text privacy and policy is displayed
 	Then editable clickable text site map is displayed
@@ -59,7 +65,6 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Scenario: TC-2848 Verification of hovering over a link - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
-	Then link legal should be underlined
 	Then link terms and conditions should be underlined
 	Then link privacy and policy should be underlined
 	Then link site map should be underlined
@@ -76,7 +81,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Scenario: TC-2849 Verification of options present in Simple Footer - Desktop Wide
 	Given pdp url is available
 	When pdp page is displayed for the product
-	Then editable clickable text legal is displayed
+	#sThen editable clickable text legal is displayed
 	Then editable clickable text Terms and conditions is displayed
 	Then editable clickable text privacy and policy is displayed
 	Then editable clickable text site map is displayed
@@ -93,6 +98,49 @@ Feature: OCCP-1030 Footer : Simple Footer
 	When pdp page is displayed for the product
 	And in footer access and click on text and conditions
 	Then user navigate to the page where detailed terms and conditions information is displayed
+	
+	@RegressionTest @WebView @WideScreen
+	Scenario:  TC-2843 Verification of clicking of text "Privacy Policy" - Desktop
+	Given pdp url is available
+	When pdp page is displayed for the product
+	Then editable clickable text privacy and policy is displayed
+	And click on privacy policy
+	Then user navigate on privacy policy page where detailed privacy policy information is displayed
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2845 Verification of clicking of text "Accessibility" - Desktop
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And user clicks on legal 'plus' section
+	And in simple footer access and click on accessibility
+	Then user should be navigated to the page where detailed accessibility information is displayed
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2835 Verification of clicking of text "Site Map" - Mobile
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And user clicks on legal 'plus' section
+	And in simple footer and click on site map
+	Then user is navigate on site map page where detailed site map information is displayed
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2834 Verification of clicking of text "Privacy Policy" - Mobile
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And user clicks on legal 'plus' section
+	And click on privacy policy
+	Then user navigate on privacy policy page where detailed privacy policy information is displayed
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2833 Verification of clicking of text "Terms & Conditions" - Mobile
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And user clicks on legal 'plus' section
+	And in footer access and click on text and conditions
+	Then user navigate to the page where detailed terms and conditions information is displayed
+	
+	
+	
 	
 	
 

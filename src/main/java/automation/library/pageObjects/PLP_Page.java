@@ -400,6 +400,7 @@ public class PLP_Page extends PageObject {
 	
 	/** This function is verify that 'selected product variant' is displayed */
 	public void displaySelectedProductVariant() throws Exception {
+		Log.message("Class:- " + $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Selected_Product_Variant()), "class"), true);
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Selected_Product_Variant()));
 	}
 	

@@ -103,6 +103,29 @@ public class PageObject {
 		return element;
 	}
 
+	
+	/** enter data function */
+	public void $enterDataFindElement(By by, String data) throws Exception {
+
+		WebElement element = driver.findElement(by);
+		Log.message("Data" + data, true);
+		element.sendKeys(data);
+	}
+	
+	/** click on element */
+	public void $clickFindElement(By by) throws Exception {
+
+		WebElement element = driver.findElement(by);
+		element.click();
+	}
+	
+	/** display element */
+	public void $displayFindElement(By by) throws Exception {
+
+		WebElement element = driver.findElement(by);
+		element.isDisplayed();
+	}
+	
 	/** return Element list using locator */
 	public List<Element> $$(Loc type, String locator) {
 		WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());

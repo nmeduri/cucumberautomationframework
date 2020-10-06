@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * This file create driver of chrome (Headless)
  */
-public class ChromeDriver_Headless_Manager  extends DriverManager{
+public class Headless_Chrome_Driver_Manager  extends DriverManager{
 
 	//@Override
 	public void createDriver() {

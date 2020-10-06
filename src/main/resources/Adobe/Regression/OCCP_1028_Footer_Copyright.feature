@@ -60,6 +60,20 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then footer is displayed
 	Then copy right information should be displayed on the footer
 	
+	@RegressionTest @WebView @WideScreen
+	Scenario: TC-2795, TC-2857 Verification of hover over a link - Desktop 
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And in footer hover on any link on footer
+	
+	#@RegressionTest @MobileView @TableView @SmokeTest
+	Scenario: TC-2839 Verification of hover over a link - Desktop 
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And user clicks on legal 'plus' section
+	And in footerhover on any link on footer
+	
+	
 	
 	
 

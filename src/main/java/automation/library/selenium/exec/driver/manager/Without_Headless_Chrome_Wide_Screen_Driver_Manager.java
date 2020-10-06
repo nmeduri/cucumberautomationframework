@@ -12,20 +12,23 @@ import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 /**
- * This file create driver for chrome (Mobile)
+ * This file create driver of chrome (Wide Screen)
  */
 
-public class IPadChromeDriverManager  extends DriverManager{
+public class Without_Headless_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 
 	//@Override
 	public void createDriver() {
-		
+		Map<String, Object> prefsMap = new HashMap<String, Object>();
+		prefsMap.put("profile.default_content_settings.popups", 0);
+		  prefsMap.put("download.default_directory", System.getProperty("user.dir"));
+		  
+		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("prefs", prefsMap);
 		WebDriverManager.chromedriver().setup();
-		Map<String, String> mobileEmulation = new HashMap<>();
-		mobileEmulation.put("deviceName", "iPad");
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-		driver = new ChromeDriver(chromeOptions);
+		options.addArguments("window-size=2560x3500");
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
 	}
 
 	//@Override

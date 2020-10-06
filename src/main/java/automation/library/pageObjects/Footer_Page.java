@@ -218,7 +218,9 @@ public class Footer_Page extends PageObject {
 	public void clickOnAccessibility() throws Exception {
 		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()), "href");
 		configuration.setProperty("urlAccessibility", url);
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()));
+		Log.message("url:- " + url, true);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()), 3);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility())));
 	}
 
 	/** This function is verify that clickable text link 'Order Status' is displayed */
@@ -457,27 +459,33 @@ public class Footer_Page extends PageObject {
 	
 	/** This function is verify that Link is successfully navigate on Accessibility */
 	public void verifyLinkNavigateOnAccessibility() throws Exception {
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		String expectedUrl = (java.lang.String) configuration.getProperty("urlAccessibility");
 		Log.message("Expected Url:- " + expectedUrl, true);
 		String actualUrl = PageObject.getDriver().getCurrentUrl();
 		Log.message("Actual Url:- " + actualUrl, true);
 		Assert.assertEquals(expectedUrl, actualUrl);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 	}
 	
 	/** This function click on terms and conditions */
 	public void clickOnTermsAndConditions() throws Exception {
 		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Footer()), "href");
 		configuration.setProperty("urlTermsAndCondtions", url);
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Footer())); 
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Footer())));
 	}
 	
 	/** This function is verify that Link is successfully navigate on Terms and Conditions */
 	public void verifyLinkNavigateOnTermsAndConditions() throws Exception {
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		String expectedUrl = (java.lang.String) configuration.getProperty("urlTermsAndCondtions");
 		Log.message("Expected Url:- " + expectedUrl, true);
 		String actualUrl = PageObject.getDriver().getCurrentUrl();
 		Log.message("Actual Url:- " + actualUrl, true);
 		Assert.assertEquals(expectedUrl, actualUrl);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 	}
 	
 	/** This function click on legal */
@@ -554,6 +562,68 @@ public class Footer_Page extends PageObject {
 	/** This function is to verify that Legal "+" button is displayed */
 	public void displayLegalPlusButton() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Plus_Button()));
+	}
+	
+	/** This function click on privacy policy */
+	public void clickPrivacyPolicy() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link()), "href");
+		configuration.setProperty("privacyPolicyUrl", url);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link())));
+	}
+	
+	/** This function is verify that privacy link is successfully navigate on Privacy Policy Link */
+	public void verifyLinkNavigateOnPrivacyPolicy() throws Exception {
+		String expectedUrl = (java.lang.String) configuration.getProperty("privacyPolicyUrl");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+	}
+	
+	/** This function click on site map */
+	public void clickSiteMap() throws Exception {
+		configuration.setProperty("urlSiteMap", $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_SiteMap_Link()), "href"));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_SiteMap_Link())));
+	}
+	
+	/** This function is verify that Link is successfully navigate on Site Map */
+	public void verifyLinkNavigateOnSiteMap() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		String expectedUrl = (java.lang.String) configuration.getProperty("urlSiteMap");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
+	
+	/** This function is verify that all links are underlined on hover */
+	public void verifyUnderlinkeOnAnyLink() throws Exception {
+		
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_All_Footer_Links()));
+		Log.message("Size:-  " + li.size(), true);
+		for(int i=0; i<li.size(); i++) {
+			$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tire_Logo()));
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover(li.get(i));
+			li.get(i).isDisplayed();
+			String decorationValue = li.get(i).getCssValue("text-decoration");
+			Log.message("Value:- " + decorationValue, true);
+			 Assert.assertTrue(decorationValue.contains("underline"));
+		}
+		
+	}
+	
+	/** This function is verify that all links are underlined on hover */
+	public void verifyUnderlinkeOnAnyLinkOnMobile() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions()), "text-decoration");
+		String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions()), "href");
+		Log.message("value"+ value, true);
+	    Assert.assertTrue(value.contains("underline"));
+	    Assert.assertFalse(href.equals(""));
+		
 	}
 	
 }

@@ -31,7 +31,7 @@ public class Footer_PageLocator {
 	String returnsAndExchanges = Property.getProperty(Constant.OR_FILE, "returnsAndExchanges");
 	String recyclingInformation = Property.getProperty(Constant.OR_FILE, "recyclingInformation");
 	String contactUs = Property.getProperty(Constant.OR_FILE, "contactUs");
-	String storeLocator = Property.getProperty(Constant.OR_FILE, "storeLocator");
+	String storeLocatorFooter = Property.getProperty(Constant.OR_FILE, "storeLocatorFooter");
 	String productRecalls = Property.getProperty(Constant.OR_FILE, "productRecalls");
 	String safetyDataSheets = Property.getProperty(Constant.OR_FILE, "safetyDataSheets");
 	String canadianTiresFinancialServices = Property.getProperty(Constant.OR_FILE, "canadianTiresFinancialServices");
@@ -67,6 +67,7 @@ public class Footer_PageLocator {
 	String viewMoreNotDisplay = Property.getProperty(Constant.OR_FILE, "viewMoreNotDisplay");
 	String footerLink = Property.getProperty(Constant.OR_FILE, "footerLink");
 	String copyRightInformation = Property.getProperty(Constant.OR_FILE, "copyRightInformation");
+	String allFooterLinks = Property.getProperty(Constant.OR_FILE, "allFooterLinks");
 	
 	/**
 	 * gets Locator - Legal Disclaimer
@@ -168,7 +169,6 @@ public class Footer_PageLocator {
 	}
 	
 	/**
-<<<<<<< HEAD
 	 * gets Locator - Custom Support Text
 	 * 
 	 */
@@ -261,7 +261,7 @@ public class Footer_PageLocator {
 	 */
 	
 	public String get_Store_Locator() {
-		return storeLocator;
+		return storeLocatorFooter;
 	}
 	
 	/**
@@ -565,6 +565,14 @@ public class Footer_PageLocator {
 	 */
 	public String get_Copy_Right_Information() {
 		return copyRightInformation;
+	}
+	
+	/**
+	 * gets Locator - Footer All links
+	 * 
+	 */
+	public String get_All_Footer_Links() {
+		return allFooterLinks;
 	}
  }
 

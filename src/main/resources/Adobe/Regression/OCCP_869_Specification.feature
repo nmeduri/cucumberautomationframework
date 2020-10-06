@@ -40,11 +40,11 @@ Feature: OCCP-869 PDP Specifications
     And the section title specifications is displayed
     Then verify the first 8 specifications are displayed on the PDP
     Then verify the view more specifications hyperlink is displayed
-    And click on view more specifications hyperlink
+    And click on viewmore specifications hyperlink
     Then verify the remaining list of the specifications displays on the pdp
     Then view more specifications is not displayed any more
     Then view less specifications is displayed
-    And click on view less specifications hyperlink
+    And click on viewless specifications hyperlink
     Then verify the first 8 specifications are displayed on the PDP
     Then verify the view more specifications hyperlink is displayed
     And view less specifications is not displayed

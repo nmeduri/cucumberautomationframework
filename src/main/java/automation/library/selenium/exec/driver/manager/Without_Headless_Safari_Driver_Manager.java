@@ -5,23 +5,20 @@ import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
 
 /**
  * This file create driver for Firefox
  */
 
-public class HeadlessFirefoxDriverManager extends DriverManager {
+public class Without_Headless_Safari_Driver_Manager extends DriverManager {
      
 	private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
 		    //@Override
 		    public void createDriver() {
-		    	FirefoxOptions options = new FirefoxOptions();
-		        options.setHeadless(true);
-		        
-		        //pass the options parameter in the Firefox driver declaration
-		        WebDriverManager.firefoxdriver().setup();
-		         driver = new FirefoxDriver(options);
+		    	System.setProperty("webdriver.safari.driver", "SafariDriver.safariextz");
+				driver = new SafariDriver();
+				driver.manage().window().maximize();
 		    }
 	
 

@@ -15,16 +15,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver for chrome (Mobile)
  */
 
-public class IPadHeadlessChromeDriverManager  extends DriverManager{
+public class Without_Headless_Chrome_Mobile_Driver_Manager  extends DriverManager{
 
 	//@Override
 	public void createDriver() {
 		
 		WebDriverManager.chromedriver().setup();
 		Map<String, String> mobileEmulation = new HashMap<>();
-		mobileEmulation.put("deviceName", "iPad");
+		mobileEmulation.put("deviceName", "Nexus 5");
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("headless");
 		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 		driver = new ChromeDriver(chromeOptions);
 	}

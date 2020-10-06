@@ -18,7 +18,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver of Chrome (Sauce Labs)
  */
 
-public class Tablet_Chrome_Sauce_Lab_DriverManager  extends DriverManager{
+public class Sauce_Lab_Chrome_Tablet_Driver_Manager  extends DriverManager{
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");
 	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
 	//@Override

@@ -14,23 +14,22 @@ import automation.library.logdetail.Log;
 import automation.library.managers.DriverManager;
 import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 /**
- * This file create driver of chrome (Wide - Sauce Labs)
+ * This file create driver of chrome (Web - Sauce Labs)
  */
 
-public class Wide_Screen_Sauce_Lab_DriverManager  extends DriverManager{
+public class Sauce_Lab_Edge_Driver_Manager  extends DriverManager{
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");
 	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
 	//@Override
 	public void createDriver() {
 		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
-		DesiredCapabilities caps12 = DesiredCapabilities.chrome();
-		caps12.setCapability("platform", "Windows 10");
-		caps12.setCapability("version", "latest");
-		caps12.setCapability("screenResolution", "1280x1024");
+		DesiredCapabilities caps = DesiredCapabilities.edge();
+		caps.setCapability("platform", "Windows 10");
+		caps.setCapability("version", "latest");
+		caps.setCapability("screenResolution", "800x600");
 		try {
-			driver = new RemoteWebDriver(new URL(URL), caps12);
+			driver = new RemoteWebDriver(new URL(URL), caps);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

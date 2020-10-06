@@ -103,5 +103,10 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     public void user_is_navigated_to_passowrd_reset_confirmation_screen() throws Exception {
     	testContext.getPageObjectManager().getResetPasswordPage().displayResetPasswordScreen();
     }
+    
+    @And("user click buton join now")
+    public void user_click_button_join_now() throws Exception {
+    	testContext.getPageObjectManager().getResetPasswordPage().clickJoinNowButton();
+    }
  
 }

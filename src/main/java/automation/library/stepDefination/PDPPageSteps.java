@@ -261,7 +261,7 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().displayViewMoreSpecifications();
 	}
 	
-	@And("click on view more specifications hyperlink")
+	@And("click on viewmore specifications hyperlink")
 	public void click_on_view_more_specifications_hyper_link() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().clickViewMoreSpecifications();
 	}
@@ -281,7 +281,7 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage().displayViewLessSpecifications();
 	}
 	
-	@And("click on view less specifications hyperlink")
+	@And("click on viewless specifications hyperlink")
 	public void click_on_view_less_specifications_hyper_link() throws Exception {
 		testContext.getPageObjectManager().getPDPPage().clickViewLessSpecifications();
 	}
