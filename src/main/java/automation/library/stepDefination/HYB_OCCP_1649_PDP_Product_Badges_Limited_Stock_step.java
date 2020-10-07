@@ -12,7 +12,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
-
+/**
+ * This file contains the scenario of user stories OCCP-1649
+ */
 public class HYB_OCCP_1649_PDP_Product_Badges_Limited_Stock_step extends BaseStep{
 
 	RequestSpecification request;

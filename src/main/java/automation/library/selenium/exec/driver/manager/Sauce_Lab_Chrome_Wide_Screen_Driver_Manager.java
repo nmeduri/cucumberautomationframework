@@ -22,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Sauce_Lab_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");
 	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
-	//@Override
+	
 	public void createDriver() {
 		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 		DesiredCapabilities caps12 = DesiredCapabilities.chrome();
@@ -36,12 +36,6 @@ public class Sauce_Lab_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 			e.printStackTrace();
 		}
 		
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

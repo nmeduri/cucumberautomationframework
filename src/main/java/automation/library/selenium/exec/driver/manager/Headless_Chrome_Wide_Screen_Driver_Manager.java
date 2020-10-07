@@ -15,7 +15,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Headless_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 
-	//@Override
 	public void createDriver() {
 		ChromeOptions options = new ChromeOptions();
 		Log.message("Head less", true);
@@ -25,12 +24,6 @@ public class Headless_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

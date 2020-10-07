@@ -16,7 +16,7 @@ import automation.library.managers.DriverManager;
 public class Sauce_Lab_Safari_Driver_Manager  extends DriverManager{
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");
 	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
-	//@Override
+
 	public void createDriver() {
 		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 		MutableCapabilities sauceOptions = new MutableCapabilities();
@@ -35,10 +35,5 @@ public class Sauce_Lab_Safari_Driver_Manager  extends DriverManager{
 		
 	}
 
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

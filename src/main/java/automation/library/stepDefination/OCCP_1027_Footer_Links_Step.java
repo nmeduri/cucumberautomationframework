@@ -22,7 +22,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-
+/**
+ * This file contains the scenario of user stories OCCP-1027
+ */
 public class OCCP_1027_Footer_Links_Step extends BaseClass {
 
 	Footer_Page footerPage;

@@ -1,6 +1,6 @@
 Feature: OCCP-1655 PDP: Product Badges
 
-	Description: To test the ADOBE Test Cases for the story OCCP-1576
+	Description: To test the ADOBE Test Cases for the story OCCP-1655
 
     @RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-369 Verify the In-Store Only badge remains displayed when user selects a product variant 

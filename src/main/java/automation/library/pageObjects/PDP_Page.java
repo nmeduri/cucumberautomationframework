@@ -596,9 +596,9 @@ public class PDP_Page extends PageObject {
 
    /** select product */
 	public void selectProduct() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Pink_Color()));
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Sweet_Water()));
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Size_Seven()));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Pink_Color())));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Sweet_Water())));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Size_Seven())));
 	}
 	
 	/** This function is verify that message 'Item added to wish list' is displayed */
@@ -619,6 +619,7 @@ public class PDP_Page extends PageObject {
 	/** This function is verify that wish list icon color */
 	public void verifyWishListIconColor() throws Exception {
 		   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishList_Icon()), "background-color"); 
+		   Log.message("Color:- " + colorValue, true);
 		   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#000000", colorValue);
 	   }
 	
@@ -634,129 +635,184 @@ public class PDP_Page extends PageObject {
 	}
 	
 	
-	
+	/** This function is verify that Pencil Banner is displayed */
 	public void display_PencilBanner() throws Exception {
-
-		//$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PencilBanner()));
 		Assert.assertTrue($display(
 				$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PencilBanner())));
 	}
+	/** This function is verify that Account link is displayed*/
 	public void display_AccountLink() throws Exception {
-		//DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Account_link()));
 	}
 	
+	/** This function is verify that Preferences Options is displayed*/
 	public void display_PreferencesOption() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PreferencesOption()));
 	}
+	
+	/** This function is verify that Wish list option is displayed*/
 	public void display_WishListOption() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishlistOption()));
 	}
+	
+	/** This function is verify that Personal Info is displayed*/
 	public void display_PersonalInfoOption() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PersonalInfoOption()));
 	}
+	
+	/** This function is verify that Order History is displayed */
 	public void display_OrderHistory() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_OrderHistory()));
 	}
+	
+	/** This function is verify that Payment Info is displayed */
 	public void display_PaymentInfo() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PaymentInfo()));
 	}
+	
+	/** This function is verify that Address is displayed */
 	public void display_Address() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Address()));
 	}
+	
+	/** This function is verify that Reward is displayed */
 	public void display_Reward() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Reward()));
 	}
+	
+	/** This function is verify that Preference is displayed */
 	public void display_Preference() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Preference()));
 	}
+	
+	/** This function is verify that Made for Life is displayed */
 	public void display_MadeForLife() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_MadeForLifeText()));
 	}
+	
+	/** This function is verify that customer service is displayed */
 	public void display_CustomerServicePage() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CustomerService_Page()));
 	}
+	
+	/** This function is verify that credit offered is displayed */
 	public void display_CreditOffered() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CreditOfferedText()));
 	}
+	
+	/** This function is verify that customer service is displayed */
 	public void display_CustomerService() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CustomerService()));
 	}
+	
+	/** This function clicks on customer service */
 	public void click_CustomerService() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_CustomerService()));
 	}
+	
+	/** This function is verify that Language is displayed */
 	public void display_Language() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Language()));
 	}
+	
+	/** This function click on Language */
 	public void Click_Language() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Language()));
 	}
+	
+	/** This function click on Account Link */
 	public void Click_AccountLink() throws Exception {
 		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Account_link()));
 	}
+	
+	/** This function click on Preference Option */
 	public void Click_PreferencesOption() throws Exception {
-Thread.sleep(2000);
+     Thread.sleep(2000);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PreferencesOption()));
 	}
+	
+	/** This function click on wishlist Option */
 	public void Click_WishListOption() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_WishlistOption()));
 	}
+	
+	/** This function click on Personal Info */
 	public void Click_PersonalInfoOption() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PersonalInfoOption()));
 	}
+	
+	/** This function click on order history */
 	public void Click_OrderHistory() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_OrderHistory()));
 	}
+	
+	/** This function click on payment info */
 	public void Click_PaymentInfo() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_PaymentInfo()));
 	}
+	
+	/** This function click on address */
 	public void Click_Address() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Address()));
 	}
+	
+	/** This function click on reward */
 	public void Click_Reward() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Reward()));
 	}
+	
+	/** This function click on Preference */
 	public void Click_Preference() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Preference()));
 	}
+	
+	/** This function is verify that 'Sign In' is displayed */
 	public void display_SignIn() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignInOption()));
 	}
+	
+	/** This function is verify that registration is displayed */
 	public void display_Registration() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_RegistrationOption()));
 	}
+	
+	/** This function click on hi link */
 	public void Click_HiLink() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_HiLink()));
 	}
+	
+	/** This function is verify that sign out is displayed */
 	public void display_SignOut() throws Exception {
 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignOutOption()));
 	}
+	
+	/** This function click on sign out */
 	public void click_SignOut() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignOutOption()));

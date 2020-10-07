@@ -15,16 +15,16 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     Then plp page is visible in list view
     And product card displays the product card title
 	
-   @RegressionTest @WebView @WideScreen @MobileView @TabletView
+    @RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-161 Verify the system doesn't display the ratings and review section on PLP when the customer rating is 0 for a given product
 	Given plp url is available
     When plp is displayed
     And scroll up to page
     And click on sort by option 
-   And Select sort option price high to low
-   And scroll up to page
-   And scroll up to page
-   Then rating and review section should not be displayed if customer rating is zero 
+    And Select sort option price high to low
+    And scroll up to page
+    And scroll up to page
+    Then rating and review section should not be displayed if customer rating is zero 
     
     @RegressionTest @MobileView @TabletView
     Scenario: TC-156 Verify the product card displays the product title on PLP (Mobile)

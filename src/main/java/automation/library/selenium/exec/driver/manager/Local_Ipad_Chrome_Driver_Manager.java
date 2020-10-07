@@ -15,10 +15,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver for chrome (Mobile)
  */
 
-public class Without_Headless_Ipad_Chrome_Driver_Manager  extends DriverManager{
 
-	//@Override
-	public void createDriver() {
+public class Local_Ipad_Chrome_Driver_Manager  extends DriverManager{
+	
+public void createDriver() {
 		
 		WebDriverManager.chromedriver().setup();
 		Map<String, String> mobileEmulation = new HashMap<>();
@@ -26,12 +26,6 @@ public class Without_Headless_Ipad_Chrome_Driver_Manager  extends DriverManager{
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 		driver = new ChromeDriver(chromeOptions);
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

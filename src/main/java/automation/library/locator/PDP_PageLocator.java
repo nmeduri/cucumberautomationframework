@@ -617,61 +617,156 @@ public class PDP_PageLocator {
 		return defaultStateWishListIcon;
 	}
 	
+	/**
+	 * gets Locator - Pencil Banner
+	 * 
+	 */
+	
 	public String get_PencilBanner() {
 		return PencilBanner;
 	}
+	
+	/**
+	 * gets Locator - Account Link
+	 * 
+	 */
 	public String get_Account_link() {
 		return AccountLink;
 	}
 	
+	/**
+	 * gets Locator - Wishlist Icon (Default State)
+	 * 
+	 */
+	
 	public String get_PreferencesOption() {
 		return PreferencesOption;
 	}
+	
+	/**
+	 * gets Locator - Wishlist Icon
+	 * 
+	 */
 	public String get_WishlistOption() {
 		return WishListOption;
 	}
+	
+	/**
+	 * gets Locator - Peresonal Info
+	 * 
+	 */
 	public String get_PersonalInfoOption() {
 		return PersonalInfoOption;
 	}
+	
+	/**
+	 * gets Locator - Order History
+	 * 
+	 */
 	public String get_OrderHistory() {
 		return OrderHistory;
 	}
+	
+	/**
+	 * gets Locator - Payment Info
+	 * 
+	 */
 	public String get_PaymentInfo() {
 		return PaymentInfo;
 	}
+	
+	/**
+	 * gets Locator - Reward
+	 * 
+	 */
 	public String get_Reward() {
 		return Reward;
 	}
+	
+	/**
+	 * gets Locator - Address
+	 * 
+	 */
 	public String get_Address() {
 		return Address;
 	}
+	
+	/**
+	 * gets Locator - Preference
+	 * 
+	 */
 	public String get_Preference() {
 		return Preference;
 	}
+	
+	/**
+	 * gets Locator - Made for life
+	 * 
+	 */
 	public String get_MadeForLifeText() {
 		return MadeForLife;
 	}
+	
+	/**
+	 * gets Locator - Credit offered
+	 * 
+	 */
 	public String get_CreditOfferedText() {
 		return CreditOffered;
 	}
+	
+	/**
+	 * gets Locator - Customer Service
+	 * 
+	 */
 	public String get_CustomerService() {
 		return CustomerService;
 	}
+	
+	/**
+	 * gets Locator - Language
+	 * 
+	 */
 	public String get_Language() {
 		return Language;
 	}
+	
+	/**
+	 * gets Locator - Customer Service Page
+	 * 
+	 */
 	public String get_CustomerService_Page() {
 		return CustomerServicePage;
 	}	
+	
+	/**
+	 * gets Locator - Sign In Option
+	 * 
+	 */
 	public String get_SignInOption() {
 		return SignIn;
 	}
+	
+	/**
+	 * gets Locator - Registration Option
+	 * 
+	 */
 	public String get_RegistrationOption() {
 		return Registration;
 	}
+	
+	/**
+	 * gets Locator - Hi
+	 * 
+	 */
 	public String get_HiLink() {
 		return HiLink;
 	}
+	
+	/**
+	 * gets Locator - Sign Out
+	 * 
+	 */
 	public String get_SignOutOption() {
 		return SignOut;
 	}

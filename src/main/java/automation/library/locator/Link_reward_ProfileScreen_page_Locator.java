@@ -36,110 +36,244 @@ public class Link_reward_ProfileScreen_page_Locator {
     String InvalidLastnameError=Property.getProperty(Constant.OR_FILE, "InvalidLastnameError");
     String InvalidFirstnameError=Property.getProperty(Constant.OR_FILE, "InvalidFirstnameError");
 
+    /**
+	 * gets Locator - Triangle Reward
+	 * 
+	 */
 	public String getTriangleReward() {
 
 		return getTriangleReward;
 	}
+	
+	/**
+	 * gets Locator - First Name
+	 * 
+	 */
 	public String get_FirstName() {
 
 		return firstName;
 	}
+	
+	/**
+	 * gets Locator - Last Name
+	 * 
+	 */
 	public String get_LastName() {
 
 		return lastName;
 	}
+	
+	/**
+	 * gets Locator - Address
+	 * 
+	 */
 	public String get_address() {
 
 		return address;
 	}
+	
+	/**
+	 * gets Locator - City
+	 * 
+	 */
 	public String get_city() {
 
 		return city;
 	}
+	
+	/**
+	 * gets Locator - Province
+	 * 
+	 */
 	public String get_province() {
 
 		return province;
 	}
+	
+	/**
+	 * gets Locator - Postal Code
+	 * 
+	 */
 	public String get_PostalCode() {
 
 		return postalCode;
 	}
+	
+	/**
+	 * gets Locator - Phone Number
+	 * 
+	 */
 	public String get_phnNumber() {
 
 		return phnNumber;
 	}
+	
+	/**
+	 * gets Locator - Date of Birth
+	 * 
+	 */
 	public String get_Birth() {
 
 		return Birth;
 	}
+	
+	/**
+	 * gets Locator - Continue Button
+	 * 
+	 */
 	public String get_continuebtn() {
 
 		return continuebtn;
 	}
+	
+	/**
+	 * gets Locator - Cancel Button
+	 * 
+	 */
 	public String Get_cancel() {
 
 		return cancel;
 	}
+	
+	/**
+	 * gets Locator - YOB Error
+	 * 
+	 */
 	public String get_YOBerror() {
 
 		return YOBerror;
 	}
+	
+	/**
+	 * gets Locator - First Name Error
+	 * 
+	 */
 	public String get_FNError() {
 
 		return FNError;
 	}
+	
+	/**
+	 * gets Locator - Last Name Error
+	 * 
+	 */
 	public String get_LNError() {
 
 		return LNError;
 	}
+	
+	/**
+	 * gets Locator - Address Error
+	 * 
+	 */
 	public String get_addressError() {
 
 		return addressError;
 	}
+	
+	/**
+	 * gets Locator - City Error
+	 * 
+	 */
 	public String get_cityError() {
 
 		return cityError;
 	}
+	
+	/**
+	 * gets Locator - Postal Code Error
+	 * 
+	 */
 	public String get_PinError() {
 
 		return PinError;
 	}
+	
+	/**
+	 * gets Locator - Province Error
+	 * 
+	 */
 	public String get_provinceErr() {
 
 		return provinceErr;
 	}
+	
+	/**
+	 * gets Locator - Phone Number Error
+	 * 
+	 */
 	public String get_phnError() {
 
 		return phnError;
 	}
+	
+	/**
+	 * gets Locator - Province
+	 * 
+	 */
 	public String set_Province() {
 
 		return provinceValue;
 	}
+	
+	/**
+	 * gets Locator - Year
+	 * 
+	 */
 	public String set_Year() {
 
 		return yearOfBirthValue;
 	}
+	
+	/**
+	 * gets Locator - Month of Birth
+	 * 
+	 */
 	public String get_MonthOfBirth() {
 
 		return monthOfBirth;
 	}
+	
+	/**
+	 * gets Locator - Month of Birth value
+	 * 
+	 */
 	public String get_MOBValue() {
 
 		return monthValue;
 	}
+	
+	/**
+	 * gets Locator - Date of Birth
+	 * 
+	 */
 	public String get_DateOfBirth() {
 
 		return DOB;
 	}
+	
+	/**
+	 * gets Locator - Date of Birth Value
+	 * 
+	 */
 	public String get_DOBValue() {
 
 		return DOBValue;
 	}
+	
+	/**
+	 * gets Locator - Invalid First Name
+	 * 
+	 */
 	public String get_InvalidFN() {
 
 		return InvalidFirstnameError;
 	}
+	
+	/**
+	 * gets Locator - Invalid Last name
+	 * 
+	 */
 	public String get_InvalidLN() {
 
 		return InvalidLastnameError;

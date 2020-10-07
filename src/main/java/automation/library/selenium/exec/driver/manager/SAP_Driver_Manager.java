@@ -15,15 +15,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SAP_Driver_Manager  extends DriverManager{
 
-	//@Override
 	public void createDriver() {
 		
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

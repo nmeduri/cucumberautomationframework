@@ -32,7 +32,7 @@ Feature: OCCP-869 PDP Specifications
     And the specifications are displayed with title and values for each specification as individual rows
     And the specifications are less than 8 on the Desktop 
    
-    @RegressionTest @MobieView @WideScreen @WebView @TabletView
+    @RegressionTest @MobileView @WideScreen @WebView @TabletView
     Scenario: TC-103, TC-104, TC-1384 Verify product specifications are displayed on PDP for desktop (more than 8 specifications) 
     Given pdp url is available
     When pdp page is displayed for the product

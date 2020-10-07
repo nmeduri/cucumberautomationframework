@@ -10,7 +10,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And about us section is displayed
 	And legal section is displayed
 	
-	@RegressionTest @MobileView 
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2096 User views the links displayed on Footer-desktop/desktop wide
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -72,7 +72,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for accessibility is displayed
 	And clickable text link for pricing policy is displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2120, User views the "Customer Support " Section-Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -89,7 +89,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for product recalls is displayed
 	And clickable text link for safety data sheets is displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2122, User views the "Services & Solutions" Section-mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -107,7 +107,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for gift registry is displayed
 	
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2124, User views the "About Us" section-Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -123,7 +123,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for flyer sign up is displayed
 	And clickable text link for sustainability is displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2126, User views the "Legal" section- Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -137,7 +137,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for accessibility is displayed
 	And clickable text link for pricing policy is displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2121, User clicks on "-" on Customer Support section -Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -149,7 +149,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2123, User clicks on "-" on "Services & Solutions" Section-mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -161,7 +161,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2125, User clicks on "-" on "About Us" section-Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -173,7 +173,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 	
-	@RegressionTest @MobileView
+	@RegressionTest @TabletView @MobileView
 	Scenario: TC-2127, User clicks on "-" on "Legal" section-Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product

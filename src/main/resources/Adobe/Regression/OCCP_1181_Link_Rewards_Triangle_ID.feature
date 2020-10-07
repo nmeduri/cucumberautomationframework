@@ -1,5 +1,5 @@
 Feature: OCCP-1181 Link Rewards Triangle
-	Description: To test the ADOBE Test Cases for the story OCCP-1030
+	Description: To test the ADOBE Test Cases for the story OCCP-1181
 	
 	@RegressionTest @WebView @WideScreen @SmokeTest
 	Scenario: TC-2485 Verfiy displaying Rewards Terms&Conditions screen on Desktop

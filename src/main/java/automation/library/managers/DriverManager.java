@@ -20,8 +20,8 @@ import automation.library.cucumber.Constant;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.logdetail.Log;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
-import automation.library.selenium.exec.driver.manager.Without_Headless_Chrome_Driver_Manager;
-import automation.library.selenium.exec.driver.manager.Without_Headless_Firefox_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Local_Chrome_Driver_Manager;
+import automation.library.selenium.exec.driver.manager.Local_Firefox_Driver_Manager;
 import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 

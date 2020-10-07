@@ -1,7 +1,7 @@
 Feature: OCCP-1030 Footer : Simple Footer
 	Description: To test the ADOBE Test Cases for the story OCCP-1030
 	
-	@RegressionTest @WideScreen @MobileView
+	@RegressionTest @WideScreen @MobileView @TabletView
 	Scenario: TC-2856, TC-2838 Verification of clicking of text "View More" - Desktop Wide 
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -16,7 +16,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	When pdp page is displayed for the product
 	Then first three lines of the authored legal disclaimer text should be displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2837 Verification of Legal Disclaimer property - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -36,7 +36,6 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Scenario: TC-2840 Verification of options present in Simple Footer - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
-	#Then editable clickable text legal is displayed
 	Then editable clickable text Terms and conditions is displayed
 	Then editable clickable text privacy and policy is displayed
 	Then editable clickable text site map is displayed
@@ -107,32 +106,32 @@ Feature: OCCP-1030 Footer : Simple Footer
 	And click on privacy policy
 	Then user navigate on privacy policy page where detailed privacy policy information is displayed
 	
-	@RegressionTest @MobileView
-	Scenario: TC-2845 Verification of clicking of text "Accessibility" - Desktop
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-2845, TC-2863 Verification of clicking of text "Accessibility" 
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And user clicks on legal 'plus' section
 	And in simple footer access and click on accessibility
 	Then user should be navigated to the page where detailed accessibility information is displayed
 	
-	@RegressionTest @MobileView
-	Scenario: TC-2835 Verification of clicking of text "Site Map" - Mobile
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-2835, TC-2862 Verification of clicking of text "Site Map" - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And user clicks on legal 'plus' section
 	And in simple footer and click on site map
 	Then user is navigate on site map page where detailed site map information is displayed
 	
-	@RegressionTest @MobileView
-	Scenario: TC-2834 Verification of clicking of text "Privacy Policy" - Mobile
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-2834, TC-2861 Verification of clicking of text "Privacy Policy" - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And user clicks on legal 'plus' section
 	And click on privacy policy
 	Then user navigate on privacy policy page where detailed privacy policy information is displayed
 	
-	@RegressionTest @MobileView
-	Scenario: TC-2833 Verification of clicking of text "Terms & Conditions" - Mobile
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-2833, TC-2860 Verification of clicking of text "Terms & Conditions"
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And user clicks on legal 'plus' section

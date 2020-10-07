@@ -360,10 +360,12 @@ public class PageObjectManager {
 		return (getRewardsTermsAndConditionsPage == null) ? getRewardsTermsAndConditionsPage = new Rewards_Terms_Conditions_Page(driver) : getRewardsTermsAndConditionsPage;
 	}
 	
+	/** Returns Instance of Link Your Existing Triangle Rewards Card Page File */
 	public Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingTriangleRewardsCardPage() {
 		return (getLinkYourExistingRewardsPage == null) ? getLinkYourExistingRewardsPage = new Link_Your_Existing_Triangle_Rewards_Card_Page(driver) : getLinkYourExistingRewardsPage;
 	}
 	
+	/** Returns Instance of Link Your Existing Triangle Rewards Card Page Locator File */
 	public Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingTriangleRewardsAccountLocaoter() {
 		return (getLinkYourExistingRewardsLocator == null) ? getLinkYourExistingRewardsLocator = new Link_Your_Existing_Triangle_Rewards_Card_PageLocator() : getLinkYourExistingRewardsLocator; 
 	}

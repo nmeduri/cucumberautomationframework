@@ -15,9 +15,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver for chrome (Mobile)
  */
 
-public class Without_Headless_Chrome_Mobile_Driver_Manager  extends DriverManager{
 
-	//@Override
+public class Local_Chrome_Mobile_Driver_Manager  extends DriverManager{
+
 	public void createDriver() {
 		
 		WebDriverManager.chromedriver().setup();
@@ -26,12 +26,6 @@ public class Without_Headless_Chrome_Mobile_Driver_Manager  extends DriverManage
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 		driver = new ChromeDriver(chromeOptions);
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

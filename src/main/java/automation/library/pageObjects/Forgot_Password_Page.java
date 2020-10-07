@@ -75,6 +75,7 @@ public class Forgot_Password_Page extends PageObject {
 		Assert.assertEquals("", $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Email_Forgot_Password()), "value"));
 	}
 	
+	/** This function is verify that Resent Confirmation Page is displayed */
 	public void displayConfirmationResentMessage() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getForgotPasswordLocator().get_Verification_Password_Link()));
 	}

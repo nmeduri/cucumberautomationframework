@@ -14,7 +14,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.internal.support.FileReader;
-
+/**
+ * This file contains the scenario of user stories OCCP-3149
+ */
 public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 	Login_Page loginPage;
 
@@ -44,8 +46,10 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 	public void verify_ErrorMessage() throws Exception {
 		
 	}
+	
+	
 	@And ("do not enter mandatory fields and click on Continue button")
-public void ClickContinue_ErrorMessage() throws Exception {
+        public void ClickContinue_ErrorMessage() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage().cickContinueButton();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_YOBerror();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_phnError();

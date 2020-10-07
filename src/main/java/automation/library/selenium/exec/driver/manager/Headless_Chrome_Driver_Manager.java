@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class Headless_Chrome_Driver_Manager  extends DriverManager{
 
-	//@Override
+	
 	public void createDriver() {
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
@@ -22,12 +22,6 @@ public class Headless_Chrome_Driver_Manager  extends DriverManager{
 		options.addArguments("window-size=1200x600");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

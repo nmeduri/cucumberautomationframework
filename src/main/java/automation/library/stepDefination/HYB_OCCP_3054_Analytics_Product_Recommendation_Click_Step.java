@@ -12,7 +12,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
-
+/**
+ * This file contains the scenario of user stories OCCP-3054
+ */
 public class HYB_OCCP_3054_Analytics_Product_Recommendation_Click_Step extends BaseStep{
 	RequestSpecification request;
 

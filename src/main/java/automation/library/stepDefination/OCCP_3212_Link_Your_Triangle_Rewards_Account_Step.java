@@ -22,6 +22,10 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+/**
+ * This file contains the scenario of user stories OCCP-3212
+ */
+
 public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClass{
 	
        Login_Page loginPage;

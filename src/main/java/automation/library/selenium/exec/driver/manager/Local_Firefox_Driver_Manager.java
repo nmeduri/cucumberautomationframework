@@ -10,22 +10,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * This file create driver for Firefox
  */
 
-public class Without_Headless_Firefox_Driver_Manager extends DriverManager {
-     
-	private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
-		    //@Override
+
+public class Local_Firefox_Driver_Manager extends DriverManager {
+		    
+
 		    public void createDriver() {
 		    	WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
 				driver.manage().window().maximize();
 		    }
-	
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-		
-	}
     
     
 } 

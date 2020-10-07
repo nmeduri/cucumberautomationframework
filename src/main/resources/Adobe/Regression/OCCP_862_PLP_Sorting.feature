@@ -45,7 +45,6 @@ Feature: OCCP-862 PLP Sorting
     And select sorting option Newest Arrivals
     And user click on close button
 
-#Dinesh
     @RegressionTest @WebView @WideScreen 
 	Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
 	Given plp url is available

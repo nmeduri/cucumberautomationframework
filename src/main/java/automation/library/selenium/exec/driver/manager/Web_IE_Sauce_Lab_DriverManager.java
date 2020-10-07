@@ -31,16 +31,9 @@ public class Web_IE_Sauce_Lab_DriverManager  extends DriverManager{
 		try {
 			driver = new RemoteWebDriver(new URL(URL), caps);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

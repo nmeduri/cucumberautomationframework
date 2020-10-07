@@ -66,7 +66,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	When pdp page is displayed for the product
 	And in footer hover on any link on footer
 	
-	#@RegressionTest @MobileView @TableView @SmokeTest
+	#@RegressionTest @MobileView @TabletView
 	Scenario: TC-2839 Verification of hover over a link - Desktop 
 	Given pdp url is available
 	When pdp page is displayed for the product

@@ -2,7 +2,7 @@ Feature: OCCP_4416: Analytics - Product Recommendation Click
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-4416
 	
-				@RegressionTest
+			@RegressionTest
     		Scenario: TC-3110 HYB:OCCP-4444-OCCP-4416:Verify display of default colour in product details OCC API based on the display name
     		Given occ api is available
     		When user hits product details get method api

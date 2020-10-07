@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver of chrome (Headless)
  */
 
-public class Without_Headless_Chrome_Driver_Manager  extends DriverManager{
+public class Local_Chrome_Driver_Manager  extends DriverManager{
 
 	String fileDownloadPath =  Constant.BASE_PATH;
 	//@Override
@@ -31,12 +31,6 @@ public class Without_Headless_Chrome_Driver_Manager  extends DriverManager{
 		WebDriverManager.chromedriver().setup(); 
 		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
-	}
-
-	//@Override
-	public void updateResults(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

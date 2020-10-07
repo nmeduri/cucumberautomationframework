@@ -9,7 +9,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     And click the wishlist item
     Then an error message is displayed prompting user to select all variant first
     
-    @RegressionTest @WebView @MobileView @WideScreen @TabletView @SmokeTest
+    @RegressionTest @WebView @MobileView @WideScreen @TabletView 
 	Scenario: TC-279 Verify a guest user is able to add products to the wishlist
 	Given pdp url is available
     When pdp page is displayed for the product
@@ -18,7 +18,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     And click the wishlist item
     Then item is successfully added into wish list 
     
-    #@RegressionTest @WebView
+    #@RegressionTest @WebView @WideScreen
     Scenario: TC-280 Verify the behavior of a PDP when guest user clears browser data
     Given pdp url is available
     When pdp page is displayed for the product
@@ -33,18 +33,15 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     When pdp page is displayed for the product
     And scroll up to page
     And user select product
-    #And click the wishlist item
-    #Then item is successfully added into wish list 
-    #And user select product
     Then wishlist icon becomes active in red color
     
-    @RegressionTest @WebView @MobileView @WideScreen @TabletView
+    @RegressionTest @WebView @MobileView @WideScreen @TabletView 
     Scenario: TC-1399 Verify the default state of the wishlist icon is displayed when guest user has not added products to wishlist
     Given pdp url is available
     When pdp page is displayed for the product
     Then the default state of wishlist icon is displayed
     
-    @RegressionTest @WebView @MobileView @WideScreen @TabletView
+    @RegressionTest @WebView @MobileView @WideScreen @TabletView 
     Scenario: TC-1400 Verify the default state of the wishlist icon is displayed when guest user has not selected the variant previously added to the wishlist 
     Given pdp url is available
     When pdp page is displayed for the product

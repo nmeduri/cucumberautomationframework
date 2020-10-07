@@ -233,7 +233,7 @@ public class ConfigFileReader {
 		Log.message("Server Type:- " + serverType, true);
 		if (serverType == null || serverType.equals("saucelabs"))
 			return serverType;
-		else if (serverType == null || serverType.equals("without headless"))
+		else if (serverType == null || serverType.equals("local"))
 			return serverType;
 		else if (serverType == null || serverType.equals("headless"))
 			return serverType;

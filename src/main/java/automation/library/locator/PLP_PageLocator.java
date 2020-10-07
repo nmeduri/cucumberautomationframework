@@ -16,7 +16,7 @@ public class PLP_PageLocator {
 	String gridView =  Property.getProperty(Constant.OR_FILE, "gridView");
 	String productCardImage =  Property.getProperty(Constant.OR_FILE, "productCardImage");
 	String listViewButton = Property.getProperty(Constant.OR_FILE, "listViewButton");
-	String productCardTitle = Property.getProperty(Constant.OR_FILE, "productCardTitle");
+	String productCardTitle = Property.getProperty(Constant.OR_FILE, "productCardTitle").replace("=", ",");
 	String pricelowToHigh = Property.getProperty(Constant.OR_FILE, "pricelowToHigh");
 	String sortByOption = Property.getProperty(Constant.OR_FILE, "sortByOption");
 	String priceHighToLow = Property.getProperty(Constant.OR_FILE, "priceHighToLow");
