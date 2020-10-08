@@ -4,6 +4,7 @@ Feature: Health Check BVT
 
     @WebView @MobileView @WideScreen
     Scenario: TC-2586 Verify the warranty information is correctly displayed on the PDP
+
     Given open browser
     When pdp url is available
     When pdp page is displayed for the product

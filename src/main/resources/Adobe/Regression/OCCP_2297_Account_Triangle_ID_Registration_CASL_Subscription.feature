@@ -4,7 +4,6 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1417, TC-1418 Verify Email subscription is toggled off by default when user is registering with a new email on CASL subscription screen
-	Given open browser
 	When sign up url is available
 	When sign up page is displayed
 	And user enter email
@@ -56,10 +55,6 @@ Feature: OCCP-2297 Account/Triangle ID - Registration - CASL Subscription
 	Then user is able to click toggle CASL subscription button
 	And user click on toggle CASL subscription button
 	Then verify the CASL subscription is toggled off
-
-    @WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
 	
 	
 	

@@ -4,7 +4,6 @@ Feature: OCCP-1031 Header and Main Navigateion - Primary Navigation
 	
 	@RegressionTest @WebView
 	Scenario: TC-2804 Verification of display of Primary Navigation - Desktop 
-	Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then access the header and verify if primary navigation is present
@@ -12,7 +11,6 @@ Feature: OCCP-1031 Header and Main Navigateion - Primary Navigation
 	
 	@RegressionTest @WideScreen
 	Scenario: TC-2805 Verification of display of Primary Navigation - Desktop Wide 
-	Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then access the header and verify if primary navigation is present
@@ -31,10 +29,6 @@ Feature: OCCP-1031 Header and Main Navigateion - Primary Navigation
 	Then on clicking user should be redirected to configured page
 	And click on cart icon
 	Then on clicking user redirect to cart page
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
-	
+
 
 	

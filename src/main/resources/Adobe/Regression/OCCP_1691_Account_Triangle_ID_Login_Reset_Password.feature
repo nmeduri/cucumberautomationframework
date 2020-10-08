@@ -4,7 +4,6 @@ Feature: OCCP-1691 Account/Triangle ID - Login - Reset Password
 	
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-590 Verify an inline error message is displayed when user re-enters the password incorrectly in the field
-	Given open browser
 	When sign up url is available
 	When sign up page is displayed
 	Then user enter password
@@ -12,6 +11,3 @@ Feature: OCCP-1691 Account/Triangle ID - Login - Reset Password
 	And the system displays an inline error that passwords do not match
 	And the option to procced to the next screen is not selectable
 	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser

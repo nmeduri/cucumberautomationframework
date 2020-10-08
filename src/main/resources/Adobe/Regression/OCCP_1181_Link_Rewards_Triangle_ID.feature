@@ -1,9 +1,8 @@
 Feature: OCCP-1181 Link Rewards Triangle
 	Description: To test the ADOBE Test Cases for the story OCCP-1181
 	
-	@RegressionTest @WebView @WideScreen @SmokeTest
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2485 Verfiy displaying Rewards Terms&Conditions screen on Desktop
-	Given open browser
 	When login url is available
 	When enter detail email
 	And user enter password
@@ -78,9 +77,6 @@ Feature: OCCP-1181 Link Rewards Triangle
 	Then rewards terms and conditions should be displayed
 	And verify when click on cancel button
 	Then user should be navigate to the previous screen as complete your your profile screen
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
+
 
 	

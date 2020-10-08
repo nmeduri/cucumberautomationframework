@@ -5,7 +5,6 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-608 Verify the ability of a user to create new Triangle ID account
-	Given open browser
 	When sign up url is available
 	When sign up page is displayed
 	And user enter email
@@ -111,7 +110,3 @@ Feature: OCCP-1671 Account/Triangle ID - Registration Create New Account
 	And user enter invalid retype password
 	Then message password do not match is displayed
 	And the option to procced to the next screen is not selectable
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser

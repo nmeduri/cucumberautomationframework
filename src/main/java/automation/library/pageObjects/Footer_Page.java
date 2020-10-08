@@ -13,7 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Actions;import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -421,7 +421,7 @@ public class Footer_Page extends PageObject {
 	
 	/** This function is to verify that expanded subsection to links is displayed */
 	public void displaySubsectionLinks() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Expanded_Subsection_Links()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Expanded_Subsection_Links())), 10);
 	}
 	
 	/** This function click on Custom Support "+" button */
@@ -431,17 +431,17 @@ public class Footer_Page extends PageObject {
 	
 	/** This function click on Services & Solutions "+" button */
 	public void clickServicesAndSolutionPlusButton() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Services_And_Solutions_Plus_Button()));
+	    $click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Services_And_Solutions_Plus_Button())), 20);
 	}
 	
 	/** This function click on About Us "+" button */
 	public void clickAboutUsPlusButton() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Us_Plus_Button()));
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Us_Plus_Button())), 20);
 	}
 	
 	/** This function click on Legal "+" button */
 	public void clickLegalPlusButton() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Plus_Button()));
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Plus_Button())), 30);
 	}
 	
 	/** This function is to verify that minus sign is displayed */

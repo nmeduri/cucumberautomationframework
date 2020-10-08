@@ -58,7 +58,7 @@ public class PDP_PageLocator {
 	String selectedColor = Property.getProperty(Constant.OR_FILE, "selectedColor");
 	String sectedColorTitle = Property.getProperty(Constant.OR_FILE, "sectedColorTitle");
 	String specialBuy = Property.getProperty(Constant.OR_FILE, "specialBuy");
-	String colorVariant = Property.getProperty(Constant.OR_FILE, "containsClass") + "," + Property.getProperty(Constant.OR_FILE, "colorVariantPDP");
+	String colorVariant = Property.getProperty(Constant.OR_FILE, "colorVariantPDP").replace("=", ",");
 	String pinkColor = Property.getProperty(Constant.OR_FILE, "pinkColor");
 	String scentSweetWater = Property.getProperty(Constant.OR_FILE, "scentSweetWater");
 	String sizeSeven = Property.getProperty(Constant.OR_FILE, "sizeSeven");

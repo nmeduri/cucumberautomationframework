@@ -4,7 +4,6 @@ Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verificatio
 	
 	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-1428 Verify the ability of a user to resend verification email if required for account registration of Triangle ID 
-	Given open browser
 	When sign up url is available
 	When sign up page is displayed
 	And user enter email
@@ -25,7 +24,6 @@ Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verificatio
 	
 	@RegressionTest  @MobileView @TabletView
 	Scenario: TC-1428 Verify the ability of a user to resend verification email if required for account registration of Triangle ID 
-	Given open browser
 	When sign up url is available
 	When sign up page is displayed
 	And user enter email
@@ -43,9 +41,5 @@ Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verificatio
 	Then verificationemail is resent to the user
 	#And user click on previous mail
 	#And user is able to see click on here to verify email link
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
 	
 	

@@ -4,7 +4,6 @@ Feature: OCCP-1169 Account/Triangle ID - Login after email verification performe
 	
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-669, TC-670 Verify the ability of a user to navigate to the Forgot Password screen from in order to reset P/W if required
-	Given open browser
 	When login url is available
 	When login page is displayed
 	And user click on forgot password
@@ -43,10 +42,6 @@ Feature: OCCP-1169 Account/Triangle ID - Login after email verification performe
     When enter email detail
 	And user enter password
 	And user click on sign in button
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
 	
 	
 	

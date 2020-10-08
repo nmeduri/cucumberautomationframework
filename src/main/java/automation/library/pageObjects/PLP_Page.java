@@ -352,7 +352,9 @@ public class PLP_Page extends PageObject {
 		List<WebElement> primaryImage = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()));
 		List<Element> colorNumber = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Color_Number());
 		for(int i=0; i<colorNumber.size(); i++) {
+			
 			String[] color = $getText(colorNumber.get(i)).split(" ");	
+			Log.message("Color:- " + color[0], true);
 			if(Integer.parseInt(color[0]) > 6) {
 				$mouseHover(primaryImage.get(i));
 				String secondaryImage = $getAttributeValue(secondaryImageList.get(0), "src");
@@ -442,9 +444,9 @@ public class PLP_Page extends PageObject {
 	public void notClickableProductBrand() throws Exception {
        try {
    		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
-   		fail();
+   		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).display_PLP_Page();
        }catch(Exception e) {
-    	   
+    	   fail();
        }
 	}
 	

@@ -4,7 +4,6 @@ Feature: OCCP-1711 Login Forgot Password
 	
     @RegressionTest @WebView @WideScreen
 	Scenario: TC-635, TC-630 Verify the ability of a user to create a new account from 
-	Given open browser
 	When login url is available
 	When login url is available
 	When login page is displayed
@@ -55,7 +54,7 @@ Feature: OCCP-1711 Login Forgot Password
 	And user click on send button
 	Then user friendly inline error is displayed
 	
-	@RegressionTest @WebView @WideScreen @SmokeTest
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-631 Verify the ability of a user to get a confirmation for the password reset performed
 	Given login url is available
 	When login page is displayed
@@ -103,9 +102,5 @@ Feature: OCCP-1711 Login Forgot Password
 	When login page is displayed
 	And user click on forgot password
 	And forgot password page is displayed
-	
-	@WebView @WideScreen
-	Scenario: close browser
-	Given Close Browser
 	
 	

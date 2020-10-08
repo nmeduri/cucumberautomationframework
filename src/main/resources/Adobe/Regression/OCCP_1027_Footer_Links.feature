@@ -112,7 +112,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2124, User views the "About Us" section-Mobile
+	Scenario: TC-2124, User views the "About Us" section-Mobile	
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And about us section is displayed
@@ -188,8 +188,5 @@ Feature: OCCP-1027 Footer : Footer Links
 	And user clicks on custom support 'minus' section
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
-	
-	@WebView @WideScreen @MobileView @TabletView @closeBrowser
-	Scenario: close browser
-	Given Close Browser
+
 	

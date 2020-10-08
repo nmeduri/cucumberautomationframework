@@ -5,7 +5,6 @@ Feature: OCCP-3149 Link Rewards
     @Regression @MobileView  @TabletView
     Scenario: 
 	TC-2137,2141 Verify the Field level validations on the Complete Your Profile screen on Mobile 
-	Given open browser
 	When login url is available 
 	When enter email detail 
 	And user enter password 
@@ -28,8 +27,3 @@ Feature: OCCP-3149 Link Rewards
 	And verify clicks on continue button 
 	Then rewards terms and conditions should be displayed 
 	Then register card button is displayed on terms and conditions page
-	
-	@MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
-    

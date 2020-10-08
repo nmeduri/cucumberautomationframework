@@ -4,7 +4,6 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-1374 Verify the thumbnail truncation when more than 4 variants are available
-	Given open browser
 	When plp url is available
     When plp is displayed
     And scroll up to page
@@ -47,8 +46,4 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     And Select sort option price high to low
     And scroll up to page
     Then secondary image appears on hover and product card does not display any number of color
-    
-    @WebView @WideScreen
-	Scenario: close browser
-	Given Close Browser
 	

@@ -4,7 +4,6 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
 	   
     @RegressionTest @WebView @WideScreen
     Scenario: TC-105 Verify the product title is displayed on the PDP for a given product 
-    Given open browser
     When pdp url is available
     When pdp page is displayed for the product
     Then the product title is displayed on the product 
@@ -30,7 +29,6 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     
     @RegresionTest @MobileView @TabletView
     Scenario: TC-1307 Verify the product title is displayed on the PDP for a given product in Mobile  
-    Given open browser
     When pdp url is available
     When pdp page is displayed for the product
     Then the product title is displayed on the product   
@@ -72,8 +70,4 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     And product manual link is displayed
     And user is click on product manual link
     Then product manual pdf opens in new tab
-    
-    @WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
 	

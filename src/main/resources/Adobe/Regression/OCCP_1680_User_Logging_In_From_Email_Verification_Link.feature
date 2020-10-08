@@ -5,7 +5,6 @@ Feature: OCCP-1680 User logging in from Email Verification Link
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-1437 Verify the user is automatically logged in after clicking on the email confirmation link
-	Given open browser
 	When sign up url is available
 	Then sign up page is displayed
 	And user enter email
@@ -25,7 +24,6 @@ Feature: OCCP-1680 User logging in from Email Verification Link
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-1437 Verify the user is automatically logged in after clicking on the email confirmation link (Mobile)
-	Given open browser
 	When signup url is available on mobile
 	Then sign up page is displayed
 	And user enter email
@@ -41,9 +39,5 @@ Feature: OCCP-1680 User logging in from Email Verification Link
 	And user tap on verification email on mobile
 	And user click on here to verify email link
 	Then page your email has been verified displayed
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
 	
 	

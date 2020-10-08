@@ -3,7 +3,6 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2787, TC-2786 Verification of clicking of View More - Desktop Wide And Desktop
-	Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	And click on view more
@@ -18,7 +17,6 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2785, TC-2788 Verification of clicking of View More - Mobile 
-	Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	And click on view more
@@ -74,10 +72,6 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	When pdp page is displayed for the product
 	And user clicks on legal 'plus' section
 	And in footerhover on any link on footer
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
 	
 	
 	

@@ -4,7 +4,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 
     @RegressionTest @WebView @WideScreen 
 	Scenario: TC-2396, TC-2385 Verfiy the display of Link Cards screen when Card is Deactivated in Wide Desktop view
-	Given open browser
 	When login url is available
 	When enter email detail
 	And user enter password
@@ -110,7 +109,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2390 Verfiy the display of screen when Card is Deactivated in Mobile view
-	Given open browser
 	When login url is available
 	When enter email detail
 	And user enter password
@@ -182,8 +180,4 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then user should be able to enter the loyalty card number successfully which is deactivated
 	And user click on continue button
 	Then verify an error message appears informing that card is deactivated
-	And user is able to see the click link on screen	
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
+	And user is able to see the click link on screen

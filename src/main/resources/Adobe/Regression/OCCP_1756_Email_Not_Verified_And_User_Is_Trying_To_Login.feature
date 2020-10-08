@@ -4,7 +4,6 @@ Feature: OCCP-1756 Email not verified and User is trying to Login
 
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-640 Verify the user is prompted to perform email verification if the verification has not been done already
-	Given open browser
 	When sign up url is available
 	When sign up page is displayed
 	And user enter email
@@ -28,7 +27,6 @@ Feature: OCCP-1756 Email not verified and User is trying to Login
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-640 Verify the user is prompted to perform email verification if the verification has not been done already (Mobile)
-	Given open browser
 	When signup url is available on mobile
 	When sign up page is displayed
 	And user enter email
@@ -49,10 +47,6 @@ Feature: OCCP-1756 Email not verified and User is trying to Login
 	Then user enter detail in mailinator inbox
 	And user click on go button
 	Then user has received the verification email on mobile
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
 	
 	
 	

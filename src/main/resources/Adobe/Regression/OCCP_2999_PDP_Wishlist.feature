@@ -4,7 +4,6 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
 	
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario:  	TC-1401 Verify an error message is displayed prompting the user to select all variants when user clicks the wihslist icon
-	Given open browser
 	When pdp url is available
     When pdp page is displayed for the product
     And click the wishlist item
@@ -47,9 +46,5 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     Given pdp url is available
     When pdp page is displayed for the product
     Then the default state of wishlist icon is displayed
-    
-    @WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
     
     

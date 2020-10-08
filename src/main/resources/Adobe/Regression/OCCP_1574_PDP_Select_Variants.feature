@@ -4,7 +4,6 @@ Feature: OCCP-1574 PDP: Select Variant
 
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-328 Verify the display of the PDP when a product has multiple sizes available with no size guide 
-	Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then the swatch with sizes is displayed
@@ -22,7 +21,3 @@ Feature: OCCP-1574 PDP: Select Variant
 	And a default color is displayed
 	Then unavailabe size is displayed
 	And select one of the available size
-	
-	@WebView @WideScreen @MobileView @TabletView
-	Scenario: close browser
-	Given Close Browser
