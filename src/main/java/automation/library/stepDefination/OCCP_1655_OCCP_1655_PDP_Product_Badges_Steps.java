@@ -24,15 +24,15 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_1655_OCCP_1655_PDP_Product_Badges_Steps extends BaseClass {
-      PDP_Page pdpPage;
+     
 	public OCCP_1655_OCCP_1655_PDP_Product_Badges_Steps(TestContext context) throws Exception {
 		testContext = context;
-		pdpPage = testContext.getPageObjectManager().getPDPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Then("the in store only badge is applicable to all variants and remains displayed")
 	public void the_in_store_only_badge_is_applicable_to_all_varaiants_and_remains_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayInStoreBuyForAllVariant();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayInStoreBuyForAllVariant();
 	}
 }

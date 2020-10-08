@@ -4,8 +4,13 @@ Feature: OCCP-1579 PDP: Sticky Buy Box
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-566 Verify the Sticky Add to Cart is displayed when user scrolls down the buy box
-	Given pdp url is available
+	Given open browser
+	When pdp url is available
 	When pdp page is displayed for the product
 	When user scrolls down past the buy box
 	Then Sticky Add to Cart with product information must be displayed
+	
+	@WebView @WideScreen
+	Scenario: close browser
+	Given Close Browser
 	

@@ -62,7 +62,7 @@ public class PDP_Page extends PageObject {
 	/** This function naviget to PDP Page */
 	public void navigateTo_PDP_Page() throws Exception {
 
-		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
+		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 
 	}
 
@@ -736,7 +736,7 @@ public class PDP_Page extends PageObject {
 	
 	/** This function click on Account Link */
 	public void Click_AccountLink() throws Exception {
-		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
+		//DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Account_link()));
 	}
 	

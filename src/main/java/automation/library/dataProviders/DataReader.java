@@ -144,6 +144,19 @@ public class DataReader {
 	}
 	
 	/**
+	 * gets user detail
+	 * 
+	 */
+	public String get_Username_OCCP_1181() {
+		
+		String getUserName = Property.getProperty(Constant.DATA_FILE, "username_1181");
+		if(getUserName != null)
+			return getUserName;
+		else
+			throw new RuntimeException("User Data not specified in the Data file.");
+	}
+	
+	/**
 	 * gets Incorrect Re-Type Password Data
 	 * 
 	 */

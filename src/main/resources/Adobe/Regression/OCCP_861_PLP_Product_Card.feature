@@ -1,10 +1,12 @@
 Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
 
 	Description: To test the ADOBE Test Cases for the story OCCP-861
-       
+   
+	   
     @RegressionTest @WebView @WideScreen
     Scenario: TC-156 Verify the product card displays the product title on PLP 
-    Given plp url is available
+    Given open browser
+    When plp url is available
     When plp is displayed
     And scroll up to page
     Then plp page is visible in grid view
@@ -12,6 +14,20 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And scroll up to page
     And scroll up to page
     Then user clicks on list view button
+    Then plp page is visible in list view
+    And product card displays the product card title
+    
+    @RegressionTest @MobileView @TabletView
+    Scenario: TC-156 Verify the product card displays the product title on PLP (Mobile)
+    Given open browser
+    When plp url is available
+    When plp is displayed
+    And scroll up to page
+    Then plp page is visible in grid view
+    And product card displays the product card title
+    And scroll up to page
+    And scroll up to page
+    Then user click on list view button on mobile
     Then plp page is visible in list view
     And product card displays the product card title
 	
@@ -24,20 +40,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And Select sort option price high to low
     And scroll up to page
     And scroll up to page
-    Then rating and review section should not be displayed if customer rating is zero 
-    
-    @RegressionTest @MobileView @TabletView
-    Scenario: TC-156 Verify the product card displays the product title on PLP (Mobile)
-    Given plp url is available
-    When plp is displayed
-    And scroll up to page
-    Then plp page is visible in grid view
-    And product card displays the product card title
-    And scroll up to page
-    And scroll up to page
-    Then user click on list view button on mobile
-    Then plp page is visible in list view
-    And product card displays the product card title
+    Then rating and review section should not be displayed if customer rating is zero
     
     @RegressionTest @WebView @WideScreen
     Scenario: TC-163 Verify the product card in grid view displays the product secondary image on PLP on Desktop/Desktop wide
@@ -138,3 +141,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And scroll up to page
     And hovers on mobile in primary image area A
     Then secondary image is not displayed
+    
+    @WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser

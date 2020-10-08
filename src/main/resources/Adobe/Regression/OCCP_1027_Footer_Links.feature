@@ -1,9 +1,11 @@
 Feature: OCCP-1027 Footer : Footer Links
 	Description: To test the ADOBE Test Cases for the story OCCP-1027
 	
+	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2096, TC-2112 User views the links displayed on Footer-desktop/desktop wide
-	Given pdp url is available
+	Given open browser
+	When pdp url is available
 	When pdp page is displayed for the product
 	And customer support section is displayed
 	And services and solutions section is displayed
@@ -12,7 +14,8 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2096 User views the links displayed on Footer-desktop/desktop wide
-	Given pdp url is available
+	Given open browser
+	When pdp url is available
 	When pdp page is displayed for the product
 	Then collapsed headers are displayed with 'plus' sign
 	And customer support section is displayed
@@ -71,6 +74,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for site map is displayed
 	And clickable text link for accessibility is displayed
 	And clickable text link for pricing policy is displayed
+	
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2120, User views the "Customer Support " Section-Mobile
@@ -173,8 +177,8 @@ Feature: OCCP-1027 Footer : Footer Links
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 	
-	@RegressionTest @TabletView @MobileView
-	Scenario: TC-2127, User clicks on "-" on "Legal" section-Mobile
+	@RegressionTest @TabletView @MobileView 
+	Scenario: TC-2127, User clicks on "-" on "Legal" section-Mobile (close browser)
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And legal section is displayed
@@ -184,4 +188,8 @@ Feature: OCCP-1027 Footer : Footer Links
 	And user clicks on custom support 'minus' section
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
+	
+	@WebView @WideScreen @MobileView @TabletView @closeBrowser
+	Scenario: close browser
+	Given Close Browser
 	

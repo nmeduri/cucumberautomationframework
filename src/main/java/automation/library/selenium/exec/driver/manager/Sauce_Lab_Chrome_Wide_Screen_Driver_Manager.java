@@ -19,11 +19,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver of chrome (Wide - Sauce Labs)
  */
 
-public class Sauce_Lab_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
+public class Sauce_Lab_Chrome_Wide_Screen_Driver_Manager  {
 	public static String USERNAME = System.getenv("SAUCE_USERNAME");
 	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
+	static WebDriver driver;
 	
-	public void createDriver() {
+	public static WebDriver createDriver() {
 		String URL = "https://" + USERNAME + ":" + API_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 		DesiredCapabilities caps12 = DesiredCapabilities.chrome();
 		caps12.setCapability("platform", "Windows 10");
@@ -35,6 +36,7 @@ public class Sauce_Lab_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return driver;
 		
 	}
 

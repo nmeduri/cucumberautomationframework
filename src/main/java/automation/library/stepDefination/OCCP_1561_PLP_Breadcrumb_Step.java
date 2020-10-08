@@ -28,42 +28,42 @@ import cucumber.api.java.en.When;
 
 public class OCCP_1561_PLP_Breadcrumb_Step extends BaseClass {
 
-	PLP_Page plpPage;
+	
 	public OCCP_1561_PLP_Breadcrumb_Step(TestContext context) throws Exception {
 		testContext = context;
-		plpPage = testContext.getPageObjectManager().getPLPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Then("breadcrumb is displayed")
 	public void display_of_breadcrumb() throws Exception {
-		testContext.getPageObjectManager().getPLPPage().displayBreadcrumb();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displayBreadcrumb();
 	}
 
 	@And("breadcrumb is based on category hierarchy in Hybris")
 		public void breadcrumb_category_heirarchy() throws Exception {
-			testContext.getPageObjectManager().getPLPPage().verifyBreadcrumbsHeirarchy();
+			testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyBreadcrumbsHeirarchy();
 			
 	}
 	
 	@And("main root homepage is also displayed in the path")
 	public void homepage_is_displayed_in_breadcrumb_path() throws Exception {
-		testContext.getPageObjectManager().getPLPPage().verifyHomepageDisplayInBreadcrumb();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyHomepageDisplayInBreadcrumb();
 		}
 	
 	@Then("mobile breadcrumb is displayed")
 	public void display_of_mobile_breadcrumb() throws Exception {
-		testContext.getPageObjectManager().getPLPPage().displayMobileBreadcrumb();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displayMobileBreadcrumb();
 	}
 	
 	@And("mobile breadcrumb is based on category hierarchy in Hybris")
 	public void mobile_breadcrumb_category_heirarchy() throws Exception {
-		testContext.getPageObjectManager().getPLPPage().verifyBreadcrumbsHeirarchyInMobile();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyBreadcrumbsHeirarchyInMobile();
 	}
 	
 	@And("last breadcrumb is not clickable")
 	public void last_breadcrumb_is_not_clickable() throws Exception {
-		testContext.getPageObjectManager().getPLPPage().verifyLastBreadcrumbClickable();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyLastBreadcrumbClickable();
 		}
 }
 

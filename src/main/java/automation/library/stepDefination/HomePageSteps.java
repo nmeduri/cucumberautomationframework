@@ -7,6 +7,7 @@ import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
+import automation.library.selenium.base.BaseClass;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.Given;
@@ -17,28 +18,21 @@ import cucumber.api.java.en.When;
  * This file contains the scenario of the Home Page
  */
 
-public class HomePageSteps {
+public class HomePageSteps extends BaseClass {
 
-	
-	TestContext testContext;
-	HomePage homePage;
-	PageObjectManager pageObjectManager;
-	DriverFactory driverFactory;
-	ConfigFileReader configFileReader;
-
-	private WebDriver driver;
 
 	public HomePageSteps(TestContext context) throws Exception {
 		testContext = context;
-		
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
-		homePage =  testContext.getPageObjectManager().getHomePage();
 	}
 	
 	@Given("^Adobe author url is up$")
 	public void adobe_author_url_is_up() throws Exception {
 		
-		homePage.navigateTo_HomePage();
+		driver = driverFactory.getDriver();
+		pageObjectManager = new PageObjectManager();
+		testContext.getPageObjectManager().getHomePage(driver).navigateTo_HomePage();
 		
 	}
 	

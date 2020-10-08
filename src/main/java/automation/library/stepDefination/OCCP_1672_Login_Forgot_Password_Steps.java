@@ -28,7 +28,7 @@ public class OCCP_1672_Login_Forgot_Password_Steps extends BaseClass{
 
 	public OCCP_1672_Login_Forgot_Password_Steps(TestContext context) throws Exception {
 		testContext = context;
-		
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	

@@ -51,6 +51,10 @@ public class PageObject {
 		Log.debug("obtaining the driver object for current thread");
 		return driver;
 	}
+	
+	public void closeDriver() {
+		driver.close();
+	}
 
 	/** return locate element */
 	public Element $(By by) throws Exception {
@@ -287,7 +291,7 @@ public class PageObject {
 	
 	/** scroll up by coordinates */
 	public void scrollUpByCoordinates() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) PageObject.getDriver();
 		js.executeScript("window.scrollBy(0,-5000)", "");
 	}
 

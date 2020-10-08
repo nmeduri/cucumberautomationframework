@@ -13,9 +13,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver of chrome (Headless - Wide Screen)
  */
 
-public class Headless_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
-
-	public void createDriver() {
+public class Headless_Chrome_Wide_Screen_Driver_Manager {
+    static WebDriver driver;
+	public static WebDriver createDriver() {
 		ChromeOptions options = new ChromeOptions();
 		Log.message("Head less", true);
 		WebDriverManager.chromedriver().setup();
@@ -23,7 +23,7 @@ public class Headless_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 		options.addArguments("window-size=1200x600");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		
+		return driver;
 	}
 
 }

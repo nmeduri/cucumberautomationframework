@@ -25,29 +25,28 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_862_PLP_SortingStep extends BaseClass {
-
-	PLP_Page plpPage;
+	
 	public OCCP_862_PLP_SortingStep(TestContext context) throws Exception {
 		testContext = context;
-		plpPage = testContext.getPageObjectManager().getPLPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	
 	}
 	
 	@When("user clicks on the Sort by ")
 	public void user_clicks_on_sortBy() throws Exception {
-		testContext.getPageObjectManager().getPLPPage().clickSortByOption();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickSortByOption();
 		}
 	
 	@And("user selects Price Low to High as sorting option")
 	public void user_selects_price_low_to_high() throws Exception {
 		
-		testContext.getPageObjectManager().getPLPPage().clickOnPriceLowToHigh();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickOnPriceLowToHigh();
 	}
 	
 	@Then("all the product results should be rearranged from lowest to highest price")
 	public void product_results_from_lowest_to_highest_price() throws Exception {
-		testContext.getPageObjectManager().getPLPPage().verifyPriceLowToHigh();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyPriceLowToHigh();
 	}
 	
 }

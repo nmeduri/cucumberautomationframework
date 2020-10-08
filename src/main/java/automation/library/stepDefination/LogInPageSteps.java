@@ -35,75 +35,74 @@ import cucumber.api.java.en.When;
 
 public class LogInPageSteps extends BaseClass{
 	
-       Login_Page loginPage;
 	public LogInPageSteps(TestContext context) throws Exception {
 		testContext = context;
-		loginPage = testContext.getPageObjectManager().getLoginPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Given("login url is available")
     public void login_url_is_available() throws Exception {
    	    
-		loginPage.navigateTo_Login_Page();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page();
     }
 	
 	@And("Remove Cookies")
 	public void remove_cookies() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().clear_browser_history();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).clear_browser_history();
 	}
 	
 	@Given("log in url is available on mobile")
     public void sign_up_url_is_available_on_mobile() throws Exception {
    	    
-		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page();
     }
     
     @Given("log-in url is available on wide screen chrome")
     public void sign_up_url_is_available_on_wide_screen() throws Exception {
    	    
-		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page();
     }
 	
 	@When("login page is displayed")
 	public void login_url_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().display_Welcome_To_Your_Triangle_Header();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Welcome_To_Your_Triangle_Header();
 	}
 	
 	@When("enter email detail")
 	public void enter_email_detail() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data());
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data());
 	}
 	
 	@And("clear email detail")
 	public void clear_email_detail() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().clear_Email_Login_Page();
-		testContext.getPageObjectManager().getLoginPage().clear_Email_Login_Page();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).clear_Email_Login_Page();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).clear_Email_Login_Page();
 	}
 	
 	@When("enter reset email detail")
 	public void enter_reset_email_detail() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_UserName_Three());
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_UserName_Three());
 	}
 	
 	@And("user enter username")
 	public void user_enter_username() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().enterData_Email_Login_Page(emailVaue);
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(emailVaue);
 	}
 	
 	@And("user click on sign in button")
 	public void user_click_on_sign_in_button() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().click_Sign_In_Button();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).click_Sign_In_Button();
 	}	
 	
 	@When("user is navigate on login page")
 	public void user_is_navigate_on_login_page() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().navigateTo_Login_Page();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page();
 	}
 	
 	@And("link reward screen is displayed")
 	public void displayLinkRewardScreen() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().displayLinkRewards();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).displayLinkRewards();
 	}
 	
 	@When("user click resend email verification")
@@ -123,12 +122,12 @@ public class LogInPageSteps extends BaseClass{
     	String value = "test" + Integer.toString(number);
 		emailVaue = value.replace("-", "");
 		Log.message("Email Value:- " + emailVaue, true);
-   	    testContext.getPageObjectManager().getLoginPage().enter_Invalid_Data_Email_Login_Page(emailVaue + ".com");
+   	    testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enter_Invalid_Data_Email_Login_Page(emailVaue + ".com");
     }
 	
 	@Then("an inline error is displayed")
 	public void an_inline_error_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getLoginPage().display_Inline_Error_Message_Invalid_Credentials();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Inline_Error_Message_Invalid_Credentials();
 	}
 	
 	@And("user enter invalid password")

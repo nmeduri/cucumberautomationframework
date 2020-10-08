@@ -29,24 +29,23 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_1583_PDP_Regular_Price_Step extends BaseClass   {
-		PDP_Page pdpPage;
+		
 		
       public OCCP_1583_PDP_Regular_Price_Step(TestContext context) throws Exception {
     	  testContext = context;
-    	  pdpPage = testContext.getPageObjectManager().getPDPPage();
-		
-    	  configFileReader = new ConfigFileReader();
+  		driverFactory = new DriverFactory();
+  		configFileReader = new ConfigFileReader();
 		}
 	
       @Then("Product Unit Price must be displayed")
   		public void display_of_product_price() throws Exception {
-  			testContext.getPageObjectManager().getPDPPage().displayProductPrice();
-  			testContext.getPageObjectManager().getPDPPage().scrollDownToStickyAddToCart();
-  			testContext.getPageObjectManager().getPDPPage().displayProductPrice();
+  			testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayProductPrice();
+  			testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).scrollDownToStickyAddToCart();
+  			testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayProductPrice();
   	}
       
       @Then("user must see product unit price for mobile")
     	public void display_of_product_price_mobile() throws Exception {
-    	  	testContext.getPageObjectManager().getPDPPage().displayProductPrice();
+    	  	testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayProductPrice();
 }
 }

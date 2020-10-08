@@ -47,26 +47,26 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
 
 	public OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step(TestContext context) throws Exception {
 		testContext = context;
-		signUpPage = testContext.getPageObjectManager().getSignUpPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Given("sign up url is available")
     public void sign_up_url_is_available() throws Exception {
-   	    
-		signUpPage.navigateTo_Sign_Up_Page();
+		
+		testContext.getPageObjectManager().getSignUpPage(PageObject.getDriver()).navigateTo_Sign_Up_Page();
     }
     
     @Given("signup url is available on mobile")
     public void sign_up_url_is_available_on_mobile() throws Exception {
    	    
-		testContext.getPageObjectManager().getSignUpPage().navigateTo_Sign_Up_Page();
+		testContext.getPageObjectManager().getSignUpPage(PageObject.getDriver()).navigateTo_Sign_Up_Page();
     }
     
     @Given("sign-up url is available on wide screen chrome")
     public void sign_up_url_is_available_on_wide_screen() throws Exception {
    	    
-		testContext.getPageObjectManager().getSignUpPage().navigateTo_Sign_Up_Page();
+		testContext.getPageObjectManager().getSignUpPage(PageObject.getDriver()).navigateTo_Sign_Up_Page();
     }
     
     @When("sign up page is displayed")
@@ -133,67 +133,67 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @And("mailinator url is available")
     public void mailinator_url_is_available() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().navigate_To_Mailinator();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).navigate_To_Mailinator();
        }
     
     @And("user enter detail in mailinator inbox")
     public void user_enter_detail_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(emailVaue);
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(emailVaue);
     }
     
     @And("user enter reset password email detail in mailinator inbox")
     public void user_enter_reset_email_details_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_For_Reset_Password());
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_For_Reset_Password());
     }
     
     @And("user one enter reset password email detail in mailinator inbox")
     public void user_one_enter_reset_email_details_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_For_One());
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_For_One());
     }
     
     @And("user two enter reset password email detail in mailinator inbox")
     public void user_two_enter_reset_email_details_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Two());
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Two());
     }
     
     @And("user three enter reset password email detail in mailinator inbox")
     public void user_three_enter_reset_email_details_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Three());
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Three());
     }
     
     @And("user four enter reset password email detail in mailinator inbox")
     public void user_four_enter_reset_email_details_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Four());
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Four());
     }
     
     @And("user five enter reset password email detail in mailinator inbox")
     public void user_five_enter_reset_email_details_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_Username_Five());
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_Username_Five());
     }
     
     @And("user six enter reset password email detail in mailinator inbox")
     public void user_six_enter_reset_email_details_in_mailinator_inbox() throws Exception {
-    	 testContext.getPageObjectManager().getMailinatorPage().enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Six());
+    	 testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(FileReaderManager.getInstance().getDataReader().get_UserName_Six());
     }
     
     @And("user click on go button")
     public void user_click_on_go_button() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().clickGoButton();	
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickGoButton();	
     }
     
     @Then("the user has received the verification email")
     public void the_user_has_received_the_verification_email() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().displayVerifyEmailAddress();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayVerifyEmailAddress();
     }
     
     @Then("user has received the verification email on mobile")
     public void the_user_has_received_the_verification_email_on_mobile() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().displayVerifyEmailAddressOn_Mobile();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayVerifyEmailAddressOn_Mobile();
     }
     
     @Then("user tap on verification email on mobile")
     public void user_click_tap_on_verification_email() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().clickVerifyEmailAddressOn_Mobile();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickVerifyEmailAddressOn_Mobile();
     }
     
     @And("user click on sign on option")
@@ -208,12 +208,12 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @Then("user is taken to canadian tire privacy charter screen")
     public void user_is_taken_to_canadian_tire_privacy_charter_screen() throws Exception {
-    	testContext.getPageObjectManager().getPrivacyPage().display_Header_Privacy_Charter();
+    	testContext.getPageObjectManager().getPrivacyPage(PageObject.getDriver()).display_Header_Privacy_Charter();
     }
     
     @And("the header of the overlay is sticky and remain visible")
     public void the_header_of_the_overlay_is_sticky_and_remain_visible() throws Exception {
-    	testContext.getPageObjectManager().getPrivacyPage().display_Header_Privacy_Charter();
+    	testContext.getPageObjectManager().getPrivacyPage(PageObject.getDriver()).display_Header_Privacy_Charter();
     }
     
     @Then("user is able to scroll and read throught the privacy charter condition")
@@ -223,12 +223,12 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @And("download the privacy charter")
     public void downlaod_the_privacy_charter() throws Exception {
-    	testContext.getPageObjectManager().getPrivacyPage().clickPrivacyCharterDownloadLink();
+    	testContext.getPageObjectManager().getPrivacyPage(PageObject.getDriver()).clickPrivacyCharterDownloadLink();
     }
     
     @Then("user is able to download the charter in pdf format") 
     public void user_is_able_to_download_the_charter_in_pdf_format() throws Exception {
-    	testContext.getPageObjectManager().getPrivacyPage().verifyDowloadPrivacyChartedInPDFFormat();
+    	testContext.getPageObjectManager().getPrivacyPage(PageObject.getDriver()).verifyDowloadPrivacyChartedInPDFFormat();
     }
     
     @And("delete the downloaded file in pdf format")
@@ -238,7 +238,7 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @Then("verfiy the download privacy charter document in pdf format")
     public void verify_the_download_privacy_charter_document_in_pdf_format() throws Exception {
-       testContext.getPageObjectManager().getPrivacyPage().verifyDownloadPrivacyFileInPDFFormat();	
+       testContext.getPageObjectManager().getPrivacyPage(PageObject.getDriver()).verifyDownloadPrivacyFileInPDFFormat();	
     }
     
     
@@ -249,17 +249,17 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     
     @Then("verification email is resent to the user")
     public void verification_email_is_resent_to_the_user() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().displayResentEmail();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayResentEmail();
     }
     
     @Then("verificationemail is resent to the user")
     public void verification_email_is_resent_to_the_user_mobile() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().displayResentEmailMobile();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayResentEmailMobile();
     }
     
     @And("user click on previous mail")
     public void user_click_on_previous_mail() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().clickPreviousEmail();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickPreviousEmail();
     }
     
     @Then("user enter new credenatials")

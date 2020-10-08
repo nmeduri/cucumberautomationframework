@@ -12,16 +12,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * This file create driver of chrome (Headless)
  */
-public class Headless_Chrome_Driver_Manager  extends DriverManager{
+public class Headless_Chrome_Driver_Manager {
 
-	
-	public void createDriver() {
+	static WebDriver driver;
+	public static WebDriver createDriver() {
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("headless");
 		options.addArguments("window-size=1200x600");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
+		return driver;
 	}
 
 }

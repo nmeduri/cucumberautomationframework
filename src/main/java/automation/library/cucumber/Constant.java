@@ -12,6 +12,7 @@ public class Constant {
 	public static final String BASE_PATH = System.getProperty("user.dir");
 	public static final String API_DATA = "/config/" + apiDataFile();
 	public static final String DATA_FILE = "/config/" + dataFile();
+	public static final String REPORT_PATH = System.getProperty("user.dir") + "/src/main/resources/config/extent-config.xml";
 	
 	public static String configureFile;
 

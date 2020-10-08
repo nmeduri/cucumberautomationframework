@@ -4,7 +4,8 @@ Feature: Health Check BVT
 
     @WebView @MobileView @WideScreen
     Scenario: TC-2586 Verify the warranty information is correctly displayed on the PDP
-    Given pdp url is available
+    Given open browser
+    When pdp url is available
     When pdp page is displayed for the product
     Then the product warranty information is displayed under Resources in Overview section of page
     And the warranty information of the product is correct
@@ -67,6 +68,11 @@ Feature: Health Check BVT
     Then user clicks on list view button
     Then plp page is visible in list view
     And product card displays the product card title
+    And Close Browser
+    
+    @WebView @WideScreen
+	Scenario: close browser
+	Given Close Browser
     
 
 	

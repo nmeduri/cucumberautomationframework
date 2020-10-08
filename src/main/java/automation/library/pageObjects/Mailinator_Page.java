@@ -36,7 +36,7 @@ public class Mailinator_Page extends PageObject {
 	
 	/** This function navigate on Mailinator Page */
 	public void navigate_To_Mailinator() {
-		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getDataReader().get_Mailinator_Url());
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Mailinator_Url());
 	}
 	
 	/** This function enter user name */

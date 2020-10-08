@@ -54,8 +54,10 @@ public class DriverFactory extends BaseClass {
 	Property prop;
 	private static DriverFactory instance = new DriverFactory();
 	ConfigFileReader configFileReader;
+	public static String USERNAME = System.getenv("SAUCE_USERNAME");
+	public static String API_KEY = System.getenv("SAUCE_ACCESS_KEY");
 
-	protected DriverFactory() {
+	public DriverFactory() {
 		prop = new Property();
 		configFileReader = new ConfigFileReader();
 	}
@@ -64,108 +66,97 @@ public class DriverFactory extends BaseClass {
 		return instance;
 	}
 
-	ThreadLocal<DriverManager> driverManager = new ThreadLocal<DriverManager>() {
-		protected DriverManager initialValue() {
-			return setDM();
-		}
-	};
+	ThreadLocal<DriverManager> driverManager = new ThreadLocal<DriverManager>();
 
-	/** return driver manager */
 	public DriverManager driverManager() {
 		return driverManager.get();
 	}
 
-	/** return driver */
-	public WebDriver getDriver() {
-		return driverManager.get().getDriver();
-	}
-
-	/** return driver */
 	public WebDriver returnDriver() {
 		return driverManager.get().returnDriver();
 	}
 
-	
-	/** return wait */
 	public WebDriverWait getWait() {
 		return driverManager.get().getWait();
+	
 	}
 
 	/** This function call to server and browser */
-	public DriverManager setDM() {
+	public WebDriver getDriver() {
 		String String = (java.lang.String) conf.getProperty("className");
 		switch (configFileReader.getServerType()) {
 		case "saucelabs":
 			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner")) {
-				driverManager.set(new Sauce_Lab_Chrome_Driver_Manager());
+				driver = Sauce_Lab_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
-				driverManager.set(new Sauce_Lab_Chrome_Mobile_Driver_Manager());
+				driver = Sauce_Lab_Chrome_Mobile_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
-				driverManager.set(new Sauce_Lab_Chrome_Wide_Screen_Driver_Manager());
+				driver = Sauce_Lab_Chrome_Wide_Screen_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
-				driverManager.set(new SAP_Driver_Manager());
+				driver = SAP_Driver_Manager.createDriver();
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
-				driverManager.set(new Sauce_Lab_Chrome_Tablet_Driver_Manager());
+				driver = Sauce_Lab_Chrome_Tablet_Driver_Manager.createDriver();
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
-				driverManager.set(new Sauce_Lab_Firefox_Driver_Manager());
+				driver = Sauce_Lab_Firefox_Driver_Manager.createDriver();
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Web_Safari_Runner")) {
-				driverManager.set(new Sauce_Lab_Safari_Driver_Manager());
+				driver = Sauce_Lab_Safari_Driver_Manager.createDriver();
 				break;
 			}
 			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Internet_Explore_Runner")) {
-				driverManager.set(new Sauce_Lab_IE_Driver_Manager());
+				driver = Sauce_Lab_IE_Driver_Manager.createDriver();
 			}
 			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Edge_Runner")) {
-				driverManager.set(new Sauce_Lab_Edge_Driver_Manager());
+				driver = Sauce_Lab_Edge_Driver_Manager.createDriver();
 			}
 			break;
 		case "headless":
 			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner")) {
-				driverManager.set(new Headless_Chrome_Driver_Manager());
+				driver = Headless_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
-				driverManager.set(new Sauce_Lab_Chrome_Mobile_Driver_Manager());
+				driver = Sauce_Lab_Chrome_Mobile_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
-				driverManager.set(new Headless_Chrome_Wide_Screen_Driver_Manager());
+				driver = Headless_Chrome_Wide_Screen_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
+				driver = SAP_Driver_Manager.createDriver();
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
-				driverManager.set(new Sauce_Lab_Chrome_Tablet_Driver_Manager());
+				driver = Sauce_Lab_Chrome_Tablet_Driver_Manager.createDriver();
 			}
 			break;
 		case "local":
 			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner")) {
-				driverManager.set(new Local_Chrome_Driver_Manager());
+				driver = Local_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
-				driverManager.set(new Local_Chrome_Mobile_Driver_Manager());
+				driver = Local_Chrome_Mobile_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
-				driverManager.set(new Local_Chrome_Wide_Screen_Driver_Manager());
+				driver = Local_Chrome_Wide_Screen_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
-				driverManager.set(new Local_Firefox_Driver_Manager());
+				driver = Local_Firefox_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Web_Safari_Runner")) {
-				driverManager.set(new Local_Safari_Driver_Manager());
+				driver = Local_Safari_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
-				driverManager.set(new SAP_Driver_Manager());
+				driver = SAP_Driver_Manager.createDriver();
 				break;
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
-				driverManager.set(new Local_Ipad_Chrome_Driver_Manager());
+				driver = Local_Ipad_Chrome_Driver_Manager.createDriver();
 			}else {
 				Log.message("browser not found", true);
 				return null;
 			}
 			}
-		return driverManager.get();
+		return driver;
 	}
 }

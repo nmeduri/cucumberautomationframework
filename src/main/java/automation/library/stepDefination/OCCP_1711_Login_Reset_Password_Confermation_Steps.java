@@ -24,10 +24,10 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_1711_Login_Reset_Password_Confermation_Steps extends BaseClass {
-      PDP_Page pdpPage;
+       
 	public OCCP_1711_Login_Reset_Password_Confermation_Steps(TestContext context) throws Exception {
 		testContext = context;
-		pdpPage = testContext.getPageObjectManager().getPDPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	

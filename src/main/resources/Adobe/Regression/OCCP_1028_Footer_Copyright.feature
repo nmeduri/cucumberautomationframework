@@ -3,7 +3,8 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2787, TC-2786 Verification of clicking of View More - Desktop Wide And Desktop
-	Given pdp url is available
+	Given open browser
+	When pdp url is available
 	When pdp page is displayed for the product
 	And click on view more
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
@@ -16,8 +17,9 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then view less should not be displayed
 	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2785 Verification of clicking of View More - Mobile 
-	Given pdp url is available
+	Scenario: TC-2785, TC-2788 Verification of clicking of View More - Mobile 
+	Given open browser
+	When pdp url is available
 	When pdp page is displayed for the product
 	And click on view more
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
@@ -38,14 +40,14 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then view more is displayed
 	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2781 Verification of display of Legal Disclaimer Text - Mobile 
+	Scenario: TC-2781, TC-2784 Verification of display of Legal Disclaimer Text - Mobile 
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then first 3 lines of the authored legal disclaimer text should be displayed in mobile
 	Then view more is displayed
 	
 	@RegressionTest @WideScreen @WebView @MobileView @TabletView
-	Scenario: TC-2779, TC-2778, TC-2777 Verification of display of Footer - Desktop Wide 
+	Scenario: TC-2779, TC-2778, TC-2777, TC-2776 Verification of display of Footer - Desktop Wide 
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then copy right text is displayed
@@ -54,7 +56,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then editable clickable text view more is displayed
 	
 	@RegressionTest @WideScreen @WebView @MobileView @TabletView
-	Scenario: TC-2775, TC-2774 Verification of display of Footer - Desktop Wide
+	Scenario: TC-2775, TC-2774  Verification of display of Footer - Desktop Wide
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then footer is displayed
@@ -72,6 +74,10 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	When pdp page is displayed for the product
 	And user clicks on legal 'plus' section
 	And in footerhover on any link on footer
+	
+	@WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser
 	
 	
 	

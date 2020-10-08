@@ -28,24 +28,23 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseClass   {
-		PDP_Page pdpPage;
+		
 		
       public OCCP_1579_PDP_Sticky_Buy_Box_Step(TestContext context) throws Exception {
     	  testContext = context;
-    	  pdpPage = testContext.getPageObjectManager().getPDPPage();
-		
-    	  configFileReader = new ConfigFileReader();
+  		driverFactory = new DriverFactory();
+  		configFileReader = new ConfigFileReader();
 		}
 	
 	@When("user scrolls down past the buy box")
 	public void user_scrolls_down_past_buy_box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().scrollDownToStickyAddToCart();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).scrollDownToStickyAddToCart();
 		
 	}
 
 	@Then("Sticky Add to Cart with product information must be displayed")
 	public void display_of_sticky_add_to_cart() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayStickyAddToCart();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayStickyAddToCart();
 	}
 	
 	

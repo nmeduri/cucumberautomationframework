@@ -51,7 +51,7 @@ public class PLP_Page extends PageObject {
 	/** This function navigate to PLP Page */
 	public void navigateTo_PLP_Page() throws Exception {
 
-		DriverFactory.getInstance().getDriver().navigate()
+		driver.navigate()
 				.to(FileReaderManager.getInstance().getConfigReader().getPLPUrl());
 
 	}

@@ -4,7 +4,8 @@ Feature: OCCP-1576 PDP: Product Badges
 	
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-58, TC-299 Verify the Special Buy badge is displayed when applicable
-	Given pdp url is available
+	Given open browser
+	When pdp url is available
     When pdp page is displayed for the product
     Then special buy is displayed
     Then the badge is displayed in pink color
@@ -23,4 +24,8 @@ Feature: OCCP-1576 PDP: Product Badges
     When pdp page is displayed for the product
     Then the editable badge label displays in store clearnce
     Then the badge persists and displays for all variants of the product
+    
+    @WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser
     

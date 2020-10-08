@@ -1,10 +1,11 @@
 Feature: OCCP-1756 Email not verified and User is trying to Login
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1756
-	
+
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-640 Verify the user is prompted to perform email verification if the verification has not been done already
-	Given sign up url is available
+	Given open browser
+	When sign up url is available
 	When sign up page is displayed
 	And user enter email
 	And user enter password
@@ -27,7 +28,8 @@ Feature: OCCP-1756 Email not verified and User is trying to Login
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-640 Verify the user is prompted to perform email verification if the verification has not been done already (Mobile)
-	Given signup url is available on mobile
+	Given open browser
+	When signup url is available on mobile
 	When sign up page is displayed
 	And user enter email
 	And user enter password
@@ -47,6 +49,10 @@ Feature: OCCP-1756 Email not verified and User is trying to Login
 	Then user enter detail in mailinator inbox
 	And user click on go button
 	Then user has received the verification email on mobile
+	
+	@WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser
 	
 	
 	

@@ -13,9 +13,10 @@ import automation.library.managers.FileReaderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class SAP_Driver_Manager  extends DriverManager{
-
-	public void createDriver() {
+public class SAP_Driver_Manager {
+     static WebDriver driver;
+	public static WebDriver createDriver() {
+		return driver;
 		
 	}
 

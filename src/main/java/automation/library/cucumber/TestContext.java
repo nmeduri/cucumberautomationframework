@@ -22,7 +22,7 @@ public class TestContext {
 	public TestContext() {
 		
 		
-		pageObjectManager = new PageObjectManager(DriverFactory.getInstance().driverManager().getDriver());
+		pageObjectManager = new PageObjectManager();
 		scenarioContext = new ScenarioContext();
 	}
 	public DriverManager getWebDriverManager() {

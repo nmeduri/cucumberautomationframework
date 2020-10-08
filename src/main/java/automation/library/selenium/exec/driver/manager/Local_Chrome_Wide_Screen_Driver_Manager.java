@@ -16,9 +16,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 
 
-public class Local_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
-
-	public void createDriver() {
+public class Local_Chrome_Wide_Screen_Driver_Manager {
+    static WebDriver driver;
+	public static WebDriver createDriver() {
 		Map<String, Object> prefsMap = new HashMap<String, Object>();
 		prefsMap.put("profile.default_content_settings.popups", 0);
 		  prefsMap.put("download.default_directory", System.getProperty("user.dir"));
@@ -29,6 +29,7 @@ public class Local_Chrome_Wide_Screen_Driver_Manager  extends DriverManager{
 		options.addArguments("window-size=2560x3500");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
+		return driver;
 	}
 
 }

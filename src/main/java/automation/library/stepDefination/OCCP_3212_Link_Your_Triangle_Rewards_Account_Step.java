@@ -27,112 +27,111 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClass{
-	
-       Login_Page loginPage;
+	 
 	public OCCP_3212_Link_Your_Triangle_Rewards_Account_Step(TestContext context) throws Exception {
 		testContext = context;
-		loginPage = testContext.getPageObjectManager().getLoginPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@And("user cick on triangle rewards card")
 	public void user_click_on_triangle_reward_card() throws Exception {
-		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage().click_Triangle_Reward_Card();
+		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage(PageObject.getDriver()).click_Triangle_Reward_Card();
 	}
 	
 	@And("user enters a loyalty card number that is deactivated")
 	public void user_enter__deactivated_card_number() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().enterData_Deactivated_Card_Number();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Deactivated_Card_Number();
 	}
 	
 	@And("verify when user enters a loyalty card number that is deactivated")
 	public void verify_when_user_enters_a_loyalty_card_number_that_is_deactivated() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().enter_Card_Number(FileReaderManager.getInstance().getDataReader().get_Deactivated_Card_Number());
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enter_Card_Number(FileReaderManager.getInstance().getDataReader().get_Deactivated_Card_Number());
 	}
 	
 	@And("user click on continue button")
 	public void user_click_on_continue_button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().click_Continue_Button();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).click_Continue_Button();
 	}
 	
 	@Then("verify an error message is displayed informing card is deactivated")
 	public void display_card_deactivated_error_message() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Deactivated_Error_Message();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Deactivated_Error_Message();
 	}
 	
 	@Then("user should navigate to link existing triangle card screen without prepopulated data")
 	public void navigate_to_link_existing_card_screen() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verify_CardNo_Not_Prepopulated();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verify_CardNo_Not_Prepopulated();
 	}
 	
 	@Then("try again button should be present in the error screen")
 	public void display_of_tryagain_button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_TryAgain_Button();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_TryAgain_Button();
 	}
 	
 	@Then("cancel button should be present in the error screen")
 	public void display_of_cancel_button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Cancel_Button();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Cancel_Button();
 	}
 	
 	@Then("user should navigate to link cards screen")
 	public void navigate_to_link_cards_screen() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Triangle_Reward_Card();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Triangle_Reward_Card();
 	}
 	
 	@Then("error image should be present in the error screen")
 	public void display_of_error_image() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Error_Image();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Error_Image();
 	}
 	
 	@And("user verify's error text present in the error screen")
 	public void user_verify_error__text() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verify_Deactivated_Error_Text();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verify_Deactivated_Error_Text();
 	}
 	
 	@Then("triangle id logo is displayed on screen")
 	public void display_of_triangleId_logo() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_TriangleId_Logo();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_TriangleId_Logo();
 	}
 	
 	@Then("user should be able to enter the loyalty card number successfully which is deactivated")
 	public void user_should_be_able_to_enter_the_loyalty_card_number_successfully_which_is_deactivated() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verfiyAbleToEnterLoyaltyNumber(FileReaderManager.getInstance().getDataReader().get_Deactivated_Card_Number());
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verfiyAbleToEnterLoyaltyNumber(FileReaderManager.getInstance().getDataReader().get_Deactivated_Card_Number());
 	}
 	
 	@Then("verify an error message appears informing that card is deactivated")
 	public void verify_an_error_message_appears_informing_that_card_is_deactivated() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Deactivated_Error_Message();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Deactivated_Error_Message();
 	}
 	
 	@And("verify when user click on try again button")
 	public void verify_when_user_click_on_try_again_button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().click_TryAgain_Button();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).click_TryAgain_Button();
 	}
 	
 	@And("verify when user click on cancel button")
 	public void verify_when_user_click_on_cancel_button() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().click_Cancel_Button();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).click_Cancel_Button();
 	}
 	
 	@And("user is able to see the click link on screen")
 	public void user_is_able_to_see_the_click_link_on_screen() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().displayClickButton();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayClickButton();
 	}
 	
 	@Then("user should be able to see the error image on screen")
 	public void user_should_be_able_to_see_the_error_image_on_screen() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().displayErrorImageNotBlank();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayErrorImageNotBlank();
 	}
 	
 	@And("verify error image on screen")
 	public void verify_error_image_on_screen() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().display_Error_Image();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Error_Image();
 	}
 	
 	@Then("user should be able to see the error text on screen")
 	public void user_should_be_able_to_see_the_error_text_on_screen() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage().verify_Deactivated_Error_Text();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verify_Deactivated_Error_Text();
 	}
 
 

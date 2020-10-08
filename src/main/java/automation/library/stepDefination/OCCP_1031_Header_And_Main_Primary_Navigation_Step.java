@@ -27,71 +27,70 @@ import cucumber.api.java.en.When;
  */
 public class OCCP_1031_Header_And_Main_Primary_Navigation_Step extends BaseClass {
 
-	Footer_Page footerPage;
 	public OCCP_1031_Header_And_Main_Primary_Navigation_Step(TestContext context) throws Exception {
 		testContext = context;
-		footerPage = testContext.getPageObjectManager().getFooterPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	
 	}
 	
 	@Then("access the header and verify if primary navigation is present")
 	public void access_the_header_and_verify_if_primary_naviagation_is_present() throws Exception {
-		testContext.getPageObjectManager().getPrimaryNavigationPage().displayPrimaryNavigation();
+		testContext.getPageObjectManager().getPrimaryNavigationPage(PageObject.getDriver()).displayPrimaryNavigation();
 	}
 	
 	@Then("the primary navigation should be displayed after the pencil banner")
 	public void the_primary_navigation_should_be_displayed_after_the_pencil_banner() throws Exception {
-		testContext.getPageObjectManager().getPrimaryNavigationPage().displayPrimaryNavigationAfterPencilBanner();
+		testContext.getPageObjectManager().getPrimaryNavigationPage(PageObject.getDriver()).displayPrimaryNavigationAfterPencilBanner();
 	}
 	
 	@Then("in primary navigation verify the options present")
 	public void in_primary_navigation_verify_the_options_present() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().displayBannerLogo();
-		testContext.getPageObjectManager().getHeaderPage().displayStoreBar();
-		testContext.getPageObjectManager().getHeaderPage().displaySearchBar();
-		testContext.getPageObjectManager().getHeaderPage().displayWishlistIcon();
-		testContext.getPageObjectManager().getHeaderPage().displayCartIcon();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayBannerLogo();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayStoreBar();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displaySearchBar();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayWishlistIcon();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayCartIcon();
 	}
 	
 	@And("store name is displayed")
 	public void store_name_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().displayStoreName();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayStoreName();
 	}
 	
 	@And("store status is displayed")
 	public void store_status_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().displayStoreStatus();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayStoreStatus();
 	}
 	
 	@And("closing hours is displayd")
 	public void closing_hours_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().displayClosingHours();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayClosingHours();
 	}
 	
 	@And("chervon is displayed")
 	public void chervon_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().displayChervon();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayChervon();
 	}
 	
 	@And("click on wish list icon")
 	public void click_on_wish_list_icon() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().clickWishlistIcon();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickWishlistIcon();
 	}
 	
 	@Then("on clicking user should be redirected to configured page")
 	public void on_clicking_user_should_be_redirected_to_configured_page() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().verifyWishListRedirectedToConfigurePage();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).verifyWishListRedirectedToConfigurePage();
 	}
 	
 	@And("click on cart icon")
 	public void click_on_cart_icon() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().clickCartIcon();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickCartIcon();
 	}
 	
 	@Then("on clicking user redirect to cart page")
 	public void on_clicking_user_redirect_to_cart_page() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().verifyCartRedirectedToConfigurePage();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).verifyCartRedirectedToConfigurePage();
 	}
 	
 }

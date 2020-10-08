@@ -24,20 +24,20 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_1582_Add_To_Cart_Steps extends BaseClass {
-      PDP_Page pdpPage;
+     
 	public OCCP_1582_Add_To_Cart_Steps(TestContext context) throws Exception {
 		testContext = context;
-		pdpPage = testContext.getPageObjectManager().getPDPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@And("user enter number in the quantity box that is greater than maximum quantity")
 	public void user_enter_number_in_the_quantity_box_that_is_greater_than_maximum_quantity() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().enterQuantityGreaterThanMaxixmum();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).enterQuantityGreaterThanMaxixmum();
 	}
 	
 	@Then("greater than maximum quantity is not updated in the quantity box")
 	public void greater_Than_Maximum_Quantity_Is_Not_Updated_In_The_Quantity_Box() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifyQuantityGreaterThanMaximumNotUpdate();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyQuantityGreaterThanMaximumNotUpdate();
 	}
 }

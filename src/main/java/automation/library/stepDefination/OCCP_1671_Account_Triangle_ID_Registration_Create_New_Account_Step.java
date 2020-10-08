@@ -44,7 +44,7 @@ public class OCCP_1671_Account_Triangle_ID_Registration_Create_New_Account_Step 
 
 	public OCCP_1671_Account_Triangle_ID_Registration_Create_New_Account_Step(TestContext context) throws Exception {
 		testContext = context;
-		
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	

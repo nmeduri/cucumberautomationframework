@@ -4,6 +4,7 @@ package automation.library.selenium.exec.driver.manager;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -14,11 +15,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * This file create driver of chrome (Headless)
  */
 
-public class Local_Chrome_Driver_Manager  extends DriverManager{
+public class Local_Chrome_Driver_Manager {
 
-	String fileDownloadPath =  Constant.BASE_PATH;
-	//@Override
-	public void createDriver() {
+	static String fileDownloadPath =  Constant.BASE_PATH;
+	static WebDriver driver;
+	
+	public static WebDriver createDriver() {
 		  Map<String, Object> prefsMap = new HashMap<String, Object>();
 		  prefsMap.put("profile.default_content_settings.popups", 0);
 		  prefsMap.put("download.default_directory", fileDownloadPath);
@@ -31,6 +33,7 @@ public class Local_Chrome_Driver_Manager  extends DriverManager{
 		WebDriverManager.chromedriver().setup(); 
 		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
+		return driver;
 	}
 
 }

@@ -24,15 +24,15 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_1647_Product_Badges_Clearence_Steps extends BaseClass {
-      PDP_Page pdpPage;
+      
 	public OCCP_1647_Product_Badges_Clearence_Steps(TestContext context) throws Exception {
 		testContext = context;
-		pdpPage = testContext.getPageObjectManager().getPDPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@And("an additional editable disclaimer displays only select style size badge")
 	public void an_additional_editable_disclaimer_displays_only_select_style_size_badge() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayBadgeSelectStyleSize();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayBadgeSelectStyleSize();
 	}
 }

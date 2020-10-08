@@ -26,25 +26,24 @@ import cucumber.api.java.en.When;
  */
 
 public class HeaderPageSteps extends BaseClass {
-      Header_Page headerPage;
 	public HeaderPageSteps(TestContext context) throws Exception {
 		testContext = context;
-		headerPage = testContext.getPageObjectManager().getHeaderPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@When("click on account from the header")
 	public void click_on_account_from_the_header() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().clickOnAccount();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnAccount();
 	}
 	
 	@And("click on the login from the header")
 	public void click_on_the_login_from_the_header() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().clickSignIn();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickSignIn();
 	}
 	
 	@And("click on registration from the header")
 	public void click_on_the_registration_from_the_header() throws Exception {
-		testContext.getPageObjectManager().getHeaderPage().clickSignIn();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickSignIn();
 	}
 }

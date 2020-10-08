@@ -4,7 +4,8 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
 	
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-1436 Verify the ability of a user to update the quantity of a product on PDP
-	Given pdp url is available
+	Given open browser
+	When pdp url is available
     When pdp page is displayed for the product
     And user print the quantity of the quantity box
     And click the increment sign of the quantity box
@@ -68,5 +69,9 @@ Feature: OCCP-1578 PDP: Select Quantity (Quantity Box is Available)
     Then updated quantity must be decremented by One
     Then verify sign decrement is disabled when the quantity is One
     Then quantity selector box is visible and user is able to click plus and minus
+    
+    @WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser
     
     

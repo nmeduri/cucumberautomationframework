@@ -24,18 +24,18 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_983_PDP_Features_Step extends BaseClass {
-      PDP_Page pdpPage;
+      
 	public OCCP_983_PDP_Features_Step(TestContext context) throws Exception {
 		testContext = context;
-		pdpPage = testContext.getPageObjectManager().getPDPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Then("user must see all features of the product displayed in a bulleted list")
 	public void product_features_displayed_in_bulleted_list() throws Exception {
 		
-		testContext.getPageObjectManager().getPDPPage().displayFeaturesSection();
-		testContext.getPageObjectManager().getPDPPage().displayFeaturesInBulletList();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayFeaturesSection();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayFeaturesInBulletList();
 	}
 }
 	

@@ -1,10 +1,11 @@
 Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verification/Maximum Email Sent Confirmation/Verification Expired
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1751
-		
+	
 	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-1428 Verify the ability of a user to resend verification email if required for account registration of Triangle ID 
-	Given sign up url is available
+	Given open browser
+	When sign up url is available
 	When sign up page is displayed
 	And user enter email
 	And user enter password
@@ -24,7 +25,8 @@ Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verificatio
 	
 	@RegressionTest  @MobileView @TabletView
 	Scenario: TC-1428 Verify the ability of a user to resend verification email if required for account registration of Triangle ID 
-	Given sign up url is available
+	Given open browser
+	When sign up url is available
 	When sign up page is displayed
 	And user enter email
 	And user enter password
@@ -41,3 +43,9 @@ Feature: OCCP-1751 Account/Triangle ID - Registration - Resend Email Verificatio
 	Then verificationemail is resent to the user
 	#And user click on previous mail
 	#And user is able to see click on here to verify email link
+	
+	@WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser
+	
+	

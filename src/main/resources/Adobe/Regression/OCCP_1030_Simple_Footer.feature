@@ -1,30 +1,32 @@
 Feature: OCCP-1030 Footer : Simple Footer
 	Description: To test the ADOBE Test Cases for the story OCCP-1030
 	
-	@RegressionTest @WideScreen @MobileView @TabletView
-	Scenario: TC-2856, TC-2838 Verification of clicking of text "View More" - Desktop Wide 
-	Given pdp url is available
+	@RegressionTest @WebView @WideScreen
+	Scenario: TC-2846, TC-2855 Verification of Legal Disclaimer property - Desktop 
+	Given open browser
+	When pdp url is available
+	When pdp page is displayed for the product
+	Then first three lines of the authored legal disclaimer text should be displayed
+	
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-2865, TC-2838 Verification of clicking of text "View More" - Desktop Wide 
+	Given open browser
+	When pdp url is available
 	When pdp page is displayed for the product
 	Then ligal disclaimer is displayed
 	And click on view more
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
 	Then view less is displayed
 	
-	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2846, TC-2855 Verification of Legal Disclaimer property - Desktop 
-	Given pdp url is available
-	When pdp page is displayed for the product
-	Then first three lines of the authored legal disclaimer text should be displayed
-	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2837 Verification of Legal Disclaimer property - Mobile
+	Scenario: TC-2837, TC-2864 Verification of Legal Disclaimer property - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then first 3 lines of the authored legal disclaimer text should be displayed in mobile
 	
 	
-	@RegressionTest @WebView
-	Scenario: TC-2847 Verification of clicking of text "View More" - Desktop
+	@RegressionTest @WebView @WideView
+	Scenario: TC-2847, TC-TC-2856 Verification of clicking of text "View More" - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then ligal disclaimer is displayed
@@ -47,7 +49,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then copy right text is displayed
 	
 	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2845 Verification of clicking of text "Accessibility" - Desktop
+	Scenario: TC-2845, TC-2854 Verification of clicking of text "Accessibility" - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And in simple footer access and click on accessibility
@@ -61,7 +63,16 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then user navigate to the page where detailed terms and conditions information is displayed
 	
 	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2848 Verification of hovering over a link - Desktop
+	Scenario: TC-2848, TC-2857 Verification of hovering over a link - Desktop
+	Given pdp url is available
+	When pdp page is displayed for the product
+	Then link terms and conditions should be underlined
+	Then link privacy and policy should be underlined
+	Then link site map should be underlined
+	Then link accessibility should be underlined
+	
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-2839, TC-2866 Verification of hovering over a link - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then link terms and conditions should be underlined
@@ -99,7 +110,14 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then user navigate to the page where detailed terms and conditions information is displayed
 	
 	@RegressionTest @WebView @WideScreen
-	Scenario:  TC-2843 Verification of clicking of text "Privacy Policy" - Desktop
+	Scenario: TC-2851 Verification of clicking of text "Site Map" - Desktop Wide
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And in simple footer and click on site map
+	Then user is navigate on site map page where detailed site map information is displayed
+	
+	@RegressionTest @WebView @WideScreen
+	Scenario:  TC-2843, TC-2852 Verification of clicking of text "Privacy Policy" - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then editable clickable text privacy and policy is displayed
@@ -137,6 +155,10 @@ Feature: OCCP-1030 Footer : Simple Footer
 	And user clicks on legal 'plus' section
 	And in footer access and click on text and conditions
 	Then user navigate to the page where detailed terms and conditions information is displayed
+	
+	@WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	And Close Browser
 	
 	
 	

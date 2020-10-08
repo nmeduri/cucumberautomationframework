@@ -3,8 +3,9 @@ Feature: OCCP-1181 Link Rewards Triangle
 	
 	@RegressionTest @WebView @WideScreen @SmokeTest
 	Scenario: TC-2485 Verfiy displaying Rewards Terms&Conditions screen on Desktop
-	Given login url is available
-	When enter email detail
+	Given open browser
+	When login url is available
+	When enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -37,7 +38,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	Then page your email has been verified displayed
 	And switch on parent frame
 	Given login url is available
-	When enter email detail
+	When enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -52,7 +53,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2487 Verfiy Download T&C and Displaying Rewards T&C on Desktop 
 	Given login url is available
-	When enter email detail
+	When enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -66,7 +67,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2487 Verfiy Download T&C and Displaying Rewards T&C on Desktop 
 	Given login url is available
-	When enter email detail
+	When enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -77,5 +78,9 @@ Feature: OCCP-1181 Link Rewards Triangle
 	Then rewards terms and conditions should be displayed
 	And verify when click on cancel button
 	Then user should be navigate to the previous screen as complete your your profile screen
+	
+	@WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser
 
 	

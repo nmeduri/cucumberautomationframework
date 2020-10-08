@@ -24,40 +24,40 @@ import cucumber.api.java.en.When;
  */
 
 public class OCCP_1574_PDP_Select_Variants_Steps extends BaseClass {
-      PDP_Page pdpPage;
+     
 	public OCCP_1574_PDP_Select_Variants_Steps(TestContext context) throws Exception {
 		testContext = context;
-		pdpPage = testContext.getPageObjectManager().getPDPPage();
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@Then("the swatch with sizes is displayed")
 	public void the_swatch_with_sizes_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySwatchWithSize();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displaySwatchWithSize();
 	}
 	
 	@Then("the size label is displayed")
 	public void the_size_label_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySizeLabel();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displaySizeLabel();
 	}
 	
 	@Then("unavailabe size is displayed")
 	public void unavailabe_size_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displayUnavailableSize();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayUnavailableSize();
 	}
 	
 	@And("select one of the available size")
 	public void select_one_of_the_available_size() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().clickAvailableSize();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).clickAvailableSize();
 	}
 	
 	@Then("available size is successfully selected")
     public void available_size_is_successfully_selected() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().displaySelectedSize();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displaySelectedSize();
 	}
 	
 	@Then("the lable of selected size is displayed")
 	public void the_label_of_selected_size_is_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage().verifySelectedSizeLabel();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifySelectedSizeLabel();
 	}
 }

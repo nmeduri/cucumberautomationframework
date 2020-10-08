@@ -16,9 +16,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 
 
-public class Local_Ipad_Chrome_Driver_Manager  extends DriverManager{
-	
-public void createDriver() {
+public class Local_Ipad_Chrome_Driver_Manager {
+	static WebDriver driver;
+public static WebDriver createDriver() {
 		
 		WebDriverManager.chromedriver().setup();
 		Map<String, String> mobileEmulation = new HashMap<>();
@@ -26,6 +26,7 @@ public void createDriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 		driver = new ChromeDriver(chromeOptions);
+		return driver;
 	}
 
 }

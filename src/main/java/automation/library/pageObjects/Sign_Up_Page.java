@@ -32,7 +32,7 @@ public class Sign_Up_Page extends PageObject {
 	/** This function navigate to sign up page */
 	public void navigateTo_Sign_Up_Page() throws Exception{
 		Log.message("URL:- " + FileReaderManager.getInstance().getConfigReader().getSignUpUrl(), true);
-		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getSignUpUrl());
+		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getSignUpUrl());
 		
 	}
 

@@ -48,6 +48,7 @@ import automation.library.pageObjects.Rewards_Terms_Conditions_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
+import automation.library.selenium.exec.driver.manager.Local_Chrome_Driver_Manager;
 import automation.library.stepDefination.LogInPageSteps;
 
 /**
@@ -84,10 +85,8 @@ public class PageObjectManager {
 	private Privacy_Charter_Page_Locator getPrivacyCharterLocator;
 	private Reset_Password_Page getResetPasswordPage;
 	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
-
 	private Link_reward_ProfileScreen_page getLink_reward_ProfileScreen_page;
 	private Link_reward_ProfileScreen_page_Locator getLink_reward_ProfileScreen_page_Locator;
-
 	private Header_Page getHeaderPage;
 	private Header_Page_Locator getHeaderPageLocator;
 	private Footer_Page getFooterPage;
@@ -103,9 +102,9 @@ public class PageObjectManager {
 	private Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingRewardsPage;
 	private Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingRewardsLocator;
 	
-	public PageObjectManager(WebDriver driver) {
+	public PageObjectManager() {
 
-		this.driver = driver;
+		
 
 	}
 	
@@ -117,14 +116,14 @@ public class PageObjectManager {
 	}
 
 	/** Returns Instance of Home File */
-	public HomePage getHomePage() throws Exception {
+	public HomePage getHomePage(WebDriver driver) throws Exception {
 
 		return (homePage == null) ? homePage = new HomePage(driver) : homePage;
 
 	}
 	
 	/** Returns Instance of PDP File */
-	public PDP_Page getPDPPage() throws Exception {
+	public PDP_Page getPDPPage(WebDriver driver) throws Exception {
 		
 		return (pdpPage == null) ? pdpPage = new PDP_Page(driver) : pdpPage;
 		
@@ -145,14 +144,14 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Sign up Page File */
-	public Sign_Up_Page getSignUpPage() {
+	public Sign_Up_Page getSignUpPage(WebDriver driver) {
 		
 		return (signUpPage == null) ? signUpPage = new Sign_Up_Page(driver) : signUpPage;
 		
 	}
 	
 	/** Returns Instance of PLP Page File */
-	public PLP_Page getPLPPage() throws Exception {
+	public PLP_Page getPLPPage(WebDriver driver) throws Exception {
 		
 		return (plpPage == null) ? plpPage = new PLP_Page(driver) : plpPage;
 		
@@ -222,7 +221,7 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Mailinator File */
-	public Mailinator_Page getMailinatorPage() {
+	public Mailinator_Page getMailinatorPage(WebDriver driver) {
 		
 		return (getMailinatorPage == null) ? getMailinatorPage = new Mailinator_Page(driver) : getMailinatorPage;
 		
@@ -236,7 +235,7 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Login File */
-	public Login_Page getLoginPage() {
+	public Login_Page getLoginPage(WebDriver driver) {
 		
 		
 		return (loginPage == null) ? loginPage = new Login_Page(driver) : loginPage;
@@ -274,7 +273,7 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Privacy Charter File */
-	public Privacy_Charter_Page getPrivacyPage() {
+	public Privacy_Charter_Page getPrivacyPage(WebDriver driver) {
 		return (getPrivacyCharterPage == null) ? getPrivacyCharterPage = new Privacy_Charter_Page(driver) : getPrivacyCharterPage;
 	}
 	
@@ -284,7 +283,7 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Reset Passsword File */
-	public Reset_Password_Page getResetPasswordPage() {
+	public Reset_Password_Page getResetPasswordPage(WebDriver driver) {
 		return (getResetPasswordPage == null) ? getResetPasswordPage = new Reset_Password_Page(driver) : getResetPasswordPage;
 	}
 	
@@ -300,7 +299,7 @@ public class PageObjectManager {
 		return (getLink_reward_ProfileScreen_page_Locator == null) ? getLink_reward_ProfileScreen_page_Locator = new Link_reward_ProfileScreen_page_Locator() : getLink_reward_ProfileScreen_page_Locator;
 	}
 	/** Returns Instance of Header File */
-	public Header_Page getHeaderPage() {
+	public Header_Page getHeaderPage(WebDriver driver) {
 		return (getHeaderPage == null) ? getHeaderPage = new Header_Page(driver) : getHeaderPage;
 	}
 	
@@ -311,7 +310,7 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Footer File */
-	public Footer_Page getFooterPage() {
+	public Footer_Page getFooterPage(WebDriver driver) {
 		return (getFooterPage == null) ? getFooterPage = new Footer_Page(driver) : getFooterPage;
 	}
 	
@@ -321,7 +320,7 @@ public class PageObjectManager {
 	}
  	
 	/** Returns Instance of Link Your Triangle Rewards Account Locator File */
-	public Link_Your_Triangle_Rewards_account_Page getLinkYourTriangleRewardsAccountPage() {
+	public Link_Your_Triangle_Rewards_account_Page getLinkYourTriangleRewardsAccountPage(WebDriver driver) {
 		return (getLinkYourTriangleRewardsAccountPage == null) ? getLinkYourTriangleRewardsAccountPage = new Link_Your_Triangle_Rewards_account_Page(driver) : getLinkYourTriangleRewardsAccountPage;
 	}
 	
@@ -331,7 +330,7 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Get A New Triangle Rewards Card File */
-	public Get_A_New_Triangle_Rewards_Card_Page getANewTriangleRewardsCardPage() {
+	public Get_A_New_Triangle_Rewards_Card_Page getANewTriangleRewardsCardPage(WebDriver driver) {
 		return (getAnewTriangleRewardsPage == null) ? getAnewTriangleRewardsPage = new Get_A_New_Triangle_Rewards_Card_Page(driver) : getAnewTriangleRewardsPage;
 	}
 	
@@ -341,7 +340,7 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Primary Navigation Page File */
-	public Primary_Navigation_Page getPrimaryNavigationPage() {
+	public Primary_Navigation_Page getPrimaryNavigationPage(WebDriver driver) {
 		return (getPrimaryNavigationPage == null) ? getPrimaryNavigationPage = new Primary_Navigation_Page(driver) : getPrimaryNavigationPage;
 	}
 	
@@ -356,12 +355,12 @@ public class PageObjectManager {
 	}
 	
 	/** Returns Instance of Rewards Terms And Conditions Page File */
-	public Rewards_Terms_Conditions_Page getRewardsTermsAndCondtionsPage() {
+	public Rewards_Terms_Conditions_Page getRewardsTermsAndCondtionsPage(WebDriver driver) {
 		return (getRewardsTermsAndConditionsPage == null) ? getRewardsTermsAndConditionsPage = new Rewards_Terms_Conditions_Page(driver) : getRewardsTermsAndConditionsPage;
 	}
 	
 	/** Returns Instance of Link Your Existing Triangle Rewards Card Page File */
-	public Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingTriangleRewardsCardPage() {
+	public Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingTriangleRewardsCardPage(WebDriver driver) {
 		return (getLinkYourExistingRewardsPage == null) ? getLinkYourExistingRewardsPage = new Link_Your_Existing_Triangle_Rewards_Card_Page(driver) : getLinkYourExistingRewardsPage;
 	}
 	

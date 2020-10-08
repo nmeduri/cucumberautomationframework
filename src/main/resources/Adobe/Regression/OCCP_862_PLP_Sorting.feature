@@ -4,7 +4,8 @@ Feature: OCCP-862 PLP Sorting
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-40 Verify the sticky navigation feature of filter menu
-	Given plp url is available
+	Given open browser
+	When plp url is available
     When plp is displayed
     And scroll down the window below the view point
     Then the sorting option remains displayed at the top of the page in the sticky nav
@@ -20,7 +21,8 @@ Feature: OCCP-862 PLP Sorting
     
     @RegressionTest @MobileView @TabletView
     Scenario: TC-345 Verify the functionality of the Price High to Low sorting option on a PLP (Mobile)
-    Given plp url is available
+    Given open browser
+    When plp url is available
     When plp is displayed
     And scroll up to page
     And click on sort by option 
@@ -82,3 +84,7 @@ Feature: OCCP-862 PLP Sorting
     And select the sorting option customer ratings high to low
     And user click on close button
     Then All the product results are rearranged from highest customer ratings high to lowest customer ratings
+    
+    @WebView @WideScreen @MobileView @TabletView
+	Scenario: close browser
+	Given Close Browser

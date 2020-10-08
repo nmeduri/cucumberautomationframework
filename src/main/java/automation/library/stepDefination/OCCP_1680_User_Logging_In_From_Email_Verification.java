@@ -35,24 +35,24 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
 
 	public OCCP_1680_User_Logging_In_From_Email_Verification(TestContext context) throws Exception {
 		testContext = context;
-		
+		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
 	@And("user click on verification email")
     public void user_click_on_verification_email() throws Exception {
-		testContext.getPageObjectManager().getMailinatorPage().displayMomentAgo();
-    	testContext.getPageObjectManager().getMailinatorPage().clickVerifyEmailAddress();
+		testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayMomentAgo();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickVerifyEmailAddress();
     }
 	
 	@And("user click on here to verify email link")
     public void use_click_on_here_to_verify_email_link() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().click_Here_To_Verify_Email();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).click_Here_To_Verify_Email();
     }
 	
 	@And("user is able to see click on here to verify email link")
     public void user_is_able_to_see_click_on_here_to_verify_email_link() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().display_Here_To_Verify_Email();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).display_Here_To_Verify_Email();
     }
     
     @Then("page your email has been verified displayed")
@@ -62,17 +62,17 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     
     @And("user click on click here on reset your password")
     public void user_click_on_click_here_on_reset_your_password() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().clickOnClickHere();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickOnClickHere();
     }
     
     @And("user is able to see click here")
     public void user_is_able_to_see_click_here() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().displayClickHere();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayClickHere();
     }
     
     @And("user is able to verify click here on mobile")
     public void user_is_able_to_veify_click_here_on_mobile() throws Exception {
-    	testContext.getPageObjectManager().getMailinatorPage().displayClickHereMobile();
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayClickHereMobile();
     }
     
     @And("user enter new password")
@@ -81,32 +81,32 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     	int number = rand.nextInt(999);
     	String value = "Test@" + Integer.toString(number);
     	password = value;
-    	testContext.getPageObjectManager().getResetPasswordPage().enterNewPassword(password);
+    	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).enterNewPassword(password);
     }
     
     @And("user enter re-type password")
     public void user_enter_retype_password() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().enterRetypeNewPassword(password);
+    	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).enterRetypeNewPassword(password);
     }
     
     @And("user tap on sign in button")
     public void user_tap_on_sign_in_button() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().clickSignInButton();
+    	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).clickSignInButton();
     }
     
     @And("user click on reset password button")
     public void user_click_on_reset_password_button() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().clickResetPasswordButton();
+    	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).clickResetPasswordButton();
     }
     
     @Then("user is navigated to password reset confirmation screen")
     public void user_is_navigated_to_passowrd_reset_confirmation_screen() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().displayResetPasswordScreen();
+    	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).displayResetPasswordScreen();
     }
     
     @And("user click buton join now")
     public void user_click_button_join_now() throws Exception {
-    	testContext.getPageObjectManager().getResetPasswordPage().clickJoinNowButton();
+    	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).clickJoinNowButton();
     }
  
 }
