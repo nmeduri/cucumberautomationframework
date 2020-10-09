@@ -4,6 +4,10 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 
+/**
+ * This file contains the locator of Get a new triangle Reward Page
+ * 
+ */
 public class Link_reward_ProfileScreen_page_Locator {
 
 
@@ -18,7 +22,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 	String Birth=Property.getProperty(Constant.OR_FILE, "Birth");
 	String continuebtn= Property.getProperty(Constant.OR_FILE, "continue");
 	String cancel=Property.getProperty(Constant.OR_FILE, "cancel");
-
 	String YOBerror=Property.getProperty(Constant.OR_FILE, "YOBerror");
 	String FNError=Property.getProperty(Constant.OR_FILE, "FNError");
 	String LNError=Property.getProperty(Constant.OR_FILE, "LNError");
@@ -37,14 +40,17 @@ public class Link_reward_ProfileScreen_page_Locator {
     String InvalidFirstnameError=Property.getProperty(Constant.OR_FILE, "InvalidFirstnameError");
 
     /**
+<<<<<<< HEAD
+	 * gets Locator - Get new triangle reward option
+=======
 	 * gets Locator - Triangle Reward
+>>>>>>> branch 'develop' of https://acn-ctc@dev.azure.com/acn-ctc/ODP%20Test%20Automation/_git/ODP%20Test%20Automation
 	 * 
 	 */
 	public String getTriangleReward() {
 
 		return getTriangleReward;
-	}
-	
+	}	
 	/**
 	 * gets Locator - First Name
 	 * 
@@ -62,7 +68,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return lastName;
 	}
-	
 	/**
 	 * gets Locator - Address
 	 * 
@@ -71,7 +76,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return address;
 	}
-	
 	/**
 	 * gets Locator - City
 	 * 
@@ -80,7 +84,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return city;
 	}
-	
 	/**
 	 * gets Locator - Province
 	 * 
@@ -89,7 +92,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return province;
 	}
-	
 	/**
 	 * gets Locator - Postal Code
 	 * 
@@ -98,7 +100,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return postalCode;
 	}
-	
 	/**
 	 * gets Locator - Phone Number
 	 * 
@@ -107,7 +108,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return phnNumber;
 	}
-	
 	/**
 	 * gets Locator - Date of Birth
 	 * 
@@ -116,7 +116,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return Birth;
 	}
-	
 	/**
 	 * gets Locator - Continue Button
 	 * 
@@ -125,7 +124,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return continuebtn;
 	}
-	
 	/**
 	 * gets Locator - Cancel Button
 	 * 
@@ -134,7 +132,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return cancel;
 	}
-	
 	/**
 	 * gets Locator - YOB Error
 	 * 
@@ -143,7 +140,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return YOBerror;
 	}
-	
 	/**
 	 * gets Locator - First Name Error
 	 * 
@@ -152,7 +148,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return FNError;
 	}
-	
 	/**
 	 * gets Locator - Last Name Error
 	 * 
@@ -161,7 +156,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return LNError;
 	}
-	
 	/**
 	 * gets Locator - Address Error
 	 * 
@@ -170,7 +164,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return addressError;
 	}
-	
 	/**
 	 * gets Locator - City Error
 	 * 
@@ -179,7 +172,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return cityError;
 	}
-	
 	/**
 	 * gets Locator - Postal Code Error
 	 * 
@@ -188,7 +180,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return PinError;
 	}
-	
 	/**
 	 * gets Locator - Province Error
 	 * 
@@ -197,7 +188,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return provinceErr;
 	}
-	
 	/**
 	 * gets Locator - Phone Number Error
 	 * 
@@ -206,7 +196,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return phnError;
 	}
-	
 	/**
 	 * gets Locator - Province
 	 * 
@@ -215,7 +204,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return provinceValue;
 	}
-	
 	/**
 	 * gets Locator - Year
 	 * 
@@ -224,7 +212,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return yearOfBirthValue;
 	}
-	
 	/**
 	 * gets Locator - Month of Birth
 	 * 
@@ -269,7 +256,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return InvalidFirstnameError;
 	}
-	
 	/**
 	 * gets Locator - Invalid Last name
 	 * 
@@ -278,7 +264,5 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 		return InvalidLastnameError;
 	}
-	
-
 
 }

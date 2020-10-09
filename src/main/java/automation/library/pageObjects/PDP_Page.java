@@ -43,6 +43,7 @@ public class PDP_Page extends PageObject {
 	public void display_PDP_Page() throws Exception {
 
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
+		Log.message("PDP title: "+testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle(), true);
 
 	}
 
@@ -622,6 +623,7 @@ public class PDP_Page extends PageObject {
 		   Log.message("Color:- " + colorValue, true);
 		   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#000000", colorValue);
 	   }
+
 	
 	/** This function is verify that quantity box is visible */
 	public void verifyQuantityBoxVisible() throws Exception {
@@ -633,8 +635,17 @@ public class PDP_Page extends PageObject {
 		String value = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Quantity_Box()), "value");
 		Assert.assertEquals("1", value);
 	}
-	
-	
+	/** This function is verify that PDP Page is displayed */
+	public void display_PDP_Page_Title() throws Exception {
+
+		if(testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle().contains("product-detail-page")) {
+		Log.message("PDP title: "+testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle(), true);
+		Thread.sleep(1000);
+		}else {
+			Log.message("PDP page is not displayed", true);
+			fail();
+		}
+	}
 	/** This function is verify that Pencil Banner is displayed */
 	public void display_PencilBanner() throws Exception {
 		Assert.assertTrue($display(
@@ -817,6 +828,5 @@ public class PDP_Page extends PageObject {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignOutOption()));
 	}
-
 	
 }

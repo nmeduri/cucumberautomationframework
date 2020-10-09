@@ -28,6 +28,7 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
+
 /**
  * This file contains the scenario of user stories OCCP-1680
  */

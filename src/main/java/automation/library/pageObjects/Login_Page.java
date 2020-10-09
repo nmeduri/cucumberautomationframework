@@ -68,7 +68,7 @@ public class Login_Page extends PageObject {
 	
 	/** This function click on sign in button */
 	public void click_Sign_In_Button() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button()));
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button())),20);
 	}
 	
 	/** This function is verify that Page 'Welcome Back' is displayed */
@@ -177,6 +177,11 @@ public class Login_Page extends PageObject {
 //		PageObject.getDriver().findElement(By.id("clearButton")).sendKeys(Keys.ENTER);
 //		
 //		js.executeScript(acceptDialogScript);
+	}
+	public void close_Browser() throws Exception {
+		
+		DriverFactory.getInstance().getDriver().close();
+
 	}
 	
 //	public void clear_browser_history() throws Exception {

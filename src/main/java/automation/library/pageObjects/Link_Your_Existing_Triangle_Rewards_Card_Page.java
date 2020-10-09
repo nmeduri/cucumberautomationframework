@@ -53,6 +53,10 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	public void enterData_Deactivated_Card_Number() throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Deactivated_Card_Number());
 	}
+	/** This function enters activated card number */
+	public void enterData_activated_Card_Number() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Activated_Card_Number());
+	}
 	
 	/** This function enters card number */
 	public void enter_Card_Number(String data) throws Exception {
@@ -138,5 +142,19 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	public void display_Triangle_Reward_Card() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Triangle_Reward_Card())), 40);
 	}
+	/** This function enter postal code in after entering active card */
+	public void enter_postalcode() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_PostalCode_ActivateCard())), 20);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_PostalCode_ActivateCard()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_PostalCode_ActivateCard()), FileReaderManager.getInstance().getDataReader().get_Postal_Code_Rewards());
+
+	}
+	/** This function enter YOB in after entering active card */
+	public void enter_YOB() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_YOB_ActivateCard())), 20);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_YOB_ActivateCard()));
+		$click($(Loc.ID, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value()));
+	}
+	
 	
 }

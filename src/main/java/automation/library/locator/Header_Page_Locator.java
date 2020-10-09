@@ -16,6 +16,14 @@ public class Header_Page_Locator {
 	String accountOnHeader = Property.getProperty(Constant.OR_FILE, "accountOnHeader");
 	String signInHeader = Property.getProperty(Constant.OR_FILE, "signInHeader");
 	String registrationHeader = Property.getProperty(Constant.OR_FILE, "registrationHeader");
+	String AccountLink= Property.getProperty(Constant.OR_FILE, "Account");
+	String PencilBanner=Property.getProperty(Constant.OR_FILE, "PencilBanner");
+	String MadeForLife=Property.getProperty(Constant.OR_FILE, "MadeForLife");
+	String CreditOffered=Property.getProperty(Constant.OR_FILE, "CreditOffered");
+	String CustomerService=Property.getProperty(Constant.OR_FILE, "CustomerService");
+	String Language=Property.getProperty(Constant.OR_FILE, "Language");
+	String CustomerServicePage=Property.getProperty(Constant.OR_FILE, "CustomerServicePage");
+	String HiLink=Property.getProperty(Constant.OR_FILE, "HiLink");
 	String bannerLogo = Property.getProperty(Constant.OR_FILE, "bannerLogo");
 	String storeLocator=Property.getProperty(Constant.OR_FILE, "storeLocator");
 	String searchBar = Property.getProperty(Constant.OR_FILE, "searchBar");
@@ -51,6 +59,62 @@ public class Header_Page_Locator {
 
 	public String get_Registration_Header() {
 		return registrationHeader;
+	}
+	/**
+	 * gets Locator - PencilBanner (Header)
+	 * 
+	 */
+	public String get_PencilBanner() {
+		return PencilBanner;
+	}
+	/**
+	 * gets Locator - Account (Header)
+	 * 
+	 */
+	public String get_Account_link() {
+		return AccountLink;
+	}
+	/**
+	 * gets Locator - MadeForLife (Header)
+	 * 
+	 */
+	public String get_MadeForLifeText() {
+		return MadeForLife;
+	}
+	/**
+	 * gets Locator - Customer Service (Header)
+	 * 
+	 */
+	public String get_CustomerService() {
+		return CustomerService;
+	}
+	/**
+	 * gets Locator - Language (Header)
+	 * 
+	 */
+	public String get_Language() {
+		return Language;
+	}
+	/**
+	 * gets Locator - Credit Offered Text (Header)
+	 * 
+	 */
+	public String get_CreditOfferedText() {
+		return CreditOffered;
+	}
+	/**
+	 * gets Locator - Customer Service Page(Header)
+	 * 
+	 */
+	public String get_CustomerService_Page() {
+		return CustomerServicePage;
+	}
+	/**
+	 * gets Locator - HiLink (Header)
+	 * 
+	 */
+	public String get_HiLink() {
+		return HiLink;
 	}
 	
 	/**

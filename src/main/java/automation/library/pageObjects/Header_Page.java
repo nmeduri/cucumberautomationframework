@@ -50,6 +50,67 @@ public class Header_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Registration_Header()));
 	}
 	
+	/** This function display Pencil Banner */
+	public void display_PencilBanner() throws Exception {
+		 $display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_PencilBanner())), 10);
+		Assert.assertTrue($display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_PencilBanner())));
+	}
+	
+	/** This function display Account Link */
+	public void display_AccountLink() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account_link()));
+	}
+	
+	/** This function display Made For Life Text */
+	public void display_MadeForLife() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_MadeForLifeText()));
+	}
+	
+	/** This function display Customer service page */
+	public void display_CustomerServicePage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CustomerService_Page()));
+	}
+	
+	/** This function display Credit Offered Text */
+	public void display_CreditOffered() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CreditOfferedText()));
+	}
+	
+	/** This function display Customer service Link */
+	public void display_CustomerService() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CustomerService()));
+	}
+	
+	/** This function Click Customer service Link */
+	public void click_CustomerService() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CustomerService()));
+	}
+	
+	/** This function display Language Link */
+	public void display_Language() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Language()));
+	}
+	
+	/** This function click Language Link */
+	public void Click_Language() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Language()));
+	}
+	
+	/** This function click Account Link */
+	public void Click_AccountLink() throws Exception {
+		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account_link()));
+	}
+	
+	/** This function click Hi Link after login  */
+	public void Click_HiLink() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_HiLink()));
+	}
+	/** scroll down to page */
+	public void scrollDown() throws Exception {
+		   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+	   }
+	
 	/** This function is verify that banner logo is displayed */
 	public void displayBannerLogo() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Banner_Logo()));

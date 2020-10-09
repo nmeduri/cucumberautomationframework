@@ -260,13 +260,16 @@ public class PageObject {
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), getWaitDuration());
 		switch (type) {
 		case "selectByText":
-			ele.clickable().dropdown().selectByVisibleText(value);
+			//ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			ele.click().dropdown().selectByVisibleText(value);
 			break;
 		case "selectByIndex":
-			ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			//ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			ele.click().dropdown().selectByIndex(Integer.parseInt(value));
 			break;
 		case "selectByValue":
-			ele.clickable().dropdown().selectByValue(value);
+			//ele.clickable().dropdown().selectByValue(value);
+			ele.click().dropdown().selectByValue(value);
 			break;
 		}
 
@@ -532,6 +535,7 @@ public class PageObject {
 		String String = (java.lang.String) configuration.getProperty("parentWindow");
 		PageObject.getDriver().switchTo().window(String);
 	}
+	
 }
 
 	

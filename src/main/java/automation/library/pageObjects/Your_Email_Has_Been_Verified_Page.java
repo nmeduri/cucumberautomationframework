@@ -42,5 +42,9 @@ public class Your_Email_Has_Been_Verified_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getYourEmailHasBeenVerifiedLocator().get_Your_Email_Has_Been_Verified())), 15);
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getYourEmailHasBeenVerifiedLocator().get_Your_Email_Has_Been_Verified()));
 	}
-
+	/** This function click on 'Continue' button */
+	public void Click_Continue_Button_Email_Verification_Page() throws Exception {
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getYourEmailHasBeenVerifiedLocator().get_Continue_Button_Email_Verification_Page())),10);
+	}
 }
