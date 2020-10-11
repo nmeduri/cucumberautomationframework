@@ -535,7 +535,21 @@ public class PageObject {
 		String String = (java.lang.String) configuration.getProperty("parentWindow");
 		PageObject.getDriver().switchTo().window(String);
 	}
-	
+	/** return Not display conditon */
+	public boolean $notDisplay(Element element) {
+		/*try {
+			return !element.display();		
+		}catch(Exception e){			
+			return false;
+		}*/	
+		if(element.display()) {
+			Log.message("displayed :- " , true);
+			return false;
+		}else
+		return true;
+		
+	}
+
 }
 
 	

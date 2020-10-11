@@ -7,6 +7,7 @@ import automation.library.dataProviders.ConfigFileReader;
 import automation.library.dataProviders.DataReader;
 import automation.library.managers.FileReaderManager;
 import automation.library.pageObjects.Login_Page;
+import automation.library.pageObjects.PDP_Page;
 import automation.library.selenium.base.BaseClass;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
@@ -19,14 +20,13 @@ import io.restassured.internal.support.FileReader;
  * This file contains the scenario of user stories OCCP-3149
  */
 public class OCCP_3149_Link_Rewards_Step extends BaseClass {
-	 
-
 	public OCCP_3149_Link_Rewards_Step(TestContext context) throws Exception {
 		testContext = context;
 		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
 	
+
 
 	@Then("user click on Get new triangle reward option")
 
@@ -47,23 +47,19 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 	public void verify_ErrorMessage() throws Exception {
 		
 	}
-	
-	
 	@And ("do not enter mandatory fields and click on Continue button")
+
         public void ClickContinue_ErrorMessage() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).cickContinueButton();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_YOBerror();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_phnError();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_provinceErr();
-		JavascriptExecutor js = (JavascriptExecutor) PageObject.getDriver();
-		js.executeScript("window.scrollBy(0,-300)", "");
-
-		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver())
-		.get_LastNameError();
+		testContext.getPageObjectManager().getPDPPage(driver).scrollUpByCoordinates();
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_LastNameError();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_addressError();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_CityError();
-		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_FNError();
-		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_pinError();
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_FirstNameError();
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_postalCodeError();
 
 	}
 	@Then ("enter invalid details for the input fields and click on continue button")
@@ -75,9 +71,10 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 	}
 	@Then ("enter pending loyalty card and click continue")
 	public void enterPendingLoyaltyCard_Continue() throws Exception {
+
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enter_Card_Number(FileReaderManager.getInstance().getDataReader().get_Pending_Card_Number());
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).click_Continue_Button();
-		
+	
 	}
 	@Then ("verify the display of details on the Complete your profile screen")
 	public void verify_the_details_on_Complete_your_profile_screen() throws Exception {

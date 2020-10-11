@@ -63,7 +63,9 @@ public class Header_Page extends PageObject {
 	
 	/** This function display Made For Life Text */
 	public void display_MadeForLife() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_MadeForLifeText()));
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_MadeForLifeText())), 10);
+		Assert.assertTrue($display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_MadeForLifeText())));
+
 	}
 	
 	/** This function display Customer service page */
@@ -75,6 +77,10 @@ public class Header_Page extends PageObject {
 	public void display_CreditOffered() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CreditOfferedText()));
 	}
+	/** This function click Credit Offered Text */
+	public void click_CreditOffered() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CreditOfferedText()));
+    }
 	
 	/** This function display Customer service Link */
 	public void display_CustomerService() throws Exception {
@@ -135,6 +141,22 @@ public class Header_Page extends PageObject {
 	public void displaySearchBar() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()));
 	}
+	/** This function is click search bar */
+	public void Click_SearchBar() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()));
+	}
+	/** This function is enter value on search bar */
+	public void enterData_SearchBar() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()),FileReaderManager.getInstance().getDataReader().get_Search_Data());
+	}
+	/** This function is click the search icon */
+	public void clickSearchIcon() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_search_icon()));
+	}
+	/** This function is display search result */
+	public void displaySearchResult() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_search_result()));
+	}
 	
 	/** This function is verify that Store Name is displayed */
 	public void displayStoreName() throws Exception {
@@ -180,7 +202,16 @@ public class Header_Page extends PageObject {
 		configuration.setProperty("cartUrl", cartUrl);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Cart_Icon()));
 	}
-	
+	/** This function display information banner */
+	public void display_InformationBanner() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBanner()));
+	}
+	/** This function display information banner */
+	public void display_InformationBannerText() throws Exception {
+	    $display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBannerText()));
+	    $display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBannerLink()));
+
+	}
 	/** This function is verify that cart is redirected to configure page */
 	public void verifyCartRedirectedToConfigurePage() throws Exception {
 		String expetedUrl = (java.lang.String) 		configuration.getProperty("cartUrl");

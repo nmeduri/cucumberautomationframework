@@ -60,7 +60,10 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enters card number */
 	public void enter_Card_Number(String data) throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 40);
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), data);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 40);
+
 	}
 	
 	/** This function clicks on Continue button */
@@ -141,6 +144,23 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	/** This function verify that Triangle Reward card is displayed */
 	public void display_Triangle_Reward_Card() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Triangle_Reward_Card())), 40);
+	}
+
+/** This function validate postal code after entering active card */
+public void validate_postalcode() throws Exception {
+	$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_PostalCode_ActivateCard())), 20);
+	
+}
+/** This function validate Year of birth field after entering active card */
+public void validate_YOB() throws Exception {
+	$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_YOB_ActivateCard())), 20);
+	
+}
+	
+	/** This function enter invalid postal code after entering active card */
+	public void enter_invalidPostalCode() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_PostalCode_ActivateCard()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_PostalCode_ActivateCard()), FileReaderManager.getInstance().getDataReader().get_InvalidPostal_Code());
 	}
 	/** This function enter postal code in after entering active card */
 	public void enter_postalcode() throws Exception {

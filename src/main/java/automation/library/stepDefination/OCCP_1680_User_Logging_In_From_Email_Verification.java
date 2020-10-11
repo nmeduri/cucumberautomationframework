@@ -109,5 +109,4 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     public void user_click_button_join_now() throws Exception {
     	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).clickJoinNowButton();
     }
- 
 }

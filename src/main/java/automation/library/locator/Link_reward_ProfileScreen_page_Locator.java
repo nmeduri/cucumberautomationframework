@@ -39,6 +39,7 @@ public class Link_reward_ProfileScreen_page_Locator {
     String InvalidLastnameError=Property.getProperty(Constant.OR_FILE, "InvalidLastnameError");
     String InvalidFirstnameError=Property.getProperty(Constant.OR_FILE, "InvalidFirstnameError");
 
+
     /**
 <<<<<<< HEAD
 	 * gets Locator - Get new triangle reward option
@@ -144,7 +145,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * gets Locator - First Name Error
 	 * 
 	 */
-	public String get_FNError() {
+	public String get_FirstNameError() {
 
 		return FNError;
 	}
@@ -152,7 +153,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * gets Locator - Last Name Error
 	 * 
 	 */
-	public String get_LNError() {
+	public String get_LastNameError() {
 
 		return LNError;
 	}
@@ -176,8 +177,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * gets Locator - Postal Code Error
 	 * 
 	 */
-	public String get_PinError() {
-
+	public String get_PostalCodeError() {
 		return PinError;
 	}
 	/**
@@ -185,7 +185,6 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * 
 	 */
 	public String get_provinceErr() {
-
 		return provinceErr;
 	}
 	/**
@@ -252,7 +251,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * gets Locator - Invalid First Name
 	 * 
 	 */
-	public String get_InvalidFN() {
+	public String get_InvalidFastName() {
 
 		return InvalidFirstnameError;
 	}
@@ -260,7 +259,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * gets Locator - Invalid Last name
 	 * 
 	 */
-	public String get_InvalidLN() {
+	public String get_InvalidLastName() {
 
 		return InvalidLastnameError;
 	}

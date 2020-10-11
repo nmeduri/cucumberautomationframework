@@ -22,7 +22,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And verify when user click on cancel button
 	Then user should navigate to link cards screen
 	
-	@RegressionTest @WebView @WideScreen 
+	@RegressionTest @WebView @WideScreen @SmokeTest
 	Scenario: TC-2399, Verify the 'Try Again' button on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email detail
@@ -168,7 +168,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then verify an error message appears informing that card is deactivated
 	Then try again button should be present in the error screen
 	
-	@RegressionTest @MobileView @TabletView
+	@RegressionTest @MobileView @TabletView @SmokeTest
 	Scenario: TC-2394 Verify the 'Cancel' button on screen when Card is Deactivated in Mobile view
 	Given login url is available
 	When enter email detail

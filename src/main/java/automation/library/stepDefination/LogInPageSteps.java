@@ -141,6 +141,7 @@ public class LogInPageSteps extends BaseClass{
 	}
 	@When("enter hide link screen email details")
 	public void enter_hide_link_screen_email_details() throws Exception {
+
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Hide_Link_Screen_Email_Data());
 	}
 }

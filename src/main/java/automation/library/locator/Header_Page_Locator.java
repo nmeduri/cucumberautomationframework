@@ -17,6 +17,7 @@ public class Header_Page_Locator {
 	String signInHeader = Property.getProperty(Constant.OR_FILE, "signInHeader");
 	String registrationHeader = Property.getProperty(Constant.OR_FILE, "registrationHeader");
 	String AccountLink= Property.getProperty(Constant.OR_FILE, "Account");
+	String informationBanner= Property.getProperty(Constant.OR_FILE, "informationBanner");
 	String PencilBanner=Property.getProperty(Constant.OR_FILE, "PencilBanner");
 	String MadeForLife=Property.getProperty(Constant.OR_FILE, "MadeForLife");
 	String CreditOffered=Property.getProperty(Constant.OR_FILE, "CreditOffered");
@@ -27,13 +28,16 @@ public class Header_Page_Locator {
 	String bannerLogo = Property.getProperty(Constant.OR_FILE, "bannerLogo");
 	String storeLocator=Property.getProperty(Constant.OR_FILE, "storeLocator");
 	String searchBar = Property.getProperty(Constant.OR_FILE, "searchBar");
+	String searchIcon = Property.getProperty(Constant.OR_FILE, "searchIcon");
 	String wishlistIcon = Property.getProperty(Constant.OR_FILE, "wishlistIcon");
 	String cartIcon = Property.getProperty(Constant.OR_FILE, "cartIcon");
 	String storeName = Property.getProperty(Constant.OR_FILE, "storeName");
 	String storeStatus = Property.getProperty(Constant.OR_FILE, "storeStatus");
 	String closingHours = Property.getProperty(Constant.OR_FILE, "closingHours");
 	String chervon = Property.getProperty(Constant.OR_FILE, "chervon");
-	
+	String InformationBannerText = Property.getProperty(Constant.OR_FILE, "InformationBannerText");
+	String InformationBannerLink = Property.getProperty(Constant.OR_FILE, "InformationBannerLink");
+	String SearchResult=Property.getProperty(Constant.OR_FILE, "SearchResult");
 	/**
 	 * gets Locator - Account
 	 * 
@@ -187,5 +191,41 @@ public class Header_Page_Locator {
 	 */
 	public String get_Chervon() {
 		return chervon;
+	}
+	
+	/**
+	 * gets Locator - information Banner
+	 * 
+	 */
+	public String get_informationBanner() {
+		return informationBanner;
+	}
+	/**
+	 * gets Locator - information Banner Text
+	 * 
+	 */
+	public String get_informationBannerText() {
+		return InformationBannerText;
+	}
+	/**
+	 * gets Locator - information Banner Link
+	 * 
+	 */
+	public String get_informationBannerLink() {
+		return InformationBannerLink;
+	}
+	/**
+	 * gets Locator - Search icon
+	 * 
+	 */
+	public String get_search_icon() {
+		return searchIcon;
+	}
+	/**
+	 * gets Locator - Search result
+	 * 
+	 */
+	public String get_search_result() {
+		return SearchResult;
 	}
 }

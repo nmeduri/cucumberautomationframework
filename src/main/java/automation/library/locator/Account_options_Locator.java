@@ -6,11 +6,11 @@ import automation.library.logdetail.Log;
 
 
 /**
- * This file contains the locator of Account Options
+ * This file contains the locator of Account Option
  * 
  */
 
-public class Account_Options_Page_Locator {
+public class Account_options_Locator {
 	
 	String SignIn=Property.getProperty(Constant.OR_FILE, "SignIn");
 	String Registration=Property.getProperty(Constant.OR_FILE, "Registration");
@@ -23,31 +23,7 @@ public class Account_Options_Page_Locator {
 	String Address=Property.getProperty(Constant.OR_FILE, "Address");
 	String Reward=Property.getProperty(Constant.OR_FILE, "Reward");
 	String Preference=Property.getProperty(Constant.OR_FILE, "Preference");			
-	String HomeServices=Property.getProperty(Constant.OR_FILE, "HomeServices");
-	String Returns=Property.getProperty(Constant.OR_FILE, "Returns");
-	String CheckOrderStatus=Property.getProperty(Constant.OR_FILE, "CheckOrderStatus");
-
-	/**
-	 * gets Locator - Home Services Option (Account Option)
-	 * 
-	 */
-	public String get_HomeServicesOption() {
-		return HomeServices;
-	}
-	/**
-	 * gets Locator - Return Option (Account Option)
-	 * 
-	 */
-	public String get_ReturnsOption() {
-		return Returns;
-	}
-	/**
-	 * gets Locator - Return Option (Account Option)
-	 * 
-	 */
-	public String get_CheckOrderStatusOption() {
-		return CheckOrderStatus;
-	}
+	
 	
 	/**
 	 * gets Locator - Preferences Option (Account Option)

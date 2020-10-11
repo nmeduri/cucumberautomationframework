@@ -9,20 +9,21 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
-	
 public final class Latest_Commit_Runner extends BaseClass{
-	public static String name;	
+	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_2735_Gigya_Integration_with_Hybirs.feature",
+
+			"classpath:Adobe/Regression/OCCP_3212_Link_Existing_Triangle_Rewards_Card_Error_Cases_Deactivated_Card.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@RegressionTest",
+			"--tags", "@SmokeTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
 			"--plugin", "junit:target/JunitReports/SAP_BVT.xml",
 			"--plugin", "html:target/selenium-reports"
 	};
+
 	public static void main(String[] args) throws Throwable {
 	
 		Latest_Commit_Runner ls = new Latest_Commit_Runner();

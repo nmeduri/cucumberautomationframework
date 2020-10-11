@@ -66,8 +66,7 @@ public class PDP_PageLocator {
 	String wishlistBadge = Property.getProperty(Constant.OR_FILE, "wishlistBadge");
 	String wishListIconPDP = Property.getProperty(Constant.OR_FILE, "wishListIconPDP");
 	String defaultStateWishListIcon = Property.getProperty(Constant.OR_FILE, "defaultStateWishListIcon");
-	
-	String PencilBanner = Property.getProperty(Constant.OR_FILE, "PencilBanner");
+    String PencilBanner = Property.getProperty(Constant.OR_FILE, "PencilBanner");
 	String AccountLink = Property.getProperty(Constant.OR_FILE, "AccountLink");
 	String PreferencesOption = Property.getProperty(Constant.OR_FILE, "PreferencesOption");
 	String WishListOption = Property.getProperty(Constant.OR_FILE, "WishListOption");
@@ -614,6 +613,7 @@ public class PDP_PageLocator {
 	public String get_Default_State_WishList_Icon() {
 		return defaultStateWishListIcon;
 	}
+
 	/**
 	 * gets Locator - Pencil Banner
 	 * 

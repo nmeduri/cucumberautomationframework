@@ -136,5 +136,28 @@ public class Account_Options_Page extends PageObject {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getAccount_Options_Page_Locator().get_SignOutOption()));
 	}
-
+	/** This function display home service option */
+	public void display_HomeService_option() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAccount_Options_Page_Locator().get_HomeServicesOption()));
+	}
+	/** This function display Returns option */
+	public void display_Returns_option() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAccount_Options_Page_Locator().get_ReturnsOption()));
+	}
+	/** This function display Check order status option */
+	public void display_checkOrderStatusoption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAccount_Options_Page_Locator().get_CheckOrderStatusOption()));
+	}
+	/** This function click home service option */
+	public void click_HomeService_option() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAccount_Options_Page_Locator().get_HomeServicesOption()));
+	}
+	/** This function click Returns option */
+	public void click_Returns_option() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAccount_Options_Page_Locator().get_ReturnsOption()));
+	}
+	/** This function display Check order status option */
+	public void click_checkOrderStatusoption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAccount_Options_Page_Locator().get_CheckOrderStatusOption()));
+	}
 }

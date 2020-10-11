@@ -32,7 +32,6 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 		super(driver);
 		testContext = new TestContext();
 	}
-
 	/** This function display GetTriangleReward option */
 
 	public void display_GetTriangleReward_option() throws Exception {
@@ -51,7 +50,8 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 	}
 	/** This function get last name */
 	public void get_LastNameError() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_LNError()));
+		
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_LastNameError()));
 	}
 	/** This function is verify that error message is displayed for city */
 	public void get_CityError() throws Exception {
@@ -61,9 +61,10 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 	public void get_addressError() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_addressError()));
 	}
-	/** This function is verify that error message is displayed for postal code */
-	public void get_pinError() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_PinError()));
+/** This function is verify that error message is displayed for postal code */
+
+	public void get_postalCodeError() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_PostalCodeError()));
 	}
 	/** This function is verify that error message is displayed for province */
 	public void get_provinceErr() throws Exception {
@@ -74,14 +75,12 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_phnError()));
 	}
 	/** This function is verify that error message is displayed for First Name Error */
-	public void get_FNError()throws Exception { 
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_FNError()));
-
+	public void get_FirstNameError()throws Exception { 
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_FirstNameError()));
 	}
 	/** This function is verify that error message is displayed for YOB */
 	public void get_YOBerror()throws Exception { 
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_YOBerror()));
-
 	}
 	/** enter First Name */
 	public void enterData_FirstName_Profile_Page(String data) throws Exception {
@@ -129,9 +128,7 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 	public void enterData_DOB_Profile_Page() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_DateOfBirth()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_DOBValue()));
-
-	}
-
+		}
 }
 
 

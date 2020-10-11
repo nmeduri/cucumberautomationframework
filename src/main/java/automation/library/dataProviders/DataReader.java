@@ -299,18 +299,11 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
+	
 	/**
-	 * gets First Name
+	 * gets invalid First Name
 	 * 
 	 */
-
-	public String get_FirstName() {
-		String getFN = Property.getProperty(Constant.DATA_FILE, "FirstName");
-		if(getFN != null)
-			return getFN;
-		else
-			throw new RuntimeException("First Name Data not specified in the Data file.");
-	}
 	public String get_invalid_FirstName() {
 		String getIFN = Property.getProperty(Constant.DATA_FILE, "InvalidFirstName");
 		if(getIFN != null)
@@ -318,6 +311,10 @@ public class DataReader {
 		else
 			throw new RuntimeException("Invalid First Name Data not specified in the Data file.");
 	}
+	/**
+	 * gets invalid Last Name
+	 * 
+	 */
 	public String get_invalid_LastName() {
 		String getILN = Property.getProperty(Constant.DATA_FILE, "InvalidLastName");
 		if(getILN != null)
@@ -390,7 +387,18 @@ public class DataReader {
 		else
 			throw new RuntimeException("Postal Code Data not specified in the Data file.");
 	}
+	/**
+	 * gets Invalid Postal Code
+	 * 
+	 */
 	
+	public String get_InvalidPostal_Code() {
+		String postalCode = Property.getProperty(Constant.DATA_FILE, "invalidPostalCode");
+		if(postalCode != null)
+			return postalCode;
+		else
+			throw new RuntimeException("Invalid postal Code Data not specified in the Data file.");
+	}
 	/**
 	 * gets Phone Number
 	 * 
@@ -404,31 +412,6 @@ public class DataReader {
 			throw new RuntimeException("Phone Number Data not specified in the Data file.");
 
 	}
-
-	/**
-	 * gets Last Name
-	 * 
-	 */
-	public String get_LastName() {
-		String getLN = Property.getProperty(Constant.DATA_FILE, "LastName");
-		if(getLN != null)
-			return getLN;
-		else
-			throw new RuntimeException("Last Name Data not specified in the Data file.");
-	}
-	
-	/**
-	 * gets Address
-	 * 
-	 */
-	public String get_Address() {
-		String getAddress = Property.getProperty(Constant.DATA_FILE, "Address");
-		if(getAddress != null)
-			return getAddress;
-		else
-			throw new RuntimeException("Address Data not specified in the Data file.");
-	}
-	
 	/**
 	 * gets Deactivated card number
 	 * 
@@ -441,6 +424,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Deactivated Card Number not specified in the Data file.");
 	}
+
 	/**
 	 * gets Activated card number
 	 * 
@@ -465,13 +449,6 @@ public class DataReader {
 			throw new RuntimeException("Pending Card Number not specified in the Data file.");
 	}
 
-	public String get_City() {
-		String getCity = Property.getProperty(Constant.DATA_FILE, "City");
-		if(getCity != null)
-			return getCity;
-		else
-			throw new RuntimeException("City Data not specified in the Data file.");
-	}
 	/**
 	 * gets Data - Proivnce
 	 * 
@@ -484,7 +461,7 @@ public class DataReader {
 			throw new RuntimeException("Province Data not specified in the Data file.");
 	}
 	/**
-	 * gets Valid hide link screen Email Detail
+     * gets Valid hide link screen Email Detail
 	 * 
 	 */
 	public String get_Hide_Link_Screen_Email_Data() {
@@ -494,11 +471,25 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
+	
+	
+	/**
+	 * gets search data
+	 * 
+	 */
+	
+	public String get_Search_Data() {
+		String getsearch = Property.getProperty(Constant.DATA_FILE, "searchValue");
+		if(getsearch != null)
+			return getsearch;
+		else
+			throw new RuntimeException("Search data not specified in the Data file.");
+	}
+	
 	/**
 	 * gets Gigya Api Tool URL
 	 * 
 	 */
-	
 	public String get_Gigya_Api_Tool_Url() {
 		String getGigyaApiToolUrl = Property.getProperty(Constant.DATA_FILE, "gigyaApiToolUrl");
 		if(getGigyaApiToolUrl != null)
