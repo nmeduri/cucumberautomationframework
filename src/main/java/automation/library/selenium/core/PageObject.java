@@ -297,6 +297,12 @@ public class PageObject {
 		JavascriptExecutor js = (JavascriptExecutor) PageObject.getDriver();
 		js.executeScript("window.scrollBy(0,-5000)", "");
 	}
+	
+	/** scroll up by coordinates */
+	public void scrollUp() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-200)", "");
+	}
 
 	/** click on element */
 	public Element $click(Element element) {
@@ -535,6 +541,12 @@ public class PageObject {
 		String String = (java.lang.String) configuration.getProperty("parentWindow");
 		PageObject.getDriver().switchTo().window(String);
 	}
+	
+	/** navigate back to previous page */
+	public void navigateBack() throws Exception {
+		PageObject.getDriver().navigate().back();
+	}
+
 	public void quitDriver() {
 		driver.quit();
 	}
