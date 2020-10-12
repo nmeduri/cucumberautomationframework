@@ -412,6 +412,7 @@ public class DataReader {
 			throw new RuntimeException("Phone Number Data not specified in the Data file.");
 
 	}
+
 	/**
 	 * gets Deactivated card number
 	 * 
@@ -424,7 +425,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Deactivated Card Number not specified in the Data file.");
 	}
-
+	
 	/**
 	 * gets Activated card number
 	 * 
@@ -436,6 +437,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Activated Card Number not specified in the Data file.");
 	}
+
 	/**
 	 * gets Pending card number
 	 * 
@@ -449,39 +451,7 @@ public class DataReader {
 	}
 
 	/**
-	 * gets Data - Proivnce
-	 * 
-	 */
-	public String get_Province() {
-		String getProvince = Property.getProperty(Constant.DATA_FILE, "Province");
-		if(getProvince != null)
-			return getProvince;
-		else
-			throw new RuntimeException("Province Data not specified in the Data file.");
-	}
-	public String get_Postal() {
-		String getPostal = Property.getProperty(Constant.DATA_FILE, "PostalCode");
-		if(getPostal != null)
-			return getPostal;
-		else
-			throw new RuntimeException("Postal code Data not specified in the Data file.");
-	}
-	public String get_PhnNo() {
-		String getPhn = Property.getProperty(Constant.DATA_FILE, "Phone");
-		if(getPhn != null)
-			return getPhn;
-		else
-			throw new RuntimeException("Phone No Data not specified in the Data file.");
-	}
-	public String get_YOB() {
-		String getYOB = Property.getProperty(Constant.DATA_FILE, "YOB");
-		if(getYOB != null)
-			return getYOB;
-		else
-			throw new RuntimeException("YOB Data not specified in the Data file.");
-	}
-	/**
-     * gets Valid hide link screen Email Detail
+ * gets Valid hide link screen Email Detail
 	 * 
 	 */
 	public String get_Hide_Link_Screen_Email_Data() {
@@ -489,6 +459,7 @@ public class DataReader {
 		if(email != null) 
 			return email;
 		else
+
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
 	

@@ -25,19 +25,6 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
 	}
-	
-
-
-	@Then("user click on Get new triangle reward option")
-
-	public void Click_GetLinkRewardOption() throws Exception {
-		//Thread.sleep(5000);
-		JavascriptExecutor js = (JavascriptExecutor) PageObject.getDriver();
-		js.executeScript("window.scrollBy(0,200)", "");
-		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver())
-		.click_GetTriangleReward_option();
-
-	}
 
 	@Then("verify the field level validation on complete profile screen")
 	public void display_fieldLevelValidation_profile_screen() throws Exception {
@@ -48,7 +35,6 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 		
 	}
 	@And ("do not enter mandatory fields and click on Continue button")
-
         public void ClickContinue_ErrorMessage() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).cickContinueButton();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_YOBerror();

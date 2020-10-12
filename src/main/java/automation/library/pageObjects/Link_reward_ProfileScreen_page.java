@@ -43,6 +43,7 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().getTriangleReward()));
 	}
 	/** This function click GetTriangleReward option */
+
 	public void click_ContinueBtn() throws Exception {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_continuebtn()));
