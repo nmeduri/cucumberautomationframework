@@ -172,4 +172,4 @@ Feature: OCCP-2480 Account/Triangle ID | Link Rewards | View Link Cards options
 	@RegressionTest @MobileView @WideScreen
 	Scenario: close browser
 	Given Close Browser
-	
+

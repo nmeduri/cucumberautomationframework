@@ -538,6 +538,7 @@ public class PageObject {
 	public void quitDriver() {
 		driver.quit();
 	}
+
 	/** return Not display conditon */
 	public boolean $notDisplay(Element element) {
 		/*try {
@@ -552,7 +553,6 @@ public class PageObject {
 		return true;
 		
 	}
-
 }
 
 	

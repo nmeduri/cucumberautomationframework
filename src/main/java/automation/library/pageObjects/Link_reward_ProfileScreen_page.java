@@ -53,10 +53,12 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 		
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_LastNameError()));
 	}
+
 	/** This function is verify that error message is displayed for city */
 	public void get_CityError() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_cityError()));
 	}
+
 	/** This function is verify that error message is displayed for address */
 	public void get_addressError() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_addressError()));
