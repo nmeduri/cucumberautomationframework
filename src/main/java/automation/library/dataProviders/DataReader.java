@@ -429,7 +429,6 @@ public class DataReader {
 	 * gets Activated card number
 	 * 
 	 */
-	
 	public String get_Activated_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "activatedcardNo");
 		if(cardNo != null)
@@ -459,6 +458,27 @@ public class DataReader {
 			return getProvince;
 		else
 			throw new RuntimeException("Province Data not specified in the Data file.");
+	}
+	public String get_Postal() {
+		String getPostal = Property.getProperty(Constant.DATA_FILE, "PostalCode");
+		if(getPostal != null)
+			return getPostal;
+		else
+			throw new RuntimeException("Postal code Data not specified in the Data file.");
+	}
+	public String get_PhnNo() {
+		String getPhn = Property.getProperty(Constant.DATA_FILE, "Phone");
+		if(getPhn != null)
+			return getPhn;
+		else
+			throw new RuntimeException("Phone No Data not specified in the Data file.");
+	}
+	public String get_YOB() {
+		String getYOB = Property.getProperty(Constant.DATA_FILE, "YOB");
+		if(getYOB != null)
+			return getYOB;
+		else
+			throw new RuntimeException("YOB Data not specified in the Data file.");
 	}
 	/**
      * gets Valid hide link screen Email Detail
@@ -629,4 +649,5 @@ public class DataReader {
 		else
 			throw new RuntimeException("SignatureTimestamp Data not specified in the Data file.");
 	}
+
 }

@@ -58,5 +58,21 @@ public class HYB_OCCP_869_PDP_Specifications_Step extends BaseStep {
 		PageObject.verifyLanguageInList(response.jsonPath().get("specifications.features.featureUnit.name").toString(), "centimètre");
 		
 	}
+	
+	@When("user hits Specifications GET api")
+	public void user_hits_get_api_of_Specifications() {
+		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1357());
+	}
  
+	@Then("returned JSON should not have specifications section")
+	public void returned_should_not_have_specifications_section() {
+		String specifications=response.jsonPath().get("specifications");
+		Log.message("specifications :" +specifications , true);
+		if(specifications==null) {
+			Log.message("Specifications sections is not displayed", true);		
+		}else {
+			Log.message("Specifications sections is displayed", true);	
+		}
+
+	}
 }

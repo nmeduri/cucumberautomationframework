@@ -144,4 +144,5 @@ public class LogInPageSteps extends BaseClass{
 
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Hide_Link_Screen_Email_Data());
 	}
+
 }

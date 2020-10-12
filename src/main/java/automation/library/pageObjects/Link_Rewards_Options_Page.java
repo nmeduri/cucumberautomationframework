@@ -44,7 +44,7 @@ public class Link_Rewards_Options_Page extends PageObject {
 	}
 	/** This function is verify 'Do not show me this again' toggle is displayed */
 	public void displayGetDoNotShowMeThisAgainToggle() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Get_Do_Not_Show_Me_This_Again_Toggle()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Get_Do_Not_Show_Me_This_Again_Toggle())),40);
 	}
 	/** This function is verify click on the 'Do not show me this again' toggle from left to right */
 	public void clickOnGetDoNotShowMeToggleFromLeftToRight() throws Exception {
@@ -52,14 +52,13 @@ public class Link_Rewards_Options_Page extends PageObject {
 	}
 	/** This function is verify click on the 'Skip' Link*/
 	public void clickOnSkipLink() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Click_On_Skip_Link()));
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Click_On_Skip_Link())),20);
 	}
 
 	/** This function is verify click on the 'Skip' Link Text*/
 	public void skipLinkText() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Click_On_Skip_Link()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Click_On_Skip_Link())),20);
 	}
-
 	/** This function is verify click on the 'Tool tip' */
 	public void clickOntoolTip() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_ToolTipICon()));

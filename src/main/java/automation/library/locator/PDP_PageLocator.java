@@ -85,6 +85,7 @@ public class PDP_PageLocator {
 	String Registration = Property.getProperty(Constant.OR_FILE, "Registration");
 	String HiLink = Property.getProperty(Constant.OR_FILE, "HiLink");
 	String SignOut = Property.getProperty(Constant.OR_FILE, "SignOut");
+
 	/**
 	 * gets Locator - Add to Cart Button
 	 * 

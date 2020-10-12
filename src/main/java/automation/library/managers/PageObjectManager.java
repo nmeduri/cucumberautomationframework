@@ -391,14 +391,16 @@ public class PageObjectManager {
 	public Account_Options_Page_Locator getAccount_Options_Page_Locator() {
 		return (getAccount_Options_Page_Locator == null) ? getAccount_Options_Page_Locator = new Account_Options_Page_Locator() : getAccount_Options_Page_Locator; 
 	}
-	/** Returns Instance of Link Rewards Options Account Locator File */
-	public Link_Rewards_Options_Page getLinkRewardsOptionsPage() {
+
+	/** Returns Instance of Link Rewards Options Page File */
+	public Link_Rewards_Options_Page getLinkRewardsOptionsPage(WebDriver driver) {
 		return (getLinkRewardsOptsPage == null) ? getLinkRewardsOptsPage = new Link_Rewards_Options_Page(driver) : getLinkRewardsOptsPage;
 	}
 	/** Returns Instance of Link Rewards Options Account Locator File*/
 	public Link_Rewards_Options_Page_Locator getLinkRewardsOptionsPageLocator() {
 		return (getLinkRewardsOptsPageLocator == null) ? getLinkRewardsOptsPageLocator =new Link_Rewards_Options_Page_Locator() : getLinkRewardsOptsPageLocator;
 	}
+		
 	/** Returns Instance of Gigya Api Tool file */
 	public Gigya_Api_Tool_Page getGigyaApiToolPage() {
 		return (gigyaApiToolPage == null) ? gigyaApiToolPage = new Gigya_Api_Tool_Page(driver) : gigyaApiToolPage;

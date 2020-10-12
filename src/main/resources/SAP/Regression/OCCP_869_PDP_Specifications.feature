@@ -4,8 +4,8 @@ Feature: OCCP-869  PDP: Specifications
        
 
         @RegressionTest
-		Scenario: TC-1356 HYB:OCCP-869:Verify Product Specifications are not null 	
-	    Given occ api is available
+				Scenario: TC-1356 HYB:OCCP-869:Verify Product Specifications are not null 	
+	    	Given occ api is available
         When user hits GET api
         Then returned JSON should have specifications section
         And retunred JSON should have feature unit names and value
@@ -30,6 +30,13 @@ Feature: OCCP-869  PDP: Specifications
         When user hits the GET api with locale as fr_ca
         Then returned JSON should have specifications section
         And retunred response should have feature unit names and value in fr ca
+        
+        @RegressionTest
+				Scenario: TC-1357 HYB:OCCP-869: Verify Product Specifications  are null
+	    	Given occ api is available
+        When user hits Specifications GET api 
+        Then returned JSON should not have specifications section
+       
         
         
   

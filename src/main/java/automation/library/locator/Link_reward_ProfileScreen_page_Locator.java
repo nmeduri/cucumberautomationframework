@@ -41,11 +41,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 
 
     /**
-<<<<<<< HEAD
-	 * gets Locator - Get new triangle reward option
-=======
 	 * gets Locator - Triangle Reward
->>>>>>> branch 'develop' of https://acn-ctc@dev.azure.com/acn-ctc/ODP%20Test%20Automation/_git/ODP%20Test%20Automation
 	 * 
 	 */
 	public String getTriangleReward() {

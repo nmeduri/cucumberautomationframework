@@ -272,6 +272,6 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
     public void user_enter_the_previously_registered_email() throws Exception {
    	    //testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Previously_Registered_Email(emailVaue);
    	 testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(emailVaue);
-   	    Log.message("Email Value:- " + emailVaue, true);
+   	 Log.message("Email Value:- " + emailVaue, true);
     }
 }

@@ -40,4 +40,3 @@ Feature: OCCP-3149 Link Rewards
   And verify when user enter valid information on complete your profile screen 
   And verify clicks on continue button
   
-    
