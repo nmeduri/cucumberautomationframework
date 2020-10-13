@@ -4,17 +4,14 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.common.Property;
-import automation.library.locator.Account_Options_Page_Locator;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Footer_PageLocator;
 import automation.library.locator.ForgotPasswordPageLocator;
 import automation.library.locator.Get_A_New_Triangle_Rewards_Card_Locator;
 import automation.library.locator.Get_Personalized_Offers_Page_Locator;
-import automation.library.locator.Gigya_Api_Tool_Page_Locator;
 import automation.library.locator.Header_Page_Locator;
 import automation.library.locator.HomePageLocator;
-import automation.library.locator.Link_Rewards_Options_Page_Locator;
 import automation.library.locator.Link_reward_ProfileScreen_page_Locator;
 import automation.library.locator.Link_Your_Existing_Triangle_Rewards_Card_PageLocator;
 import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
@@ -28,17 +25,14 @@ import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
-import automation.library.pageObjects.Account_Options_Page;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Footer_Page;
 import automation.library.pageObjects.Forgot_Password_Page;
 import automation.library.pageObjects.Get_A_New_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Get_Personalized_Offers_Page;
-import automation.library.pageObjects.Gigya_Api_Tool_Page;
 import automation.library.pageObjects.Header_Page;
 import automation.library.pageObjects.HomePage;
-import automation.library.pageObjects.Link_Rewards_Options_Page;
 import automation.library.pageObjects.Link_reward_ProfileScreen_page;
 import automation.library.pageObjects.Link_Your_Existing_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
@@ -91,9 +85,6 @@ public class PageObjectManager {
 	private Privacy_Charter_Page_Locator getPrivacyCharterLocator;
 	private Reset_Password_Page getResetPasswordPage;
 	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
-	private Gigya_Api_Tool_Page gigyaApiToolPage;
-	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
-	
 	private Link_reward_ProfileScreen_page getLink_reward_ProfileScreen_page;
 	private Link_reward_ProfileScreen_page_Locator getLink_reward_ProfileScreen_page_Locator;
 	private Header_Page getHeaderPage;
@@ -110,10 +101,6 @@ public class PageObjectManager {
 	private Rewards_Terms_Conditions_Page_Locator getRewardsTermsAndCondtionsLocator;
 	private Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingRewardsPage;
 	private Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingRewardsLocator;
-	private Account_Options_Page getAccount_Options_Page;
-	private Account_Options_Page_Locator getAccount_Options_Page_Locator;
-	private Link_Rewards_Options_Page getLinkRewardsOptsPage;
-	private Link_Rewards_Options_Page_Locator getLinkRewardsOptsPageLocator;
 	
 	public PageObjectManager() {
 
@@ -381,30 +368,6 @@ public class PageObjectManager {
 	public Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingTriangleRewardsAccountLocaoter() {
 		return (getLinkYourExistingRewardsLocator == null) ? getLinkYourExistingRewardsLocator = new Link_Your_Existing_Triangle_Rewards_Card_PageLocator() : getLinkYourExistingRewardsLocator; 
 	}
-	
-	/** Returns Instance of Account Options Page File */
-	public Account_Options_Page getAccount_Options_Page() {
-		return (getAccount_Options_Page == null) ? getAccount_Options_Page = new Account_Options_Page(driver) : getAccount_Options_Page; 
-	}
-	
-	/** Returns Instance of Account Options Page Locator File */
-	public Account_Options_Page_Locator getAccount_Options_Page_Locator() {
-		return (getAccount_Options_Page_Locator == null) ? getAccount_Options_Page_Locator = new Account_Options_Page_Locator() : getAccount_Options_Page_Locator; 
-	}
-	/** Returns Instance of Link Rewards Options Page File */
-	public Link_Rewards_Options_Page getLinkRewardsOptionsPage(WebDriver driver) {
-		return (getLinkRewardsOptsPage == null) ? getLinkRewardsOptsPage = new Link_Rewards_Options_Page(driver) : getLinkRewardsOptsPage;
-	}
-	/** Returns Instance of Link Rewards Options Account Locator File*/
-	public Link_Rewards_Options_Page_Locator getLinkRewardsOptionsPageLocator() {
-		return (getLinkRewardsOptsPageLocator == null) ? getLinkRewardsOptsPageLocator =new Link_Rewards_Options_Page_Locator() : getLinkRewardsOptsPageLocator;
-	}
-	/** Returns Instance of Gigya Api Tool file */
-	public Gigya_Api_Tool_Page getGigyaApiToolPage() {
-		return (gigyaApiToolPage == null) ? gigyaApiToolPage = new Gigya_Api_Tool_Page(driver) : gigyaApiToolPage;
-	}
-	/** Returns Instance of Gigya Api Tool file Locator File*/
-	public Gigya_Api_Tool_Page_Locator getGigyaApiToolPageLocator() {
-		return (gigyaApiToolPage_Locator == null) ? gigyaApiToolPage_Locator =new Gigya_Api_Tool_Page_Locator() : gigyaApiToolPage_Locator;
-	}
+
+
 }

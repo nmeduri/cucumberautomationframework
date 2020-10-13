@@ -8,9 +8,7 @@ import automation.library.selenium.core.PageObject;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.restassured.specification.RequestSpecification;
-/**
- * This file contains the scenario of user stories OCCP-3657
- */
+
 public class OCCP_3657_Add_new_enum_codes_to_CTCMediaTypeEnum_Step extends BaseStep{
 	RequestSpecification request;
 	

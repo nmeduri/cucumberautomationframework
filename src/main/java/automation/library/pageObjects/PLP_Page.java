@@ -454,4 +454,4 @@ public class PLP_Page extends PageObject {
 	public void displayReviewStars() throws Exception {
 		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getPLPLocatorPage().get_Review_Star()));
 	}
-}
+}	

@@ -87,13 +87,13 @@ public class DriverFactory extends BaseClass {
 		switch (configFileReader.getServerType()) {
 		case "saucelabs":
 			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner")) {
-				driver = Sauce_Lab_Chrome_Driver_Manager.createDriver();
+				driver = Headless_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
 				driver = Sauce_Lab_Chrome_Mobile_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Wide_Screen_Runner")) {
-				driver = Sauce_Lab_Chrome_Wide_Screen_Driver_Manager.createDriver();
+				driver = Headless_Chrome_Wide_Screen_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Sap_BVT_Runner") || String.equalsIgnoreCase("Sap_Regression_Runner")) {
 				driver = SAP_Driver_Manager.createDriver();

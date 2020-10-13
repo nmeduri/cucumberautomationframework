@@ -134,18 +134,12 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	}
 	
 	@When("user hits GET method with locale as en ca for description")
-	public void user_hits_the_GET_method_with_locale_as_en_ca_for_description() {     	
-		response = getHybApiENCA().getAPI_EN_CAURL(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());	
+	public void user_hits_the_GET_method_with_locale_as_en_ca_for_description() {     
+ 
+		
+		response = getHybApiENCA().getAPI_EN_CAURL(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());
+		
 	}
 	
-	@When("user hit the GET api for Brand Information")
-	public void user_hit_the_GET_api_for_Brand_Information() {
-		response = getApiFieldDefault().getAPI_Field_Default(url,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1334());
-	}
-	@Then("brand title should not displayed")
-	public void brand_title_should_not_displayed() {
-		String brand=response.jsonPath().get("productBrand");
-		Log.message("Brand title is not displayed and value is :" +brand, true);
-	}
 	
 }

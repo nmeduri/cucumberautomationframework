@@ -8,7 +8,7 @@ import io.restassured.response.Response;
  * This class calls the URL of Wish List's APIs and
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @date 07/07/2020
  */
 

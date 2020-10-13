@@ -42,11 +42,11 @@ public class Hooks {
 
 	@Before
 	public void BeforeSteps() {
-
+	    
 	}
 
 
-
+	
 	public void scenarioStep() throws Exception {
 		Log.message("Scenario Class:- " +  scenario.getName(), true);
 	}
@@ -78,11 +78,5 @@ public class Hooks {
 
 			} catch (IOException e) {
 			}
-		}
-
-		/*if (scenario.getName().contains("close browser")) {
-			PageObject.getDriver().quit();
-		}*/
-
-	}
+		}}
 }

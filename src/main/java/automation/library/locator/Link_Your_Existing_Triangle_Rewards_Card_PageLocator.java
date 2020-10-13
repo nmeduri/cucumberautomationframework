@@ -18,8 +18,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String errorImage = Property.getProperty(Constant.OR_FILE, "errorImage");
 	String deactivatedErrorText = Property.getProperty(Constant.OR_FILE, "deactivatedErrorText");
 	String triangleIdLogo = Property.getProperty(Constant.OR_FILE, "triangleIdLogo");
-	String postalCode_ActivateCard = Property.getProperty(Constant.OR_FILE, "postalCode_ActivateCard");
-	String YOB_ActivateCard = Property.getProperty(Constant.OR_FILE, "YOB_ActivateCard");
+	String linkYourExistingTriangleRewardCardTitle = Property.getProperty(Constant.OR_FILE, "linkYourExistingTriangleRewardCardTitle");
 	
 	/**
 	 * gets Locator - Enter Card number
@@ -90,19 +89,13 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	public String get_TriangleId_Logo() {
 		return triangleIdLogo;
 	}
+	
 	/**
-	 * gets Locator - year of birth in active card
+	 * gets Locator - Link Your Existing Triangle Reward Card Title
 	 * 
 	 */
-	public String get_YOB_ActivateCard() {
-		return YOB_ActivateCard;
-	}
-	/**
-	 * gets Locator - Postal code in active card
-	 * 
-	 */
-	public String get_PostalCode_ActivateCard() {
-		return postalCode_ActivateCard;
+	public String get_Link_Existing_Card_Title() {
+		return linkYourExistingTriangleRewardCardTitle;
 	}
 	
  }

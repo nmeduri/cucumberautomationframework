@@ -77,8 +77,8 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then link site map should be underlined
 	Then link accessibility should be underlined
 	
-	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2850 Verification of clicking of text Legal - Desktop Wide
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	Scenario: TC-2850, TC-2859 Verification of clicking of text Legal - Desktop Wide
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And in simple footer access and click on legal
@@ -131,6 +131,20 @@ Feature: OCCP-1030 Footer : Simple Footer
 	And in footer access and click on text and conditions
 	Then user navigate to the page where detailed terms and conditions information is displayed
 	
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-2831, TC-2858 Verification of options present in Simple Footer - Mobile
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And user clicks on legal 'plus' section
+	Then clickable text Terms and conditions is displayed
+	Then clickable text privacy and policy is displayed
+	Then clickable text site map is displayed
+	Then clickable text accessibility is displayed
+	Then clickable text view more is displayed
+	Then ligal disclaimer is displayed
+	And click on view more
+	Then editable clickable text view less is displayed
+	Then copy right text is displayed
 	
 	
 	

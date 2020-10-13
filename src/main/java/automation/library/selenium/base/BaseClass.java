@@ -39,17 +39,18 @@ import io.restassured.response.Response;
  * This class calls the URL of Product Info's APIs and
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @version 1.0 03/07/2020
  */
 
-public class BaseClass {
+public class BaseClass  {
 
+	
 	protected TestContext testContext;
 	protected PageObjectManager pageObjectManager;
 	protected DriverFactory driverFactory;
 	protected ConfigFileReader configFileReader;
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	public static String emailVaue;
 	public static String password;
 	public static PropertiesConfiguration conf = new PropertiesConfiguration();

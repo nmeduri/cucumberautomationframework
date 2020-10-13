@@ -47,6 +47,12 @@ public class LogInPageSteps extends BaseClass{
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page();
     }
 	
+	@Given("loginurl")
+    public void login_url() throws Exception {
+   	    
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page(driver);
+    }
+	
 	@And("Remove Cookies")
 	public void remove_cookies() throws Exception {
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).clear_browser_history();
@@ -139,10 +145,6 @@ public class LogInPageSteps extends BaseClass{
 	public void message_field_required_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).display_This_Field_Is_Required();
 	}
-	@When("enter hide link screen email details")
-	public void enter_hide_link_screen_email_details() throws Exception {
 
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Hide_Link_Screen_Email_Data());
-	}
 
 }

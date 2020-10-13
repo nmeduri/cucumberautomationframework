@@ -8,7 +8,7 @@ import io.restassured.response.Response;
  * This class calls the URL of Product Info EN CA's APIs and
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @date 30/06/2020
  */
 

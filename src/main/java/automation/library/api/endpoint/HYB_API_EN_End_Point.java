@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
  * This class calls the URL of Product Info EN's APIs and
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @date 30/06/2020
  */
 
@@ -63,19 +63,6 @@ public class HYB_API_EN_End_Point {
 		String bodyvalue="{\n" + 
 				"  \"productCodes\": [\n" + 
 				"    \""+product1+"\""+",\""+product2+"\""+"\n" + 
-				"  ]\n" + 
-				"}";
-		request.body(bodyvalue);
-		request.header("Content-Type", "application/json");
-		Log.message("bodyvalue :"+ bodyvalue, true);
-		Log.message("API:- " + url  +"363?fields=FULL&baseStoreId=CTR&lang=en", true);
-		response = request.post(url + "363?fields=FULL&baseStoreId=CTR&lang=en");
-		return response;	
-	}
-	public Response post_HYB_SingleProductList_EN(String url,String product1) {
-		String bodyvalue="{\n" + 
-				"  \"productCodes\": [\n" + 
-				"    \""+product1+"\""+"\n" + 
 				"  ]\n" + 
 				"}";
 		request.body(bodyvalue);

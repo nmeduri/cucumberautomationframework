@@ -4,7 +4,7 @@ import java.io.*;
 /*
  * This class contains the File's extension function
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @date 30/06/2020
  */
 

@@ -12,7 +12,7 @@ import io.restassured.specification.RequestSpecification;
  * This class generate the tokens for Authorization APIs.
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @date 07/07/2020
  */
 

@@ -45,7 +45,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then view more is displayed
 	
 	@RegressionTest @WideScreen @WebView @MobileView @TabletView
-	Scenario: TC-2779, TC-2778, TC-2777, TC-2776 Verification of display of Footer - Desktop Wide 
+	Scenario: TC-2779, TC-2778, TC-2777, TC-2780 Verification of display of Footer - Desktop Wide 
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then copy right text is displayed
@@ -54,7 +54,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then editable clickable text view more is displayed
 	
 	@RegressionTest @WideScreen @WebView @MobileView @TabletView
-	Scenario: TC-2775, TC-2774  Verification of display of Footer - Desktop Wide
+	Scenario: TC-2775, TC-2774, TC-2776  Verification of display of Footer - Desktop Wide
 	Given pdp url is available
 	When pdp page is displayed for the product
 	Then footer is displayed

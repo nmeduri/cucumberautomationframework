@@ -66,26 +66,28 @@ public class PDP_PageLocator {
 	String wishlistBadge = Property.getProperty(Constant.OR_FILE, "wishlistBadge");
 	String wishListIconPDP = Property.getProperty(Constant.OR_FILE, "wishListIconPDP");
 	String defaultStateWishListIcon = Property.getProperty(Constant.OR_FILE, "defaultStateWishListIcon");
-    String PencilBanner = Property.getProperty(Constant.OR_FILE, "PencilBanner");
-	String AccountLink = Property.getProperty(Constant.OR_FILE, "AccountLink");
-	String PreferencesOption = Property.getProperty(Constant.OR_FILE, "PreferencesOption");
-	String WishListOption = Property.getProperty(Constant.OR_FILE, "WishListOption");
-	String PersonalInfoOption = Property.getProperty(Constant.OR_FILE, "PersonalInfoOption");
-	String OrderHistory = Property.getProperty(Constant.OR_FILE, "OrderHistory");
-	String PaymentInfo = Property.getProperty(Constant.OR_FILE, "PaymentInfo");
-	String Reward = Property.getProperty(Constant.OR_FILE, "Reward");
-	String Address = Property.getProperty(Constant.OR_FILE, "Address");
-	String Preference = Property.getProperty(Constant.OR_FILE, "Preference");
-	String MadeForLife = Property.getProperty(Constant.OR_FILE, "MadeForLife");
-	String CreditOffered = Property.getProperty(Constant.OR_FILE, "CreditOffered");
-	String CustomerService = Property.getProperty(Constant.OR_FILE, "CustomerService");
-	String Language = Property.getProperty(Constant.OR_FILE, "Language");
-	String CustomerServicePage = Property.getProperty(Constant.OR_FILE, "CustomerServicePage");
-	String SignIn = Property.getProperty(Constant.OR_FILE, "SignIn");
-	String Registration = Property.getProperty(Constant.OR_FILE, "Registration");
-	String HiLink = Property.getProperty(Constant.OR_FILE, "HiLink");
-	String SignOut = Property.getProperty(Constant.OR_FILE, "SignOut");
-
+	String AccountLink= Property.getProperty(Constant.OR_FILE, "Account");
+	String PreferencesOption= Property.getProperty(Constant.OR_FILE, "Preferences");
+	String PencilBanner=Property.getProperty(Constant.OR_FILE, "PencilBanner");
+	String WishListOption=Property.getProperty(Constant.OR_FILE, "WishListOption");
+	String PersonalInfoOption=Property.getProperty(Constant.OR_FILE, "PencilBanner");
+	String OrderHistory=Property.getProperty(Constant.OR_FILE, "OrderHistory");
+	String PaymentInfo=Property.getProperty(Constant.OR_FILE, "PaymentInfo");
+	String Address=Property.getProperty(Constant.OR_FILE, "Address");
+	String Reward=Property.getProperty(Constant.OR_FILE, "Reward");
+	String Preference=Property.getProperty(Constant.OR_FILE, "Preference");			
+	String MadeForLife=Property.getProperty(Constant.OR_FILE, "MadeForLife");
+	String CreditOffered=Property.getProperty(Constant.OR_FILE, "CreditOffered");
+	String CustomerService=Property.getProperty(Constant.OR_FILE, "CustomerService");
+	String Language=Property.getProperty(Constant.OR_FILE, "Language");
+	String CustomerServicePage=Property.getProperty(Constant.OR_FILE, "CustomerServicePage");
+	String SignIn=Property.getProperty(Constant.OR_FILE, "SignIn");
+	String Registration=Property.getProperty(Constant.OR_FILE, "Registration");
+	String HiLink=Property.getProperty(Constant.OR_FILE, "HiLink");
+	String SignOut=Property.getProperty(Constant.OR_FILE, "SignOut");
+	
+	
+	
 	/**
 	 * gets Locator - Add to Cart Button
 	 * 
@@ -614,7 +616,7 @@ public class PDP_PageLocator {
 	public String get_Default_State_WishList_Icon() {
 		return defaultStateWishListIcon;
 	}
-
+	
 	/**
 	 * gets Locator - Pencil Banner
 	 * 

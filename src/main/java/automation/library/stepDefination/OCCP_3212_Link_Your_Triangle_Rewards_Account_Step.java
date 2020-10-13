@@ -44,6 +44,11 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Deactivated_Card_Number();
 	}
 	
+	@And("user enters a loyalty card number")
+	public void user_enter__loyalty_card_number() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Deactivated_Card_Number();
+	}
+	
 	@And("verify when user enters a loyalty card number that is deactivated")
 	public void verify_when_user_enters_a_loyalty_card_number_that_is_deactivated() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enter_Card_Number(FileReaderManager.getInstance().getDataReader().get_Deactivated_Card_Number());
@@ -114,6 +119,11 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).click_Cancel_Button();
 	}
 	
+	@And("cancel button is displayed")
+	public void verify_cancel_button_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Cancel_Button();
+	}
+	
 	@And("user is able to see the click link on screen")
 	public void user_is_able_to_see_the_click_link_on_screen() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayClickButton();
@@ -132,6 +142,16 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 	@Then("user should be able to see the error text on screen")
 	public void user_should_be_able_to_see_the_error_text_on_screen() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verify_Deactivated_Error_Text();
+	}
+	
+	@Then("user should be redirected to link existing card page")
+	public void user_should_be_redirected_to_link_existing_card_page() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayTitleLinkYourExistingCardPage();
+	}
+	
+	@Then("link card page should be displayed without prepoulating card number")
+	public void link_card_page_should_be_displayed_without_prepopulating_card_number() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verify_link_card_is_displayed_without_card_number_details();
 	}
 
 

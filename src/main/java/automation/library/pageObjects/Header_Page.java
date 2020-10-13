@@ -1,7 +1,5 @@
 package automation.library.pageObjects;
 
-import static org.testng.Assert.fail;
-
 import java.util.List;
 import java.util.Set;
 
@@ -52,73 +50,6 @@ public class Header_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Registration_Header()));
 	}
 	
-	/** This function display Pencil Banner */
-	public void display_PencilBanner() throws Exception {
-		 $display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_PencilBanner())), 10);
-		Assert.assertTrue($display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_PencilBanner())));
-	}
-	
-	/** This function display Account Link */
-	public void display_AccountLink() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account_link()));
-	}
-	
-	/** This function display Made For Life Text */
-	public void display_MadeForLife() throws Exception {
-		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_MadeForLifeText())), 10);
-		Assert.assertTrue($display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_MadeForLifeText())));
-
-	}
-	
-	/** This function display Customer service page */
-	public void display_CustomerServicePage() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CustomerService_Page()));
-	}
-	
-	/** This function display Credit Offered Text */
-	public void display_CreditOffered() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CreditOfferedText()));
-	}
-	/** This function click Credit Offered Text */
-	public void click_CreditOffered() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CreditOfferedText()));
-    }
-	
-	/** This function display Customer service Link */
-	public void display_CustomerService() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CustomerService()));
-	}
-	
-	/** This function Click Customer service Link */
-	public void click_CustomerService() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_CustomerService()));
-	}
-	
-	/** This function display Language Link */
-	public void display_Language() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Language()));
-	}
-	
-	/** This function click Language Link */
-	public void Click_Language() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Language()));
-	}
-	
-	/** This function click Account Link */
-	public void Click_AccountLink() throws Exception {
-		DriverFactory.getInstance().getDriver().navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account_link()));
-	}
-	
-	/** This function click Hi Link after login  */
-	public void Click_HiLink() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_HiLink()));
-	}
-	/** scroll down to page */
-	public void scrollDown() throws Exception {
-		   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
-	   }
-	
 	/** This function is verify that banner logo is displayed */
 	public void displayBannerLogo() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Banner_Logo()));
@@ -141,25 +72,7 @@ public class Header_Page extends PageObject {
 	
 	/** This function is verify that search bar is displayed */
 	public void displaySearchBar() throws Exception {
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollUpByCoordinates();
-		PageObject.getDriver().navigate().refresh();
 		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()));
-	}
-	/** This function is click search bar */
-	public void Click_SearchBar() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()));
-	}
-	/** This function is enter value on search bar */
-	public void enterData_SearchBar() throws Exception {
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()),FileReaderManager.getInstance().getDataReader().get_Search_Data());
-	}
-	/** This function is click the search icon */
-	public void clickSearchIcon() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_search_icon()));
-	}
-	/** This function is display search result */
-	public void displaySearchResult() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_search_result()));
 	}
 	
 	/** This function is verify that Store Name is displayed */
@@ -206,137 +119,12 @@ public class Header_Page extends PageObject {
 		configuration.setProperty("cartUrl", cartUrl);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Cart_Icon()));
 	}
-	/** This function display information banner */
-	public void display_InformationBanner() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBanner()));
-	}
-	/** This function display information banner */
-	public void display_InformationBannerText() throws Exception {
-	    $display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBannerText()));
-	    $display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBannerLink()));
-
-	}
+	
 	/** This function is verify that cart is redirected to configure page */
 	public void verifyCartRedirectedToConfigurePage() throws Exception {
 		String expetedUrl = (java.lang.String) 		configuration.getProperty("cartUrl");
 		Assert.assertEquals(expetedUrl, PageObject.getDriver().getCurrentUrl());
 		PageObject.getDriver().navigate().back();
-	}
-
-	/** This function is verify primary navigation is displayed */
-	public void displayPrimaryNavigation() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Primary_Navigation()));
-	}
-	
-	/** This function is verify that store locator is displayed */
-	public void displayStoreLocator() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Store_Locator_Mobile()));
-	}
-	
-	/** This function is verify that hamburger menu is displayed */
-	public void displayHamburgerMenu() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hamburger_Menu()));
-	}
-	
-	/** This function is verify that x icon is displayed */
-	public void displayXIcon() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Side_Menu_Cross()));
-	}
-	
-	/** This function clicks on banner logo */
-	public void clickBannerLogo() throws Exception {
-		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Banner_Logo_Mobile()), "href");
-		System.out.println(url);
-		configuration.setProperty("urlLink", url);
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Banner_Logo_Mobile()));
-	}
-	
-	/** This function is verify that Link is successfully navigate to defined associated page */
-	public void verifyLinkNavigateToAssociatedPage() throws Exception {
-		String expectedUrl = (java.lang.String)configuration.getProperty("urlLink");
-		Log.message("Expected Url:- " + expectedUrl, true);
-		String actualUrl = PageObject.getDriver().getCurrentUrl();
-		Log.message("Actual Url:- " + actualUrl, true);
-		Assert.assertEquals(expectedUrl, actualUrl);
-		testContext.getPageObjectManager().getPageObject(driver).navigateBack();
-	}
-	
-	/** This function clicks on store locator icon */
-	public void clickStoreLocatorIcon() throws Exception {
-		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Store_Locator_Mobile()), "href");
-		configuration.setProperty("urlLink", url);
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Store_Locator_Mobile()));
-	}
-	
-	/** This function is verify that store locator fly out is displayed */
-	public void displayStoreLocatorFlyOut() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Fly_Out_Title()));
-	}
-	
-	/** This function is verify that search Icon is displayed */
-	public void displaySearchIcon() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Icon()));
-	}
-	
-	/** This function is to verify that search bar is not displayed */
-	public void notDisplaySearchBar() throws Exception {
-		try {
-			$display($$$$(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar(),1));
-			   Log.message("Search bar is present", true); 
-			   fail();
-		   }
-		catch(Exception e) {
-			   Log.message("Search bar is not present", true);
-		   }
-		
-		}
-	
-	/** This function clicks on flyout cross icon */
-	public void clickOnFlyOutCross() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Fly_Out_Cross()));
-	}
-	
-	/** This function clicks on search icon */
-	public void clickOnSearchIcon() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Icon()));
-	}
-	
-	/** This function clicks on search icon */
-	public void clickOnSearchBar() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()));
-	}
-	
-	/** This function is verify that search page is displayed */
-	public void displaySearchPage() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Page()));
-	}
-	
-	/** This function clicks on Hamburger menu */
-	public void clickOnHamburgerMenu() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hamburger_Menu()));
-	}
-	
-	/** This function clicks on Side menu cross */
-	public void clickOnSideMenuCross() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Side_Menu_Cross()));
-	}
-	
-	/** This function is to verify that pencil banner is not displayed */
-	public void notDisplayPencilBanner() throws Exception {
-		try {
-			$click($$$$(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Pencil_Banner(),1));
-			   Log.message("Pencil banner is present", true); 
-			   fail();
-		   }
-		catch(Exception e) {
-			   Log.message("Pencil banner is not present", true);
-		   }
-		
-		}
-	
-	/** This function clicks on Side menu cross */
-	public void clickOnCrossSearchPage() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Close_Search_Page()));
 	}
 
 }

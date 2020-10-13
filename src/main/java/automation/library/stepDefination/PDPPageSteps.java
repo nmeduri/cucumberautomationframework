@@ -47,6 +47,15 @@ public class PDPPageSteps extends BaseClass {
 		
 	}
 	
+	@Given("^open browser again$")
+	public void open_browser_again() throws Exception {
+		
+		driver = driverFactory.getDriver();
+		pageObjectManager = new PageObjectManager();
+		testContext.getPageObjectManager().getPDPPage(driver);
+		
+	}
+	
 	@Given("pdp url is available") 
 	public void pdp_url_is_available() throws Exception {
 		
@@ -328,9 +337,5 @@ public class PDPPageSteps extends BaseClass {
 	@Then("wishlist icon becomes active in red color")
 	public void wishlist_icon_becomes_active_in_red_color() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyWishListIconColor();
-	}
-	@When("pdp page should displayed")
-	public void pdp_page_should_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_PDP_Page_Title();
 	}
 }

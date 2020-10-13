@@ -16,6 +16,7 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
+import automation.library.selenium.base.BaseClass;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
@@ -34,9 +35,9 @@ import static org.testng.Assert.fail;
  * This class call the function from Element class
  */
 
-public class PageObject {
+public class PageObject extends BaseClass {
 
-	protected static WebDriver driver;
+	//protected static WebDriver driver;
 	private WebDriverWait wait;
 	private Property property = new Property();
 	public static List<String> value;
@@ -212,6 +213,7 @@ public class PageObject {
 		return element.display();
 
 	}
+
 	
 	/** enter detail */
 	public void $enterData(Element element, String data) {
@@ -260,16 +262,13 @@ public class PageObject {
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), getWaitDuration());
 		switch (type) {
 		case "selectByText":
-			//ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
-			ele.click().dropdown().selectByVisibleText(value);
+			ele.clickable().dropdown().selectByVisibleText(value);
 			break;
 		case "selectByIndex":
-			//ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
-			ele.click().dropdown().selectByIndex(Integer.parseInt(value));
+			ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
 			break;
 		case "selectByValue":
-			//ele.clickable().dropdown().selectByValue(value);
-			ele.click().dropdown().selectByValue(value);
+			ele.clickable().dropdown().selectByValue(value);
 			break;
 		}
 
@@ -296,12 +295,6 @@ public class PageObject {
 	public void scrollUpByCoordinates() {
 		JavascriptExecutor js = (JavascriptExecutor) PageObject.getDriver();
 		js.executeScript("window.scrollBy(0,-5000)", "");
-	}
-	
-	/** scroll up by coordinates */
-	public void scrollUp() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,-200)", "");
 	}
 
 	/** click on element */
@@ -540,30 +533,6 @@ public class PageObject {
 	public void parentWindow() throws Exception {
 		String String = (java.lang.String) configuration.getProperty("parentWindow");
 		PageObject.getDriver().switchTo().window(String);
-	}
-	
-	/** navigate back to previous page */
-	public void navigateBack() throws Exception {
-		PageObject.getDriver().navigate().back();
-	}
-
-	public void quitDriver() {
-		driver.quit();
-	}
-
-	/** return Not display conditon */
-	public boolean $notDisplay(Element element) {
-		/*try {
-			return !element.display();		
-		}catch(Exception e){			
-			return false;
-		}*/	
-		if(element.display()) {
-			Log.message("displayed :- " , true);
-			return false;
-		}else
-		return true;
-		
 	}
 }
 

@@ -10,7 +10,7 @@ Feature: OCCP_4696: Increase the length of warranty and additional warranty mess
     		Then returned JSON should display warrantyMessage
     		
     		@RegressionTest
-    		Scenario: TC-3062 HYB:OCCP-4444-OCCP-4696:Increase the length of warranty and additional warranty message- Verify warranty message for Variant product API
+    		Scenario: TC-3061 HYB:OCCP-4444-OCCP-4696:Increase the length of warranty and additional warranty message- Verify warranty message for Variant product API
     		Given occ api is available
     		When Variant product -user hits the GET method for warranty message
     		Then returned JSON should display additionalWarrantyMessage

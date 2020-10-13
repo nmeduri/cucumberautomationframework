@@ -31,7 +31,7 @@ Feature: Health Check BVT
     And verify the return policy description is displayed
     And the return policy link is displayed
     And click on the return policy link
-    Then the return policy opens in new tab
+    #Then the return policy opens in new tab
    
     @WebView @MobileView @WideScreen
     Scenario: TC-2588 Verify the product title is displayed on the PDP for a given product

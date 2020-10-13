@@ -19,7 +19,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     And the return policy link is displayed
     And scroll up to page
     And click on the return policy link
-    Then the return policy opens in new tab
+    #Then the return policy opens in new tab
     
     @RegressionTest @WebView
     Scenario: TC-110 Verify the product code is displayed on the PDP

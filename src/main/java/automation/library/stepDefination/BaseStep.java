@@ -20,7 +20,7 @@ import io.restassured.response.Response;
  * This class calls the URL of Product Info's APIs and
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @version 1.0 03/07/2020
  */
 

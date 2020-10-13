@@ -30,7 +30,7 @@ public class Sauce_Lab_Chrome_Tablet_Driver_Manager {
 		caps11.setCapability("browserName", "Chrome");
 		caps11.setCapability("platformName", "android");
 		caps11.setCapability("version", "");
-		caps11.setCapability("deviceName", "Samsung_Galaxy_Tab_A_10_1_real_us");
+		caps11.setCapability("deviceName", "Samsung_Galaxy_Tab_A_7_0_real");
 		caps11.setCapability("platform", "platform");
 
 		try {

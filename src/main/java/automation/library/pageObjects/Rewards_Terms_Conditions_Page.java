@@ -80,4 +80,9 @@ public class Rewards_Terms_Conditions_Page extends PageObject {
 		String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getRewardsTermsAndConditionsLocator().get_Rewards_Link()), "href");
 		Assert.assertTrue(href.contains(".pdf"));
 	}
+	
+	/** This function is verify that button register card is enabled */
+	public void enableRegisterCardButton() throws Exception {
+		$findElement($By(Loc.XPATH, testContext.getPageObjectManager().getRewardsTermsAndConditionsLocator().get_Button_Register_Card())).isEnabled();
+	}
 }

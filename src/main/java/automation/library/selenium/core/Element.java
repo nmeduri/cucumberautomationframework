@@ -27,116 +27,116 @@ public class Element {
 		wait = new WebDriverWait(driver, getWaitDuration());
 		this.element = e;
 	}
-
+	
 	public Element(WebDriver driver, WebElement e, By by) {
-		this.driver = driver;
-		wait = new WebDriverWait(driver, getWaitDuration());
-		this.element = e;
-		this.by = by;
-	}
+        this.driver = driver;
+        wait = new WebDriverWait(driver, getWaitDuration());
+        this.element = e;
+        this.by = by;
+    }
 
-	public Element(WebDriver driver, By by, int... delay) {
-		this.driver = driver;
-		this.by = by;
-		try {
-			wait = new WebDriverWait(driver, delay.length > 0 ? delay[0] : getWaitDuration());
-			this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
-			Log.message("element located successfully:" + by.toString(), true);
-		} catch (Exception e) {
-			this.element = null;
-			Log.message("element not located:" + by.toString(), true);
-			Log.message(e.getMessage(), true);
-		}
-	}
-
+    public Element(WebDriver driver, By by, int... delay) {
+        this.driver = driver;
+        this.by = by;
+        try {
+            wait = new WebDriverWait(driver, delay.length > 0 ? delay[0] : getWaitDuration());
+            this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+            Log.message("element located successfully:" + by.toString(), true);
+        } catch (Exception e) {
+            this.element = null;
+            Log.message("element not located:" + by.toString(), true);
+            Log.message(e.getMessage(), true);
+        }
+    }
+	
 	/**
-	 * Returns duration for specified waits
-	 */
-	public static int getWaitDuration() {
-		final int defaultWait = 10;
-		int duration;
-		try {
-			duration = Integer.parseInt(System.getProperty("cukes.selenium.defaultWait"));
-		} catch (Exception e) {
-			duration = defaultWait;
-		}
-		return duration;
-	}
+     * Returns duration for specified waits
+     */
+    public static int getWaitDuration() {
+        final int defaultWait = 10;
+        int duration;
+        try {
+            duration = Integer.parseInt(System.getProperty("cukes.selenium.defaultWait"));
+        } catch (Exception e) {
+            duration = defaultWait;
+        }
+        return duration;
+    }
 
-	/**
-	 * Returns element
-	 */
+    /**
+     * Returns element
+     */
 	public WebElement element() {
 		return element;
 	}
 
 	/**
-	 * Returns sendkeys
-	 */
+     * Returns sendkeys
+     */
 	public Element sendKeys(String val) {
 		this.element().sendKeys(val);
 		return this;
 	}
 
 	/**
-	 * click function
-	 */
+     * click function
+     */
 	public Element click() {
 		this.element().click();
 		return this;
 	}
-
+	
 	/**
-	 * Returns attribute value
-	 */
+     * Returns attribute value
+     */
 	public String getAttribute(String data) {
 		return this.element.getAttribute(data);
 	}
-
+	
 	/**
-	 * Returns CSS Value
-	 */
+     * Returns CSS Value
+     */
 	public String getCSSValue(String data) {
 		return this.element.getCssValue(data);
 	}
-
+ 	
 	/**
-	 * clear data
-	 */
+     * clear data
+     */
 	public Element clear() {
 		this.element.clear();
 		return this;
 	}
-
+	
 	/**
-	 * scroll down
-	 */
+     * scroll down
+     */
 	public Element scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", this.element());
 		return this;
 	}
-
+	
 	/**
-	 * Returns duration for specified waits
-	 */
+     * Returns duration for specified waits
+     */
 	public boolean display() {
 		boolean value = this.element.isDisplayed();
 		return value;
 	}
-
-
+	
+	
 	/**
-	 * Returns get text of element
-	 */
+     * Returns get text of element
+     */
 	public String  getText() {
 		String value = element.getText();
 		return value;
 	}
 
 	/**
-	 * Returns Expection conditions of wait
-	 */
+     * Returns Expection conditions of wait
+     */
 	public Element(WebDriver driver, ExpectedCondition<?> exp, int... delay) throws Exception {
 
 		this.driver = driver;
@@ -154,8 +154,8 @@ public class Element {
 	}
 
 	/**
-	 * locate to element using By
-	 */
+     * locate to element using By
+     */
 	public Element(WebDriver driver, By by) throws Exception {
 
 		this.driver = driver;
@@ -172,10 +172,10 @@ public class Element {
 		}
 
 	}
-
+	
 	/**
-	 * no clickable
-	 */
+     * no clickable
+     */
 	public Element notClickable(Element element) {
 		try {
 			this.element = wait.until(ExpectedConditions.elementToBeClickable(this.element));
@@ -186,7 +186,7 @@ public class Element {
 		}
 		return this;
 	}
-
+	
 	public Element(WebDriver driver, By by, int timeunit) throws Exception {
 
 		this.driver = driver;
@@ -202,73 +202,74 @@ public class Element {
 		}
 
 	}
-
+	
 	/**
-	 * clickable
-	 */
+     * clickable
+     */
 	public Element clickable(int... retries) {
-		try {
-			this.element = wait.until(ExpectedConditions.elementToBeClickable(this.element));
-		} catch (Exception e) {
-			if (!(retries.length > 0 && retries[0] == 0)) {
-				this.refind(retries);
-				return this.clickable(0);
-			} else {
-				throw e;
-			}
-		}
-		return this;
-	}
-
+        try {
+            this.element = wait.until(ExpectedConditions.elementToBeClickable(this.element));
+        } catch (Exception e) {
+            if (!(retries.length > 0 && retries[0] == 0)) {
+                this.refind(retries);
+                return this.clickable(0);
+            } else {
+                throw e;
+            }
+        }
+        return this;
+    }
+	
 	public Element refind(int... retries) {
-		Log.message("Attempting to refind the element: " + by.toString(), true);
-		int attempts = 0;
-		Boolean retry = true;
-		int maxRetry = retries.length > 0 ? retries[0] : getFindRetries();
-		while (attempts < maxRetry && retry) {
-			try {
-				Log.message("retry number " + attempts, true);
-				this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
-				this.element.getTagName();
-				retry = false;
-			} catch (Exception e) {
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException e1) {
-					Log.message(e1.getMessage(), true);
-				}
-			}
-			attempts++;
-		}
-		return this;
-	}
-
+        Log.message("Attempting to refind the element: " + by.toString(), true);
+        int attempts = 0;
+        Boolean retry = true;
+        int maxRetry = retries.length > 0 ? retries[0] : getFindRetries();
+        while (attempts < maxRetry && retry) {
+            try {
+                Log.message("retry number " + attempts, true);
+                this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+                this.element.getTagName();
+                retry = false;
+            } catch (Exception e) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e1) {
+                	Log.message(e1.getMessage(), true);
+                }
+            }
+            attempts++;
+        }
+        return this;
+    }
+	
 	public static int getFindRetries() {
-		final int defaultFindRetries = 10;
-		int refind;
-		try {
-			refind = Integer.parseInt(System.getProperty("cukes.selenium.defaultFindRetries"));
-		} catch (Exception e) {
-			refind = defaultFindRetries;
-		}
-		return refind;
-	}
-
+        final int defaultFindRetries = 10;
+        int refind;
+        try {
+            refind = Integer.parseInt(System.getProperty("cukes.selenium.defaultFindRetries"));
+        } catch (Exception e) {
+            refind = defaultFindRetries;
+        }
+        return refind;
+    }
+	
 	/**
-	 * return drop down value
-	 */
+     * return drop down value
+     */
 	public Select dropdown(int... retries) {
-		Select sel = null;
-		try {
-			sel = new Select(this.element);
-		} catch (Exception e) {
-			if (!(retries.length > 0 && retries[0] == 0)) {
-				this.refind(retries);
-				this.dropdown(0);
-			} else {
-				throw e;
-			}
-		}
-		return sel;
-	}
+        Select sel = null;
+        try {
+            sel = new Select(this.element);
+        } catch (Exception e) {
+            if (!(retries.length > 0 && retries[0] == 0)) {
+                this.refind(retries);
+                this.dropdown(0);
+            } else {
+                throw e;
+            }
+        }
+        return sel;
+    }
+
 }

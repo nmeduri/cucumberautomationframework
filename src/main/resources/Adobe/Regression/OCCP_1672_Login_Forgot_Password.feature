@@ -2,10 +2,20 @@ Feature: OCCP-1672 Login Forgot Password
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1672
 	
-	@RegressionTest @WebView @MobileView @WideScreen @TabletView
+	@RegressionTest @WebView @WideScreen
+	Scenario: TC-1440 Verify the user has the ability to go back to Login screen while resetting password
+	Given close Browser
+	When open browser
+	And login url is available
+	And login page is displayed
+	And user click on forgot password
+	And user click back to sign in
+	Then login page is displayed
+	
+	@RegressionTest @WideScreen @TabletView
 	Scenario: TC-1440 Verify the user has the ability to go back to Login screen while resetting password
 	When login url is available
-	When login page is displayed
+	And login page is displayed
 	And user click on forgot password
 	And user click back to sign in
 	Then login page is displayed

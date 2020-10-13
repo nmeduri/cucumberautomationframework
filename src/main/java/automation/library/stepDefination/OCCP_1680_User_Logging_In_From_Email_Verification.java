@@ -28,7 +28,6 @@ import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import test.assertion.AssertionTest;
-
 /**
  * This file contains the scenario of user stories OCCP-1680
  */
@@ -109,4 +108,5 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
     public void user_click_button_join_now() throws Exception {
     	testContext.getPageObjectManager().getResetPasswordPage(PageObject.getDriver()).clickJoinNowButton();
     }
+ 
 }

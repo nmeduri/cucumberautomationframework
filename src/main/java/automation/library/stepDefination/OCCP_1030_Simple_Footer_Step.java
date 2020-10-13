@@ -194,5 +194,35 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		
 	}
 	
+	@Then("clickable text Terms and conditions is displayed")
+	public void clickable_text_terms_and_conditions_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayEditableTextTermsAndConditionsMobile();
+	}
+	
+	@Then("clickable text privacy and policy is displayed")
+	public void clickable_text_pricacy_and_policy_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayEditableTextPrivacyAndPolicyMobile();
+	}
+	
+	@Then("clickable text site map is displayed")
+	public void clickable_text_site_map_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayEditableTextSiteMapMobile();
+	}
+	
+	@Then("clickable text accessibility is displayed")
+	public void clickable_text_accessbility_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayEditableTextAccessibilityMobile();
+	}
+	
+	@Then("clickable text view more is displayed")
+	public void clickable_text_view_more_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayEditableTextAccessibilityMobile();
+	}
+	
+	@Then("clickable text view less is displayed")
+	public void clickable_text_view_less_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayEditableViewLessMobile();
+	}
+	
 	
 }

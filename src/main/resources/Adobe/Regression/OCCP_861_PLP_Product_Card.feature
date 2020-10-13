@@ -5,6 +5,8 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
 	   
     @RegressionTest @WebView @WideScreen
     Scenario: TC-156 Verify the product card displays the product title on PLP 
+    Given close Browser
+	When open browser
     When plp url is available
     When plp is displayed
     And scroll up to page

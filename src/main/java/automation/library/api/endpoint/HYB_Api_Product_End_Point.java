@@ -10,7 +10,7 @@ import io.restassured.specification.RequestSpecification;
  * This class calls the URL of Product Info's APIs and
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @date 03/07/2020
  */
 

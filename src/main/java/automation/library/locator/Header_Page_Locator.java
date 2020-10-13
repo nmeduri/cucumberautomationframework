@@ -16,38 +16,16 @@ public class Header_Page_Locator {
 	String accountOnHeader = Property.getProperty(Constant.OR_FILE, "accountOnHeader");
 	String signInHeader = Property.getProperty(Constant.OR_FILE, "signInHeader");
 	String registrationHeader = Property.getProperty(Constant.OR_FILE, "registrationHeader");
-	String AccountLink= Property.getProperty(Constant.OR_FILE, "Account");
-	String informationBanner= Property.getProperty(Constant.OR_FILE, "informationBanner");
-	String PencilBanner=Property.getProperty(Constant.OR_FILE, "PencilBanner");
-	String MadeForLife=Property.getProperty(Constant.OR_FILE, "MadeForLife");
-	String CreditOffered=Property.getProperty(Constant.OR_FILE, "CreditOffered");
-	String CustomerService=Property.getProperty(Constant.OR_FILE, "CustomerService");
-	String Language=Property.getProperty(Constant.OR_FILE, "Language");
-	String CustomerServicePage=Property.getProperty(Constant.OR_FILE, "CustomerServicePage");
-	String HiLink=Property.getProperty(Constant.OR_FILE, "HiLink");
 	String bannerLogo = Property.getProperty(Constant.OR_FILE, "bannerLogo");
 	String storeLocator=Property.getProperty(Constant.OR_FILE, "storeLocator");
 	String searchBar = Property.getProperty(Constant.OR_FILE, "searchBar");
-	String searchIcon = Property.getProperty(Constant.OR_FILE, "searchIcon");
 	String wishlistIcon = Property.getProperty(Constant.OR_FILE, "wishlistIcon");
 	String cartIcon = Property.getProperty(Constant.OR_FILE, "cartIcon");
 	String storeName = Property.getProperty(Constant.OR_FILE, "storeName");
 	String storeStatus = Property.getProperty(Constant.OR_FILE, "storeStatus");
 	String closingHours = Property.getProperty(Constant.OR_FILE, "closingHours");
 	String chervon = Property.getProperty(Constant.OR_FILE, "chervon");
-	String primaryNavigation = Property.getProperty(Constant.OR_FILE, "primaryNavigation");
-	String hamburgerMenu = Property.getProperty(Constant.OR_FILE, "hamburgerMenu");
-	String storeLocatorMobile = Property.getProperty(Constant.OR_FILE, "storeLocatorMobile");
-	String sideMenuCross = Property.getProperty(Constant.OR_FILE, "sideMenuCross");
-	String storeLocatorFlyOut = Property.getProperty(Constant.OR_FILE, "storeLocatorFlyOut");
-	String flyOutCross = Property.getProperty(Constant.OR_FILE, "flyOutCross");
-	String searchTakeOverPage = Property.getProperty(Constant.OR_FILE, "searchTakeOverPage");
-	String bannerLogoMobile = Property.getProperty(Constant.OR_FILE, "bannerLogoMobile");
-	String pencilBanner = Property.getProperty(Constant.OR_FILE, "pencilBanner");
-	String closeSearchPage = Property.getProperty(Constant.OR_FILE, "closeSearchPage");
-	String InformationBannerText = Property.getProperty(Constant.OR_FILE, "InformationBannerText");
-	String InformationBannerLink = Property.getProperty(Constant.OR_FILE, "InformationBannerLink");
-	String SearchResult=Property.getProperty(Constant.OR_FILE, "SearchResult");
+	
 	/**
 	 * gets Locator - Account
 	 * 
@@ -73,62 +51,6 @@ public class Header_Page_Locator {
 
 	public String get_Registration_Header() {
 		return registrationHeader;
-	}
-	/**
-	 * gets Locator - PencilBanner (Header)
-	 * 
-	 */
-	public String get_PencilBanner() {
-		return PencilBanner;
-	}
-	/**
-	 * gets Locator - Account (Header)
-	 * 
-	 */
-	public String get_Account_link() {
-		return AccountLink;
-	}
-	/**
-	 * gets Locator - MadeForLife (Header)
-	 * 
-	 */
-	public String get_MadeForLifeText() {
-		return MadeForLife;
-	}
-	/**
-	 * gets Locator - Customer Service (Header)
-	 * 
-	 */
-	public String get_CustomerService() {
-		return CustomerService;
-	}
-	/**
-	 * gets Locator - Language (Header)
-	 * 
-	 */
-	public String get_Language() {
-		return Language;
-	}
-	/**
-	 * gets Locator - Credit Offered Text (Header)
-	 * 
-	 */
-	public String get_CreditOfferedText() {
-		return CreditOffered;
-	}
-	/**
-	 * gets Locator - Customer Service Page(Header)
-	 * 
-	 */
-	public String get_CustomerService_Page() {
-		return CustomerServicePage;
-	}
-	/**
-	 * gets Locator - HiLink (Header)
-	 * 
-	 */
-	public String get_HiLink() {
-		return HiLink;
 	}
 	
 	/**
@@ -201,132 +123,5 @@ public class Header_Page_Locator {
 	 */
 	public String get_Chervon() {
 		return chervon;
-	}
-	
-	/**
-	 * gets Locator - Primary Navigation
-	 * 
-	 */
-	public String get_Primary_Navigation() {
-		return primaryNavigation;
-	}
-
-	
-	/**
-	 * gets Locator - Hamburger Menu
-	 * 
-	 */
-	public String get_Hamburger_Menu() {
-		return hamburgerMenu;
-	}
-
-	
-	/**
-	 * gets Locator - Store Locator Mobile
-	 * 
-	 */
-	public String get_Store_Locator_Mobile() {
-		return storeLocatorMobile;
-	}
-
-	
-	/**
-	 * gets Locator - Side Menu Cross
-	 * 
-	 */
-	public String get_Side_Menu_Cross() {
-		return sideMenuCross;
-	}
-	
-	/**
-	 * gets Locator - Store locator fly out title
-	 * 
-	 */
-	public String get_Fly_Out_Title() {
-		return storeLocatorFlyOut;
-	}
-	
-	/**
-	 * gets Locator - Store locator fly out title
-	 * 
-	 */
-	public String get_Search_Icon() {
-		return searchIcon;
-	}
-	
-	/**
-	 * gets Locator - Store locator fly out title
-	 * 
-	 */
-	public String get_Fly_Out_Cross() {
-		return flyOutCross;
-	}
-	
-	/**
-	 * gets Locator - Search page
-	 * 
-	 */
-	public String get_Search_Page() {
-		return searchTakeOverPage;
-	}
-	
-	/**
-	 * gets Locator - banner logo 
-	 * 
-	 */
-	public String get_Banner_Logo_Mobile() {
-		return bannerLogoMobile;
-	}
-	
-	/**
-	 * gets Locator - pencil banner
-	 * 
-	 */
-	public String get_Pencil_Banner() {
-		return pencilBanner;
-	}
-	
-	/**
-	 * gets Locator - Close search page
-	 * 
-	 */
-	public String get_Close_Search_Page() {
-		return closeSearchPage;
-	}
-
-	/**
-	 * gets Locator - information Banner
-	 * 
-	 */
-	public String get_informationBanner() {
-		return informationBanner;
-	}
-	/**
-	 * gets Locator - information Banner Text
-	 * 
-	 */
-	public String get_informationBannerText() {
-		return InformationBannerText;
-	}
-	/**
-	 * gets Locator - information Banner Link
-	 * 
-	 */
-	public String get_informationBannerLink() {
-		return InformationBannerLink;
-	}
-	/**
-	 * gets Locator - Search icon
-	 * 
-	 */
-	public String get_search_icon() {
-		return searchIcon;
-	}
-	/**
-	 * gets Locator - Search result
-	 * 
-	 */
-	public String get_search_result() {
-		return SearchResult;
 	}
 }

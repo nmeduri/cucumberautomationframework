@@ -210,14 +210,8 @@ public class Footer_Page extends PageObject {
 	
 	/** This function will scroll down to Footer */
 	public void scrollDownToFooter() throws Exception {
-		By goToFooter = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Custom_Support());
+		By goToFooter = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer());
 		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToFooter, 1);
-	}
-	
-	/** This function will scroll down to Mobile Footer */
-	public void scrollDownToMobileFooter() throws Exception {
-		By goToMobileFooter = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Mobile_Custom_Support());
-		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToMobileFooter, 1);
 	}
 	
 	/** This function click on accessibility */
@@ -432,23 +426,22 @@ public class Footer_Page extends PageObject {
 	
 	/** This function click on Custom Support "+" button */
 	public void clickCustomSupportPlusButton() throws Exception {
-		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Custom_Support_Plus_Button()));
 	}
 	
 	/** This function click on Services & Solutions "+" button */
 	public void clickServicesAndSolutionPlusButton() throws Exception {
-	    $click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Services_And_Solutions_Plus_Button())), 20);
+	    $click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Services_And_Solutions_Plus_Button())), 5);
 	}
 	
 	/** This function click on About Us "+" button */
 	public void clickAboutUsPlusButton() throws Exception {
-		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Us_Plus_Button())), 20);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Us_Plus_Button())), 5);
 	}
 	
 	/** This function click on Legal "+" button */
 	public void clickLegalPlusButton() throws Exception {
-		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Plus_Button())), 30);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Plus_Button())), 5);
 	}
 	
 	/** This function is to verify that minus sign is displayed */
@@ -571,267 +564,6 @@ public class Footer_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Plus_Button()));
 	}
 	
-	/** This function is verify that Custom Support Text is clickable  */
-	public void clickableServicesAndSolutionsHeader() throws Exception {
-		try {
-			 String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Custom_Support()), "href");  
-			 Assert.assertFalse(href.equals(""));
-			 Log.message("Custom Support Text is clickable", true);
-			 }
-			 catch(Exception e) {
-			Log.message("Custom Support Text is not clickable", true);
-			 }
-	}
-	
-	/** This function is verify that Services & Solutions Text is clickable  */
-	public void clickableCustomSupportHeader() throws Exception {
-		try {
-			 String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Solutions_And_Services()), "href");  
-			 Assert.assertFalse(href.equals(""));
-			 Log.message("Services & Solutions Text is clickable", true);
-			 }
-			 catch(Exception e) {
-			Log.message("Services & Solutions Text is not clickable", true);
-			 }
-	}
-	
-	/** This function is verify that About Us Text is clickable  */
-	public void clickableAboutUsHeader() throws Exception {
-		try {
-			 String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_AboutUs()), "href");  
-			 Assert.assertFalse(href.equals(""));
-			 Log.message("About Us Text is clickable", true);
-			 }
-			 catch(Exception e) {
-			Log.message("About Us Text is not clickable", true);
-			 }
-	}
-	
-	/** This function is verify that Custom Support Text is clickable  */
-	public void clickableLegalHeader() throws Exception {
-		try {
-			 String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Section()), "href");  
-			 Assert.assertFalse(href.equals(""));
-			 Log.message("Legal Text is clickable", true);
-			 }
-			 catch(Exception e) {
-			Log.message("Legal Text is not clickable", true);
-			 }
-	}
-	
-		/** This function click on order status */
-		public void clickOnOrderStatus() throws Exception {
-			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Order_Status())), 40);
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Order_Status()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Order_Status()));
-		}
-		
-		/** This function is verify that Link is successfully navigate to defined associated page */
-		public void verifyLinkNavigateToAssociatedPage() throws Exception {
-			String expectedUrl = (java.lang.String) configuration.getProperty("urlLink");
-			Log.message("Expected Url:- " + expectedUrl, true);
-			String actualUrl = PageObject.getDriver().getCurrentUrl();
-			Log.message("Actual Url:- " + actualUrl, true);
-			Assert.assertEquals(expectedUrl, actualUrl);
-		}
-
-		/** This function navigate back to previous page */
-		public void verifyNavigateBack() throws Exception {
-			testContext.getPageObjectManager().getPageObject(driver).navigateBack();
-		}
-		
-		/** This function click on pickup & delivery */
-		public void clickOnPickUpAndDelivery() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Pickup_And_Delivery()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Pickup_And_Delivery()));
-		}
-		
-		/** This function click on Returns & Exchanges */
-		public void clickOnReturnsAndExchanges() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Returns_And_Exchanges()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Returns_And_Exchanges()));
-		}
-		
-		/** This function click on Help & FAQs */
-		public void clickOnHelpAndFaqs() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Help_And_FAQs()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Help_And_FAQs()));
-		}
-		
-		/** This function click on Contact Us */
-		public void clickOnContactUs() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Contact_Us()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Contact_Us()));
-		}
-		
-		/** This function click on Store Locator */
-		public void clickOnStoreLocator() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Store_Locator()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Store_Locator()));
-		}
-		
-		/** This function click on Product Recalls */
-		public void clickOnProductRecalls() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Product_Recalls()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Product_Recalls()));
-		}
-		
-		/** This function click on Safety Data Sheets */
-		public void clickOnSafetyDataSheets() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Safety_Data_Sheets()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Safety_Data_Sheets()));
-		}
-		
-		/** This function click on Canadian Tires Financial Services */
-		public void clickOnCanadianTiresFinancialServices() throws Exception {
-			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tires_Financial_Services())), 40);
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tires_Financial_Services()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tires_Financial_Services()));
-		}
-		
-		/** This function click on Installation & Assembling */
-		public void clickOnInstallationAndAssembling() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Installation_And_Assembling()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Installation_And_Assembling()));
-		}
-		
-		/** This function click on Auto Service Center */
-		public void clickOnAutoServiceCenter() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_AutoService_Center()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_AutoService_Center()));
-		}
-		
-		/** This function click on Loan-A-Tool */
-		public void clickOnLoanATool() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Loan_A_Tool()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Loan_A_Tool()));
-		}
-		
-		/** This function click on Roadside Assistance */
-		public void clickOnRoadsideAssistance() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Roadside_Assistance()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Roadside_Assistance()));
-		}
-		
-		/** This function click on Gift Cards */
-		public void clickOnGiftCards() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Gift_Cards()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Gift_Cards()));
-		}
-		
-		/** This function click on Tested for Life */
-		public void clickOnTestedForLife() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Tested_For_Life()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Tested_For_Life()));
-		}
-		
-		/** This function click on Gift Registry */
-		public void clickOnGiftRegistry() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Gift_Registry()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Gift_Registry()));
-		}
-		
-		/** This function click on About Canadian Tire */
-		public void clickOnAboutCanadianTire() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Canadian_Tire()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Canadian_Tire()));
-		}
-		
-		/** This function click on Careers */
-		public void clickOnCareers() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Careers()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Careers()));
-		}
-		
-		/** This function click on About Triangle ID */
-		public void clickOnAboutTriangleID() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Triangle_Id()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_About_Triangle_Id()));
-		}
-		
-		/** This function click on Recycling Information */
-		public void clickOnRecyclingInformation() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Recycling_Information()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Recycling_Information()));
-		}
-		
-		/** This function click on Our Brands */
-		public void clickOnOurBrands() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Our_Brands()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Our_Brands()));
-		}
-		
-		/** This function click on Flyer Sign Up */
-		public void clickOnFlyerSignUp() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Flyer_Sign_Up()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Flyer_Sign_Up()));
-		}
-		
-		/** This function click on Sustainability */
-		public void clickOnSustainability() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Sustainability()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Sustainability()));
-		}
-		
-		/** This function click on Privacy Policy */
-		public void clickOnPrivacyPolicyLink() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link()));
-		}
-		
-		/** This function click on Terms & Conditions */
-		public void clickOnTermsAndConditionsLink() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Careers()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Careers()));
-		}
-		
-		/** This function click on Site Map */
-		public void clickOnSiteMapLink() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_SiteMap_Link()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_SiteMap_Link()));
-		}
-		
-		/** This function click on Accessibility */
-		public void clickOnAccessibilityLink() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessability_Link()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessability_Link()));
-		}
-		
-		/** This function click on Pricing Policy */
-		public void clickOnPricingPolicy() throws Exception {
-			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Pricing_Policy()), "href");
-			configuration.setProperty("urlLink", url);
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Pricing_Policy()));
-		}
-	
-		
 	/** This function click on privacy policy */
 	public void clickPrivacyPolicy() throws Exception {
 		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link()), "href");
@@ -892,6 +624,60 @@ public class Footer_Page extends PageObject {
 	    Assert.assertTrue(value.contains("underline"));
 	    Assert.assertFalse(href.equals(""));
 		
+	}
+	
+	/** This function is verify that editable terms and conditions is displayed */
+	public void displayEditableTextTermsAndConditionsMobile() throws Exception {
+		//$click($(Loc.CLASSNAME, testContext.getPageObjectManager().getFooterPageLocator().get_Canadian_Tire_Logo()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions()), "text-decoration");
+		Log.message("Value:- " + value, true);
+	    //Assert.assertTrue(value.contains("underline"));
+	    String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions()), "href");
+	    Assert.assertFalse(href.equals(""));
+	}
+	
+	/** This function is verify editable policy and policy is displayd */
+	public void displayEditableTextPrivacyAndPolicyMobile() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy()));
+	    String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy()), "href");
+	    Assert.assertFalse(href.equals(""));
+	}
+	
+	/** This function is verify editable site map is displayed */
+	public void displayEditableTextSiteMapMobile() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Site_Map())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Site_Map()));
+		String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Site_Map()), "href");
+	    Assert.assertFalse(href.equals(""));
+	}
+	
+	/** This function is verify editable accessibility is displayed */
+	public void displayEditableTextAccessibilityMobile() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()));
+	    String href = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()), "href");
+	    Assert.assertFalse(href.equals(""));
+	}
+	
+	/** This function is verify that view more is displayed */
+	public void displayEditableViewMoreMobile() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_View_More())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()), "text-decoration");
+		Log.message("Value:- " + value, true);
+	    Assert.assertTrue(value.contains("underline"));
+	}
+	
+	/** This function is verify that view less is displayed */
+	public void displayEditableViewLessMobile() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_View_Less())));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()), "text-decoration");
+		Log.message("Value:- " + value, true);
+	    Assert.assertTrue(value.contains("underline"));
 	}
 	
 }

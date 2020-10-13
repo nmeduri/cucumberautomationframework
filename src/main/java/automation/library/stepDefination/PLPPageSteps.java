@@ -141,12 +141,8 @@ public class PLPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displayReviewStars();
 	}
 	
-	@And("Close Browser") 
+	@And("close Browser") 
 	public void close_browser() throws Exception {
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeDriver();
-	}
-	@And("Quit Browser") 
-	public void quit_browser() throws Exception {
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).quitDriver();
+		PageObject.getDriver().quit();
 	}
 }

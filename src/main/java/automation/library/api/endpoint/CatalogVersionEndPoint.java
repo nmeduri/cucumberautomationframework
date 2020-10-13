@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
  * This class calls the URL of BVT's APIs and
  * Execute the APIs method
  * 
- * @author Shasahnk Bansal
+ * @author Shashank Bansal
  * @date 26/06/2020
  */
 

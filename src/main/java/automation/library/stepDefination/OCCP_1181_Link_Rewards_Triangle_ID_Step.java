@@ -76,6 +76,11 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage(PageObject.getDriver()).displayHeaderRewardsTermsAndConditions();
 	}
 	
+	@And("user dont have scroll to terms and conditions page")
+	public void user_don_have_scroll_to_terms_and_conditions_page() throws Exception {
+		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage(PageObject.getDriver()).enableRegisterCardButton();
+	}
+	
 	@And("register card button is displayed on terms and conditions page")
 	public void verify_click_on_register_card_button_on_terms_and_conditions() throws Exception {
 		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage(PageObject.getDriver()).displayRegisterCardButton();
@@ -109,6 +114,11 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 	@Then("terms and conditions should open user's browser whether pdf")
 	public void terms_and_conditions_should_open_users_browser_whether_pdf() throws Exception {
 		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage(PageObject.getDriver()).verifyRewardsLinkInPdf();
+	}
+	
+	@And("user 2488 enter detail email")
+	public void user_2488_enter_detail_email() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_UserName_2488());
 	}
 }
 	
