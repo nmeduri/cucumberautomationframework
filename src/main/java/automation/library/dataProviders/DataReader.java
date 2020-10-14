@@ -481,6 +481,170 @@ public class DataReader {
 		else
 			throw new RuntimeException("Province Data not specified in the Data file.");
 	}
+	/**
+     * gets Valid hide link screen Email Detail
+	 * 
+	 */
+	public String get_Hide_Link_Screen_Email_Data() {
+		String email = Property.getProperty(Constant.DATA_FILE, "hideLinkScreenEmail");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Api Tool URL
+	 * 
+	 */
+	public String get_Gigya_Api_Tool_Url() {
+		String getGigyaApiToolUrl = Property.getProperty(Constant.DATA_FILE, "gigyaApiToolUrl");
+		if(getGigyaApiToolUrl != null)
+			return getGigyaApiToolUrl;
+		else 
+			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya API Key
+	 * 
+	 */
+	public String get_Gigya_Api_Key() {
+		String getGigyaApiKey = Property.getProperty(Constant.DATA_FILE, "apiKey");
+		if(getGigyaApiKey != null)
+			return getGigyaApiKey;
+		else
+			throw new RuntimeException("apiKey Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya User Key
+	 * 
+	 */
+	public String get_Gigya_User_Key() {
+		String getGigyaUserKey = Property.getProperty(Constant.DATA_FILE, "userKey");
+		if(getGigyaUserKey != null)
+			return getGigyaUserKey;
+		else
+			throw new RuntimeException("userKey Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Secret Key
+	 * 
+	 */
+	public String get_Gigya_Secret_Key() {
+		String getGigyaSecretKey = Property.getProperty(Constant.DATA_FILE, "secretKey");
+		if(getGigyaSecretKey != null)
+			return getGigyaSecretKey;
+		else
+			throw new RuntimeException("secretKey Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Data Center End Point
+	 * 
+	 */
+	public String get_Gigya_Data_Center_EndPoint() {
+		String getDataCenterEndPoint = Property.getProperty(Constant.DATA_FILE, "dataCenterEndPoint");
+		if(getDataCenterEndPoint != null)
+			return getDataCenterEndPoint;
+		else
+			throw new RuntimeException("dataCenterEndPoint Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Parameter Login Name
+	 * 
+	 */
+	public String get_Gigya_Parameter_Login_Name() {
+		String getParameterLoginName = Property.getProperty(Constant.DATA_FILE, "parameterLoginName");
+		if(getParameterLoginName != null)
+			return getParameterLoginName;
+		else
+			throw new RuntimeException("ParameterLoginName Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Parameter Login Value
+	 * 
+	 */
+	public String get_Gigya_Parameter_Login_Value() {
+		String getParameterLoginValue = Property.getProperty(Constant.DATA_FILE, "parameterLoginValue");
+		if(getParameterLoginValue != null)
+			return getParameterLoginValue;
+		else
+			throw new RuntimeException("ParameterLoginValue Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Parameter Password Name
+	 * 
+	 */
+	public String get_Gigya_Parameter_Password() {
+		String getParameterPasswordName = Property.getProperty(Constant.DATA_FILE, "parameterPassword");
+		if(getParameterPasswordName != null)
+			return getParameterPasswordName;
+		else
+			throw new RuntimeException("ParameterPasswordName Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Parameter Password Value
+	 * 
+	 */
+	public String get_Gigya_Parameter_Password_Value() {
+		String getParameterPasswordValue = Property.getProperty(Constant.DATA_FILE, "parameterPasswordValue");
+		if(getParameterPasswordValue != null)
+			return getParameterPasswordValue;
+		else
+			throw new RuntimeException("ParameterPasswordvalue Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya Data Center Drop down
+	 * 
+	 */
+	public String get_Gigya_Data_Center_Dropdown() {
+		String getDataCenterDropdown = Property.getProperty(Constant.DATA_FILE, "dataCenter");
+		if(getDataCenterDropdown != null)
+			return getDataCenterDropdown;
+		else
+			throw new RuntimeException("DataCenterDropdown Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya UID in response
+	 * 
+	 */
+	public String get_UID() {
+		String getUID = Property.getProperty(Constant.DATA_FILE, "uid");
+		if(getUID != null)
+			return getUID;
+		else
+			throw new RuntimeException("UID Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya UIDSignature in response
+	 * 
+	 */
+	public String get_UIDSignature() {
+		String getUIDSignature = Property.getProperty(Constant.DATA_FILE, "uidSignature");
+		if(getUIDSignature != null)
+			return getUIDSignature;
+		else
+			throw new RuntimeException("UIDSignature Data not specified in the Data file.");
+	}
+	/**
+	 * gets Gigya signatureTimestamp in response
+	 * 
+	 */
+	public String get_Signature_Timestamp() {
+		String getsignatureTimestamp = Property.getProperty(Constant.DATA_FILE, "signatureTimestamp");
+		if(getsignatureTimestamp != null)
+			return getsignatureTimestamp;
+		else
+			throw new RuntimeException("SignatureTimestamp Data not specified in the Data file.");
+	}
+	/**
+	 * gets Valid Email Data for 2480
+	 * 
+	 */
 	
-	
+	public String get_Valid_Email_Id_2480() {
+		String email = Property.getProperty(Constant.DATA_FILE, "validEmailId_2480");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
 }

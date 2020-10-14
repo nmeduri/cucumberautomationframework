@@ -262,13 +262,16 @@ public class PageObject extends BaseClass {
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), getWaitDuration());
 		switch (type) {
 		case "selectByText":
-			ele.clickable().dropdown().selectByVisibleText(value);
+			//ele.clickable().dropdown().selectByVisibleText(value);
+			ele.click().dropdown().selectByVisibleText(value);
 			break;
 		case "selectByIndex":
-			ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			//ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			ele.click().dropdown().selectByIndex(Integer.parseInt(value));
 			break;
 		case "selectByValue":
-			ele.clickable().dropdown().selectByValue(value);
+			//ele.clickable().dropdown().selectByValue(value);
+			ele.click().dropdown().selectByValue(value);
 			break;
 		}
 
@@ -534,6 +537,31 @@ public class PageObject extends BaseClass {
 		String String = (java.lang.String) configuration.getProperty("parentWindow");
 		PageObject.getDriver().switchTo().window(String);
 	}
+	
+	/** navigate back to previous page */
+	public void navigateBack() throws Exception {
+		PageObject.getDriver().navigate().back();
+	}
+
+	public void quitDriver() {
+		driver.quit();
+	}
+
+	/** return Not display conditon */
+	public boolean $notDisplay(Element element) {
+		/*try {
+			return !element.display();		
+		}catch(Exception e){			
+			return false;
+		}*/	
+		if(element.display()) {
+			Log.message("displayed :- " , true);
+			return false;
+		}else
+		return true;
+		
+	}
+
 }
 
 	

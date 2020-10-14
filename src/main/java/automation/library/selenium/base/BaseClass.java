@@ -54,6 +54,7 @@ public class BaseClass  {
 	public static String emailVaue;
 	public static String password;
 	public static PropertiesConfiguration conf = new PropertiesConfiguration();
+	public static String emailVaueForSkip;
 	
 
 

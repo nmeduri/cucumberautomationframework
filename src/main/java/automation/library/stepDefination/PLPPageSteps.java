@@ -145,4 +145,5 @@ public class PLPPageSteps extends BaseClass {
 	public void close_browser() throws Exception {
 		PageObject.getDriver().quit();
 	}
+	
 }

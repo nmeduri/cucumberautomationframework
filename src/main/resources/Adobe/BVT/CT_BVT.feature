@@ -69,11 +69,11 @@ Feature: Health Check BVT
     Then user clicks on list view button
     Then plp page is visible in list view
     And product card displays the product card title
-    And Close Browser
+    And close Browser
     
     @WebView @WideScreen
 	Scenario: close browser
-	Given Close Browser
+	Given close Browser
     
 
 	

@@ -1058,4 +1058,291 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
+	/**
+	 * gets product data of TC-1334
+	 * 
+	 */
+
+	public String get_product_tc_1334() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1334");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets Add to Cart API
+	 * 
+	 */
+	public String getAddToCartAnonymousUserI() {
+
+		String productInfo = Property.getProperty(Constant.API_DATA, "AddToCartAnonymousUser");
+		if (productInfo != null)
+			return productInfo;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3965_P1
+	 * 
+	 */
+	public String get_product_tc_3965_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3965_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3965_P2
+	 * 
+	 */
+	public String get_product_tc_3965_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3965_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3970_P1
+	 * 
+	 */
+	public String get_product_tc_3970_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3970_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3970_P2
+	 * 
+	 */
+	public String get_product_tc_3970_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3970_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3969_P1
+	 * 
+	 */
+	public String product_tc_3969_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3969_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3969_P2
+	 * 
+	 */
+	public String product_tc_3969_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3969_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3967_P1
+	 * 
+	 */
+	public String product_tc_3967_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3967_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3967_P2
+	 * 
+	 */
+	public String product_tc_3967_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3967_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3968_P1
+	 * 
+	 */
+	public String product_tc_3968_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3968_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3968_P2
+	 * 
+	 */
+	public String product_tc_3968_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3968_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-1357
+	 * 
+	 */
+	              
+	public String get_product_tc_1357() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1357");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3961
+	 * 
+	 */
+	              
+	public String get_product_tc_3961() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3961");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3962
+	 * 
+	 */
+	              
+	public String get_product_tc_3962() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3962");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3963_P1
+	 * 
+	 */
+	              
+	public String get_product_tc_3963_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3963_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3963_P2
+	 * 
+	 */
+	              
+	public String get_product_tc_3963_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3963_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3962_P3
+	 * 
+	 */
+	              
+	public String get_product_tc_3963_P3() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3963_P3");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3964_P1
+	 * 
+	 */
+	              
+	public String get_product_tc_3964_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3964_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3964_P2
+	 * 
+	 */
+	              
+	public String get_product_tc_3964_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3964_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3964_P3
+	 * 
+	 */
+	              
+	public String get_product_tc_3964_P3() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3964_P3");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3966_P1
+	 * 
+	 */
+	public String product_tc_3966_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3966_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3966_P2
+	 * 
+	 */
+	public String product_tc_3966_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3966_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+	}
+	
 }

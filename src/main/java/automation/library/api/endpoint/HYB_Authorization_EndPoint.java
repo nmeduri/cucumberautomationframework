@@ -136,7 +136,7 @@ public class HYB_Authorization_EndPoint {
 
 	}
 	public Response post_HYB_AddToCart_RegUserAPI(String url, String code, String product1, String product2, String accessToken) {
-		String bodyvalue="{\n" + 
+		/*String bodyvalue="{\n" + 
 				"    \"orderEntries\": [\n" + 
 				"        {\n" + 
 				"            \"product\": {\n" + 
@@ -157,13 +157,51 @@ public class HYB_Authorization_EndPoint {
 				"            }\n" + 
 				"        }\n" + 
 				"    ]\n" + 
+				"}";*/
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \""+product1+""+"\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"BOPIS\"\n" + 
+				"            },\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        },\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \""+product2+""+"\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"STH\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"    ]\n" + 
 				"}";
 		request.body(bodyvalue);
 		request.header("Content-Type", "application/json");
 		request.header("Authorization", "Bearer " + accessToken);
 		Log.message("bodyvalue :"+ bodyvalue, true);
-		Log.message("API:- " + url  + code +"/entries?fields=DEFAULT&baseStoreId=ctr", true);
-		response = request.post(url + code+ "/entries?fields=DEFAULT&baseStoreId=ctr");
+		Log.message("API:- " + url  + code +"/entries?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + code+ "/entries?fields=FULL&baseStoreId=ctr");
 		return response;	
 	}
 	public Response get_Addtocart_GuestUser_Post_API(String url) {
@@ -202,6 +240,53 @@ public class HYB_Authorization_EndPoint {
 		Log.message("bodyvalue :"+ bodyvalue, true);
 		Log.message("API:- " + url  + code +"/entries?fields=DEFAULT", true);
 		response = request.post(url + code+ "/entries?fields=DEFAULT");
+		return response;	
+	}
+	public Response post_HYB_AddToCart_AnonymousUserAPI(String url, String guid, String product1,String product2) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \""+product1+""+"\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"BOPIS\"\n" + 
+				"            },\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        },\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \""+product2+""+"\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"STH\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"    ]\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " );
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("API:- " + url  + guid +"/entries?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + guid+ "/entries?fields=FULL&baseStoreId=ctr");
 		return response;	
 	}
 	

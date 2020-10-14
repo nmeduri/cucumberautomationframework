@@ -817,6 +817,16 @@ public class PDP_Page extends PageObject {
 
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SignOutOption()));
 	}
+	/** This function is verify that PDP Page is displayed */
+	public void display_PDP_Page_Title() throws Exception {
 
+		if(testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle().contains("product-detail-page")) {
+		Log.message("PDP title: "+testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle(), true);
+		Thread.sleep(1000);
+		}else {
+			Log.message("PDP page is not displayed", true);
+			fail();
+		}
+	}
 	
 }
