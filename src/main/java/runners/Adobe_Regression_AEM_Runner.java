@@ -11,16 +11,15 @@ import cucumber.api.CucumberOptions;
  * This file execute the scenarios of Adobe Regression (Web)
  */
 
-public final class Adobe_Regression_Web_firefox_Runner extends BaseClass {
+public final class Adobe_Regression_AEM_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
-
-
-			"classpath:Adobe/Regression/OCCP_1027_Footer_Links.feature",
+			
+			"classpath:Adobe/AEM/Regression/OCCP_868_Search_And_SRP_Auto_Corrective_Search.feature", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@WebView",
-				"--plugin", "json:cucumber.json",
+			"--tags", "@AEM",
+			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html"
@@ -28,7 +27,7 @@ public final class Adobe_Regression_Web_firefox_Runner extends BaseClass {
 		};
 
 	public static void main(String[] args) throws Throwable {
-		Adobe_Regression_Web_firefox_Runner ls = new Adobe_Regression_Web_firefox_Runner();
+		Adobe_Regression_AEM_Runner ls = new Adobe_Regression_AEM_Runner();
 		String className = ls.getClass().getSimpleName();
 		Log.message("Class Name:- " + className, true);
 		conf.setProperty("className", className);

@@ -86,7 +86,7 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage(PageObject.getDriver()).displayRegisterCardButton();
 	}
 	
-	@Then("cancel button is displayed on terms and conditions page")
+	@Then("button cancel is displayed on terms and conditions page")
 	public void cancel_button_is_displayed_on_terms_and_conditions_page() throws Exception {
 		testContext.getPageObjectManager().getRewardsTermsAndCondtionsPage(PageObject.getDriver()).displayCancdlButton();
 	}

@@ -22,6 +22,7 @@ public class Your_Email_Has_Been_Verified_PageLocator {
 		
 		return yourEmailHasBeenVerified;
 	}
+
 	/**
 	 * gets Locator - Your Email Has Been Verified
 	 * 

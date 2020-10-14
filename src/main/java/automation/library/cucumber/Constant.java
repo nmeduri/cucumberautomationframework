@@ -12,6 +12,7 @@ public class Constant {
 	public static final String BASE_PATH = System.getProperty("user.dir");
 	public static final String API_DATA = "/config/" + apiDataFile();
 	public static final String DATA_FILE = "/config/" + dataFile();
+	public static final String AEM_DATA_FILE = "/config/" + aemDataFile();
 	public static final String REPORT_PATH = System.getProperty("user.dir") + "/src/main/resources/config/extent-config.xml";
 	
 	public static String configureFile;
@@ -46,6 +47,20 @@ public class Constant {
 			return configureFile;
 		} else {
 			configureFile = "dataFile_D2.properties";
+			Log.message("File:- " + configureFile, true);
+			return configureFile;
+		}
+
+	}
+	
+	public static String aemDataFile() {
+		String sEnvironment = System.getenv("environment");
+		if (sEnvironment.equalsIgnoreCase("D1")) {
+			configureFile = "AEM_Data_D1.properties";
+			Log.message("File:- " + configureFile, true);
+			return configureFile;
+		} else {
+			configureFile = "AEM_Data_D2.properties";
 			Log.message("File:- " + configureFile, true);
 			return configureFile;
 		}

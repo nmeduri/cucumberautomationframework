@@ -338,8 +338,9 @@ public class PDPPageSteps extends BaseClass {
 	public void wishlist_icon_becomes_active_in_red_color() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyWishListIconColor();
 	}
-	@When("pdp page should displayed")
-	public void pdp_page_should_displayed() throws Exception {
-		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_PDP_Page_Title();
+	
+	@And("switch on window")
+	public void switch_on_window() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 	}
 }

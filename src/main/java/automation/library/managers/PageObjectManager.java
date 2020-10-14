@@ -3,7 +3,8 @@ package automation.library.managers;
 
 import org.openqa.selenium.WebDriver;
 
-import automation.library.common.Property;
+import automation.library.locator.AEM_Common_Page_Locator;
+import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Footer_PageLocator;
@@ -13,9 +14,10 @@ import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.Gigya_Api_Tool_Page_Locator;
 import automation.library.locator.Header_Page_Locator;
 import automation.library.locator.HomePageLocator;
-import automation.library.locator.Link_reward_ProfileScreen_page_Locator;
+import automation.library.locator.Link_Rewards_Options_Page_Locator;
 import automation.library.locator.Link_Your_Existing_Triangle_Rewards_Card_PageLocator;
 import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
+import automation.library.locator.Link_reward_ProfileScreen_page_Locator;
 import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
@@ -26,6 +28,8 @@ import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
+import automation.library.pageObjects.AEM_Common_Page;
+import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Footer_Page;
@@ -36,9 +40,9 @@ import automation.library.pageObjects.Gigya_Api_Tool_Page;
 import automation.library.pageObjects.Header_Page;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.Link_Rewards_Options_Page;
-import automation.library.pageObjects.Link_reward_ProfileScreen_page;
 import automation.library.pageObjects.Link_Your_Existing_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
+import automation.library.pageObjects.Link_reward_ProfileScreen_page;
 import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
 import automation.library.pageObjects.PDP_Page;
@@ -51,9 +55,6 @@ import automation.library.pageObjects.Rewards_Terms_Conditions_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
-import automation.library.selenium.exec.driver.manager.Local_Chrome_Driver_Manager;
-import automation.library.stepDefination.LogInPageSteps;
-import automation.library.locator.Link_Rewards_Options_Page_Locator;
 
 /**
  * Class to get Instance of Page & Locator Class
@@ -105,9 +106,13 @@ public class PageObjectManager {
 	private Rewards_Terms_Conditions_Page_Locator getRewardsTermsAndCondtionsLocator;
 	private Link_Your_Existing_Triangle_Rewards_Card_Page getLinkYourExistingRewardsPage;
 	private Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingRewardsLocator;
+	private AEM_Search_And_SRP_Page getSearchAndSRPPage;
+	private AEM_Common_Page getAEMCommonPage;
+	private AEM_Common_Page_Locator getAEMCommonPageLocator;
+	private AEM_Search_And_SRP_Page_Locator getAEMSearchAndSRPPageLocator;
 	private Link_Rewards_Options_Page getLinkRewardsOptsPage;
-	private Link_Rewards_Options_Page_Locator getLinkRewardsOptsPageLocator;
 	private Gigya_Api_Tool_Page gigyaApiToolPage;
+	private Link_Rewards_Options_Page_Locator getLinkRewardsOptsPageLocator;
 	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
 	
 	public PageObjectManager() {
@@ -376,18 +381,42 @@ public class PageObjectManager {
 	public Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingTriangleRewardsAccountLocaoter() {
 		return (getLinkYourExistingRewardsLocator == null) ? getLinkYourExistingRewardsLocator = new Link_Your_Existing_Triangle_Rewards_Card_PageLocator() : getLinkYourExistingRewardsLocator; 
 	}
+	
+	/** Return Instance of Search And SRP Page */
+	public AEM_Search_And_SRP_Page getAEMSearchAndSRPPage(WebDriver driver) {
+		return (getSearchAndSRPPage == null) ?  getSearchAndSRPPage = new AEM_Search_And_SRP_Page(driver) : getSearchAndSRPPage;
+	}
+	
+	/** Return Instance of AEM Common Page */
+	public AEM_Common_Page getAEMCommonPage(WebDriver driver) {
+		return (getAEMCommonPage == null) ? getAEMCommonPage = new AEM_Common_Page(driver) : getAEMCommonPage;
+	}
+	
 	/** Returns Instance of Link Rewards Options Account Locator File */
 	public Link_Rewards_Options_Page getLinkRewardsOptionsPage(WebDriver driver) {
 		return (getLinkRewardsOptsPage == null) ? getLinkRewardsOptsPage = new Link_Rewards_Options_Page(driver) : getLinkRewardsOptsPage;
 	}
+	
 	/** Returns Instance of Link Rewards Options Account Locator File*/
 	public Link_Rewards_Options_Page_Locator getLinkRewardsOptionsPageLocator() {
-		return (getLinkRewardsOptsPageLocator == null) ? getLinkRewardsOptsPageLocator =new Link_Rewards_Options_Page_Locator() : getLinkRewardsOptsPageLocator;
+		return (getLinkRewardsOptsPageLocator == null) ? getLinkRewardsOptsPageLocator = new Link_Rewards_Options_Page_Locator() : getLinkRewardsOptsPageLocator;
 	}
 	/** Returns Instance of Gigya Api Tool file */
 	public Gigya_Api_Tool_Page getGigyaApiToolPage(WebDriver driver) {
 		return (gigyaApiToolPage == null) ? gigyaApiToolPage = new Gigya_Api_Tool_Page(driver) : gigyaApiToolPage;
 	}
+	
+	/** Return Instance of AEM Common Page Locator */
+	public AEM_Common_Page_Locator getAEMCommonPageLocator() {
+		return (getAEMCommonPageLocator == null) ? getAEMCommonPageLocator = new AEM_Common_Page_Locator() : getAEMCommonPageLocator;
+	}
+	
+	/** Return Instance of AEM Search and SRP Page Locator */
+	public AEM_Search_And_SRP_Page_Locator getAEMSearchAndSRPPageLocator() {
+		return (getAEMSearchAndSRPPageLocator == null) ? getAEMSearchAndSRPPageLocator = new AEM_Search_And_SRP_Page_Locator() : getAEMSearchAndSRPPageLocator;
+ 	}
+	
+
 	/** Returns Instance of Gigya Api Tool file Locator File*/
 	public Gigya_Api_Tool_Page_Locator getGigyaApiToolPageLocator() {
 		return (gigyaApiToolPage_Locator == null) ? gigyaApiToolPage_Locator =new Gigya_Api_Tool_Page_Locator() : gigyaApiToolPage_Locator;

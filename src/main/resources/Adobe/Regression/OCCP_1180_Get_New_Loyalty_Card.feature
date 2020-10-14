@@ -17,7 +17,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2472 Verfiy Rewards Terms&Conditions screen and screen on Desktop 
 	When login url is available
-	When enter detail email
+	When user 2488 enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -31,7 +31,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2470, TC-2478 Verfiy Field level validations on Personal Information on Desktop
 	When login url is available
-	When enter detail email
+	When user 2488 enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed

@@ -1,5 +1,6 @@
 package automation.library.managers;
 
+import automation.library.dataProviders.AEMDataReader;
 import automation.library.dataProviders.APIDataReader;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.dataProviders.DataReader;
@@ -12,6 +13,7 @@ public class FileReaderManager {
 	private static ConfigFileReader configFileReader;
 	private static APIDataReader apiDataReader;
 	private static DataReader dataReader;
+	private static AEMDataReader aemDataReader;
 	
 	private FileReaderManager() {
 	}
@@ -34,6 +36,11 @@ public class FileReaderManager {
 	 /** Returns Instance of Data Reader File */
 	 public DataReader getDataReader() {
 		 return (dataReader == null) ? new DataReader() : dataReader;
+	 }
+	 
+	 /** Returns Instance of AEM Data Reader File */
+	 public AEMDataReader getAEMDataReader() {
+		 return (aemDataReader == null) ? new AEMDataReader() : aemDataReader;
 	 }
 	 
 	 

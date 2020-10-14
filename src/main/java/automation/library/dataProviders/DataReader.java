@@ -429,6 +429,7 @@ public class DataReader {
 			throw new RuntimeException("Last Name Data not specified in the Data file.");
 	}
 	
+	
 	/**
 	 * gets Address
 	 * 
@@ -467,7 +468,6 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-		
 	
 	
 	/**
@@ -492,17 +492,20 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
+	
 	/**
-	 * gets Gigya Api Tool URL
+	 * gets Valid Email Data for 2480
 	 * 
 	 */
-	public String get_Gigya_Api_Tool_Url() {
-		String getGigyaApiToolUrl = Property.getProperty(Constant.DATA_FILE, "gigyaApiToolUrl");
-		if(getGigyaApiToolUrl != null)
-			return getGigyaApiToolUrl;
-		else 
-			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
+	
+	public String get_Valid_Email_Id_2480() {
+		String email = Property.getProperty(Constant.DATA_FILE, "validEmailId_2480");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
+	
 	/**
 	 * gets Gigya API Key
 	 * 
@@ -514,6 +517,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("apiKey Data not specified in the Data file.");
 	}
+	
 	/**
 	 * gets Gigya User Key
 	 * 
@@ -547,6 +551,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("dataCenterEndPoint Data not specified in the Data file.");
 	}
+	
 	/**
 	 * gets Gigya Parameter Login Name
 	 * 
@@ -635,16 +640,16 @@ public class DataReader {
 		else
 			throw new RuntimeException("SignatureTimestamp Data not specified in the Data file.");
 	}
+	
 	/**
-	 * gets Valid Email Data for 2480
+	 * gets Gigya Api Tool URL
 	 * 
 	 */
-	
-	public String get_Valid_Email_Id_2480() {
-		String email = Property.getProperty(Constant.DATA_FILE, "validEmailId_2480");
-		if(email != null) 
-			return email;
-		else
-			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	public String get_Gigya_Api_Tool_Url() {
+		String getGigyaApiToolUrl = Property.getProperty(Constant.DATA_FILE, "gigyaApiToolUrl");
+		if(getGigyaApiToolUrl != null)
+			return getGigyaApiToolUrl;
+		else 
+			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
 	}
 }

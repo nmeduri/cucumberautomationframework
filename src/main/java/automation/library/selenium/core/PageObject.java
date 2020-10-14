@@ -42,6 +42,7 @@ public class PageObject extends BaseClass {
 	private Property property = new Property();
 	public static List<String> value;
 	public static PropertiesConfiguration configuration = new PropertiesConfiguration();
+	private WebElement element;
 
 	public PageObject(WebDriver driver) {
 		this.driver = driver;
@@ -107,7 +108,27 @@ public class PageObject extends BaseClass {
 		WebElement element = driver.findElement(by);
 		return element;
 	}
-
+	
+	/** click on element */
+	public void $clickFindElement(ExpectedCondition<WebElement> exp, int delay) throws Exception {
+		wait = new WebDriverWait(driver, 20);
+		element = wait.until(exp);
+		element.click();
+	}
+	
+	/** enter data using element */
+	public void $enterData(ExpectedCondition<WebElement> exp, int delay, String data) throws Exception {
+		wait = new WebDriverWait(driver, 20);
+		element = wait.until(exp);
+		element.sendKeys(data);
+	}
+	
+	/** enter data using element */
+	public void $clearData(ExpectedCondition<WebElement> exp, int delay) throws Exception {
+		wait = new WebDriverWait(driver, 20);
+		element = wait.until(exp);
+		element.clear();
+	}
 	
 	/** enter data function */
 	public void $enterDataFindElement(By by, String data) throws Exception {
@@ -262,16 +283,13 @@ public class PageObject extends BaseClass {
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), getWaitDuration());
 		switch (type) {
 		case "selectByText":
-			//ele.clickable().dropdown().selectByVisibleText(value);
-			ele.click().dropdown().selectByVisibleText(value);
+			ele.clickable().dropdown().selectByVisibleText(value);
 			break;
 		case "selectByIndex":
-			//ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
-			ele.click().dropdown().selectByIndex(Integer.parseInt(value));
+			ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
 			break;
 		case "selectByValue":
-			//ele.clickable().dropdown().selectByValue(value);
-			ele.click().dropdown().selectByValue(value);
+			ele.clickable().dropdown().selectByValue(value);
 			break;
 		}
 
@@ -561,7 +579,6 @@ public class PageObject extends BaseClass {
 		return true;
 		
 	}
-
 }
 
 	

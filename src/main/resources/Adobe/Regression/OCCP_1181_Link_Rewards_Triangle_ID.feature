@@ -4,7 +4,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2485, TC-2492, TC-2496 Verfiy displaying Rewards Terms&Conditions screen on Desktop
 	When login url is available
-	When enter detail email
+	When user 2488 enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -14,11 +14,11 @@ Feature: OCCP-1181 Link Rewards Triangle
 	And verify clicks on continue button
 	Then rewards terms and conditions should be displayed
 	Then register card button is displayed on terms and conditions page
-	Then cancel button is displayed on terms and conditions page
+	Then button cancel is displayed on terms and conditions page
 	And verify when click on cancel button
 	Then user should be navigate to the previous screen as complete your your profile screen
 	
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2486 Verfiy Saving the consent on this step and feeding it back to Gigya profile  Displaying Rewards T&C on Desktop
 	Given sign up url is available
 	Then sign up page is displayed
@@ -52,7 +52,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2487, TC-2494 Verfiy Download T&C and Displaying Rewards T&C on Desktop 
 	Given login url is available
-	When enter detail email
+	When user 2488 enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -66,7 +66,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2487 Verfiy Download T&C and Displaying Rewards T&C on Desktop 
 	Given login url is available
-	When enter detail email
+	When user 2488 enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
@@ -101,7 +101,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	@RegressionTest @WebView @WideView @MobileView @TabletView
 	Scenario: TC-2493, TC-2497, TC-2498 Verfiy displaying Rewards Terms&Conditions screen on Desktop
 	When login url is available
-	When enter detail email
+	When user 2488 enter detail email
 	And user enter password
 	And user click on sign in button
 	Then link card screen should be displayed
