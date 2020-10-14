@@ -90,7 +90,12 @@ public class Link_reward_ProfileScreen_page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_YOBerror()));
 		
 	}
-	
+
+	/** This function is verify that error message is displayed for user not reached year of age majority */
+	public void dispaly_ageMajorityError()throws Exception { 
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_ageMajorityError()));
+	}
+
 	/** enter First Name */
 	public void enterData_FirstName_Profile_Page(String data) throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_FirstName()), data );

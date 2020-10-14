@@ -1,10 +1,6 @@
 
 package automation.library.stepDefination;
 import org.junit.Assert;
-
-/**
- * This file contains the scenario of user stories OCCP-1616
- */
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
 import automation.library.selenium.core.PageObject;
@@ -12,6 +8,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
+
 /**
  * This file contains the scenario of user stories OCCP-1616
  */

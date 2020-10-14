@@ -249,8 +249,7 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	public void plus_should_be_displayed_instead_of_minus() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayCustomSupportPlusButton();
 	}
-	
-	
+
 	
 	
 }

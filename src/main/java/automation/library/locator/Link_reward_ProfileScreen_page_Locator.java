@@ -35,6 +35,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 	String DOBValue=Property.getProperty(Constant.OR_FILE, "DOBValue");
     String InvalidLastnameError=Property.getProperty(Constant.OR_FILE, "InvalidLastnameError");
     String InvalidFirstnameError=Property.getProperty(Constant.OR_FILE, "InvalidFirstnameError");
+    String AgeMajorityError=Property.getProperty(Constant.OR_FILE, "AgeMajorityError");
 
     /**
 	 * gets Locator - Triangle Reward
@@ -265,7 +266,7 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * gets Locator - Invalid First Name
 	 * 
 	 */
-	public String get_InvalidFN() {
+	public String get_InvalidFirstNameError() {
 
 		return InvalidFirstnameError;
 	}
@@ -274,11 +275,17 @@ public class Link_reward_ProfileScreen_page_Locator {
 	 * gets Locator - Invalid Last name
 	 * 
 	 */
-	public String get_InvalidLN() {
+	public String get_InvalidLastnameError() {
 
 		return InvalidLastnameError;
 	}
+	/**
+	 * gets Locator - Age majority error
+	 * 
+	 */
+	public String get_ageMajorityError() {
+
+		return AgeMajorityError;
+	}
 	
-
-
 }

@@ -11,19 +11,19 @@ import automation.library.cucumber.Constant;
  * 
  */
 public class DataReader {
-	
-	
+
+
 	private Properties properties;
 
 	public DataReader(){
-        
-       
-   }
+
+
+	}
 	/**
 	 * gets password detail
 	 * 
 	 */
-	
+
 	public String get_Password_Detail() {
 		String getPassword = Property.getProperty(Constant.DATA_FILE, "passwordData");
 		if(getPassword != null)
@@ -31,12 +31,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Password Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets New Password Detail
 	 * 
 	 */
-	
+
 	public String get_New_Password_Detail() {
 		String getPassword = Property.getProperty(Constant.DATA_FILE, "newPassword");
 		if(getPassword != null)
@@ -44,7 +44,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Password Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets User Name - One
 	 * 
@@ -56,7 +56,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets User Name
 	 * 
@@ -80,7 +80,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets User Name - Three
 	 * 
@@ -92,7 +92,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets User Name - Six
 	 * 
@@ -104,7 +104,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets User Name - Four
 	 * 
@@ -116,7 +116,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets User Name - Five
 	 * 
@@ -128,12 +128,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Reset Password Data
 	 * 
 	 */
-	
+
 	public String get_UserName_For_Reset_Password() {
 		String getPassword = Property.getProperty(Constant.DATA_FILE, "usernameForResetPassword");
 		if(getPassword != null)
@@ -141,12 +141,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Re-Type Password data
 	 * 
 	 */
-	
+
 	public String get_Retype_Password_Detail() {
 		String getRetypePassword = Property.getProperty(Constant.DATA_FILE, "retypePasswordData");
 		if(getRetypePassword != null)
@@ -154,25 +154,25 @@ public class DataReader {
 		else
 			throw new RuntimeException("Retype Password Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets user detail
 	 * 
 	 */
 	public String get_Username_OCCP_1181() {
-		
+
 		String getUserName = Property.getProperty(Constant.DATA_FILE, "username_1181");
 		if(getUserName != null)
 			return getUserName;
 		else
 			throw new RuntimeException("User Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Incorrect Re-Type Password Data
 	 * 
 	 */
-	
+
 	public String get_Incorrect_Retype_Password_Detail() {
 		String getRetypePassword = Property.getProperty(Constant.DATA_FILE, "incorrectRetypePassword");
 		if(getRetypePassword != null)
@@ -180,12 +180,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Retype Password Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Email Detail
 	 * 
 	 */
-	
+
 	public String get_Email_Detail() {
 		String getEmail = Property.getProperty(Constant.DATA_FILE, "emailData");
 		if(getEmail != null)
@@ -193,12 +193,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Email Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Malinator URl
 	 * 
 	 */
-	
+
 	public String get_Mailinator_Url() {
 		String getMailinatorUrl = Property.getProperty(Constant.DATA_FILE, "mailinatorUrl");
 		if(getMailinatorUrl != null)
@@ -206,12 +206,12 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Mailinator url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Invalid Email
 	 * 
 	 */
-	
+
 	public String get_Invalid_Email() {
 		String getEmail = Property.getProperty(Constant.DATA_FILE, "invalidEmailData");
 		if(getEmail != null)
@@ -219,12 +219,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Invalid EmailData Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Login URL
 	 * 
 	 */
-	
+
 	public String get_Login_Url() {
 		String getLoginUrl = Property.getProperty(Constant.DATA_FILE, "loginUrl");
 		if(getLoginUrl != null)
@@ -232,12 +232,12 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Login url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Valid Email Detail
 	 * 
 	 */
-	
+
 	public String get_Valid_Email_Data() {
 		String email = Property.getProperty(Constant.DATA_FILE, "validEmailData");
 		if(email != null) 
@@ -245,12 +245,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets quantity
 	 * 
 	 */
-	
+
 	public String get_Quantity() {
 		String quantity = Property.getProperty(Constant.DATA_FILE, "quantity");
 		if(quantity != null)
@@ -258,12 +258,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Quantity (Maximum Quantity)
 	 * 
 	 */
-	
+
 	public String get_Quantity_Greater_Than_Maximum_Quantity() {
 		String quantity = Property.getProperty(Constant.DATA_FILE, "quantityGreaterThanMaximumQuantity");
 		if(quantity != null)
@@ -271,12 +271,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Invalid Quantity Data (Not Integer)
 	 * 
 	 */
-	
+
 	public String get_Quantity_Not_Integer() {
 		String quantityNotInteger = Property.getProperty(Constant.DATA_FILE, "quantityNotInteger");
 		if(quantityNotInteger != null)
@@ -284,12 +284,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Invalid Quantity (Zero)
 	 * 
 	 */
-	
+
 	public String get_Quantity_Zero() {
 		String quantityNotInteger = Property.getProperty(Constant.DATA_FILE, "quantityZero");
 		if(quantityNotInteger != null)
@@ -297,13 +297,13 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Invalid Quantity (In Decimal)
 	 * 
 	 */
-	
-	
+
+
 	public String get_Quantity_In_Decimal() {
 		String quantityNotInteger = Property.getProperty(Constant.DATA_FILE, "decimalNumbuerInQuantity");
 		if(quantityNotInteger != null)
@@ -323,6 +323,10 @@ public class DataReader {
 		else
 			throw new RuntimeException("First Name Data not specified in the Data file.");
 	}
+	/**
+	 * gets Invalid First Name
+	 * 
+	 */
 	public String get_invalid_FirstName() {
 		String getIFN = Property.getProperty(Constant.DATA_FILE, "InvalidFirstName");
 		if(getIFN != null)
@@ -330,6 +334,10 @@ public class DataReader {
 		else
 			throw new RuntimeException("Invalid First Name Data not specified in the Data file.");
 	}
+	/**
+	 * gets Invalid Last Name
+	 * 
+	 */
 	public String get_invalid_LastName() {
 		String getILN = Property.getProperty(Constant.DATA_FILE, "InvalidLastName");
 		if(getILN != null)
@@ -342,7 +350,7 @@ public class DataReader {
 	 * gets First Name
 	 * 
 	 */
-	
+
 	public String get_First_Name_Rewards() {
 		String firstName = Property.getProperty(Constant.DATA_FILE, "firstNameRewards");
 		if(firstName != null)
@@ -350,12 +358,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("First Name Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Second Name
 	 * 
 	 */
-	
+
 	public String get_Last_Name_Rewards() {
 		String lastName = Property.getProperty(Constant.DATA_FILE, "lastNamrRewards");
 		if(lastName != null)
@@ -363,12 +371,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Lirst Name Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Address
 	 * 
 	 */
-	
+
 	public String get_Address_Rewards() {
 		String address = Property.getProperty(Constant.DATA_FILE, "addressRewards");
 		if(address != null)
@@ -376,12 +384,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Address Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets City
 	 * 
 	 */
-	
+
 	public String get_City_Rewards() {
 		String city = Property.getProperty(Constant.DATA_FILE, "cityRewards");
 		if(city != null)
@@ -389,12 +397,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("City Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Postal Code
 	 * 
 	 */
-	
+
 	public String get_Postal_Code_Rewards() {
 		String postalCode = Property.getProperty(Constant.DATA_FILE, "postalCodeRewards");
 		if(postalCode != null)
@@ -402,12 +410,24 @@ public class DataReader {
 		else
 			throw new RuntimeException("Postal Code Data not specified in the Data file.");
 	}
-	
+
+	/**
+	 * gets Invalid Postal Code
+	 * 
+	 */
+
+	public String get_InvalidPostal_Code() {
+		String postalCode = Property.getProperty(Constant.DATA_FILE, "invalidPostalCode");
+		if(postalCode != null)
+			return postalCode;
+		else
+			throw new RuntimeException("Invalid postal Code Data not specified in the Data file.");
+	}
 	/**
 	 * gets Phone Number
 	 * 
 	 */
-	
+
 	public String get_Phone_Number_Rewards() {
 		String phoneNumber = Property.getProperty(Constant.DATA_FILE, "phoneNumberRewards");
 		if(phoneNumber != null)
@@ -446,7 +466,7 @@ public class DataReader {
 	 * gets Deactivated card number
 	 * 
 	 */
-	
+
 	public String get_Deactivated_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "deactivatedCardNo");
 		if(cardNo != null)
@@ -454,8 +474,6 @@ public class DataReader {
 		else
 			throw new RuntimeException("Deactivated Card Number not specified in the Data file.");
 	}
-	
-	
 	/**
 	 * gets Deactivated card number
 	 * 
@@ -493,11 +511,23 @@ public class DataReader {
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
 	
-	/**
-	 * gets Valid Email Data for 2480
-	 * 
-	 */
+
+/**
+ * gets SearchValue
+ * 
+ */
+	public String get_Search_Data() {
+		String getsearch = Property.getProperty(Constant.DATA_FILE, "searchValue");
+		if(getsearch != null)
+			return getsearch;
+		else
+			throw new RuntimeException("Search Data not specified in the Data file.");
+	}
 	
+/**
+ * gets Valid Email Data for 2480
+ * 
+ */
 	public String get_Valid_Email_Id_2480() {
 		String email = Property.getProperty(Constant.DATA_FILE, "validEmailId_2480");
 		if(email != null) 
@@ -505,7 +535,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Gigya API Key
 	 * 

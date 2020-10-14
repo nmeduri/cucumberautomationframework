@@ -13,7 +13,7 @@ import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
 import junit.framework.Assert;
 /**
- * This file contains the scenario of user stories OCCP-4016
+ * This file contains the scenario of user stories OCCP-4416
  */
 public class HYB_OCCP_4416_Add_default_colourorvariant_logic_and_update_data_for_Product_Details_OCC_Step extends BaseStep{
 RequestSpecification request;

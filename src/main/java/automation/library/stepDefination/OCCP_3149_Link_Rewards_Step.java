@@ -49,8 +49,8 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 	}
 	
 	
-	@And ("do not enter mandatory fields and click on Continue button")
-        public void ClickContinue_ErrorMessage() throws Exception {
+	@And ("do not enter mandatory fields")
+        public void NoInput_ErrorMessage() throws Exception {
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_YOBerror();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_phnError();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_provinceErr();
@@ -61,7 +61,7 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_pinError();
 
 	}
-	@Then ("enter invalid details for the input fields and click on continue button")
+	@Then ("enter invalid details for the input fields")
 	public void enterInvalidDetail_Continue() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_First_Name(FileReaderManager.getInstance().getDataReader().get_invalid_FirstName());	
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Last_Name(FileReaderManager.getInstance().getDataReader().get_invalid_LastName());	
@@ -79,5 +79,12 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_FNError();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_pinError();
 	}
+	@Then ("validate inline error displayed when incorrect details are filled")
+	public void validate_error_when_incorrect_details_filled() throws Exception {
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_InvalidFirstNameError();
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page_Locator().get_InvalidLastnameError();
+
+	}
+
 
 }

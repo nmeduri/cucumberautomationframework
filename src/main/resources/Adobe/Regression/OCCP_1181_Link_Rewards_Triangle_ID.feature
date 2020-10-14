@@ -72,7 +72,7 @@ Feature: OCCP-1181 Link Rewards Triangle
 	Then link card screen should be displayed
 	And verify when user clicks on the get a new triangle rewards card link
 	Then user should redirect to the get a new triangle rewards card screen
-	And verify when user enter valid information on complete your profile screen
+  And verify when user enter valid information on complete your profile screen
 	And verify clicks on continue button
 	Then rewards terms and conditions should be displayed
 	And verify when click on cancel button

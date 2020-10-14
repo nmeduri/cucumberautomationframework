@@ -22,6 +22,13 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	String province = Property.getProperty(Constant.OR_FILE, "province");
 	String provinceValue = Property.getProperty(Constant.OR_FILE, "provinceValue");
 	String continueButton = Property.getProperty(Constant.OR_FILE, "continueButton");
+	String yearOfBirthValueAgeMajority=Property.getProperty(Constant.OR_FILE, "yearOfBirthValueAgeMajority");
+	String yearOfBirthValueNoAgeMajority=Property.getProperty(Constant.OR_FILE, "yearOfBirthValueNoAgeMajority");
+	String monthOfBirth=Property.getProperty(Constant.OR_FILE, "monthOfBirth");
+	String DOB=Property.getProperty(Constant.OR_FILE, "DOB");
+	String monthValue=Property.getProperty(Constant.OR_FILE, "monthValue");
+	String monthValueAfterCurrentdate=Property.getProperty(Constant.OR_FILE, "monthValueAfterCurrentdate");
+	String DOBValue=Property.getProperty(Constant.OR_FILE, "DOBValue");
 	
 	/**
 	 * gets Locator - Header Get A New Triangle Rewards Card Title
@@ -104,6 +111,22 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	public String get_Year_Of_Birth_Value() throws Exception {
 		return yearOfBirthValue;
 	}
+	/**
+	 * gets Locator - Year of Birth Value for age majority check
+	 * 
+	 */
+	
+	public String get_Year_Of_Birth_Value_Age_Majority() throws Exception {
+		return yearOfBirthValueAgeMajority;
+	}
+	/**
+	 * gets Locator - Year of Birth Value for not reach age majority check
+	 * 
+	 */
+	
+	public String get_Year_Of_Birth_Value_No_Age_Majority() throws Exception {
+		return yearOfBirthValueNoAgeMajority;
+	}
 	
 	/**
 	 * gets Locator - Province (Drop Down)
@@ -130,6 +153,46 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	
 	public String get_Continue_Button() throws Exception {
 		return continueButton;
+	}
+	/**
+	 * gets Locator - Month of birth dropdown
+	 * 
+	 */
+	
+	public String get_MonthOfBirth() throws Exception {
+		return monthOfBirth;
+	}
+	/**
+	 * gets Locator - date of birth dropdown
+	 * 
+	 */
+	
+	public String get_dateOfBirth() throws Exception {
+		return DOB;
+	}
+	/**
+	 * gets Locator - date of birth value
+	 * 
+	 */
+	
+	public String get_dateOfBirthValue() throws Exception {
+		return DOBValue;
+	}
+	/**
+	 * gets Locator - month of birth dropdown
+	 * 
+	 */
+	
+	public String get_monthOfBirthValue() throws Exception {
+		return monthValue;
+	}
+	/**
+	 * gets Locator - month of birth value after current date
+	 * 
+	 */
+	
+	public String get_monthOfBirth_afterCurrentdate() throws Exception {
+		return monthValueAfterCurrentdate;
 	}
  }
 
