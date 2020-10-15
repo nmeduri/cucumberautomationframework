@@ -317,6 +317,18 @@ public class PageObject extends BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor) PageObject.getDriver();
 		js.executeScript("window.scrollBy(0,-5000)", "");
 	}
+	
+	/** scroll up by coordinates */
+	public void scrollUp() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-200)", "");
+	}
+	
+	/** scroll down by coordinates */
+	public void scrollDownToFtr() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,2000)");
+	}
 
 	/** click on element */
 	public Element $click(Element element) {

@@ -13,7 +13,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And legal section is displayed
 	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2096 User views the links displayed on Footer-desktop/desktop wide
+	Scenario: TC-2119 User views the links displayed on Footer on Mobile
 	Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
@@ -145,58 +145,6 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for accessibility is displayed
 	And clickable text link for pricing policy is displayed
 	
-	@RegressionTest @MobileView 
-	Scenario: TC-2121, User clicks on "-" on Customer Support section -Mobile
-	Given pdp url is available
-	When pdp page is displayed for the product
-	Then scroll down to mobile footer
-	And customer support section is displayed
-	And user clicks on Custom Support 'plus' section
-	Then sub section should expand to display below links
-	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on custom support 'minus' section
-	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
-	And the 'plus' sign should be displayed instead of 'minus' sign
-	
-	@RegressionTest @MobileView 
-	Scenario: TC-2123, User clicks on "-" on "Services & Solutions" Section-mobile
-	Given pdp url is available
-	When pdp page is displayed for the product
-	Then scroll down to mobile footer
-	And services and solutions section is displayed
-	And user clicks on services and solutions 'plus' section
-	Then sub section should expand to display below links
-	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on custom support 'minus' section
-	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
-	And the 'plus' sign should be displayed instead of 'minus' sign
-	
-	@RegressionTest @MobileView 
-	Scenario: TC-2125, User clicks on "-" on "About Us" section-Mobile
-	Given pdp url is available
-	When pdp page is displayed for the product
-	Then scroll down to mobile footer
-	And about us section is displayed
-	And user clicks on about us 'plus' section
-	Then sub section should expand to display below links
-	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on custom support 'minus' section
-	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
-	And the 'plus' sign should be displayed instead of 'minus' sign
-
-	@RegressionTest @MobileView 
-	Scenario: TC-2127, User clicks on "-" on "Legal" section-Mobile
-	Given pdp url is available
-	When pdp page is displayed for the product
-	Then scroll down to mobile footer
-	And legal section is displayed
-	And user clicks on legal 'plus' section
-	Then sub section should expand to display below links
-	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on custom support 'minus' section
-	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
-	And the 'plus' sign should be displayed instead of 'minus' sign
-	
 		@RegressionTest @WebView @WideView 
 		Scenario: TC-2102, 2118 User view the section headers
 		Given pdp url is available
@@ -207,11 +155,12 @@ Feature: OCCP-1027 Footer : Footer Links
 		And user clicks on the section header name About Us
 		And user clicks on the section header name Legal
 	
-		@RegressionTest @WebView @WideView
+		@RegressionTest @WebView @WideView 
 		Scenario: TC-2101, 2117 User clicks on the links listed under four sections (Customer Support, Services & Solutions, About Us, Legal)
 		Given pdp url is available
 		When pdp page is displayed for the product
 		And customer support section is displayed
+		Then scroll down to footer
 		And in footer links under custom support section access and click on order status
 		Then user should be navigate to defined associated page
 		And user navigates back to to previous page
@@ -348,4 +297,6 @@ Feature: OCCP-1027 Footer : Footer Links
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 
-	
+	  @RegressionTest @WebView @WideScreen @MobileView @TabletView
+    Scenario: close browser
+    And close browser

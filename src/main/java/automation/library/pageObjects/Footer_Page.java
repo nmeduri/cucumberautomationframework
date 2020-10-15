@@ -211,7 +211,13 @@ public class Footer_Page extends PageObject {
 	/** This function will scroll down to Footer */
 	public void scrollDownToFooter() throws Exception {
 		By goToFooter = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer());
-		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToFooter, 1);
+		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToFooter, 10);
+	}
+	
+	/** This function will scroll down to Mobile Footer */
+	public void scrollDownToMobileFooter() throws Exception {
+		By goToMobileFooter = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Mobile_Custom_Support());
+		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToMobileFooter, 1);
 	}
 	
 	/** This function click on accessibility */

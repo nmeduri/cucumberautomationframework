@@ -68,6 +68,7 @@ public class Footer_PageLocator {
 	String footerLink = Property.getProperty(Constant.OR_FILE, "footerLink");
 	String copyRightInformation = Property.getProperty(Constant.OR_FILE, "copyRightInformation");
 	String allFooterLinks = Property.getProperty(Constant.OR_FILE, "allFooterLinks");
+	String mobilecustomSupportSection = Property.getProperty(Constant.OR_FILE, "mobilecustomSupportSection");
 	
 	/**
 	 * gets Locator - Legal Disclaimer
@@ -573,6 +574,14 @@ public class Footer_PageLocator {
 	 */
 	public String get_All_Footer_Links() {
 		return allFooterLinks;
+	}
+	
+	/**
+	 * gets Locator - mobile custom support
+	 * 
+	 */
+	public String get_Mobile_Custom_Support() {
+		return mobilecustomSupportSection;
 	}
  }
 

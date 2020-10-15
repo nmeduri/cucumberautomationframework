@@ -4,9 +4,10 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 
   @RegressionTest @WebView @WideScreen 
 	Scenario: TC-2396, TC-2385 Verfiy the display of Link Cards screen when Card is Deactivated in Wide Desktop view
+	Given open browser
 	When login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -25,8 +26,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2399, Verify the 'Try Again' button on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -38,8 +39,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2400, Verify the 'Cancel' button on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -50,8 +51,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2397, Verify the Error image on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -63,8 +64,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2398, Verify the ErrorText on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -92,8 +93,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-3052 Verfiy the display of screen when Card is Deactivated on Desktop
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card

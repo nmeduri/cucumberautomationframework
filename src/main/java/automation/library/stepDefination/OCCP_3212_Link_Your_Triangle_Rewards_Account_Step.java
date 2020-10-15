@@ -144,6 +144,16 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verify_Deactivated_Error_Text();
 	}
 	
+	@When("enter email id")
+	public void enter_email_detail() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Email_Data());
+	}
+	
+	@And("enter password data")
+    public void user_enter_password() throws Exception {
+   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Password());
+    }
+	
 	@Then("user should be redirected to link existing card page")
 	public void user_should_be_redirected_to_link_existing_card_page() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayTitleLinkYourExistingCardPage();
@@ -154,5 +164,10 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).verify_link_card_is_displayed_without_card_number_details();
 	}
 
+	@And("close browser")
+    public void close_browser() throws Exception {
+        //testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeDriver();
+        PageObject.getDriver().quit();
+    }
 
 }

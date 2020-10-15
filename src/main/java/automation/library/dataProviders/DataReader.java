@@ -672,6 +672,32 @@ public class DataReader {
 	}
 	
 	/**
+	 * gets Email Detail
+	 * 
+	 */
+	
+	public String get_Email_Data() {
+		String email = Property.getProperty(Constant.DATA_FILE, "getEmail");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets password
+	 * 
+	 */
+	
+	public String get_Password() {
+		String email = Property.getProperty(Constant.DATA_FILE, "getPassword");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
+
+	/**
 	 * gets Gigya Api Tool URL
 	 * 
 	 */

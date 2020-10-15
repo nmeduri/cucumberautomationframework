@@ -29,6 +29,7 @@ public class Local_Chrome_Driver_Manager {
 		  option.setExperimentalOption("prefs", prefsMap);
 		  option.addArguments("--test-type");
 		  option.addArguments("--disable-extensions");
+		  //option.addArguments("incognito");
 		
 		WebDriverManager.chromedriver().setup(); 
 		driver = new ChromeDriver(option);

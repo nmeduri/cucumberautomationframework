@@ -15,7 +15,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 			"classpath:Adobe/Regression/OCCP_2805_Age_Of_Majority_Check.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@SmokeTest",
+			"--tags", "@WebView",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

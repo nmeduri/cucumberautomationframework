@@ -55,9 +55,15 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	}
 	
 	@Then("scroll down to footer")
-	public void scroll_down_to_mobile_footer() throws Exception {
+	public void scroll_down_to_footer() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).scrollDownToFooter();	
 	}
+	
+	@Then("scroll down to mobile footer")
+	public void scroll_down_to_mobile_footer() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).scrollDownToMobileFooter();	
+	}
+	
 	
 	@And("clickable text link for order status is displayed")
 	public void clickable_order_status_is_displayed() throws Exception {
@@ -234,7 +240,7 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	public void click_on_legal_plus_section() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickLegalPlusButton();
 	}
-	
+
 	@And("user clicks on custom support 'minus' section")
 	public void click_on_custom_support_minus_section() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickMinusButton();
