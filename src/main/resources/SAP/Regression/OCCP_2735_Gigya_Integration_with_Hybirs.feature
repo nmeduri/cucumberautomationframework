@@ -22,3 +22,4 @@ Feature: OCCP-2735 Gigya Integration with Hybirs
         @RegressionTest
 				Scenario: close browser
 				Given close Browser
+

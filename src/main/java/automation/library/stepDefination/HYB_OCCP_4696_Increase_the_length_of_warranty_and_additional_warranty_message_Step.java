@@ -12,7 +12,7 @@ import io.restassured.specification.RequestSpecification;
 /**
  * This file contains the scenario of user stories OCCP-4696
  */
-public class OCCP_4696_Increase_the_length_of_warranty_and_additional_warranty_message_Step extends BaseStep{
+public class HYB_OCCP_4696_Increase_the_length_of_warranty_and_additional_warranty_message_Step extends BaseStep{
 	RequestSpecification request;
 
 	@Given("Product api is available")

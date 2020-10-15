@@ -157,8 +157,8 @@ public class HYB_OCCP_874_PDP_Warranty_Step extends BaseStep {
 		Assert.assertNotEquals(null, response.jsonPath().get("warranty.warrantyMessage"));
 	}
 	
-	
-	
-	
-
+	@Then("returned JSON should have warranty section without type and value")
+	public void returned_response_should_have_warranty_section_without_type_and_value() {
+		Assert.assertEquals("{}", response.jsonPath().get("warranty").toString());	
+	}
 }

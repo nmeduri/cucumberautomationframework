@@ -78,5 +78,12 @@ public class Hooks {
 
 			} catch (IOException e) {
 			}
-		}}
+		}
+
+		/*if (scenario.getName().contains("close browser")) {
+			PageObject.getDriver().quit();
+		}*/
+
+	}
+
 }

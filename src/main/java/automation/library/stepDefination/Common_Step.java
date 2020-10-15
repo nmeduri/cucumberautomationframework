@@ -92,7 +92,7 @@ public class Common_Step extends BaseStep {
 	@When("user hits the GET api without locale")
 	public void user_hits_the_api_without_locale() {
 
-		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1411());
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1412());
 		
 
 	}

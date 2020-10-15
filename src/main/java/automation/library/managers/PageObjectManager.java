@@ -90,6 +90,7 @@ public class PageObjectManager {
 	private Privacy_Charter_Page_Locator getPrivacyCharterLocator;
 	private Reset_Password_Page getResetPasswordPage;
 	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
+
 	private Link_reward_ProfileScreen_page getLink_reward_ProfileScreen_page;
 	private Link_reward_ProfileScreen_page_Locator getLink_reward_ProfileScreen_page_Locator;
 	private Header_Page getHeaderPage;
@@ -111,6 +112,7 @@ public class PageObjectManager {
 	private AEM_Common_Page_Locator getAEMCommonPageLocator;
 	private AEM_Search_And_SRP_Page_Locator getAEMSearchAndSRPPageLocator;
 	private Link_Rewards_Options_Page getLinkRewardsOptsPage;
+
 	private Gigya_Api_Tool_Page gigyaApiToolPage;
 	private Link_Rewards_Options_Page_Locator getLinkRewardsOptsPageLocator;
 	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
