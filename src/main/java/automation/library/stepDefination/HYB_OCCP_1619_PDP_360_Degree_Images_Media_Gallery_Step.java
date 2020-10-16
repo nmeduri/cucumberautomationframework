@@ -75,10 +75,8 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 
 	@Then("medias section should have in response without mediaType name and its value")
 	public void response_should_have_medias_section_without_mediaType_name_and_its_value() {
-
-		List<String> resp = response.jsonPath().get("medias.mediaType");
-		Log.message("Media Type:- " + resp, true);
-		Assert.assertTrue(resp.contains(null));
+		//List<String> resp = response.jsonPath().get("medias.mediaType");
+		PageObject.verifyExpectedResponseWithoutList("[]", response.jsonPath().get("medias.mediaType").toString());
 		Log.message("Section 'medias' is displayed without mediaType name and its value.", true);
 
 	}
@@ -151,7 +149,6 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 
 	}
 
-
 	@And("user able to see media section with code")
 	public void user_able_to_see_media_section_with_codes() {
 
@@ -194,6 +191,35 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 		PageObject.verifySectionResponseNotNull(response.jsonPath().get("medias.name"));
 
 	}
-	
+	@When("1476-user hits the GET api without locale")
+	public void user_hits_the_GET_api_without_locale_1476() {
 
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().product_tc_1476());
+	}
+	@And("response should have medias without order and its value")
+	public void response_should_have_medias_without_order_and_its_value() {
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.order"));
+	}
+	@Then("response should have medias section without videoImageThumbnailURL and its value")
+	public void response_should_have_medias_without_videoImageThumbnailURL_and_its_value() {
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.videoImageThumbnailURL"));
+	}
+	@Then("response should have medias section without videoImageThumbnailDAMPath and its value")
+	public void response_should_have_medias_without_videoImageThumbnailDAMPath_and_its_value() {
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.videoImageThumbnailDAMPath"));
+	}
+	@Then("response should have medias section without alttext and value in english")
+	public void response_should_have_medias_without_alttext_and_value_in_english() {
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.altText"));
+	}
+	@Then("response should have medias section without isPrimary and its value")
+	public void response_should_have_medias_without_isPrimary_and_its_value() {
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.isPrimary"));
+		Log.message("isPrimary and its value is not displayed :- " + response.jsonPath().get("medias.isPrimary"), true);	
+	}
+	@Then("JSON response should have medias section without isListingThumbnailImage and value")
+	public void response_should_have_medias_without_isListingThumbnailImageL_and_its_value() {
+		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.isListingThumbnailImage"));
+		Log.message("isListingThumbnailImage and value is not displayed :- " + response.jsonPath().get("medias.isListingThumbnailImage"), true);
+	}
 }

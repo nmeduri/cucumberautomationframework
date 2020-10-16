@@ -13,7 +13,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1309_Cart_View_Filled_Cart.feature",
+			"classpath:SAP/Regression/OCCP_1619_PDP_360_Degree_Images_Media_Gallery.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
