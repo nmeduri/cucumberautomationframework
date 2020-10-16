@@ -573,10 +573,6 @@ public class PageObject extends BaseClass {
 		PageObject.getDriver().navigate().back();
 	}
 
-	public void quitDriver() {
-		driver.quit();
-	}
-
 	/** return Not display conditon */
 	public boolean $notDisplay(Element element) {
 		/*try {
@@ -590,6 +586,11 @@ public class PageObject extends BaseClass {
 		}else
 		return true;
 		
+	}
+	/** verify  response not null for Integer value*/
+	public static void notNullAttributeInResponseInInteger(Integer actualValue) {
+		//Integer.parseInt(value)
+		Assert.assertNotEquals(null, actualValue);
 	}
 }
 

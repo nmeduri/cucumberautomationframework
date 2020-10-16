@@ -822,7 +822,7 @@ public class PDP_Page extends PageObject {
 
 		if(testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle().contains("product-detail-page")) {
 		Log.message("PDP title: "+testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle(), true);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		}else {
 			Log.message("PDP page is not displayed", true);
 			fail();

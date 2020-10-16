@@ -17,64 +17,64 @@ import io.restassured.specification.RequestSpecification;
  */
 
 public class HYB_Authorization_EndPoint {
-	
+
 	private static String base_url;
 	private static Response response;
 	private RequestSpecification request = RestAssured.given();
-	
 
-	
+
+
 	public String HYB_Auth_Url(String baseUrl) {
 		base_url = baseUrl;
 		return base_url;
-    }
-	
+	}
+
 	public Response getAuthorizationToken(String url) {
 		response = 
 				RestAssured.given()
-	    	.auth().preemptive().basic("trusted_client", "secret")
-	    	.contentType("application/x-www-form-urlencoded").log().all()
-	    	.formParam("grant_type", "password")
-	    	.formParam("username", FileReaderManager.getInstance().getAPIDataReader().get_Authenticated_User())
-	    	.formParam("password", "nimda")
-	    	     .when()
-	    	.post(url);
-    	
+				.auth().preemptive().basic("trusted_client", "secret")
+				.contentType("application/x-www-form-urlencoded").log().all()
+				.formParam("grant_type", "password")
+				.formParam("username", FileReaderManager.getInstance().getAPIDataReader().get_Authenticated_User())
+				.formParam("password", "nimda")
+				.when()
+				.post(url);
 
-    	    JSONObject jsonObject = new JSONObject(response.getBody().asString());
-    	    Log.message("Response:- " + jsonObject, true);
-    	    String accessToken = jsonObject.get("access_token").toString();
-    	    String tokenType = jsonObject.get("token_type").toString();
-    	    
-    	    Log.message("Oauth Token with type " + tokenType + "   " + accessToken, true);
+
+		JSONObject jsonObject = new JSONObject(response.getBody().asString());
+		Log.message("Response:- " + jsonObject, true);
+		String accessToken = jsonObject.get("access_token").toString();
+		String tokenType = jsonObject.get("token_type").toString();
+
+		Log.message("Oauth Token with type " + tokenType + "   " + accessToken, true);
 		return response;
 
 	}
-	
+
 	public Response getAPI_Field_Default(String url, String accessToken, String product) {
 
 		Log.message("API:- " + url + "product/" + product, true);
 		request.header("Authorization", "Bearer " + accessToken);
-	    response = request.put(url + "product/" + product);
+		response = request.put(url + "product/" + product);
 		return response;
 
 	}
-	
+
 	public Response delete_HYB_Add_Wishlist_API(String url, String accessToken, String product) {
 		request.header("Authorization", "Bearer " + accessToken);
 		Log.message("API:- " + url + "product/" + product,  true);
 		response = request.delete(url + "product/" + product);
-	return response;
+		return response;
 
 	}
-	
+
 	public Response get_Wishlist_API(String url, String accessToken) {
 		request.header("Authorization", "Bearer " + accessToken);
 		Log.message("Token 2:- " + accessToken,  true);
 		Log.message("API:- " + url,  true);
 		response = request.get(url);
 		Log.message("Response:- " + response.getBody().asString(), true);
-	return response;
+		return response;
 
 	}
 
@@ -102,7 +102,7 @@ public class HYB_Authorization_EndPoint {
 		Log.message("Get Response:- " + response.getBody().asString(), true);
 		return response;
 	}
-		
+
 	public Response get_HYB_Add_Product_API(String url, String product, String accessToken) {
 		request.header("Authorization", "Bearer " + accessToken);
 		Log.message("API:- " + url + "/products/" + product +"/363?fields=FULL&baseStoreId=ctr", true);
@@ -115,14 +115,14 @@ public class HYB_Authorization_EndPoint {
 		response = request.get(url + "/products/" + product +"/363?fields=FULL&baseStoreId=ctr");
 		return response;	
 	}
-=======*/
-		
-	
+	 */
+
+
 	public Response put_API_Field_Default(String url, String accessToken, String product) {
 
 		Log.message("API:- " + url + "/product/" + product, true);
 		request.header("Authorization", "Bearer " + accessToken);
-	    response = request.put(url + "/product/" + product);
+		response = request.put(url + "/product/" + product);
 		return response;
 
 	}
@@ -132,7 +132,7 @@ public class HYB_Authorization_EndPoint {
 		Log.message("API:- " + url,  true);
 		response = request.put(url);
 		Log.message("Response:- " + response.getBody().asString(), true);
-	return response;
+		return response;
 
 	}
 	public Response post_HYB_AddToCart_RegUserAPI(String url, String code, String product1, String product2, String accessToken) {
@@ -289,5 +289,118 @@ public class HYB_Authorization_EndPoint {
 		response = request.post(url + guid+ "/entries?fields=FULL&baseStoreId=ctr");
 		return response;	
 	}
-	
+	public Response post_HYB_AddToCart_AnonymousUserAPI_SingleProd(String url, String guid, String product1) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        \n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \"" +product1 +""+ "\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"STH\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"    ]\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " );
+		Log.message("Add to Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Add to Cart API:- " + url  + guid +"/entries?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + guid+ "/entries?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response patch_HYB_UpdateCart_AnonymousUserAPI_STH(String url, String guid, String product1) {
+		String bodyvalue="{\n" + 
+				"    \"storeZoneIds\": {\n" + 
+				"        \"parcelZoneId\": \"QC_BS_PCL\",\n" + 
+				"        \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
+				"        \"storeDistance\": 13\n" + 
+				"    },\n" + 
+				"    \"quantity\": 3,\n" + 
+				"    \"deliveryMode\": {\n" + 
+				"        \"code\": \"STH\"\n" + 
+				"    },\n" + 
+				"    \"product\": {\n" + 
+				"        \"code\": \"" +product1 +""+ "\"\n" + 
+				"    },\n" + 
+				"    \"deliveryPointOfService\": {\n" + 
+				"        \"name\": \"\"\n" + 
+				"    }\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " );
+		Log.message("Update Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Update Cart API:- " + url  + guid +"/entries/0?fields=FULL&baseStoreId=ctr", true);
+		response = request.patch(url + guid+ "/entries/0?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response get_Cart_API_AnonymousUser(String url,String guid) {
+		Log.message("Get Cart API AnonymousUser :- " + url+ guid+"?fields=FULL",  true);
+		response = request.get(url+guid+ "?fields=FULL");
+		return response;
+	}
+	public Response patch_HYB_UpdateCart_AnonymousUserAPI_BOPIS(String url, String guid, String product1) {
+		String bodyvalue="{\n" + 
+				"	\"storeZoneIds\": { \n" + 
+				"		\"parcelZoneId\": \"AB_BS_PCL\", \n" + 
+				"		\"bulkZoneId\": \"AB_BS_BLK\", \n" + 
+				"		\"storeDistance\": 13 \n" + 
+				"	},\n" + 
+				"	\"quantity\":2 ,\n" + 
+				"	\"deliveryMode\":{\n" + 
+				"	    \"code\": \"BOPIS\" \n" + 
+				"	},\n" + 
+				"	\"product\":{\n" + 
+				"		\"code\": \"" +product1 +""+"\" \n" + 
+				"	},\n" + 
+				"	\"deliveryPointOfService\":{\n" + 
+				"		\"name\": \"363\"   \n" + 
+				"	}\n" + 
+				"	\n" + 
+				"    \n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		Log.message("Update Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Update Cart API:- " + url  + guid +"/entries/0?fields=FULL", true);
+		response = request.patch(url + guid+ "/entries/0?fields=FULL");
+		return response;	
+	}
+	public Response patch_HYB_UpdateCart_AnonymousUserAPI_404NotFound(String url, String guid, String product1) {
+		String bodyvalue="{\n" + 
+				"    \"storeZoneIds\": {\n" + 
+				"        \"parcelZoneId\": \"QC_BS_PCL\",\n" + 
+				"        \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
+				"        \"storeDistance\": 13\n" + 
+				"    },\n" + 
+				"    \"quantity\": 3,\n" + 
+				"    \"deliveryMode\": {\n" + 
+				"        \"code\": \"STH\"\n" + 
+				"    },\n" + 
+				"    \"product\": {\n" + 
+				"        \"code\": \"" +product1 +""+ "\"\n" + 
+				"    },\n" + 
+				"    \"deliveryPointOfService\": {\n" + 
+				"        \"name\": \"\"\n" + 
+				"    }\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		Log.message("Update Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Update Cart API:- " + url  + guid +"/entri/0?fields=FULL", true);
+		response = request.patch(url + guid+ "/entri/0?fields=FULL");
+		return response;	
+	}
 }

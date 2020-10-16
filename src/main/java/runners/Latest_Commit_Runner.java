@@ -13,9 +13,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_2805_Age_Of_Majority_Check.feature",
+			"classpath:SAP/Regression/OCCP_1309_Cart_View_Filled_Cart.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@WebView",
+			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
