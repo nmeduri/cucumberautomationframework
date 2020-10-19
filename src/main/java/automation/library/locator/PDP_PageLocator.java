@@ -48,7 +48,7 @@ public class PDP_PageLocator {
 	String viewLessSpecificationButton = Property.getProperty(Constant.OR_FILE, "viewLessSpecificationButton");
 	String prductUnitPrice = Property.getProperty(Constant.OR_FILE, "prductUnitPrice");
 	String swatchWithSize = Property.getProperty(Constant.OR_FILE, "swatchWithSize");
-	String sizeLabel = Property.getProperty(Constant.OR_FILE, "sizeLabel");
+	String sizeLabel = Property.getProperty(Constant.OR_FILE, "sizeLabel").replace("=", ",");
 	String unavailableSize = Property.getProperty(Constant.OR_FILE, "unavailableSize");
 	String availabeSize = Property.getProperty(Constant.OR_FILE, "availabeSize");
 	String selectedSize = Property.getProperty(Constant.OR_FILE, "selectedSize");

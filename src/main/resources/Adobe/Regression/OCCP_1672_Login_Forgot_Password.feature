@@ -12,8 +12,10 @@ Feature: OCCP-1672 Login Forgot Password
 	And user click back to sign in
 	Then login page is displayed
 	
-	@RegressionTest @WideScreen @TabletView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-1440 Verify the user has the ability to go back to Login screen while resetting password
+	Given quit browser
+	When open browser
 	When login url is available
 	And login page is displayed
 	And user click on forgot password
@@ -52,13 +54,24 @@ Feature: OCCP-1672 Login Forgot Password
 	And user click resend-passowrd link
 	Then the user views a confirmation message that email was resent
 	
-	@RegressionTest @WideScreen @WebView @MobileView @TabletView
+	@RegressionTest @WideScreen @WebView 
 	Scenario: TC-1439 Verify the user's ability to receive a link to reset password over the email (Email Not Entered)
 	Given login url is available
 	When Remove Cookies
 	Given login url is available
 	When login page is displayed
 	And clear email detail
+	And user click on forgot password
+	Then the email address is not popualated
+	And user fill emaildetails for forgot password
+	And user click on send button
+	Then email sent password screen is displayed
+	
+	@RegressionTest @MobileView @TabletView
+	Scenario: TC-1439 Verify the user's ability to receive a link to reset password over the email (Email Not Entered)
+	Given login url is available
+	Given login url is available
+	When login page is displayed
 	And user click on forgot password
 	Then the email address is not popualated
 	And user fill emaildetails for forgot password

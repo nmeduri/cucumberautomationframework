@@ -6,6 +6,8 @@ import static org.testng.Assert.fail;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -50,7 +52,7 @@ public class Link_Rewards_Options_Page extends PageObject {
 	}
 	/** This function is verify click on the 'Do not show me this again' toggle from left to right */
 	public void clickOnGetDoNotShowMeToggleFromLeftToRight() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Click_Do_Not_Show_Me_Toggle_Left_TO_Right())),20);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getLinkRewardsOptionsPageLocator().get_Click_Do_Not_Show_Me_Toggle_Left_TO_Right())));
 	}
 	/** This function is verify click on the 'Skip' Link*/
 	public void clickOnSkipLink() throws Exception {

@@ -30,13 +30,14 @@ public class HYB_Authorization_EndPoint {
 	}
 
 	public Response getAuthorizationToken(String url) {
+		Log.message("Password:- " + FileReaderManager.getInstance().getAPIDataReader().getAuthenticatedUserPassword(), true);
 		response = 
 				RestAssured.given()
 				.auth().preemptive().basic("trusted_client", "secret")
 				.contentType("application/x-www-form-urlencoded").log().all()
 				.formParam("grant_type", "password")
 				.formParam("username", FileReaderManager.getInstance().getAPIDataReader().get_Authenticated_User())
-				.formParam("password", "nimda")
+				.formParam("password", FileReaderManager.getInstance().getAPIDataReader().getAuthenticatedUserPassword())
 				.when()
 				.post(url);
 

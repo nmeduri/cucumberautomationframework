@@ -73,7 +73,7 @@ public class Get_Personalized_Offers_Page extends PageObject {
 	
 	/** This function click on Tool Tip Close Button */
 	public void click_Tool_Tip_Close_Button() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Tool_Tip_Close_Button()));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPersonalizedOffersLocator().get_Tool_Tip_Close_Button())));
 	}
 	
 	/** This function is verify that 'Tool Tip Close' button is not displayed */

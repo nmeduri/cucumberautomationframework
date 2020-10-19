@@ -2,7 +2,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Description: To test the ADOBE Test Cases for the story OCCP-1030
 	
 	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2846, TC-2855 Verification of Legal Disclaimer property - Desktop 
+	Scenario: TC-2846, TC-2855 Verification of Legal Disclaimer property - Desktop
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then first three lines of the authored legal disclaimer text should be displayed
@@ -31,7 +31,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
 	Then view less is displayed
 	
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen @SmokeTest
 	Scenario: TC-2840, TC-2849 Verification of options present in Simple Footer - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -77,7 +77,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then clickable text site map is displayed
 	Then clickable text accessibility is displayed
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	#@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2850, TC-2859 Verification of clicking of text Legal - Desktop Wide
 	Given pdp url is available
 	When pdp page is displayed for the product

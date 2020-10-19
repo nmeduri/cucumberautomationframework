@@ -33,8 +33,6 @@ Feature: OCCP-1760 Welcome Back Message
 	When login page is displayed
 	Then populated email id is not displayed
 	Then populated password is not displayed
-	And Remove Cookies
-	Given login url is available
 	
 	
 	

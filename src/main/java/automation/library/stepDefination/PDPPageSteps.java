@@ -220,7 +220,7 @@ public class PDPPageSteps extends BaseClass {
 	
 	@When("user clicks on any where")
 	public void user_clicks_on_anywhere() throws Exception {
-		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).click_Tool_Tip_Icon();
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).clickAvailableSize();
 	}
 	
 	@Then("the romance copy section is displayed")

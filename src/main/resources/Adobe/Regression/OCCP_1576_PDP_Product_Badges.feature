@@ -16,11 +16,4 @@ Feature: OCCP-1576 PDP: Product Badges
     When pdp page is displayed for the product
     Then the editable badge label displays in store clearnce
     And the badge is displayed in Yellow color
-   
-    @RegressionTest @WebView @MobileView @WideScreen @TabletView
-	Scenario: TC-369 Verify the In-Store Only badge remains displayed when user selects a product variant 
-	Given pdp url is available
-    When pdp page is displayed for the product
-    Then the editable badge label displays in store clearnce
-    Then the badge persists and displays for all variants of the product
     

@@ -2,7 +2,16 @@ Feature: OCCP-1169 Account/Triangle ID - Login after email verification performe
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1169
 	
-	@RegressionTest @WebView @MobileView @WideScreen @TabletView
+	@RegressionTest @WebView @WideScreen
+	Scenario: TC-669, TC-670 Verify the ability of a user to navigate to the Forgot Password screen from in order to reset P/W if required
+	Given pdp url is available
+	When click on account from the header
+	And click on the login from the header
+	When login page is displayed
+	And user click on forgot password
+	Then forgot password page is displayed
+	
+	#@RegressionTest @MobileView @TabletView
 	Scenario: TC-669, TC-670 Verify the ability of a user to navigate to the Forgot Password screen from in order to reset P/W if required
 	Given pdp url is available
 	When click on account from the header

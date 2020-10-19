@@ -2,7 +2,7 @@ Feature: OCCP-871 PDP Installations
 
 	Description: To test the ADOBE Test Cases for the story OCCP-871
 	   
-    @RegressionTest @WebView @WideScreen
+    @RegressionTest @WebView @WideScreen @SmokeTest
     Scenario: TC-116, TC-1305 Verify the functionality of the PDP page when a product is eligible for service installation  
     When pdp url is available
     When pdp page is displayed for the product
@@ -19,10 +19,9 @@ Feature: OCCP-871 PDP Installations
     And scroll up to page
     And click on tool tip icon
 	Then tool tip box opens and tool tip message along with close button is displayed 
-	And user clicks on any where
 	
 	@RegressionTest @MobileView @TabletView
-    Scenario: TC-116, TC-1303 Verify the functionality of the PDP page when a product is eligible for service installation  
+    Scenario: TC-116, TC-1303 Verify the functionality of the PDP page when a product is eligible for service installation 
     When pdp url is available
     When pdp page is displayed for the product
     Then Get it installed indicator is displayed on the pdp

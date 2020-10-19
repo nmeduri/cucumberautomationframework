@@ -36,6 +36,19 @@ public class APIDataReader {
 	}
 	
 	/**
+	 * gets Password
+	 * 
+	 */
+
+	public String getAuthenticatedUserPassword() {
+
+		String authenticatedUserPassword = Property.getProperty(Constant.API_DATA, "authenticatedUserPassword");
+		if (authenticatedUserPassword != null)
+			return authenticatedUserPassword;
+		else
+			throw new RuntimeException("Password Data not specified in the API Data file.");
+	}
+	/**
 	 * gets Catalog API
 	 * 
 	 */

@@ -153,6 +153,7 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	public void cickContinueButton() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Continue_Button())), 3);
 		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Continue_Button())));
+
 	}
 	
 	/** This function click on cancel link */
@@ -173,7 +174,6 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 		Thread.sleep(5000);
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Number()));
 		Thread.sleep(5000);
-		
 	}
 	
 	/** This function verify the display of Phone number inline error */

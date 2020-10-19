@@ -236,14 +236,29 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickAboutUsPlusButton();
 	}
 	
+	@And("user clicks on about us 'minus' section")
+	public void click_on_about_us_minus_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickAboutUsPlusButton();
+	}
+	
 	@And("user clicks on legal 'plus' section")
 	public void click_on_legal_plus_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickLegalPlusButton();
+	}
+	
+	@And("user clicks on legal 'minus' section")
+	public void click_on_legal_minus_section() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickLegalPlusButton();
 	}
 
 	@And("user clicks on custom support 'minus' section")
 	public void click_on_custom_support_minus_section() throws Exception {
-		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickMinusButton();
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickCustomSupportPlusButton();
+	}
+	
+	@And("user clicks on service and solutions 'minus' section")
+	public void click_on_services_and_solutions_minus_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickServicesAndSolutionPlusButton();
 	}
 	
 	@Then("the sub section should be collapsed to the original view and expanded sub-section links should not be displayed")

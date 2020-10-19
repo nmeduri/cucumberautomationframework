@@ -59,9 +59,9 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	And user click on sign in button
 	Then pdp page is displayed for the product
 	
-	@RegressionTest @WebView @SmokeTest @WideScreen @MobileView
+	@RegressionTest @WebView @WideScreen @MobileView
 	Scenario: TC-1995,TC-2009,2017 Verify the display of tool tip for the "Do not show me this again" toggle button
-  Given login url is available
+    Given login url is available
 	When 2480-enter email detail
 	And user enter password
 	And user click on sign in button
