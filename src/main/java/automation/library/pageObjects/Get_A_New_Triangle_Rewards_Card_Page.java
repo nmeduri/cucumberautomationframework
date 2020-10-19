@@ -146,4 +146,33 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Continue_Button())), 3);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Continue_Button()));
 	}
+	
+	/** This function click on cancel link */
+	public void cickCancelLink() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Cancel_Link())), 3);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Cancel_Link()));
+	}
+	
+
+	/** This function verify the display of success screen */
+	public void displayNewLoyaltyCardSuccessScreen() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Success_Message())), 10);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Success_CardNo()));
+	}
+	
+	/** This function clears phone number */
+	public void emptyPhoneNumber() throws Exception {
+		Thread.sleep(5000);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Number()));
+		Thread.sleep(5000);
+		
+	}
+	
+	/** This function verify the display of Phone number inline error */
+	public void displayPhoneNoInlineError() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Error())),20);
+		
+	}
+
+
 }

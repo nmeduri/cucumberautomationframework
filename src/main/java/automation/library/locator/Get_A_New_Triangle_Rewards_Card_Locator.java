@@ -22,6 +22,10 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	String province = Property.getProperty(Constant.OR_FILE, "province");
 	String provinceValue = Property.getProperty(Constant.OR_FILE, "provinceValue");
 	String continueButton = Property.getProperty(Constant.OR_FILE, "continueButton");
+	String completeYourProfileCancel = Property.getProperty(Constant.OR_FILE, "completeYourProfileCancel");
+	String successMessage = Property.getProperty(Constant.OR_FILE, "successMessage");
+	String successCardNo = Property.getProperty(Constant.OR_FILE, "successCardNo");
+	String phnError = Property.getProperty(Constant.OR_FILE, "phnError");
 	String yearOfBirthValueAgeMajority=Property.getProperty(Constant.OR_FILE, "yearOfBirthValueAgeMajority");
 	String yearOfBirthValueNoAgeMajority=Property.getProperty(Constant.OR_FILE, "yearOfBirthValueNoAgeMajority");
 	String monthOfBirth=Property.getProperty(Constant.OR_FILE, "monthOfBirth");
@@ -154,6 +158,44 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	public String get_Continue_Button() throws Exception {
 		return continueButton;
 	}
+	
+	/**
+	 * gets Locator - Cancel Link
+	 * 
+	 */
+	
+	public String get_Cancel_Link() throws Exception {
+		return completeYourProfileCancel;
+	}
+	
+	/**
+	 * gets Locator - Success message
+	 * 
+	 */
+	
+	public String get_Success_Message() throws Exception {
+		return successMessage;
+	}
+	
+	/**
+	 * gets Locator - Success Card Number
+	 * 
+	 */
+	
+	public String get_Success_CardNo() throws Exception {
+		return successCardNo;
+	}
+	
+	/**
+	 * gets Locator - Phone Error
+	 * 
+	 */
+	
+	public String get_Phone_Error() throws Exception {
+		return phnError;
+	}
+
+	
 	/**
 	 * gets Locator - Month of birth dropdown
 	 * 

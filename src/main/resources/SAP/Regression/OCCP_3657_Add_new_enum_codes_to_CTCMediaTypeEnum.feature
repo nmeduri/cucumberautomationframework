@@ -7,4 +7,3 @@ Feature: OCCP_3657_Add new enum codes to CTCMediaTypeEnum
       Given occ api is available
 			When hits GET method for product api-3035
 	    Then mediaType is available in JSON response-3035
-
