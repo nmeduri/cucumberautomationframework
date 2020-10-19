@@ -342,6 +342,7 @@ public class PDPPageSteps extends BaseClass {
 	@And("switch on window")
 	public void switch_on_window() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+
 	}
 	@When("pdp page should displayed")
 	public void pdp_page_should_displayed() throws Exception {

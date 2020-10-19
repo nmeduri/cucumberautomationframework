@@ -1,4 +1,4 @@
-Feature: OCCP-2480 Account/Triangle ID | Link Rewards | View Link Cards options
+Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 
 	Description: To test the ADOBE Test Cases for the story OCCP-2480
 	
@@ -11,7 +11,7 @@ Feature: OCCP-2480 Account/Triangle ID | Link Rewards | View Link Cards options
 	And user click on sign in button
 	Then link card screen should be displayed
 	
-  @RegressionTest @WideScreen
+   @RegressionTest @WideScreen
 	Scenario: TC-2004,2012,1990 Verify the flow to link loyalty card after account confirmation on Widescreen
 	Given sign up url is available
 	Then sign up page is displayed
@@ -126,7 +126,7 @@ Feature: OCCP-2480 Account/Triangle ID | Link Rewards | View Link Cards options
 	When click on the toggle from left to right
 	And click on skip link
 	Then pdp page should displayed
-	And close Browser
+	And quit browser
 	Given open browser
 	When login url is available
 	When user enter the previously registered email
@@ -154,8 +154,3 @@ Feature: OCCP-2480 Account/Triangle ID | Link Rewards | View Link Cards options
 	Then link card screen should be displayed
 	And Do not show me this again toggle button is available on the link card screen
 	And click on skip link
-
-	@RegressionTest @MobileView @WideScreen
-	Scenario: close browser
-	Given close Browser
-

@@ -53,6 +53,8 @@ public class Mailinator_Page extends PageObject {
 	
 	/** This function is verify that Email address is displayed */
 	public void displayVerifyEmailAddress() throws Exception {
+		Thread.sleep(5000);
+		PageObject.getDriver().navigate().refresh();
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address())), 40);
 	}
 	

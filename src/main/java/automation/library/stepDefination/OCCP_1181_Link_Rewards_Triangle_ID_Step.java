@@ -3,6 +3,7 @@ package automation.library.stepDefination;
 
 import static org.testng.Assert.fail;
 
+import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
@@ -56,14 +57,27 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 	
 	@And("verify when user enter valid information on complete your profile screen")
 	public void verify_when_user_enter_valid_information_on_complete_your_profile_screen() throws Exception {
-		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_First_Name(FileReaderManager.getInstance().getDataReader().get_First_Name_Rewards());
-		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Last_Name(FileReaderManager.getInstance().getDataReader().get_Last_Name_Rewards());
-		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Address(FileReaderManager.getInstance().getDataReader().get_Address_Rewards());
-		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_City(FileReaderManager.getInstance().getDataReader().get_City_Rewards());
+		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    StringBuilder sb = new StringBuilder();
+	    Random random = new Random();
+	    int length = 8;
+
+	    for(int i = 0; i < length; i++) {
+
+	      int index = random.nextInt(alphabet.length());
+	      char randomChar = alphabet.charAt(index);
+	      sb.append(randomChar);
+	    }
+	    String randomString = sb.toString();
+	    testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_First_Name(randomString);
+	    testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Last_Name(FileReaderManager.getInstance().getDataReader().get_Last_Name_Rewards());		
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Address(FileReaderManager.getInstance().getDataReader().get_Address_Rewards());		
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_City(FileReaderManager.getInstance().getDataReader().get_City_Rewards());		
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDataProvince();
-		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Postal_Code(FileReaderManager.getInstance().getDataReader().get_Postal_Code_Rewards());
-		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Phone_Number(FileReaderManager.getInstance().getDataReader().get_Phone_Number_Rewards());
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Postal_Code(FileReaderManager.getInstance().getDataReader().get_Postal_Code_Rewards());		
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Phone_Number(FileReaderManager.getInstance().getDataReader().get_Phone_Number_Rewards());		
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterYearOfBirth();
+		
 	}
 	
 	@And("verify clicks on continue button")

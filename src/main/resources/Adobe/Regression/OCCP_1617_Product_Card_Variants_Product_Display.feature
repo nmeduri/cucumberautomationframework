@@ -39,6 +39,7 @@ Feature: OCCP-1617 Product Card - Variant Products Display on the Card
     
     @RegresionTest @WebView @WideScreen
     Scenario: TC-1373 Verify the behaviour on hovering on Product Card when no Variants available
+    Given open browser
     Given plp url is available
     When plp is displayed
     And scroll up to page

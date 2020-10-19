@@ -16,7 +16,7 @@ public class Header_Page_Locator {
 	String accountOnHeader = Property.getProperty(Constant.OR_FILE, "accountOnHeader");
 	String signInHeader = Property.getProperty(Constant.OR_FILE, "signInHeader");
 	String registrationHeader = Property.getProperty(Constant.OR_FILE, "registrationHeader");
-	String bannerLogo = Property.getProperty(Constant.OR_FILE, "bannerLogo");
+	String bannerLogo = Property.getProperty(Constant.OR_FILE, "bannerLogo").replace("=", ",");
 	String storeLocator=Property.getProperty(Constant.OR_FILE, "storeLocator");
 	String searchBar = Property.getProperty(Constant.OR_FILE, "searchBar");
 	String wishlistIcon = Property.getProperty(Constant.OR_FILE, "wishlistIcon");

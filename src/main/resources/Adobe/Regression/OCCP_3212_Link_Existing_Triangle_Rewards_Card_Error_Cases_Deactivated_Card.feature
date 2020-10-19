@@ -11,13 +11,13 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters a loyalty card number that is deactivated
+	And user enters loyalty card number that is deactivated
 	Then user should be able to enter the loyalty card number successfully which is deactivated
 	And user click on continue button
 	Then verify an error message is displayed informing card is deactivated
 	And verify when user click on try again button 
 	Then user should navigate to link existing triangle card screen without prepopulated data
-	And user enters a loyalty card number that is deactivated
+	And user enters loyalty card number that is deactivated
 	And user click on continue button
 	Then verify an error message is displayed informing card is deactivated
 	And verify when user click on cancel button
@@ -31,7 +31,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters a loyalty card number that is deactivated
+	And user enters loyalty card number that is deactivated
 	Then user should be able to enter the loyalty card number successfully which is deactivated
 	And user click on continue button
 	Then try again button should be present in the error screen
@@ -44,7 +44,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters a loyalty card number that is deactivated
+	And user enters loyalty card number that is deactivated
 	And user click on continue button
 	Then cancel button should be present in the error screen
 
@@ -56,7 +56,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters a loyalty card number that is deactivated
+	And user enters loyalty card number that is deactivated
 	And user click on continue button
 	Then verify an error message is displayed informing card is deactivated
 	And error image should be present in the error screen
@@ -69,7 +69,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters a loyalty card number that is deactivated
+	And user enters loyalty card number that is deactivated
 	And user click on continue button
 	Then verify an error message is displayed informing card is deactivated
 	And user verify's error text present in the error screen
@@ -82,7 +82,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters a loyalty card number that is deactivated
+	And user enters loyalty card number that is deactivated
 	And user click on continue button
 	Then triangle id logo is displayed on screen
 	Then verify an error message is displayed informing card is deactivated

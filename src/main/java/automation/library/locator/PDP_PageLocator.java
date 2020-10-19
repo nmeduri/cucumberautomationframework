@@ -85,6 +85,7 @@ public class PDP_PageLocator {
 	String Registration=Property.getProperty(Constant.OR_FILE, "Registration");
 	String HiLink=Property.getProperty(Constant.OR_FILE, "HiLink");
 	String SignOut=Property.getProperty(Constant.OR_FILE, "SignOut");
+	String viewMoreLessSpecifications = Property.getProperty(Constant.OR_FILE, "viewMoreLessSpecifications");
 	
 	
 	
@@ -770,5 +771,13 @@ public class PDP_PageLocator {
 	public String get_SignOutOption() {
 		return SignOut;
 	}
- }
+	
+	/**
+	 * gets Locator - View More/Less Specifications
+	 * 
+	 */
+	public String get_View_More_Less_Specifications() {
+		return viewMoreLessSpecifications;
+	}
+  }
 

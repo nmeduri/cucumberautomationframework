@@ -5,7 +5,7 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
 	   
     @RegressionTest @WebView @WideScreen
     Scenario: TC-156 Verify the product card displays the product title on PLP 
-    Given close Browser
+    Given quit browser
 	When open browser
     When plp url is available
     When plp is displayed
@@ -141,4 +141,4 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And scroll up to page
     And hovers on mobile in primary image area A
     Then secondary image is not displayed
-	Given Close Browser
+	And quit browser

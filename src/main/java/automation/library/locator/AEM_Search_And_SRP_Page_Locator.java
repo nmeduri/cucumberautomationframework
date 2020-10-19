@@ -19,6 +19,9 @@ public class AEM_Search_And_SRP_Page_Locator {
 	String suggestiveMessage = Property.getProperty(Constant.OR_FILE, "suggestiveMessage");
 	String searchResultThreshold = Property.getProperty(Constant.OR_FILE, "searchResultThreshold");
 	String checkButton = Property.getProperty(Constant.OR_FILE, "checkButton");
+	String searchBarField = Property.getProperty(Constant.OR_FILE, "searchBarField").replace("=", ",");
+	String desktopPlaceHolderLabel = Property.getProperty(Constant.OR_FILE, "desktopPlaceHolderLabel");
+	String searchLabelAEM = Property.getProperty(Constant.OR_FILE, "searchLabelAEM");
 
     /**
 	 * gets Locator - Search Title
@@ -91,4 +94,26 @@ public class AEM_Search_And_SRP_Page_Locator {
 		return checkButton;
 	}
 	
+
+	/**
+	 * gets Locator - Search Bar
+	 */
+	public String getSearchBar() {
+		return searchBarField;
+	}
+	
+	/**
+	 * get Locator - Desktop Place Holder
+	 */
+	public String getDesktopPlaceHolder() {
+		return desktopPlaceHolderLabel;
+	}
+	
+	/**
+	 * get Locator - Search Label
+	 * 
+	 */
+	public String getSearchLabel() {
+		return searchLabelAEM;
+	}
 }

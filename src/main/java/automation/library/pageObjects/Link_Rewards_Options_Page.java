@@ -84,4 +84,5 @@ public class Link_Rewards_Options_Page extends PageObject {
 			Log.message("Element is Not displayed", true);
 		}
 	}
+
 }

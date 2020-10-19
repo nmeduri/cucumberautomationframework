@@ -448,7 +448,7 @@
 						</goals>
 					</execution>
 					
-					<execution>
+					<!-- <execution>
 						<id>build-Adobe_Regression_Web_Edge_Runner</id>
 						<configuration>
 							<appendAssemblyId>false</appendAssemblyId>
@@ -526,7 +526,7 @@
 						<goals>
 							<goal>single</goal>
 						</goals>
-					</execution>
+					</execution> -->
 					
 					
 				</executions>

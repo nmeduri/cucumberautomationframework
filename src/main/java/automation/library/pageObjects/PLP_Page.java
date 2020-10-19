@@ -375,23 +375,17 @@ public class PLP_Page extends PageObject {
 		Log.message("Primary Expected Image:- " + expectedImage,  true);
 		List<Element> secondaryImageList = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image());
 		List<WebElement> primaryImage = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()));	
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Review()));
-		List<Element> productCardReview = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Review());
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand()));
+		List<Element> productCardReview = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Brand());
 		for(int i=0; i<productCardReview.size(); i++) {
-			if($getText(productCardReview.get(i)).equalsIgnoreCase("")) {
-				Log.message("Number :- " +i, true);
-				$mouseHover(primaryImage.get(i));
-				String secondaryImage = $getAttributeValue(secondaryImageList.get(i), "src");
-				Log.message("Secondary Image:- " + secondaryImage, true);
-				Log.message("Expected Image:- " + expectedImage, true);
-				Assert.assertTrue(expectedImage.contains("_b"));
-				break;
-			}else {
-				Log.message("Products have variants", true);
-				fail();
+			$mouseHover(primaryImage.get(0));
+			String secondaryImage = $getAttributeValue(secondaryImageList.get(i), "src");
+			Log.message("Secondary Image:- " + secondaryImage, true);
+			Log.message("Expected Image:- " + expectedImage, true);
+			Assert.assertTrue(expectedImage.contains("_b"));
 			}
 		}
-	}
+	
 	
 	/** click on product card variant */
 	public void clickProductCardVariant() throws Exception {

@@ -53,6 +53,13 @@ public class OCCP_868_Search_And_SRP_Auto_Corrective_Search extends BaseClass {
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickCloseButton();
 	}
 	
+	@And("login to AEM using the credential as mentioned in the test data")
+	public void login_to_aem_using_the_credential_as_mentioned_in_the_test_data() throws Exception {
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickArrowIcon();
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).enterUsername();
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).enterPassword();
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickSignInButton();
+	}
 	@And("click on search page thumbnail image")
 	public void click_on_search_page_thumbnail_image() throws Exception {
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickThumbnailSRP();
@@ -106,13 +113,24 @@ public class OCCP_868_Search_And_SRP_Auto_Corrective_Search extends BaseClass {
 	@And("user click on check button")
 	public void user_click_on_check_button() throws Exception {
 		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).clickCheckButton();
+		PageObject.getDriver().navigate().refresh();
+	}
+	
+	@And("user click on done button")
+	public void user_click_on_done_button() throws Exception {
+		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).clickDoneButton();
+		PageObject.getDriver().navigate().refresh();
 	}
 	
 	@And("configure the corrective search message")
 	public void configure_the_corrective_search_message() throws Exception {
 		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).enterDataAutoCorrectiveSearchMessage();
 	}
-	
+
+	@And("reverse place holder changes")
+	public void reverse_place_holder_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).revertPlaceHolderLabelChanges();
+	}
 	
  
 }

@@ -8,7 +8,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then first three lines of the authored legal disclaimer text should be displayed
 	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2865, TC-2838 Verification of clicking of text "View More" - Desktop Wide 
+	Scenario: TC-2865, TC-2838 Verification of clicking of text "View More" - Desktop Wide
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then ligal disclaimer is displayed
@@ -46,7 +46,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then copy right text is displayed
 	
 	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2845, TC-2854 Verification of clicking of text "Accessibility" - Desktop
+	Scenario: c TC-2854 Verification of clicking of text "Accessibility" - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And in simple footer access and click on accessibility
@@ -72,10 +72,10 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Scenario: TC-2839, TC-2866 Verification of hovering over a link - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
-	Then link terms and conditions should be underlined
-	Then link privacy and policy should be underlined
-	Then link site map should be underlined
-	Then link accessibility should be underlined
+	Then clickable text Terms and conditions is displayed
+	Then clickable text privacy and policy is displayed
+	Then clickable text site map is displayed
+	Then clickable text accessibility is displayed
 	
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2850, TC-2859 Verification of clicking of text Legal - Desktop Wide

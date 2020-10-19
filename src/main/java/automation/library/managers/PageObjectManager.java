@@ -4,6 +4,8 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Common_Page_Locator;
+import automation.library.locator.AEM_PDP_Page_Locator;
+import automation.library.locator.AEM_PLP_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
@@ -29,6 +31,8 @@ import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Common_Page;
+import automation.library.pageObjects.AEM_PDP_Page;
+import automation.library.pageObjects.AEM_PLP_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
@@ -91,8 +95,6 @@ public class PageObjectManager {
 	private Reset_Password_Page getResetPasswordPage;
 	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
 
-	private Gigya_Api_Tool_Page gigyaApiToolPage;
-	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
 
 	private Link_reward_ProfileScreen_page getLink_reward_ProfileScreen_page;
 	private Link_reward_ProfileScreen_page_Locator getLink_reward_ProfileScreen_page_Locator;
@@ -115,7 +117,14 @@ public class PageObjectManager {
 	private AEM_Common_Page_Locator getAEMCommonPageLocator;
 	private AEM_Search_And_SRP_Page_Locator getAEMSearchAndSRPPageLocator;
 	private Link_Rewards_Options_Page getLinkRewardsOptsPage;
+
+	private Gigya_Api_Tool_Page gigyaApiToolPage;
 	private Link_Rewards_Options_Page_Locator getLinkRewardsOptsPageLocator;
+	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
+	private AEM_PDP_Page getAEMPDPPage;
+	private AEM_PDP_Page_Locator gettAEMPDPPPageLocator;
+	private AEM_PLP_Page getAEMPLPPage;
+	private AEM_PLP_Page_Locator getAEMPLPPageLocator;
 	
 	public PageObjectManager() {
 
@@ -422,6 +431,26 @@ public class PageObjectManager {
 	/** Returns Instance of Gigya Api Tool file Locator File*/
 	public Gigya_Api_Tool_Page_Locator getGigyaApiToolPageLocator() {
 		return (gigyaApiToolPage_Locator == null) ? gigyaApiToolPage_Locator =new Gigya_Api_Tool_Page_Locator() : gigyaApiToolPage_Locator;
+	}
+	
+	/** Returns Instance of AEM PDP Page */
+	public AEM_PDP_Page getAEMPDPPage(WebDriver driver) {
+		return (getAEMPDPPage == null) ? getAEMPDPPage = new AEM_PDP_Page(driver) : getAEMPDPPage;
+	}
+	
+	/** Returns Instance of AEM PDP Page Locator */
+	public AEM_PDP_Page_Locator gettAEMPDPPPageLocator() {
+		return (gettAEMPDPPPageLocator == null) ? gettAEMPDPPPageLocator = new AEM_PDP_Page_Locator() : gettAEMPDPPPageLocator;
+	}
+	
+	/** Returns Instance of AEM PLP Page */
+	public AEM_PLP_Page getAEMPLPPage(WebDriver driver) {
+		return (getAEMPLPPage == null) ? getAEMPLPPage = new AEM_PLP_Page(driver) : getAEMPLPPage;
+ 	}
+	
+	/** Returns Instance of AEM PLP Page Locator */
+	public AEM_PLP_Page_Locator getAEMPLPLocatorPage() {
+		return (getAEMPLPPageLocator == null) ? getAEMPLPPageLocator = new AEM_PLP_Page_Locator() : getAEMPLPPageLocator;
 	}
 
 }

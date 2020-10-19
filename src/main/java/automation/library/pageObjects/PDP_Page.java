@@ -152,6 +152,8 @@ public class PDP_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		Log.message("Title:- " + testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle(),
 				true);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 
 	}
 	

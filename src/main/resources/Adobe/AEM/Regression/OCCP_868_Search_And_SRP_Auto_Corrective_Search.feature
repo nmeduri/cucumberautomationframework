@@ -19,3 +19,4 @@ Feature: OCCP-868 Search and SRP-Auto corrective search
 	And user enter suggestive message
 	And user enter search result threshold
 	And user click on check button
+	And close Browser

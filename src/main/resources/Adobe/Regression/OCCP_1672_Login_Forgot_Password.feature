@@ -4,7 +4,7 @@ Feature: OCCP-1672 Login Forgot Password
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-1440 Verify the user has the ability to go back to Login screen while resetting password
-	Given close Browser
+	Given quit browser
 	When open browser
 	And login url is available
 	And login page is displayed

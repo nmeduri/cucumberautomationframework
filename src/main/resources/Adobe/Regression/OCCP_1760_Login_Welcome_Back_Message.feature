@@ -2,10 +2,10 @@ Feature: OCCP-1760 Welcome Back Message
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1760
 	
-	@RegressionTest @WebView@WideScreen
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-657 TC-658 Verify the login screen includes message (First name NOT available)
-	Given close Browser
-	When open browser
+	#Given quit browser
+	Given open browser
 	When login url is available
 	When enter email detail
 	And user enter password
@@ -18,8 +18,6 @@ Feature: OCCP-1760 Welcome Back Message
 	When login page is displayed
 	Then populated email id is not displayed
 	Then populated password is not displayed
-	And Remove Cookies
-	Given login url is available
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-657 TC-658 Verify the login screen includes message (First name NOT available)

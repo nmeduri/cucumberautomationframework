@@ -9,7 +9,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     Then the product title is displayed on the product 
     
     @RegressionTest @WebView @WideScreen
-    Scenario: TC-108 Verify the return policy link is displayed on the PDP for a given product 
+    Scenario: TC-108 Verify the return policy link is displayed on the PDP for a given product
     Given pdp url is available
     When pdp page is displayed for the product
     And scroll up to page
@@ -19,7 +19,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     And the return policy link is displayed
     And scroll up to page
     And click on the return policy link
-    #Then the return policy opens in new tab
+    Then the return policy opens in new tab
     
     @RegressionTest @WebView
     Scenario: TC-110 Verify the product code is displayed on the PDP
@@ -68,6 +68,6 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     And product manual description is displayed
     And user save the product manual link url
     And product manual link is displayed
-    And user is click on product manual link
-    Then product manual pdf opens in new tab
+    #And user is click on product manual link
+    #Then product manual pdf opens in new tab
 	

@@ -4,7 +4,7 @@ Feature: OCCP-1711 Login Forgot Password
 	
     @RegressionTest @WebView @WideScreen
 	Scenario: TC-635, TC-630 Verify the ability of a user to create a new account from 
-	Given close Browser
+	Given quit browser
 	When open browser
 	When login url is available
 	When login page is displayed

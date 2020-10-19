@@ -1,7 +1,7 @@
 Feature: OCCP-1180 Get New Loyalty Card
 	Description: To test the ADOBE Test Cases for the story OCCP-1180
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	#@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2469, TC-2477 Verfiy Generate a New Loyalty card for signed in user and Cancel link redirection on Desktop
 	When login url is available
 	When user 2488 enter detail email
@@ -14,7 +14,7 @@ Feature: OCCP-1180 Get New Loyalty Card
 	And verify when user click on cancel button
 	Then link card screen should be displayed
 	
-	@RegressionTest @WebView @WideScreen
+	#@RegressionTest @WebView @WideScreen
 	Scenario: TC-2472 Verfiy Rewards Terms&Conditions screen and screen on Desktop 
 	When login url is available
 	When user 2488 enter detail email

@@ -18,6 +18,8 @@ public class AEM_Common_Page_Locator {
 	String thumbnailSRP = Property.getProperty(Constant.OR_FILE, "thumbnailSRP");
 	String editHeader = Property.getProperty(Constant.OR_FILE, "editHeader");
 	String configureButton = Property.getProperty(Constant.OR_FILE, "configureButton").replace("=", ",");
+	String previewButton =  Property.getProperty(Constant.OR_FILE, "previewButton");
+	String editButton =  Property.getProperty(Constant.OR_FILE, "editButton"); 
 
     /**
 	 * gets Locator - Arrow Icon Sign In
@@ -85,5 +87,21 @@ public class AEM_Common_Page_Locator {
 	 */
 	public String getConfigureButton() {
 		return configureButton;
+	}
+	
+	/**
+	 * get Locator - Preview Button
+	 * 
+	 */
+	public String getPreviewButton() {
+		return previewButton;
+	}
+	
+	/**
+	 * get Locator - Edit Button
+	 * 
+	 */
+	public String getEditButton() {
+		return editButton;
 	}
 }

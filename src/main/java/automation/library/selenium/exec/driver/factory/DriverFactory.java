@@ -130,9 +130,23 @@ public class DriverFactory extends BaseClass {
 			}else if (String.equalsIgnoreCase("Adobe_Regression_Tablet_Runner")) {
 				driver = Sauce_Lab_Chrome_Tablet_Driver_Manager.createDriver();
 			}
+			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Safari_Runner")) {
+				driver = Sauce_Lab_Safari_Driver_Manager.createDriver();
+				break;
+			}
+			else if (String.equalsIgnoreCase("Adobe_Regression_Web_firefox_Runner")) {
+				driver = Sauce_Lab_Firefox_Driver_Manager.createDriver();
+				break;
+			}
+			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Internet_Explore_Runner")) {
+				driver = Sauce_Lab_IE_Driver_Manager.createDriver();
+			}
+			else if (String.equalsIgnoreCase("Adobe_Regression_Web_Edge_Runner")) {
+				driver = Sauce_Lab_Edge_Driver_Manager.createDriver();
+			}
 			break;
 		case "local":
-			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner") || String.equalsIgnoreCase("Adobe_Regression_AEM_Runner")) {
+			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner") || String.equalsIgnoreCase("AEM_Regression_Runner")) {
 				driver = Local_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {

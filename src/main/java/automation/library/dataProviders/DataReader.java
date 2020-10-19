@@ -221,6 +221,19 @@ public class DataReader {
 	}
 
 	/**
+	 * gets Email Detail
+	 * 
+	 */
+	
+	public String get_Email_Data() {
+		String email = Property.getProperty(Constant.DATA_FILE, "getEmail");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
+	
+	/**
 	 * gets Login URL
 	 * 
 	 */
@@ -512,6 +525,7 @@ public class DataReader {
 	}
 	
 
+
 /**
  * gets SearchValue
  * 
@@ -535,7 +549,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
-
+	
 	/**
 	 * gets Gigya API Key
 	 * 
@@ -672,17 +686,23 @@ public class DataReader {
 	}
 	
 	/**
-	 * gets Email Detail
+	 * gets Gigya Api Tool URL
+	 * 
+	 */
+	public String get_Gigya_Api_Tool_Url() {
+		String getGigyaApiToolUrl = Property.getProperty(Constant.DATA_FILE, "gigyaApiToolUrl");
+		if(getGigyaApiToolUrl != null)
+			return getGigyaApiToolUrl;
+		else 
+			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets password
 	 * 
 	 */
 	
-	public String get_Email_Data() {
-		String email = Property.getProperty(Constant.DATA_FILE, "getEmail");
-		if(email != null) 
-			return email;
-		else
-			throw new RuntimeException("Valid Email Data not specified in the Data file.");
-	}
+	
 	
 	/**
 	 * gets password
@@ -694,18 +714,6 @@ public class DataReader {
 		if(email != null) 
 			return email;
 		else
-			throw new RuntimeException("Valid Email Data not specified in the Data file.");
-	}
-
-	/**
-	 * gets Gigya Api Tool URL
-	 * 
-	 */
-	public String get_Gigya_Api_Tool_Url() {
-		String getGigyaApiToolUrl = Property.getProperty(Constant.DATA_FILE, "gigyaApiToolUrl");
-		if(getGigyaApiToolUrl != null)
-			return getGigyaApiToolUrl;
-		else 
-			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
+			throw new RuntimeException("Valid Password Data not specified in the Data file.");
 	}
 }
