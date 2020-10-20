@@ -64,5 +64,61 @@ public class OCCP_939_PLP_SRP_Load_More extends BaseClass {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseProductNumberChanges();
 	}
 	
+	@And("click on show more tab")
+	public void click_on_show_more_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickShowMore();
+	}
+	
+	@And("update the number of the results to be displayed when show more is clicked")
+	public void update_the_number_of_the_results_to_be_displayed_when_show_more_is_clicked() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterShowMoreCount();
+	}
+	
+	@And("click on aem show more button")
+	public void click_on_aem_show_more_button() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickShowMoreButton();
+	}
+	
+	@Then("show more count changes are reflected on a PLP for both gird list views")
+	public void show_more_count_changes_are_reflected_on_a_plp_for_both_grid_list_views() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyShowMoreCountUpdateOnSite();
+	}
+	
+	@And("reverse show more changes")
+	public void reverse_show_more_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseShowMoreChanges();
+	}
+	
+	@And("update the search response count")
+	public void update_the_search_response_count() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterSearchResponseCount();
+	}
+	
+	@Then("search response count changes are reflected on a PLP for both grid list views")
+	public void search_response_count_changes_are_reflected_on_a_plp_for_both_grid_list_views() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifySearchResponseCountUpdateOnSite();
+	}
+	
+	@And("reverse search response count changes")
+	public void reverse_search_response_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseShowMoreChanges();
+	}
+	
+	@And("edit copy for first part of the pagination result")
+	public void edit_copy_for_first_part_of_the_pagination_result() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterPaginationResultMessage();
+	}
+	
+	@Then("pagination result message changes are reflected on a PLP both grid list views")
+	public void pagination_result_message_changes_are_reflected_on_a_plp_both_grid_list_views() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyPaginationResultMessageUpdateOnSite();
+	}
+	
+	@And("reverse pagination result message changes")
+	public void reverse_pagination_result_message_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reversePaginationResultMessageChanges();
+	}
+	
+	
  
 }

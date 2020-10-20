@@ -15,6 +15,7 @@ public class AEM_PDP_Page_Locator {
 	String setNumberOfSpecifications = Property.getProperty(Constant.OR_FILE, "setNumberOfSpecifications");
 	String viewMoreSpecificationsLabel = Property.getProperty(Constant.OR_FILE, "viewMoreSpecificationsLabel");
 	String viewLessSpecificationsLabel = Property.getProperty(Constant.OR_FILE, "viewLessSpecificationsLabel");
+	String showMoreTab = Property.getProperty(Constant.OR_FILE, "showMoreTab");
 
     /**
 	 * gets Locator - Specifications
@@ -59,6 +60,15 @@ public class AEM_PDP_Page_Locator {
     
 	public String getViewLessSpecifications() {
 		return viewLessSpecificationsLabel;	
+	}
+	
+	/**
+	 * 
+	 * gets Locator - Show More Tab
+	 * 
+	 */
+	public String getShowMoreTab() {
+		return showMoreTab;
 	}
 	
 }

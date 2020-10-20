@@ -340,4 +340,80 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("Result Data not specified in the Data file.");
 	}
+	
+	/**
+	 * 
+	 * get Data - Show More Count
+	 * 
+	 */
+	
+	public String get_Show_More_Count() {
+		String getShowMoreCount = Property.getProperty(Constant.AEM_DATA_FILE, "showMoreCount");
+		if(getShowMoreCount != null)
+			return getShowMoreCount;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Show More Count
+	 * 
+	 */
+	
+	public String get_Show_More_Count_Changes() {
+		String showMoreCountChanges = Property.getProperty(Constant.AEM_DATA_FILE, "showMoreCountChanges");
+		if(showMoreCountChanges != null)
+			return showMoreCountChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	
+	/**
+	 * 
+	 * get Data - Search Response Count
+	 * 
+	 */
+	public String get_Search_Response_Count() {
+		String searchResponseCount = Property.getProperty(Constant.AEM_DATA_FILE, "searchResponseCount");
+		if(searchResponseCount != null)
+			return searchResponseCount;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Search Response Count Changes
+	 * 
+	 */
+	public String get_Search_Response_Count_Changes() {
+		String searchResponseCount = Property.getProperty(Constant.AEM_DATA_FILE, "searchResponseCountChanges");
+		if(searchResponseCount != null)
+			return searchResponseCount;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Pagination result message
+	 * 
+	 */
+	public String get_Paginarion_Result_Message() {
+		String paginationResultMessage = Property.getProperty(Constant.AEM_DATA_FILE, "paginationResultMessage");
+		if(paginationResultMessage != null)
+			return paginationResultMessage;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Pagination result message
+	 * 
+	 */
+	public String get_Pagination_Result_Message_Changes() {
+		String searchResponseCount = Property.getProperty(Constant.AEM_DATA_FILE, "paginationResultMessageChanges");
+		if(searchResponseCount != null)
+			return searchResponseCount;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
 }

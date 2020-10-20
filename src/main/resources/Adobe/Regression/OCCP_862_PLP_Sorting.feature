@@ -4,8 +4,8 @@ Feature: OCCP-862 PLP Sorting
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-40 Verify the sticky navigation feature of filter menu
-		Given open browser
-		When plp url is available
+	Given open browser
+	When plp url is available
     When plp is displayed
     And scroll down the window below the view point
     Then the sorting option remains displayed at the top of the page in the sticky nav
