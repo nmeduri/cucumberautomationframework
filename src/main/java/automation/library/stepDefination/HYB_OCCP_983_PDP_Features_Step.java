@@ -64,5 +64,22 @@ public class HYB_OCCP_983_PDP_Features_Step extends BaseStep {
 		
 		
 	}
+	@When("user hits the features are null GET api without locale")
+	public void user_hits_the_features_are_null_api_without_locale() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().product_tc_1352());
+	}
+
+	@Then("returned JSON should not display feature Bullets section")
+	public void returned_response_should_not_display_feature_bullets_section() {
+		
+		Assert.assertEquals("[]", response.jsonPath().get("featureBullets").toString());
+		Log.message("Section 'Feature Bullets' is NOT displayed in JSON response.", true);
+	}
+	
+	@And("returned JSON should not display feature description")
+	public void returned_response_should_not_display_feature_description() {
+		Assert.assertEquals("[]",response.jsonPath().get("featureBullets.description").toString());
+	}
 
 }

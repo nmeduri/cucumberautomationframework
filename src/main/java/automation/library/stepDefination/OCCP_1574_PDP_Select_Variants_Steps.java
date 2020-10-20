@@ -60,4 +60,13 @@ public class OCCP_1574_PDP_Select_Variants_Steps extends BaseClass {
 	public void the_label_of_selected_size_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifySelectedSizeLabel();
 	}
+	
+	@And("Select a different colour variant")
+	public void select_a_different_colour_variant() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).click_different_colour_variant();
+	}
+	@Then("the lable of selected color is displayed")
+	public void the_label_of_selected_color_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifySelectedColorLabel();
+	}
 }

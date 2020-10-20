@@ -3,8 +3,8 @@ Feature: OCCP-983 PDP Features
 	Description: To test the HYBRIS Test Cases for the story OCCP-983
        
         @RegressionTest
-		Scenario: TC-1351 HYB:OCCP-983: Verify features are not null	
-	    Given occ api is available
+				Scenario: TC-1351 HYB:OCCP-983: Verify features are not null	
+	    	Given occ api is available
         When user hits the GET api without locale
         Then returned JSON should display feature Bullets section
         And returned JSON should display feature description
@@ -29,4 +29,11 @@ Feature: OCCP-983 PDP Features
         When user hits the GET api with locale as fr_ca
         Then returned JSON should display feature Bullets section
         And returned JSON should display feature description
+        
+        @RegressionTest
+				Scenario: TC-1352 HYB:OCCP-983: HYB:OCCP-983: Verify features are null
+	    	Given occ api is available
+        When user hits the features are null GET api without locale
+        Then returned JSON should not display feature Bullets section
+        And returned JSON should not display feature description
 	

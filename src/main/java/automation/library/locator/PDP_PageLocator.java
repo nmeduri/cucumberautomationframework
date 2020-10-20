@@ -48,7 +48,8 @@ public class PDP_PageLocator {
 	String viewLessSpecificationButton = Property.getProperty(Constant.OR_FILE, "viewLessSpecificationButton");
 	String prductUnitPrice = Property.getProperty(Constant.OR_FILE, "prductUnitPrice");
 	String swatchWithSize = Property.getProperty(Constant.OR_FILE, "swatchWithSize");
-	String sizeLabel = Property.getProperty(Constant.OR_FILE, "sizeLabel").replace("=", ",");
+	//String sizeLabel = Property.getProperty(Constant.OR_FILE, "sizeLabel").replace("=", ",");
+	String sizeLabel = Property.getProperty(Constant.OR_FILE, "sizeLabel");
 	String unavailableSize = Property.getProperty(Constant.OR_FILE, "unavailableSize");
 	String availabeSize = Property.getProperty(Constant.OR_FILE, "availabeSize");
 	String selectedSize = Property.getProperty(Constant.OR_FILE, "selectedSize");
@@ -85,8 +86,9 @@ public class PDP_PageLocator {
 	String Registration=Property.getProperty(Constant.OR_FILE, "Registration");
 	String HiLink=Property.getProperty(Constant.OR_FILE, "HiLink");
 	String SignOut=Property.getProperty(Constant.OR_FILE, "SignOut");
+	String selectDifferentColourVariant=Property.getProperty(Constant.OR_FILE, "selectDifferentColourVariant");
 	String viewMoreLessSpecifications = Property.getProperty(Constant.OR_FILE, "viewMoreLessSpecifications");
-	
+	String colorVariantGray = Property.getProperty(Constant.OR_FILE, "colorVariantGray");
 	
 	
 	/**
@@ -771,6 +773,13 @@ public class PDP_PageLocator {
 	public String get_SignOutOption() {
 		return SignOut;
 	}
+	/**
+	 * gets Locator - Select different colour variant
+	 * 
+	 */
+	public String get_SelectDifferentColourVariant() {
+		return selectDifferentColourVariant;
+	}
 	
 	/**
 	 * gets Locator - View More/Less Specifications
@@ -779,5 +788,14 @@ public class PDP_PageLocator {
 	public String get_View_More_Less_Specifications() {
 		return viewMoreLessSpecifications;
 	}
+	
+	/**
+	 * gets Locator - Different color
+	 * 
+	 */
+	public String get_DifferentColor() {
+		return colorVariantGray;
+	}
   }
+
 

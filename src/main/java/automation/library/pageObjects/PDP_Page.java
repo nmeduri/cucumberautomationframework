@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
@@ -830,5 +831,17 @@ public class PDP_Page extends PageObject {
 			fail();
 		}
 	}
+	/** This function click on different colour variant */
+	   public void click_different_colour_variant() throws Exception {
+		   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SelectDifferentColourVariant()));
+	   }
+	   /** This function is verify that different color is displayed */
+	   public void verifySelectedColorLabel() throws Exception {
+		   String selectedColorValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_DifferentColor()), "aria-label").replace("Variant ", "");
+		   String selectedColorTitle = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Selected_Color_Title())).replace("Color: ", "");
+		   Log.message("selectedColorTitle : "+selectedColorTitle, true);
+		   Log.message("selectedColor : "+selectedColorValue, true);
+		   Assert.assertTrue(selectedColorTitle.equalsIgnoreCase(selectedColorValue));
+	   }
 	
 }
