@@ -3,6 +3,7 @@ package automation.library.api.endpoint;
 import automation.library.logdetail.Log;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 /*
  * This class calls the URL of Wish List's APIs and
@@ -18,6 +19,7 @@ public class HYB_API_Wishlist_End_Point {
 	private static String base_url;
 	private static Response response;
 	private static Response response1;
+	private RequestSpecification request = RestAssured.given();
 	
 	
 	public String HYB_Wishlist_API(String baseUrl) {
@@ -50,6 +52,7 @@ public class HYB_API_Wishlist_End_Point {
 
 	}
 	
+	
 	public Response get_HYB_Wishlist_API(String url, String guid) {
 		
 		Log.message("Get Url:- " + url + "/users/anonymous/wishlist?guid=" +  guid , true);
@@ -58,6 +61,20 @@ public class HYB_API_Wishlist_End_Point {
 		return response;
 
 	}
-
+	public Response put_HYB_Wishlist_API_AuthenticatedUser(String url, String sProductCode ,String cartCode,String accessToken) {
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("PUT wishlist Url:- " + url +  "product/" +  sProductCode + "?cartid="+ cartCode, true);
+		response = request.put(url + "product/" +  sProductCode + "?cartid="+ cartCode);
+		return response;
+	}
+	
+	public Response get_HYB_Wishlist_API_AuthenticatedUser(String url, String code,String accessToken) {
+		request.header("Content-Type", "application/json");
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Get Url Wishlist :- " + url , true);
+		response = request.get(url);
+		Log.message("Get Response:- " + response.getBody().asString(), true);
+		return response;
+	}
 
 }

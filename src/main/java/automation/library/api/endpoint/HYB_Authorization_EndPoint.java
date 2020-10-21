@@ -63,7 +63,7 @@ public class HYB_Authorization_EndPoint {
 
 	public Response delete_HYB_Add_Wishlist_API(String url, String accessToken, String product) {
 		request.header("Authorization", "Bearer " + accessToken);
-		Log.message("API:- " + url + "product/" + product,  true);
+		Log.message("Delete API:- " + url + "product/" + product,  true);
 		response = request.delete(url + "product/" + product);
 		return response;
 
@@ -82,9 +82,9 @@ public class HYB_Authorization_EndPoint {
 	public Response get_Addtocart_Post_API(String url, String accessToken) {
 		request.header("Authorization", "Bearer " + accessToken);
 		Log.message("Token 2:- " + accessToken,  true);
-		Log.message("API:- " + url,  true);
+		Log.message("Create Cart API:- " + url,  true);
 		response = request.post(url);
-		Log.message("Response:- " + response.getBody().asString(), true);
+		Log.message("Create Cart Response:- " + response.getBody().asString(), true);
 		return response;
 
 	}
@@ -404,4 +404,36 @@ public class HYB_Authorization_EndPoint {
 		response = request.patch(url + guid+ "/entri/0?fields=FULL");
 		return response;	
 	}
+	public Response post_HYB_AddToCart_AuthUserAPI_SingleProd(String url, String code, String product1, String accessToken) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \"" +product1 +""+ "\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"BOPIS\"\n" + 
+				"            },\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"        \n" + 
+				"    ]\n" + 
+				"}";
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Add to Cart bodyvalue :"+ bodyvalue, true);
+		Log.message("Add to Cart API:- " + url  + code +"/entries?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + code+ "/entries?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	
 }
