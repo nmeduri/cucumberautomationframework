@@ -115,6 +115,7 @@ stages:
     condition: and( succeeded(), in( 'True', '${{ parameters.AEM_BVT }}', '${{ parameters.AEM_Regression }}', '${{ parameters.SAP_BVT }}', '${{ parameters.SAP_Regression}}', '${{ parameters.Lighthouse_Execution}}' ) )
     jobs:
       - job: Run_SAP_Tests_Suites
+        timeoutInMinutes: 0
         displayName: Run SAP Tests Suites
         condition: in('True', '${{ parameters.SAP_BVT }}', '${{ parameters.SAP_Regression }}' )
         variables:
@@ -139,6 +140,7 @@ stages:
                     testname: 'SAP Regression'
 
       - job: Run_AEM_Tests_Suites
+        timeoutInMinutes: 0
         displayName: Run AEM Tests Suites
         condition: in('True', '${{ parameters.AEM_BVT }}', '${{ parameters.AEM_Regression }}' )
         variables:
@@ -165,7 +167,7 @@ stages:
               parameters:
                 items:
                   - projname: Adobe
-                    pattern: 'Adobe_Regression_Web*.jar'
+                    pattern: 'Adobe_Regression_Web_Runner.jar'
                     reportname: 'Adobe Regression Web Extent Report'
                     testname: 'Adobe Regression Web'
             - template: qa_tests.yml
@@ -175,6 +177,34 @@ stages:
                     pattern: 'Adobe_Regression_Wide_Screen*.jar'
                     reportname: 'Adobe Regression Wide Screen Extent Report'
                     testname: 'Adobe Regression Wide Screen'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Tablet*.jar'
+                    reportname: 'Adobe Regression Tablet Extent Report'
+                    testname: 'Adobe Regression Tablet'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web_Edge*.jar'
+                    reportname: 'Adobe Regression Web Edge Extent Report'
+                    testname: 'Adobe Regression Web Edge'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web_firefox*.jar'
+                    reportname: 'Adobe Regression Web Firefox Extent Report'
+                    testname: 'Adobe Regression Web Firefox'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web_Safari*.jar'
+                    reportname: 'Adobe Regression Web Safari Extent Report'
+                    testname: 'Adobe Regression Web Safari'
 
       - job: Run_Lighthouse_Scanning
         displayName: Run Lighthouse Scanning
