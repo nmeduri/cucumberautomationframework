@@ -112,8 +112,7 @@ public class OCCP_868_Search_And_SRP_Auto_Corrective_Search extends BaseClass {
 	
 	@And("user click on check button")
 	public void user_click_on_check_button() throws Exception {
-		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).clickCheckButton();
-		PageObject.getDriver().navigate().refresh();
+		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).clickDoneButton();
 	}
 	
 	@And("user click on done button")
@@ -121,6 +120,7 @@ public class OCCP_868_Search_And_SRP_Auto_Corrective_Search extends BaseClass {
 		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).clickDoneButton();
 		PageObject.getDriver().navigate().refresh();
 	}
+	
 	
 	@And("configure the corrective search message")
 	public void configure_the_corrective_search_message() throws Exception {

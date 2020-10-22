@@ -4,7 +4,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 
   @RegressionTest @WebView @WideScreen 
 	Scenario: TC-2396, TC-2385 Verfiy the display of Link Cards screen when Card is Deactivated in Wide Desktop view
-	Given open browser
 	When login url is available
 	When enter email id
 	And enter password data

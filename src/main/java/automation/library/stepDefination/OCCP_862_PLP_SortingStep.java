@@ -59,6 +59,11 @@ public class OCCP_862_PLP_SortingStep extends BaseClass {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).notDisplaySortOption();
 	}
 	
+	@And("sort option is displayed on the site")
+	public void sort_option_is_displayed_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displaySortOption();
+	}
+	
 	@And("reverse the sort changes")
 	public void reverse_the_product_number_changes() throws Exception {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseProductNumberChanges();

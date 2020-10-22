@@ -4,7 +4,6 @@ Feature: OCCP-4420 : Edge to Edge Banner
 	
 	@RegressionTest @WebView @WideScreen @TabletView
 	Scenario: TC-3576 OCCP-4420 Edge to Edge Banner- Verify when User is able to view the banner(with image)for EN/FR locale| Desktop/desktop wide/Tablet
-	Given open browser
 	When edge to edge banner url is available for EN
 	When edge banner page is displayed for the product
 	Then user should be able to view the edge banner
@@ -39,7 +38,6 @@ Feature: OCCP-4420 : Edge to Edge Banner
 	
 	@RegressionTest @MobileView
 	Scenario: TC-3575 OCCP-4420 Edge to Edge Banner- Verify when User is able to view the banner(with image) for EN/FR locale-Stacking in Mobile
-	Given open browser
 	When edge to edge banner url is available for EN
 	When edge banner page is displayed for the product
 	Then user should be able to view the edge banner

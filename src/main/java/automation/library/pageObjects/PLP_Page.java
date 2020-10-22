@@ -330,7 +330,7 @@ public class PLP_Page extends PageObject {
 	
 	/** This function is verify that primary product image is displayed */
 	public void displayPrimaryProductImage() throws Exception {
-		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image_Mobile()), "src");
+		String primaryImage = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Primary_Image()), "src");
 		Assert.assertTrue(primaryImage.contains("_a"));
 	}
 	
@@ -452,10 +452,18 @@ public class PLP_Page extends PageObject {
 	/** Sort option is not dispalyed */
 	public void notDisplaySortOption() throws Exception {
 		try {
-			$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSortOption()));
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().getSortOption()));
 			fail();
 		}catch(Exception e) {
 			
 		}
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** Sort option is not dispalyed */
+	public void displaySortOption() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSortOption())), 5);
 	}
 }	

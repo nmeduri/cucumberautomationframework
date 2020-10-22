@@ -4,8 +4,6 @@ Feature: OCCP-1655 PDP: Product Badges
 	
     @RegressionTest @WebView @MobileView @WideScreen @TabletView
 	Scenario: TC-369 Verify the In-Store Only badge remains displayed when user selects a product variant
-	Given quit browser
-	When open browser
 	When pdp url is available
     When pdp page is displayed for the product
     Then the editable badge label displays in store clearnce

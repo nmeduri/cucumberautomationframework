@@ -42,7 +42,6 @@ Feature: OCCP-1180 Get New Loyalty Card
 	
 	@RegressionTest @WideScreen 
 	Scenario: TC-2481 Generate a New Loyalty card for signed in user and Cancel link redirection on Wide Desktop View
-	Given open browser
 	When login url is available
 	When enter email detail
 	And user enter password
@@ -54,9 +53,8 @@ Feature: OCCP-1180 Get New Loyalty Card
 	And user clicks on cancel link
 	Then user should be returned to initial link cards screen
 	
-	@RegressionTest @MobileView @WideScreen 
+	@RegressionTest @MobileView @TabletScreen 
 	Scenario: TC-2480, 2484 Rewards T&C screen and Link Success screen 
-	Given open browser
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email
@@ -93,8 +91,3 @@ Feature: OCCP-1180 Get New Loyalty Card
 	Then user should redirect to the get a new triangle rewards card screen
 	And verify clicks on continue button
 	Then user should be able to see an inline error message below the field
-	
-	@RegressionTest @MobileView @WideScreen
-	Scenario: close browser
-	Given close Browser
-	

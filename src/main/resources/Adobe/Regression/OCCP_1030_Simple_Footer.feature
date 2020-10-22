@@ -31,7 +31,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
 	Then view less is displayed
 	
-	@RegressionTest @WebView @WideScreen @SmokeTest
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2840, TC-2849 Verification of options present in Simple Footer - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -68,7 +68,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then link site map should be underlined
 	Then link accessibility should be underlined
 	
-	@RegressionTest @MobileView @TabletView
+	#@RegressionTest @MobileView @TabletView @SmokeTest
 	Scenario: TC-2839, TC-2866 Verification of hovering over a link - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product

@@ -4,7 +4,7 @@ Feature: OCCP-1760 Welcome Back Message
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-657 TC-658 Verify the login screen includes message (First name NOT available)
-	#Given quit browser
+	Given quit browser
 	Given open browser
 	When login url is available
 	When enter email detail

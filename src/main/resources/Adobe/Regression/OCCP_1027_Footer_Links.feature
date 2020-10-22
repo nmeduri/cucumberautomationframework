@@ -251,7 +251,6 @@ Feature: OCCP-1027 Footer : Footer Links
 
 	@RegressionTest @MobileView @TabletView 
 	Scenario: TC-2121, User clicks on "-" on Customer Support section -Mobile
-	Given open browser
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And customer support section is displayed
@@ -276,7 +275,6 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2125, User clicks on "-" on "About Us" section-Mobile
-	Given open browser
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And about us section is displayed
@@ -289,7 +287,6 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 	@RegressionTest @TabletView @MobileView 
 	Scenario: TC-2127, User clicks on "-" on "Legal" section-Mobile
-	Given open browser
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And legal section is displayed

@@ -7,4 +7,5 @@ Feature: OCCP-983 PDP: Features
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then user must see all features of the product displayed in a bulleted list
+	And quit browser
 	

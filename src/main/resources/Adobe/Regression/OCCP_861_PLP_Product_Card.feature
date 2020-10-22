@@ -141,4 +141,3 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
     And scroll up to page
     And hovers on mobile in primary image area A
     Then secondary image is not displayed
-	And quit browser

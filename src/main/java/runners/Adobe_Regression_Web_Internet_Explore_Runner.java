@@ -19,7 +19,7 @@ public final class Adobe_Regression_Web_Internet_Explore_Runner extends BaseClas
 			"classpath:Adobe/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@WebView",
+			"--tags", "@Regress",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

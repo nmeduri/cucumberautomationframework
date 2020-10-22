@@ -4,7 +4,6 @@ Feature: OCCP-862 PLP Sorting
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-40 Verify the sticky navigation feature of filter menu
-	Given open browser
 	When plp url is available
     When plp is displayed
     And scroll down the window below the view point
@@ -30,7 +29,6 @@ Feature: OCCP-862 PLP Sorting
     
     @RegressionTest @MobileView @TabletView
     Scenario: TC-345 Verify the functionality of the Price High to Low sorting option on a PLP (Mobile)
-    Given open browser
     When plp url is available
     When plp is displayed
     And scroll up to page
@@ -46,7 +44,6 @@ Feature: OCCP-862 PLP Sorting
     And scroll up to page
     And click on sort by option
     And select sorting option Newest Arrivals
-    And close browser
 
     @RegressionTest @MobileView @TabletView
     Scenario: TC-347 Verify the functionality of the Newest Arrivals sorting option on a PLP
@@ -59,7 +56,6 @@ Feature: OCCP-862 PLP Sorting
 
     @RegressionTest @WebView @WideScreen 
 	Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
-	 Given open browser
 	Given plp url is available
 	And scroll up to page
 	When user clicks on the Sort by 

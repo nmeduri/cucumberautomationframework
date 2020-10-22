@@ -4,7 +4,6 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
 	   
     @RegressionTest @WebView @WideScreen
     Scenario: TC-105 Verify the product title is displayed on the PDP for a given product 
-    Given open browser
     When pdp url is available
     When pdp page is displayed for the product
     Then the product title is displayed on the product 

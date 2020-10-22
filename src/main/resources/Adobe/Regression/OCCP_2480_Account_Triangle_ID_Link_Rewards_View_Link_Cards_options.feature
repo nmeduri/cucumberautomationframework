@@ -4,7 +4,8 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	
 	@RegressionTest @WideScreen
 	Scenario: TC-2003,2011,1989 Verify the display of details when user logins with Triangle ID for the first time on Widescreen
-	Given open browser
+	Given quit browser
+	When open browser
 	When login url is available
 	When 2480-enter email detail
 	And user enter password
@@ -73,7 +74,8 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	
 	#@RegressionTest @WideScreen
 	Scenario: TC-2007,2015,2016,1993,TC-1996 Verify hide the link screen option on the Link Card screen when -Email Validation
-	Given open browser
+	Given quit browser
+	When open browser
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email

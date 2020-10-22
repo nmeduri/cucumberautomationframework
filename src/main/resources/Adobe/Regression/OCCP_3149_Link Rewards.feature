@@ -6,7 +6,6 @@ Feature: OCCP-3149 Link Rewards
     
   #@Regression @MobileView  @TabletView
   Scenario: TC-2137,2141 Verify the Field level validations on the Complete Your Profile screen on Mobile
-  Given open browser
     When login url is available 
     When enter email id
     And enter password data
@@ -50,7 +49,6 @@ Feature: OCCP-3149 Link Rewards
     
     @RegressionTest @MobileView @TabletView
     Scenario: TC-2136 Verify the details on Complete your profile screen on Mobile
-    Given open browser
     When login url is available
     When user 2488 enter detail email
     And user enter password
