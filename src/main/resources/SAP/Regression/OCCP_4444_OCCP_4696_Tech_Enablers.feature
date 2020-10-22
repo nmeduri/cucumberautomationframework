@@ -1,6 +1,6 @@
-Feature: OCCP_4696: Increase the length of warranty and additional warranty message
+Feature: OCCP_4444- OCCP_4696 : Tech_Enablers
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-4696
+	Description: To test the HYBRIS Test Cases for the story OCCP_4444- OCCP-4696
 	
 			@RegressionTest
     		Scenario: TC-3061 HYB:OCCP-4444-OCCP-4696:Increase the length of warranty and additional warranty message- Verify warranty message in product API	

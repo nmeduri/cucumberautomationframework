@@ -716,4 +716,52 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Password Data not specified in the Data file.");
 	}
+	/**
+	 * gets EdgeToEdge Banner url with Image
+	 * 
+	 */
+	
+	public String getEdgeToEdgeBannerUrlWithImageEn() {
+		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageEn");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+	}
+	/**
+	 * gets EdgeToEdge Banner url without Image
+	 * 
+	 */
+	
+	public String getEdgeToEdgeBannerUrlWithoutImageEn() {
+		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageEn");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+	}
+	/**
+	 * gets EdgeToEdge Banner url with Image
+	 * 
+	 */
+	
+	public String getEdgeToEdgeBannerUrlWithImageFr() {
+		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageFr");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+	}
+	/**
+	 * gets EdgeToEdge Banner url without Image
+	 * 
+	 */
+	
+	public String getEdgeToEdgeBannerUrlWithoutImageFr() {
+		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageFr");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+	}
 }

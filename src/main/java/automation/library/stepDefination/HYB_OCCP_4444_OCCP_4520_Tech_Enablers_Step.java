@@ -8,9 +8,9 @@ import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
 
 /**
- * This file contains the scenario of user stories OCCP-4520
+ * This file contains the scenario of user stories OCCP-4444- OCCP-4520
  */
-public class HYB_OCCP_4520_Change_Loyalty_Badges_Approach_Inbound_Outbound extends BaseStep{
+public class HYB_OCCP_4444_OCCP_4520_Tech_Enablers_Step extends BaseStep{
 	RequestSpecification request;
 	
 	@When("user hits GET method for Loyalty badge")

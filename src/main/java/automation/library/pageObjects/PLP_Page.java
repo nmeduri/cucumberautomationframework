@@ -299,7 +299,7 @@ public class PLP_Page extends PageObject {
 	 
 	 /** This function is verify that breadcrumbs is displayed */
 	 public void displayMobileBreadcrumb() throws Exception {
-			$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb()));
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb())), 20);
 			Log.message("breadcrumb is displayed in mobile", true);	
 		}
 	 

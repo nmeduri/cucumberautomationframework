@@ -69,8 +69,8 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void response_should_have_medias_section_without_name_and_its_value() {
 		List<String> mediaName = response.jsonPath().get("medias.name");
 		Log.message("Media Name:- " + mediaName, true);
-		Assert.assertTrue(mediaName.contains(null));
-		Assert.assertNotEquals(null, response.jsonPath().get("medias"));
+		Assert.assertEquals("[]", mediaName.toString());
+		//assertTrue(mediaName.contains(null));
 	}
 
 	@Then("medias section should have in response without mediaType name and its value")
@@ -221,5 +221,10 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void response_should_have_medias_without_isListingThumbnailImageL_and_its_value() {
 		PageObject.verifySectionValueResponseNull(response.jsonPath().get("medias.isListingThumbnailImage"));
 		Log.message("isListingThumbnailImage and value is not displayed :- " + response.jsonPath().get("medias.isListingThumbnailImage"), true);
+	}
+	@When("1467-user hits the GET api without locale")
+	public void user_hits_the_GET_api_without_locale_1467() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().product_tc_1467());
 	}
 }

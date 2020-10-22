@@ -7,9 +7,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
 /**
- * This file contains the scenario of user stories OCCP-4098
+ * This file contains the scenario of user stories OCCP-4444- OCCP-4098
  */
-public class HYB_OCCP_4098_PLP_Update_implemented_OCC_API_to_include_baseStoreId_Step extends BaseStep{
+public class HYB_OCCP_4444_OCCP_4098_Tech_Enablers_Step extends BaseStep{
 RequestSpecification request;
 	
 	@When("user hits pdp get method api without base store id")

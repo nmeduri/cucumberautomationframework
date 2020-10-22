@@ -1,6 +1,6 @@
-Feature: OCCP_4520_HYB: DEV: Change Loyalty Badges approach - inbound/outbound
+Feature: OCCP_4444_OCCP_4520: Tech_Enablers
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-4520
+	Description: To test the HYBRIS Test Cases for the story OCCP-4444- OCCP-4520
 
 	    @RegressionTest
       Scenario: TC-3074 HYB:OCCP-3773-OCCP-4520: Change Loyalty Badges approach - inbound/outbound - verify badge in OCC API

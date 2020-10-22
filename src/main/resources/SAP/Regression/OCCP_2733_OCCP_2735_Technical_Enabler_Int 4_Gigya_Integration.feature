@@ -1,6 +1,6 @@
-Feature: OCCP-2735 Gigya Integration with Hybirs
+Feature: OCCP-2733- OCCP-2735 HYB:Technical Enabler(Int 4): Gigya Integration 
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-2735
+	Description: To test the HYBRIS Test Cases for the story OCCP-2733- OCCP-2735
        
         @RegressionTest
         Scenario: TC-1667 HYB-OCCP-2733-OCCP-2735: Gigya-Verify creation of UID, UIDSignature, signatureTimestamp from Gigya API tool.

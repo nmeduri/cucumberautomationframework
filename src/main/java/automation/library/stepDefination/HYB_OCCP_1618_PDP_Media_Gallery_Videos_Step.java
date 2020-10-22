@@ -39,5 +39,11 @@ public class HYB_OCCP_1618_PDP_Media_Gallery_Videos_Step extends BaseStep {
 //		Assert.assertTrue(mediaType.contains("DEMO_VIDEOS"));
 //
 //	}
- 
+	@When("user hits GET API without locale-1493")
+	public void user_hits_API_without_locale_1493() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1493());
+		
+
+	}
 }

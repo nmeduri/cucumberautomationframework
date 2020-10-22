@@ -39,7 +39,7 @@ Feature: OCCP-1619 PDP: 360 Degree Images -Media Gallery
         @RegressionTest
         Scenario: TC-1467 HYB:OCCP-1619:Verify 360 Degree Images -Media Gallery - name is null
         Given occ api is available
-        When 1476-user hits the GET api without locale
+        When 1467-user hits the GET api without locale
         Then response should have medias section without name and its value
         
         @RegressionTest

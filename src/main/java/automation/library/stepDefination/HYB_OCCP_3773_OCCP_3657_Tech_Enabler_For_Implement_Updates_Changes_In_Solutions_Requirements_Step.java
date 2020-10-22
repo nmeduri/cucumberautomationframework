@@ -9,9 +9,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.restassured.specification.RequestSpecification;
 /**
- * This file contains the scenario of user stories OCCP-3657
+ * This file contains the scenario of user stories OCCP-3773- OCCP-3657
  */
-public class HYB_OCCP_3657_Add_new_enum_codes_to_CTCMediaTypeEnum_Step extends BaseStep{
+public class HYB_OCCP_3773_OCCP_3657_Tech_Enabler_For_Implement_Updates_Changes_In_Solutions_Requirements_Step extends BaseStep{
 	RequestSpecification request;
 	
 	@Given("hits GET method for product api-3035")

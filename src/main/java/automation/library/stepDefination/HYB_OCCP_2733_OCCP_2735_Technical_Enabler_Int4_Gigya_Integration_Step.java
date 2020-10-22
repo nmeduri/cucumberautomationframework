@@ -11,11 +11,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 /**
- * This file contains the scenario of user stories OCCP-2735
+ * This file contains the scenario of user stories OCCP-2733- OCCP-2735
  */
-public class HYB_OCCP_2735_Gigya_Integration_with_Hybirs_Step extends BaseClass{
+public class HYB_OCCP_2733_OCCP_2735_Technical_Enabler_Int4_Gigya_Integration_Step extends BaseClass{
 	Gigya_Api_Tool_Page gigyaApiToolPage;
-	public HYB_OCCP_2735_Gigya_Integration_with_Hybirs_Step(TestContext context) throws Exception {
+	public HYB_OCCP_2733_OCCP_2735_Technical_Enabler_Int4_Gigya_Integration_Step(TestContext context) throws Exception {
 		testContext = context;
 		//gigyaApiToolPage = testContext.getPageObjectManager().getGigyaApiToolPage(PageObject.getDriver());
 		driverFactory = new DriverFactory();

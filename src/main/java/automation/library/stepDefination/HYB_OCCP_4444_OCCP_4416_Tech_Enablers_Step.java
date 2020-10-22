@@ -13,9 +13,9 @@ import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
 import junit.framework.Assert;
 /**
- * This file contains the scenario of user stories OCCP-4416
+ * This file contains the scenario of user stories OCCP-4444- OCCP-4416
  */
-public class HYB_OCCP_4416_Add_default_colourorvariant_logic_and_update_data_for_Product_Details_OCC_Step extends BaseStep{
+public class HYB_OCCP_4444_OCCP_4416_Tech_Enablers_Step extends BaseStep{
 RequestSpecification request;
 	
 	@When("user hits product details get method api")

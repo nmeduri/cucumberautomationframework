@@ -1,6 +1,6 @@
-Feature: OCCP_3657_Add new enum codes to CTCMediaTypeEnum
+Feature: OCCP_3773- OCCP_3657_HYB: DEV: Tech Enabler for implement updates, changes in solutions/requirements 
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-3657
+	Description: To test the HYBRIS Test Cases for the story OCCP-3773- OCCP-3657
 
 	    @RegressionTest
       Scenario: TC-3035 HYB:OCCP-3773-OCCP-3657- Verify LIFESTYLE_IMAGE - CTCMediaTypeEnum - Update Product OCC API 

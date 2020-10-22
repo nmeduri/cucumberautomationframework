@@ -1,6 +1,6 @@
-Feature: OCCP_4098: Update implemented OCC API to include baseStoreId
+Feature: OCCP_4444- OCCP_4098: Tech Enablers
 
-	Description: To test the HYBRIS Test Cases for the story OCCP-4098
+	Description: To test the HYBRIS Test Cases for the story OCCP_4444- OCCP-4098
 	
 		    @RegressionTest
     		Scenario: TC-3107 HYB:OCCP-4444-OCCP-4098: Update implemented OCC API to without  baseStoreId - PDP

@@ -7,6 +7,7 @@ import automation.library.locator.AEM_Common_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
+import automation.library.locator.Banners_Locator;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Footer_PageLocator;
@@ -34,6 +35,7 @@ import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
+import automation.library.pageObjects.Banner_Pages;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Footer_Page;
@@ -125,6 +127,8 @@ public class PageObjectManager {
 	private AEM_PDP_Page_Locator gettAEMPDPPPageLocator;
 	private AEM_PLP_Page getAEMPLPPage;
 	private AEM_PLP_Page_Locator getAEMPLPPageLocator;
+	private Banner_Pages getBannerPages;
+	private Banners_Locator getBannerPageLocators;
 	
 	public PageObjectManager() {
 
@@ -452,5 +456,12 @@ public class PageObjectManager {
 	public AEM_PLP_Page_Locator getAEMPLPLocatorPage() {
 		return (getAEMPLPPageLocator == null) ? getAEMPLPPageLocator = new AEM_PLP_Page_Locator() : getAEMPLPPageLocator;
 	}
-
+	/** Returns Instance of Edge To Edge Banner Page File */
+	public Banner_Pages getBannerPages(WebDriver driver) throws Exception {	
+		return (getBannerPages == null) ? getBannerPages = new Banner_Pages(driver) : getBannerPages;	
+	}
+	/** Returns Instance of Edge To Edge Banner Page Locator */
+	public Banners_Locator getBannerPageLocators() {
+		return (getBannerPageLocators == null) ? getBannerPageLocators = new Banners_Locator() : getBannerPageLocators;
+	}
 }
