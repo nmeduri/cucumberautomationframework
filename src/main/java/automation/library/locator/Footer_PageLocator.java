@@ -69,6 +69,7 @@ public class Footer_PageLocator {
 	String copyRightInformation = Property.getProperty(Constant.OR_FILE, "copyRightInformation");
 	String allFooterLinks = Property.getProperty(Constant.OR_FILE, "allFooterLinks");
 	String mobilecustomSupportSection = Property.getProperty(Constant.OR_FILE, "mobilecustomSupportSection");
+	String minusActiveButton = Property.getProperty(Constant.OR_FILE, "minusActiveButton");
 	
 	/**
 	 * gets Locator - Legal Disclaimer
@@ -582,6 +583,16 @@ public class Footer_PageLocator {
 	 */
 	public String get_Mobile_Custom_Support() {
 		return mobilecustomSupportSection;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Minus Button
+	 * 
+	 */
+	
+	public String getMinusButton() {
+		return minusActiveButton;
 	}
  }
 

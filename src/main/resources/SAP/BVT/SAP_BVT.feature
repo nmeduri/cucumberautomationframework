@@ -37,7 +37,6 @@ Feature: Health Check BVT API
     When user hits the GET api with locale en
     Then response JSON should have medias section
     
-    
     Scenario: TC-2091 Get product info - Variants, Features, Warranty
     Given occ api is available
     When user hits the GET api with locale en
@@ -56,7 +55,7 @@ Feature: Health Check BVT API
     Then should return 201 created
     And user hits delete api for guid
     Then should return 200 ok
-    
+   
     Scenario: TC-2092 Add wishlist, delete wishlist - Authenticated user 
     Given access token is available
     When user generate token

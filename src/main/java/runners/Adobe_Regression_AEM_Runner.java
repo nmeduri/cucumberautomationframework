@@ -15,10 +15,10 @@ public final class Adobe_Regression_AEM_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
 			
-			"classpath:Adobe/AEM/Regression/OCCP_868_Search_And_SRP_Auto_Corrective_Search.feature", 
+			"classpath:Adobe/AEM/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@AEM",
+			"--tags", "@Demo",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

@@ -688,6 +688,12 @@ public class Footer_Page extends PageObject {
 	    Assert.assertTrue(value.contains("underline"));
 	}
 	
+	/** This function clicks on minus button*/
+	public void clickMinusSection() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().getMinusButton())), 5);
+	}
+	
+	
 }
 	
 	

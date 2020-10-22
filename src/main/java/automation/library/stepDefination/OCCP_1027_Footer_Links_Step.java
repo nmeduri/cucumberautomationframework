@@ -256,6 +256,12 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickCustomSupportPlusButton();
 	}
 	
+	@And("user click on minus section") 
+		public void user_click_on_minus_section() throws Exception {
+			testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickMinusSection();
+		}
+	
+	
 	@And("user clicks on service and solutions 'minus' section")
 	public void click_on_services_and_solutions_minus_section() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickServicesAndSolutionPlusButton();

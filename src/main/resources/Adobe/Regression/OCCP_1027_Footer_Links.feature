@@ -249,15 +249,16 @@ Feature: OCCP-1027 Footer : Footer Links
 		Then user should be navigate to defined associated page
 		And user navigates back to to previous page
 
-	@RegressionTest @MobileView @TabletView
+	@RegressionTest @MobileView @TabletView 
 	Scenario: TC-2121, User clicks on "-" on Customer Support section -Mobile
+	Given open browser
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And customer support section is displayed
 	And user clicks on Custom Support 'plus' section
 	Then sub section should expand to display below links
 	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on custom support 'minus' section
+	And user click on minus section
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 	
@@ -269,30 +270,32 @@ Feature: OCCP-1027 Footer : Footer Links
 	And user clicks on services and solutions 'plus' section
 	Then sub section should expand to display below links
 	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on service and solutions 'minus' section
+	And user click on minus section
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 	
-	@RegressionTest @MobileView @TabletView @SmokeTest
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2125, User clicks on "-" on "About Us" section-Mobile
+	Given open browser
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And about us section is displayed
 	And user clicks on about us 'plus' section
 	Then sub section should expand to display below links
 	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on about us 'minus' section
+	And user click on minus section
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign
 	
 	@RegressionTest @TabletView @MobileView 
-	Scenario: TC-2127, User clicks on "-" on "Legal" section-Mobile (close browser)
+	Scenario: TC-2127, User clicks on "-" on "Legal" section-Mobile
+	Given open browser
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And legal section is displayed
 	And user clicks on legal 'plus' section
 	Then sub section should expand to display below links
 	Then the 'plus' sign is replaced by 'minus' sign
-	And user clicks on legal 'minus' section
+	And user click on minus section
 	Then the sub section should be collapsed to the original view and expanded sub-section links should not be displayed
 	And the 'plus' sign should be displayed instead of 'minus' sign

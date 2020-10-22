@@ -62,6 +62,11 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigateTo_PDP_Page();
 	}
 	
+	@Given("user manual url is available")
+	public void user_manual_url_is_available() throws Exception {
+		PageObject.getDriver().navigate().to("https://qa1-www.canadiantire.ca/content/canadiantire/en/pdpnew.html?productId=1981108");
+	}
+	
 	@Given("product detail page url is available on mobile") 
 	public void pdp_url_is_available_on_mobile_view() throws Exception {
 		

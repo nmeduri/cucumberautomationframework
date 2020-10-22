@@ -62,7 +62,7 @@ Feature: OCCP-870 PDP Information, Product Manual, 	Product Returns
     
     @RegressionTest @WebView @WideScreen
     Scenario: TC-109 Verify the product manual is displayed on the PDP for a given product 
-    Given pdp url is available
+    Given user manual url is available
     When pdp page is displayed for the product
     And scroll up to page
     Then product manual title is displayed

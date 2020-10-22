@@ -49,4 +49,29 @@ public class OCCP_862_PLP_SortingStep extends BaseClass {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyPriceLowToHigh();
 	}
 	
+	@And("user select hide option")
+	public void user_select_hide_option() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickHideOption();
+	}
+	
+	@And("sort option is not displayed on the site")
+	public void sort_option_is_not_displayed_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).notDisplaySortOption();
+	}
+	
+	@And("reverse the sort changes")
+	public void reverse_the_product_number_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseProductNumberChanges();
+	}
+	
+	@And("user click on unhide option")
+	public void user_click_on_unhide_option() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickUnhideOption();
+	}
+	
+	@And("select sorting tab")
+	public void select_sorting_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickSortingTab();
+	}
+	
 }

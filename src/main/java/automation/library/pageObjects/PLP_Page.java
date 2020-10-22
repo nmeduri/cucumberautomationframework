@@ -448,4 +448,14 @@ public class PLP_Page extends PageObject {
 	public void displayReviewStars() throws Exception {
 		$display($(Loc.CLASSNAME, testContext.getPageObjectManager().getPLPLocatorPage().get_Review_Star()));
 	}
+	
+	/** Sort option is not dispalyed */
+	public void notDisplaySortOption() throws Exception {
+		try {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSortOption()));
+			fail();
+		}catch(Exception e) {
+			
+		}
+	}
 }	

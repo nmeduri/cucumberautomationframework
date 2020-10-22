@@ -15,6 +15,7 @@ public final class Sap_BVT_Runner extends BaseClass {
 
 			"classpath:SAP/BVT/SAP_BVT.feature", 
 			"--glue", "automation.library.stepDefination",
+			"--tags", "@Demo",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json", 
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

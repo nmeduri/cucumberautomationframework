@@ -164,6 +164,92 @@ public class AEM_PLP_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getShowMoreCountField()), FileReaderManager.getInstance().getAEMDataReader().get_Pagination_Result_Message_Changes());
 	}
 	
+	/** enter show more button text */
+	public void enterShowMoreButtonText() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button())), 5);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button()), FileReaderManager.getInstance().getAEMDataReader().get_Show_More_Button());
+	}
+	
+	/** This function is verify that pagination result message changes are reflected on site */
+	public void verifyShowMoreButtonTextUpdateOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button())), 10);
+		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Show_More_Button()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View_Button()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button())), 10);
+		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Show_More_Button()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** reverse the show more button changes */
+	public void reverseShowMoreButtonChanges() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button())), 5);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button()), FileReaderManager.getInstance().getAEMDataReader().get_Show_More_Count_Changes());
+	}
+	
+	/** enter end of pagination message */
+	public void enterEndOfPaginationMessage() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage())), 5);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage()), FileReaderManager.getInstance().getAEMDataReader().get_End_Of_Pagination_Message());
+	}
+	
+	/** This function is verify that number of product changes are reflected on site */
+	public void verifyEndOfPaginationMessageChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage())), 10);
+		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage())).contains(FileReaderManager.getInstance().getAEMDataReader().get_End_Of_Pagination_Message()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View_Button()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage())), 10);
+		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage())).contains(FileReaderManager.getInstance().getAEMDataReader().get_End_Of_Pagination_Message()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** reverse the End OF Pagination Message changes */
+	public void reverseEndOfPaginationMessageChanges() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage())), 5);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button()), FileReaderManager.getInstance().getAEMDataReader().get_End_Of_Pagination_Message_Changes());
+	}
+	
+	/** enter back to top button label */
+	public void enterBackToTopButtonLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getBackToTopButton())), 5);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getBackToTopButton()), FileReaderManager.getInstance().getAEMDataReader().get_Back_To_Top());
+	}
+	
+	/** This function is verify that back to top button's label changes are reflected on site */
+	public void verifyBackToTopButtonLabelChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getBackToTopButton())), 10);
+		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getBackToTopButton())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Back_To_Top()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View_Button()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEndOfPaginationMessage())), 10);
+		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getBackToTopButton())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Back_To_Top()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** reverse the back to top button's label changes */
+	public void reverseBackToTopButtonLabelChanges() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getBackToTopButton())), 5);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Show_More_Button()), FileReaderManager.getInstance().getAEMDataReader().get_Back_To_Top_Changes());
+	}
+	
+	/** user click on hide option */
+	public void clickHideOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getHideOption()));
+	}
+	
+	/** user click on unhide option */
+	public void clickUnhideOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getUnhideOption()));
+	}
+	
+	/** click on sorting tab */
+	public void clickSortingTab() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getSortingTab()));
+	}
 	
 	
 }

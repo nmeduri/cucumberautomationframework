@@ -416,4 +416,76 @@ public class AEMDataReader {
 			return searchResponseCount;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+	
+	/**
+	 * 
+	 * get Data - Show More Button
+	 * 
+	 */
+	public String get_Show_More_Button() {
+		String showMoreButtonAEM = Property.getProperty(Constant.AEM_DATA_FILE, "showMoreButtonAEM");
+		if(showMoreButtonAEM != null)
+			return showMoreButtonAEM;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Show More Button
+	 * 
+	 */
+	public String get_Show_More_Button_Changes() {
+		String showMoreButtonChangeAEM = Property.getProperty(Constant.AEM_DATA_FILE, "showMoreButtonChangeAEM");
+		if(showMoreButtonChangeAEM != null)
+			return showMoreButtonChangeAEM;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - End of Pagination Message
+	 * 
+	 */
+	public String get_End_Of_Pagination_Message() {
+		String endOfPaginationMessage = Property.getProperty(Constant.AEM_DATA_FILE, "endOfPaginationMessage");
+		if(endOfPaginationMessage != null)
+			return endOfPaginationMessage;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - End Of Pagination Message
+	 * 
+	 */
+	public String get_End_Of_Pagination_Message_Changes() {
+		String endOfPaginationMessageChange = Property.getProperty(Constant.AEM_DATA_FILE, "endOfPaginationMessageChange");
+		if(endOfPaginationMessageChange != null)
+			return endOfPaginationMessageChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Back To Top
+	 * 
+	 */
+	public String get_Back_To_Top() {
+		String backToTopButtonLabel = Property.getProperty(Constant.AEM_DATA_FILE, "backToTopButtonLabel");
+		if(backToTopButtonLabel != null)
+			return backToTopButtonLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Back To Top
+	 * 
+	 */
+	public String get_Back_To_Top_Changes() {
+		String backToTopButtonLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "backToTopButtonLabelChange");
+		if(backToTopButtonLabelChange != null)
+			return backToTopButtonLabelChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
 }

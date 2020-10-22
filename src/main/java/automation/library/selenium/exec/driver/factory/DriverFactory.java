@@ -86,7 +86,7 @@ public class DriverFactory extends BaseClass {
 		String String = (java.lang.String) conf.getProperty("className");
 		switch (configFileReader.getServerType()) {
 		case "saucelabs":
-			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner")) {
+			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Adobe_Regression_AEM_Runner")) {
 				driver = Headless_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
@@ -115,7 +115,7 @@ public class DriverFactory extends BaseClass {
 			}
 			break;
 		case "headless":
-			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner")) {
+			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner") || String.equalsIgnoreCase("Adobe_Regression_AEM_Runner")) {
 				driver = Headless_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {
@@ -146,7 +146,7 @@ public class DriverFactory extends BaseClass {
 			}
 			break;
 		case "local":
-			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner") || String.equalsIgnoreCase("AEM_Regression_Runner")) {
+			if (String.equalsIgnoreCase("Adobe_BVT_Runner") || String.equalsIgnoreCase("Adobe_Regression_Web_Runner") || String.equalsIgnoreCase("Adobe_Regression_Runner") || String.equalsIgnoreCase("Latest_Commit_Runner") || String.equalsIgnoreCase("Last_Commit_Runner") || String.equalsIgnoreCase("AEM_Regression_Runner") || String.equalsIgnoreCase("Adobe_Regression_AEM_Runner")) {
 				driver = Local_Chrome_Driver_Manager.createDriver();
 				break;
 			} else if (String.equalsIgnoreCase("Adobe_Regression_Mobile_Runner")) {

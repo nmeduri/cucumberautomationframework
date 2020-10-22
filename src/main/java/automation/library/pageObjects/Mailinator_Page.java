@@ -137,8 +137,8 @@ public class Mailinator_Page extends PageObject {
 	
 	/** This function is verify to Moment Ago is displayed */
 	public void displayMomentAgo() throws Exception {
-		Thread.sleep(5000);
-		PageObject.getDriver().navigate().refresh();
+//		Thread.sleep(5000);
+//		PageObject.getDriver().navigate().refresh();
 		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Moment_Ago())), 10);
 	}
 }

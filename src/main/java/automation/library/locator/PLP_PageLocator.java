@@ -52,6 +52,8 @@ public class PLP_PageLocator {
 	String numberOfColours = Property.getProperty(Constant.OR_FILE, "numberOfColours");
 	String productCard = Property.getProperty(Constant.OR_FILE, "productCard");
 	String reviewsStars = Property.getProperty(Constant.OR_FILE, "reviewsStars");
+	String sortOption = Property.getProperty(Constant.OR_FILE, "sortOption");
+			
 	
 	/**
 	 * gets Locator - List View
@@ -414,5 +416,14 @@ public class PLP_PageLocator {
 	
 	public String get_Review_Star() {
 		return reviewsStars;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Sort Option
+	 * 
+	 */
+	public String getSortOption() {
+		return sortOption;
 	}
 }

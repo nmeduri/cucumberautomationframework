@@ -16,7 +16,12 @@ public class AEM_PLP_Page_Locator {
 	String showMoreCountField = Property.getProperty(Constant.OR_FILE, "showMoreCountField");
 	String searchResponseCount = Property.getProperty(Constant.OR_FILE, "searchResponseCount");
 	String paginationResultMessage = Property.getProperty(Constant.OR_FILE, "paginationResultMessage");
-			
+	String showMoreButtonAEM = Property.getProperty(Constant.OR_FILE, "showMoreButtonAEM");
+	String endOfPaginationMessage = Property.getProperty(Constant.OR_FILE, "endOfPaginationMessage");
+	String backToTopButtonLabelAEM = Property.getProperty(Constant.OR_FILE, "backToTopButtonLabelAEM");
+	String hideOptionAEM = Property.getProperty(Constant.OR_FILE, "hideOptionAEM");
+	String unhideOptionAEM = Property.getProperty(Constant.OR_FILE, "unhideOptionAEM");
+	String sortingTab = Property.getProperty(Constant.OR_FILE, "sortingTab");		
 			
 
     /**
@@ -75,4 +80,55 @@ public class AEM_PLP_Page_Locator {
 		return paginationResultMessage;
 	}
 	
+	/**
+	 * 
+	 * get Locator - Show More Button
+	 * 
+	 */
+	public String get_Show_More_Button() {
+		return showMoreButtonAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - End of Pagination Message
+	 * 
+	 */
+	public String getEndOfPaginationMessage() {
+		return endOfPaginationMessage;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Back To Top Button
+	 * 
+	 */
+	public String getBackToTopButton() {
+		return backToTopButtonLabelAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Hide Option (Sort By)
+	 * 
+	 */
+	public String getHideOption() {
+		return hideOptionAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Unhide option (Sort By)
+	 */
+	public String getUnhideOption() {
+		return unhideOptionAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Sorting Tab
+	 */
+	public String getSortingTab() {
+		return sortingTab;
+	}
 }

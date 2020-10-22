@@ -119,6 +119,50 @@ public class OCCP_939_PLP_SRP_Load_More extends BaseClass {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reversePaginationResultMessageChanges();
 	}
 	
+	@And("edit the text for show more cta")
+	public void edit_the_text_for_show_more_cta() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterShowMoreButtonText();
+	}
+	
+	@Then("the show more text changes are reflect on plp for both grid list views")
+	public void the_show_more_text_changes_are_reflect_on_plp_for_both_grid_list_views() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyShowMoreButtonTextUpdateOnSite();
+	}
+	
+	@And("reverse show more button changes")
+	public void reverse_show_more_button_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseShowMoreButtonChanges();
+	}
+	
+	@And("edit copy for the first part of the end of pagination message")
+	public void edit_copy_for_the_first_part_of_the_end_of_pagination_message() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterEndOfPaginationMessage();
+	}
+	
+	@Then("the end of pagination message changes are reflected on a plp for both list grid view")
+	public void the_end_of_pagination_message_changes_are_reflected_on_a_plp_for_both_list_gird_view() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyEndOfPaginationMessageChangesReflectOnSite();
+	}
+	
+	@And("reverse end of pagination message changes")
+	public void reverse_End_Of_Pagination_Message_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseEndOfPaginationMessageChanges();
+	}
+	
+	@And("edit label for back to top button")
+	public void edit_label_for_back_to_top_button() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterBackToTopButtonLabel();
+	}
+	
+	@Then("the back to top button label changes are reflected on a plp for both list grid view")
+	public void the_back_to_top_button_label_changes_are_reflected_on_a_plp_for_both_list_gird_view() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyBackToTopButtonLabelChangesReflectOnSite();
+	}
+	
+	@And("reverse back to top button label changes")
+	public void reverse_Back_To_Top_Button_Label_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).reverseBackToTopButtonLabelChanges();
+	}
 	
  
 }
