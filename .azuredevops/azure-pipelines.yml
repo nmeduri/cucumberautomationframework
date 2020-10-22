@@ -53,6 +53,7 @@ stages:
   - stage: CI
     jobs:
       - job: CI
+        timeoutInMinutes: 0
         displayName: CI
         steps:
         
