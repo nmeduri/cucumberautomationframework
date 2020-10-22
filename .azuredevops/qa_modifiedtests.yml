@@ -41,27 +41,6 @@ steps:
     system_accesstoken: $(System.AccessToken)
   displayName: Get Changed Files Name
 
-# Run modifed tests in D1      
-- bash: |
-        cd $(Build.StagingDirectory) && java -jar Last_Commit_Runner.jar $(featurefilenames)
-        if [ $? = 0 ] ; then
-          echo "All test cases executed successfully"
-        else
-          echo "##vso[task.logissue type=warning]Test cases have been failed. Please check the issue and do not merge the PR directly"
-          echo "##vso[task.complete result=SucceededWithIssues;]"
-        fi
-  displayName: Run only modified tests in D1
-  env:
-    environment: D1
-
-# Publish D1 extent report
-- task: PublishPipelineArtifact@1
-  displayName: Publish Modified Tests Extent Report for D1 Environment
-  inputs:
-    targetPath: '$(Build.StagingDirectory)/cucumber-reports/'
-    artifact: Modified Tests Extent Report for D1
-    publishLocation: 'pipeline'
-
 # Run modified tests in D2          
 - bash: |
         cd $(Build.StagingDirectory) && java -jar Last_Commit_Runner.jar $(featurefilenames)
