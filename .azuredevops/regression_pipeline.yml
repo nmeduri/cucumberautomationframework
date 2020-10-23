@@ -1,0 +1,164 @@
+# QA Test Automation Pipeline for Adobe
+
+schedules:
+- cron: "30 19 * * Mon-Fri"
+  displayName: Daily midnight build
+  branches:
+    include:
+    - develop
+  always: true
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+parameters:
+
+- name: AEM_Regression
+  displayName: Run AEM Regression Suite
+  type: boolean
+  default: true
+
+- name: SAP_Regression
+  displayName: Run SAP Regression Suite
+  type: boolean
+  default: true 
+
+- name: Environment
+  displayName: Environment name to run tests
+  type: string
+  default: D2
+  values:
+    - D1
+    - D2
+
+stages:
+  - stage: CI
+    jobs:
+      - job: CI
+        timeoutInMinutes: 0
+        displayName: CI
+        steps:
+        
+        #copy lighthouse URLs files to be published
+        - task: CopyFiles@2
+          displayName: 'Copy lighthouse URL file'
+          inputs:
+            Contents: |
+              $(Pipeline.Workspace)/s/lighthouse_execution_urls.txt
+            TargetFolder: '$(Build.StagingDirectory)\Lighthouse'
+
+        - task: PublishPipelineArtifact@1
+          displayName: Publish Lighthouse artifact
+          inputs:
+            targetPath: '$(Build.StagingDirectory)\Lighthouse'
+            artifactName: 'Lighthouse'
+
+        # build
+        - task: Maven@3
+          displayName: Maven build task
+          inputs:
+            mavenPomFile: ./pom.xml
+            mavenOptions: '-Xmx3072m'
+            javaHomeOption: 'JDKVersion'
+            jdkVersionOption: '1.8'
+            jdkArchitectureOption: 'x64'
+            goals: 'package'
+            options: '-DoutputDirectory=$(Build.StagingDirectory)'
+            
+        # move files to appropriate subfolders
+        - task: CopyFiles@2
+          inputs:
+            SourceFolder: '$(Build.StagingDirectory)'
+            TargetFolder: '$(Build.StagingDirectory)\Adobe'
+            Contents: 'Adobe**.jar'
+        
+        - task: CopyFiles@2
+          inputs:
+            SourceFolder: $(Build.StagingDirectory)
+            TargetFolder: $(Build.StagingDirectory)\Sap
+            Contents: 'Sap**.jar'
+          
+        - task: PublishPipelineArtifact@1
+          displayName: Publish Adobe artifact
+          inputs:
+            targetPath: '$(Build.StagingDirectory)\Adobe'
+            artifactName: 'Adobe'
+            
+        - task: PublishPipelineArtifact@1
+          displayName: Publish Sap artifact
+          inputs:
+            targetPath: '$(Build.StagingDirectory)\Sap'
+            artifactName: 'Sap'
+
+  - stage: Run_Regression_Test_Suites
+    dependsOn: CI
+    condition: and( succeeded(), in( 'True', '${{ parameters.AEM_Regression }}', '${{ parameters.SAP_Regression}}' ) )
+    jobs:
+      - job: Run_Regression_Test_Suites
+        timeoutInMinutes: 0
+        displayName: Run Regression Test Suites
+        condition: in('True', '${{ parameters.AEM_Regression }}', '${{ parameters.SAP_Regression }}' )
+        variables:
+          - name: environment
+            value: ${{ parameters.Environment }}
+        steps:
+          - ${{ if eq(parameters.SAP_Regression, true) }}:
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Sap
+                    pattern: 'Sap_Regression*.jar'
+                    reportname: 'SAP Regression Extent Report'
+                    testname: 'SAP Regression'
+          - ${{ if eq(parameters.AEM_Regression, true) }}:
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Mobile*.jar'
+                    reportname: 'Adobe Regression Mobile Extent Report'
+                    testname: 'Adobe Regression Mobile'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web_Runner.jar'
+                    reportname: 'Adobe Regression Web Extent Report'
+                    testname: 'Adobe Regression Web'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Wide_Screen*.jar'
+                    reportname: 'Adobe Regression Wide Screen Extent Report'
+                    testname: 'Adobe Regression Wide Screen'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Tablet*.jar'
+                    reportname: 'Adobe Regression Tablet Extent Report'
+                    testname: 'Adobe Regression Tablet'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web_Edge*.jar'
+                    reportname: 'Adobe Regression Web Edge Extent Report'
+                    testname: 'Adobe Regression Web Edge'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web_firefox*.jar'
+                    reportname: 'Adobe Regression Web Firefox Extent Report'
+                    testname: 'Adobe Regression Web Firefox'
+            - template: qa_tests.yml
+              parameters:
+                items:
+                  - projname: Adobe
+                    pattern: 'Adobe_Regression_Web_Safari*.jar'
+                    reportname: 'Adobe Regression Web Safari Extent Report'
+                    testname: 'Adobe Regression Web Safari'
