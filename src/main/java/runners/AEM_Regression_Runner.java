@@ -18,7 +18,7 @@ public final class AEM_Regression_Runner extends BaseClass {
 			"classpath:Adobe/AEM/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@AEM",
+			"--tags", "@Regress",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

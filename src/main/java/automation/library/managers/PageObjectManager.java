@@ -4,6 +4,8 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Common_Page_Locator;
+import automation.library.locator.AEM_Footer_Page_Locator;
+import automation.library.locator.AEM_Link_Card_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
@@ -32,6 +34,8 @@ import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Common_Page;
+import automation.library.pageObjects.AEM_Footer_Page;
+import automation.library.pageObjects.AEM_Link_Card_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
@@ -129,6 +133,10 @@ public class PageObjectManager {
 	private AEM_PLP_Page_Locator getAEMPLPPageLocator;
 	private Banner_Pages getBannerPages;
 	private Banners_Locator getBannerPageLocators;
+	private AEM_Link_Card_Page getAEMLinkCardPage;
+	private AEM_Link_Card_Page_Locator getAEMLInkCardPageLocator;
+	private AEM_Footer_Page_Locator getAEMFooterLocatorPage;
+	private AEM_Footer_Page getAEMFooterPage; 
 	
 	public PageObjectManager() {
 
@@ -463,5 +471,25 @@ public class PageObjectManager {
 	/** Returns Instance of Edge To Edge Banner Page Locator */
 	public Banners_Locator getBannerPageLocators() {
 		return (getBannerPageLocators == null) ? getBannerPageLocators = new Banners_Locator() : getBannerPageLocators;
+	}
+	
+	/** Returns Instance of AEM Link Card Page */
+	public AEM_Link_Card_Page getAEMLinkCardPage(WebDriver driver) {
+		return (getAEMLinkCardPage == null) ? getAEMLinkCardPage = new AEM_Link_Card_Page(driver) : getAEMLinkCardPage;
+	}
+	
+	/** Returns Instance of AEM Link Card Page Locator */
+	public AEM_Link_Card_Page_Locator getAEMLinkCardPageLocator() {
+		return (getAEMCommonPageLocator == null) ? getAEMLInkCardPageLocator = new AEM_Link_Card_Page_Locator() : getAEMLInkCardPageLocator;
+	}
+	
+	/** Return Instance of AEM Footer Page */
+	public AEM_Footer_Page getAEMFooterPage(WebDriver driver) {
+		return (getAEMFooterPage == null) ? getAEMFooterPage = new AEM_Footer_Page(driver) : getAEMFooterPage;
+	}
+	
+	/** Return Instance of AEM Footer Locator Page */
+	public AEM_Footer_Page_Locator getAEMFooterLocatorPage() {
+		return (getAEMFooterLocatorPage == null) ? getAEMFooterLocatorPage = new AEM_Footer_Page_Locator() : getAEMFooterLocatorPage;
 	}
 }

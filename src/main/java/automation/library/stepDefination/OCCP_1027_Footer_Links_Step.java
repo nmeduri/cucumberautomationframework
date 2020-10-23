@@ -276,6 +276,76 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	public void plus_should_be_displayed_instead_of_minus() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayCustomSupportPlusButton();
 	}
+	
+	@When("AEM author with access to configure footer load on the page")
+	public void aem_author_with_access_to_configure_footer_load_on_the_page() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).navigateTo_Footer_Page();
+	}
+	
+	@And("click on footer Pannel")
+	public void click_on_footer_pannel() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).clickFooterPannel();
+	}
+	
+	@And("update customer service sub section tilte details")
+	public void update_customer_service_sub_section_title_details() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterCustomerServerSubSectionTitleDetails();
+	}
+	
+	@Then("the customer service sub section changes are reflect on site")
+	public void the_customer_service_sub_section_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyCustomerServiceSectionChangesReflectOnSite();
+	}
+	
+	@And("reverse the customer service section changes")
+	public void reverse_the_customer_service_section_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesCustomerServerSubSectionTitleDetails();
+	}
+	
+	@And("update service and solutions sub section tilte details")
+	public void update_service_and_solution_sub_section_title_details() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterServiceAndSolutionsSubSectionTitleDetails();
+	}
+	
+	@Then("the service and solution sub section changes are reflect on site")
+	public void the_service_and_solution_sub_section_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyServiceAndSolutionSectionChangesReflectOnSite();
+	}
+	
+	@And("reverse the service and solutions section changes")
+	public void reverse_the_services_and_solutions_section_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesServiceAndSolutionsSubSectionTitleDetails();
+	}
+	
+	@And("update about us sub section tilte details")
+	public void update_about_us_sub_section_title_details() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterAboutUsSubSectionTitleDetails();
+	}
+	
+	@Then("the about us sub section changes are reflect on site")
+	public void the_about_us_sub_section_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyAbutUsSectionChangesReflectOnSite();
+	}
+	
+	@And("reverse the about us section changes")
+	public void reverse_the_about_us_section_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesAboutUsSubSectionTitleDetails();
+	}
+	
+	@And("update legal sub section tilte details")
+	public void update_legal_sub_section_title_details() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterLegalSubSectionTitleDetails();
+	}
+	
+	@Then("the legal sub section changes are reflect on site")
+	public void the_legal_sub_section_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyLegalSectionChangesReflectOnSite();
+	}
+	
+	@And("reverse the legal section changes")
+	public void reverse_the_legal_section_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesAboutUsSubSectionTitleDetails();
+	}
 
 	
 	
