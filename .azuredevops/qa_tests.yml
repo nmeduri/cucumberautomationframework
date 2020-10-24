@@ -63,5 +63,5 @@ steps:
   displayName: Extent Report
   inputs:
     targetPath: '$(workingDir)/cucumber-reports/'
-    artifact: '$(reportName)'
+    artifact: '$(reportName)_$(System.JobAttempt)'
     publishLocation: 'pipeline'
