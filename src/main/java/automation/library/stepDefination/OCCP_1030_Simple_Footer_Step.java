@@ -3,10 +3,13 @@ package automation.library.stepDefination;
 
 import java.util.Set;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
+import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.Footer_Page;
@@ -124,7 +127,7 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnAccessibility();
 	}
 	
-	@And("in simple footer access and click on legal")
+	@And("in simple footer access and click on ")
 	public void in_simple_footer_access_and_click_on_legal() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnlegal();
 	}
@@ -223,6 +226,277 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 	public void clickable_text_view_less_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayEditableViewLessMobile();
 	}
+	@Then("scroll down to AEM footer")
+	public void scroll_down_to_AEM_footer() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).scrollDownToAEMFooter();	
+	}
+	@Then("scroll down to CopyRight")
+	public void scroll_down_to_CopyRight() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).scrollDownToCopyRight();	
+	}
+	@When("AEM author with access to configure the footer component section")
+	public void aem_author_with_access_to_configure_the_footer_component_section() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).navigateTo_FooterComponent_Page();
+	}
+	@Then ("click on footer component")
+	public void click_footer_component() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).clickFooterComponent();	
+	}
+	@And ("verify the legal text is authorable")
+	public void verify_the_legal_text_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyLegalTextisAuthorable();
+	}
+	@Then ("access the text property and author the text mentioned in test data")
+	public void access_the_text_property_and_author_the_text_mentioned_in_test_data() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateLegalTextOfFooterComponent();
+	}
+	@Then ("the changes are reflected on a footer component")
+	public void Verify_the_vhanges_reflected_in_footer() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedLegalTextOnSite();
+	}
+	@And ("reverse the legal text changes")
+	public void reverse_legalText_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateLegalTextOfFooterComponent();
+	}
+	@And ("verify if URL for Legal Text is authorable")
+	public void verify_the_legal_text_URL_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyLegalTextURLisAuthorable();
+	}
+	@Then ("access the text property and author the URL mentioned in the test data")
+	public void access_the_text_property_and_author_the_URL_mentioned_in_test_data() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateLegalTextURLOfFooterComponent();
+	}
+	@Then ("the legal text URL changes are reflected on a footer component")
+	public void Verify_the_URL_changes_reflected_in_footer() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedLegalTextURLOnSite();
+	}
+	@And ("reverse the legal text URL changes")
+	public void reverse_legalTextURL_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateLegalTextURLOfFooterComponent();
+	}
+	@And ("verify the term and conditions text is authorable")
+	public void verify_the_termnconditions_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyTermsNConditionTextisAuthorable();
+	}
+	@Then ("access the text property and author the terms and condition text mentioned in test data")
+	public void access_the_text_property_and_author_the_TnC_mentioned_in_test_data() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateTermsnConditionTextOfFooterComponent();
+	}
+	@Then ("the terms n condition text changes are reflected on a footer component")
+	public void Verify_the_TnC_changes_reflected_in_footer() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedtncTextOnSite();
+	}
+	@And ("reverse the TnC text changes")
+	public void reverse_TnCText_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertTermsNConditionTextLabelChanges();
+	}
+
+	@And ("verify the term and conditions text URL is authorable")
+	public void verify_the_termnconditions_URL_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyTermsNConditionURLisAuthorable();
+	}
+	@Then ("access the text property and author the terms and condition URL mentioned in test data")
+	public void access_the_text_property_and_author_the_TnC_URL_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateTermsnConditionURLofFooterComponent();
+	}
+	@Then ("the terms n condition URL changes are reflected on a footer component")
+	public void Verify_the_TnC_URL_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedtncURLOnSite();
+	}
+	@And ("reverse the TnC URL changes")
+	public void reverse_TnCURL_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertTermsNConditionURLLabelChanges();
+	}
+	@And ("verify the Privacy Policy text is authorable")
+	public void verify_the_PrivacyPolicy_Text_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyPrivacyPolicyTextisAuthorable();
+	}
+	@Then ("access the text property and author the Privacy Policy text mentioned in test data")
+    public void access_the_text_property_and_author_the_privacyPolicy_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updatePrivacypolicyTextOfFooterComponent();
+	}
+	@Then ("the Privacy Policy text changes are reflected on a footer component")
+	public void Verify_the_PrivacyPolicy_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedPrivacyPolicyTextOnSite();
+	}
+	@And ("reverse the Privacy Policy text text changes")
+	public void reverse_PrivacyPolicy_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertPrivacyPolicyTextLabelChanges();
+	}
+	@And ("verify the Privacy Policy text URL is authorable")
+	public void verify_the_PrivacyPolicy_URL_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyPrivacyPolicyURLisAuthorable();
+	}
+	@Then ("access the text property and author the Privacy Policy URL mentioned in test data")
+    public void access_the_text_property_and_author_the_privacyPolicy_URL_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updatePrivacyPolicyURLofFooterComponent();
+	}
+	@Then ("the Privacy Policy URL changes are reflected on a footer component")
+	public void Verify_the_PrivacyPolicy_URL_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedPrivacyPolicyURLOnSite();
+	}
+	@And ("reverse the Privacy Policy URL changes")
+	public void reverse_PrivacyPolicy_URL_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertPrivacyPolicyURLLabelChanges();
+	}
+	@And ("verify the Site map text is authorable")
+	public void verify_the_SiteMap_Text_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifysitemapTextisAuthorable();
+	}
+	@Then ("access the text property and author the Site map text mentioned in test data")
+    public void access_the_text_property_and_author_the_SiteMap_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateSitemapTextOfFooterComponent();
+	}
+	@Then ("the Site map text changes are reflected on a footer component")
+	public void Verify_the_sitemap_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedsitemapOnSite();
+	}
+	@And ("reverse the Site map text changes")
+	public void reverse_SiteMap_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertSiteMapTextLabelChanges();
+		}
+	@And ("verify the Site Map text URL is authorable")
+	public void verify_the_SiteMapURL_Text_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifySiteMapURLisAuthorable();
+	}
+	@Then ("access the text property and author the Site Map URL mentioned in test data")
+    public void access_the_text_property_and_author_the_SiteMap_URL_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateSiteMapURLofFooterComponent();
+	}
+	@Then ("the Site Map URL changes are reflected on a footer component")
+	public void Verify_the_sitemap_URL_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedSiteMapURLOnSite();
+	}
+	@And ("reverse the Site Map URL changes")
+	public void reverse_SiteMapURL_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertSiteMapURLLabelChanges();
+		}
+	@And ("verify the Accessibility text is authorable")
+	public void verify_the_Accessibility_Text_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyAccessibilityTextisAuthorable();
+	}
+	@Then ("access the text property and author the Accessibility text mentioned in test data")
+    public void access_the_text_property_and_author_the_Accessibility_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateAccessibilityTextOfFooterComponent();
+	}
+	@Then ("the Accessibility text changes are reflected on a footer component")
+	public void Verify_the_Accesibilty_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedAccessibilityOnSite();
+	}
+	@And ("reverse the Accessibility text changes")
+	public void reverse_Accessibility_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertAccessibilityTextLabelChanges();
+		}
+	@And ("verify the Accessibility URL is authorable")
+	public void verify_the_Accessibility_URL_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyAccessibilityURLisAuthorable();
+	}
+	@Then ("access the text property and author the Accessibility URL mentioned in test data")
+    public void access_the_text_property_and_author_the_AccessibilityURL_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateAccessibilityURLOfFooterComponent();
+	}
+	@Then ("the Accessibility URL changes are reflected on a footer component")
+	public void Verify_the_AccesibiltyURL_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedAccessibilityURLOnSite();
+	}
+	@And ("reverse the Accessibility URL changes")
+	public void reverse_AccessibilityURL_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertAccessibilityURLLabelChanges();
+		}
+	@And ("verify the Copyright text is authorable")
+	public void verify_the_Copyright_URL_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyCopyRightTextisAuthorable();
+	}
+	@Then ("access the text property and author the Copyright text mentioned in test data")
+    public void access_the_text_property_and_author_the_Copyright_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateCopyRightTextOfFooterComponent();
+	}
+	@Then ("the Copyright text changes are reflected on a footer component")
+	public void Verify_the_Copyright_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedCopyRightOnSite();
+	}
+	@And ("reverse the Copyright text changes")
+	public void reverse_Copyright_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertCopyRightTextLabelChanges();
+		}
 	
+	@And ("verify the Legal Disclaimer text is authorable")
+	public void verify_the_LegalDisclaimer_URL_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyLegalDisclaimerTextisAuthorable();
+	}
+	@Then ("access the text property and author the Legal Disclaimer text mentioned in test data")
+    public void access_the_text_property_and_author_the_LegalDisclaimer_mentioned_in_test_data() throws Exception {
+		
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateLegalDisclaimerOfFooterComponent();
+	}
+	@Then ("the Legal Disclaimer text changes are reflected on a footer component")
+	public void Verify_the_LegalDisclaimer_changes_reflected_in_footer() throws Exception {
+		Thread.sleep(4000);
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedLegalDisclaimerOnSite();
+	}
+	@And ("reverse the Legal Disclaimer text changes")
+	public void reverse_LegalDisclaimer_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertLegalDisclaimerTextLabelChanges();
+		}
+	@And ("Verify if View More Text is authorable")
+	public void verify_ViewMore_Text_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyViewMoreTextisAuthorable();
+	}
+	@And ("Verify if View Less Text is authorable")
+	public void verify_ViewLess_Text_is_authorable() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyViewLessTextisAuthorable();
+	}
+	@Then ("access the text property and author the View more text mentioned in test data")
+	public void access_the_text_property_and_author_the_ViewMore_mentioned_in_test_data() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateviewMoreinFooterComponent();
+	}
+	@Then ("access the text property and author the View less text mentioned in test data")
+	public void access_the_text_property_and_author_the_ViewLess_mentioned_in_test_data() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateviewlessinFooterComponent();
+	}
+	@Then ("the view more text changes are reflected on a footer component")
+	public void Verify_the_ViewMore_changes_reflected_in_footer() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedViewMoreOnSite();
+	}
+	@Then ("the view Less text changes are reflected on a footer component")
+	public void Verify_the_ViewLess_changes_reflected_in_footer() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayUpdatedViewlessOnSite();
+	}
+	@And ("reverse the View More text changes")
+	public void reverse_ViewMore_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertViewMoreTextLabelChanges();
+		}
+	@And ("reverse the View less text changes")
+	public void reverse_ViewLess_Changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertViewLessTextLabelChanges();
+		}
+
 	
+
+
 }

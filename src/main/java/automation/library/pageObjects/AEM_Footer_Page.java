@@ -1,14 +1,23 @@
 package automation.library.pageObjects;
 
 import static org.testng.Assert.fail;
-
 import java.util.List;
 import java.util.Set;
-
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import automation.library.cucumber.TestContext;
+import automation.library.enums.Locator.Loc;
+import automation.library.logdetail.Log;
+import automation.library.managers.FileReaderManager;
+import automation.library.managers.PageObjectManager;
+import automation.library.selenium.core.Element;
+import automation.library.selenium.core.PageObject;
+import automation.library.selenium.exec.driver.factory.DriverFactory;
+import net.bytebuddy.implementation.bytecode.constant.TextConstant;
 import org.openqa.selenium.WebDriver;import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -21,9 +30,8 @@ import automation.library.selenium.core.Element;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
-
 /**
- * This file contains the functions of PDP Page
+ * This file contains the functions of AEM footer
  * 
  */
 
@@ -38,7 +46,363 @@ public class AEM_Footer_Page extends PageObject {
 		testContext = new TestContext();
 
 	}
+	/** This function navigate to footer Component Page */
+	public void navigateTo_FooterComponent_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Footer_Component_Url());
+
+	}
 	
+	/** This function click footer component */
+	public void clickFooterComponent() throws Exception {
+
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooterComponent())), 3);
+
+	}
+	/** This function will scroll down to AEM Footer */
+	public void scrollDownToAEMFooter() throws Exception {
+		By goToAEMFooter = $By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooterComponent());
+		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToAEMFooter, 10);
+	}
+	/** This function will scroll down to Copy right label in footer */
+	public void scrollDownToCopyRight() throws Exception {
+		By goToCopyRight= $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Copy_Right_Text());
+		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToCopyRight, 10);
+	}
+	/** Update Legal text label */
+	public void updateLegalTextOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalText());
+	}
+	/** display Legal text field */
+	public void verifyLegalTextisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalText()));
+	}
+	
+	/** revert legal text label changes */
+	public void revertPlaceHolderLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalText());
+	} 
+	
+	/** This functions verify legal text label is successfully updated on site */
+	public void displayUpdatedLegalTextOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalText() + "']"));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	/** Update Legal text URL */
+	public void updateLegalTextURLOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalURL());
+	}
+	/** display Legal text URL */
+	public void verifyLegalTextURLisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalURL()));
+	}
+	
+	/** revert legal text URL label changes */
+	public void revertLegalTexturlLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalURL());
+	} 
+	
+	/** This functions verify legal text label is successfully updated on site */
+	public void displayUpdatedLegalTextURLOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalText() + "']"));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	/** Update Terms and condition text*/
+	public void updateTermsnConditionTextOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_termsnCondition());
+	}
+	/** display Terms and condition text */
+	public void verifyTermsNConditionTextisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionText()));
+	}
+	
+	/** revert Terms and condition text */
+	public void revertTermsNConditionTextLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_termsnCondition());
+	} 
+	
+	/** This functions verify Terms and condition Text is successfully updated on site */
+	public void displayUpdatedtncTextOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_termsnCondition() + "']"));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	/** Update Terms and condition URL*/
+	public void updateTermsnConditionURLofFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_termsnConditionURL());
+	}
+	/** display Terms and condition tURL */
+	public void verifyTermsNConditionURLisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionURL()));
+	}
+	
+	/** revert Terms and condition URL */
+	public void revertTermsNConditionURLLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_TermsnConditionURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_termsnConditionURL());
+	} 
+	
+	/** This functions verify Terms and condition URL is successfully updated on site */
+	public void displayUpdatedtncURLOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_termsnCondition() + "']"));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	/** Update Privacy policy text*/
+	public void updatePrivacypolicyTextOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_privacyPolicyText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_privacyPolicyText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_privacyPolicyLabel());
+	}
+	/** display Privacy policy text */
+	public void verifyPrivacyPolicyTextisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_privacyPolicyText()));
+	}
+	
+	/** revert Privacy policy text */
+	public void revertPrivacyPolicyTextLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_privacyPolicyText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_privacyPolicyText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_privacyPolicyLabel());
+	} 
+	
+	/** This functions verify Privacy policy Text is successfully updated on site */
+	public void displayUpdatedPrivacyPolicyTextOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_privacyPolicyLabel() + "']"));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	/** Update Privacy Policy URL*/
+	public void updatePrivacyPolicyURLofFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_PrivacyPolicyURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_PrivacyPolicyURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_privacyPolicyURL());
+	}
+	/** display PrivacyPolicy tURL */
+	public void verifyPrivacyPolicyURLisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_PrivacyPolicyURL()));
+	}
+	
+	/** revert PrivacyPolicy URL */
+	public void revertPrivacyPolicyURLLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_PrivacyPolicyURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_PrivacyPolicyURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_privacyPolicyURL());
+	} 
+	
+	/** This functions verify PrivacyPolicy URL is successfully updated on site */
+	public void displayUpdatedPrivacyPolicyURLOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_privacyPolicyURL() + "']"));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	/** Update site map text*/
+	public void updateSitemapTextOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_SiteMap()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_SiteMap())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_siteMapText());
+	}
+	/** display site map text */
+	public void verifysitemapTextisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_SiteMap()));
+	}
+	
+	/** revert site map text */
+	public void revertSiteMapTextLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_SiteMap()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_SiteMap())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_siteMapText());
+	} 
+	
+	/** This functions verify site map Text is successfully updated on site */
+	public void displayUpdatedsitemapOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_siteMapText() + "']"));
+		PageObject.getDriver().switchTo().parentFrame();
+	
+}
+	/** Update Site Map URL*/
+	public void updateSiteMapURLofFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_siteMapURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_siteMapURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_siteMapURL());
+	}
+	/** display Site Map URL */
+	public void verifySiteMapURLisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_siteMapURL()));
+	}
+	
+	/** revert Site Map URL */
+	public void revertSiteMapURLLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_siteMapURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_siteMapURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_siteMapURL());
+	} 
+	
+	/** This functions verify Site Map URL is successfully updated on site */
+	public void displayUpdatedSiteMapURLOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Site_Map()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_siteMapURL() + "']"));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	/** Update Accessibility text*/
+	public void updateAccessibilityTextOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_AccessibilityText());
+	}
+	/** display Accessibility text */
+	public void verifyAccessibilityTextisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityText()));
+	}
+	
+	/** revert Accessibility text */
+	public void revertAccessibilityTextLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityText()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityText())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_AccessibilityText());
+	} 
+	
+	/** This functions verify Accessibility Text is successfully updated on site */
+	public void displayUpdatedAccessibilityOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_AccessibilityText() + "']"));
+		PageObject.getDriver().switchTo().parentFrame();
+	
+}
+	/** Update Accessibility URL*/
+	public void updateAccessibilityURLOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_AccessibilityURL());
+	}
+	/** display Accessibility URL */
+	public void verifyAccessibilityURLisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityURL()));
+	}
+	
+	/** revert Accessibility URL */
+	public void revertAccessibilityURLLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityURL()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_AccessibilityURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_AccessibilityURL());
+	} 
+	
+	/** This functions verify Accessibility URL is successfully updated on site */
+	public void displayUpdatedAccessibilityURLOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_AccessibilityURL() + "']"));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		PageObject.getDriver().switchTo().parentFrame();
+		
+}
+	/** Update CopyRight text*/
+	public void updateCopyRightTextOfFooterComponent() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_CopyrightLabel()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_CopyrightLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_CopyrightLabel());
+	}
+	/** display CopyRight text */
+	public void verifyCopyRightTextisAuthorable() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_CopyrightLabel()));
+	}
+	
+	/** revert CopyRight text */
+	public void revertCopyRightTextLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_CopyrightLabel()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_CopyrightLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_CopyrightLabel());
+	} 
+	
+	/** This functions verify CopyRight Text is successfully updated on site */
+	public void displayUpdatedCopyRightOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_CopyrightLabel() + "']"));
+		PageObject.getDriver().switchTo().parentFrame();
+	
+}
+	/** Update Legal Disclaimer text*/
+	public void updateLegalDisclaimerOfFooterComponent() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_legalDisclaimer()));
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_legalDisclaimer()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_legalDisclaimer())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalDisclaimer());
+	}
+	/** display Legal Disclaimer text */
+	public void verifyLegalDisclaimerTextisAuthorable() throws Exception {
+		
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_legalDisclaimer()));
+	}
+	
+	/** revert Legal Disclaimer text */
+	public void revertLegalDisclaimerTextLabelChanges() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_legalDisclaimer()));
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_legalDisclaimer()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_legalDisclaimer())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalDisclaimer());
+		} 
+	
+	/** This functions verify Legal Disclaimer Text is successfully updated on site */
+	public void displayUpdatedLegalDisclaimerOnSite() throws Exception {
+	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalDisclaimer() + "']"));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+		/** Update View More text*/
+		public void updateviewMoreinFooterComponent() throws Exception {
+			$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewMore()));
+			$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewMore())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_ViewMore());
+		}
+		/** display View More text */
+		public void verifyViewMoreTextisAuthorable() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewMore()));
+		}
+		
+		/** revert View More text */
+		public void revertViewMoreTextLabelChanges() throws Exception {
+			$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewMore()));
+			$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewMore())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_ViewMore());
+			} 
+		
+		/** This functions verify View More Text is successfully updated on site */
+		public void displayUpdatedViewMoreOnSite() throws Exception {
+		    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+			$displayFindElement(By.xpath("//*[@class='js-copyright-footer__view-more']"));
+			PageObject.getDriver().switchTo().parentFrame();
+	
+}
+		/** Update View less text*/
+		public void updateviewlessinFooterComponent() throws Exception {
+			$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewLess()));
+			$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewLess())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_ViewLess());
+		}
+		/** display View less text */
+		public void verifyViewLessTextisAuthorable() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewLess()));
+		}
+		
+		/** revert View less text */
+		public void revertViewLessTextLabelChanges() throws Exception {
+			$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewLess()));
+			$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_viewLess())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_ViewLess());
+			} 
+		
+		/** This functions verify View less Text is successfully updated on site */
+		public void displayUpdatedViewlessOnSite() throws Exception {
+		    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
+			$displayFindElement(By.xpath("//*[@class='js-copyright-footer__view-less']"));
+			PageObject.getDriver().switchTo().parentFrame();
+	
+}
+
 	/** This function naviget to Footer Author Page */
 	public void navigateTo_Footer_Page() throws Exception {
 

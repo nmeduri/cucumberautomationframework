@@ -131,6 +131,7 @@ public class PageObjectManager {
 	private AEM_PDP_Page_Locator gettAEMPDPPPageLocator;
 	private AEM_PLP_Page getAEMPLPPage;
 	private AEM_PLP_Page_Locator getAEMPLPPageLocator;
+	private AEM_Footer_Page_Locator getAEMFooterPageLocator;
 	private Banner_Pages getBannerPages;
 	private Banners_Locator getBannerPageLocators;
 	private AEM_Link_Card_Page getAEMLinkCardPage;
@@ -464,6 +465,12 @@ public class PageObjectManager {
 	public AEM_PLP_Page_Locator getAEMPLPLocatorPage() {
 		return (getAEMPLPPageLocator == null) ? getAEMPLPPageLocator = new AEM_PLP_Page_Locator() : getAEMPLPPageLocator;
 	}
+
+	/** Returns Instance of AEM Footer Page Locator */
+	public AEM_Footer_Page_Locator getAEMFooterPageLocator() {
+		return (getAEMFooterPageLocator == null) ? getAEMFooterPageLocator = new AEM_Footer_Page_Locator() : getAEMFooterPageLocator;
+	}
+
 	/** Returns Instance of Edge To Edge Banner Page File */
 	public Banner_Pages getBannerPages(WebDriver driver) throws Exception {	
 		return (getBannerPages == null) ? getBannerPages = new Banner_Pages(driver) : getBannerPages;	

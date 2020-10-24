@@ -69,7 +69,8 @@ public class Footer_PageLocator {
 	String copyRightInformation = Property.getProperty(Constant.OR_FILE, "copyRightInformation");
 	String allFooterLinks = Property.getProperty(Constant.OR_FILE, "allFooterLinks");
 	String mobilecustomSupportSection = Property.getProperty(Constant.OR_FILE, "mobilecustomSupportSection");
-	String minusActiveButton = Property.getProperty(Constant.OR_FILE, "minusActiveButton");
+	String aemFooter = Property.getProperty(Constant.OR_FILE, "aemFooter");
+	String aemLegalText = Property.getProperty(Constant.OR_FILE, "aemLegalText");
 	
 	/**
 	 * gets Locator - Legal Disclaimer
@@ -96,6 +97,14 @@ public class Footer_PageLocator {
 
 	public String get_View_Less() {
 		return viewLesslegalDisclaimer;
+	}
+	/**
+	 * gets Locator - Legal text authorization
+	 * 
+	 */
+	
+	public String get_Legal_text() {
+		return aemLegalText;
 	}
 	
 	/**
@@ -212,6 +221,15 @@ public class Footer_PageLocator {
 	
 	public String get_Footer() {
 		return goToFooter;
+	}
+	
+	/**
+	 * gets Locator -AEM Footer to scroll
+	 * 
+	 */
+	
+	public String get_AEMFooter() {
+		return aemFooter;
 	}
 	
 	/**
@@ -583,16 +601,6 @@ public class Footer_PageLocator {
 	 */
 	public String get_Mobile_Custom_Support() {
 		return mobilecustomSupportSection;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Minus Button
-	 * 
-	 */
-	
-	public String getMinusButton() {
-		return minusActiveButton;
 	}
  }
 

@@ -4,12 +4,28 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 /**
- * This file contains the locator of Mailinator Page
+ * This file contains the locator of Footer component page
  * 
  */
 public class AEM_Footer_Page_Locator {
 	
 	
+	String FooterComponent = Property.getProperty(Constant.OR_FILE, "FooterComponent");
+	String LegalTextInput=Property.getProperty(Constant.OR_FILE, "LegalTextInput");
+	String LegalTextURL=Property.getProperty(Constant.OR_FILE, "LegalTextURL");
+	String TermsnConditionText=Property.getProperty(Constant.OR_FILE, "Terms&ConditionText");
+	String TermsnConditionURL=Property.getProperty(Constant.OR_FILE, "Terms&ConditionURL");
+	String privacyPolicyText=Property.getProperty(Constant.OR_FILE, "privacyPolicyText");
+	String privacyPolicyURL=Property.getProperty(Constant.OR_FILE, "privacyPolicyURL");
+	String SiteMap=Property.getProperty(Constant.OR_FILE, "SiteMap");
+	String SiteMapURL=Property.getProperty(Constant.OR_FILE, "SiteMapURL");
+	String AccessibilityText=Property.getProperty(Constant.OR_FILE, "AccessibilityText");
+	String AccessibilityURL=Property.getProperty(Constant.OR_FILE, "AccessibilityURL");
+	String CopyrightLabel=Property.getProperty(Constant.OR_FILE, "CopyrightLabel");
+	String legalDisclaimer=Property.getProperty(Constant.OR_FILE, "legalDisclaimer");
+	String viewMore=Property.getProperty(Constant.OR_FILE, "viewMore");
+	String viewLess=Property.getProperty(Constant.OR_FILE, "viewLess");
+
 	String footerPannelAEM = Property.getProperty(Constant.OR_FILE, "footerPannelAEM").replace("=", ",");
 	String orderStatusAEM = Property.getProperty(Constant.OR_FILE, "orderStatusAEM");
 	String pickUpDeliveryAEM = Property.getProperty(Constant.OR_FILE, "pickUpDeliveryAEM");
@@ -50,337 +66,458 @@ public class AEM_Footer_Page_Locator {
 	String accessibilityAEM = Property.getProperty(Constant.OR_FILE, "accessibilityAEM");
 	String pricingPolicyAEM = Property.getProperty(Constant.OR_FILE, "pricingPolicyAEM");
 	String legalSectionUpdate = Property.getProperty(Constant.OR_FILE, "legalSectionUpdate");
-	
-	
+
     /**
-	 * gets Locator - Footer Pannel
+	 * gets Locator - Footer component
 	 * 
 	 */
     
-	public String getFooterPannel() {
-		return footerPannelAEM;	
-	}
-	
-	/**
-	 * 
-	 * get Locator - order status
-	 * 
-	 */
-	public String getOrderStatus() {
-		return orderStatusAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Pick Up and Delivery
-	 * 
-	 */
-	public String getPickUpDelivery() {
-		return pickUpDeliveryAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - return Exchange 
-	 * 
-	 */
-	public String getReturnExchange() {
-		return returnExchangesAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Help And FAQ
-	 * 
-	 */
-	public String getHelpFQA() {
-		return helpAndFaqsAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Contact Us
-	 * 
-	 */
-	public String getContactUs() {
-		return contactUSAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Store Locator
-	 * 
-	 */
-	public String getStoreLocator() {
-		return storeLocatorAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Product Recall
-	 * 
-	 */
-	public String getProductRecall() {
-		return productRecallsAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Safety Data Sheet
-	 * 
-	 */
-	public String getSafetyDataSheet() {
-		return safetyDataSheetsAEM;
-	}
-	
-	/**
-	 * 
-	 * get Locator - Customer Service Container
-	 * 
-	 */
-	
-	public String getCustomerServiceSection() {
-		return customerServiceFooterSectionUpdate;
-	}
-	
-	
-	/**---------**/
-	
-	/**
-	 * 
-	 * get Locator - Financial Services
-	 * 
-	 */
-	
-	public String getFinancialServices() {
-		return financialServicesAEM;
+	public String getFooterComponent() {
+		return FooterComponent;	
 	}
 	/**
-	 * 
-	 * get Locator - Installation Assembling
+	 * gets Locator - Footer component-LegalText
 	 * 
 	 */
-	
-	public String getInstallationAssembling() {
-		return installationAssemblingAEM;
+    
+	public String getFooter_LegalText() {
+		return LegalTextInput;	
 	}
 	/**
-	 * 
-	 * get Locator - Auto Service Center
+	 * gets Locator - Footer component-LegalTextURL
 	 * 
 	 */
-	
-	public String getAutoServiceCenter( ) {
-		return autoServiceCenterAEM;
+    
+	public String getFooter_LegalURL() {
+		return LegalTextURL;	
 	}
 	/**
-	 * 
-	 * get Locator - Loan Tool
+	 * gets Locator - Footer component-Terms&ConditionText
 	 * 
 	 */
-	
-	public String getLoanTool() {
-		return loanToolAEM;
+    
+	public String getFooter_TermsnConditionText() {
+		return TermsnConditionText;	
 	}
 	/**
-	 * 
-	 * get Locator - Road Side Assistance
+	 * gets Locator - Footer component-Terms&ConditionURL
 	 * 
 	 */
-	
-	public String getRoadSideAssistance() {
-		return roadSideAsistance;
+    
+	public String getFooter_TermsnConditionURL() {
+		return TermsnConditionURL;	
 	}
 	/**
-	 * 
-	 * get Locator - Gift Card
+	 * gets Locator - Footer component-privacyPolicyText
 	 * 
 	 */
-	
-	public String getGiftCards() {
-		return giftCardsAEM;
+    
+	public String getFooter_privacyPolicyText() {
+		return privacyPolicyText;	
 	}
 	/**
-	 * 
-	 * get Locator - Tested For Life
+	 * gets Locator - Footer component-Privacy Policy URL
 	 * 
 	 */
-	
-	public String getTestForLife() {
-		return testedForLifeAEM;
+    
+	public String getFooter_PrivacyPolicyURL() {
+		return privacyPolicyURL;	
 	}
 	/**
-	 * 
-	 * get Locator - Gift Registry
+	 * gets Locator - Footer component-SiteMap
 	 * 
 	 */
-	
-	public String getGiftRegistry() {
-		return giftRegistryAEM;
+    
+	public String getFooter_SiteMap() {
+		return SiteMap;	
 	}
-	
 	/**
+	 * gets Locator - Footer component-SiteMap URL
 	 * 
-	 * get Locator - Coloumn Two
 	 */
-	
-	public String get_Column_Two() {
-		return columnTwoTab;
+    
+	public String getFooter_siteMapURL() {
+		return SiteMapURL;	
 	}
-	
 	/**
+	 * gets Locator - Footer component-AccessibilityText
 	 * 
-	 * 
-	 * get Locator - Service And Installations
 	 */
-	public String get_Service_And_Installation_Updated() {
-		return serviceSolutionsFooterSectionUpdate;
+    
+	public String getFooter_AccessibilityText() {
+		return AccessibilityText;	
 	}
-	
 	/**
+	 * gets Locator - Footer component-AccessibilityURL
 	 * 
-	 * 
-	 * get Locator - About Canadian Tire
 	 */
-	public String get_About_Canadian_Tire() {
-		return aboutCanadianTireAEM;
+    
+	public String getFooter_AccessibilityURL() {
+		return AccessibilityURL;	
 	}
-	
 	/**
+	 * gets Locator - Footer component-CopyrightLabel
 	 * 
-	 * 
-	 * get Locator - About Triangle
 	 */
-	public String get_About_Triangle() {
-		return aboutTriangleAEM;
+    
+	public String getFooter_CopyrightLabel() {
+		return CopyrightLabel;	
 	}
-	
 	/**
+	 * gets Locator - Footer component-legalDisclaimer
 	 * 
-	 * 
-	 * get Locator - Careers
 	 */
-	public String get_Careers() {
-		return careersAEM;
+    
+	public String getFooter_legalDisclaimer() {
+		return legalDisclaimer;	
 	}
-	
 	/**
+	 * gets Locator - Footer component-viewMore
 	 * 
-	 * 
-	 * get Locator - Recyling Information
 	 */
-	public String get_Recyling_Information() {
-		return recylingInformationAEM;
+    
+	public String getFooter_viewMore() {
+		return viewMore;	
 	}
-	
 	/**
+	 * gets Locator - Footer component-viewLess
 	 * 
-	 * 
-	 * get Locator - Our Brands
 	 */
-	public String get_Our_Brands() {
-		return ourBrandsAEM;
+    
+	public String getFooter_viewLess() {
+		return viewLess;	
 	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Flyyer Sign Up
-	 */
-	public String get_Flyer_Sign_Up() {
-		return flyerSignUpAEM;
+	 /**
+		 * gets Locator - Footer Pannel
+		 * 
+		 */
+	    
+		public String getFooterPannel() {
+			return footerPannelAEM;	
+		}
+		
+		/**
+		 * 
+		 * get Locator - order status
+		 * 
+		 */
+		public String getOrderStatus() {
+			return orderStatusAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Pick Up and Delivery
+		 * 
+		 */
+		public String getPickUpDelivery() {
+			return pickUpDeliveryAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - return Exchange 
+		 * 
+		 */
+		public String getReturnExchange() {
+			return returnExchangesAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Help And FAQ
+		 * 
+		 */
+		public String getHelpFQA() {
+			return helpAndFaqsAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Contact Us
+		 * 
+		 */
+		public String getContactUs() {
+			return contactUSAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Store Locator
+		 * 
+		 */
+		public String getStoreLocator() {
+			return storeLocatorAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Product Recall
+		 * 
+		 */
+		public String getProductRecall() {
+			return productRecallsAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Safety Data Sheet
+		 * 
+		 */
+		public String getSafetyDataSheet() {
+			return safetyDataSheetsAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Customer Service Container
+		 * 
+		 */
+		
+		public String getCustomerServiceSection() {
+			return customerServiceFooterSectionUpdate;
+		}
+		
+		
+		/**---------**/
+		
+		/**
+		 * 
+		 * get Locator - Financial Services
+		 * 
+		 */
+		
+		public String getFinancialServices() {
+			return financialServicesAEM;
+		}
+		/**
+		 * 
+		 * get Locator - Installation Assembling
+		 * 
+		 */
+		
+		public String getInstallationAssembling() {
+			return installationAssemblingAEM;
+		}
+		/**
+		 * 
+		 * get Locator - Auto Service Center
+		 * 
+		 */
+		
+		public String getAutoServiceCenter( ) {
+			return autoServiceCenterAEM;
+		}
+		/**
+		 * 
+		 * get Locator - Loan Tool
+		 * 
+		 */
+		
+		public String getLoanTool() {
+			return loanToolAEM;
+		}
+		/**
+		 * 
+		 * get Locator - Road Side Assistance
+		 * 
+		 */
+		
+		public String getRoadSideAssistance() {
+			return roadSideAsistance;
+		}
+		/**
+		 * 
+		 * get Locator - Gift Card
+		 * 
+		 */
+		
+		public String getGiftCards() {
+			return giftCardsAEM;
+		}
+		/**
+		 * 
+		 * get Locator - Tested For Life
+		 * 
+		 */
+		
+		public String getTestForLife() {
+			return testedForLifeAEM;
+		}
+		/**
+		 * 
+		 * get Locator - Gift Registry
+		 * 
+		 */
+		
+		public String getGiftRegistry() {
+			return giftRegistryAEM;
+		}
+		
+		/**
+		 * 
+		 * get Locator - Coloumn Two
+		 */
+		
+		public String get_Column_Two() {
+			return columnTwoTab;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Service And Installations
+		 */
+		public String get_Service_And_Installation_Updated() {
+			return serviceSolutionsFooterSectionUpdate;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - About Canadian Tire
+		 */
+		public String get_About_Canadian_Tire() {
+			return aboutCanadianTireAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - About Triangle
+		 */
+		public String get_About_Triangle() {
+			return aboutTriangleAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Careers
+		 */
+		public String get_Careers() {
+			return careersAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Recyling Information
+		 */
+		public String get_Recyling_Information() {
+			return recylingInformationAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Our Brands
+		 */
+		public String get_Our_Brands() {
+			return ourBrandsAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Flyyer Sign Up
+		 */
+		public String get_Flyer_Sign_Up() {
+			return flyerSignUpAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Sustainability
+		 */
+		public String get_Sustainability() {
+			return sustaiabilityAEM;
+		}
+		
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Column Three
+		 */
+		public String get_Column_Three() {
+			return columnThreeTab;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - About Us Section
+		 */
+		public String get_About_Section() {
+			return aboutUsSectionUpdate;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Legal Section
+		 */
+		public String get_Column_Four() {
+			return columnFourTab;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Privacy Policy
+		 */
+		public String get_Privacy_Policy() {
+			return privacyPlolicyAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Terms And Condition
+		 */
+		public String get_Term_And_Condition() {
+			return termAndConditionsAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Site Map
+		 */
+		public String get_Site_Map() {
+			return siteMapAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Accessibility
+		 */
+		public String get_Accessibility() {
+			return accessibilityAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Pricing Policy
+		 */
+		public String get_Pricing_Policy() {
+			return pricingPolicyAEM;
+		}
+		
+		/**
+		 * 
+		 * 
+		 * get Locator - Legal Section On Site
+		 */
+		public String get_Legal_Section_Update() {
+			return legalSectionUpdate;
+		}
+		
+
 	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Sustainability
-	 */
-	public String get_Sustainability() {
-		return sustaiabilityAEM;
-	}
-	
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Column Three
-	 */
-	public String get_Column_Three() {
-		return columnThreeTab;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - About Us Section
-	 */
-	public String get_About_Section() {
-		return aboutUsSectionUpdate;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Legal Section
-	 */
-	public String get_Column_Four() {
-		return columnFourTab;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Privacy Policy
-	 */
-	public String get_Privacy_Policy() {
-		return privacyPlolicyAEM;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Terms And Condition
-	 */
-	public String get_Term_And_Condition() {
-		return termAndConditionsAEM;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Site Map
-	 */
-	public String get_Site_Map() {
-		return siteMapAEM;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Accessibility
-	 */
-	public String get_Accessibility() {
-		return accessibilityAEM;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Pricing Policy
-	 */
-	public String get_Pricing_Policy() {
-		return pricingPolicyAEM;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * get Locator - Legal Secion On Site
-	 */
-	public String get_Legal_Section_Update() {
-		return legalSectionUpdate;
-	}
-	
-	
-}
+
+

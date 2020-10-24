@@ -51,6 +51,7 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	
 	@And("legal section is displayed")
 	public void legal_section_is_displayed() throws Exception {
+		Thread.sleep(2000);
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayLegalSection();
 	}
 	

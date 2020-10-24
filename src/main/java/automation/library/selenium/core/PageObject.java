@@ -277,7 +277,7 @@ public class PageObject extends BaseClass {
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), delay);
 		ele.scrollDown();
 	}
-
+	
 	/** drop down */
 	public void performDropDown(By by, String type, String value) throws Exception {
 		Element ele = new Element(driver, ExpectedConditions.visibilityOfElementLocated(by), getWaitDuration());
@@ -321,7 +321,7 @@ public class PageObject extends BaseClass {
 	/** scroll up by coordinates */
 	public void scrollUp() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,-200)", "");
+		js.executeScript("window.scrollBy(0,-300)", "");
 	}
 	
 	/** scroll down by coordinates */

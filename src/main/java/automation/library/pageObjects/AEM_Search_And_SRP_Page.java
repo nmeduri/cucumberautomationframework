@@ -64,7 +64,6 @@ public class AEM_Search_And_SRP_Page extends PageObject {
 		}
 	}
 	
-
 	
 	/** enter Data to Auto Corrective Search Message */
 	public void enterDataAutoCorrectiveSearchMessage() throws Exception {

@@ -83,7 +83,18 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("Url Data not specified in the Data file.");
 	}
+	/**
+	 * gets Footer component Bar Url
+	 * 
+	 */
 	
+	public String get_Footer_Component_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "footerComponentAuthor");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
 	/**
 	 * gets AEM admin user
 	 * 
@@ -369,6 +380,176 @@ public class AEMDataReader {
 	
 	/**
 	 * 
+<<<<<<< HEAD
+	 * get Data - Footer-Legal Text
+	 * 
+	 */
+	public String get_Footer_LegalText() {
+		String getLegalText = Property.getProperty(Constant.AEM_DATA_FILE, "legalTextLabel");
+		if(getLegalText != null)
+			return getLegalText;
+		else
+			throw new RuntimeException("Legal text Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-Legal Text URL
+	 * 
+	 */
+	public String get_Footer_LegalURL() {
+		String getLegalURL = Property.getProperty(Constant.AEM_DATA_FILE, "legalTextURLLabel");
+		if(getLegalURL != null)
+			return getLegalURL;
+		else
+			throw new RuntimeException("Legal text URL Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-terms&Condition Label
+	 * 
+	 */
+	public String get_Footer_termsnCondition() {
+		String getTnC = Property.getProperty(Constant.AEM_DATA_FILE, "terms&ConditionLabel");
+		if(getTnC != null)
+			return getTnC;
+		else
+			throw new RuntimeException("Terms and Condition text Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-terms&Condition URL
+	 * 
+	 */
+	public String get_Footer_termsnConditionURL() {
+		String getTnCURL = Property.getProperty(Constant.AEM_DATA_FILE, "terms&ConditionURLLabel");
+		if(getTnCURL != null)
+			return getTnCURL;
+		else
+			throw new RuntimeException("Terms and Condition URL Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-privacy Policy Label
+	 * 
+	 */
+	public String get_Footer_privacyPolicyLabel() {
+		String getprivacy = Property.getProperty(Constant.AEM_DATA_FILE, "privacyPolicyLabel");
+		if(getprivacy != null)
+			return getprivacy;
+		else
+			throw new RuntimeException("Privacy policy label text Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-privacy Policy URL
+	 * 
+	 */
+	public String get_Footer_privacyPolicyURL() {
+		String getprivacyURL = Property.getProperty(Constant.AEM_DATA_FILE, "privacyPolicyURLLabel");
+		if(getprivacyURL != null)
+			return getprivacyURL;
+		else
+			throw new RuntimeException("Privacy policy label URL Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-SiteMap Text
+	 * 
+	 */
+	public String get_Footer_siteMapText() {
+		String getsitemap = Property.getProperty(Constant.AEM_DATA_FILE, "siteMapLabel");
+		if(getsitemap != null)
+			return getsitemap;
+		else
+			throw new RuntimeException("Site map label Data not specified in the Data file.");
+	}
+
+	/**
+	 * 
+	 * get Data - Footer-SiteMap URL
+	 * 
+	 */
+	public String get_Footer_siteMapURL() {
+		String getsitemap = Property.getProperty(Constant.AEM_DATA_FILE, "siteMapURLLabel");
+		if(getsitemap != null)
+			return getsitemap;
+		else
+			throw new RuntimeException("Site map URL Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Footer-Accessibility Text
+	 * 
+	 */
+	public String get_Footer_AccessibilityText() {
+		String getAccessibilityText = Property.getProperty(Constant.AEM_DATA_FILE, "AccessibilityText");
+		if(getAccessibilityText != null)
+			return getAccessibilityText;
+		else
+			throw new RuntimeException("Accessibility Text Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-Accessibility URL
+	 * 
+	 */
+	public String get_Footer_AccessibilityURL() {
+		String getAccessibilityURL = Property.getProperty(Constant.AEM_DATA_FILE, "AccessibilityURL");
+		if(getAccessibilityURL != null)
+			return getAccessibilityURL;
+		else
+			throw new RuntimeException("Accessibility URL Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-CopyrightLabel
+	 * 
+	 */
+	public String get_Footer_CopyrightLabel() {
+		String getCopyrightLabel = Property.getProperty(Constant.AEM_DATA_FILE, "CopyrightLabel");
+		if(getCopyrightLabel != null)
+			return getCopyrightLabel;
+		else
+			throw new RuntimeException("Copyright Label Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-Legal Disclaimer
+	 * 
+	 */
+	public String get_Footer_LegalDisclaimer() {
+		String getlegaldisclaimer = Property.getProperty(Constant.AEM_DATA_FILE, "LegalDisclaimer");
+		if(getlegaldisclaimer != null)
+			return getlegaldisclaimer;
+		else
+			throw new RuntimeException("Legal Disclaimer Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-ViewMore
+	 * 
+	 */
+	public String get_Footer_ViewMore() {
+		String getViewMore = Property.getProperty(Constant.AEM_DATA_FILE, "ViewMoreText");
+		if(getViewMore != null)
+			return getViewMore;
+		else
+			throw new RuntimeException("View More data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Footer-ViewLess
+	 * 
+	 */
+	public String get_Footer_ViewLess() {
+		String getViewLess = Property.getProperty(Constant.AEM_DATA_FILE, "ViewLessText");
+		if(getViewLess != null)
+			return getViewLess;
+		else
+			throw new RuntimeException("View Less data not specified in the Data file.");
+	}
+    /**
 	 * get Data - Show More Count
 	 * 
 	 */

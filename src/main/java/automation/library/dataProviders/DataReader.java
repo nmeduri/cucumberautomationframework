@@ -697,13 +697,7 @@ public class DataReader {
 			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
 	}
 	
-	/**
-	 * gets password
-	 * 
-	 */
-	
-	
-	
+
 	/**
 	 * gets password
 	 * 

@@ -214,6 +214,11 @@ public class Footer_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToFooter, 10);
 	}
 	
+	/** This function is verify that Legal text is displayed after AEM authorization */
+	public void displayLegalText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_text()));
+	}
+		
 	/** This function will scroll down to Mobile Footer */
 	public void scrollDownToMobileFooter() throws Exception {
 		By goToMobileFooter = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Mobile_Custom_Support());
@@ -690,7 +695,7 @@ public class Footer_Page extends PageObject {
 	
 	/** This function clicks on minus button*/
 	public void clickMinusSection() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().getMinusButton())), 5);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
 	}
 	
 	
