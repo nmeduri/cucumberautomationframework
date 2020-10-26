@@ -21,3 +21,12 @@ Feature: OCCP-862 PLP Sorting
 	And click on preview button
 	Then sort option is displayed on the site
 	
+	@AEM
+	Scenario: TC-353 Verify the ability of an AEM content author to configure Sorting Option labels
+	Given open browser
+	When AEM author with access to configure intial product result load on the page
+	And login to AEM using the credential as mentioned in the test data
+	And click on PLP Pannel
+	And click on aem configure button
+	And select sorting tab
+	

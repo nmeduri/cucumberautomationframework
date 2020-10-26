@@ -9,7 +9,7 @@ import automation.library.logdetail.Log;
  */
 public class AEM_Footer_Page_Locator {
 	
-	
+
 	String FooterComponent = Property.getProperty(Constant.OR_FILE, "FooterComponent");
 	String LegalTextInput=Property.getProperty(Constant.OR_FILE, "LegalTextInput");
 	String LegalTextURL=Property.getProperty(Constant.OR_FILE, "LegalTextURL");
@@ -66,6 +66,493 @@ public class AEM_Footer_Page_Locator {
 	String accessibilityAEM = Property.getProperty(Constant.OR_FILE, "accessibilityAEM");
 	String pricingPolicyAEM = Property.getProperty(Constant.OR_FILE, "pricingPolicyAEM");
 	String legalSectionUpdate = Property.getProperty(Constant.OR_FILE, "legalSectionUpdate");
+	
+	
+	String orderStatusSubUrl = Property.getProperty(Constant.OR_FILE, "orderStatusSubUrl");
+	String pickUpAndDeliverySubUrl = Property.getProperty(Constant.OR_FILE, "pickUpAndDeliverySubUrl");
+	String returnAndExchangeSubUrl = Property.getProperty(Constant.OR_FILE, "returnAndExchangeSubUrl");
+	String helpFAQSubUrl = Property.getProperty(Constant.OR_FILE, "helpFAQSubUrl");
+	String contactUsSubUrl = Property.getProperty(Constant.OR_FILE, "contactUsSubUrl");
+	String storeLocatorSubUrl = Property.getProperty(Constant.OR_FILE, "storeLocatorSubUrl");
+	String productRecallsSubUrl = Property.getProperty(Constant.OR_FILE, "productRecallsSubUrl");
+	String safetyDataSheetSubUrl = Property.getProperty(Constant.OR_FILE, "safetyDataSheetSubUrl");
+	
+	String canadianTireFinancialSubUrl = Property.getProperty(Constant.OR_FILE, "canadianTireFinancialSubUrl");
+	String installatioAssemblingSubUrl = Property.getProperty(Constant.OR_FILE, "installatioAssemblingSubUrl");
+	String autoServicesCenterSubUrl = Property.getProperty(Constant.OR_FILE, "autoServicesCenterSubUrl");
+	String loanToolSubUrl = Property.getProperty(Constant.OR_FILE, "loanToolSubUrl");
+	String roadSideAssistanceSubUrl = Property.getProperty(Constant.OR_FILE, "roadSideAssistanceSubUrl");
+	String giftCardsSubUrl = Property.getProperty(Constant.OR_FILE, "giftCardsSubUrl");
+	String testedForLifeSubUrl = Property.getProperty(Constant.OR_FILE, "testedForLifeSubUrl");
+	String giftRegistrySubUrl = Property.getProperty(Constant.OR_FILE, "giftRegistrySubUrl");
+	
+	
+    /**
+	 * gets Locator - Footer Pannel
+	 * 
+	 */
+    
+	public String getFooterPannel() {
+		return footerPannelAEM;	
+	}
+	
+	/**
+	 * 
+	 * get Locator - order status
+	 * 
+	 */
+	public String getOrderStatus() {
+		return orderStatusAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Pick Up and Delivery
+	 * 
+	 */
+	public String getPickUpDelivery() {
+		return pickUpDeliveryAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - return Exchange 
+	 * 
+	 */
+	public String getReturnExchange() {
+		return returnExchangesAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Help And FAQ
+	 * 
+	 */
+	public String getHelpFQA() {
+		return helpAndFaqsAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Contact Us
+	 * 
+	 */
+	public String getContactUs() {
+		return contactUSAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Store Locator
+	 * 
+	 */
+	public String getStoreLocator() {
+		return storeLocatorAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Product Recall
+	 * 
+	 */
+	public String getProductRecall() {
+		return productRecallsAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Safety Data Sheet
+	 * 
+	 */
+	public String getSafetyDataSheet() {
+		return safetyDataSheetsAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Customer Service Container
+	 * 
+	 */
+	
+	public String getCustomerServiceSection() {
+		return customerServiceFooterSectionUpdate;
+	}
+	
+	
+	/**---------**/
+	
+	/**
+	 * 
+	 * get Locator - Financial Services
+	 * 
+	 */
+	
+	public String getFinancialServices() {
+		return financialServicesAEM;
+	}
+	/**
+	 * 
+	 * get Locator - Installation Assembling
+	 * 
+	 */
+	
+	public String getInstallationAssembling() {
+		return installationAssemblingAEM;
+	}
+	/**
+	 * 
+	 * get Locator - Auto Service Center
+	 * 
+	 */
+	
+	public String getAutoServiceCenter( ) {
+		return autoServiceCenterAEM;
+	}
+	/**
+	 * 
+	 * get Locator - Loan Tool
+	 * 
+	 */
+	
+	public String getLoanTool() {
+		return loanToolAEM;
+	}
+	/**
+	 * 
+	 * get Locator - Road Side Assistance
+	 * 
+	 */
+	
+	public String getRoadSideAssistance() {
+		return roadSideAsistance;
+	}
+	/**
+	 * 
+	 * get Locator - Gift Card
+	 * 
+	 */
+	
+	public String getGiftCards() {
+		return giftCardsAEM;
+	}
+	/**
+	 * 
+	 * get Locator - Tested For Life
+	 * 
+	 */
+	
+	public String getTestForLife() {
+		return testedForLifeAEM;
+	}
+	/**
+	 * 
+	 * get Locator - Gift Registry
+	 * 
+	 */
+	
+	public String getGiftRegistry() {
+		return giftRegistryAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Coloumn Two
+	 */
+	
+	public String get_Column_Two() {
+		return columnTwoTab;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Service And Installations
+	 */
+	public String get_Service_And_Installation_Updated() {
+		return serviceSolutionsFooterSectionUpdate;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - About Canadian Tire
+	 */
+	public String get_About_Canadian_Tire() {
+		return aboutCanadianTireAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - About Triangle
+	 */
+	public String get_About_Triangle() {
+		return aboutTriangleAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Careers
+	 */
+	public String get_Careers() {
+		return careersAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Recyling Information
+	 */
+	public String get_Recyling_Information() {
+		return recylingInformationAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Our Brands
+	 */
+	public String get_Our_Brands() {
+		return ourBrandsAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Flyyer Sign Up
+	 */
+	public String get_Flyer_Sign_Up() {
+		return flyerSignUpAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Sustainability
+	 */
+	public String get_Sustainability() {
+		return sustaiabilityAEM;
+	}
+	
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Column Three
+	 */
+	public String get_Column_Three() {
+		return columnThreeTab;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - About Us Section
+	 */
+	public String get_About_Section() {
+		return aboutUsSectionUpdate;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Legal Section
+	 */
+	public String get_Column_Four() {
+		return columnFourTab;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Privacy Policy
+	 */
+	public String get_Privacy_Policy() {
+		return privacyPlolicyAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Terms And Condition
+	 */
+	public String get_Term_And_Condition() {
+		return termAndConditionsAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Site Map
+	 */
+	public String get_Site_Map() {
+		return siteMapAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Accessibility
+	 */
+	public String get_Accessibility() {
+		return accessibilityAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Pricing Policy
+	 */
+	public String get_Pricing_Policy() {
+		return pricingPolicyAEM;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * get Locator - Legal Secion On Site
+	 */
+	public String get_Legal_Section_Update() {
+		return legalSectionUpdate;
+	}
+	
+	/** get Locator - Order Status Url
+	 * 
+	 */
+	public String get_Order_Status_Url() {
+		return orderStatusSubUrl;
+	}
+	
+	/**
+	 * get Locator - Pick Up & Delivery Url
+	 * 
+	 */
+	public String get_Pick_Up_Delivery_Url() {
+		return pickUpAndDeliverySubUrl;
+	}
+	
+	/**
+	 * get Locator - Return And Exchange Url	
+	 */
+	public String get_Return_And_Exchagne_Url() {
+		return returnAndExchangeSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Help And FAQ Url
+	 * 
+	 */
+	public String get_Help_And_FAQ_Url() {
+		return helpFAQSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Contact Us Url
+	 */
+	public String get_Contact_Us_Url() {
+		return contactUsSubUrl;
+	}
+	
+	/**
+	 * get Locator - Store Locator Url
+	 * 
+	 */
+	public String get_Store_Locator_Url() {
+		return storeLocatorSubUrl;
+	}
+	
+	/**
+	 * get Locator - Product Recall Url
+	 * 
+	 */
+	public String get_Product_Recall_Url() {
+		return productRecallsSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Safety Data Sheet
+	 * 
+	 */
+	public String get_Safety_Data_Sheet_Url() {
+		return safetyDataSheetSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Canadian Tire Financial Service Sub Url
+	 * 
+	 */
+	
+	public String get_Canadian_Tire_Financial_Services_Sub_Url() {
+		return canadianTireFinancialSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Installation and Assembling Sub Url
+	 */
+	public String get_Installation_Assembling_Sub_Url() {
+		return installatioAssemblingSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Auto Services Center Sub Url
+	 * 
+	 */
+	public String get_Auto_Services_Center_Sub_Url() {
+		return autoServicesCenterSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Loan Tool
+	 * 
+	 */
+	public String get_Loan_Tool_Sub_Url() {
+		return loanToolSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Road Assistance Sub Url
+	 * 
+	 */
+	public String get_Road_Assistance_Sub_Url() {
+		return roadSideAssistanceSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Gift Cards Sub Url
+	 * 
+	 */
+	public String get_Gift_Cards_Sub_Url() {
+		return giftCardsSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Tested for Life Sub Url
+	 * 
+	 */
+	public String get_Tested_For_Life_Sub_Url() {
+		return testedForLifeSubUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Gift Registry Sub Url
+	 * 
+	 */
+	public String get_Gift_Registry_Sub_Url() {
+		return giftRegistrySubUrl;
+	}
+	
 
     /**
 	 * gets Locator - Footer component
@@ -191,333 +678,9 @@ public class AEM_Footer_Page_Locator {
 		 * gets Locator - Footer Pannel
 		 * 
 		 */
-	    
-		public String getFooterPannel() {
-			return footerPannelAEM;	
-		}
-		
-		/**
-		 * 
-		 * get Locator - order status
-		 * 
-		 */
-		public String getOrderStatus() {
-			return orderStatusAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Pick Up and Delivery
-		 * 
-		 */
-		public String getPickUpDelivery() {
-			return pickUpDeliveryAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - return Exchange 
-		 * 
-		 */
-		public String getReturnExchange() {
-			return returnExchangesAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Help And FAQ
-		 * 
-		 */
-		public String getHelpFQA() {
-			return helpAndFaqsAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Contact Us
-		 * 
-		 */
-		public String getContactUs() {
-			return contactUSAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Store Locator
-		 * 
-		 */
-		public String getStoreLocator() {
-			return storeLocatorAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Product Recall
-		 * 
-		 */
-		public String getProductRecall() {
-			return productRecallsAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Safety Data Sheet
-		 * 
-		 */
-		public String getSafetyDataSheet() {
-			return safetyDataSheetsAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Customer Service Container
-		 * 
-		 */
-		
-		public String getCustomerServiceSection() {
-			return customerServiceFooterSectionUpdate;
-		}
+	   
 		
 		
-		/**---------**/
-		
-		/**
-		 * 
-		 * get Locator - Financial Services
-		 * 
-		 */
-		
-		public String getFinancialServices() {
-			return financialServicesAEM;
-		}
-		/**
-		 * 
-		 * get Locator - Installation Assembling
-		 * 
-		 */
-		
-		public String getInstallationAssembling() {
-			return installationAssemblingAEM;
-		}
-		/**
-		 * 
-		 * get Locator - Auto Service Center
-		 * 
-		 */
-		
-		public String getAutoServiceCenter( ) {
-			return autoServiceCenterAEM;
-		}
-		/**
-		 * 
-		 * get Locator - Loan Tool
-		 * 
-		 */
-		
-		public String getLoanTool() {
-			return loanToolAEM;
-		}
-		/**
-		 * 
-		 * get Locator - Road Side Assistance
-		 * 
-		 */
-		
-		public String getRoadSideAssistance() {
-			return roadSideAsistance;
-		}
-		/**
-		 * 
-		 * get Locator - Gift Card
-		 * 
-		 */
-		
-		public String getGiftCards() {
-			return giftCardsAEM;
-		}
-		/**
-		 * 
-		 * get Locator - Tested For Life
-		 * 
-		 */
-		
-		public String getTestForLife() {
-			return testedForLifeAEM;
-		}
-		/**
-		 * 
-		 * get Locator - Gift Registry
-		 * 
-		 */
-		
-		public String getGiftRegistry() {
-			return giftRegistryAEM;
-		}
-		
-		/**
-		 * 
-		 * get Locator - Coloumn Two
-		 */
-		
-		public String get_Column_Two() {
-			return columnTwoTab;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Service And Installations
-		 */
-		public String get_Service_And_Installation_Updated() {
-			return serviceSolutionsFooterSectionUpdate;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - About Canadian Tire
-		 */
-		public String get_About_Canadian_Tire() {
-			return aboutCanadianTireAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - About Triangle
-		 */
-		public String get_About_Triangle() {
-			return aboutTriangleAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Careers
-		 */
-		public String get_Careers() {
-			return careersAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Recyling Information
-		 */
-		public String get_Recyling_Information() {
-			return recylingInformationAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Our Brands
-		 */
-		public String get_Our_Brands() {
-			return ourBrandsAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Flyyer Sign Up
-		 */
-		public String get_Flyer_Sign_Up() {
-			return flyerSignUpAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Sustainability
-		 */
-		public String get_Sustainability() {
-			return sustaiabilityAEM;
-		}
-		
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Column Three
-		 */
-		public String get_Column_Three() {
-			return columnThreeTab;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - About Us Section
-		 */
-		public String get_About_Section() {
-			return aboutUsSectionUpdate;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Legal Section
-		 */
-		public String get_Column_Four() {
-			return columnFourTab;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Privacy Policy
-		 */
-		public String get_Privacy_Policy() {
-			return privacyPlolicyAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Terms And Condition
-		 */
-		public String get_Term_And_Condition() {
-			return termAndConditionsAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Site Map
-		 */
-		public String get_Site_Map() {
-			return siteMapAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Accessibility
-		 */
-		public String get_Accessibility() {
-			return accessibilityAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Pricing Policy
-		 */
-		public String get_Pricing_Policy() {
-			return pricingPolicyAEM;
-		}
-		
-		/**
-		 * 
-		 * 
-		 * get Locator - Legal Section On Site
-		 */
-		public String get_Legal_Section_Update() {
-			return legalSectionUpdate;
-		}
 		
 
 	}
-
-

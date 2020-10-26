@@ -1,12 +1,15 @@
 package automation.library.pageObjects;
 
 import static org.testng.Assert.fail;
+
 import java.util.List;
 import java.util.Set;
+
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import automation.library.cucumber.TestContext;
@@ -30,6 +33,7 @@ import automation.library.selenium.core.Element;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
+
 /**
  * This file contains the functions of AEM footer
  * 
@@ -46,6 +50,7 @@ public class AEM_Footer_Page extends PageObject {
 		testContext = new TestContext();
 
 	}
+
 	/** This function navigate to footer Component Page */
 	public void navigateTo_FooterComponent_Page() throws Exception {
 
@@ -634,6 +639,127 @@ public class AEM_Footer_Page extends PageObject {
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Accessibility())), 5, FileReaderManager.getInstance().getAEMDataReader().get_AccessibilityChanges());
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pricing_Policy()));
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pricing_Policy())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Pricing_Policy_Changes());
+		
+	}
+
+	
+	/** enter customer service sub section details */
+	public void enterCustomerServerDestinationUrlDetails() throws Exception{
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Order_Status_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Order_Status_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Order_Status_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Up_Delivery_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Up_Delivery_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_PickUp_Delivery_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getReturnExchange()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Return_And_Exchagne_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Return_End_Exchange_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getHelpFQA()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Help_And_FAQ_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Help_FAQ_Section_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getContactUs()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Contact_Us_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getStoreLocator()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Store_Locator_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Store_Locator_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getProductRecall()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Product_Recall_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Product_Result_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getSafetyDataSheet()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Safety_Data_Sheet_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Safty_Data_Sheet_Url());
+		
+	}
+	
+	/** verify customer service sub url changes are reflect on site */
+	public void verifyCustomerServiceUrlChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getCustomerServiceSection())), 5);
+		List<Element> li = $$(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getCustomerServiceSection());
+		Assert.assertEquals($getAttributeValue(li.get(0), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Order_Status_Url());
+		Assert.assertEquals($getAttributeValue(li.get(1), "href"), FileReaderManager.getInstance().getAEMDataReader().get_PickUp_Delivery_Url());
+		Assert.assertEquals($getAttributeValue(li.get(2), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Return_End_Exchange_Url());
+		Assert.assertEquals($getAttributeValue(li.get(3), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Help_FAQ_Section_Url());
+		Assert.assertEquals($getAttributeValue(li.get(4), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_Url());
+		Assert.assertEquals($getAttributeValue(li.get(5), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Store_Locator_Url());
+		Assert.assertEquals($getAttributeValue(li.get(6), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Product_Result_Url());
+		Assert.assertEquals($getAttributeValue(li.get(7), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Safty_Data_Sheet_Url());
+		PageObject.getDriver().switchTo().parentFrame();
+		
+	}
+	
+	/** enter customer service sub section details */
+	public void reverseChangesCustomerServerSubSectionUrlDetails() throws Exception{
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Order_Status_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Order_Status_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Order_Status_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Up_Delivery_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Up_Delivery_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_PickUp_Delivery_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getReturnExchange()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Return_And_Exchagne_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Return_End_Exchange_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getHelpFQA()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Help_And_FAQ_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Help_FAQ_Section_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getContactUs()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Contact_Us_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getStoreLocator()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Store_Locator_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Store_Locator_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getProductRecall()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Product_Recall_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Product_Result_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().getSafetyDataSheet()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Safety_Data_Sheet_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Safty_Data_Sheet_Url_Changes());
+		
+	}
+	
+	/** enter service and solutions sub url details */
+	public void enterServiceAndSolutionsSubUrlTitleDetails() throws Exception{
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Two())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Canadian_Tire_Financial_Services_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Canadian_Tire_Financial_Services_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Canadian_Tire_Financial_Services_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Installation_Assembling_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Installation_Assembling_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Installation_Assembling_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Auto_Services_Center_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Auto_Services_Center_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Auto_Service_Center_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Loan_Tool_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Loan_Tool_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Load_Tool_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Road_Assistance_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Road_Assistance_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Road_Side_Assistance_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Cards_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Cards_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Gift_Cards_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Tested_For_Life_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Tested_For_Life_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Tested_For_Life_Url());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Cards_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Registry_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Gift_Registry_Url());
+		
+	}
+	
+	/** verify service and solution sub url changes are reflect on site */
+	public void verifyServiceAndSolutionURlChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Service_And_Installation_Updated())), 5);
+		List<Element> li = $$(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Service_And_Installation_Updated());
+		Assert.assertEquals($getAttributeValue(li.get(0), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Canadian_Tire_Financial_Services_Url());
+		Assert.assertEquals($getAttributeValue(li.get(1), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Installation_Assembling_Url());
+		Assert.assertEquals($getAttributeValue(li.get(2), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Auto_Service_Center_Url());
+		Assert.assertEquals($getAttributeValue(li.get(3), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Load_Tool_Url());
+		Assert.assertEquals($getAttributeValue(li.get(4), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Road_Side_Assistance_Url());
+		Assert.assertEquals($getAttributeValue(li.get(5), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Gift_Cards_Url());
+		Assert.assertEquals($getAttributeValue(li.get(6), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Tested_For_Life_Url());
+		Assert.assertEquals($getAttributeValue(li.get(7), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Gift_Cards_Url());
+		PageObject.getDriver().switchTo().parentFrame();
+		
+	}
+	
+	/** enter service and solutions sub url details */
+	public void reverseChangesServiceAndSolutionsSubUrlTitleDetails() throws Exception{
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Two())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Canadian_Tire_Financial_Services_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Canadian_Tire_Financial_Services_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Canadian_Tire_Financial_Services_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Installation_Assembling_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Installation_Assembling_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Installation_Assembling_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Auto_Services_Center_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Auto_Services_Center_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Auto_Service_Center_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Loan_Tool_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Loan_Tool_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Load_Tool__Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Road_Assistance_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Road_Assistance_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Road_Side_Assistance_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Cards_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Cards_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Gift_Cards__Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Tested_For_Life_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Tested_For_Life_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Tested_For_Life_Url_Changes());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Cards_Sub_Url()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Gift_Registry_Sub_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Gift_Registry_Url_Changes());
 		
 	}
 }
