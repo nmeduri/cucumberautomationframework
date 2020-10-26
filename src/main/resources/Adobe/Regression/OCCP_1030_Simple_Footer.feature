@@ -108,7 +108,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then user should be navigated to the page where detailed accessibility information is displayed
 	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2835, TC-2862 Verification of clicking of text "Site Map" - Mobile
+	Scenario: TC-2835, TC-2862 ,TC-2844 Verification of clicking of text "Site Map" - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And user clicks on legal 'plus' section

@@ -12,7 +12,7 @@ public class Your_Email_Has_Been_Verified_PageLocator {
 	
 	String yourEmailHasBeenVerified = Property.getProperty(Constant.OR_FILE, "yourEmailHasBeenVerified");
 	String ClickContinueButtonEmailVerificationPage = Property.getProperty(Constant.OR_FILE, "ClickContinueButtonEmailVerificationPage");
-	
+
 	/**
 	 * gets Locator - Your Email Has Been Verified
 	 * 

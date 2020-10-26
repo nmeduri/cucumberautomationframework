@@ -2,7 +2,6 @@
 package automation.library.managers;
 
 import org.openqa.selenium.WebDriver;
-
 import automation.library.locator.AEM_Common_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
 import automation.library.locator.AEM_Link_Card_Page_Locator;
@@ -140,9 +139,7 @@ public class PageObjectManager {
 	private AEM_Footer_Page getAEMFooterPage; 
 	
 	public PageObjectManager() {
-
 		
-
 	}
 	
 	/** Returns Instance of Page Object File */
@@ -405,7 +402,7 @@ public class PageObjectManager {
 	public Link_Your_Existing_Triangle_Rewards_Card_PageLocator getLinkYourExistingTriangleRewardsAccountLocaoter() {
 		return (getLinkYourExistingRewardsLocator == null) ? getLinkYourExistingRewardsLocator = new Link_Your_Existing_Triangle_Rewards_Card_PageLocator() : getLinkYourExistingRewardsLocator; 
 	}
-	
+
 	/** Return Instance of Search And SRP Page */
 	public AEM_Search_And_SRP_Page getAEMSearchAndSRPPage(WebDriver driver) {
 		return (getSearchAndSRPPage == null) ?  getSearchAndSRPPage = new AEM_Search_And_SRP_Page(driver) : getSearchAndSRPPage;

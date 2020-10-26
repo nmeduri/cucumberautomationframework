@@ -1,9 +1,5 @@
-
 package automation.library.pageObjects;
-
-
 import static org.testng.Assert.fail;
-
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,7 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import automation.library.cucumber.TestContext;
 import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;

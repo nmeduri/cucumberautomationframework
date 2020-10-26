@@ -567,7 +567,7 @@ public class PageObject extends BaseClass {
 		String String = (java.lang.String) configuration.getProperty("parentWindow");
 		PageObject.getDriver().switchTo().window(String);
 	}
-	
+
 	/** navigate back to previous page */
 	public void navigateBack() throws Exception {
 		PageObject.getDriver().navigate().back();

@@ -220,11 +220,6 @@ public class DataReader {
 			throw new RuntimeException("Invalid EmailData Data not specified in the Data file.");
 	}
 
-	/**
-	 * gets Email Detail
-	 * 
-	 */
-	
 	public String get_Email_Data() {
 		String email = Property.getProperty(Constant.DATA_FILE, "getEmail");
 		if(email != null) 
@@ -232,7 +227,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Login URL
 	 * 
@@ -488,7 +483,19 @@ public class DataReader {
 			throw new RuntimeException("Deactivated Card Number not specified in the Data file.");
 	}
 	/**
-	 * gets Deactivated card number
+	 * gets activated card number
+	 * 
+	 */
+
+	public String get_Activated_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "activatedcardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Activated Card Number not specified in the Data file.");
+	}
+	/**
+	 * gets loyalty card number
 	 * 
 	 */
 	
@@ -499,8 +506,31 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
+	/**
+	 * gets closed card number
+	 * 
+	 */
 	
+	public String get_Closed_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "closedCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Closed Card Number not specified in the Data file.");
+	}
+	/**
+	 * gets non existing card number
+	 * 
+	 */
 	
+	public String get_NonExisting_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "nonExistingCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Non existing card Number not specified in the Data file.");
+	}
+		
 	/**
 	 * gets Data - Proivnce
 	 * 
@@ -523,8 +553,8 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
-	
 
+	
 
 /**
  * gets SearchValue
@@ -549,6 +579,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
+	
 	
 	/**
 	 * gets Gigya API Key
@@ -698,12 +729,13 @@ public class DataReader {
 	}
 	
 
+
 	/**
 	 * gets password
 	 * 
 	 */
 	
-	public String get_Password() {
+public String get_Password() {
 		String email = Property.getProperty(Constant.DATA_FILE, "getPassword");
 		if(email != null) 
 			return email;

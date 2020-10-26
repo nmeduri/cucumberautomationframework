@@ -53,7 +53,19 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	public void enterData_Deactivated_Card_Number() throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Deactivated_Card_Number());
 	}
-	
+
+	/** This function enters closed card number */
+	public void enterData_Closed_Card_Number() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Closed_Card_Number());
+	}
+	/** This function enters nonExisting card number */
+	public void enterData_NonExisting_Card_Number() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_NonExisting_Card_Number());
+	}
+	/** This function enters activated card number */
+	public void enterData_activated_Card_Number() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Activated_Card_Number());
+	}
 	/** This function enters loyalty card number */
 	public void enterData_loyalty_Card_Number() throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Loyalty_Card_Number());
@@ -107,6 +119,14 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	/** This function verify that Deactivated Error message is displayed */
 	public void display_Deactivated_Error_Message() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Deactivated_Error_Message()));
+	}
+	/** This function verify that Closed card Error message is displayed */
+	public void display_Closed_Error_Message() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_ClosedCard_Error_Message()));
+	}
+	/** This function verify that non-existing card Error message is displayed */
+	public void display_nonexisting_Error_Message() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_nonExistingCard_Error_Message()));
 	}
 	
 	/** This function verify that Error Image is displayed */
