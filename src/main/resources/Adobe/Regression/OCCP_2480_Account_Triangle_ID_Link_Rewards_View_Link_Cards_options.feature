@@ -72,9 +72,9 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	Then click on the toggle from left to right
 	And user should not see the tool tip message
 	
-	#@RegressionTest @WideScreen
+	@RegressionTest @WideScreen @RegressT
 	Scenario: TC-2007,2015,2016,1993,TC-1996 Verify hide the link screen option on the Link Card screen when -Email Validation
-	Given quit browser
+	#Given quit browser
 	When open browser
 	Given sign up url is available
 	Then sign up page is displayed
@@ -97,7 +97,6 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	When click on the toggle from left to right
 	And click on skip link
 	Then pdp page should displayed
-	#And open new window
 	Given login url is available
 	When user enter the previously registered email
 	And user enter password

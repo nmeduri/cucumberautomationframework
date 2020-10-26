@@ -344,7 +344,7 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	
 	@And("reverse the legal section changes")
 	public void reverse_the_legal_section_changes() throws Exception {
-		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesAboutUsSubSectionTitleDetails();
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesLegalSubSectionTitleDetails();
 	}
 	
 	@And("update customer service destination url")
@@ -377,9 +377,34 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesServiceAndSolutionsSubUrlTitleDetails();
 	}
 	
+	@And("update about us sub url details")
+	public void update_about_us_sub_url_details() throws Exception { 
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterAboutUsSubUrlDetails();
+	}
 	
-
-
+	@Then("the about us sub url changes are reflect on site")
+	public void the_about_us_sub_url_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyAbutUsUrlChangesReflectOnSite();
+	}
 	
+	@And("reverse the about us url changes")
+	public void reverse_the_about_us_url_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesAboutUsSubUrlTitleDetails();
+	}
+	
+	@And("update legal sub section url details")
+	public void update_legal_sub_section_url_details() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterLegalSubSectionUrlDetails();
+	}
+	
+	@Then("the legal sub url changes are reflect on site")
+	public void the_legal_sub_url_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyLegalUrlChangesReflectOnSite();
+	}
+	
+	@And("reverse the legal url changes")
+	public void reverse_the_legal_url_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesLegalSubUrlDetails();
+	}
 
 }

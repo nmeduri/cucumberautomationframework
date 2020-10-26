@@ -86,6 +86,20 @@ public class AEM_Footer_Page_Locator {
 	String testedForLifeSubUrl = Property.getProperty(Constant.OR_FILE, "testedForLifeSubUrl");
 	String giftRegistrySubUrl = Property.getProperty(Constant.OR_FILE, "giftRegistrySubUrl");
 	
+	String aboutCanadianTireUrlAEM = Property.getProperty(Constant.OR_FILE, "aboutCanadianTireUrlAEM");
+	String careersUrlAEM = Property.getProperty(Constant.OR_FILE, "careersUrlAEM");
+	String aboutTriangleUrlAEM = Property.getProperty(Constant.OR_FILE, "aboutTriangleUrlAEM");
+	String recylingInformationUrlAEM = Property.getProperty(Constant.OR_FILE, "recylingInformationUrlAEM");
+	String ourBrandsAEMUrl = Property.getProperty(Constant.OR_FILE, "ourBrandsAEMUrl");
+	String flyerSignUpUrlAEM = Property.getProperty(Constant.OR_FILE, "flyerSignUpUrlAEM");
+	String sustaiabilityUrlAEM = Property.getProperty(Constant.OR_FILE, "sustaiabilityUrlAEM");
+	
+	String privacyPlolicyUrlAEM = Property.getProperty(Constant.OR_FILE, "privacyPlolicyUrlAEM");
+	String termAndConditionsUrlAEM = Property.getProperty(Constant.OR_FILE, "termAndConditionsUrlAEM");
+	String siteMapUrlAEM = Property.getProperty(Constant.OR_FILE, "siteMapUrlAEM");
+	String accessibilityUrlAEM = Property.getProperty(Constant.OR_FILE, "accessibilityUrlAEM");
+	String pricingPolicyUrlAEM = Property.getProperty(Constant.OR_FILE, "pricingPolicyUrlAEM");
+	
 	
     /**
 	 * gets Locator - Footer Pannel
@@ -674,13 +688,114 @@ public class AEM_Footer_Page_Locator {
 	public String getFooter_viewLess() {
 		return viewLess;	
 	}
-	 /**
-		 * gets Locator - Footer Pannel
-		 * 
-		 */
+	
 	   
+	/**
+	 * 
+	 * get Locator - About Canadian Tire
+	 * 	
+	 */
+	public String get_About_Canadian_Tire_Url() {
+		return aboutCanadianTireUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locaotr - Careers Url
+	 * 
+	 */
+	public String get_Careers_Url() {
+		return careersUrlAEM;
+	}
 		
-		
-		
+	/**
+	 * 
+	 * get Locator - About Training ID
+	 * 
+	 */
+	
+	public String get_About_Training_ID_Url() {
+		return aboutTriangleUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Recyling Information 
+	 * 
+	 */
+	public String get_Recyling_Information_Url() {
+		return recylingInformationUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Our Brands
+	 * 
+	 */
+	public String get_Our_Brands_Url() {
+		return ourBrandsAEMUrl;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Flyer Sign Up
+	 * 
+	 */
+	public String get_Flyer_Sign_Up_Url() {
+		return flyerSignUpUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Sustainabiliity
+	 * 
+	 */
+	public String get_Sustainability_Url() {
+		return sustaiabilityUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Privacy Policy
+	 * 
+	 */
+	public String get_Privacy_Policy_Url() {
+		return privacyPlolicyUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Terms and Conditions
+	 * 
+	 */
+	public String get_Terms_And_Condtions_Url() {
+		return termAndConditionsUrlAEM;
+	}
+
+	/**
+	 * 
+	 * get Locator - Site Map 	
+	 */
+	public String get_Site_Map_Url() {
+		return siteMapUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Accessibility
+	 * 
+	 */
+	public String get_Accessibility_Url() {
+		return accessibilityUrlAEM;
+	}
+	
+	/**
+	 * 
+	 * get Locator - Pricing Policy
+	 * 
+	 */
+	public String get_Pricing_Policy_Url() {
+		return pricingPolicyUrlAEM;
+	}
 
 	}

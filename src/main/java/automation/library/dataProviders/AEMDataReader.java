@@ -1680,6 +1680,7 @@ public class AEMDataReader {
 			return loadToolUrl;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+
 	
 	/**
 	 * 
@@ -1822,6 +1823,299 @@ public class AEMDataReader {
 		String giftRegistryUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "giftRegistryUrlChanges");
 		if(giftRegistryUrlChanges != null)
 			return giftRegistryUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - About Canadian Tire
+	 * 
+	 */
+	public String get_About_Canadian_Tire_Url() {
+		String aboutCanadianTireUrl = Property.getProperty(Constant.AEM_DATA_FILE, "aboutCanadianTireUrl");
+		if(aboutCanadianTireUrl != null)
+			return aboutCanadianTireUrl;
+
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Careers
+	 * 
+	 */
+	public String get_Careers_Url() {
+		String careersUrl = Property.getProperty(Constant.AEM_DATA_FILE, "careersUrl");
+		if(careersUrl != null)
+			return careersUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - About Triangle ID
+	 * 
+	 */
+	public String get_About_Triangle_ID_Url() {
+		String aboutTriangleIDUrl = Property.getProperty(Constant.AEM_DATA_FILE, "aboutTriangleIDUrl");
+		if(aboutTriangleIDUrl != null)
+			return aboutTriangleIDUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Recyling Information
+	 * 
+	 */
+	public String get_Recyling_Information_Url() {
+		String recylingInformationUrl = Property.getProperty(Constant.AEM_DATA_FILE, "recylingInformationUrl");
+		if(recylingInformationUrl != null)
+			return recylingInformationUrl;
+
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+<<<<<<< HEAD
+	 * get Data - Our Brands
+	 * 
+	 */
+	public String get_Our_Brands_Url() {
+		String ourBrandsUrl = Property.getProperty(Constant.AEM_DATA_FILE, "ourBrandsUrl");
+		if(ourBrandsUrl != null)
+			return ourBrandsUrl;
+
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Flyer Sign Up
+	 * 
+	 */
+	public String get_Flyer_Sign_Up_Url() {
+		String flyerSignUpUrl = Property.getProperty(Constant.AEM_DATA_FILE, "flyerSignUpUrl");
+		if(flyerSignUpUrl != null)
+			return flyerSignUpUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Sustainability
+	 * 
+	 */
+	public String get_Sustainablity_Url() {
+		String sustainablityUrl = Property.getProperty(Constant.AEM_DATA_FILE, "sustainablityUrl");
+		if(sustainablityUrl != null)
+			return sustainablityUrl;
+
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - About Canadian Tire
+	 * 
+	 */
+	public String get_About_Canadian_Tire_Url_Changes() {
+		String aboutCanadianTireUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "aboutCanadianTireUrlChanges");
+		if(aboutCanadianTireUrlChanges != null)
+			return aboutCanadianTireUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Careers
+	 * 
+	 */
+	public String get_Careers_Url_Changes() {
+		String careersUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "careersUrlChanges");
+		if(careersUrlChanges != null)
+			return careersUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - About Triangle ID
+	 * 
+	 */
+	public String get_About_Triangle_ID_Url_Changes() {
+		String aboutTriangleIDUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "aboutTriangleIDUrlChanges");
+		if(aboutTriangleIDUrlChanges != null)
+			return aboutTriangleIDUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Recyling Information
+	 * 
+	 */
+	public String get_Recyling_Information_Url_Changes() {
+		String recylingInformationUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "recylingInformationUrlChanges");
+		if(recylingInformationUrlChanges != null)
+			return recylingInformationUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Our Brands
+	 * 
+	 */
+	public String get_Our_Brands_Url_Changes() {
+		String ourBrandsUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "ourBrandsUrlChanges");
+		if(ourBrandsUrlChanges != null)
+			return ourBrandsUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Flyer Sign Up
+	 * 
+	 */
+	public String get_Flyer_Sign_Up_Url_Changes() {
+		String flyerSignUpUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "flyerSignUpUrlChanges");
+		if(flyerSignUpUrlChanges != null)
+			return flyerSignUpUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Sustainability
+	 * 
+	 */
+	public String get_Sustainablity_Changes_Url() {
+		String sustainablityUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "sustainablityUrlChanges");
+		if(sustainablityUrlChanges != null)
+			return sustainablityUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Privacy Policy
+	 * 
+	 */
+	public String get_Privacy_Policy_Url() {
+		String privacyPolicyUrl = Property.getProperty(Constant.AEM_DATA_FILE, "privacyPolicyUrl");
+		if(privacyPolicyUrl != null)
+			return privacyPolicyUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Terms and Conditions
+	 * 
+	 */
+	public String get_Terms_And_Conditions_Url() {
+		String termsAndCondtionsUrl = Property.getProperty(Constant.AEM_DATA_FILE, "termsAndCondtionsUrl");
+		if(termsAndCondtionsUrl != null)
+			return termsAndCondtionsUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Site Map
+	 * 
+	 */
+	public String get_Site_Map_Url() {
+		String siteMapUrl = Property.getProperty(Constant.AEM_DATA_FILE, "siteMapUrl");
+		if(siteMapUrl != null)
+			return siteMapUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Accessibility
+	 * 
+	 */
+	public String get_Accessibility_Url() {
+		String accessibiltyUrl = Property.getProperty(Constant.AEM_DATA_FILE, "accessibiltyUrl");
+		if(accessibiltyUrl != null)
+			return accessibiltyUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Pricing Policy
+	 * 
+	 */
+	public String get_Pricing_Policy_Url() {
+		String pricingPolicyUrl = Property.getProperty(Constant.AEM_DATA_FILE, "pricingPolicyUrl");
+		if(pricingPolicyUrl != null)
+			return pricingPolicyUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Privacy Policy
+	 * 
+	 */
+	public String get_Privacy_Policy_Url_Changes() {
+		String privacyPolicyUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "privacyPolicyUrlChanges");
+		if(privacyPolicyUrlChanges != null)
+			return privacyPolicyUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Terms and Conditions
+	 * 
+	 */
+	public String get_Terms_And_Conditions_Url_Changes() {
+		String termsAndCondtionsUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "termsAndCondtionsUrlChanges");
+		if(termsAndCondtionsUrlChanges != null)
+			return termsAndCondtionsUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Site Map
+	 * 
+	 */
+	public String get_Site_Map_Url_Changes() {
+		String siteMapUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "siteMapUrlChanges");
+		if(siteMapUrlChanges != null)
+			return siteMapUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Accessibility
+	 * 
+	 */
+	public String get_AccessibilityUrlChanges() {
+		String accessibiltyYUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "accessibiltyYUrlChanges");
+		if(accessibiltyYUrlChanges != null)
+			return accessibiltyYUrlChanges;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Pricing Policy
+	 * 
+	 */
+	public String get_Pricing_Policy_Url_Changes() {
+		String pricingPolicyUrlChanges = Property.getProperty(Constant.AEM_DATA_FILE, "pricingPolicyUrlChanges");
+		if(pricingPolicyUrlChanges != null)
+			return pricingPolicyUrlChanges;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
 }
