@@ -82,5 +82,92 @@ public class OCCP_2805_Age_Of_Majority_Check_Step extends BaseClass{
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).dispaly_ageMajorityError();
 	}
 	
+	@When("aem author with access navigates to new rewards card screen")
+	public void navigate_to_new_rewards_card_screen() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).navigateToNewRewardsCardScreen();
+	}
+	
+	@And("click on aem new reward card title")
+	public void click_on_aem_new_rewards_card_screen() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).clickOnNewRewardsCardTitle();
+	}
+	
+	@And("in link new rewards card page click on error tab")
+	public void click_on_error_screen_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).clickOnErrorScreenTab();
+	}
+	
+	@And("user should be able to author error text")
+	public void user_able_to_author_error_text() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).displayErrorTextField();
+	}
+	
+	@And("user updates the error text")
+	public void user_updates_error_text() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterDataErrorText();
+	}
+	
+	@And("user updates the try again cta label")
+	public void user_updates_tryagain_cta_label() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterDataTryAgainLabel();
+	}
+	
+	@And("user updates the cancel cta label")
+	public void user_updates_cancel_cta_label() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterDataCancelLabel();
+	}
+	
+	@And("login to AEM using the right credentials as mentioned in the test data")
+	public void login_to_aem_using_the_right_credential_as_mentioned_in_the_test_data() throws Exception {
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickArrowIcon();
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).enterUsername();
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).enterPassword();
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickSignInButton();
+	}
+	
+	@And("user should be able to author error image")
+	public void user_able_to_author_error_image() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).displayErrorImageField();
+	}
+	
+	@And("user should be able to author try again cta label")
+	public void user_able_to_author_tryagain_label() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).displayTryAgainCTA();
+	}
+	
+	@And("user should be able to author cancel cta label")
+	public void user_able_to_author_cancel_label() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).displayCancelCTA();
+	}
+	
+	@And("user updates the error image")
+	public void user_updates_error_image() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterDataErrorImage();
+	}
+	
+	@Then ("error text changes are reflected on ctc site")
+	public void error_text_changes_reflected_ctc_site() throws Exception {
+		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).verifyErrorTextChangesReflectOnSite();
+	}
+
+	@Then ("try again cta label changes are reflected on ctc site")
+	public void tryagain_label_changes_reflected_ctc_site() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterMonthOfBirth_After_currentDate();
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDateOfBirth();
+	}
+
+	@Then ("cancel cta changes are reflected on ctc site")
+	public void cancel_label_changes_reflected_ctc_site() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterMonthOfBirth_After_currentDate();
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDateOfBirth();
+	}
+	
+	@Then ("error image changes are reflected on ctc site")
+	public void error_image_changes_reflected_ctc_site() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterMonthOfBirth_After_currentDate();
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDateOfBirth();
+	}
+	
+	
 }
 		

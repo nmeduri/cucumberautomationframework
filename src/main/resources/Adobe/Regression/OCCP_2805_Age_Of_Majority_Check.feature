@@ -3,7 +3,7 @@ Feature: 	OCCP-2805 Account/Triangle ID - Link Rewards / Age of Majority Check
   Description: To test the ADOBE Test Cases for the story OCCP-2805
 
     #@Regression @MobileView @WebView @SmokeTest
-    Scenario: TC-2593,TC-2602 Verfiy Age of Majority Reached on Complete Your Profile screen on Desktop
+    Scenario: TC-2593,TC-2602, TC-2607 Verfiy Age of Majority Reached on Complete Your Profile screen on Desktop
     Given login url is available
 	When enter detail email
 	And user enter password

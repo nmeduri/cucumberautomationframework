@@ -57,6 +57,7 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	@Then("scroll down to footer")
 	public void scroll_down_to_footer() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).scrollDownToFooter();	
+	
 	}
 
 	@Then("scroll down to mobile footer")
@@ -276,6 +277,178 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	public void plus_should_be_displayed_instead_of_minus() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayCustomSupportPlusButton();
 	}
+	
+	@And("user clicks on the section headers name Customer Support")
+	public void click_on_custom_support_header_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickableCustomSupportHeader();
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayCustomSupportPlusButton();
+	}
+
+	@And("user clicks on the section headers name Services & Solutions")
+	public void click_on_services_and_solutions_header_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickableServicesAndSolutionsHeader();
+	}
+	
+	@And("user clicks on the section header name About Us")
+	public void click_on_about_us_header_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickableAboutUsHeader();
+	}
+	
+	@And("user clicks on the section header name Legal")
+	public void click_on_legal_header_section() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickableLegalHeader();
+	}
+
+	@And("in footer links under custom support section access and click on order status")
+	public void click_on_order_status_() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnOrderStatus();
+	}	
+	
+	@Then("user should be navigate to defined associated page")
+	public void user_navigate_to_associate_page() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyLinkNavigateToAssociatedPage();
+	}
+	
+	@And("user navigates back to to previous page")
+	public void navigate_back_to_previous_page() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyNavigateBack();
+	}
+	
+	@And("in footer links under custom support section access and click on pickup & delivery")
+	public void click_on_pickup_and_delivery() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnPickUpAndDelivery();
+	}	
+	
+	@And("in footer links under custom support section access and click on returns & exchanges")
+	public void click_on_returns_and_exchanges() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnReturnsAndExchanges();
+	}	
+	
+	@And("in footer links under custom support section access and click on help & faqs")
+	public void click_on_help_and_faqs() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnHelpAndFaqs();
+	}	
+	
+	@And("in footer links under custom support section access and click on contact us")
+	public void click_on_contact_us() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnContactUs();
+	}	
+	
+	@And("in footer links under custom support section access and click on store locator")
+	public void click_on_store_locator() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnStoreLocator();
+	}
+	
+	@And("in footer links under custom support section access and click on product recalls")
+	public void click_on_product_recalls() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnProductRecalls();
+	}
+	
+	@And("in footer links under custom support section access and click on safety data sheets")
+	public void click_on_safety_data_sheets() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnSafetyDataSheets();
+	}
+	
+	@And("in footer links under services and solutions section access and click on canadian tires financial services")
+	public void click_on_canadian_tires_financial_services() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnCanadianTiresFinancialServices();
+	}
+	
+	@And("in footer links under services and solutions section access and click on installation & assembling")
+	public void click_on_installation_and_assembling() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnInstallationAndAssembling();
+	}
+	
+	@And("in footer links under services and solutions section access and click on auto service center")
+	public void click_on_auto_service_center() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnAutoServiceCenter();
+	}
+	
+	@And("in footer links under services and solutions section access and click on loan-a-tool")
+	public void click_on_loan_a_tool() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnLoanATool();
+	}
+	
+	@And("in footer links under services and solutions section access and click on roadside assistance")
+	public void click_on_roadside_assistance() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnRoadsideAssistance();
+	}
+	
+	@And("in footer links under services and solutions section access and click on gift cards")
+	public void click_on_gift_cards() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnTestedForLife();
+	}
+	
+	@And("in footer links under services and solutions section access and click on tested for life")
+	public void click_on_tested_for_life() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnTestedForLife();
+	}
+	
+	@And("in footer links under services and solutions section access and click on gift registry")
+	public void click_on_gift_registry() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnGiftRegistry();
+	}
+	
+	@And("in footer links under about us section access and click on about canadian tire")
+	public void click_on_about_canadian_tire() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnAboutCanadianTire();
+	}
+	
+	@And("in footer links under about us section access and click on careers")
+	public void click_on_careers() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnCareers();
+	}
+	
+	@And("in footer links under about us section access and click on about triangle id")
+	public void click_on_about_triangle_id() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnAboutTriangleID();
+	}
+	
+	@And("in footer links under about us section access and click on recycling information")
+	public void click_on_recycling_information() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnRecyclingInformation();
+	}
+	
+	@And("in footer links under about us section access and click on our brands")
+	public void click_on_our_brands() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnOurBrands();
+	}
+	
+	@And("in footer links under about us section access and click on flyer sign up")
+	public void click_on_flyer_sign_up() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnFlyerSignUp();
+	}
+	
+	@And("in footer links under about us section access and click on sustainability")
+	public void click_on_sustainability() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnSustainability();
+	}
+	
+	@And("in footer links under legal section access and click on privacy policy")
+	public void click_on_privacy_policy() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnPrivacyPolicyLink();
+	}
+	
+	@And("in footer links under legal section access and click on terms & conditions")
+	public void click_on_terms_and_conditions() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnTermsAndConditionsLink();
+	}
+	
+	@And("in footer links under legal section access and click on site map")
+	public void click_on_site_map() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnSiteMapLink();
+	}
+	
+	@And("in footer links under legal section access and click on accessibility")
+	public void click_on_accessibility() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnAccessibilityLink();
+	}
+	
+	@And("in footer links under legal section access and click on pricing policy")
+	public void click_on_pricing_policy() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnPricingPolicy();
+	}
+	
 	
 	@When("AEM author with access to configure footer load on the page")
 	public void aem_author_with_access_to_configure_footer_load_on_the_page() throws Exception {

@@ -46,7 +46,8 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enter first name detail */
 	public void enter_First_Name(String data) throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name())), 3);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollUpByCoordinates();
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name())), 20);
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name()), data);
@@ -171,9 +172,8 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function clears phone number */
 	public void emptyPhoneNumber() throws Exception {
-		Thread.sleep(5000);
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Number()));
-		Thread.sleep(5000);
+		
 	}
 	
 	/** This function verify the display of Phone number inline error */
@@ -181,6 +181,4 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Error())),20);
 		
 	}
-
-
 }

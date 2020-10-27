@@ -21,6 +21,16 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String deactivatedErrorText = Property.getProperty(Constant.OR_FILE, "deactivatedErrorText");
 	String triangleIdLogo = Property.getProperty(Constant.OR_FILE, "triangleIdLogo");
 	String linkYourExistingTriangleRewardCardTitle = Property.getProperty(Constant.OR_FILE, "linkYourExistingTriangleRewardCardTitle");
+	String headerText = Property.getProperty(Constant.OR_FILE, "headerText");
+	String subHeaderText = Property.getProperty(Constant.OR_FILE, "subHeaderText");
+	String cardInputPrefilled = Property.getProperty(Constant.OR_FILE, "cardInputPrefilled");
+	String tooltipMessage = Property.getProperty(Constant.OR_FILE, "tooltipMessage");
+	String tooltip = Property.getProperty(Constant.OR_FILE, "tooltip");
+	String generateCardLink = Property.getProperty(Constant.OR_FILE, "generateCardLink");
+	String inlineErrorIncorrectFormat = Property.getProperty(Constant.OR_FILE, "inlineErrorIncorrectFormat");
+	String invalidCardErrorMessage = Property.getProperty(Constant.OR_FILE, "invalidCardErrorMessage");
+	String thresholdErrorMessage = Property.getProperty(Constant.OR_FILE, "thresholdErrorMessage");
+	String alreadyEnrolledErrorMessage = Property.getProperty(Constant.OR_FILE, "alreadyEnrolledErrorMessage");
 	
 	/**
 	 * gets Locator - Enter Card number
@@ -116,5 +126,88 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 		return linkYourExistingTriangleRewardCardTitle;
 	}
 	
+	/**
+	 * gets Locator - Header
+	 * 
+	 */
+	
+	public String get_Header() {
+		return headerText;
+	}
+	
+	/**
+	 * gets Locator - Sub header
+	 * 
+	 */
+	
+	public String get_Sub_Header() {
+		return subHeaderText;
+	}
+	
+	/**
+	 * gets Locator - Prefilled card input
+	 * 
+	 */
+	
+	public String get_Card_Input_Prefilled() {
+		return cardInputPrefilled;
+	}
+	
+	/**
+	 * gets Locator - Tooltip message
+	 * 
+	 */
+	
+	public String get_Tooltip_Message() {
+		return tooltipMessage;
+	}
+	
+	/**
+	 * gets Locator - Tooltip
+	 * 
+	 */
+	public String get_Tooltip() {
+		return tooltip;
+	}
+	
+	/**
+	 * gets Locator - Tooltip
+	 * 
+	 */
+	public String get_Generate_Card_link() {
+		return generateCardLink;
+	}
+	
+	/**
+	 * gets Locator - get Inline error
+	 * 
+	 */
+	public String get_Inline_Error() {
+		return inlineErrorIncorrectFormat;
+	}
+	
+	/**
+	 * gets Locator - Tooltip
+	 * 
+	 */
+	public String get_Bad_Card_Error() {
+		return invalidCardErrorMessage;
+	}
+	
+	/**
+	 * gets Locator - Tooltip
+	 * 
+	 */
+	public String get_Threshold_Card_Error() {
+		return thresholdErrorMessage;
+	}
+	
+	/**
+	 * gets Locator - get Inline error
+	 * 
+	 */
+	public String get_Already_Linked_Card_Error() {
+		return alreadyEnrolledErrorMessage;
+	}
  }
 

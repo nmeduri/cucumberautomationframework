@@ -4,6 +4,8 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 import automation.library.locator.AEM_Common_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
+import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
+import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_Link_Card_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
@@ -34,6 +36,8 @@ import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
+import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
+import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_Link_Card_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
@@ -126,10 +130,14 @@ public class PageObjectManager {
 	private Gigya_Api_Tool_Page gigyaApiToolPage;
 	private Link_Rewards_Options_Page_Locator getLinkRewardsOptsPageLocator;
 	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
+	private AEM_New_Rewards_Card_Screen_Page getAEMNewRewardsCardScreenPage;
+	private AEM_New_Rewards_Card_Screen_Page_Locator getAEMNewRewardsCardScreenPageLocator;
 	private AEM_PDP_Page getAEMPDPPage;
 	private AEM_PDP_Page_Locator gettAEMPDPPPageLocator;
 	private AEM_PLP_Page getAEMPLPPage;
 	private AEM_PLP_Page_Locator getAEMPLPPageLocator;
+	private AEM_Link_Existing_Card_Page getAEMLinkExistingCardPage;
+	private AEM_Link_Existing_Card_Page_Locator getAEMLinkExistingCardLocatorPage;
 	private AEM_Footer_Page_Locator getAEMFooterPageLocator;
 	private Banner_Pages getBannerPages;
 	private Banners_Locator getBannerPageLocators;
@@ -443,6 +451,16 @@ public class PageObjectManager {
 		return (gigyaApiToolPage_Locator == null) ? gigyaApiToolPage_Locator =new Gigya_Api_Tool_Page_Locator() : gigyaApiToolPage_Locator;
 	}
 	
+	/** Return Instance of AEM New Rewards Card Screen Page */
+	public AEM_New_Rewards_Card_Screen_Page getAEMNewRewardsCardScreenPage(WebDriver driver) {
+		return (getAEMNewRewardsCardScreenPage == null) ? getAEMNewRewardsCardScreenPage = new AEM_New_Rewards_Card_Screen_Page(driver) : getAEMNewRewardsCardScreenPage;
+	}
+	
+	/** Return Instance of AEM New Rewards Card Screen Page Locator */
+	public AEM_New_Rewards_Card_Screen_Page_Locator getAEMNewRewardsCardScreenPageLocator() {
+		return (getAEMNewRewardsCardScreenPageLocator == null) ? getAEMNewRewardsCardScreenPageLocator = new AEM_New_Rewards_Card_Screen_Page_Locator() : getAEMNewRewardsCardScreenPageLocator;
+	}
+	
 	/** Returns Instance of AEM PDP Page */
 	public AEM_PDP_Page getAEMPDPPage(WebDriver driver) {
 		return (getAEMPDPPage == null) ? getAEMPDPPage = new AEM_PDP_Page(driver) : getAEMPDPPage;
@@ -461,6 +479,16 @@ public class PageObjectManager {
 	/** Returns Instance of AEM PLP Page Locator */
 	public AEM_PLP_Page_Locator getAEMPLPLocatorPage() {
 		return (getAEMPLPPageLocator == null) ? getAEMPLPPageLocator = new AEM_PLP_Page_Locator() : getAEMPLPPageLocator;
+	}
+	
+	/** Returns Instance of AEM Link Existing Card Page */
+	public AEM_Link_Existing_Card_Page getAEMLinkExistingCardPage(WebDriver driver) {
+		return (getAEMLinkExistingCardPage == null) ? getAEMLinkExistingCardPage = new AEM_Link_Existing_Card_Page(driver) : getAEMLinkExistingCardPage;
+ 	}
+	
+	/** Returns Instance of AEM Link Existing Card Page Locator */
+	public AEM_Link_Existing_Card_Page_Locator getAEMLinkExistingCardLocatorPage() {
+		return (getAEMLinkExistingCardLocatorPage == null) ? getAEMLinkExistingCardLocatorPage = new AEM_Link_Existing_Card_Page_Locator() : getAEMLinkExistingCardLocatorPage;
 	}
 
 	/** Returns Instance of AEM Footer Page Locator */

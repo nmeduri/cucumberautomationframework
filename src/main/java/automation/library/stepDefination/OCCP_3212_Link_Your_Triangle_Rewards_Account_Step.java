@@ -39,7 +39,7 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage(PageObject.getDriver()).click_Triangle_Reward_Card();
 	}
 	
-	@And("user enters loyalty card number that is deactivated")
+	@And("user should enter a loyalty card number that is deactivated")
 	public void user_enter__deactivated_card_number() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Deactivated_Card_Number();
 	}
@@ -172,5 +172,10 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
         //testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeDriver();
         PageObject.getDriver().quit();
     }
+	
+	@And("user enters a pending loyalty card number")
+	public void user_enter_pending_loyalty_card_number() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Pending_Card_Number();
+	}
 
 }

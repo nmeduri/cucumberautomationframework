@@ -4,6 +4,7 @@ Feature: OCCP-1561 PLP Breadcrumb
 	
 	@RegressionTest @WebView @WideScreen
     Scenario: TC-119 Verify Breadcrumb is displayed on PLP for Desktop/Desktop Wide view
+    Given open browser 
     When plp url is available
     When plp is displayed
     And scroll up to page
@@ -26,3 +27,4 @@ Feature: OCCP-1561 PLP Breadcrumb
     And scroll up to page
     Then breadcrumb is displayed
     And last breadcrumb is not clickable
+    And close browser

@@ -210,6 +210,95 @@ public class AEMDataReader {
 	}
 	
 	/**
+	 * gets SRP Url
+	 * 
+	 */
+	
+	public String get_New_Rewards_Card_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "newRewardsCardUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Corrective Auto Search message
+	 */
+	
+	public String get_Age_Of_Majority_Error_Text() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "ageOfMajorityErrorText");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_Try_Again_CTA_label() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "tryAgainLabel");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_Cancel_CTA_label() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "cancelLabel");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_Error_Image() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "errorImage");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_Footer_Logo_Alt_Text() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "footerLogoAltText");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_Copyright_Label_Text() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "copyrighttLabelText");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_Legal_Disclaimer_Text() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "legalDisclaimerText");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_View_More_Text() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "viewMoreText");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	public String get_View_Less_Text() {
+		String getMessage = Property.getProperty(Constant.AEM_DATA_FILE, "viewLessText");
+		if(getMessage != null)
+			return getMessage;
+		else
+			throw new RuntimeException("Corrective Search Message Data not specified in the Data file.");
+	}
+	
+	/*	
 	 * get Place Holder Label (Test)
 	 */
 	
@@ -625,6 +714,148 @@ public class AEMDataReader {
 	}
 	
 	/**
+	 * gets Link Existing Card Url
+	 * 
+	 */
+	
+	public String get_Link_Existing_Card_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "linkExistingCardUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Link Existing Card Title
+	 * 
+	 */
+	
+	public String get_Link_Card_Page_Title_Data() {
+		String title = Property.getProperty(Constant.AEM_DATA_FILE, "pagetitleText");
+		if(title != null)
+			return title;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Link Existing Card Sub Title
+	 * 
+	 */
+	
+	public String get_Link_Existing_Card_Sub_Title() {
+		String subTitle = Property.getProperty(Constant.AEM_DATA_FILE, "subTitle");
+		if(subTitle != null)
+			return subTitle;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool tip text label
+	 * 
+	 */
+	
+	public String get_Tooltip_Text_label() {
+		String toolTipText = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipLabelText");
+		if(toolTipText != null)
+			return toolTipText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool tip text label
+	 * 
+	 */
+	
+	public String get_Tooltip_Header_Text() {
+		String toolTipHeaderText = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipHeaderText");
+		if(toolTipHeaderText != null)
+			return toolTipHeaderText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool tip text label
+	 * 
+	 */
+	
+	public String get_Tooltip_Content() {
+		String toolTipContent = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipContent");
+		if(toolTipContent != null)
+			return toolTipContent;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Dont Have Card Text
+	 * 
+	 */
+	
+	public String get_Dont_Have_Card_Text() {
+		String dontHaveCardText = Property.getProperty(Constant.AEM_DATA_FILE, "dontHaveCardText");
+		if(dontHaveCardText != null)
+			return dontHaveCardText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Get one here text
+	 * 
+	 */
+	
+	public String get_One_Here_Text() {
+		String getOneHereText = Property.getProperty(Constant.AEM_DATA_FILE, "getOneHereText");
+		if(getOneHereText != null)
+			return getOneHereText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Dont Have Card Text
+	 * 
+	 */
+	
+	public String get_One_Here_Link() {
+		String getOneHereLink = Property.getProperty(Constant.AEM_DATA_FILE, "getOneHereLink");
+		if(getOneHereLink != null)
+			return getOneHereLink;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Dont Have Card Text
+	 * 
+	 */
+	
+	public String get_Cancel_CTA() {
+		String cancelCTAText = Property.getProperty(Constant.AEM_DATA_FILE, "cancelCTAText");
+		if(cancelCTAText != null)
+			return cancelCTAText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Input Field Text
+	 * 
+	 */
+	
+	public String get_Input_Field_Data() {
+		String inputField = Property.getProperty(Constant.AEM_DATA_FILE, "inputFieldText");
+		if(inputField != null)
+			return inputField;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	/*	
 	 * 
 	 * get Data - Show More Button
 	 * 

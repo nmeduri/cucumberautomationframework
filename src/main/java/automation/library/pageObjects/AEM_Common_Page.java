@@ -87,6 +87,24 @@ public class AEM_Common_Page extends PageObject {
 		}
 	}
 	
+	/** This function clicks on Page Information */
+	public void clickOnPageInformation() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Page_Information())),5);
+	}
+	
+	/** This function clicks on Publish Page */
+	public void clickOnPublishPage() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())),5);
+		if($display($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_SelectAll_Checkbox()))) {
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Button()));
+		}
+		else {
+			Log.message("select all checkbox not displayed", true);
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Preview()));
+		}
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Preview()));
+	}
+
 	/** This function clicks on preview button */
 	public void clickPreviewButton() throws Exception {
 		Thread.sleep(5000);
@@ -97,6 +115,14 @@ public class AEM_Common_Page extends PageObject {
 	/** This function clicks on Edit button */
 	public void clickEditButton() throws Exception {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())), 5);
+	}
+	
+	/** This function clicks on preview button */
+	public void clickOnThePreviewButton() throws Exception {
+		Thread.sleep(5000);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 5);
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 5);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 	}
 
 	

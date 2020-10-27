@@ -64,9 +64,7 @@ public class Login_Page extends PageObject {
 
 	/** This function enter email detail */
 	public void enterData_Email_Login_Page(String data) throws Exception {
-
-		$display(ExpectedConditions.visibilityOfElementLocated(
-				$By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page())), 40);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page())), 40);
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()),
 				data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());

@@ -73,6 +73,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enters card number */
 	public void enter_Card_Number(String data) throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 40);
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), data);
 	}
 	
@@ -118,7 +119,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	}
 	/** This function verify that Deactivated Error message is displayed */
 	public void display_Deactivated_Error_Message() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Deactivated_Error_Message()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Deactivated_Error_Message())), 40);
 	}
 	/** This function verify that Closed card Error message is displayed */
 	public void display_Closed_Error_Message() throws Exception {
@@ -177,4 +178,102 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 		Assert.assertEquals("", actualValue.replace(" ", ""));
 	}
 	
+	/** This function enters pending loyalty card number */
+	public void enterData_Pending_Card_Number() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Pending_Loyalty_Card_Number());
+	}
+	
+	/** This function verify cancel link is displayed */
+	public void displayCancelLink() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button()));
+	}
+	
+	/** This function verify header text is displayed */
+	public void displayHeaderText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Header()));
+	}
+	
+	/** This function verify sub header text is displayed */
+	public void displaySubHeaderText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Sub_Header()));
+	}
+	
+	/** This function verify input card number is displayed */
+	public void displayInputCardNumber() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Sub_Header()));
+	}
+	
+	/** This function verify Tooltip message and Icon is displayed */
+	public void displayTooltipMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Tooltip_Message()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Tooltip()));
+	}
+	
+	/** This function verify continue cta button is displayed */
+	public void displayContinueCTA() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Continue_Button()));
+	}
+	
+	/** This function verify generate card link is displayed */
+	public void displayGenerateCardLink() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Generate_Card_link()));
+	}
+	
+	/** This function enters incorrect format card number */
+	public void enterCardNoIncorrectFormat() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5, FileReaderManager.getInstance().getDataReader().get_Incorrect_Format_Card_Number()); 
+	}
+	
+	/** This function enters long character card number */
+	public void enterLongCharCardNo() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5, FileReaderManager.getInstance().getDataReader().get_Long_Card_Number()); 
+	}
+	
+	/** This function verify Inline error is displayed */
+	public void displayInlineError() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Inline_Error()));
+	}
+	
+	/** This function verify not more than 16 characters are present */
+	public void verifyNotAllowMoreCharacters() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()));
+		Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Long_Card_Number(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), "value").replaceAll(" ", ""));
+		Assert.assertTrue("restricted to 16 characters including 4 prepopulated", (($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), "value").replaceAll(" ", "")).length() <=12));
+	}
+	
+	/** This function enters invalid or bad card number */
+	public void enterBadCardNo() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5, FileReaderManager.getInstance().getDataReader().get_Bad_Card_Number()); 
+	}
+	
+	/** This function enters threshold card number */
+	public void enterThresholdCardNo() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5, FileReaderManager.getInstance().getDataReader().get_Threshold_Card_Number()); 
+	}
+	
+	/** This function enters already linked card number */
+	public void enterAlreadyLinkedCardNo() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5, FileReaderManager.getInstance().getDataReader().get_Already_Linked_Card_Number()); 
+	}
+	
+	/** This function verify Bad card error is displayed */
+	public void displayBadCardErrorMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Bad_Card_Error()));
+	}
+	
+	/** This function verify threshold card error is displayed */
+	public void displayThresholdCardErrorMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Threshold_Card_Error()));
+	}
+	
+	/** This function verify already linked card error is displayed */
+	public void displayAlreadyLinkedCardErrorMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Already_Linked_Card_Error()));
+	}
+
 }

@@ -10,19 +10,19 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters loyalty card number that is deactivated
+	And user should enter a loyalty card number that is deactivated
 	Then user should be able to enter the loyalty card number successfully which is deactivated
 	And user click on continue button
 	Then verify an error message is displayed informing card is deactivated
 	And verify when user click on try again button 
 	Then user should navigate to link existing triangle card screen without prepopulated data
-	And user enters loyalty card number that is deactivated
+	And user should enter a loyalty card number that is deactivated
 	And user click on continue button
 	Then verify an error message is displayed informing card is deactivated
 	And verify when user click on cancel button
 	Then user should navigate to link cards screen
 	
-	@RegressionTest @WebView @WideScreen 
+	@RegressionTest @WebView @WideScreen  
 	Scenario: TC-2399, Verify the 'Try Again' button on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email id
@@ -30,12 +30,12 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters loyalty card number that is deactivated
+	And user should enter a loyalty card number that is deactivated
 	Then user should be able to enter the loyalty card number successfully which is deactivated
 	And user click on continue button
 	Then try again button should be present in the error screen
 	
-	@RegressionTest @WebView @WideScreen 
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2400, Verify the 'Cancel' button on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email id
@@ -43,7 +43,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters loyalty card number that is deactivated
+	And user should enter a loyalty card number that is deactivated
 	And user click on continue button
 	Then cancel button should be present in the error screen
 
@@ -76,12 +76,12 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	#@RegressionTest @WideScreen @WebView
 	Scenario: TC-2401, Verify the UI of Link Cards screen screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters loyalty card number that is deactivated
+	And user should enter a loyalty card number that is deactivated
 	And user click on continue button
 	Then triangle id logo is displayed on screen
 	Then verify an error message is displayed informing card is deactivated
@@ -109,9 +109,10 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2390 Verfiy the display of screen when Card is Deactivated in Mobile view
-	When login url is available
-	When enter email detail
-	And user enter password
+	Given open browser
+	Given login url is available
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -128,8 +129,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2391 Verify the Error image on screen when Card is Deactivated in Mobile view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -143,8 +144,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2392 Verify the ErrorText on screen when Card is Deactivated in Mobile view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -157,8 +158,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2393 Verify the 'Try Again' button on screen when Card is Deactivated in Mobile view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -171,8 +172,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2394 Verify the 'Cancel' button on screen when Card is Deactivated in Mobile view
 	Given login url is available
-	When enter email detail
-	And user enter password
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
@@ -182,22 +183,3 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then verify an error message appears informing that card is deactivated
 	And user is able to see the click link on screen
 	
-	@RegressionTest @WebView @WideView
-	Scenario: TC-2180, TC-2181 Verification of display of error message when already linked loyalty card is used for registration - Desktop
-	Given login url is available
-	When enter email detail
-	And user enter password
-	And user click on sign in button
-	Then link card screen should be displayed
-	And user cick on triangle rewards card
-	And verify when user enters a loyalty card number that is deactivated
-	Then user should be able to enter the loyalty card number successfully which is deactivated
-	And user click on continue button
-	And verify when user click on try again button
-	Then user should be redirected to link existing card page
-	Then link card page should be displayed without prepoulating card number
-	And verify when user enters a loyalty card number that is deactivated
-	Then user should be able to enter the loyalty card number successfully which is deactivated
-	And user click on continue button
-	And verify when user click on cancel button
-	Then link card screen should be displayed

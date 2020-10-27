@@ -110,6 +110,200 @@ public class AEM_Footer_Page_Locator {
 	String aboutUsTitlePreview = Property.getProperty(Constant.OR_FILE, "aboutUsTitlePreview");
 	String legalTitlePreview = Property.getProperty(Constant.OR_FILE, "legalTitlePreview");
 	
+	String copyrightFooterTitleAEM = Property.getProperty(Constant.OR_FILE, "copyrightFooterTitleAEM");
+	String pickImage = Property.getProperty(Constant.OR_FILE, "pickImage");
+	String logoAltText = Property.getProperty(Constant.OR_FILE, "logoAltText");
+	String copyrightLabelAEM = Property.getProperty(Constant.OR_FILE, "copyrightLabelAEM");
+	String legalDisclaimerAEM = Property.getProperty(Constant.OR_FILE, "legalDisclaimerAEM");
+	String viewMoreAEM = Property.getProperty(Constant.OR_FILE, "viewMoreAEM");
+	String viewLessAEM = Property.getProperty(Constant.OR_FILE, "viewLessAEM");
+	String copyrightPreview = Property.getProperty(Constant.OR_FILE, "copyrightPreview");
+	String legalPreview = Property.getProperty(Constant.OR_FILE, "legalPreview");
+	String altTextPreview = Property.getProperty(Constant.OR_FILE, "altTextPreview");
+	String viewMorePreview = Property.getProperty(Constant.OR_FILE, "viewMorePreview");
+	String viewLessPreview = Property.getProperty(Constant.OR_FILE, "viewLessPreview");
+	String simpleFooterTitleAEM = Property.getProperty(Constant.OR_FILE, "simpleFooterTitleAEM");
+	String legalOpenURL = Property.getProperty(Constant.OR_FILE, "legalOpenURL");
+	String legalNewTab = Property.getProperty(Constant.OR_FILE, "legalNewTab");
+	String legalDisclaimerPreview = Property.getProperty(Constant.OR_FILE, "legalDisclaimerPreview");
+	String ctcWebCTR = Property.getProperty(Constant.OR_FILE, "ctcWebCTR");
+	String canadianTireLogo = Property.getProperty(Constant.OR_FILE, "canadianTireLogo");
+	String selectAemButton = Property.getProperty(Constant.OR_FILE, "selectAemButton");
+	String logoField = Property.getProperty(Constant.OR_FILE, "logoField");
+	String logoInPreview = Property.getProperty(Constant.OR_FILE, "logoInPreview");
+	
+	/**
+	 * gets Locator - Footer copyright title
+	 * 
+	 */
+	
+	public String get_Footer_Copyright_Title() {
+		return copyrightFooterTitleAEM;
+	}
+	
+	/**
+	 * gets Locator - Terms And Conditions (Footer)
+	 * 
+	 */
+	
+	public String get_Pick_Image() {
+		return pickImage;
+	}
+	
+	/**
+	 * gets Locator - logo alt text
+	 * 
+	 */
+	
+	public String get_Logo_Alt_Text() {
+		return logoAltText;
+	}
+	
+	/**
+	 * gets Locator - copyright label
+	 * 
+	 */
+	public String get_Copyright_Label_Aem() {
+		return copyrightLabelAEM;
+	}
+	
+	/**
+	 * gets Locator - legal disclaimer
+	 * 
+	 */
+	public String get_Legal_disclaimer_Aem() {
+		return legalDisclaimerAEM;
+	}
+		
+	/**
+	 * gets Locator - View More
+	 * 
+	 */
+	public String get_View_More_Aem() {
+		return viewMoreAEM;
+	}
+	
+	/**
+	 * gets Locator - View Less
+	 * 
+	 */
+	public String get_View_Less_Aem() {
+		return viewLessAEM;
+	}
+	
+	/**
+	 * gets Locator - Copyright label in Preview
+	 * 
+	 */
+	public String get_Copyright_Preview() {
+		return copyrightPreview;
+	}
+	
+	/**
+	 * gets Locator - Legal disclaimer in Preview
+	 * 
+	 */
+	public String get_Legal_Disclaimer_Preview() {
+		return legalDisclaimerPreview;
+	}
+	
+	/**
+	 * gets Locator - Alternative text in Preview
+	 * 
+	 */
+	public String get_Alt_Text_Preview() {
+		return altTextPreview;
+	}
+	
+	/**
+	 * gets Locator - View more in Preview
+	 * 
+	 */
+	public String get_View_More_Preview() {
+		return viewMorePreview;
+	}
+	
+	/**
+	 * gets Locator - View less in Preview
+	 * 
+	 */
+	public String get_View_Less_Preview() {
+		return viewLessPreview;
+	}
+	
+	/**
+	 * gets Locator - View more in Preview
+	 * 
+	 */
+	public String get_Simple_Footer_AEM_Title() {
+		return simpleFooterTitleAEM;
+	}
+	
+	/**
+	 * gets Locator - View less in Preview
+	 * 
+	 */
+	public String get_Legal_Open_Url() {
+		return legalOpenURL;
+	}
+	
+	/**
+	 * gets Locator - legal same
+	 * 
+	 */
+	public String get_Legal_New_Tab
+	() {
+		return legalNewTab;
+	}
+	
+	/**
+	 * gets Locator - Legal disclaimer in Preview
+	 * 
+	 */
+	public String get_Legal_Link_Preview() {
+		return legalPreview;
+	}
+	
+	/**
+	 * gets Locator - ctcWebCTR in AEM
+	 * 
+	 */
+	public String get_CTC_Web_CTR() {
+		return ctcWebCTR;
+	}
+	
+	/**
+	 * gets Locator - logo from dam
+	 * 
+	 */
+	public String get_Logo() {
+		return canadianTireLogo;
+	}
+	
+	/**
+	 * gets Locator - Select button AEM 
+	 * 
+	 */
+	public String get_Select_Aem_Button() {
+		return selectAemButton;
+	}
+	
+	/**
+	 * gets Locator - logo field
+	 * 
+	 */
+	public String get_Logo_Field() {
+		return logoField;
+	}
+	
+	/**
+	 * gets Locator - logo in preview
+	 * 
+	 */
+	public String get_Logo_In_Preview() {
+		return logoInPreview;
+	}
+	
 	
     /**
 	 * gets Locator - Footer Pannel
@@ -864,4 +1058,4 @@ public class AEM_Footer_Page_Locator {
 		return legalTitlePreview;
 	}
 
-	}
+}

@@ -905,4 +905,159 @@ public class AEM_Footer_Page extends PageObject {
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Legal_Title_Change());
 		
 	}
+	
+	/** This function clicks on AEM Footer Title */
+	public void clickOnFooterTitle() throws Exception {
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Footer_Copyright_Title())));
+		//$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Footer_Copyright_Title())), 10);
+	}
+	
+	/** This function verify image text is authorable */
+	public void displayLogoAltText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo_Alt_Text()));
+	}
+	
+	/** This function updates image alt text */
+	public void enterDataLogoAltText() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo_Alt_Text())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo_Alt_Text())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_Logo_Alt_Text()); 
+
+	}
+	
+	/** This function verify copyright label is authorable */
+	public void displayCopyrightLabel() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Copyright_Label_Aem()));
+	}
+	
+	/** This function updates copyright label text */
+	public void enterDataCopyrightLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Copyright_Label_Aem())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Copyright_Label_Aem())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Copyright_Label_Text()); 
+
+	}
+	
+	/** This function verify Legal Disclaimer label is authorable */
+	public void displayLegalDisclaimerAem() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_disclaimer_Aem()));
+	}
+	
+	/** This function updates Legal Disclaimer label text */
+	public void enterDataLegalDisclaimerAem() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_disclaimer_Aem())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_disclaimer_Aem())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Legal_Disclaimer_Text()); 
+
+	}
+	
+	/** This function verify View More label is authorable */
+	public void displayViewMoreAem() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Aem()));
+	}
+	
+	/** This function updates View More label text */
+	public void enterDataViewMoreAem() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Aem())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Aem())), 5, FileReaderManager.getInstance().getAEMDataReader().get_View_More_Text()); 
+	}
+	
+	/** This function verify View Less label is authorable */
+	public void displayViewLessAem() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Aem()));
+	}
+	
+	/** This function updates View Less label text */
+	public void enterDataViewLessAem() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_Less_Aem())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_Less_Aem())), 5, FileReaderManager.getInstance().getAEMDataReader().get_View_Less_Text()); 
+	}
+	
+	/** This function scrolls down to copyright footer */
+	public void scrollDownToCopyrightFooter() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Footer_Copyright_Title()), 2);	
+	}
+	
+	/** This function verifys copyright label changes reflected */
+	public void verifyCopyrightLabelChangesReflected() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Copyright_Label_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Copyright_Preview())));
+	}
+	
+	/** This function verifys legal disclaimer changes reflected */
+	public void verifyLegalDisclaimerChangesReflected() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Legal_Disclaimer_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Disclaimer_Preview())));
+	}
+	
+	/** This function verifys alternative text changes reflected */
+	public void verifyAltTextChangesReflected() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Footer_Logo_Alt_Text(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Alt_Text_Preview()), "alt"));
+	}
+	
+	/** This function verifys alternative text changes reflected */
+	public void verifyViewMoreViewLessChangesReflected() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_View_More_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Preview())));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Preview())));
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_View_Less_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_Less_Preview())));
+	}
+	
+	/** This function clicks on AEM Simple Footer Title */
+	public void clickOnSimpleFooterTitle() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Simple_Footer_AEM_Title())), 10);
+	}
+
+	/** This function selects same tab from dropdown */
+	public void selectTabFromDropDown() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Open_Url())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_New_Tab())), 10);
+		
+		//performDropDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Open_Url()), "selectByValue" , "_self");
+	}
+	
+	/** This function scrolls down to copyright footer */
+	public void scrollDownToSimpleFooter() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Simple_Footer_AEM_Title()), 2);	
+	}
+	
+	/** This function verifys redirecting to authored tab option */
+	public void verifyOpensInAuthoredTab() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview())), 40);
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview()), "href");
+		configuration.setProperty("urlLink", url);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview()), 2);	
+		//$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Preview())), 10);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview())));
+		testContext.getPageObjectManager().getPageObject(driver).switchOnChildWindow();
+		String expectedUrl = (java.lang.String)configuration.getProperty("urlLink");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+	}
+	
+	/** This function verify new tab/same tab is authorable */
+	public void displayLegalOpenUrlIn() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Open_Url()));
+	}
+	
+	/** This function verify logo is authorable */
+	public void displayLogoField() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo_Field()));
+	}
+
+	/** This function uploads logo */
+	public void uploadLogo() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Image())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_CTC_Web_CTR())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Select_Aem_Button())), 10);
+	}
+	
+	/** This function verify logo is authorable */
+	public void verifyUploadedLogoIsDisplayed() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo_In_Preview()));
+	}
+
 }

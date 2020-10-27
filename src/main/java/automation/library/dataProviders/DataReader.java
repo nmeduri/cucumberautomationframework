@@ -221,7 +221,7 @@ public class DataReader {
 	}
 
 	public String get_Email_Data() {
-		String email = Property.getProperty(Constant.DATA_FILE, "getEmail");
+		String email = Property.getProperty(Constant.DATA_FILE, "getEmailData");
 		if(email != null) 
 			return email;
 		else
@@ -511,6 +511,19 @@ public class DataReader {
 	 * 
 	 */
 	
+	/**
+	 * gets loyalty card number
+	 * 
+	 */
+	
+	public String get_Pending_Loyalty_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "pendingLoyaltyCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
+	}
+	
 	public String get_Closed_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "closedCardNo");
 		if(cardNo != null)
@@ -728,19 +741,85 @@ public class DataReader {
 			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
 	}
 	
-
-
+	
+	
+	
 	/**
 	 * gets password
 	 * 
 	 */
 	
-public String get_Password() {
-		String email = Property.getProperty(Constant.DATA_FILE, "getPassword");
+	public String get_Password() {
+		String email = Property.getProperty(Constant.DATA_FILE, "getPasswordData");
 		if(email != null) 
 			return email;
 		else
 			throw new RuntimeException("Valid Password Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Incorrect format card number
+	 * 
+	 */
+	
+	public String get_Incorrect_Format_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "incorrectFormatCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
+	}
+	
+	/**
+	 * gets long characters card number
+	 * 
+	 */
+	
+	public String get_Long_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "longCharCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
+	}
+	
+	/**
+	 * gets balance greater than 100$ card number
+	 * 
+	 */
+	
+	public String get_Threshold_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "thresholdCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
+	}
+	
+	/**
+	 * gets bad card number or invalid card no
+	 * 
+	 */
+	
+	public String get_Bad_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "badCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
+	}
+	
+	/**
+	 * gets already kinked to other account card no
+	 * 
+	 */
+	
+	public String get_Already_Linked_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
 	/**
 	 * gets EdgeToEdge Banner url with Image

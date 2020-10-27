@@ -75,7 +75,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for site map is displayed
 	And clickable text link for accessibility is displayed
 	And clickable text link for pricing policy is displayed
-	
+
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2120, User views the "Customer Support " Section-Mobile
 	Given pdp url is available
@@ -111,7 +111,6 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for gift cards is displayed
 	And clickable text link for tested for life is displayed
 	And clickable text link for gift registry is displayed
-	
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2124, User views the "About Us" section-Mobile	

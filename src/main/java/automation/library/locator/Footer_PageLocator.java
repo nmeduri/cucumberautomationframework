@@ -31,6 +31,7 @@ public class Footer_PageLocator {
 	String returnsAndExchanges = Property.getProperty(Constant.OR_FILE, "returnsAndExchanges");
 	String recyclingInformation = Property.getProperty(Constant.OR_FILE, "recyclingInformation");
 	String contactUs = Property.getProperty(Constant.OR_FILE, "contactUs");
+	String storeLocatorLink = Property.getProperty(Constant.OR_FILE, "storeLocatorLink");
 	String storeLocatorFooter = Property.getProperty(Constant.OR_FILE, "storeLocatorFooter");
 	String productRecalls = Property.getProperty(Constant.OR_FILE, "productRecalls");
 	String safetyDataSheets = Property.getProperty(Constant.OR_FILE, "safetyDataSheets");
@@ -586,7 +587,7 @@ public class Footer_PageLocator {
 	public String get_Copy_Right_Information() {
 		return copyRightInformation;
 	}
-	
+		
 	/**
 	 * gets Locator - Footer All links
 	 * 
@@ -602,5 +603,7 @@ public class Footer_PageLocator {
 	public String get_Mobile_Custom_Support() {
 		return mobilecustomSupportSection;
 	}
+	
+	
  }
 
