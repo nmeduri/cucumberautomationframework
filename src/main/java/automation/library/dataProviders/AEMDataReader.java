@@ -2118,4 +2118,173 @@ public class AEMDataReader {
 			return pricingPolicyUrlChanges;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+
+	
+	/**
+	 * 
+	 * get Data - Available At Checkout
+	 * 
+	 */
+	public String get_Available_At_Checkout() {
+		String availableAtCheckoutLabel = Property.getProperty(Constant.AEM_DATA_FILE, "availableAtCheckoutLabel");
+		if(availableAtCheckoutLabel != null)
+			return availableAtCheckoutLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Get It Installed Label
+	 * 
+	 */
+	public String get_Get_It_Installed_Label() {
+		String getItInstalledLabel = Property.getProperty(Constant.AEM_DATA_FILE, "getItInstalledLabel");
+		if(getItInstalledLabel != null)
+			return getItInstalledLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Tool Tip Message
+	 * 
+	 */
+	public String get_Tool_Tip_Message() {
+		String toolTipMessage = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipMessage");
+		if(toolTipMessage != null)
+			return toolTipMessage;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Available At Checkout
+	 * 
+	 */
+	public String get_Available_At_Checkout_Change() {
+		String availableAtCheckoutLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "availableAtCheckoutLabelChange");
+		if(availableAtCheckoutLabelChange != null)
+			return availableAtCheckoutLabelChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Get It Installed Label
+	 * 
+	 */
+	public String get_Get_It_Installed_Label_Change() {
+		String getItInstalledLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "getItInstalledLabelChange");
+		if(getItInstalledLabelChange != null)
+			return getItInstalledLabelChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Tool Tip Message
+	 * 
+	 */
+	public String get_Tool_Tip_Message_Change() {
+		String toolTipMessageChange = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipMessageChange");
+		if(toolTipMessageChange != null)
+			return toolTipMessageChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Overview Label
+	 * 
+	 */
+	public String get_Overview_Label() {
+		String overviewLabel = Property.getProperty(Constant.AEM_DATA_FILE, "overviewLabel");
+		if(overviewLabel != null)
+			return overviewLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Overview Label
+	 * 
+	 */
+	public String get_Overview_Label_Change() {
+		String overviewLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "overviewLabelChange");
+		if(overviewLabelChange != null)
+			return overviewLabelChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - User Manual Label
+	 * 
+	 */
+	public String get_User_Manual_Label() {
+		String userManualLabel = Property.getProperty(Constant.AEM_DATA_FILE, "userManualLabel");
+		if(userManualLabel != null)
+			return userManualLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - User Manual Label Description
+	 * 
+	 */
+	public String get_User_Manual_Label_Description() {
+		String userManualDescription = Property.getProperty(Constant.AEM_DATA_FILE, "userManualDescription");
+		if(userManualDescription != null)
+			return userManualDescription;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - User Manual Download Link Lable
+	 * 
+	 */
+	public String get_User_Manual_Download_Link_Label() {
+		String userManualDownloadLinkLabel = Property.getProperty(Constant.AEM_DATA_FILE, "userManualDownloadLinkLabel");
+		if(userManualDownloadLinkLabel != null)
+			return userManualDownloadLinkLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - User Manual Label
+	 * 
+	 */
+	public String get_User_Manual_Label_Change() {
+		String userManualLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "userManualLabelChange");
+		if(userManualLabelChange != null)
+			return userManualLabelChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - User Manual Description
+	 * 
+	 */
+	public String get_User_Manual_Description_Change() {
+		String userManualDescriptionChange = Property.getProperty(Constant.AEM_DATA_FILE, "userManualDescriptionChange");
+		if(userManualDescriptionChange != null)
+			return userManualDescriptionChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - User Manual Download Link Label
+	 * 
+	 */
+	public String get_User_Manual_Download_Link_Label_Change() {
+		String userManualDownloadLinkLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "userManualDownloadLinkLabelChange");
+		if(userManualDownloadLinkLabelChange != null)
+			return userManualDownloadLinkLabelChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
 }

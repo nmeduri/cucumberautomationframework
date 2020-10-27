@@ -46,7 +46,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then copy right text is displayed
 	
 	@RegressionTest @WebView @WideScreen
-	Scenario: c TC-2854 Verification of clicking of text "Accessibility" - Desktop
+	Scenario: TC-2854 Verification of clicking of text "Accessibility" - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And in simple footer access and click on accessibility

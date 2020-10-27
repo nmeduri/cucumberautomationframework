@@ -99,4 +99,107 @@ public class AEM_PDP_Page extends PageObject {
 		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSetNumberOfSpecifications())), 5);
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSetNumberOfSpecifications())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Set_Number_Of_Specifications_Reverse_Changes());
 	} 
+	
+	/** click on buy box section */
+	public void clickBuyBoxSection() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Buy_Box_Section())), 4);
+	}
+	
+	/** configure installations information */
+	public void configureInstallationsInformation() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_At_Checkout_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_At_Checkout_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Available_At_Checkout());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Get_It_Installed_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Get_It_Installed_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Get_It_Installed_Label());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Tip_Icon()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Information_Tool_Tip_Icon_Option()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Get_It_Installed_Icon()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Get_It_Installed_Icon_Option()));
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Tip_Title()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Tip_Title()), FileReaderManager.getInstance().getAEMDataReader().get_Tool_Tip_Message());
+	}
+	
+	/** updated installation information are displayed on site */
+	public void updatedInformationDisplayedOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Get_It_Installed_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_Get_It_Installed_Label());
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_At_Checkout_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_Available_At_Checkout());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Icon_Installation()));
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tool_Tip_Message())), FileReaderManager.getInstance().getAEMDataReader().get_Tool_Tip_Message());
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** revert installation information changes */
+	public void revertInstallationChangesChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_At_Checkout_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_At_Checkout_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Available_At_Checkout_Change());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Get_It_Installed_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Get_It_Installed_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Get_It_Installed_Label_Change());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Tip_Icon()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Tool_Tip_Icon_Option()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Get_It_Installed_Icon()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Information_Get_It_Installed_Icon_Option()));
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Tip_Title()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Tools_Tip_Title()), FileReaderManager.getInstance().getAEMDataReader().get_Tool_Tip_Message_Change());
+	} 
+	
+	/** click on overview authorable section */
+	public void clickOverviewAuthorableSection() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Overview_Section_Author())), 5);
+	}
+	
+	/** update overview label */
+	public void udpate_overview_label() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Overview_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Overview_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Overview_Label());
+	}
+	
+	/** overview changes are reflect on site */
+	public void verifyOverviewChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Romance_Copy_Section_Title())), FileReaderManager.getInstance().getAEMDataReader().get_Overview_Label());
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** reverse overview changes */
+	public void reverse_overview_changes() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Overview_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Overview_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Overview_Label_Change());
+	}
+	
+	/** click on resource authorable section */
+	public void clickResourceAuthrableSection() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Resource_Section())), 5);
+	}
+	
+	/** update user manual information */
+	public void updateUseManualInformation() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Product_Merchandise_Tab()));
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Label()), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Label());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Description()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Description()), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Label_Description());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Download_Link()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Download_Link()), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Download_Link_Label());
+	}
+	
+	/** user manual changes are reflect on site */
+	public void verifyUserManualChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Label_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Label());
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Description_Preivew())), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Label_Description());
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Download_Link_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Download_Link_Label());
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** reverse user manual changes */
+	public void reverse_user_manual_changes() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Product_Merchandise_Tab()));
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Label()), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Label_Change());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Description()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Description()), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Description_Change());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Download_Link()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Download_Link()), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Download_Link_Label_Change());
+	}
 }
