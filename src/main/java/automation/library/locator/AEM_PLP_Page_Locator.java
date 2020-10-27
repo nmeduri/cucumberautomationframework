@@ -21,7 +21,11 @@ public class AEM_PLP_Page_Locator {
 	String backToTopButtonLabelAEM = Property.getProperty(Constant.OR_FILE, "backToTopButtonLabelAEM");
 	String hideOptionAEM = Property.getProperty(Constant.OR_FILE, "hideOptionAEM");
 	String unhideOptionAEM = Property.getProperty(Constant.OR_FILE, "unhideOptionAEM");
-	String sortingTab = Property.getProperty(Constant.OR_FILE, "sortingTab");		
+	String sortingTab = Property.getProperty(Constant.OR_FILE, "sortingTab");	
+	String productListViewOff = Property.getProperty(Constant.OR_FILE, "productListViewOff");
+	String productListViewOn = Property.getProperty(Constant.OR_FILE, "productListViewOn");
+	String featureHeaderLabelAEM = Property.getProperty(Constant.OR_FILE, "featureHeaderLabelAEM");
+	String featureHeaderLabelPreview = Property.getProperty(Constant.OR_FILE, "featureHeaderLabelPreview");
 			
 
     /**
@@ -130,5 +134,33 @@ public class AEM_PLP_Page_Locator {
 	 */
 	public String getSortingTab() {
 		return sortingTab;
+	}
+	
+	/**
+	 * get Locator - Product List View Off
+	 */
+	public String get_Product_List_View_Off() {
+		return productListViewOff;
+	}
+	
+	/**
+	 * get Locator - Product List View On
+	 */
+	public String get_Product_List_View_On() {
+		return productListViewOn;
+	}
+	
+	/**
+	 * get Locator - Feature Header Label
+	 */
+	public String get_Feature_Header_Label() {
+		return featureHeaderLabelAEM;
+	}
+	
+	/**
+	 * get Locator - Feature Header Preview
+	 */
+	public String get_Feature_Header_Preview() {
+		return featureHeaderLabelPreview;
 	}
 }

@@ -137,4 +137,21 @@ Feature: OCCP-1027 Footer Links
 	And reverse the legal url changes
 	And user click on done button
 	
+	@AEM @TC-2103
+	Scenario: TC-2103 Verify user is able to configure the section titles for Links on Footer via AEM 
+	Given open browser
+	When AEM author with access to configure footer load on the page
+	And login to AEM using the credential as mentioned in the test data
+	And click on footer Pannel
+	And click on aem configure button
+	Then update the footer option title
+	And user click on done button
+	And click on preview button
+	Then footer option changes are reflect on site
+	And click on edit button
+	And click on footer Pannel
+	And click on aem configure button
+	And reverse the footer option changes
+	And user click on done button
+	
 	

@@ -408,7 +408,7 @@ public class AEM_Footer_Page extends PageObject {
 	
 }
 
-	/** This function naviget to Footer Author Page */
+	/** This function navigate to Footer Author Page */
 	public void navigateTo_Footer_Page() throws Exception {
 
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Footer_Author_Url());
@@ -862,6 +862,47 @@ public class AEM_Footer_Page extends PageObject {
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Accessibility_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_AccessibilityChanges());
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pricing_Policy_Url()));
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pricing_Policy_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Pricing_Policy_Url_Changes());
+		
+	}
+	
+	/** update footer option title */
+	public void updateFooterOptionTitle() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Customer_Support_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Customer_Support_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Customer_Support_Title());
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Two())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Service_Installation_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Service_Installation_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Service_Installation_Title());
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Three())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_About_Us_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_About_Us_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_About_Us_Title());
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Four())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Legal_Title());
+	}
+	
+	/** footer option changes are reflect on site */
+	public void footer_option_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Customer_Support_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_Customer_Support_Title());
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Service_Installation_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_Service_Installation_Title());
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_About_Us_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_About_Us_Title());
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_Legal_Title());
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** enter footer option details */
+	public void reverseFooterOptionDetails() throws Exception{
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Customer_Support_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Customer_Support_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Customer_Support_Title_Change());
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Two())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Service_Installation_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Service_Installation_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Service_Installation_Change());
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Three())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_About_Us_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_About_Us_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_About_Us_Title_Change());
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Column_Four())), 5);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Title()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Legal_Title_Change());
 		
 	}
 }

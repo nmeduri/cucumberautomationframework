@@ -406,5 +406,20 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	public void reverse_the_legal_url_changes() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseChangesLegalSubUrlDetails();
 	}
+	
+	@And("update the footer option title")
+	public void update_the_footer_option_title() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).updateFooterOptionTitle();
+	}
+	
+	@Then("footer option changes are reflect on site")
+	public void footer_option_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).footer_option_changes_are_reflect_on_site();
+	}
+	
+	@And("reverse the footer option changes")
+	public void reverse_the_footer_option_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseFooterOptionDetails();
+	}
 
 }

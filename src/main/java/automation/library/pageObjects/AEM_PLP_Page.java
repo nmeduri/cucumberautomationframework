@@ -251,5 +251,73 @@ public class AEM_PLP_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getSortingTab()));
 	}
 	
+	/** select product list off */
+	public void selectProductListOff() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Product_List_View_Off())), 5);
+	}
+	
+	/** select product list on */
+	public void selectProductListOn() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Product_List_View_On())), 5);
+	}
+	
+	/** list view changes are reflect on site */
+	public void displayProductCardGridView() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertTrue(
+				$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Grid_View())));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	
+	/** option list view is not displayed */
+	public void notDisplayListView() throws Exception {
+		
+			try {
+				testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+				$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
+				fail();
+			}catch(Exception e) {
+				
+			}
+			PageObject.getDriver().switchTo().parentFrame();
+		
+	}
+	
+	/** option list view is not displayed */
+	public void displayListViewOption() throws Exception {
+		
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
+		PageObject.getDriver().switchTo().parentFrame();
+		
+	}
+	
+	/** change feature label header */
+	public void updateFeatureLabelHeader() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Feature_Header_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Feature_Header_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Feature_Label_Header());
+	}
+	
+	/** update feature label header on site */
+	public void updateFeatureHeaderLabelOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Feature_Header_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_Feature_Label_Header());
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** revert header label changes */
+	public void reverseHeaderLabelChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Feature_Header_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Feature_Header_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Feature_Label_Header_Change());
+	}
+	
+	/** This function click on list view button */
+	public void clickOnListViewButton() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
 	
 }

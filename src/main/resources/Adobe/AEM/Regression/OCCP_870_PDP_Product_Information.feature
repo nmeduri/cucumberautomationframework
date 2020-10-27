@@ -1,4 +1,4 @@
-Feature: OCCP-871 PDP Installations
+Feature: OCCP-870 PDP Product Information
 	Description: To test the ADOBE Test Cases for the story OCCP-871
 	
 	@AEM

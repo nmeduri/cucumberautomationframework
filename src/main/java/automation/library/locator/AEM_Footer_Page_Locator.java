@@ -100,6 +100,16 @@ public class AEM_Footer_Page_Locator {
 	String accessibilityUrlAEM = Property.getProperty(Constant.OR_FILE, "accessibilityUrlAEM");
 	String pricingPolicyUrlAEM = Property.getProperty(Constant.OR_FILE, "pricingPolicyUrlAEM");
 	
+	String customerSupportTitleAEM = Property.getProperty(Constant.OR_FILE, "customerSupportTitleAEM");
+	String serviceInstallationTitleAEM = Property.getProperty(Constant.OR_FILE, "serviceInstallationTitleAEM");
+	String aboutUsTitleAEM = Property.getProperty(Constant.OR_FILE, "aboutUsTitleAEM");
+	String legalTitleAEM = Property.getProperty(Constant.OR_FILE, "legalTitleAEM");
+	
+	String cusotmerSupportTitlePreview = Property.getProperty(Constant.OR_FILE, "cusotmerSupportTitlePreview");
+	String serviceInstallationTitlePreview = Property.getProperty(Constant.OR_FILE, "serviceInstallationTitlePreview");
+	String aboutUsTitlePreview = Property.getProperty(Constant.OR_FILE, "aboutUsTitlePreview");
+	String legalTitlePreview = Property.getProperty(Constant.OR_FILE, "legalTitlePreview");
+	
 	
     /**
 	 * gets Locator - Footer Pannel
@@ -796,6 +806,62 @@ public class AEM_Footer_Page_Locator {
 	 */
 	public String get_Pricing_Policy_Url() {
 		return pricingPolicyUrlAEM;
+	}
+	
+	/**
+	 * get Locator - Customer Support
+	 */
+	public String get_Customer_Support_Title() {
+		return customerSupportTitleAEM;
+	}
+	
+	/**
+	 * get Locator - Service Installation
+	 */
+	public String get_Service_Installation_Title() {
+		return serviceInstallationTitleAEM;
+	}
+	
+	/**
+	 * get Locator - About Us
+	 */
+	public String get_About_Us_Title() {
+		return aboutUsTitleAEM;
+	}
+	
+	/**
+	 * get Locator - Legal
+	 */
+	public String get_Legal_Title() {
+		return legalTitleAEM;
+	}
+	
+	/**
+	 * get Locator - Customer Support
+	 */
+	public String get_Customer_Support_Preview() {
+		return cusotmerSupportTitlePreview;
+	}
+	
+	/**
+	 * get Locator - Service Installation
+	 */
+	public String get_Service_Installation_Preview() {
+		return serviceInstallationTitlePreview;
+	}
+	
+	/**
+	 * get Locator - About Us
+	 */
+	public String get_About_Us_Preview() {
+		return aboutUsTitlePreview;
+	}
+	
+	/**
+	 * get Locator - Legal
+	 */
+	public String get_Legal_Preview() {
+		return legalTitlePreview;
 	}
 
 	}

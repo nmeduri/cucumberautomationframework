@@ -2287,4 +2287,104 @@ public class AEMDataReader {
 			return userManualDownloadLinkLabelChange;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+	
+	/**
+	 * get Data - Feature Label Header
+	 */
+	public String get_Feature_Label_Header() {
+		String featureHeaderLabel = Property.getProperty(Constant.AEM_DATA_FILE, "featureHeaderLabel");
+		if(featureHeaderLabel != null)
+			return featureHeaderLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Feature Label Header Change
+	 */
+	public String get_Feature_Label_Header_Change() {
+		String featureHeaderLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "featureHeaderLabelChange");
+		if(featureHeaderLabelChange != null)
+			return featureHeaderLabelChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Customer Support Title
+	 */
+	public String get_Customer_Support_Title() {
+		String customerSupportTitle = Property.getProperty(Constant.AEM_DATA_FILE, "customerSupportTitle");
+		if(customerSupportTitle != null)
+			return customerSupportTitle;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Service Installation Title
+	 */
+	public String get_Service_Installation_Title() {
+		String serviceInstallationTitle = Property.getProperty(Constant.AEM_DATA_FILE, "serviceInstallationTitle");
+		if(serviceInstallationTitle != null)
+			return serviceInstallationTitle;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - About Us Title
+	 */
+	public String get_About_Us_Title() {
+		String aboutUsTitle = Property.getProperty(Constant.AEM_DATA_FILE, "aboutUsTitle");
+		if(aboutUsTitle != null)
+			return aboutUsTitle;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Legal Title
+	 */
+	public String get_Legal_Title() {
+		String legalTitle = Property.getProperty(Constant.AEM_DATA_FILE, "legalTitle");
+		if(legalTitle != null)
+			return legalTitle;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Customer Support Title
+	 */
+	public String get_Customer_Support_Title_Change() {
+		String customerSupportTitleChange = Property.getProperty(Constant.AEM_DATA_FILE, "customerSupportTitleChange");
+		if(customerSupportTitleChange != null)
+			return customerSupportTitleChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Service Installation Change
+	 */
+	public String get_Service_Installation_Change() {
+		String serviceInstallationTitleChange = Property.getProperty(Constant.AEM_DATA_FILE, "serviceInstallationTitleChange");
+		if(serviceInstallationTitleChange != null)
+			return serviceInstallationTitleChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Feature Label Header Change
+	 */
+	public String get_About_Us_Title_Change() {
+		String aboutUsTitleChange = Property.getProperty(Constant.AEM_DATA_FILE, "aboutUsTitleChange");
+		if(aboutUsTitleChange != null)
+			return aboutUsTitleChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Legal Title Change
+	 */
+	public String get_Legal_Title_Change() {
+		String legalTitleChange = Property.getProperty(Constant.AEM_DATA_FILE, "legalTitleChange");
+		if(legalTitleChange != null)
+			return legalTitleChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
 }

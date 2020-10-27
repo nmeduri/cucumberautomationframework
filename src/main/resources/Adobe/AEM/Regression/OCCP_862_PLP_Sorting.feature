@@ -10,6 +10,7 @@ Feature: OCCP-862 PLP Sorting
 	And click on aem configure button
 	And select sorting tab
 	And user select hide option
+	And user click on done button
 	And click on preview button
 	Then sort option is not displayed on the site
 	And click on edit button
