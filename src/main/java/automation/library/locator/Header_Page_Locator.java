@@ -26,6 +26,7 @@ public class Header_Page_Locator {
 	String storeStatus = Property.getProperty(Constant.OR_FILE, "storeStatus");
 	String closingHours = Property.getProperty(Constant.OR_FILE, "closingHours");
 	String chervon = Property.getProperty(Constant.OR_FILE, "chervon");
+	String addedItemWishlist = Property.getProperty(Constant.OR_FILE, "addedItemWishlist");
 	String primaryNavigation = Property.getProperty(Constant.OR_FILE, "primaryNavigation");
 	String hamburgerMenu = Property.getProperty(Constant.OR_FILE, "hamburgerMenu");
 	String storeLocatorMobile = Property.getProperty(Constant.OR_FILE, "storeLocatorMobile");
@@ -40,6 +41,7 @@ public class Header_Page_Locator {
 	String InformationBannerLink = Property.getProperty(Constant.OR_FILE, "InformationBannerLink");
 	String SearchResult=Property.getProperty(Constant.OR_FILE, "SearchResult");
 	String InformationBanner=Property.getProperty(Constant.OR_FILE, "InformationBanner");
+
 	
 	/**
 	 * gets Locator - Account
@@ -141,8 +143,12 @@ public class Header_Page_Locator {
 	}
 	
 	/**
-	 * gets Locator - Primary Navigation
-	 * 
+	 * gets Locator - addedItemWishlist
+	 */
+	public String getAddedItemWishlist() {
+		return addedItemWishlist;
+	}
+	 /** 
 	 */
 	public String get_Primary_Navigation() {
 		return primaryNavigation;

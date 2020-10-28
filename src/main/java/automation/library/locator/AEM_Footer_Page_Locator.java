@@ -1064,6 +1064,11 @@ public class AEM_Footer_Page_Locator {
 	 */
 	public String get_Legal_Preview() {
 		return legalTitlePreview;
+	
 	}
+	
+	
+	
+	
 
 }

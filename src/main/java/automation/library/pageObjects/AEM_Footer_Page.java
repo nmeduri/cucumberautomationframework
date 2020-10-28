@@ -905,6 +905,7 @@ public class AEM_Footer_Page extends PageObject {
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Legal_Title_Change());
 		
 	}
+
 	
 	/** This function navigate to AEM New Rewards Card Page */
 	public void navigateToFooterPage() throws Exception {
@@ -1067,5 +1068,4 @@ public class AEM_Footer_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo_In_Preview()));
 	}
-
 }

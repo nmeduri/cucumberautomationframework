@@ -106,6 +106,19 @@ public class ConfigFileReader {
 	}
 	
 	/**
+	 * gets plp url
+	 * 
+	 */
+	
+	public String getPLPUrlShowMore() {
+		String url = Property.getProperty(Constant.DATA_FILE, "showMoreProductPLP");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+	}
+	
+	/**
 	 * gets Sign In url
 	 * 
 	 */

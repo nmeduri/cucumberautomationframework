@@ -41,6 +41,7 @@ public class AEM_PDP_Page_Locator {
 	String userManaualLabelPreview = Property.getProperty(Constant.OR_FILE, "userManaualLabelPreview");
 	String userManualDescriptionPreview = Property.getProperty(Constant.OR_FILE, "userManualDescriptionPreview");
 	String downloadUserManualPreview = Property.getProperty(Constant.OR_FILE, "downloadUserManualPreview");
+	String stickyTOCAEM = Property.getProperty(Constant.OR_FILE, "stickyTOCAEM");
 	
 	
 
@@ -262,6 +263,13 @@ public class AEM_PDP_Page_Locator {
 	 */
 	public String get_User_Manual_Download_Link_Preview() {
 		return downloadUserManualPreview;
+	}
+	
+	/**
+	 * get Locator - Sticky TOC
+	 */
+	public String get_Sticky_TOC() {
+		return stickyTOCAEM;
 	}
 	
 }

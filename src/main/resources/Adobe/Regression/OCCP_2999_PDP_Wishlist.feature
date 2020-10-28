@@ -20,7 +20,7 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     And click the wishlist item
     Then item is successfully added into wish list 
     
-    #@RegressionTest @WebView @WideScreen
+    @RegressionTest @WebView @WideScreen @TC-280
     Scenario: TC-280 Verify the behavior of a PDP when guest user clears browser data
     Given pdp url is available
     When pdp page is displayed for the product
@@ -28,6 +28,11 @@ Feature: OCCP-2999 PDP: Wishlist (Guest)
     And user select product
     And click the wishlist item
     Then item is successfully added into wish list 
+    And quit browser
+    And open browser
+    Given pdp url is available
+    When pdp page is displayed for the product
+    Then saved wishlist items are removed
     
     @RegressionTest @WebView @WideScreen
     Scenario: TC-282 Verify the behavior of the page when a guest user adds variants to a product already added to the guest user's wishlist

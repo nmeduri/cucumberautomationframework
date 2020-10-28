@@ -202,4 +202,9 @@ public class AEM_PDP_Page extends PageObject {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Download_Link()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_User_Manual_Download_Link()), FileReaderManager.getInstance().getAEMDataReader().get_User_Manual_Download_Link_Label_Change());
 	}
+	
+	/** click on sticky TOC */
+	public void clickStickyTOC() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Sticky_TOC())), 5); 
+	}
 }

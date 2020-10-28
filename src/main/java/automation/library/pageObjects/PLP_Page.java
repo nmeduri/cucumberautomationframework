@@ -55,6 +55,14 @@ public class PLP_Page extends PageObject {
 				.to(FileReaderManager.getInstance().getConfigReader().getPLPUrl());
 
 	}
+	
+	/** This function navigate to PLP Page */
+	public void navigateTo_PLP_Show_More_Page() throws Exception {
+
+		driver.navigate()
+				.to(FileReaderManager.getInstance().getConfigReader().getPLPUrlShowMore());
+
+	}
 
 	/** This function is verify that PLP Page is displayed */
 	public void display_PLP_Page() throws Exception {
@@ -461,9 +469,45 @@ public class PLP_Page extends PageObject {
 		PageObject.getDriver().switchTo().parentFrame();
 	}
 	
-	/** Sort option is not dispalyed */
+	/** Sort option is not displayed */
 	public void displaySortOption() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSortOption())), 5);
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** load more button is not displayed */
+	public void notDisplayLoadMoreButton() {
+		try {
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Show_More_Button()));
+			fail();
+		}catch(Exception e) {
+			
+		}
+	}
+	
+	/** click on load more button */
+	public void clickLoadMoreButton() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Show_More_Button())), 4);
+	}
+	
+	/** verify - load more button is displayed */
+	public void displayLoadMoreButton() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Show_More_Button())), 4);
+	}
+	
+	/** end pagination message is displayyed */
+	public void displayEndPaginationMessage() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_End_Pagination_Message())), 4);
+	}
+	
+	/** back to top button is displayed */
+	public void displayBackToTopButton() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Back_To_Top_Button())), 4);
+	}
+	
+	/** click on back to top button */
+	public void clickBackToTopButton() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Back_To_Top_Button())), 4);
 	}
 }	

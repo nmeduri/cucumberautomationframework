@@ -5,10 +5,7 @@ Feature: OCCP-868 Search and SRP-Auto corrective search
 	Scenario: TC-143 Verify AEM author is able to configure the corrective search message
 	Given open browser
 	When AEM author with access to configure the corrective search message
-	And login to AEM using the right credential as mentioned in the test data
-	And click on search page thumbnail image
-	And click on edit icon on header
-	And switch on window
+	And login to AEM using the credential as mentioned in the test data
 	And click on aem search title
 	And click on aem configure button
 	And configure the corrective search message
@@ -19,4 +16,4 @@ Feature: OCCP-868 Search and SRP-Auto corrective search
 	And user enter suggestive message
 	And user enter search result threshold
 	And user click on check button
-	And close Browser
+	#And close Browser

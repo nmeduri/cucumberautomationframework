@@ -352,4 +352,9 @@ public class PDPPageSteps extends BaseClass {
 	public void pdp_page_should_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_PDP_Page_Title();
 	}
+	
+	@Then("saved wishlist items are removed")
+	public void saved_wishlist_items_are_removed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).notDisplayAddedItem();
+	}
 }

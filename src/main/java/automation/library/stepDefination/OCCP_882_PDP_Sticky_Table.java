@@ -39,5 +39,10 @@ public class OCCP_882_PDP_Sticky_Table extends BaseClass {
 		configFileReader = new ConfigFileReader();
 	}
 	
+	@And("click on sticky toc pannel")
+	public void click_on_sticky_toc_pannel() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).clickStickyTOC();
+	}
+	
  
 }

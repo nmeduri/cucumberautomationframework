@@ -130,6 +130,16 @@ public class Header_Page extends PageObject {
 		Assert.assertEquals(expetedUrl, PageObject.getDriver().getCurrentUrl());
 		PageObject.getDriver().navigate().back();
 	}
+	
+	/**Added Item is not Displayed */
+	public void notDisplayAddedItem() throws Exception {
+		try {
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().get_Header_Locator_Page().getAddedItemWishlist()));
+			fail();
+		}catch(Exception e) {
+			
+		}
+	}
 
 	/** This function is verify primary navigation is displayed */
 	public void displayPrimaryNavigation() throws Exception {
