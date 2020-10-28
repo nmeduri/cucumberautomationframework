@@ -13,7 +13,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_1642_PDP_Image_Gallery_Videos.feature",
+			"classpath:Adobe/Regression/OCCP_968_Broad_Promo_Tiles_Component.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@WebView",
 			"--plugin", "pretty",

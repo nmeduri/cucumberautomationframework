@@ -82,7 +82,8 @@ public class Login_Page extends PageObject {
 
 	/** This function click on sign in button */
 	public void click_Sign_In_Button() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button()));
+		//$click($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button()));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getLoginPageLocator().get_Sign_In_Button())));
 	}
 
 	/** This function is verify that Page 'Welcome Back' is displayed */

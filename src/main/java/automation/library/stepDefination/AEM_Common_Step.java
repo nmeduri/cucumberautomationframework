@@ -42,4 +42,5 @@ public class AEM_Common_Step extends BaseClass {
 	public void click_on_the_preview_button() throws Exception {
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnThePreviewButton();
 	}
+
 }

@@ -116,14 +116,13 @@ public class AEM_Common_Page extends PageObject {
 	public void clickEditButton() throws Exception {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())), 5);
 	}
-	
-	/** This function clicks on preview button */
-	public void clickOnThePreviewButton() throws Exception {
-		Thread.sleep(5000);
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 5);
-		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 5);
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
-	}
 
+	/** This function clicks on preview button */
+    public void clickOnThePreviewButton() throws Exception {
+        Thread.sleep(5000);
+        $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 20);
+        $click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 20);
+        testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+    }
 	
 }

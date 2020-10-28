@@ -869,4 +869,29 @@ public class DataReader {
 		else
 			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
 	}
+	/**
+	 * gets Broad Promo Tiles En URL
+	 * 
+	 */
+
+	public String get_BroadPromoTiles_Url_En() {
+		String getLoginUrl = Property.getProperty(Constant.DATA_FILE, "broadPromoTilesEn");
+		if(getLoginUrl != null)
+			return getLoginUrl;
+		else 
+			throw new RuntimeException("broadPromoTilesEn url not specified in the Data file.");
+	}
+	/**
+	 * gets Broad Promo Tiles Fr URL
+	 * 
+	 */
+
+	public String get_BroadPromoTiles_Url_Fr() {
+		String getLoginUrl = Property.getProperty(Constant.DATA_FILE, "broadPromoTilesFr");
+		if(getLoginUrl != null)
+			return getLoginUrl;
+		else 
+			throw new RuntimeException("broadPromoTilesFr url not specified in the Data file.");
+	}
+
 }

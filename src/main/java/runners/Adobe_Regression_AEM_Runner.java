@@ -11,11 +11,10 @@ import cucumber.api.CucumberOptions;
  * This file execute the scenarios of Adobe Regression (Web)
  */
 
-public final class AEM_Regression_Runner extends BaseClass {
+public final class Adobe_Regression_AEM_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
 			
-
 			"classpath:Adobe/AEM/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
@@ -28,7 +27,7 @@ public final class AEM_Regression_Runner extends BaseClass {
 		};
 
 	public static void main(String[] args) throws Throwable {
-		AEM_Regression_Runner ls = new AEM_Regression_Runner();
+		Adobe_Regression_AEM_Runner ls = new Adobe_Regression_AEM_Runner();
 		String className = ls.getClass().getSimpleName();
 		Log.message("Class Name:- " + className, true);
 		conf.setProperty("className", className);

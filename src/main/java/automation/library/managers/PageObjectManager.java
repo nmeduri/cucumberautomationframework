@@ -2,6 +2,8 @@
 package automation.library.managers;
 
 import org.openqa.selenium.WebDriver;
+
+import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
 import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
@@ -11,6 +13,7 @@ import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.Banners_Locator;
+import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Footer_PageLocator;
@@ -34,6 +37,7 @@ import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
+import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
 import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
@@ -43,6 +47,7 @@ import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.Banner_Pages;
+import automation.library.pageObjects.Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Footer_Page;
@@ -141,10 +146,16 @@ public class PageObjectManager {
 	private AEM_Footer_Page_Locator getAEMFooterPageLocator;
 	private Banner_Pages getBannerPages;
 	private Banners_Locator getBannerPageLocators;
+	private Broad_Promo_Tiles_Page getBroadPromoTilesPage;
+	private Broad_Promo_Tiles_Page_Locator getBroadPromoTilesPageLocator;
+	private AEM_Broad_Promo_Tiles_Page getAEMBroadPromoTilesPage;
+	private AEM_Broad_Promo_Tiles_Page_Locator getAEMBroadPromoTilesPageLocator;
+	 
 	private AEM_Link_Card_Page getAEMLinkCardPage;
 	private AEM_Link_Card_Page_Locator getAEMLInkCardPageLocator;
 	private AEM_Footer_Page_Locator getAEMFooterLocatorPage;
 	private AEM_Footer_Page getAEMFooterPage; 
+
 	
 	public PageObjectManager() {
 		
@@ -504,7 +515,23 @@ public class PageObjectManager {
 	public Banners_Locator getBannerPageLocators() {
 		return (getBannerPageLocators == null) ? getBannerPageLocators = new Banners_Locator() : getBannerPageLocators;
 	}
+	/** Returns Instance of Broad Promo Tiles Page */
+	public Broad_Promo_Tiles_Page getBroadPromoTilesPage(WebDriver driver) {	
+		return (getBroadPromoTilesPage == null) ? getBroadPromoTilesPage = new Broad_Promo_Tiles_Page(driver) : getBroadPromoTilesPage;
+	}
+	/** Returns Instance of Broad Promo Tiles Page Locators */
+	public Broad_Promo_Tiles_Page_Locator getBroadPromoTilesPageLocator() {	
+		return (getBroadPromoTilesPageLocator == null) ? getBroadPromoTilesPageLocator = new Broad_Promo_Tiles_Page_Locator() : getBroadPromoTilesPageLocator;	
+	}
+	/** Returns Instance of AEM  Broad Promo Tiles Page */
+	public AEM_Broad_Promo_Tiles_Page getAEMBroadPromoTilesPage(WebDriver driver) {
+		return (getAEMBroadPromoTilesPage == null) ? getAEMBroadPromoTilesPage = new AEM_Broad_Promo_Tiles_Page(driver) : getAEMBroadPromoTilesPage;
+	}
 	
+	/** Returns Instance of AEM  Broad Promo Tiles Page Locator */
+	public AEM_Broad_Promo_Tiles_Page_Locator getAEMBroadPromoTilesPageLocator() {
+		return (getAEMBroadPromoTilesPageLocator == null) ? getAEMBroadPromoTilesPageLocator = new AEM_Broad_Promo_Tiles_Page_Locator() : getAEMBroadPromoTilesPageLocator;
+	}
 	/** Returns Instance of AEM Link Card Page */
 	public AEM_Link_Card_Page getAEMLinkCardPage(WebDriver driver) {
 		return (getAEMLinkCardPage == null) ? getAEMLinkCardPage = new AEM_Link_Card_Page(driver) : getAEMLinkCardPage;
@@ -523,5 +550,6 @@ public class PageObjectManager {
 	/** Return Instance of AEM Footer Locator Page */
 	public AEM_Footer_Page_Locator getAEMFooterLocatorPage() {
 		return (getAEMFooterLocatorPage == null) ? getAEMFooterLocatorPage = new AEM_Footer_Page_Locator() : getAEMFooterLocatorPage;
+
 	}
 }

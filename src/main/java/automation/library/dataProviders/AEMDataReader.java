@@ -712,6 +712,198 @@ public class AEMDataReader {
 			return searchResponseCount;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+	/**
+	 * get Url - Broad Promo Tiles Page Author
+	 * 
+	 */
+	
+	public String get_Broad_Promo_Tiles_Page_Url() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "broadPromoTilesAuthor");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("broadPromoTilesAuthor Url not specified in the Data file.");
+	}
+	/**
+	 * get Url - Broad Promo Tiles Title 
+	 * 
+	 */
+	
+	public String get_Broad_Promo_Tiles_Title() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "broadPromoTilesTitleAEM");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("broadPromoTilesTitle not specified in the Data file.");
+	}
+	/**
+	 * get Url - Image Alt Text Of Broad Promo Tile 2
+	 * 
+	 */
+	
+	public String get_Image_Alt_Text_Of_Tile2() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "imageAltTextOfTile2");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("imageAltTextOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Title Of Broad Promo Tile 2 
+	 * 
+	 */
+	
+	public String get_Title_Of_Tile2() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "titleOfTile2");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("titleOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Sub-Title Of Broad Promo Tile 2
+	 * 
+	 */
+	
+	public String get_Sub_Title_Of_Tile2() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleOFTile2");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("subTitleOFTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Button Title Of Broad Promo Tile 2
+	 * 
+	 */
+	
+	public String get_Button_Title_Of_Tile2() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "buttonTitleOfTile2");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("buttonTitleOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Button URL Of Broad Promo Tile 2
+	 * 
+	 */
+	
+	public String get_Button_URL_Of_Tile2() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "buttonURLOfTile2");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("buttonURLOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Save Story Text Of Broad Promo Tile 2
+	 * 
+	 */
+	
+	public String get_Save_Story_Text_Of_Tile2() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "saveStoryTextTile2");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("saveStoryTypeTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Save Story Value Of Broad Promo Tile 2
+	 * 
+	 */
+	
+	public String get_Save_Story_Value_Of_Tile2() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "saveStoryValueTile2");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("saveStoryValueTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Image Alt Text Of Broad Promo Tile 1 
+	 * 
+	 */
+	
+	public String get_Image_Alt_Text_Of_Tile1() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "imageAltTextOfTile1");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("imageAltTextOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Title Of Broad Promo Tile 1 
+	 * 
+	 */
+	
+	public String get_Title_Of_Tile1() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "titleOfTile1");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("titleOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Sub-Title Of Broad Promo Tile 1 
+	 * 
+	 */
+	
+	public String get_Sub_Title_Of_Tile1() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleOFTile1");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("subTitleOFTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Button Title Of Broad Promo Tile 1 
+	 * 
+	 */
+	
+	public String get_Button_Title_Of_Tile1() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "buttonTitleOfTile1");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("buttonTitleOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Button URL Of Broad Promo Tile 1 
+	 * 
+	 */
+	
+	public String get_Button_URL_Of_Tile1() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "buttonURLOfTile1");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("buttonURLOfTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Save Story Text Of Broad Promo Tile 1 
+	 * 
+	 */
+	
+	public String get_Save_Story_Text_Of_Tile1() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "saveStoryTextTile1");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("saveStoryTypeTile1 not specified in the Data file.");
+	}
+	/**
+	 * get Url - Save Story Value Of Broad Promo Tile 1 
+	 * 
+	 */
+	
+	public String get_Save_Story_Value_Of_Tile1() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "saveStoryValueTile1");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("saveStoryValueTile1 not specified in the Data file.");
+	}
 	
 	/**
 	 * gets Link Existing Card Url
@@ -2361,8 +2553,6 @@ public class AEMDataReader {
 			return pricingPolicyUrlChanges;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
-
-	
 	/**
 	 * 
 	 * get Data - Available At Checkout
@@ -2630,4 +2820,5 @@ public class AEMDataReader {
 			return legalTitleChange;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+
 }

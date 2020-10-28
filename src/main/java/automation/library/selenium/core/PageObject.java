@@ -284,9 +284,11 @@ public class PageObject extends BaseClass {
 		switch (type) {
 		case "selectByText":
 			ele.clickable().dropdown().selectByVisibleText(value);
+			//ele.click().dropdown().selectByVisibleText(value);
 			break;
 		case "selectByIndex":
-			ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			//ele.clickable().dropdown().selectByIndex(Integer.parseInt(value));
+			ele.click().dropdown().selectByIndex(Integer.parseInt(value));
 			break;
 		case "selectByValue":
 			ele.clickable().dropdown().selectByValue(value);
@@ -592,6 +594,19 @@ public class PageObject extends BaseClass {
 	public static void notNullAttributeInResponseInInteger(Integer actualValue) {
 		//Integer.parseInt(value)
 		Assert.assertNotEquals(null, actualValue);
+	}
+	/** return Element list using locator */
+	public List<WebElement> $listDisplay(Loc type,String locator) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
+		List<WebElement> els = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getLocator(type, locator)));
+		List<Element> elements = $$(type, locator);
+		for(Element list:elements) {
+			if(list.display()) {
+				Log.message("List is displayed ", true);
+			}else
+			Log.message("List is NOT displayed ", true);
+		}
+        return els;
 	}
 }
 
