@@ -506,10 +506,6 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-	/**
-	 * gets closed card number
-	 * 
-	 */
 	
 	/**
 	 * gets loyalty card number
@@ -524,6 +520,10 @@ public class DataReader {
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
 	
+	/**
+	 * gets closed card number
+	 * 
+	 */
 	public String get_Closed_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "closedCardNo");
 		if(cardNo != null)

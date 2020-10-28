@@ -92,8 +92,8 @@ public class OCCP_2805_Age_Of_Majority_Check_Step extends BaseClass{
 		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).clickOnNewRewardsCardTitle();
 	}
 	
-	@And("in link new rewards card page click on error tab")
-	public void click_on_error_screen_tab() throws Exception {
+	@And("click on error tab in new reward card screen ")
+	public void click_on_error_screen_tab_age_of_majority_check() throws Exception {
 		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).clickOnErrorScreenTab();
 	}
 	

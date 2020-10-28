@@ -906,6 +906,12 @@ public class AEM_Footer_Page extends PageObject {
 		
 	}
 	
+	/** This function navigate to AEM New Rewards Card Page */
+	public void navigateToFooterPage() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Footer_Url());
+
+	}
+	
 	/** This function clicks on AEM Footer Title */
 	public void clickOnFooterTitle() throws Exception {
 		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Footer_Copyright_Title())));
@@ -972,7 +978,7 @@ public class AEM_Footer_Page extends PageObject {
 	
 	/** This function scrolls down to copyright footer */
 	public void scrollDownToCopyrightFooter() throws Exception {
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Footer_Copyright_Title()), 2);	
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Footer_Copyright_Title()), 20);	
 	}
 	
 	/** This function verifys copyright label changes reflected */
@@ -995,9 +1001,11 @@ public class AEM_Footer_Page extends PageObject {
 	
 	/** This function verifys alternative text changes reflected */
 	public void verifyViewMoreViewLessChangesReflected() throws Exception {
+		driver.navigate().refresh();
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_View_More_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Preview())));
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Preview())));
+		((JavascriptExecutor)PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_More_Preview())));
+		//$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Chevron_Down())), 10);
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_View_Less_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_View_Less_Preview())));
 	}
 	

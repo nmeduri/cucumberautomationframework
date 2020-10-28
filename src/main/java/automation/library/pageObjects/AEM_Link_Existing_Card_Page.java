@@ -189,8 +189,6 @@ public class AEM_Link_Existing_Card_Page extends PageObject {
 	
 	/** This function verify if Get one here link changes reflected in preview */
 	public void VerifyLinkChangesReflected() throws Exception {
-		System.out.println(FileReaderManager.getInstance().getAEMDataReader().get_One_Here_Text());
-		System.out.println($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_One_Here_Preview())));
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_One_Here_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_One_Here_Preview())));
 	}
 	
@@ -220,8 +218,6 @@ public class AEM_Link_Existing_Card_Page extends PageObject {
 	/** This function verify if Tooltip Header text changes reflected in preview */
 	public void VerifyTooltipHeaderTextChangesReflected() throws Exception {
 		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Tooltip_Button_Preview())),20);
-		System.out.println(FileReaderManager.getInstance().getAEMDataReader().get_Tooltip_Header_Text());
-		System.out.println($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Tooltip_Header_Text_Preview())));
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Tooltip_Header_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Tooltip_Header_Text_Preview())));
 	}
 	

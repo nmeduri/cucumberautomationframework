@@ -2,7 +2,28 @@ Feature: OCCP-3212 Account/Triangle ID - Link Rewards  Link Existing Triangle Re
 
 Description: To test the ADOBE Test Cases for the story OCCP-3212
 
-  @RegressionTest @WebView @WideScreen 
+ @RegressionTest @WebView @WideView
+	Scenario: TC-2180, TC-2181 Verification of display of error message when already linked loyalty card is used for registration - Desktop
+	Given open browser
+	Given login url is available
+	When enter email id
+	And enter password data
+	And user click on sign in button
+	Then link card screen should be displayed
+	And user cick on triangle rewards card
+	And verify when user enters a loyalty card number that is deactivated
+	Then user should be able to enter the loyalty card number successfully which is deactivated
+	And user click on continue button
+	And verify when user click on try again button
+	Then user should be redirected to link existing card page
+	Then link card page should be displayed without prepoulating card number
+	And verify when user enters a loyalty card number that is deactivated
+	Then user should be able to enter the loyalty card number successfully which is deactivated
+	And user click on continue button
+	And verify when user click on cancel button
+	Then link card screen should be displayed
+ 
+  @RegressionTest @WebView @WideScreen
 	Scenario: TC-2396, TC-2385 Verfiy the display of Link Cards screen when Card is Deactivated in Wide Desktop view
 	When login url is available
 	When enter email id

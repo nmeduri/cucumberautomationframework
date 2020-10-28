@@ -928,6 +928,18 @@ public class AEMDataReader {
 	}
 	
 	/**
+	 * get Url - PLP Author
+	 * 
+	 */
+	
+	public String get_Footer_Url() {
+		String getFooterUrl = Property.getProperty(Constant.AEM_DATA_FILE, "footerAuthor");
+		if(getFooterUrl != null)
+			return getFooterUrl;
+		else
+			throw new RuntimeException("Result Url not specified in the Data file.");
+	}
+	/**
 	 * 
 	 * get Data - Already Link Master Card Image
 	 * 

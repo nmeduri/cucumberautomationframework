@@ -4,7 +4,7 @@ Feature: OCCP-1028 FOOTER: Footer Copyright
 	@RegressionTest @AEM
 	Scenario: TC-2789 AEM user configures logo for Canadian Tire
 	Given open browser
-	When aem author with access navigates to new rewards card screen
+	When aem author with access navigates to footer page
 	And login to AEM using the right credentials as mentioned in the test data 
 	And click on edit button
 	Then scroll down to copyright footer component
@@ -16,13 +16,10 @@ Feature: OCCP-1028 FOOTER: Footer Copyright
 	And user click on check button
 	And click on preview button
 	Then the uploaded logo should be reflected on ctc site
-	And close Browser
 	
 	@RegressionTest @AEM
 	Scenario: TC-2790 AEM user configures text for Canadian Tire Text
-	Given open browser
-	When aem author with access navigates to new rewards card screen
-	And login to AEM using the right credentials as mentioned in the test data 
+	When aem author with access navigates to footer page
 	And click on edit button
 	Then scroll down to copyright footer component
 	And click on aem new copyright footer title
@@ -32,45 +29,23 @@ Feature: OCCP-1028 FOOTER: Footer Copyright
 	And user click on check button
 	And click on preview button
 	Then image alternative text changes are reflected on ctc site
-	And close Browser
 	
-	@RegressionTest @AEM
-	Scenario: TC-2791 AEM user configures text for Copyright Label
-	Given open browser
-	When aem author with access navigates to new rewards card screen
-	And login to AEM using the right credentials as mentioned in the test data
-	And click on edit button 
-	Then scroll down to copyright footer component
-	And click on aem new copyright footer title
-	And click on aem configure button
-	And user should be able to author copyright label property
-	And access the copyright label and author the text
-	And user click on check button
-	And click on preview button
-	Then copyright label changes are reflected on ctc site
-	And close Browser
-	
-	@RegressionTest @AEM
+	#@RegressionTest @AEM
 	Scenario: TC-2792 AEM user configures text for Legal Disclaimer
-	Given open browser
-	When aem author with access navigates to new rewards card screen
-	And login to AEM using the right credentials as mentioned in the test data 
+	When aem author with access navigates to footer page
 	And click on edit button
 	Then scroll down to copyright footer component
 	And click on aem new copyright footer title
 	And click on aem configure button
-	And user should be able to author copyright label property
+	And user should be able to author Legal Disclaimer
 	And access the Legal Disclaimer property and author the text
 	And user click on check button
 	And click on preview button
 	Then legal disclaimer changes are reflected on ctc site
-	And close Browser
 	
 	@RegressionTest @AEM
 	Scenario: TC-2793 AEM user configures text for View More/View Less
-	Given open browser
-	When aem author with access navigates to new rewards card screen
-	And login to AEM using the right credentials as mentioned in the test data
+	When aem author with access navigates to footer page
 	And click on edit button
 	Then scroll down to copyright footer component
 	And click on aem new copyright footer title
@@ -81,12 +56,26 @@ Feature: OCCP-1028 FOOTER: Footer Copyright
 	And access the view less property and author the text
 	And user click on check button
 	And click on preview button
-	Then view more/view less label text changes are reflected on ctc site
-	And close Browser
+	Then view more and view less label text changes are reflected on ctc site
+	
+	#@RegressionTest @AEM 
+	Scenario: TC-2791 AEM user configures text for Copyright Label
+	Given open browser
+	When aem author with access navigates to footer page
+	And login to AEM using the right credentials as mentioned in the test data 
+	And click on edit button 
+	Then scroll down to copyright footer component
+	And click on aem new copyright footer title
+	And click on aem configure button
+	And user should be able to author copyright label property
+	And access the copyright label and author the text
+	And user click on done button
+	And click on preview button
+	Then copyright label changes are reflected on ctc site
 	
 	@RegressionTest @AEM
 	Scenario: TC-2794 AEM user configures to open up the Footer links on same page/new tab
-	When aem author with access navigates to new rewards card screen
+	When aem author with access navigates to footer page
 	And click on edit button
 	Then scroll down to simple footer component
 	And click on aem new simple footer title
@@ -96,4 +85,3 @@ Feature: OCCP-1028 FOOTER: Footer Copyright
 	And user click on check button
 	And click on preview button
 	Then verify if page opens in new tab or same tab as authored
-	And quit browser

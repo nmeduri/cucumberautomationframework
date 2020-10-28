@@ -148,7 +148,7 @@ public class OCCP_1028_Footer_Copyright_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyAltTextChangesReflected();
 	}
 	
-	@Then("view more/view less label text changes are reflected on ctc site")
+	@Then("view more and view less label text changes are reflected on ctc site")
 	public void view_more_view_less_label_text_changes_reflected_on_footer_component() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyViewMoreViewLessChangesReflected();
 	}
@@ -196,5 +196,10 @@ public class OCCP_1028_Footer_Copyright_Step extends BaseClass {
 	@Then("the uploaded logo should be reflected on ctc site")
 	public void uploaded_logo_should_be_reflected() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyUploadedLogoIsDisplayed();
+	}
+	
+	@When("aem author with access navigates to footer page")
+	public void navigate_to_footer() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).navigateToFooterPage();
 	}
 }

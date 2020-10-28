@@ -8,7 +8,7 @@ Feature: OCCP-2805 Account/Triangle ID - Link Rewards | Age of Majority Check
 	And login to AEM using the right credentials as mentioned in the test data 
 	And click on aem new reward card title
 	And click on aem configure button
-	And in link new rewards card page click on error tab
+	And click on error tab in new reward card screen 
 	And user should be able to author error text
 	And user updates the error text
 	And user click on check button
@@ -20,7 +20,7 @@ Feature: OCCP-2805 Account/Triangle ID - Link Rewards | Age of Majority Check
 	When aem author with access navigates to new rewards card screen
 	And click on aem new reward card title
 	And click on aem configure button
-	And in link new rewards card page click on error tab
+	And click on error tab in new reward card screen 
 	And user should be able to author try again cta label
 	And user updates the try again cta label
 	And user click on check button
@@ -32,7 +32,7 @@ Feature: OCCP-2805 Account/Triangle ID - Link Rewards | Age of Majority Check
 	When aem author with access navigates to new rewards card screen
 	And click on aem new reward card title
 	And click on aem configure button
-	And in link new rewards card page click on error tab
+	And click on error tab in new reward card screen 
 	And user should be able to author cancel cta label
 	And user updates the cancel cta label
 	And user click on check button
@@ -44,7 +44,7 @@ Feature: OCCP-2805 Account/Triangle ID - Link Rewards | Age of Majority Check
 	When aem author with access navigates to new rewards card screen
 	And click on aem new reward card title
 	And click on aem configure button
-	And in link new rewards card page click on error tab
+	And click on error tab in new reward card screen 
 	And user should be able to author error image
 	And user updates the error image
 	And user click on check button
