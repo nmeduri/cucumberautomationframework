@@ -425,7 +425,7 @@ public class DataReader {
 	 */
 
 	public String get_InvalidPostal_Code() {
-		String postalCode = Property.getProperty(Constant.DATA_FILE, "invalidPostalCode");
+		String postalCode = Property.getProperty(Constant.DATA_FILE, "postalCodeRewards");
 		if(postalCode != null)
 			return postalCode;
 		else
@@ -450,7 +450,7 @@ public class DataReader {
 	 * 
 	 */
 	public String get_LastName() {
-		String getLN = Property.getProperty(Constant.DATA_FILE, "LastName");
+		String getLN = Property.getProperty(Constant.DATA_FILE, "lastName");
 		if(getLN != null)
 			return getLN;
 		else
@@ -869,6 +869,20 @@ public class DataReader {
 		else
 			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
 	}
+	
+	/**
+	 * gets non existing card number
+	 * 
+	 */
+	
+	public String get_Incorrect_MasterCard_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "incorrectMasterCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Non existing card Number not specified in the Data file.");
+	}
+
 	/**
 	 * gets Broad Promo Tiles En URL
 	 * 

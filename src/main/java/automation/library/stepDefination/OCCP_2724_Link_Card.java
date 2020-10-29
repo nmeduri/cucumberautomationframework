@@ -88,5 +88,51 @@ public class OCCP_2724_Link_Card extends BaseClass {
 	public void reverse_the_error_image_text_changes() throws Exception {
 		testContext.getPageObjectManager().getAEMLinkCardPage(PageObject.getDriver()).reverseErrorImageTextChanges();
 	}
- 
+	
+	//FED
+	@Then("link master card screen should be displayed")
+	public void master_card_screen_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).displayTitleLinkMasterCardPage();
+	}
+	
+	@And("input all the triangle master card details")
+	public void input_all_card_details() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).enterDataInvalidMasterCardDetails();
+	}
+	
+	@Then("user should be redirected to card information is incorrect or not found error screen")
+	public void redirrected_to_error_screen() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).displayMasterCardIncorrectErrorScreen();
+	}
+	
+	@Then("user should be redirected to link master card screen")
+	public void redirrected_to_link_mastercard_screen() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).displayTitleLinkMasterCardPage();
+	}
+	
+	@And("master card page should be displayed without prepoulating previously entered details")
+	public void without_prepopulating_card_details() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).verifyLinkMastercardIsDisplayedWithoutCardDetails();
+	}
+	
+	@Then("user should navigate to link master card screen")
+	public void navigate_to_link_mastercard_screen() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).displayTitleLinkMasterCardPage();
+	}
+	
+	@And("user should see customer care contact number displayed")
+	public void customer_care_contact_number_displayed() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).verifyLinkMastercardIsDisplayedWithoutCardDetails();
+	}
+	
+	@And("click on contact number")
+	public void click_contact_number() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).verifyLinkMastercardIsDisplayedWithoutCardDetails();
+	}
+	
+	@And("user cick on triangle master card")
+	public void click_master_card() throws Exception {
+		testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountPage(PageObject.getDriver()).click_Triangle_Master_Card();
+	}
+	
 }

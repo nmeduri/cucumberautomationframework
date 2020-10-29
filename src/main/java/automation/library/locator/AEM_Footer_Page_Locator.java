@@ -130,6 +130,7 @@ public class AEM_Footer_Page_Locator {
 	String selectAemButton = Property.getProperty(Constant.OR_FILE, "selectAemButton");
 	String logoField = Property.getProperty(Constant.OR_FILE, "logoField");
 	String logoInPreview = Property.getProperty(Constant.OR_FILE, "logoInPreview");
+
 	String chevronDown = Property.getProperty(Constant.OR_FILE, "chevronDown");
 	
 	/**

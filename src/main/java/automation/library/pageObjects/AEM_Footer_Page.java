@@ -907,6 +907,7 @@ public class AEM_Footer_Page extends PageObject {
 	}
 
 	
+	
 	/** This function navigate to AEM New Rewards Card Page */
 	public void navigateToFooterPage() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Footer_Url());

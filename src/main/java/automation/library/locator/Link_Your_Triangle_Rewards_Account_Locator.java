@@ -16,7 +16,9 @@ public class Link_Your_Triangle_Rewards_Account_Locator {
 	String linkYourTriangleRewardsAccountTitle = Property.getProperty(Constant.OR_FILE, "linkYourTriangleRewardsAccountTitle");
 	String getANewTriangleRewards = Property.getProperty(Constant.OR_FILE, "getANewTriangleRewards");
 	String triangleRewardCard = Property.getProperty(Constant.OR_FILE, "triangleRewardCard");
+	String triangleMasterCard = Property.getProperty(Constant.OR_FILE, "triangleMasterCard");
 
+	
 	/**
 	 * gets Locator - Link Your Triangle Rewards Account (Title)
 	 * 
@@ -43,5 +45,15 @@ public class Link_Your_Triangle_Rewards_Account_Locator {
 	public String get_Triangle_Reward_Card() {
 		return triangleRewardCard;
 	}
+	
+	/**
+	 * gets Locator - Triangle Master Card
+	 * 
+	 */
+	
+	public String get_Triangle_Master_Card() {
+		return triangleMasterCard;
+	}
+
  }
 

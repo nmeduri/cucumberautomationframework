@@ -29,6 +29,9 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	String toolTipContentPreview = Property.getProperty(Constant.OR_FILE, "toolTipContentPreview");
 	String getOneHerePreview = Property.getProperty(Constant.OR_FILE, "getOneHerePreview");
 	String inputFieldPreview = Property.getProperty(Constant.OR_FILE, "inputFieldPreview");
+	String linkExistingCardErrorScreenTab = Property.getProperty(Constant.OR_FILE, "linkExistingCardErrorScreenTab");
+	String linkExistingCardTryAgainCTA = Property.getProperty(Constant.OR_FILE, "linkExistingCardTryAgainCTA");
+	String linkExistingCardCancelCTA = Property.getProperty(Constant.OR_FILE, "linkExistingCardCancelCTA");
 	
 	/**
 	 * gets Locator - Link Existing Card title
@@ -200,4 +203,32 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	public String get_Input_Field_Preview() {
 		return inputFieldPreview;
 	}
+	
+	/**
+	 * gets Locator - Error Tab
+	 * 
+	 */
+	
+	public String get_Error_Tab() {
+		return linkExistingCardErrorScreenTab;
+	}
+	
+	/**
+	 * gets Locator - Cancel CTA
+	 * 
+	 */
+	
+	public String get_TryAgain_CTA_AEM() {
+		return linkExistingCardTryAgainCTA;
+	}
+	
+	/**
+	 * gets Locator - Cancel CTA
+	 * 
+	 */
+	
+	public String get_Cancel_CTA_AEM() {
+		return linkExistingCardCancelCTA;
+	}
+	
 }

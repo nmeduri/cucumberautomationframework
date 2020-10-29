@@ -54,4 +54,9 @@ public class Link_Your_Triangle_Rewards_account_Page extends PageObject {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Triangle_Reward_Card())), 40);
 	}
 	
+	/** This function click on Master Reward Card */
+	public void click_Triangle_Master_Card() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Triangle_Master_Card())), 40);
+	}
+	
 }

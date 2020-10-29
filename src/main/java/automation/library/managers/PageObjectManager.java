@@ -23,6 +23,7 @@ import automation.library.locator.Get_Personalized_Offers_Page_Locator;
 import automation.library.locator.Gigya_Api_Tool_Page_Locator;
 import automation.library.locator.Header_Page_Locator;
 import automation.library.locator.HomePageLocator;
+import automation.library.locator.Link_MasterCard_Page_Locator;
 import automation.library.locator.Link_Rewards_Options_Page_Locator;
 import automation.library.locator.Link_Your_Existing_Triangle_Rewards_Card_PageLocator;
 import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
@@ -57,6 +58,7 @@ import automation.library.pageObjects.Get_Personalized_Offers_Page;
 import automation.library.pageObjects.Gigya_Api_Tool_Page;
 import automation.library.pageObjects.Header_Page;
 import automation.library.pageObjects.HomePage;
+import automation.library.pageObjects.Link_MasterCard_Page;
 import automation.library.pageObjects.Link_Rewards_Options_Page;
 import automation.library.pageObjects.Link_Your_Existing_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
@@ -155,6 +157,8 @@ public class PageObjectManager {
 	private AEM_Link_Card_Page_Locator getAEMLInkCardPageLocator;
 	private AEM_Footer_Page_Locator getAEMFooterLocatorPage;
 	private AEM_Footer_Page getAEMFooterPage; 
+	private Link_MasterCard_Page getLinkMasterCardPage;
+	private Link_MasterCard_Page_Locator getLinkMasterCardLocatorPage;
 
 	
 	public PageObjectManager() {
@@ -551,5 +555,15 @@ public class PageObjectManager {
 	public AEM_Footer_Page_Locator getAEMFooterLocatorPage() {
 		return (getAEMFooterLocatorPage == null) ? getAEMFooterLocatorPage = new AEM_Footer_Page_Locator() : getAEMFooterLocatorPage;
 
+	}
+	
+	/** Return Instance of AEM Footer Page */
+	public Link_MasterCard_Page getLinkMasterCardPage(WebDriver driver) {
+		return (getLinkMasterCardPage == null) ? getLinkMasterCardPage = new Link_MasterCard_Page(driver) : getLinkMasterCardPage;
+	}
+	
+	/** Return Instance of AEM Footer Locator Page */
+	public Link_MasterCard_Page_Locator getLinkMasterCardLocatorPage() {
+		return (getLinkMasterCardLocatorPage == null) ? getLinkMasterCardLocatorPage = new Link_MasterCard_Page_Locator() : getLinkMasterCardLocatorPage;
 	}
 }

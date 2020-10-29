@@ -226,4 +226,35 @@ public class AEM_Link_Existing_Card_Page extends PageObject {
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Tooltip_Content(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Tooltip_Content_Preview())));
 	}
 	
+	/** This function clicks on AEM Link Existing Card Error Tab */
+	public void clickOnLinkExistingErrorTab() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Error_Tab())),40);
+		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Error_Tab())));
+	}
+	
+	/** enter Data to TryAgain CTA*/
+	public void enterDataTryAgainText() throws Exception {
+			$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_TryAgain_CTA_AEM())), 5);
+			$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_TryAgain_CTA_AEM())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Try_Again_CTA_label());
+	}
+	
+	/** enter Data to TryAgain CTA*/
+	public void enterDataCancelText() throws Exception {
+			$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Cancel_CTA_AEM())), 5);
+			$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Cancel_CTA_AEM())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Cancel_CTA_label());
+	}
+	
+	/** This function verify if TryAgain CTA label changes reflected in preview */
+	public void verifyTryAgainChangesReflected() throws Exception {
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Try_Again_CTA_label(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_TryAgain_Button())));
+	}
+
+	/** This function enters incorrect card number */
+	public void enterDataIncorrectCardNumber() throws Exception {
+		driver.navigate().refresh();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 40);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_NonExisting_Card_Number());
+	}
 }
