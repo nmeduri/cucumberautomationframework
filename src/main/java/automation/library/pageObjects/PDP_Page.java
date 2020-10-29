@@ -60,7 +60,7 @@ public class PDP_Page extends PageObject {
 				testContext.getPageObjectManager().getPDPPageLocator().get_Return_Policty_Under_Resource())));
 	}
 
-	/** This function naviget to PDP Page */
+	/** This function navigate to PDP Page */
 	public void navigateTo_PDP_Page() throws Exception {
 
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());

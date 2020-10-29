@@ -294,4 +294,16 @@ public class ConfigFileReader {
 			throw new RuntimeException(
 					"Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");
 	}
+	/**
+	 * gets Checkout page url
+	 * 
+	 */
+	
+	public String getCheckoutPageUrl() {
+		String url = Property.getProperty(Constant.DATA_FILE, "simpleHeaderCheckoutUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("simpleHeaderCheckoutUrl not specified in the Configuration.properties file.");
+	}
 }

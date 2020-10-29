@@ -2820,5 +2820,40 @@ public class AEMDataReader {
 			return legalTitleChange;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+	
+	/**
+	 * get Url - Experience Fragment Header Simple Page Author
+	 * 
+	 */
+	
+	public String get_Experience_Fragment_Header_Simple_Page_Url() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "experienceFragmentHeaderSimpleUrl");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("broadPromoTilesAuthor Url not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Customer Service Label AEM
+	 * 
+	 */
+	public String get_Customer_Service_Label() {
+		String orderStatusSectionTitle = Property.getProperty(Constant.AEM_DATA_FILE, "getCustomerServiceLabel");
+		if(orderStatusSectionTitle != null)
+			return orderStatusSectionTitle;
+		throw new RuntimeException("getCustomerServiceLabel not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Customer Service Contact Number AEM
+	 * 
+	 */
+	public String get_Customer_Service_Contact_Number() {
+		String orderStatusSectionTitle = Property.getProperty(Constant.AEM_DATA_FILE, "getCustomerServiceContactNumber");
+		if(orderStatusSectionTitle != null)
+			return orderStatusSectionTitle;
+		throw new RuntimeException("getCustomerServiceLabel not specified in the Data file.");
+	}
 
 }

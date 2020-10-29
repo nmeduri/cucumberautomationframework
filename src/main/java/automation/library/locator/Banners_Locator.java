@@ -4,7 +4,7 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 
 /**
- * This file contains the locator of Banners Page Locators
+ * This file contains the locator of Banners Page
  * 
  */
 public class Banners_Locator {

@@ -12,8 +12,11 @@ import automation.library.locator.AEM_Link_Card_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
+import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
 import automation.library.locator.Banners_Locator;
 import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
+import automation.library.locator.Checkout_Page_Locator;
+
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Footer_PageLocator;
@@ -47,8 +50,11 @@ import automation.library.pageObjects.AEM_Link_Card_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
+import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
 import automation.library.pageObjects.Banner_Pages;
 import automation.library.pageObjects.Broad_Promo_Tiles_Page;
+import automation.library.pageObjects.Checkout_Page;
+
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Footer_Page;
@@ -157,6 +163,10 @@ public class PageObjectManager {
 	private AEM_Link_Card_Page_Locator getAEMLInkCardPageLocator;
 	private AEM_Footer_Page_Locator getAEMFooterLocatorPage;
 	private AEM_Footer_Page getAEMFooterPage; 
+	private Checkout_Page getCheckoutPage; 
+	private Checkout_Page_Locator getCheckoutPageLocator;
+	private AEM_Simple_Header_Checkout_Flow_Page getAEMSimpleHeaderCheckoutFlowPage;
+	private AEM_Simple_Header_Checkout_Flow_Page_Locator getAEMSimpleHeaderCheckoutFlowPageLocator; 
 	private Link_MasterCard_Page getLinkMasterCardPage;
 	private Link_MasterCard_Page_Locator getLinkMasterCardLocatorPage;
 
@@ -554,9 +564,26 @@ public class PageObjectManager {
 	/** Return Instance of AEM Footer Locator Page */
 	public AEM_Footer_Page_Locator getAEMFooterLocatorPage() {
 		return (getAEMFooterLocatorPage == null) ? getAEMFooterLocatorPage = new AEM_Footer_Page_Locator() : getAEMFooterLocatorPage;
-
+	}
+	/** Return Instance of Checkout Page */
+	public Checkout_Page getCheckoutPage(WebDriver driver) {
+		return (getCheckoutPage == null) ? getCheckoutPage = new Checkout_Page(driver) : getCheckoutPage;
 	}
 	
+	/** Return Instance of Checkout Locator Page */
+	public Checkout_Page_Locator getCheckoutPageLocator() {
+		return (getCheckoutPageLocator == null) ? getCheckoutPageLocator = new Checkout_Page_Locator() : getCheckoutPageLocator;
+
+	}
+	/** Return Instance of AEM Simple Header Checkout Flow Page */
+	public AEM_Simple_Header_Checkout_Flow_Page getAEMSimpleHeaderCheckoutFlowPage(WebDriver driver) {
+		return (getAEMSimpleHeaderCheckoutFlowPage == null) ? getAEMSimpleHeaderCheckoutFlowPage = new AEM_Simple_Header_Checkout_Flow_Page(driver) : getAEMSimpleHeaderCheckoutFlowPage;
+	}
+	
+	/** Return Instance of AEM Simple Header Checkout Flow Locator Page */
+	public AEM_Simple_Header_Checkout_Flow_Page_Locator getAEMSimpleHeaderCheckoutFlowPageLocator() {
+		return (getAEMSimpleHeaderCheckoutFlowPageLocator == null) ? getAEMSimpleHeaderCheckoutFlowPageLocator = new AEM_Simple_Header_Checkout_Flow_Page_Locator() : getAEMSimpleHeaderCheckoutFlowPageLocator;
+	}
 	/** Return Instance of AEM Footer Page */
 	public Link_MasterCard_Page getLinkMasterCardPage(WebDriver driver) {
 		return (getLinkMasterCardPage == null) ? getLinkMasterCardPage = new Link_MasterCard_Page(driver) : getLinkMasterCardPage;
