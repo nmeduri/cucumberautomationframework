@@ -81,3 +81,17 @@ Feature: OCCP-862 PLP Sorting
     And select the sorting option customer ratings high to low
     And user click on close button
     Then All the product results are rearranged from highest customer ratings high to lowest customer ratings
+    
+    @RegressionTest @WebView @WideView @TC-44
+    Scenario: TC-44 Verify the previously selected sorting option is displayed when the user clicks 'Back' from a product detail page
+    Given open browser
+    Given plp url is available
+    When plp is displayed
+	And scroll up to page
+	And click on sort by option
+	And select sorting option Newest Arrivals
+	And enter product in search bar
+	And user click on search icon
+	And back from page
+	Then plp is displayed
+	Then the previously selected sorting option is persisted

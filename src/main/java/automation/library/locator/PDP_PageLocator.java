@@ -88,7 +88,8 @@ public class PDP_PageLocator {
 	String selectDifferentColourVariant=Property.getProperty(Constant.OR_FILE, "selectDifferentColourVariant");
 	String viewMoreLessSpecifications = Property.getProperty(Constant.OR_FILE, "viewMoreLessSpecifications");
 	String colorVariantGray = Property.getProperty(Constant.OR_FILE, "colorVariantGray");
-	
+	String badgesPDP = Property.getProperty(Constant.OR_FILE, "badgesPDP").replace("=", ",");
+	String resourceSection = Property.getProperty(Constant.OR_FILE, "resourceSection");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -794,6 +795,20 @@ public class PDP_PageLocator {
 	 */
 	public String get_DifferentColor() {
 		return colorVariantGray;
+	}
+	
+	/**
+	 * gets Locator - Badges
+	 */
+	public String get_Badges() {
+		return badgesPDP;
+	}
+	
+	/**
+	 * gets Locator - Resource Section
+	 */
+	public String get_Resource_Section() {
+		return resourceSection;
 	}
   }
 

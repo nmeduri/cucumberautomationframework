@@ -59,5 +59,20 @@ public class OCCP_871_PDP_Installation extends BaseClass {
 		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).revertInstallationChangesChanges();
 	}
 	
+	@Then("no indicator for service installation is displayed")
+	public void no_indicator_for_service_installation_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).not_display_Installation_Icon();
+	}
+	
+	@Then("no corresponding message is displayed")
+	public void no_corresponding_message_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).not_Displayed_Available_at_Checkout();
+	}
+	
+	@Then("no corresponding tooltip is displayed")
+	public void no_corresponding_tooltip_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).not_Displayed_Tool_Tip_Icon();
+	}
+	
  
 }

@@ -1,7 +1,7 @@
 Feature: OCCP-868 Search and SRP-Auto corrective search
 	Description: To test the ADOBE Test Cases for the story OCCP-868
 	
-	@RegressionTest @AEM
+	#@RegressionTest @AEM
 	Scenario: TC-143 Verify AEM author is able to configure the corrective search message
 	Given open browser
 	When AEM author with access to configure the corrective search message

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.logdetail.Log;
+import automation.library.managers.FileReaderManager;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.PDP_Page;
@@ -60,6 +61,16 @@ public class PDPPageSteps extends BaseClass {
 	public void pdp_url_is_available() throws Exception {
 		
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigateTo_PDP_Page();
+	}
+	
+	@Given("pdp product url is available")
+	public void pdp_product_url_is_available() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Product_Page(FileReaderManager.getInstance().getDataReader().get_Product_Not_Feature());
+	}
+	
+	@Given("pdp url for no service installation")
+	public void pdp_url_for_no_service_installaion() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Product_Page(FileReaderManager.getInstance().getDataReader().getProductCodeForNoServiceInstallation());
 	}
 	
 	@Given("user manual url is available")
@@ -352,6 +363,7 @@ public class PDPPageSteps extends BaseClass {
 	public void pdp_page_should_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_PDP_Page_Title();
 	}
+	
 	
 	@Then("saved wishlist items are removed")
 	public void saved_wishlist_items_are_removed() throws Exception {

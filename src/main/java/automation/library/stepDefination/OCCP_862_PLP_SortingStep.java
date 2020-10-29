@@ -79,4 +79,19 @@ public class OCCP_862_PLP_SortingStep extends BaseClass {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickSortingTab();
 	}
 	
+	@And("enter product in search bar")
+	public void enter_product_in_search_bar() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).enterProductInSearchField();
+	}
+	
+	@And("user click on search icon")
+	public void user_click_on_search_icon() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickSearchIcon();
+	}
+	
+	@Then("the previously selected sorting option is persisted")
+	public void the_previously_selected_sorting_option_is_persisted() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displaySortOptionNewArrivalSelected();
+	}
+	
 }

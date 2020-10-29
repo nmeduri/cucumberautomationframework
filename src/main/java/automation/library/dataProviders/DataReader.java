@@ -167,7 +167,19 @@ public class DataReader {
 		else
 			throw new RuntimeException("User Data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Product Code
+	 * 
+	 */
+	public String get_Product_Not_Feature() {
 
+		String notFeatureProductCode = Property.getProperty(Constant.DATA_FILE, "notFeatureProductCode");
+		if(notFeatureProductCode != null)
+			return notFeatureProductCode;
+		else
+			throw new RuntimeException("Product Code not specified in the Data file.");
+	}
 	/**
 	 * gets Incorrect Re-Type Password Data
 	 * 
@@ -871,7 +883,31 @@ public class DataReader {
 	}
 	
 	/**
-	 * gets non existing card number
+	 * gets PDP Product Url
+	 * 
+	 */
+	
+	public String getPDPProductUrl() {
+		String url = Property.getProperty(Constant.DATA_FILE, "pdpProductUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("pdpProductUrl not specified in the Configuration.properties file.");
+	}
+	
+	/**
+	 * gets No Service Installation
+	 * 
+	 */
+	
+	public String getProductCodeForNoServiceInstallation() {
+		String noServiceInstallationProductCode = Property.getProperty(Constant.DATA_FILE, "noServiceInstallationProductCode");
+		if (noServiceInstallationProductCode != null)
+			return noServiceInstallationProductCode;
+		else
+			throw new RuntimeException("pdp Product Code not specified in the Configuration.properties file.");
+	}
+	 /** gets non existing card number
 	 * 
 	 */
 	
@@ -907,5 +943,15 @@ public class DataReader {
 		else 
 			throw new RuntimeException("broadPromoTilesFr url not specified in the Data file.");
 	}
-
+	
+	/**
+	 * gets ProductName (Search Product)
+	 */
+	public String get_Product_Search() {
+		String getProduct = Property.getProperty(Constant.DATA_FILE, "serarchProduct");
+		if(getProduct != null)
+			return getProduct;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
 }

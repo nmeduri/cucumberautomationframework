@@ -55,4 +55,9 @@ public class OCCP_1576_PDP_Product_Badgess_Steps extends BaseClass {
 	public void the_editable_badge_label_displays_in_store_clearnce() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayBadgeInStoreClearnce();
 	}
+	
+	@Then("maximum of x badges are displayed")
+	public void maximum_of_x_badges_are_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyBadgesMoreThanTwo();
+	}
 }

@@ -66,6 +66,11 @@ public class PDP_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 
 	}
+	
+	/** This function navigate to PDP Product Page */
+	public void navigate_To_PDP_Product_Page(String sProductCode) throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductUrl() + sProductCode);
+	}
 
 	/** This function click on Add to Cart Button */
 	public void clickOnAddToCartButton() throws Exception {
@@ -842,6 +847,58 @@ public class PDP_Page extends PageObject {
 		   Log.message("selectedColorTitle : "+selectedColorTitle, true);
 		   Log.message("selectedColor : "+selectedColorValue, true);
 		   Assert.assertTrue(selectedColorTitle.equalsIgnoreCase(selectedColorValue));
+	   }
+	   
+	   /** This function is verify that badges should be more than two */
+	   public void verifyBadgesMoreThanTwo() throws Exception {
+		   $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badges())), 3);
+		   List<Element> badges = $$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badges());
+		   Assert.assertTrue(badges.size() >= 2);
+	   }
+	   
+	   /** This function is verify that Feature section is not displayed */
+	   public void notDisplayFeatureSection() throws Exception {
+		   try {
+			   $displayFindElement($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Features_Section()));
+			   fail();
+		   }catch(Exception e) {
+			   
+		   }
+	   }
+	   
+	   /** Resource section is displayed */
+	   public void displayResouceSection() throws Exception {
+		   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Resource_Section()));
+	   }
+	   
+	   /** This function is verify that Installation Icon is not displayed */
+	   public void not_display_Installation_Icon() throws Exception {
+		   try {
+			   $displayFindElement($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Installation_Icon()));
+			   fail();
+		   }catch(Exception e) {
+			   
+		   }
+	   }
+	   
+	   /** message available at check is not displayed */
+	   public void not_Displayed_Available_at_Checkout() throws Exception {
+		   try {
+			   $displayFindElement($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Message_Available_At_Check()));
+			   fail();
+		   }catch(Exception e) {
+			   
+		   }
+	   }
+	   
+	   /** tool tip is not displayed */
+	   public void not_Displayed_Tool_Tip_Icon() throws Exception {
+		   try {
+			   $displayFindElement($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tool_Tip_Icon_Installation()));
+			   fail();
+		   }catch(Exception e) {
+			   
+		   }
 	   }
 	
 }

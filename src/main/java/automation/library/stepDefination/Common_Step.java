@@ -157,4 +157,10 @@ public class Common_Step extends BaseStep {
 				.HYB_API_EN_CA(FileReaderManager.getInstance().getAPIDataReader().get_PLP_ProductInformationAPI());
 
 	}
+	
+	@And("back from page")
+	public void back_from_page() throws Exception{
+		Thread.sleep(10000);
+		PageObject.getDriver().navigate().back();
+	}
 }

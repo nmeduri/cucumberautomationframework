@@ -41,7 +41,8 @@ public class AEM_PDP_Page_Locator {
 	String userManaualLabelPreview = Property.getProperty(Constant.OR_FILE, "userManaualLabelPreview");
 	String userManualDescriptionPreview = Property.getProperty(Constant.OR_FILE, "userManualDescriptionPreview");
 	String downloadUserManualPreview = Property.getProperty(Constant.OR_FILE, "downloadUserManualPreview");
-	String stickyTOCAEM = Property.getProperty(Constant.OR_FILE, "stickyTOCAEM");
+	String stickyTOCAEM = Property.getProperty(Constant.OR_FILE, "stickyTOCAEM").replace("=", ",");
+
 	
 	
 

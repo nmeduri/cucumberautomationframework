@@ -17,9 +17,11 @@ Feature: OCCP-1576 PDP: Product Badges
     Then the editable badge label displays in store clearnce
     And the badge is displayed in Yellow color
     
-    #@RegressionTest @WebView @MobileView @WideScreen @TabletView
+    @RegressionTest @WebView @MobileView @WideScreen @TabletView @TC-55
     Scenario: TC-55 Verify product badges are displayed on a PDP
-    Given open browser
     When pdp url is available
     When pdp page is displayed for the product
+    Then maximum of x badges are displayed
+    Then the badge is displayed in pink color
+    And the badge is displayed in Yellow color
     

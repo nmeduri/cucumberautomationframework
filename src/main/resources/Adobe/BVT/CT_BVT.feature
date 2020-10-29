@@ -50,7 +50,7 @@ Feature: Health Check BVT
 	And user enter retype password
 	And user click on create button
 	
-	@RegressionTest @WebView
+	#@RegressionTest @WebView
 	Scenario: TC-2804 Verification of display of Primary Navigation - Desktop 
 	When pdp url is available
 	When pdp page is displayed for the product

@@ -256,5 +256,15 @@ public class Header_Page extends PageObject {
 	public void clickOnCrossSearchPage() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Close_Search_Page()));
 	}
+	
+	/** enter product in search field */
+	public void enterProductInSearchField() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Bar()), FileReaderManager.getInstance().getDataReader().get_Product_Search());
+	}
+	
+	/** click on search Icon */
+	public void clickSearchIcon() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Icon()));
+	}
 
 }

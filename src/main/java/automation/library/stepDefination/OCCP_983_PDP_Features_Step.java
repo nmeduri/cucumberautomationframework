@@ -37,5 +37,15 @@ public class OCCP_983_PDP_Features_Step extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayFeaturesSection();
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayFeaturesInBulletList();
 	}
+	
+	@Then("feature section is not available in overview section")
+	public void feature_section_is_not_available_in_overview_section() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).notDisplayFeatureSection();
+	}
+	
+	@Then("resource section is displayed")
+	public void resource_section_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayResouceSection();
+	}
 }
 	

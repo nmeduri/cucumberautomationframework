@@ -510,4 +510,9 @@ public class PLP_Page extends PageObject {
 	public void clickBackToTopButton() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Back_To_Top_Button())), 4);
 	}
+	
+	/**Sort option New Arrival is selected */
+	public void displaySortOptionNewArrivalSelected() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_New_Arrival_Selected_Sort())), 4);
+	}
 }	

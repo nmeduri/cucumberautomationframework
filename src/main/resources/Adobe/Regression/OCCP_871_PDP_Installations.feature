@@ -34,3 +34,22 @@ Feature: OCCP-871 PDP Installations
     And click on close button on installation indicator
     And click on tool tip icon
 	Then tool tip box opens and tool tip message along with close button is displayed 
+	
+	@RegressionTest @WebView @WideScreen
+	Scenario: TC-118 User verifies no indicator for service installation is displayed on PDP when the product is not eligible for service installation 
+	Given pdp url for no service installation
+	When pdp page is displayed for the product
+	Then no indicator for service installation is displayed
+	Then no corresponding message is displayed
+	Then no corresponding tooltip is displayed
+	
+	@RegressionTest @WebView @WideScreen @TC-1304
+	Scenario: TC-1304 User verifies no indicator for service installation is displayed on PDP when the product is not eligible for service installation 
+	Given pdp url for no service installation
+	When pdp page is displayed for the product
+	Then no indicator for service installation is displayed
+	Then no corresponding message is displayed
+	Then no corresponding tooltip is displayed
+	
+	
+	

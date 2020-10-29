@@ -144,8 +144,9 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for accessibility is displayed
 	And clickable text link for pricing policy is displayed
 	
-		#@RegressionTest @WebView @WideView 
+	@RegressionTest @WebView @WideView @TC-2102
 		Scenario: TC-2102, 2118 User view the section headers
+		Given open browser
 		Given pdp url is available
 		When pdp page is displayed for the product
 		Then scroll down to footer
@@ -154,7 +155,7 @@ Feature: OCCP-1027 Footer : Footer Links
 		And user clicks on the section header name About Us
 		And user clicks on the section header name Legal
 	
-		#@RegressionTest @WebView @WideView 
+		@RegressionTest @WebView @WideView
 		Scenario: TC-2101, 2117 User clicks on the links listed under four sections (Customer Support, Services & Solutions, About Us, Legal)
 		Given pdp url is available
 		When pdp page is displayed for the product

@@ -56,6 +56,7 @@ public class PLP_PageLocator {
 	String showMoreButtonButton = Property.getProperty(Constant.OR_FILE, "showMoreButtonButton");
 	String endPaginationMessage = Property.getProperty(Constant.OR_FILE, "endPaginationMessage");
 	String backToTopButton = Property.getProperty(Constant.OR_FILE, "backToTopButton");
+	String newArrivalSelectedSort = Property.getProperty(Constant.OR_FILE, "newArrivalSelectedSort");
 			
 			
 	
@@ -450,5 +451,12 @@ public class PLP_PageLocator {
 	 */
 	public String get_Back_To_Top_Button() {
 		return backToTopButton;
+	}
+	
+	/**
+	 * gets Locator - New Arrival Sorting (Selected)
+	 */
+	public String get_New_Arrival_Selected_Sort() {
+		return newArrivalSelectedSort;
 	}
 }
