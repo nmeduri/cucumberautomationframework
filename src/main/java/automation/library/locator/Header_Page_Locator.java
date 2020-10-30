@@ -149,6 +149,8 @@ public class Header_Page_Locator {
 		return addedItemWishlist;
 	}
 	 /** 
+	 * gets Locator - Primary Navigation
+	 * 
 	 */
 	public String get_Primary_Navigation() {
 		return primaryNavigation;

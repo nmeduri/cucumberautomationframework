@@ -210,12 +210,23 @@ public class AEMDataReader {
 	}
 	
 	/**
-	 * gets SRP Url
+	 * gets New Rewards Card Aem Url
 	 * 
 	 */
-	
 	public String get_New_Rewards_Card_Url() {
 		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "newRewardsCardUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets New Rewards Card Aem Url
+	 * 
+	 */
+	public String get_New_Rewards_Card_Url_Fed() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "newRewardsCardUrlFED");
 		if(getURl != null)
 			return getURl;
 		else

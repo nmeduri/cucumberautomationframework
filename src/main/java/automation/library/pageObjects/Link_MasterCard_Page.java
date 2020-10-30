@@ -55,6 +55,7 @@ public class Link_MasterCard_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName()), FileReaderManager.getInstance().getDataReader().get_LastName());
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_YOB()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Year()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName())), 5);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_MOB()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Month()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_DOB()));
@@ -79,5 +80,16 @@ public class Link_MasterCard_Page extends PageObject {
 		String CardNoValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Input()), "value");
 		Log.message("Atual Data:- " + CardNoValue.replace(" ", ""), true);
 		Assert.assertEquals("", CardNoValue.replace(" ", ""));
+	}
+	
+	/** This function clicks on contact no */
+	public void clickOnCustomerContactNo() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollUp();
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Customer_Contact_No())), 20);
+	}
+	
+	/** This function verify that Error screen with error is displayed */
+	public void displayCustomerContactNo() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Customer_Contact_No())), 20);
 	}
 }

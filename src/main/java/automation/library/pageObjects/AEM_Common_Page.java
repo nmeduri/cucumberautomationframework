@@ -87,18 +87,23 @@ public class AEM_Common_Page extends PageObject {
 		}
 	}
 	
+	/** This function clicks on Page Information */
+	public void clickOnPageInformation() throws Exception {
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Page_Information())),20);
+	}
+	
 	/** This function clicks on Publish Page */
-    public void clickOnPublishPage() throws Exception {
-        ((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())),20);
-        try {
-        if($display($$$$(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_SelectAll_Checkbox(), 10))) {
-            $click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Button()));
-            }
-        }
-        catch(Exception e) {
-            Log.message("select all checkbox not displayed", true);
-        }
-    }
+	public void clickOnPublishPage() throws Exception {
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())),20);
+		try {
+		if($display($$$$(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_SelectAll_Checkbox(), 10))) {
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Button()));
+			}
+		}
+		catch(Exception e) {
+			Log.message("The page has been published", true);
+		}
+	}
 
 	/** This function clicks on preview button */
 	public void clickPreviewButton() throws Exception {
@@ -109,11 +114,20 @@ public class AEM_Common_Page extends PageObject {
 	
 	/** This function clicks on Edit button */
 	public void clickEditButton() throws Exception {
-		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())), 5);
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())), 20);
 	}
 
 	/** This function clicks on preview button */
     public void clickOnThePreviewButton() throws Exception {
+        Thread.sleep(5000);
+        $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 20);
+        $click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 20);
+        testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+    }
+    
+    /** This function clicks on preview button */
+    public void clickOnThePreviewButtonAfterRefresh() throws Exception {
+    	driver.navigate().refresh();
         Thread.sleep(5000);
         $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 20);
         $click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getPreviewButton())), 20);

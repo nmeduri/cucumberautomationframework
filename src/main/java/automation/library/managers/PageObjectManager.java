@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
+import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
 import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
 import automation.library.locator.AEM_Login_Page_Locator;
@@ -45,6 +46,7 @@ import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Common_Page;
+import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
 import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
 import automation.library.pageObjects.AEM_Login_Page;
@@ -523,7 +525,7 @@ public class PageObjectManager {
 	public AEM_Link_Existing_Card_Page_Locator getAEMLinkExistingCardLocatorPage() {
 		return (getAEMLinkExistingCardLocatorPage == null) ? getAEMLinkExistingCardLocatorPage = new AEM_Link_Existing_Card_Page_Locator() : getAEMLinkExistingCardLocatorPage;
 	}
-
+	
 	/** Returns Instance of AEM Footer Page Locator */
 	public AEM_Footer_Page_Locator getAEMFooterPageLocator() {
 		return (getAEMFooterPageLocator == null) ? getAEMFooterPageLocator = new AEM_Footer_Page_Locator() : getAEMFooterPageLocator;

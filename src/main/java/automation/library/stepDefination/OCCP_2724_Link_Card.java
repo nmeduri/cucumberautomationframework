@@ -122,12 +122,12 @@ public class OCCP_2724_Link_Card extends BaseClass {
 	
 	@And("user should see customer care contact number displayed")
 	public void customer_care_contact_number_displayed() throws Exception {
-		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).verifyLinkMastercardIsDisplayedWithoutCardDetails();
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).displayCustomerContactNo();
 	}
 	
 	@And("click on contact number")
 	public void click_contact_number() throws Exception {
-		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).verifyLinkMastercardIsDisplayedWithoutCardDetails();
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).clickOnCustomerContactNo();
 	}
 	
 	@And("user cick on triangle master card")

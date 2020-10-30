@@ -44,7 +44,7 @@ public class AEM_New_Rewards_Card_Screen_Page extends PageObject {
 	
 	/** This function clicks on AEM New Rewards Card Title */
 	public void clickOnNewRewardsCardTitle() throws Exception {
-		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_new_Rewards_Card_Title())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_new_Rewards_Card_Title())), 40);
 	}
 	
 	/** This function clicks on AEM Error Screen Tab */
@@ -99,7 +99,31 @@ public class AEM_New_Rewards_Card_Screen_Page extends PageObject {
 		
 		/** This function verifys Error Text change is reflected on site */
 		public void verifyErrorTextChangesReflectOnSite() throws Exception {
-			$display(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Cancel_Label())), 5);
+			Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Age_Of_Majority_Error_Text(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Age_Of_Maturity_Error_Text())));
+		}
+		
+		/** This function verifys Error Text change is reflected on site */
+		public void verifyErrorImageChangesReflectOnSite() throws Exception {
+			$display(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Age_Of_Maturity_Error_Image())), 5);
 		}
 
+		public void enterYearOfBirth2002() throws Exception {
+			$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 5);
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())));
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Year_2002())));
+		}
+		
+		public void enterProvinceOntario() throws Exception {
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())), 3);
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())));
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Province_Ontario())));
+		}
+		
+		/** This function navigate to complete your profile Page */
+		public void navigateToCompleteYourProfileScreen() throws Exception {
+			driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_New_Rewards_Card_Url_Fed());
+
+		}
+		
+		
 }

@@ -43,8 +43,14 @@ public class AEM_Common_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnThePreviewButton();
 	}
 	
-	@When("click on the publish button")
+	@When("refresh the page and click on preview")
+	public void click_on_the_preview_button_after_refresh() throws Exception {
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnThePreviewButtonAfterRefresh();
+	}
+	
+	@And("click on the publish button")
 	public void click_on_publish_button() throws Exception {
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPageInformation();
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPublishPage();
 	}
 

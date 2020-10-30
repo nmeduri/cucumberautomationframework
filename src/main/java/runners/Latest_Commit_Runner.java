@@ -15,7 +15,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 			"classpath:Adobe/Regression/OCCP_3722_Login_Registration_Template.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@WebView",
+			"--tags", "@SmokeTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

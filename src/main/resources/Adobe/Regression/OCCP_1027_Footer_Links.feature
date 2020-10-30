@@ -112,6 +112,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for tested for life is displayed
 	And clickable text link for gift registry is displayed
 	
+
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2124, User views the "About Us" section-Mobile	
 	Given pdp url is available

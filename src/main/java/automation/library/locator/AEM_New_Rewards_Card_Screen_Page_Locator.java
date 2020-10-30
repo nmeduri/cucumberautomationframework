@@ -17,6 +17,10 @@ public class AEM_New_Rewards_Card_Screen_Page_Locator {
 	String cancelCTA = Property.getProperty(Constant.OR_FILE, "cancelCTA");
 	String errorImageAOM = Property.getProperty(Constant.OR_FILE, "errorImageAOM");
 	String errorImageLabel = Property.getProperty(Constant.OR_FILE, "errorImageLabel");
+	String getYear2002 = Property.getProperty(Constant.OR_FILE, "getYear2002");
+	String getProvinceOntario = Property.getProperty(Constant.OR_FILE, "getProvinceOntario");
+	String ageOfMaturityErrorText = Property.getProperty(Constant.OR_FILE, "ageOfMaturityErrorText");
+	String ageOfMaturityErrorImage = Property.getProperty(Constant.OR_FILE, "ageOfMaturityErrorImage");
 	
 	/**
 	 * gets Locator - New Rewards card title
@@ -81,4 +85,39 @@ public class AEM_New_Rewards_Card_Screen_Page_Locator {
 		return errorImageLabel;	
 	}
 
+	/**
+	 * gets Locator - get year 2002
+	 * 
+	 */
+    
+	public String get_Year_2002() {
+		return getYear2002;	
+	}
+	
+	/**
+	 * gets Locator - get province ontario
+	 * 
+	 */
+    
+	public String get_Province_Ontario() {
+		return getProvinceOntario;	
+	}
+	
+	/**
+	 * gets Locator - Age of maturity error text
+	 * 
+	 */
+    
+	public String get_Age_Of_Maturity_Error_Text() {
+		return ageOfMaturityErrorText;	
+	}
+	
+	/**
+	 * gets Locator - Age of maturity error image
+	 * 
+	 */
+    
+	public String get_Age_Of_Maturity_Error_Image() {
+		return ageOfMaturityErrorImage;	
+	}
 }

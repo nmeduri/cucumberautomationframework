@@ -24,7 +24,7 @@ public class AEM_Common_Page_Locator {
 	String checkboxSelectAll = Property.getProperty(Constant.OR_FILE, "checkboxSelectAll");
 	String preview = Property.getProperty(Constant.OR_FILE, "preview");
 	String previewButton =  Property.getProperty(Constant.OR_FILE, "previewButton");
-	String editButton =  Property.getProperty(Constant.OR_FILE, "editButton"); 
+	String editButton =  Property.getProperty(Constant.OR_FILE, "editButton");
 
     /**
 	 * gets Locator - Arrow Icon Sign In

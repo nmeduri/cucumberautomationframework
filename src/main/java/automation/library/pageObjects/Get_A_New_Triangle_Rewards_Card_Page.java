@@ -181,4 +181,5 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Error())),20);
 		
 	}
+
 }

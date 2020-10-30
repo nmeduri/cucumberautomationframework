@@ -21,6 +21,7 @@ public class Link_MasterCard_Page_Locator {
 	String mastercardMonth = Property.getProperty(Constant.OR_FILE, "mastercardMonth");
 	String mastercardDate = Property.getProperty(Constant.OR_FILE, "mastercardDate");
 	String incorrectMasterCardError = Property.getProperty(Constant.OR_FILE, "incorrectMasterCardError");
+	String customerCareNo = Property.getProperty(Constant.OR_FILE, "customerCareNo");
 	
 	
 	/**
@@ -122,5 +123,12 @@ public class Link_MasterCard_Page_Locator {
 		return incorrectMasterCardError;
 	}
 
-
+	/**
+	 * gets Locator -  Customer care no
+	 * 
+	 */
+	
+	public String get_Customer_Contact_No() {
+		return customerCareNo;
+	}
 }
