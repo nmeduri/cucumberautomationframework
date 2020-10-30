@@ -190,7 +190,16 @@ public class LogInPageSteps extends BaseClass{
 	
 	@When("hit login page publish url")
 	public void hit_login_page_publish_url() throws Exception {
-		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page_Publish_Url_En();
+		testContext.getPageObjectManager().getAEMLoginPage(PageObject.getDriver()).navigateTo_Login_Page_Publish_Url_En();
 	}
+	@When("for fr locale AEM author with access to configure login page component")
+	public void for_fr_locale_aem_author_with_access_to_configure_login_page_component() throws Exception {
+		testContext.getPageObjectManager().getAEMLoginPage(PageObject.getDriver()).navigate_To_Author_Login_Page_Url_Fr();
+	}
+	@When("hit fr login page publish url")
+	public void hit_fr_login_page_publish_url() throws Exception {
+		testContext.getPageObjectManager().getAEMLoginPage(PageObject.getDriver()).navigateTo_Login_Page_Publish_Url_En();
+	}
+
 	
 }

@@ -254,10 +254,12 @@ public class Login_Page extends PageObject {
 		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Login_Page_Logo()), "background-color");
 		Assert.assertTrue(value.contains("rgba(147, 229, 222, 1)"));
 	}
+
 	/** This function navigate to Login page publish URL EN*/
 	public void navigateTo_Login_Page_Publish_Url_En() throws Exception {
 
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Page_Publish_Url_En());
 
 	}
+
 }

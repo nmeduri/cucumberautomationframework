@@ -41,28 +41,35 @@ TestContext testContext;
 	public void select_Gigya_Screen1_Dropdown() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1AEM()), 40);
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1AEM())), 40);
-		//$click(ExpectedConditions.elementToBeClickable(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1ValueAEM())), 40);
-		//$clickFindElement(ExpectedConditions.elementToBeClickable(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1ValueAEM())), 40);
-		//Thread.sleep(2000);
-		//$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1ValueAEM())),40);
-		//$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1ValueAEM())), 40);
+		Thread.sleep(2000);
+		$click(ExpectedConditions.elementToBeClickable(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1ValueAEM())), 40);
 		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1ValueAEM())));
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen1ValueAEM())));
 	}
 	/** This function to select Gigya screen2 dropdown */
 	public void select_Gigya_Screen2_Dropdown() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2AEM()), 40);
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2AEM())), 40);
-		//$click(ExpectedConditions.elementToBeClickable(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2ValueAEM())), 40);
-		//Thread.sleep(2000);
-		//$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2ValueAEM())),40);
-		//$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2ValueAEM())), 40);
+		Thread.sleep(2000);
+		$click(ExpectedConditions.elementToBeClickable(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2ValueAEM())), 40);
 		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2ValueAEM())));
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMLoginPageLocator().getSelectGigyaScreen2ValueAEM())));
 	}
 	
 	/** This function navigate to Publish Login Page */
 	public void navigate_To_Publish_Login_Page_Url() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Login_Page_Url_En());
+	}
+	/** This function navigate to Login Page for fr locale*/
+	public void navigate_To_Author_Login_Page_Url_Fr() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Login_Page_Url_Fr());
+	}
+	/** This function navigate to Login page publish URL EN*/
+	public void navigateTo_Login_Page_Publish_Url_En() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Page_Publish_Url_En());
+
+	}
+	/** This function navigate to Login page publish URL FR*/
+	public void navigateTo_Login_Page_Publish_Url_Fr() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Page_Publish_Url_En());
 	}
 }

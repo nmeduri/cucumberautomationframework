@@ -945,6 +945,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("getBroadPromoTilesUrlFr url not specified in the Data file.");
 	}
+
 	/**
 	 * gets Login URL Fr locale
 	 * 
@@ -957,7 +958,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Login Fr locale url not specified in the Data file.");
 	}
-
 	/**
 	 * gets Login Page Publish URL En locale
 	 * 
@@ -970,6 +970,18 @@ public class DataReader {
 		else 
 			throw new RuntimeException("loginPagePublishUrl_En locale url not specified in the Data file.");
 	}
+	/**
+	 * gets Google App Store Url
+	 * 
+	 */
+
+	public String get_Google_App_Store_Url() {
+		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "googleAppStoreUrl");
+		if(getLoginPagePublishUrlEn != null)
+			return getLoginPagePublishUrlEn;
+		else 
+			throw new RuntimeException("googleAppStoreUrl locale url not specified in the Data file.");
+	}
 	
 	/**
 	 * gets ProductName (Search Product)
@@ -980,6 +992,44 @@ public class DataReader {
 			return getProduct;
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
+	}
+
+	/**
+	 * gets Login Page Publish URL FR locale
+	 * 
+	 */
+
+	public String get_Login_Page_Publish_Url_Fr() {
+		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "loginPagePublishUrl_Fr");
+		if(getLoginPagePublishUrlEn != null)
+			return getLoginPagePublishUrlEn;
+		else 
+			throw new RuntimeException("loginPagePublishUrl_Fr locale url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Registration Page Publish URL En locale
+	 * 
+	 */
+
+	public String get_Registration_Page_Publish_Url_En() {
+		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "registrationPagePublishUrl_En");
+		if(getLoginPagePublishUrlEn != null)
+			return getLoginPagePublishUrlEn;
+		else 
+			throw new RuntimeException("registrationPagePublishUrl_En locale url not specified in the Data file.");
+	}
+	/**
+	 * gets Registration Page Publish URL Fr locale
+	 * 
+	 */
+
+	public String get_Registration_Page_Publish_Url_Fr() {
+		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "registrationPagePublishUrl_Fr");
+		if(getLoginPagePublishUrlEn != null)
+			return getLoginPagePublishUrlEn;
+		else 
+			throw new RuntimeException("registrationPagePublishUrl_En locale url not specified in the Data file.");
 	}
 	
 	/**
@@ -1015,4 +1065,5 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
 }

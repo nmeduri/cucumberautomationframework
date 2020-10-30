@@ -2946,8 +2946,8 @@ public class AEMDataReader {
 	}
 	/**
 	 * 
-	 * get Data - Login Page author url
-	 * 
+	 * get Data - Login Page author url en locale
+	 *  
 	 */
 	public String get_Login_Page_Url_En() {
 		String getloginPageUrlEn = Property.getProperty(Constant.AEM_DATA_FILE, "loginPageUrl_En");
@@ -2955,5 +2955,38 @@ public class AEMDataReader {
 			return getloginPageUrlEn;
 		throw new RuntimeException("loginPageUrl_En not specified in the Data file.");
 	}
-
+	/**
+	 * 
+	 * get Data - Login Page author url fr locale
+	 * 
+	 */
+	public String get_Login_Page_Url_Fr() {
+		String getloginPageUrlEn = Property.getProperty(Constant.AEM_DATA_FILE, "loginPageUrl_Fr");
+		if(getloginPageUrlEn != null)
+			return getloginPageUrlEn;
+		throw new RuntimeException("loginPageUrl_En not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Login Registration author url en locale
+	 *  
+	 */
+	public String get_Registration_Page_Url_En() {
+		String getloginPageUrlEn = Property.getProperty(Constant.AEM_DATA_FILE, "registrationPageUrl_En");
+		if(getloginPageUrlEn != null)
+			return getloginPageUrlEn;
+		throw new RuntimeException("registrationPageUrl_En not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Login Registration author url fr locale
+	 *  
+	 */
+	public String get_Registration_Page_Url_Fr() {
+		String getloginPageUrlEn = Property.getProperty(Constant.AEM_DATA_FILE, "registrationPageUrl_Fr");
+		if(getloginPageUrlEn != null)
+			return getloginPageUrlEn;
+		throw new RuntimeException("registrationPageUrl_Fr not specified in the Data file.");
+	}
+	
 }

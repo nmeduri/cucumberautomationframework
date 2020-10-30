@@ -163,4 +163,10 @@ public class Common_Step extends BaseStep {
 		Thread.sleep(10000);
 		PageObject.getDriver().navigate().back();
 	}
+
+	@And("refresh the page")
+	public void refresh_the_page() throws Exception{
+		//Thread.sleep(10000);
+		PageObject.getDriver().navigate().refresh();
+	}
 }

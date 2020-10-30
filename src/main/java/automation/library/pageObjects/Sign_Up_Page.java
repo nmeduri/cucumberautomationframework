@@ -54,5 +54,10 @@ public class Sign_Up_Page extends PageObject {
 	public void display_Sign_Up_Header_Fr() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_Header_Fr())), 15);
 	}
+	/** This function is verify that Registration page is displayed */
+	public void display_Registration_Page() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header())), 20);
+	}
+
 
 }

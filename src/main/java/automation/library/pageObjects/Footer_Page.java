@@ -889,10 +889,9 @@ public class Footer_Page extends PageObject {
 			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover(li.get(i));
 			li.get(i).isDisplayed();
 			String decorationValue = li.get(i).getCssValue("text-decoration");
-			Log.message("Value:- " + decorationValue, true);
+			Log.message("Value :- " + decorationValue, true);
 			 Assert.assertTrue(decorationValue.contains("underline"));
-		}
-		
+		}	
 	}
 	
 	/** This function is verify that all links are underlined on hover */
@@ -966,6 +965,37 @@ public class Footer_Page extends PageObject {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
 	}
 	
+	/** This function to display Footer section*/
+	public void displayFooterSection() throws Exception {
+		//By footerSection = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section());
+		//testContext.getPageObjectManager().getPageObject(driver).scrollDown(footerSection, 10);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
+	}
+	/** This function to display Footer Links section*/
+	public void displayFooterLinksSection() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section())), 40);
+	}
+	/** This function to click On Android App Store Logo*/
+	public void clickOnAndroidAppStoreLogo() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Android_App_Store_Logo())), 40);
+	}
+	/** This function to display Google App Store Download */
+	public void displayGoogleAppStoreDownload() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Google_App_Store())), 40);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual URL: "+actualUrl, true);
+		Assert.assertTrue(actualUrl.contains(FileReaderManager.getInstance().getDataReader().get_Google_App_Store_Url()));
+		
+	}
+	/** This function is verify that all links are underlined on hover */
+	public void verifyHoverOnAnyFooterLink() throws Exception {
+		testContext.getPageObjectManager().getPageObject(driver).scrollUp();
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Custom_Support())), 40);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Order_Status())));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Order_Status()), "text-decoration");
+		Log.message("Value:- " + value, true);
+	    Assert.assertTrue(value.contains("underline"));
+	}
 	/** verify Learn more link is getting navigate on learn more section */
 	public void verifyLearnMoreLinkNavigation() throws Exception {
 		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Learn_More()), "href"), FileReaderManager.getInstance().getDataReader().get_Learn_More_Link());
@@ -985,10 +1015,6 @@ public class Footer_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()));
 	}
 	
-	/** This function to display Footer section*/
-	public void displayFooterSection() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
-	}
 }
 	
 	

@@ -15,6 +15,7 @@ public class AEM_Login_Page_Locator {
 	String selectGigyaScreen2AEM = Property.getProperty(Constant.OR_FILE, "selectGigyaScreen2AEM");
 	String selectGigyaScreen2ValueAEM = Property.getProperty(Constant.OR_FILE, "selectGigyaScreen2ValueAEM");
 	
+	
 	/**
 	 * gets Locator - AEM Gigya Integration Component
 	 * 
@@ -55,5 +56,5 @@ public class AEM_Login_Page_Locator {
 	public String getSelectGigyaScreen2ValueAEM() {
 		return selectGigyaScreen2ValueAEM;	
 	}
-
+	
 }
