@@ -50,6 +50,13 @@ public class Footer_Page extends PageObject {
 
 	}
 	
+	/** This function navigate to Footer Page */
+	public void navigateTo_Footer_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Footer_Url());
+
+	}
+	
 	/** This function is verify that Legal Disclaimer is displayed */
 	public void displayLegalDisclaimer() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal_Disclaimer()));
@@ -957,6 +964,25 @@ public class Footer_Page extends PageObject {
 	/** This function clicks on minus button*/
 	public void clickMinusSection() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
+	}
+	
+	/** verify Learn more link is getting navigate on learn more section */
+	public void verifyLearnMoreLinkNavigation() throws Exception {
+		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Learn_More()), "href"), FileReaderManager.getInstance().getDataReader().get_Learn_More_Link());
+	}
+	
+	/** verify Accessibility link is getting navigate on Accesibility section on new tab */
+	public void verifyAccessibilityNavigation() throws Exception {
+		testContext.getPageObjectManager().getPageObject(driver).switchWindow();
+		Thread.sleep(2000);
+		Assert.assertEquals(PageObject.getDriver().getCurrentUrl(), FileReaderManager.getInstance().getDataReader().get_Accessibility_Link());
+		PageObject.getDriver().close();
+		testContext.getPageObjectManager().getPageObject(driver).parentWindow();
+	}
+	
+	/** click on accessibility logo */
+	public void clickOnAccessibilityLogo() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()));
 	}
 	
 	/** This function to display Footer section*/

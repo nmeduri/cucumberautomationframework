@@ -2833,7 +2833,85 @@ public class AEMDataReader {
 	}
 	
 	/**
-	 * get Url - Experience Fragment Header Simple Page Author
+	 * get Data - Be the First to Know
+	 */
+	public String get_Be_The_First_To_Know() {
+		String beTheFirstKnown = Property.getProperty(Constant.AEM_DATA_FILE, "beTheFirstKnown");
+		if(beTheFirstKnown != null)
+			return beTheFirstKnown;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Be The First to Know
+	 */
+	public String get_Be_The_First_To_Know_Change() {
+		String beTheFirstKnownChange = Property.getProperty(Constant.AEM_DATA_FILE, "beTheFirstKnownChange");
+		if(beTheFirstKnownChange != null)
+			return beTheFirstKnownChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Weekly Flyer Email Directly
+	 */
+	public String get_Weekly_Flyer_Email_Directly() {
+		String weeklyFlyerEmailDirectly = Property.getProperty(Constant.AEM_DATA_FILE, "weeklyFlyerEmailDirectly");
+		if(weeklyFlyerEmailDirectly != null)
+			return weeklyFlyerEmailDirectly;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Weekly Flyer Email Directly
+	 */
+	public String get_Weekly_Flyer_Email_Directly_Change() {
+		String weeklyFlyerEmailDirectlyChange = Property.getProperty(Constant.AEM_DATA_FILE, "weeklyFlyerEmailDirectlyChange");
+		if(weeklyFlyerEmailDirectlyChange != null)
+			return weeklyFlyerEmailDirectlyChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Weekly Sign Up Detail
+	 */
+	public String get_Weekly_Sign_Up_Detail() {
+		String weeklySignUpDetail = Property.getProperty(Constant.AEM_DATA_FILE, "weeklySignUpDetail");
+		if(weeklySignUpDetail != null)
+			return weeklySignUpDetail;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Weekly Sign Up Detail
+	 */
+	public String get_Weekly_Sign_Up_Detail_Change() {
+		String WeeklySignUpDetailChange = Property.getProperty(Constant.AEM_DATA_FILE, "WeeklySignUpDetailChange");
+		if(WeeklySignUpDetailChange != null)
+			return WeeklySignUpDetailChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Weekly Sign Up URL Detail
+	 */
+	public String get_Weekly_Sign_Up_Url_Detail() {
+		String weeklySignUpUrl = Property.getProperty(Constant.AEM_DATA_FILE, "weeklySignUpUrl");
+		if(weeklySignUpUrl != null)
+			return weeklySignUpUrl;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Weekly Sign Up URL Detail
+	 */
+	public String get_Weekly_Sign_Up__Url_Detail_Change() {
+		String weeklySignUpUrlChange = Property.getProperty(Constant.AEM_DATA_FILE, "weeklySignUpUrlChange");
+		if(weeklySignUpUrlChange != null)
+			return weeklySignUpUrlChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	 /** get Url - Experience Fragment Header Simple Page Author
 	 * 
 	 */
 	

@@ -133,6 +133,13 @@ public class AEM_Footer_Page_Locator {
 
 	String chevronDown = Property.getProperty(Constant.OR_FILE, "chevronDown");
 	
+	String downloadAndAccessibilityTab = Property.getProperty(Constant.OR_FILE, "downloadAndAccessibilityTab");
+	String weeklyFlyerTitleAEM = Property.getProperty(Constant.OR_FILE, "weeklyFlyerTitleAEM");
+	String weeklyFlyerEmailDirectlyToYouAEM = Property.getProperty(Constant.OR_FILE, "weeklyFlyerEmailDirectlyToYouAEM");
+	String weeklySignUpFieldAEM = Property.getProperty(Constant.OR_FILE, "weeklySignUpFieldAEM");
+	String weeklySignUpUrlAEM = Property.getProperty(Constant.OR_FILE, "weeklySignUpUrlAEM");
+			
+	
 	/**
 	 * gets Locator - Footer copyright title
 	 * 
@@ -1068,8 +1075,39 @@ public class AEM_Footer_Page_Locator {
 	
 	}
 	
+	/**
+	 * get Locator - Download and Accessibility Tab
+	 */
+	public String get_Download_And_Accessibility_Tab() {
+		return downloadAndAccessibilityTab;
+	}
 	
+	/**
+	 * get Locator - weeklyFlyerTitleAEM
+	 */
+	public String get_Weekly_Flyer_Title_Be_The_First() {
+		return weeklyFlyerTitleAEM;
+	}
 	
+	/**
+	 * get Locator - Weekly Flyer Email To Directly
+	 */
+	public String get_Weekly_Flyer_Email_To_Directly() {
+		return weeklyFlyerEmailDirectlyToYouAEM;
+	}
 	
-
-}
+	/**
+	 * get Locator - Weekly Sign Up Field
+	 */
+	public String get_Weekly_Sign_Up_Field() {
+	return weeklySignUpFieldAEM;
+	}
+	
+	/**
+	 * gets Locator - Weekly Sign Up Url
+	 */
+	public String get_Weekly_Sign_Up_Url() {
+		return weeklySignUpUrlAEM;
+	}
+ 	
+	}

@@ -56,6 +56,5 @@ Feature: Health Check BVT
 	When pdp page is displayed for the product
 	Then access the header and verify if primary navigation is present
 	Then the primary navigation should be displayed after the pencil banner
-    
 
 	

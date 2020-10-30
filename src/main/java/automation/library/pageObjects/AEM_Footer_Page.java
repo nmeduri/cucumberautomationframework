@@ -1069,4 +1069,91 @@ public class AEM_Footer_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo_In_Preview()));
 	}
+	
+	/** This function clicks on download and accessibility tab */
+	public void clickDownloadAndAccessibilityTab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Download_And_Accessibility_Tab())), 4);
+	}
+	
+	/** Update be the first to know field */
+	public void updateBeTheFirstToKnowField() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Title_Be_The_First()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Title_Be_The_First())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Be_The_First_To_Know());
+	}
+	
+	/** verify To Be The First To Know changes are reflect on site */
+	public void verifyToBeTheFirstChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Be_The_First_To_Know())), FileReaderManager.getInstance().getAEMDataReader().get_Be_The_First_To_Know());
+		PageObject.getDriver().switchTo().parentFrame();
+		
+	}
+	
+	/** revert to be the first know changes */
+	public void revertToBeTheFirstKnowChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Title_Be_The_First()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Title_Be_The_First())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Be_The_First_To_Know_Change());
+	} 
+	
+	/** Update weekly flyer email directly field */
+	public void updateWeeklyFlyerEmailDirectly() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Email_To_Directly()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Email_To_Directly())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Flyer_Email_Directly());
+	}
+	
+	/** verify Weekly Flyer Email Directly changes are reflect on site */
+	public void verifyFlyerEmailDirectlyChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Flyer_Email_Directly())), FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Flyer_Email_Directly());
+		PageObject.getDriver().switchTo().parentFrame();
+		
+	}
+	
+	/** revert to be the first know changes */
+	public void revertWeeklyFlyerEmailDirectly() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Email_To_Directly()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Email_To_Directly())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Flyer_Email_Directly_Change());
+	} 
+	
+	/** update weekly sign up field */
+	public void updateWeeklySignUpField() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Field()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Field())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Detail());
+	}
+	
+	/** revert to weekly sign up changes */
+	public void revertWeeklySignUpChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Field()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Field())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Detail_Change());
+	} 
+	
+	/** verify weekly sign up changes are reflect on site */
+	public void verifyWeeklySignUpChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Sign_Up())), FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Detail());
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** update weekly sign up url */
+	public void updateWeeklySignUpUrl() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Url()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Url_Detail());
+		Thread.sleep(3000);
+	}
+	
+	/** revert to weekly sign up url changes */
+	public void revertWeeklySignUpUrlChanges() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Url()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Sign_Up_Url())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up__Url_Detail_Change());
+		Thread.sleep(3000);
+	} 
+	
+	/** verify weekly sign up url changes are reflect on site */
+	public void verifyWeeklySignUpUrlChangesReflectOnSite() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+		Log.message("Was Url:- " + $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Sign_Up()), "href"),true);
+		Log.message("Url:- " +FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Url_Detail(), true);
+		Assert.assertTrue($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Sign_Up()), "href").contains(FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Url_Detail()));
+		PageObject.getDriver().switchTo().parentFrame();
+	}
 }

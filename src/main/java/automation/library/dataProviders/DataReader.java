@@ -895,6 +895,8 @@ public class DataReader {
 			throw new RuntimeException("pdpProductUrl not specified in the Configuration.properties file.");
 	}
 	
+	
+	
 	/**
 	 * gets No Service Installation
 	 * 
@@ -955,6 +957,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Login Fr locale url not specified in the Data file.");
 	}
+
 	/**
 	 * gets Login Page Publish URL En locale
 	 * 
@@ -975,6 +978,40 @@ public class DataReader {
 		String getProduct = Property.getProperty(Constant.DATA_FILE, "serarchProduct");
 		if(getProduct != null)
 			return getProduct;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Learn More Link
+	 */
+	public String get_Learn_More_Link() {
+		String learnMoreLink = Property.getProperty(Constant.DATA_FILE, "learnMoreLink");
+		if(learnMoreLink != null)
+			return learnMoreLink;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Accessibility Link
+	 */
+	public String get_Accessibility_Link() {
+		String accessibilityLink = Property.getProperty(Constant.DATA_FILE, "accessibilityLink");
+		if(accessibilityLink != null)
+			return accessibilityLink;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
+	
+	
+	/**
+	 * gets Footer Url
+	 */
+	public String get_Footer_Url() {
+		String footerUrl = Property.getProperty(Constant.DATA_FILE, "footerUrl");
+		if(footerUrl != null)
+			return footerUrl;
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}

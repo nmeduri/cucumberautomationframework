@@ -248,14 +248,14 @@ public class Header_Page extends PageObject {
 		   }
 		catch(Exception e) {
 			   Log.message("Pencil banner is not present", true);
-		   }
-		
+		 }
 		}
 	
 	/** This function clicks on Side menu cross */
 	public void clickOnCrossSearchPage() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Close_Search_Page()));
 	}
+
 	/** This function is verify that Standard Header is displayed */
 	public void displayStandardHeader() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Standard_Header()));
