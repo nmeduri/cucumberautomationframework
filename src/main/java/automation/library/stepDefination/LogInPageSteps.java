@@ -154,4 +154,43 @@ public class LogInPageSteps extends BaseClass{
 	public void enter_email_detail_2480() throws Exception {
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Id_2480());
 	}
+	@And("blue background should be displayed")
+	public void blue_background_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Blue_Background();
+	}
+	@And("logo should be displayed")
+	public void logo_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Login_Page_Logo();
+	}
+	@When("fr locale login url is available")
+    public void fr_locale_login_url_is_available() throws Exception {
+   	    
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page_Fr_Locale();
+    }
+	@And("blue background is displayed in mobile view")
+	public void blue_background_is_displayed_mobile() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).display_Blue_Background_Mobile();
+	}
+	@When("AEM author with access to configure login page component")
+	public void aem_author_with_access_to_configure_login_page_component() throws Exception {
+		testContext.getPageObjectManager().getAEMLoginPage(PageObject.getDriver()).navigate_To_Author_Login_Page_Url();
+	}
+	@And("click on gigya integration component")
+	public void click_on_gigya_integration_component() throws Exception {
+		testContext.getPageObjectManager().getAEMLoginPage(PageObject.getDriver()).clickOnGigyaIntegrationComponent();
+	}
+	@And("select gigya Screen1 dropdown")
+	public void select_gigya_Screen1_dropdown() throws Exception {
+		testContext.getPageObjectManager().getAEMLoginPage(PageObject.getDriver()).select_Gigya_Screen1_Dropdown();
+	}
+	@And("select gigya Screen2 dropdown")
+	public void select_gigya_Screen2_dropdown() throws Exception {
+		testContext.getPageObjectManager().getAEMLoginPage(PageObject.getDriver()).select_Gigya_Screen2_Dropdown();
+	}
+	
+	@When("hit login page publish url")
+	public void hit_login_page_publish_url() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).navigateTo_Login_Page_Publish_Url_En();
+	}
+	
 }

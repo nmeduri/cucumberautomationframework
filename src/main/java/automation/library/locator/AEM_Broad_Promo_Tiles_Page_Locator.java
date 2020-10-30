@@ -2,7 +2,10 @@ package automation.library.locator;
 
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
-
+/**
+ * This file contains the locator of Broad Promo Tiles Page
+ * 
+ */
 public class AEM_Broad_Promo_Tiles_Page_Locator {
 
 	String broadPromoTilesComponent = Property.getProperty(Constant.OR_FILE, "broadPromoTilesComponent");

@@ -69,9 +69,4 @@ public class OCCP_1037_Simple_Header_Checkout_Flow_Step extends BaseClass{
 		testContext.getPageObjectManager().getAEMSimpleHeaderCheckoutFlowPage(PageObject.getDriver()).enterCustomerServerContactNumberDetails();
 	}
 	
-	
-	
-	
-	
-	
 }

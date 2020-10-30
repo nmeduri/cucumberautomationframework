@@ -7,10 +7,12 @@ import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
 import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
+import automation.library.locator.AEM_Login_Page_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_Link_Card_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
+import automation.library.locator.AEM_Registration_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
 import automation.library.locator.Banners_Locator;
@@ -45,10 +47,12 @@ import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
 import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
+import automation.library.pageObjects.AEM_Login_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_Link_Card_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
+import automation.library.pageObjects.AEM_Registration_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
 import automation.library.pageObjects.Banner_Pages;
@@ -169,7 +173,11 @@ public class PageObjectManager {
 	private AEM_Simple_Header_Checkout_Flow_Page_Locator getAEMSimpleHeaderCheckoutFlowPageLocator; 
 	private Link_MasterCard_Page getLinkMasterCardPage;
 	private Link_MasterCard_Page_Locator getLinkMasterCardLocatorPage;
-
+	private AEM_Login_Page getAEMLoginPage;
+	private AEM_Login_Page_Locator getAEMLoginPageLocator;
+	private AEM_Registration_Page getAEMRegistrationPage;
+	private AEM_Registration_Page_Locator getAEMRegistrationPageLocator;
+	
 	
 	public PageObjectManager() {
 		
@@ -592,5 +600,25 @@ public class PageObjectManager {
 	/** Return Instance of AEM Footer Locator Page */
 	public Link_MasterCard_Page_Locator getLinkMasterCardLocatorPage() {
 		return (getLinkMasterCardLocatorPage == null) ? getLinkMasterCardLocatorPage = new Link_MasterCard_Page_Locator() : getLinkMasterCardLocatorPage;
+
+	}
+	/** Return Instance of AEM  Login Page */
+	public AEM_Login_Page getAEMLoginPage(WebDriver driver) {
+		return (getAEMLoginPage == null) ? getAEMLoginPage = new AEM_Login_Page(driver) : getAEMLoginPage;
+	}
+	
+	/** Return Instance of AEM Footer Locator Page */
+	public AEM_Login_Page_Locator getAEMLoginPageLocator() {
+		return (getAEMLoginPageLocator == null) ? getAEMLoginPageLocator = new AEM_Login_Page_Locator() : getAEMLoginPageLocator;
+	}
+	/** Return Instance of AEM  Login Page */
+	public AEM_Registration_Page getAEMRegistrationPage(WebDriver driver) {
+		return (getAEMRegistrationPage == null) ? getAEMRegistrationPage = new AEM_Registration_Page(driver) : getAEMRegistrationPage;
+	}
+	
+	/** Return Instance of AEM Footer Locator Page */
+	public AEM_Registration_Page_Locator getAEMRegistrationPageLocator() {
+		return (getAEMRegistrationPageLocator == null) ? getAEMRegistrationPageLocator = new AEM_Registration_Page_Locator() : getAEMRegistrationPageLocator;
+
 	}
 }

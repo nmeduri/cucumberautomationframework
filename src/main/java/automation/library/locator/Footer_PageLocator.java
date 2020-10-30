@@ -72,6 +72,7 @@ public class Footer_PageLocator {
 	String mobilecustomSupportSection = Property.getProperty(Constant.OR_FILE, "mobilecustomSupportSection");
 	String aemFooter = Property.getProperty(Constant.OR_FILE, "aemFooter");
 	String aemLegalText = Property.getProperty(Constant.OR_FILE, "aemLegalText");
+	String footerSection = Property.getProperty(Constant.OR_FILE, "footerSection");
 	
 	/**
 	 * gets Locator - Legal Disclaimer
@@ -604,6 +605,12 @@ public class Footer_PageLocator {
 		return mobilecustomSupportSection;
 	}
 	
-	
+	/**
+	 * gets Locator - Total Footer Section
+	 * 
+	 */
+	public String get_Footer_Section() {
+		return footerSection;
+	}
  }
 

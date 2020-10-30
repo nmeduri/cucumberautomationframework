@@ -593,5 +593,9 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	public void reverse_the_footer_option_changes() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).reverseFooterOptionDetails();
 	}
-
+	
+	@And("standard footer is displayed")
+	public void standard_footer_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayFooterSection();
+	}
 }

@@ -41,5 +41,14 @@ public class SignUpPageSteps extends BaseClass{
 	public void user_launches_the_author_url() throws Throwable {
 
 	}
-
+	
+	@When("fr locale sign up url is available")
+    public void fr_locale_signup_url_is_available() throws Exception {
+   	    
+		testContext.getPageObjectManager().getSignUpPage(PageObject.getDriver()).navigateTo_Sign_Up_Page_Fr_Locale();
+    }
+	@When("fr locale sign up page is displayed")
+    public void sign_up_page_is_displayed() throws Exception {
+   	 testContext.getPageObjectManager().getSignUpPage(PageObject.getDriver()).display_Sign_Up_Header_Fr();
+    }
 }

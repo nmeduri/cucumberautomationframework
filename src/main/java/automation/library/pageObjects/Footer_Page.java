@@ -959,7 +959,10 @@ public class Footer_Page extends PageObject {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
 	}
 	
-	
+	/** This function to display Footer section*/
+	public void displayFooterSection() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
+	}
 }
 	
 	

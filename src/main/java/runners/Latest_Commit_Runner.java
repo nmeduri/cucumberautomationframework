@@ -13,7 +13,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_968_Broad_Promo_Tiles_Component.feature",
+			"classpath:Adobe/Regression/OCCP_3722_Login_Registration_Template.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@WebView",
 			"--plugin", "pretty",

@@ -41,7 +41,7 @@ public class Header_Page_Locator {
 	String InformationBannerLink = Property.getProperty(Constant.OR_FILE, "InformationBannerLink");
 	String SearchResult=Property.getProperty(Constant.OR_FILE, "SearchResult");
 	String InformationBanner=Property.getProperty(Constant.OR_FILE, "InformationBanner");
-
+	String standardHeader=Property.getProperty(Constant.OR_FILE, "standardHeader");
 	
 	/**
 	 * gets Locator - Account
@@ -267,5 +267,13 @@ public class Header_Page_Locator {
 	 */
 	public String get_search_result() {
 		return SearchResult;
+	}
+	
+	/**
+	 * gets Locator - Standard Header
+	 * 
+	 */
+	public String get_Standard_Header() {
+		return standardHeader;
 	}
 }

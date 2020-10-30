@@ -306,4 +306,18 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("simpleHeaderCheckoutUrl not specified in the Configuration.properties file.");
 	}
+	/**
+	 * gets Sign In url
+	 * 
+	 */
+	
+	public String getSignUpUrl_Fr() {
+		String getSignUpUrlFr = Property.getProperty(Constant.DATA_FILE, "signUpUrl_Fr");
+		Log.message("URL:- " + getSignUpUrlFr, true);
+		if (getSignUpUrlFr != null)
+			return getSignUpUrlFr;
+		else
+			throw new RuntimeException("signUpUrl_Fr not specified in the Configuration.properties file.");	
+	}
+
 }

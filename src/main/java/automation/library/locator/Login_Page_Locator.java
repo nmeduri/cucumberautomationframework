@@ -22,6 +22,8 @@ public class Login_Page_Locator {
 	String messageFieldRequired = Property.getProperty(Constant.OR_FILE, "messageFieldRequired");
 	String linkRewards = Property.getProperty(Constant.OR_FILE, "linkRewards");
 	String clearDataButton = Property.getProperty(Constant.OR_FILE, "clearDataButton");
+	String loginPageLogo = Property.getProperty(Constant.OR_FILE, "loginPageLogo");
+	String blueBackgroundColor = Property.getProperty(Constant.OR_FILE, "blueBackgroundColor");
 	
 	/**
 	 * gets Locator - Header Get Welcome To Your Triangle
@@ -122,5 +124,21 @@ public class Login_Page_Locator {
 	
 	public String get_Clear_Data_Button() {
 		return clearDataButton;
+	}
+	/**
+	 * gets Locator - Get Login Page Logo
+	 * 
+	 */
+	
+	public String get_Login_Page_Logo() {
+		return loginPageLogo;
+	}
+	/**
+	 * gets Locator - Get Blue Background of Login page
+	 * 
+	 */
+	
+	public String get_Blue_Background() {
+		return blueBackgroundColor;
 	}
 }

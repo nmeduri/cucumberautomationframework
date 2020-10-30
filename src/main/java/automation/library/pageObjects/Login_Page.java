@@ -234,5 +234,30 @@ public class Login_Page extends PageObject {
 //			
 //		}
 //	}
+	
+	/** This function display Blue Background */
+	public void display_Blue_Background() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Blue_Background()), "background-color");
+		Assert.assertTrue(value.contains("rgba(147, 229, 222, 1)"));
+	}
+	/** This function display Login Page Logo */
+	public void display_Login_Page_Logo() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Login_Page_Logo())),40);
+		
+	}
+	/** This function navigate To Login Page for Fr locale */
+	public void navigateTo_Login_Page_Fr_Locale() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Url_Fr());
+	}
+	/** This function display Blue Background in mobile*/
+	public void display_Blue_Background_Mobile() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Login_Page_Logo()), "background-color");
+		Assert.assertTrue(value.contains("rgba(147, 229, 222, 1)"));
+	}
+	/** This function navigate to Login page publish URL EN*/
+	public void navigateTo_Login_Page_Publish_Url_En() throws Exception {
 
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Page_Publish_Url_En());
+
+	}
 }

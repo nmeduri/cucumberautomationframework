@@ -839,11 +839,11 @@ public class DataReader {
 	 */
 	
 	public String getEdgeToEdgeBannerUrlWithImageEn() {
-		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageEn");
-		if (url != null)
-			return url;
+		String getEdgeToEdgeBannerUrlWithImageEn = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageEn");
+		if (getEdgeToEdgeBannerUrlWithImageEn != null)
+			return getEdgeToEdgeBannerUrlWithImageEn;
 		else
-			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+			throw new RuntimeException("getEdgeToEdgeBannerUrlWithImageEn not specified in the Configuration.properties file.");
 	}
 	/**
 	 * gets EdgeToEdge Banner url without Image
@@ -851,11 +851,11 @@ public class DataReader {
 	 */
 	
 	public String getEdgeToEdgeBannerUrlWithoutImageEn() {
-		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageEn");
-		if (url != null)
-			return url;
+		String getEdgeToEdgeBannerUrlWithoutImageEn = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageEn");
+		if (getEdgeToEdgeBannerUrlWithoutImageEn != null)
+			return getEdgeToEdgeBannerUrlWithoutImageEn;
 		else
-			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+			throw new RuntimeException("getEdgeToEdgeBannerUrlWithoutImageEn not specified in the Configuration.properties file.");
 	}
 	/**
 	 * gets EdgeToEdge Banner url with Image
@@ -863,11 +863,11 @@ public class DataReader {
 	 */
 	
 	public String getEdgeToEdgeBannerUrlWithImageFr() {
-		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageFr");
-		if (url != null)
-			return url;
+		String getEdgeToEdgeBannerUrlWithImageFr = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageFr");
+		if (getEdgeToEdgeBannerUrlWithImageFr != null)
+			return getEdgeToEdgeBannerUrlWithImageFr;
 		else
-			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+			throw new RuntimeException("getEdgeToEdgeBannerUrlWithImageFr not specified in the Configuration.properties file.");
 	}
 	/**
 	 * gets EdgeToEdge Banner url without Image
@@ -875,11 +875,11 @@ public class DataReader {
 	 */
 	
 	public String getEdgeToEdgeBannerUrlWithoutImageFr() {
-		String url = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageFr");
-		if (url != null)
-			return url;
+		String getEdgeToEdgeBannerUrlWithoutImageFr = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageFr");
+		if (getEdgeToEdgeBannerUrlWithoutImageFr != null)
+			return getEdgeToEdgeBannerUrlWithoutImageFr;
 		else
-			throw new RuntimeException("edgeToEdgeBannerUrl not specified in the Configuration.properties file.");
+			throw new RuntimeException("getEdgeToEdgeBannerUrlWithoutImageFr not specified in the Configuration.properties file.");
 	}
 	
 	/**
@@ -925,9 +925,9 @@ public class DataReader {
 	 */
 
 	public String get_BroadPromoTiles_Url_En() {
-		String getLoginUrl = Property.getProperty(Constant.DATA_FILE, "broadPromoTilesEn");
-		if(getLoginUrl != null)
-			return getLoginUrl;
+		String getBroadPromoTilesUrlEn = Property.getProperty(Constant.DATA_FILE, "broadPromoTilesEn");
+		if(getBroadPromoTilesUrlEn != null)
+			return getBroadPromoTilesUrlEn;
 		else 
 			throw new RuntimeException("broadPromoTilesEn url not specified in the Data file.");
 	}
@@ -937,11 +937,35 @@ public class DataReader {
 	 */
 
 	public String get_BroadPromoTiles_Url_Fr() {
-		String getLoginUrl = Property.getProperty(Constant.DATA_FILE, "broadPromoTilesFr");
-		if(getLoginUrl != null)
-			return getLoginUrl;
+		String getBroadPromoTilesUrlFr = Property.getProperty(Constant.DATA_FILE, "broadPromoTilesFr");
+		if(getBroadPromoTilesUrlFr != null)
+			return getBroadPromoTilesUrlFr;
 		else 
-			throw new RuntimeException("broadPromoTilesFr url not specified in the Data file.");
+			throw new RuntimeException("getBroadPromoTilesUrlFr url not specified in the Data file.");
+	}
+	/**
+	 * gets Login URL Fr locale
+	 * 
+	 */
+
+	public String get_Login_Url_Fr() {
+		String getLoginUrlFr = Property.getProperty(Constant.DATA_FILE, "loginUrl_Fr");
+		if(getLoginUrlFr != null)
+			return getLoginUrlFr;
+		else 
+			throw new RuntimeException("Login Fr locale url not specified in the Data file.");
+	}
+	/**
+	 * gets Login Page Publish URL En locale
+	 * 
+	 */
+
+	public String get_Login_Page_Publish_Url_En() {
+		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "loginPagePublishUrl_En");
+		if(getLoginPagePublishUrlEn != null)
+			return getLoginPagePublishUrlEn;
+		else 
+			throw new RuntimeException("loginPagePublishUrl_En locale url not specified in the Data file.");
 	}
 	
 	/**

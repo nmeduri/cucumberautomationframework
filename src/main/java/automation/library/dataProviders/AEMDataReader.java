@@ -2855,5 +2855,16 @@ public class AEMDataReader {
 			return orderStatusSectionTitle;
 		throw new RuntimeException("getCustomerServiceLabel not specified in the Data file.");
 	}
+	/**
+	 * 
+	 * get Data - Login Page author url
+	 * 
+	 */
+	public String get_Login_Page_Url_En() {
+		String getloginPageUrlEn = Property.getProperty(Constant.AEM_DATA_FILE, "loginPageUrl_En");
+		if(getloginPageUrlEn != null)
+			return getloginPageUrlEn;
+		throw new RuntimeException("loginPageUrl_En not specified in the Data file.");
+	}
 
 }
