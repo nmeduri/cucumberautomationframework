@@ -34,27 +34,16 @@ Feature: Health Check BVT
     Then plp page is visible in list view
     And product card displays the product card title
     
-    @RegressionTest @WebView @WideScreen
-	Scenario: TC-40 Verify the sticky navigation feature of filter menu
-	When plp url is available
-    When plp is displayed
-    And scroll down the window below the view point
-    Then the sorting option remains displayed at the top of the page in the sticky nav
-    
     @RegressionTest @WebView @MobileView @WideScreen @TabletView
-	Scenario: TC-608 Verify the ability of a user to create new Triangle ID account
-	When sign up url is available
-	When sign up page is displayed
-	And user enter email
-	And user enter password
-	And user enter retype password
-	And user click on create button
+	Scenario: TC-1549 Verify an error is displayed on PDP when user increases the quantity in the quantity selector box above 99 
+	When pdp url is available
+    When pdp page is displayed for the product
+    And user enter number in the quantity box that is greater than maximum quantity
+	Then greater than maximum quantity is not updated in the quantity box
 	
-	#@RegressionTest @WebView
+	@RegressionTest @WebView
 	Scenario: TC-2804 Verification of display of Primary Navigation - Desktop 
 	When pdp url is available
 	When pdp page is displayed for the product
-	Then access the header and verify if primary navigation is present
 	Then the primary navigation should be displayed after the pencil banner
-
 	

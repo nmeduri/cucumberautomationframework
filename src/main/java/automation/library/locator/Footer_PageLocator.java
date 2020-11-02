@@ -72,15 +72,18 @@ public class Footer_PageLocator {
 	String mobilecustomSupportSection = Property.getProperty(Constant.OR_FILE, "mobilecustomSupportSection");
 	String aemFooter = Property.getProperty(Constant.OR_FILE, "aemFooter");
 	String aemLegalText = Property.getProperty(Constant.OR_FILE, "aemLegalText");
-	String footerSection = Property.getProperty(Constant.OR_FILE, "footerSection");
-	String footerLinks = Property.getProperty(Constant.OR_FILE, "footerLinks");
-	String androidAppStoreLogo = Property.getProperty(Constant.OR_FILE, "androidAppStoreLogo");
-	String googleAppStore = Property.getProperty(Constant.OR_FILE, "googleAppStore");
 	String beTheFirstToKnowTitle = Property.getProperty(Constant.OR_FILE, "beTheFirstToKnowTitle");
 	String weeklyFlyerEmailDirectlyText = Property.getProperty(Constant.OR_FILE, "weeklyFlyerEmailDirectlyText");
 	String weeklySignUp = Property.getProperty(Constant.OR_FILE, "weeklySignUp");
 	String learMoreFooter = Property.getProperty(Constant.OR_FILE, "learMoreFooter");
 	String accessibilityLogo = Property.getProperty(Constant.OR_FILE, "accessibilityLogo");
+	String footerSection = Property.getProperty(Constant.OR_FILE, "footerSection");
+
+	String appStoreLogoUrl = Property.getProperty(Constant.OR_FILE, "appStoreLogoUrl");
+
+	String footerLinks = Property.getProperty(Constant.OR_FILE, "footerLinks");
+	String androidAppStoreLogo = Property.getProperty(Constant.OR_FILE, "androidAppStoreLogo");
+	String googleAppStore = Property.getProperty(Constant.OR_FILE, "googleAppStore");
 	
 
 
@@ -616,12 +619,57 @@ public class Footer_PageLocator {
 	}
 
 	/**
-	 * gets Locator - Total Footer Section
+	 * get Locator - Be The First to know
+	 */
+	public String get_Be_The_First_To_Know() {
+		return beTheFirstToKnowTitle;
+	}
+	
+	/**
+	 * get Locator - Weekly Flyer Email Directly
+	 */
+	public String get_Weekly_Flyer_Email_Directly() {
+		return weeklyFlyerEmailDirectlyText;
+	}
+	
+	/**
+	 * get Locator - Weekly Sign Up
+	 */
+	public String get_Weekly_Sign_Up() {
+		return weeklySignUp;
+	}
+	
+	/**
+	 * get Locator - Learn More
+	 */
+	public String get_Learn_More() {
+		return learMoreFooter;
+	}
+	
+	/**
+	 * get Locator - Accessibility Logo
+	 */
+	public String get_Accessibility_Logo() {
+		return accessibilityLogo;
+		
+	}
+	
+	 /** gets Locator - Total Footer Section
 	 * 
 	 */
 	public String get_Footer_Section() {
 		return footerSection;
 	}
+
+	
+	/**
+	 * gets Locator - App Store Logo
+	 */
+	public String get_App_Store_Logo() {
+		return appStoreLogoUrl;
+	}
+ 
+
 	/**
 	 * gets Locator - Total Footer Links section
 	 * 
@@ -636,13 +684,7 @@ public class Footer_PageLocator {
 	public String get_Android_App_Store_Logo() {
 		return androidAppStoreLogo;
 	}
-	/**
-	* get Locator - Be The First to know
-	*/
-	public String get_Be_The_First_To_Know() {
-		return beTheFirstToKnowTitle;
-
-	}
+	
 
 	/**
 	 * gets Locator - Google App Store
@@ -651,34 +693,7 @@ public class Footer_PageLocator {
 	public String get_Google_App_Store() {
 		return googleAppStore;
 	}
-	/**
-	 * get Locator - Weekly Flyer Email Directly
-	 */
-	public String get_Weekly_Flyer_Email_Directly() {
-		return weeklyFlyerEmailDirectlyText;
-	}
-
-	/**
-	 * get Locator - Weekly Sign Up
-	 */
-	public String get_Weekly_Sign_Up() {
-		return weeklySignUp;
-	}
-
-	/**
-	 * get Locator - Learn More
-	 */
-	public String get_Learn_More() {
-		return learMoreFooter;
-	}
-
-	/**
-	 * get Locator - Accessibility Logo
-	 */
-	public String get_Accessibility_Logo() {
-		return accessibilityLogo;
-
-	}
+	
 
 }
 

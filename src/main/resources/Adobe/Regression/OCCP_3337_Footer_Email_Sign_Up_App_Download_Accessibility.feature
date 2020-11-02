@@ -28,20 +28,33 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	Then standard footer is displayed
 	And footer links section should be displayed
 	Then link should be underlined when hovers over any link on the footer links section
+
 	
 	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView
 	Scenario: TC-3396 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify the User is able to click on Learn More CTA
 	When footre url is available
-	And pdp page is displayed for the product
+	And footer page is displayed for the product
 	Then user should be directed to learn more section
 	
 	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3397
 	Scenario: TC-3397 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify that User is able to click on Accessibility Icon
-	Given open browser
 	When footre url is available
-	And pdp page is displayed for the product
+	And footer page is displayed for the product
 	And click on accessibility logo
 	Then user should be directed to accessibility section on new tab
 	
+	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3389
+	Scenario: TC-3389 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify that User is able to clicks on "Sign Up "Link
+	When footre url is available
+	And footer page is displayed for the product
+	And click on sign up
+	Then user should be directed to sign up section on new tab
 	
+	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3390
+	Scenario: TC-3390 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify the redirection when user clicks on Apple App Store Logo - Desktop /Desktop Wide
+	Given open browser
+	When footre url is available
+	And footer page is displayed for the product
+	And click on apple store logo
+	Then user should be directed to app store section on new tab
 	

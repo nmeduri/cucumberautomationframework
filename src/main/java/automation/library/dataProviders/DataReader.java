@@ -958,6 +958,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Login Fr locale url not specified in the Data file.");
 	}
+
 	/**
 	 * gets Login Page Publish URL En locale
 	 * 
@@ -993,6 +994,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
 
 	/**
 	 * gets Login Page Publish URL FR locale
@@ -1031,6 +1033,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("registrationPagePublishUrl_En locale url not specified in the Data file.");
 	}
+
 	
 	/**
 	 * gets Learn More Link
@@ -1054,6 +1057,17 @@ public class DataReader {
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
 	
+
+	/**
+	 * gets Sign Up Link
+	 */
+	public String get_Sign_Up_Link() {
+		String signUpUrl = Property.getProperty(Constant.DATA_FILE, "signUpUrl");
+		if(signUpUrl != null)
+			return signUpUrl;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
 	
 	/**
 	 * gets Footer Url
@@ -1065,5 +1079,16 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+	
 
+	/**
+	 * gets Sign Up Link
+	 */
+	public String get_App_Store_Link() {
+		String appStoreLogoLink = Property.getProperty(Constant.DATA_FILE, "appStoreLogoLink");
+		if(appStoreLogoLink != null)
+			return appStoreLogoLink;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
 }

@@ -34,6 +34,12 @@ public class OCCP_3337_Footer_Email_App_Download_Step extends BaseClass {
 
 	}
 	
+
+	@When("footer page is displayed for the product")
+	public void footer_page_is_displayed_for_the_product() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).display_Footer_Page();
+	}
+	
 	@Given("footre url is available") 
 	public void footer_url_is_available() throws Exception {
 		
@@ -115,8 +121,29 @@ public class OCCP_3337_Footer_Email_App_Download_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnAccessibilityLogo();
 	}
 	
+
+	@And("click on sign up")
+	public void clickOnSignUp() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnSignUp();
+	}
 	@Then("user should be directed to accessibility section on new tab")
 	public void user_should_be_directed_accessibility_section_on_new_tab() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyAccessibilityNavigation();
+	}
+
+	
+	@Then("user should be directed to sign up section on new tab")
+	public void user_should_be_directed_sign_up_section_on_new_tab() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifySignUpNavigation();
+	}
+	
+	@And("click on apple store logo")
+	public void click_on_apple_store_logo() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickAppStoreLogo();
+	}
+	
+	@Then("user should be directed to app store section on new tab")
+	public void user_should_be_directed_app_store_section_on_new_tab() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyAppStoreNavigation();
 	}
 }

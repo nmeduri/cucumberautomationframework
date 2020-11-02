@@ -7,7 +7,6 @@ Feature: OCCP-983 PDP: Features
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then user must see all features of the product displayed in a bulleted list
-	And quit browser
 	
 	@RegressionTest @WebView @WideScreen @MobileView @TableView
 	Scenario: TC-320 Verify the features section is not available in Overview section of a PDP when the product doesn't have features available in product catalog
