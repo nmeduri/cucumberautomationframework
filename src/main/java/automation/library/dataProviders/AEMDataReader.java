@@ -2988,5 +2988,171 @@ public class AEMDataReader {
 			return getloginPageUrlEn;
 		throw new RuntimeException("registrationPageUrl_Fr not specified in the Data file.");
 	}
+	/**
+	 * 
+	 * get Data - Customer Service Page author url en locale
+	 *  
+	 */
+	public String get_Customer_Service_Page_Url_En() {
+		String getCustomerServicePageUrlEn = Property.getProperty(Constant.AEM_DATA_FILE, "customerServiceUrl_En");
+		if(getCustomerServicePageUrlEn != null)
+			return getCustomerServicePageUrlEn;
+		throw new RuntimeException("customerServiceUrl_En not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Customer Service Page author url fr locale
+	 *  
+	 */
+	public String get_Customer_Service_Page_Url_Fr() {
+		String getCustomerServicePageUrlFr = Property.getProperty(Constant.AEM_DATA_FILE, "customerServiceUrl_Fr");
+		if(getCustomerServicePageUrlFr != null)
+			return getCustomerServicePageUrlFr;
+		throw new RuntimeException("customerServiceUrl_En not specified in the Data file.");
+	}
+	/**
+	 * get Data - Customer Service Title 
+	 * 
+	 */
 	
+	public String get_Customer_Service_Title() {
+		String getCustomerServiceTitle = Property.getProperty(Constant.AEM_DATA_FILE, "titleOfCustomerServiceAEM");
+		if(getCustomerServiceTitle != null)
+			return getCustomerServiceTitle;
+		else
+			throw new RuntimeException("titleOfCustomerServiceAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Customer Service Sub Title 
+	 * 
+	 */
+	
+	public String get_Customer_Service_Sub_Title() {
+		String getCustomerServiceSubTitle = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleOfCustomerServiceAEM");
+		if(getCustomerServiceSubTitle != null)
+			return getCustomerServiceSubTitle;
+		else
+			throw new RuntimeException("titleOfCustomerServiceAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Title1 of Link List
+	 * 
+	 */
+	
+	public String get_Title1_Link_List() {
+		String getTitle1LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "title1OfLinkListAEM");
+		if(getTitle1LinkList != null)
+			return getTitle1LinkList;
+		else
+			throw new RuntimeException("title1OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Title2 of Link List
+	 * 
+	 */
+	
+	public String get_Title2_Link_List() {
+		String getTitle2LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "title2OfLinkListAEM");
+		if(getTitle2LinkList != null)
+			return getTitle2LinkList;
+		else
+			throw new RuntimeException("title2OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Title3 of Link List
+	 * 
+	 */
+	
+	public String get_Title3_Link_List() {
+		String getTitle3LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "title3OfLinkListAEM");
+		if(getTitle3LinkList != null)
+			return getTitle3LinkList;
+		else
+			throw new RuntimeException("title3OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Title4 of Link List
+	 * 
+	 */
+	
+	public String get_Title4_Link_List() {
+		String getTitle4LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "title4OfLinkListAEM");
+		if(getTitle4LinkList != null)
+			return getTitle4LinkList;
+		else
+			throw new RuntimeException("title4OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Title5 of Link List
+	 * 
+	 */
+	
+	public String get_Title5_Link_List() {
+		String getTitle5LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "title5OfLinkListAEM");
+		if(getTitle5LinkList != null)
+			return getTitle5LinkList;
+		else
+			throw new RuntimeException("title5OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Description 1 of Link List
+	 * 
+	 */
+	
+	public String get_Description1_Link_List() {
+		String getDescription1LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "description1OfLinkListAEM");
+		if(getDescription1LinkList != null)
+			return getDescription1LinkList;
+		else
+			throw new RuntimeException("description1OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Description 2 of Link List
+	 * 
+	 */
+	
+	public String get_Description2_Link_List() {
+		String getDescription2LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "description2OfLinkListAEM");
+		if(getDescription2LinkList != null)
+			return getDescription2LinkList;
+		else
+			throw new RuntimeException("description2OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Description 3 of Link List
+	 * 
+	 */
+	
+	public String get_Description3_Link_List() {
+		String getDescription3LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "description3OfLinkListAEM");
+		if(getDescription3LinkList != null)
+			return getDescription3LinkList;
+		else
+			throw new RuntimeException("description3OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Description 4 of Link List
+	 * 
+	 */
+	
+	public String get_Description4_Link_List() {
+		String getDescription4LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "description4OfLinkListAEM");
+		if(getDescription4LinkList != null)
+			return getDescription4LinkList;
+		else
+			throw new RuntimeException("description4OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Description 5 of Link List
+	 * 
+	 */
+	
+	public String get_Description5_Link_List() {
+		String getDescription5LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "description5OfLinkListAEM");
+		if(getDescription5LinkList != null)
+			return getDescription5LinkList;
+		else
+			throw new RuntimeException("description4OfLinkListAEM is not specified in the Data file.");
+	}
+
 }

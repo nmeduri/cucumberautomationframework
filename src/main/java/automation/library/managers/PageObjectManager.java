@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
+import automation.library.locator.AEM_Customer_Service_Informational_Copy_Page_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
 import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
@@ -21,6 +22,7 @@ import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.Checkout_Page_Locator;
 
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
+import automation.library.locator.Customer_Service_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
 import automation.library.locator.Footer_PageLocator;
 import automation.library.locator.ForgotPasswordPageLocator;
@@ -46,6 +48,7 @@ import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Common_Page;
+import automation.library.pageObjects.AEM_Customer_Service_Informational_Copy_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
 import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
@@ -62,6 +65,7 @@ import automation.library.pageObjects.Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.Checkout_Page;
 
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
+import automation.library.pageObjects.Customer_Service_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
 import automation.library.pageObjects.Footer_Page;
 import automation.library.pageObjects.Forgot_Password_Page;
@@ -179,7 +183,11 @@ public class PageObjectManager {
 	private AEM_Login_Page_Locator getAEMLoginPageLocator;
 	private AEM_Registration_Page getAEMRegistrationPage;
 	private AEM_Registration_Page_Locator getAEMRegistrationPageLocator;
-	
+	private Customer_Service_Page getCustomerServicePage;
+	private Customer_Service_Page_Locator getCustomerServicePageLocator;  
+	private AEM_Customer_Service_Informational_Copy_Page getAEMCustomerServiceInformationalCopyPage;
+	private AEM_Customer_Service_Informational_Copy_Page_Locator getAEMCustomerServiceInformationalCopyPageLocator;
+	 
 	
 	public PageObjectManager() {
 		
@@ -623,4 +631,28 @@ public class PageObjectManager {
 		return (getAEMRegistrationPageLocator == null) ? getAEMRegistrationPageLocator = new AEM_Registration_Page_Locator() : getAEMRegistrationPageLocator;
 
 	}
+	/** Return Instance of Customer Service Page */
+	public Customer_Service_Page getCustomerServicePage(WebDriver driver) {
+		return (getCustomerServicePage == null) ? getCustomerServicePage = new Customer_Service_Page(driver) : getCustomerServicePage;
+	}
+	
+	/** Return Instance of Customer Service Locator Page */
+	public Customer_Service_Page_Locator getCustomerServicePageLocator() {
+		return (getCustomerServicePageLocator == null) ? getCustomerServicePageLocator = new Customer_Service_Page_Locator() : getCustomerServicePageLocator;
+
+	}
+	/** Return Instance of AEM  Login Page */
+	public AEM_Customer_Service_Informational_Copy_Page getAEMCustomerServiceInformationalCopyPage(WebDriver driver) {
+		return (getAEMCustomerServiceInformationalCopyPage == null) ? getAEMCustomerServiceInformationalCopyPage = new AEM_Customer_Service_Informational_Copy_Page(driver) : getAEMCustomerServiceInformationalCopyPage;
+	}
+	
+	/** Return Instance of AEM Footer Locator Page */
+	public AEM_Customer_Service_Informational_Copy_Page_Locator getAEMCustomerServiceInformationalCopyPageLocator() {
+		return (getAEMCustomerServiceInformationalCopyPageLocator == null) ? getAEMCustomerServiceInformationalCopyPageLocator = new AEM_Customer_Service_Informational_Copy_Page_Locator() : getAEMCustomerServiceInformationalCopyPageLocator;
+	}
+	
+	
+	
+	
+	
 }

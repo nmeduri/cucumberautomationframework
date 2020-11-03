@@ -319,5 +319,17 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("signUpUrl_Fr not specified in the Configuration.properties file.");	
 	}
-
+	/**
+	 * gets Customer Service Page Url
+	 * 
+	 */
+	
+	public String getCustomerServicePageUrl() {
+		String getCustomerServicePageUrl = Property.getProperty(Constant.DATA_FILE, "customerServicePageUrl");
+		Log.message("URL:- " + getCustomerServicePageUrl, true);
+		if (getCustomerServicePageUrl != null)
+			return getCustomerServicePageUrl;
+		else
+			throw new RuntimeException("customerServicePageUrl not specified in the Configuration.properties file.");	
+	}
 }

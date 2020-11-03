@@ -14,7 +14,7 @@ import cucumber.api.CucumberOptions;
 public final class Adobe_Regression_Mobile_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_3722_Login_Registration_Template.feature",
+			"classpath:Adobe/Regression/",
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@MobileView",

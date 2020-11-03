@@ -228,7 +228,7 @@ public class PageObject extends BaseClass {
 		return ele.getText();
 	}
 
-	/** return display conditon */
+	/** return display condition */
 	public boolean $display(Element element) {
 
 		return element.display();

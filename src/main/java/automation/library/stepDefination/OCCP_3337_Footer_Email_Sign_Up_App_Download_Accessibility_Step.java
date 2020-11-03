@@ -10,7 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 /**
- * This file contains the scenario of the Footer
+ * This file contains the scenario of the user stories OCCP-3337
  */
 public class OCCP_3337_Footer_Email_Sign_Up_App_Download_Accessibility_Step extends BaseClass{
 	public OCCP_3337_Footer_Email_Sign_Up_App_Download_Accessibility_Step(TestContext context) throws Exception {
