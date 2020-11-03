@@ -276,4 +276,30 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Already_Linked_Card_Error()));
 	}
 
+	/** This function verify that Header Text is displayed */
+	public void displayActiveValidationHeaderText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Active_Ownership_Validation_HeaderText()));
+	}
+	
+	/** This function verify that Sub Header Text is displayed */
+	public void displayActiveValidationSubHeaderText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Active_Ownership_Validation_Sub_HeaderText()));
+	}
+	
+	/** This function verify that Postal code is displayed */
+	public void displayPostalCodeField() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Postal_Code_Rewards()));
+	}
+	
+	/** This function verify that Year of birth is displayed */
+	public void displayActiveYearOfBirthField() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth()));
+		//$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 5);
+	}
+	
+	/** This function verify that Year of birth is displayed */
+	public void enterDataPendingCardNo() throws Exception {
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5, FileReaderManager.getInstance().getDataReader().get_Active_Ownership_Card_Number());
+	}
+	
 }

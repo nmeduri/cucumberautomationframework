@@ -555,6 +555,20 @@ public class DataReader {
 		else
 			throw new RuntimeException("Non existing card Number not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Active Ownership Validation screen loyalty card number
+	 * 
+	 */
+	
+	public String get_Active_Ownership_Card_Number() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "activeOwnershipValidationCardNo");
+		if(cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
+	}
+
 		
 	/**
 	 * gets Data - Proivnce
@@ -991,6 +1005,17 @@ public class DataReader {
 		String getProduct = Property.getProperty(Constant.DATA_FILE, "serarchProduct");
 		if(getProduct != null)
 			return getProduct;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Footer Url
+	 */
+	public String get_Footer_Component_Url() {
+		String getUrl = Property.getProperty(Constant.DATA_FILE, "getFooterUrl");
+		if(getUrl != null)
+			return getUrl;
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}

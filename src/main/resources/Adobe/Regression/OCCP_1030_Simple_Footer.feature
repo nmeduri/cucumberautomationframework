@@ -77,11 +77,12 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then clickable text site map is displayed
 	Then clickable text accessibility is displayed
 	
-	#@RegressionTest @WebView @WideScreen @MobileView @TabletView
-	Scenario: TC-2850, TC-2859 Verification of clicking of text Legal - Desktop Wide
-	Given pdp url is available
-	When pdp page is displayed for the product
-	And in simple footer access and click on legal
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView @SmokeTest
+	Scenario: TC-2841, TC-2832 TC-2850, TC-2859 Verification of clicking of text Legal 
+	Given open browser
+	Given footer url is available
+	When footer page is displayed
+	And in simple footer access and click on legal text
 	Then user should be navigate on legal information
 	
 	@RegressionTest @WebView @WideScreen
@@ -146,8 +147,12 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then editable clickable text view less is displayed
 	Then copy right text is displayed
 	
-	
-	
+	@RegressionTest @WebView @WideScreen
+	Scenario: TC-2854 Verification of clicking of text "Accessibility" - Desktop
+	Given pdp url is available
+	When pdp page is displayed for the product
+	And in simple footer access and click on accessibility
+	Then user should be navigated to the page where detailed accessibility information is displayed
 	
 	
 

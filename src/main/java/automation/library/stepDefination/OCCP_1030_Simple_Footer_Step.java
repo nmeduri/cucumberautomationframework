@@ -127,7 +127,7 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnAccessibility();
 	}
 	
-	@And("in simple footer access and click on ")
+	@And("in simple footer access and click on legal text")
 	public void in_simple_footer_access_and_click_on_legal() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickOnlegal();
 	}
@@ -496,7 +496,15 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertViewLessTextLabelChanges();
 		}
 
+	@Given("footer url is available") 
+	public void footer_url_is_available() throws Exception {
+		
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).navigate_To_Footer_Page();
+	}
 	
-
+	@When("footer page is displayed")
+	public void pdp_page_is_displayed_for_the_product() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).display_Footer_Page();
+	}
 
 }

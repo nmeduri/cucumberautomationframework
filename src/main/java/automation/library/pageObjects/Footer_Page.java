@@ -50,13 +50,6 @@ public class Footer_Page extends PageObject {
 
 	}
 	
-
-	/** This function is verify that Footer Page is displayed */
-	public void display_Footer_Page() throws Exception {
-
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
-
-	}
 	
 	/** This function navigate to Footer Page */
 	public void navigateTo_Footer_Page() throws Exception {
@@ -1002,6 +995,16 @@ public class Footer_Page extends PageObject {
 		//By footerSection = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section());
 		//testContext.getPageObjectManager().getPageObject(driver).scrollDown(footerSection, 10);
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
+	}
+	
+	/** This function navigate to Footer page*/
+	public void navigate_To_Footer_Page() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Footer_Component_Url());
+	}
+	
+	/** This function is verify that Footer Page is displayed */
+	public void display_Footer_Page() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
 	}
 
 	

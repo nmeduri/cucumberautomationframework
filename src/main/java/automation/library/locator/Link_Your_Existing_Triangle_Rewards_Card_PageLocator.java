@@ -31,6 +31,8 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String invalidCardErrorMessage = Property.getProperty(Constant.OR_FILE, "invalidCardErrorMessage");
 	String thresholdErrorMessage = Property.getProperty(Constant.OR_FILE, "thresholdErrorMessage");
 	String alreadyEnrolledErrorMessage = Property.getProperty(Constant.OR_FILE, "alreadyEnrolledErrorMessage");
+	String activeOwnershipValidationHeaderText = Property.getProperty(Constant.OR_FILE, "activeOwnershipValidationHeaderText");
+	String activeOwnershipValidationSubHeaderText = Property.getProperty(Constant.OR_FILE, "activeOwnershipValidationSubHeaderText").replace("=", ",");
 	
 	/**
 	 * gets Locator - Enter Card number
@@ -208,6 +210,22 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	 */
 	public String get_Already_Linked_Card_Error() {
 		return alreadyEnrolledErrorMessage;
+	}
+	
+	/**
+	 * gets Locator - Header Text
+	 * 
+	 */
+	public String get_Active_Ownership_Validation_HeaderText() {
+		return activeOwnershipValidationHeaderText;
+	}
+	
+	/**
+	 * gets Locator - get Sub Header Text
+	 * 
+	 */
+	public String get_Active_Ownership_Validation_Sub_HeaderText() {
+		return activeOwnershipValidationSubHeaderText;
 	}
  }
 
