@@ -25,4 +25,4 @@ Description: To test the ADOBE Test Cases for the story OCCP-2809
 	Then verify an error message is displayed informing card does not exist 
 	And verify when user click on try again button 
 	Then user should navigate to link existing triangle card screen without prepopulated data
-	Given Close Browser
+	Given close Browser

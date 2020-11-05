@@ -1127,4 +1127,15 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
+	/**
+	 * gets PDP Sort Product Reviews URL
+	 */
+	public String get_PDP_Sort_Product_Reviews_URL() {
+		String Url = Property.getProperty(Constant.DATA_FILE, "pdpSortProductsReviewsURL");
+		if(Url != null)
+			return Url;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+	}
 }

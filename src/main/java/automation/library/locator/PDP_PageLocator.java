@@ -90,6 +90,17 @@ public class PDP_PageLocator {
 	String colorVariantGray = Property.getProperty(Constant.OR_FILE, "colorVariantGray");
 	String badgesPDP = Property.getProperty(Constant.OR_FILE, "badgesPDP").replace("=", ",");
 	String resourceSection = Property.getProperty(Constant.OR_FILE, "resourceSection");
+	String sortBySection=Property.getProperty(Constant.OR_FILE, "sortBySection");
+	String sortByReviewsLabel=Property.getProperty(Constant.OR_FILE, "sortByReviewsLabel");
+	String mostRecentReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostRecentReviewsLabel");
+	String mostRelevantOption = Property.getProperty(Constant.OR_FILE, "mostRelevantOption");
+	String mostHelpfulOption = Property.getProperty(Constant.OR_FILE, "mostHelpfulOption");
+	String highestToLowestRatingOption = Property.getProperty(Constant.OR_FILE, "highestToLowestRatingOption");
+	String lowestToHighestRatingOption = Property.getProperty(Constant.OR_FILE, "lowestToHighestRatingOption");
+	String mostRecentOption=Property.getProperty(Constant.OR_FILE, "mostRecentOption");
+	String chevronReviewsArrow=Property.getProperty(Constant.OR_FILE, "chevronReviewsArrow");
+	String mostHelpfulReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostHelpfulReviewsLabel");
+	String reviewsSection=Property.getProperty(Constant.OR_FILE, "reviewsSection");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -646,77 +657,6 @@ public class PDP_PageLocator {
 		return PreferencesOption;
 	}
 	
-	/**
-	 * gets Locator - Wishlist Icon
-	 * 
-	 */
-	public String get_WishlistOption() {
-		return WishListOption;
-	}
-	
-	/**
-	 * gets Locator - Peresonal Info
-	 * 
-	 */
-	public String get_PersonalInfoOption() {
-		return PersonalInfoOption;
-	}
-	
-	/**
-	 * gets Locator - Order History
-	 * 
-	 */
-	public String get_OrderHistory() {
-		return OrderHistory;
-	}
-	
-	/**
-	 * gets Locator - Payment Info
-	 * 
-	 */
-	public String get_PaymentInfo() {
-		return PaymentInfo;
-	}
-	
-	/**
-	 * gets Locator - Reward
-	 * 
-	 */
-	public String get_Reward() {
-		return Reward;
-	}
-	
-	/**
-	 * gets Locator - Address
-	 * 
-	 */
-	public String get_Address() {
-		return Address;
-	}
-	
-	/**
-	 * gets Locator - Preference
-	 * 
-	 */
-	public String get_Preference() {
-		return Preference;
-	}
-	
-	/**
-	 * gets Locator - Made for life
-	 * 
-	 */
-	public String get_MadeForLifeText() {
-		return MadeForLife;
-	}
-	
-	/**
-	 * gets Locator - Credit offered
-	 * 
-	 */
-	public String get_CreditOfferedText() {
-		return CreditOffered;
-	}
 	
 	/**
 	 * gets Locator - Customer Service
@@ -810,6 +750,166 @@ public class PDP_PageLocator {
 	public String get_Resource_Section() {
 		return resourceSection;
 	}
-  }
+	
+	/**
+	 * gets Locator - Wishlist Icon
+	 * 
+	 */
+	public String get_WishlistOption() {
+		return WishListOption;
+	}
+	
+	/**
+	 * gets Locator - Peresonal Info
+	 * 
+	 */
+	public String get_PersonalInfoOption() {
+		return PersonalInfoOption;
+	}
+	
+	/**
+	 * gets Locator - Order History
+	 * 
+	 */
+	public String get_OrderHistory() {
+		return OrderHistory;
+	}
+	
+	/**
+	 * gets Locator - Payment Info
+	 * 
+	 */
+	public String get_PaymentInfo() {
+		return PaymentInfo;
+	}
+	
+	/**
+	 * gets Locator - Reward
+	 * 
+	 */
+	public String get_Reward() {
+		return Reward;
+	}
+	
+	/**
+	 * gets Locator - Address
+	 * 
+	 */
+	public String get_Address() {
+		return Address;
+	}
+	
+	/**
+	 * gets Locator - Preference
+	 * 
+	 */
+	public String get_Preference() {
+		return Preference;
+	}
+	
+	/**
+	 * gets Locator - Made for life
+	 * 
+	 */
+	public String get_MadeForLifeText() {
+		return MadeForLife;
+	}
+	
+	/**
+	 * gets Locator - Credit offered
+	 * 
+	 */
+	public String get_CreditOfferedText() {
+		return CreditOffered;
+	}
+	
+	/**
+	 * gets Locator - Sort By section
+	 * 
+	 */
+	public String get_SortBy_Section() {
+		return sortBySection;
+	}
+	
+	/**
+	 * gets Locator - sort by reviews label
+	 * 
+	 */
+	public String get_SortBy_Reviews_Label() {
+		return sortByReviewsLabel;
+	}
+	
+	/**
+	 * gets Locator - Most Recent Label
+	 * 
+	 */
+	public String get_Most_Recent_Label() {
+		return mostRecentReviewsLabel;
+	}
+	
+	/**
+	 * gets Locator - Most Relevant 
+	 * 
+	 */
+	public String get_Most_Relevant() {
+		return mostRelevantOption;
+	}
+	
+	/**
+	 * gets Locator - Most Helpful 
+	 * 
+	 */
+	public String get_Most_Helpful() {
+		return mostHelpfulOption;
+	}
+	
+	/**
+	 * gets Locator - Highest to lowest rating
+	 * 
+	 */
+	public String get_HToL_Rating() {
+		return highestToLowestRatingOption;
+	}
+	
+	/**
+	 * gets Locator - Lowest to Highest rating
+	 * 
+	 */
+	public String get_LToH_Rating() {
+		return lowestToHighestRatingOption;
+	}
+	
+	/**
+	 * gets Locator - Made for life
+	 * 
+	 */
+	public String get_Most_Recent() {
+		return mostRecentOption;
+	}
+	
+	/**
+	 * gets Locator - Chevron
+	 * 
+	 */
+	public String get_Chevron_Reviews() {
+		return chevronReviewsArrow;
+	}
+	
+	/**
+	 * gets Locator - helpful reviews label
+	 * 
+	 */
+	public String get_Most_Helpful_Reviews_Label() {
+		return mostHelpfulReviewsLabel;
+	}
+	
+	/**
+	 * gets Locator - Reviews Title
+	 * 
+	 */
+	public String get_Reviews_Section_Title() {
+		return reviewsSection;
+	}
+}
 
 

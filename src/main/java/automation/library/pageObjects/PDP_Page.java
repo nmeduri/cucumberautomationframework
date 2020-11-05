@@ -901,4 +901,59 @@ public class PDP_Page extends PageObject {
 		   }
 	   }
 	
+	   /** This function navigate to PDP Page */
+		public void navigate_to_PDP_Sort_Product_Reviews_Page() throws Exception {
+
+			driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_PDP_Sort_Product_Reviews_URL());
+
+		}
+		
+		 /** This function verify if sort by section is displayed*/
+		public void displaySortBySection() throws Exception {
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Reviews_Section_Title()), 20);
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SortBy_Section()));
+		}
+		
+		 /** This function verify if sort by most recent label is displayed*/
+		public void displaySortByMostRecentLabel() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_SortBy_Reviews_Label()));
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Recent_Label()));
+		}
+
+		 /** This function verify if most recent is displayed*/
+		public void displayMostRecentDefault() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Recent_Label()));
+		}
+		
+		 /** This function verify if most recent is displayed*/
+		public void displayChevronInReviews() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Chevron_Reviews()));
+		}
+		
+		/** This function click on Sorting option */
+		public void clickOnSortingOption() throws Exception {
+			//$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Recent_Label()));
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Most_Recent_Label())));
+		}
+		
+		 /** This function verify if all sorting options are displayed*/
+		public void displaySortingOptions() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Relevant()));
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Helpful()));
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_HToL_Rating()));
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_LToH_Rating()));
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Recent()));
+		}
+		
+		/** This function click on Sorting option */
+		public void clickOnMostHelpfulOption() throws Exception {
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Helpful())),15);
+			//$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Helpful()));
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Most_Helpful())));
+		}
+		
+		/** This function verify if most recent is displayed*/
+		public void displayMostHelpfulLabel() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Helpful_Reviews_Label()));
+		}
 }
