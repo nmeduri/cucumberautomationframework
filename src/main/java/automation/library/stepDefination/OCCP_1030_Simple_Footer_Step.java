@@ -491,16 +491,12 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 	public void reverse_ViewMore_Changes() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertViewMoreTextLabelChanges();
 		}
+	
 	@And ("reverse the View less text changes")
 	public void reverse_ViewLess_Changes() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertViewLessTextLabelChanges();
 		}
 
-	@Given("footer url is available") 
-	public void footer_url_is_available() throws Exception {
-		
-		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).navigate_To_Footer_Page();
-	}
 	
 	@When("footer page is displayed")
 	public void pdp_page_is_displayed_for_the_product() throws Exception {

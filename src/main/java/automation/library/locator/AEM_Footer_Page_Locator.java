@@ -138,6 +138,7 @@ public class AEM_Footer_Page_Locator {
 	String weeklyFlyerEmailDirectlyToYouAEM = Property.getProperty(Constant.OR_FILE, "weeklyFlyerEmailDirectlyToYouAEM");
 	String weeklySignUpFieldAEM = Property.getProperty(Constant.OR_FILE, "weeklySignUpFieldAEM");
 	String weeklySignUpUrlAEM = Property.getProperty(Constant.OR_FILE, "weeklySignUpUrlAEM");
+
 	String downloadAppTitleAEM = Property.getProperty(Constant.OR_FILE, "downloadAppTitleAEM");
 	String downloadTheAppTitlePreview = Property.getProperty(Constant.OR_FILE, "downloadTheAppTitlePreview");
 	String learnMoreLabelAEM = Property.getProperty(Constant.OR_FILE, "learnMoreLabelAEM");
@@ -1124,6 +1125,7 @@ public class AEM_Footer_Page_Locator {
 	public String get_Weekly_Sign_Up_Url() {
 		return weeklySignUpUrlAEM;
 	}
+
 	/**
 	 * gets Locator - Download the App title
 	 */

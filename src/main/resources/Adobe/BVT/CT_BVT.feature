@@ -33,13 +33,12 @@ Feature: Health Check BVT
     Then user clicks on list view button
     Then plp page is visible in list view
     And product card displays the product card title
-    
-    @RegressionTest @WebView @MobileView @WideScreen @TabletView
-	Scenario: TC-1549 Verify an error is displayed on PDP when user increases the quantity in the quantity selector box above 99 
-	When pdp url is available
-    When pdp page is displayed for the product
-    And user enter number in the quantity box that is greater than maximum quantity
-	Then greater than maximum quantity is not updated in the quantity box
+
+   @RegressionTest @WebView @WideScreen @MobileView @TableView
+	Scenario: TC-320 Verify the features section is not available in Overview section of a PDP when the product doesn't have features available in product catalog
+	When pdp product url is available
+	And pdp page is displayed for the product
+	Then feature section is not available in overview section
 	
 	@RegressionTest @WebView
 	Scenario: TC-2804 Verification of display of Primary Navigation - Desktop 

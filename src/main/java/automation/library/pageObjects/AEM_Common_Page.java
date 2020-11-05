@@ -93,18 +93,19 @@ public class AEM_Common_Page extends PageObject {
 	}
 	
 	/** This function clicks on Publish Page */
-	public void clickOnPublishPage() throws Exception {
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())),20);
-		try {
-		if($display($$$$(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_SelectAll_Checkbox(), 10))) {
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Button()));
-			}
-		}
-		catch(Exception e) {
-			Log.message("The page has been published", true);
-		}
-	}
-
+    public void clickOnPublishPage() throws Exception {
+    	$click(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())), 5);
+       //((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())),20);
+        try {
+        if($display($$$$(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_SelectAll_Checkbox(), 10))) {
+            $click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Button()));
+            }
+        }
+        catch(Exception e) {
+            Log.message("select all checkbox not displayed", true);
+        }
+    }
+    
 	/** This function clicks on preview button */
 	public void clickPreviewButton() throws Exception {
 		Thread.sleep(5000);

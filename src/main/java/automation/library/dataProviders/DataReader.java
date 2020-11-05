@@ -906,7 +906,7 @@ public class DataReader {
 		if (url != null)
 			return url;
 		else
-			throw new RuntimeException("pdpProductUrl not specified in the Configuration.properties file.");
+			throw new RuntimeException("pdpProductUrl not specified in the data.properties file.");
 	}
 	
 	
@@ -972,6 +972,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Login Fr locale url not specified in the Data file.");
 	}
+
 	/**
 	 * gets Login Page Publish URL En locale
 	 * 
@@ -1018,6 +1019,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
 
 	/**
 	 * gets Login Page Publish URL FR locale
@@ -1080,6 +1082,7 @@ public class DataReader {
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
 	
+
 	/**
 	 * gets App store Url
 	 */
@@ -1112,6 +1115,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+	
 
 	/**
 	 * gets Sign Up Link
@@ -1123,5 +1127,4 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-
 }

@@ -50,6 +50,13 @@ public class Footer_Page extends PageObject {
 
 	}
 	
+
+	/** This function is verify that Footer Page is displayed */
+	public void display_Footer_Page() throws Exception {
+
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
+
+	}
 	
 	/** This function navigate to Footer Page */
 	public void navigateTo_Footer_Page() throws Exception {
@@ -966,12 +973,52 @@ public class Footer_Page extends PageObject {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
 	}
 	
+	/** verify Learn more link is getting navigate on learn more section */
+	public void verifyLearnMoreLinkNavigation() throws Exception {
+		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Learn_More()), "href"), FileReaderManager.getInstance().getDataReader().get_Learn_More_Link());
+	}
+	
+	/** verify Accessibility link is getting navigate on Accesibility section on new tab */
+	public void verifyAccessibilityNavigation() throws Exception {
+		Thread.sleep(2000);
+		testContext.getPageObjectManager().getPageObject(driver).switchWindow();
+		if(PageObject.getDriver().getCurrentUrl().equalsIgnoreCase(FileReaderManager.getInstance().getDataReader().get_Accessibility_Link())) {
+			PageObject.getDriver().close();
+			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
+		}else {
+			PageObject.getDriver().close();
+			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
+			fail();
+		}
+	}
+	
+	/** click on accessibility logo */
+	public void clickOnAccessibilityLogo() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()));
+	}
+	
 	/** This function to display Footer section*/
 	public void displayFooterSection() throws Exception {
 		//By footerSection = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section());
 		//testContext.getPageObjectManager().getPageObject(driver).scrollDown(footerSection, 10);
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
 	}
+	
+	
+	/** verify App Store Logo link is getting navigate on App Store section on new tab */
+	public void verifyAppStoreNavigation() throws Exception {
+		testContext.getPageObjectManager().getPageObject(driver).switchWindow();
+		Thread.sleep(2000);
+		if(PageObject.getDriver().getCurrentUrl().equalsIgnoreCase(FileReaderManager.getInstance().getDataReader().get_App_Store_Link())) {
+			PageObject.getDriver().close();
+			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
+		}else {
+			PageObject.getDriver().close();
+			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
+			fail();
+		}
+	}
+
 	/** This function to display Footer Links section*/
 	public void displayFooterLinksSection() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section())), 40);
@@ -997,29 +1044,8 @@ public class Footer_Page extends PageObject {
 		Log.message("Value:- " + value, true);
 	    Assert.assertTrue(value.contains("underline"));
 	}
-	/** verify Learn more link is getting navigate on learn more section */
-	public void verifyLearnMoreLinkNavigation() throws Exception {
-		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Learn_More()), "href"), FileReaderManager.getInstance().getDataReader().get_Learn_More_Link());
-	}
-	
-	/** verify Accessibility link is getting navigate on Accesibility section on new tab */
-	public void verifyAccessibilityNavigation() throws Exception {
-		Thread.sleep(2000);
-		testContext.getPageObjectManager().getPageObject(driver).switchWindow();
-		if(PageObject.getDriver().getCurrentUrl().equalsIgnoreCase(FileReaderManager.getInstance().getDataReader().get_Accessibility_Link())) {
-			PageObject.getDriver().close();
-			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
-		}else {
-			PageObject.getDriver().close();
-			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
-			fail();
-		}
-	}
-	
-	/** click on accessibility logo */
-	public void clickOnAccessibilityLogo() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()));
-	}
+
+
 	
 	
 	
@@ -1052,11 +1078,6 @@ public class Footer_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Footer_Component_Url());
 	}
 	
-	/** This function is verify that Footer Page is displayed */
-	public void display_Footer_Page() throws Exception {
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
-	}
-
 	/** click on sign up */
 	public void clickOnSignUp() throws Exception {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Sign_Up())), 40);
@@ -1080,22 +1101,6 @@ public class Footer_Page extends PageObject {
 			fail();
 		}
 	}
-	
-	/** verify App Store Logo link is getting navigate on App Store section on new tab */
-	public void verifyAppStoreNavigation() throws Exception {
-		testContext.getPageObjectManager().getPageObject(driver).switchWindow();
-		Thread.sleep(2000);
-		if(PageObject.getDriver().getCurrentUrl().equalsIgnoreCase(FileReaderManager.getInstance().getDataReader().get_App_Store_Link())) {
-			PageObject.getDriver().close();
-			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
-		}else {
-			PageObject.getDriver().close();
-			testContext.getPageObjectManager().getPageObject(driver).parentWindow();
-			fail();
-		}
-	}
-	
-
 }
 	
 	

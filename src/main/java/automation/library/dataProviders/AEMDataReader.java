@@ -480,7 +480,6 @@ public class AEMDataReader {
 	
 	/**
 	 * 
-<<<<<<< HEAD
 	 * get Data - Footer-Legal Text
 	 * 
 	 */
@@ -491,6 +490,7 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("Legal text Data not specified in the Data file.");
 	}
+	
 	/**
 	 * 
 	 * get Data - Footer-Legal Text URL
@@ -503,6 +503,33 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("Legal text URL Data not specified in the Data file.");
 	}
+	
+	/**
+	 * 
+	 * get Url - Feature List Author Page
+	 * 
+	 */
+	public String get_Feature_List_Author_Page() {
+		String getFeatureListAuthorPage = Property.getProperty(Constant.AEM_DATA_FILE, "featureListAuthor");
+		if(getFeatureListAuthorPage != null)
+			return getFeatureListAuthorPage;
+		else
+			throw new RuntimeException("URL Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Url - Feature List Author Page
+	 * 
+	 */
+	public String get_Informational_Feature_List_Author_Page() {
+		String getFeatureListAuthorPage = Property.getProperty(Constant.AEM_DATA_FILE, "informatioalFeatureListAuthor");
+		if(getFeatureListAuthorPage != null)
+			return getFeatureListAuthorPage;
+		else
+			throw new RuntimeException("URL Data not specified in the Data file.");
+	}
+	
 	/**
 	 * 
 	 * get Data - Footer-terms&Condition Label
@@ -2977,6 +3004,7 @@ public class AEMDataReader {
 			return getloginPageUrlEn;
 		throw new RuntimeException("registrationPageUrl_En not specified in the Data file.");
 	}
+	
 	/**
 	 * 
 	 * get Data - Login Registration author url fr locale
@@ -3102,11 +3130,79 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("title2OfLinkListAEM is not specified in the Data file.");
 	}
+
 	/**
-	 * get Data - Title3 of Link List
+	 * 
+	 * get Data - Sub Title
+	 *  
+	 */
+	public String get_Sub_Title_First() {
+		String subTitleFirst = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleFirst");
+		if(subTitleFirst != null)
+			return subTitleFirst;
+		throw new RuntimeException("registrationPageUrl_En not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Sub Title
+	 */
+	public String get_Sub_Title_First_Change() {
+		String subTitleFirstChange = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleFirstChange");
+		if(subTitleFirstChange != null)
+			return subTitleFirstChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Sub Title
+	 */
+	public String get_FL_Image_Sub_Title_First_Change() {
+		String subTitleFirstChange = Property.getProperty(Constant.AEM_DATA_FILE, "subFLImageTitleFirst");
+		if(subTitleFirstChange != null)
+			return subTitleFirstChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Feature List Alt Text One
+	 *  
+	 */
+	public String get_Feature_List_Alt_Text_One() {
+		String featureListAltTextOne = Property.getProperty(Constant.AEM_DATA_FILE, "featureListAltTextOne");
+		if(featureListAltTextOne != null)
+			return featureListAltTextOne;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Learn More Link First
+	 *  
+	 */
+	public String get_Learn_More_Link_One() {
+		String learMoreLinkFirstOption = Property.getProperty(Constant.AEM_DATA_FILE, "learMoreLinkFirstOption");
+		if(learMoreLinkFirstOption != null)
+			return learMoreLinkFirstOption;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Featured List Url
 	 * 
 	 */
 	
+	public String get_Feature_List_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "featureListUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+
 	public String get_Title3_Link_List() {
 		String getTitle3LinkList = Property.getProperty(Constant.AEM_DATA_FILE, "title3OfLinkListAEM");
 		if(getTitle3LinkList != null)
@@ -3210,5 +3306,4 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("weeklySignUpPublishUrl is not specified in the Data file.");
 	}
-
 }

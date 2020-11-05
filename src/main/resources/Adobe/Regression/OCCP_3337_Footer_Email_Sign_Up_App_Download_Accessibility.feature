@@ -1,4 +1,3 @@
-
 Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 
 	Description: To test the ADOBE Test Cases for the story OCCP-3337
@@ -42,6 +41,21 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	And footer page is displayed for the product
 	And click on accessibility logo
 	Then user should be directed to accessibility section on new tab
+
+	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3389
+	Scenario: TC-3389 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify that User is able to clicks on "Sign Up "Link
+	When footre url is available
+	And footer page is displayed for the product
+	And click on sign up
+	Then user should be directed to sign up section on new tab
+	
+	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3390
+	Scenario: TC-3390 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify the redirection when user clicks on Apple App Store Logo - Desktop /Desktop Wide
+	Given open browser
+	When footre url is available
+	And footer page is displayed for the product
+	And click on apple store logo
+	Then user should be directed to app store section on new tab
 	
 	@RegressionTest @WebScreen @WideScreen @MobileView @SmokeTest
 	Scenario: TC-3394 Verify that User is able to click on Android Play Store- Mobile- Device is an Android device
