@@ -11,6 +11,8 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  demands:
+  - run-test-automation -equals true
 
 parameters:
 
