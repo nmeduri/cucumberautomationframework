@@ -972,7 +972,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Login Fr locale url not specified in the Data file.");
 	}
-
 	/**
 	 * gets Login Page Publish URL En locale
 	 * 
@@ -1020,7 +1019,6 @@ public class DataReader {
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
 
-
 	/**
 	 * gets Login Page Publish URL FR locale
 	 * 
@@ -1040,9 +1038,9 @@ public class DataReader {
 	 */
 
 	public String get_Registration_Page_Publish_Url_En() {
-		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "registrationPagePublishUrl_En");
-		if(getLoginPagePublishUrlEn != null)
-			return getLoginPagePublishUrlEn;
+		String getRegistrationPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "registrationPagePublishUrl_En");
+		if(getRegistrationPagePublishUrlEn != null)
+			return getRegistrationPagePublishUrlEn;
 		else 
 			throw new RuntimeException("registrationPagePublishUrl_En locale url not specified in the Data file.");
 	}
@@ -1052,11 +1050,11 @@ public class DataReader {
 	 */
 
 	public String get_Registration_Page_Publish_Url_Fr() {
-		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "registrationPagePublishUrl_Fr");
-		if(getLoginPagePublishUrlEn != null)
-			return getLoginPagePublishUrlEn;
+		String getRegistrationPagePublishUrlFr = Property.getProperty(Constant.DATA_FILE, "registrationPagePublishUrl_Fr");
+		if(getRegistrationPagePublishUrlFr != null)
+			return getRegistrationPagePublishUrlFr;
 		else 
-			throw new RuntimeException("registrationPagePublishUrl_En locale url not specified in the Data file.");
+			throw new RuntimeException("registrationPagePublishUrl_Fr locale url not specified in the Data file.");
 	}
 
 	
@@ -1082,6 +1080,16 @@ public class DataReader {
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
 	
+	/**
+	 * gets App store Url
+	 */
+	public String get_AppStore_Url() {
+		String Url = Property.getProperty(Constant.DATA_FILE, "appStoreUrl");
+		if(Url != null)
+			return Url;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+}
 
 	/**
 	 * gets Sign Up Link
@@ -1104,7 +1112,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-	
 
 	/**
 	 * gets Sign Up Link
@@ -1116,4 +1123,5 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
 }

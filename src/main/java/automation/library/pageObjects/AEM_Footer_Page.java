@@ -1156,4 +1156,149 @@ public class AEM_Footer_Page extends PageObject {
 		Assert.assertTrue($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Sign_Up()), "href").contains(FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Url_Detail()));
 		PageObject.getDriver().switchTo().parentFrame();
 	}
+	/** update Download the App field */
+	public void updateDownloadTheAppField() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Download_App_Title()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Download_App_Title())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Download_App_Title_Field());
+	}
+	
+	/** Verify display Download the App field */
+	public void displayDownloadTheApp() throws Exception {
+		Thread.sleep(2000);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Download_App_Title_Preview())), 50);
+	}
+	/** update the Learn More text field */
+	public void updateLearnMoreField() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Learn_More_Label()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Learn_More_Label())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Label());
+	}
+	
+	/** Verify display Learn More field */
+	public void displayLearnMore() throws Exception {
+		
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Learn_More())), 50);
+	}
+	/** update the Apple App Store Link */
+	public void updateAppleAppStoreLink() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Apple_App_Store_Link_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Apple_App_Store_Link_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Apple_App_Store_URL());
+	}
+	/** Verify display Apple App Store Link */
+	public void displayAppleAppStoreLink() throws Exception {
+		
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Apple_App_Store_URL())), 50);
+	}
+	/** verify Apple App Store url changes are reflect on site */
+	public void verifyAppleAppStoreUrlChangesReflectOnSite() throws Exception {
+		Log.message("Actual Url:- " + $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_App_Store_Logo()), "href"),true);
+		Log.message("Expected Url:- " +FileReaderManager.getInstance().getAEMDataReader().get_Apple_App_Store_URL(), true);
+		Assert.assertTrue($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_App_Store_Logo()), "href").contains(FileReaderManager.getInstance().getAEMDataReader().get_Apple_App_Store_URL()));
+	}
+	/** update the Play Store Link */
+	public void updatePlayStoreLink() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Play_Store_Link_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Play_Store_Link_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Play_Store_URL());
+	}
+	/** verify Play Store url changes are reflect on site */
+	public void verifyPlayStoreUrlChangesReflectOnSite() throws Exception {
+		Log.message("Actual Url:- " + $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Android_App_Store_Logo()), "href"),true);
+		Log.message("Expected Url:- " +FileReaderManager.getInstance().getAEMDataReader().get_Play_Store_URL(), true);
+		Assert.assertTrue($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Android_App_Store_Logo()), "href").contains(FileReaderManager.getInstance().getAEMDataReader().get_Play_Store_URL()));
+	}
+	/** update the Accessibility Link */
+	public void updateAccessibilityIconLink() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Accessibility_Link_AEM()), 20);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Accessibility_Link_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Accessibility_Link_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Accessibility_URL());
+	}
+	/** verify Accessibility url changes are reflect on site */
+	public void verifyAccessibilityUrlChangesReflectOnSite() throws Exception {
+		Log.message("Actual Url:- " + $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()), "href"),true);
+		Log.message("Expected Url:- " +FileReaderManager.getInstance().getAEMDataReader().get_Accessibility_URL(), true);
+		Assert.assertTrue($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()), "href").contains(FileReaderManager.getInstance().getAEMDataReader().get_Accessibility_URL()));
+	}
+	/** pick the Accessibility Logo */
+	public void pickAccessibilityLogo() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Pick_Accessibility_Logo_AEM())), 40);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMBroadPromoTilesPageLocator().getCtcWeb())), 40);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Pick_Accessibility_Logo_Image())), 40);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Accessibility_Logo_Image_AEM())),40);	
+	}
+	/** Verify display Accessibility Logo */
+	public void displayAccessibilityLogo() throws Exception {
+		
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo())), 50);
+	}
+	/** Verify Select the Accessibility Link Target */
+	public void updateAccessibilityLinkOnSamePageOrNewtab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Accessibility_Link_Target_AEM())), 40);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Target_Newtab())), 40);
+	}
+	/** Verify Click on Accessibility Logo */
+	public void clickOnAccessibilityLogo() throws Exception {	
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo())), 50);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchOnChildWindow();
+		String expectedUrl = FileReaderManager.getInstance().getAEMDataReader().get_Accessibility_URL();
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
+	/** Verify Select the Play Store Target */
+	public void selectAndroidPlayAppTargetOnSamePageOrNewtab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Android_Play_App_Target_AEM())), 40);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Target_Newtab())), 40);
+	}
+	/** Verify Click on Play Store Logo */
+	public void clickOnPlayStoreLogo() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Android_App_Store_Logo())), 50);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchOnChildWindow();
+		String expectedUrl = FileReaderManager.getInstance().getAEMDataReader().get_Play_Store_URL();
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
+	/** Verify Select Apple App Store Target */
+	public void selectAppleAppStoreTargetOnSamePageOrNewtab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Apple_App_Store_Target_AEM())), 40);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Target_Newtab())), 40);
+	}
+	/** Verify Click on Apple App Store Logo */
+	public void clickOnAppleAppStoreLogo() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_App_Store_Logo())), 50);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchOnChildWindow();
+		String expectedUrl = FileReaderManager.getInstance().getAEMDataReader().get_Apple_App_Store_URL();
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
+	/** Verify Select Weekly Flyer Target */
+	public void selectWeeklyFlyerTargetOnSamePageOrNewtab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Weekly_Flyer_Target_AEM())), 40);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Target_Newtab())), 40);
+	}
+	/** Verify Click on Sign Up button */
+	public void clickOnSignUpButton() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Sign_Up())), 50);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchOnChildWindow();
+		String expectedUrl = FileReaderManager.getInstance().getAEMDataReader().get_Weekly_Sign_Up_Publish_Url();
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
 }

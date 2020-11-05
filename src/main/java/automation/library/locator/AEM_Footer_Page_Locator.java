@@ -138,7 +138,22 @@ public class AEM_Footer_Page_Locator {
 	String weeklyFlyerEmailDirectlyToYouAEM = Property.getProperty(Constant.OR_FILE, "weeklyFlyerEmailDirectlyToYouAEM");
 	String weeklySignUpFieldAEM = Property.getProperty(Constant.OR_FILE, "weeklySignUpFieldAEM");
 	String weeklySignUpUrlAEM = Property.getProperty(Constant.OR_FILE, "weeklySignUpUrlAEM");
-			
+	String downloadAppTitleAEM = Property.getProperty(Constant.OR_FILE, "downloadAppTitleAEM");
+	String downloadTheAppTitlePreview = Property.getProperty(Constant.OR_FILE, "downloadTheAppTitlePreview");
+	String learnMoreLabelAEM = Property.getProperty(Constant.OR_FILE, "learnMoreLabelAEM");
+	String learnMoreLabel = Property.getProperty(Constant.OR_FILE, "learnMoreLabel");
+	String appleAppStoreLinkAEM = Property.getProperty(Constant.OR_FILE, "appleAppStoreLinkAEM");
+	String appleAppStoreURL = Property.getProperty(Constant.OR_FILE, "appleAppStoreURL");
+	String androidPlayStoreLinkAEM = Property.getProperty(Constant.OR_FILE, "androidPlayStoreLinkAEM");
+	String accessibilityLinkAEM = Property.getProperty(Constant.OR_FILE, "accessibilityLinkAEM");
+	String pickAccessibilityLogoAEM = Property.getProperty(Constant.OR_FILE, "pickAccessibilityLogoAEM");
+	String selectAccessibilityLogoImage = Property.getProperty(Constant.OR_FILE, "selectAccessibilityLogoImage");
+	String accessibilityLogoImageAEM = Property.getProperty(Constant.OR_FILE, "accessibilityLogoImageAEM");
+	String accessibilityLinkTargetAEM = Property.getProperty(Constant.OR_FILE, "accessibilityLinkTargetAEM");
+	String targetNewtabAEM = Property.getProperty(Constant.OR_FILE, "targetNewtabAEM");
+	String androidPlayAppTargetAEM = Property.getProperty(Constant.OR_FILE, "androidPlayAppTargetAEM");
+	String appleAppStoreTargetAEM = Property.getProperty(Constant.OR_FILE, "appleAppStoreTargetAEM");
+	String weeklyFlyerTargetAEM = Property.getProperty(Constant.OR_FILE, "weeklyFlyerTargetAEM");
 	
 	/**
 	 * gets Locator - Footer copyright title
@@ -1109,5 +1124,103 @@ public class AEM_Footer_Page_Locator {
 	public String get_Weekly_Sign_Up_Url() {
 		return weeklySignUpUrlAEM;
 	}
- 	
+	/**
+	 * gets Locator - Download the App title
+	 */
+	public String get_Download_App_Title() {
+		return downloadAppTitleAEM;
 	}
+	/**
+	 * gets Locator - Download the App title in preview mode
+	 */
+	public String get_Download_App_Title_Preview() {
+		return downloadTheAppTitlePreview;
+	}
+	/**
+	 * gets Locator - Learn more text label
+	 */
+	public String get_Learn_More_Label() {
+		return learnMoreLabelAEM;
+	}
+	
+	/**
+	 * gets Locator - Learn more in preview mode
+	 */
+	public String get_Learn_More() {
+		return learnMoreLabel;
+	}
+	/**
+	 * gets Locator - Apple App Store Link
+	 */
+	public String get_Apple_App_Store_Link_AEM() {
+		return appleAppStoreLinkAEM;
+	}
+	/**
+	 * gets Locator - Apple App Store URL
+	 */
+	public String get_Apple_App_Store_URL() {
+		return appleAppStoreURL;
+	}
+	/**
+	 * gets Locator - Play Store Link
+	 */
+	public String get_Play_Store_Link_AEM() {
+		return androidPlayStoreLinkAEM;
+	}
+	/**
+	 * gets Locator - Accessibility Link
+	 */
+	public String get_Accessibility_Link_AEM() {
+		return accessibilityLinkAEM;
+	}
+	/**
+	 * gets Locator -Pick Accessibility Logo
+	 */
+	public String get_Pick_Accessibility_Logo_AEM() {
+		return pickAccessibilityLogoAEM;
+	}
+	
+	/**
+	 * gets Locator -Select Accessibility Logo Image
+	 */
+	public String get_Pick_Accessibility_Logo_Image() {
+		return selectAccessibilityLogoImage;
+	}
+	
+	/**
+	 * gets Locator -display Accessibility Logo AEM
+	 */
+	public String get_Accessibility_Logo_Image_AEM() {
+		return accessibilityLogoImageAEM;
+	}
+	/**
+	 * gets Locator -Click on Accessibility Link Target
+	 */
+	public String get_Accessibility_Link_Target_AEM() {
+		return accessibilityLinkTargetAEM;
+	}
+	/**
+	 * gets Locator -Select Target as New tab
+	 */
+	public String get_Target_Newtab() {
+		return targetNewtabAEM;
+	}
+	/**
+	 * gets Locator -Click on Android Play App Target
+	 */
+	public String get_Android_Play_App_Target_AEM() {
+		return androidPlayAppTargetAEM;
+	}
+	/**
+	 * gets Locator -Click on Apple App Store Target
+	 */
+	public String get_Apple_App_Store_Target_AEM() {
+		return appleAppStoreTargetAEM;
+	}
+	/**
+	 * gets Locator -Click on Weekly Flyer Target
+	 */
+	public String get_Weekly_Flyer_Target_AEM() {
+		return weeklyFlyerTargetAEM;
+	}
+}

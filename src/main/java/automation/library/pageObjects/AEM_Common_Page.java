@@ -114,7 +114,10 @@ public class AEM_Common_Page extends PageObject {
 	
 	/** This function clicks on Edit button */
 	public void clickEditButton() throws Exception {
-		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())), 20);
+		Thread.sleep(2000);
+		//$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())), 20);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())),40);
+		driver.navigate().refresh();
 	}
 
 	/** This function clicks on preview button */

@@ -2989,7 +2989,51 @@ public class AEMDataReader {
 		throw new RuntimeException("registrationPageUrl_Fr not specified in the Data file.");
 	}
 	/**
-	 * 
+	 * get Data - Download App Title
+	 */
+	public String get_Download_App_Title_Field() {
+		String getDownloadAppTitleField = Property.getProperty(Constant.AEM_DATA_FILE, "downloadAppTitle");
+		if(getDownloadAppTitleField != null)
+			return getDownloadAppTitleField;
+		throw new RuntimeException("downloadAppTitle data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Learn More Label
+	 */
+	public String get_Learn_More_Label() {
+		String getLearnMoreLabel = Property.getProperty(Constant.AEM_DATA_FILE, "learnMoreLabel");
+		if(getLearnMoreLabel != null)
+			return getLearnMoreLabel;
+		throw new RuntimeException("learnMoreLabel data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Apple App Store Link
+	 */
+	public String get_Apple_App_Store_URL() {
+		String getAppleAppStoreURL = Property.getProperty(Constant.AEM_DATA_FILE, "appleAppStoreURL");
+		if(getAppleAppStoreURL != null)
+			return getAppleAppStoreURL;
+		throw new RuntimeException("appleAppStoreURL data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Play Store Link
+	 */
+	public String get_Play_Store_URL() {
+		String getPlayStoreURL = Property.getProperty(Constant.AEM_DATA_FILE, "playStoreURL");
+		if(getPlayStoreURL != null)
+			return getPlayStoreURL;
+		throw new RuntimeException("playStoreURL data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Accessibility Link
+	 */
+	public String get_Accessibility_URL() {
+		String getAccessibilityURL = Property.getProperty(Constant.AEM_DATA_FILE, "accessibilityURL");
+		if(getAccessibilityURL != null)
+			return getAccessibilityURL;
+		throw new RuntimeException("accessibilityURL data is not specified in the Data file.");
+	}
+	 /** 
 	 * get Data - Customer Service Page author url en locale
 	 *  
 	 */
@@ -3153,6 +3197,18 @@ public class AEMDataReader {
 			return getDescription5LinkList;
 		else
 			throw new RuntimeException("description4OfLinkListAEM is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Description 5 of Link List
+	 * 
+	 */
+	
+	public String get_Weekly_Sign_Up_Publish_Url() {
+		String getweeklySignUpPublishUrl = Property.getProperty(Constant.AEM_DATA_FILE, "weeklySignUpPublishUrl");
+		if(getweeklySignUpPublishUrl != null)
+			return getweeklySignUpPublishUrl;
+		else
+			throw new RuntimeException("weeklySignUpPublishUrl is not specified in the Data file.");
 	}
 
 }
