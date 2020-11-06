@@ -69,8 +69,8 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void response_should_have_medias_section_without_name_and_its_value() {
 		List<String> mediaName = response.jsonPath().get("medias.name");
 		Log.message("Media Name:- " + mediaName, true);
-		Assert.assertEquals("[]", mediaName.toString());
-		//assertTrue(mediaName.contains(null));
+		//Assert.assertEquals("null", media);
+		Assert.assertTrue(mediaName.contains(null));
 	}
 
 	@Then("medias section should have in response without mediaType name and its value")
@@ -226,5 +226,29 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	public void user_hits_the_GET_api_without_locale_1467() {
 
 		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().product_tc_1467());
+	}
+	@When("1462-user hits the GET api without locale")
+	public void user_hits_the_api_without_locale_1462() {
+
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1462());
+	}
+	@When("1469-user hits the GET api with locale as en_ca")
+	public void user_hits_the_api_with_locale_as_en_ca_1469() {
+
+		response = getHybApiENCA().getAPI_EN_CAURL(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1462());
+	}
+	@When("1483-user hits the GET api with locale en")
+	public void user_hits_the_api_with_locale_as_en_1483() {
+
+		response = getHybApiEN().getAPI_EN(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1462());
+	}
+	@When("1470-user hits the GET api with locale as fr_ca")
+	public void user_hits_the_api_with_locale_as_fr_ca_1470() {
+
+		response = getHybApiFRCA().getAPI_FR_CA(url,
+				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1462());
+
 	}
 }

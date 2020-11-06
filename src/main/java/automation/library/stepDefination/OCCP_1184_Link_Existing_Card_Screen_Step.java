@@ -7,7 +7,9 @@ import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-
+/**
+ * This file contains the scenario of user stories OCCP-1184
+ */
 public class OCCP_1184_Link_Existing_Card_Screen_Step extends BaseClass {
 	
 	public OCCP_1184_Link_Existing_Card_Screen_Step(TestContext context) throws Exception {

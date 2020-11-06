@@ -90,6 +90,16 @@ public class PDP_PageLocator {
 	String colorVariantGray = Property.getProperty(Constant.OR_FILE, "colorVariantGray");
 	String badgesPDP = Property.getProperty(Constant.OR_FILE, "badgesPDP").replace("=", ",");
 	String resourceSection = Property.getProperty(Constant.OR_FILE, "resourceSection");
+
+	String addToCartFlyOut = Property.getProperty(Constant.OR_FILE, "addToCartFlyOut");
+	String selectDefaultcolor = Property.getProperty(Constant.OR_FILE, "selectDefaultcolor");
+	String addToCartFlyoutImage = Property.getProperty(Constant.OR_FILE, "addToCartFlyoutImage");
+	String addToCartFlyoutProductBrand = Property.getProperty(Constant.OR_FILE, "addToCartFlyoutProductBrand");
+	String addToCartFlyoutProductTitle = Property.getProperty(Constant.OR_FILE, "addToCartFlyoutProductTitle");
+	String addToCartFlyoutProductVariants = Property.getProperty(Constant.OR_FILE, "addToCartFlyoutProductVariants");
+	String continueButtonOnSafetyModel = Property.getProperty(Constant.OR_FILE, "continueButtonOnSafetyModel");
+	String lengthVariant = Property.getProperty(Constant.OR_FILE, "lengthVariant");
+
 	String sortBySection=Property.getProperty(Constant.OR_FILE, "sortBySection");
 	String sortByReviewsLabel=Property.getProperty(Constant.OR_FILE, "sortByReviewsLabel");
 	String mostRecentReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostRecentReviewsLabel");
@@ -101,6 +111,7 @@ public class PDP_PageLocator {
 	String chevronReviewsArrow=Property.getProperty(Constant.OR_FILE, "chevronReviewsArrow");
 	String mostHelpfulReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostHelpfulReviewsLabel");
 	String reviewsSection=Property.getProperty(Constant.OR_FILE, "reviewsSection");
+
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -750,6 +761,55 @@ public class PDP_PageLocator {
 	public String get_Resource_Section() {
 		return resourceSection;
 	}
+	/**
+	 * gets Locator - Add To Cart Fly out
+	 */
+	public String get_Add_To_Cart_Fly_Out() {
+		return addToCartFlyOut;
+	}
+	
+	/**
+	 * gets Locator - Select default color
+	 */
+	public String get_Select_Default_color() {
+		return selectDefaultcolor;
+	}
+	/**
+	 * gets Locator - Add To Cart Fly out Image
+	 */
+	public String get_Add_To_Cart_Fly_Out_Image() {
+		return addToCartFlyoutImage;
+	}
+	/**
+	 * gets Locator - Add To Cart Fly out Product Brand
+	 */
+	public String get_Add_To_Cart_FlyOut_Product_Brand() {
+		return addToCartFlyoutProductBrand;
+	}
+	/**
+	 * gets Locator - Add To Cart Fly out Product Title
+	 */
+	public String get_Add_To_Cart_FlyOut_Product_Title() {
+		return addToCartFlyoutProductTitle;
+	}
+	/**
+	 * gets Locator - Add To Cart Fly out Product Variants
+	 */
+	public String get_Add_To_Cart_FlyOut_Product_Variants() {
+		return addToCartFlyoutProductVariants;
+	}
+	/**
+	 * gets Locator - Continue Button on Safety and Warranty Warning Model
+	 */
+	public String get_Continue_Button_On_Safety_Model() {
+		return continueButtonOnSafetyModel;
+	}
+	/**
+	 * gets Locator - Select Length Variant
+	 */
+	public String get_Length_Variant() {
+		return lengthVariant;
+	}
 	
 	/**
 	 * gets Locator - Wishlist Icon
@@ -911,5 +971,6 @@ public class PDP_PageLocator {
 		return reviewsSection;
 	}
 }
+
 
 

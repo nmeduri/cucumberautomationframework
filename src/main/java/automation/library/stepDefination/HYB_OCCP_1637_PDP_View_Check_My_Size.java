@@ -17,7 +17,7 @@ public class HYB_OCCP_1637_PDP_View_Check_My_Size extends BaseStep{
 	@When("user hits the POST api for Add Product")
 	public void user_hits_the_api_for_Add_Product() {
 		Log.message("Token No 1: "+accessToken, true);
-		response = getAuthorizationUrl().get_Addtocart_Post_API(url, accessToken);	
+		response = getAuthorizationUrl().get_Create_Cart_AuthUser_Post_API(url, accessToken);	
 	}
 	
 	@Given("User hits product api for size guide is not null")

@@ -900,6 +900,48 @@ public class PDP_Page extends PageObject {
 			   
 		   }
 	   }
+	   /** This function is verify that display Add to Cart fly out */
+	   public void display_Add_To_Cart_FlyOut() throws Exception {
+		   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Continue_Button_On_Safety_Model()));
+		   $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Add_To_Cart_Fly_Out())), 40);
+	   }
+	   /** This function is verify that select any variant */
+	   public void selectAnyVariant() throws Exception {	   
+		   if($display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Select_Default_color()))) {
+			   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Select_Default_color()));
+			   if($display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Swatch_With_Size()))) {
+				   $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Swatch_With_Size()));
+				   if($display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Length_Variant()))) {
+					   ((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Length_Variant())));
+				   }else
+					   Log.message("Default Length is not displayed ", true);
+			   }
+			   else
+				   Log.message("Default Size is not displayed ", true);
+		   }else
+			   Log.message("Default Color is not displayed ", true);
+	   }
+	   /** This function is verify that display Add to Cart fly out Image */
+	   public void display_Add_To_Cart_FlyOut_Image() throws Exception {
+		   $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Add_To_Cart_Fly_Out_Image())), 40);
+	   }
+	   /** This function is verify that display Add to Cart fly out of Product Brand */
+	   public void display_Add_To_Cart_FlyOut_Product_Brand() throws Exception {
+		   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Add_To_Cart_FlyOut_Product_Brand()));
+	   }
+	   /** This function is verify that display Add to Cart fly out of Product Title */
+	   public void display_Add_To_Cart_FlyOut_Product_Title() throws Exception {
+		   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Add_To_Cart_FlyOut_Product_Title()));
+	   }
+	   /** This function is verify that display Add to Cart fly out of Product Variants */
+	   public void display_Add_To_Cart_FlyOut_Product_Variants() throws Exception {
+		   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Add_To_Cart_FlyOut_Product_Variants()));
+	   }
+	  
+	   /** This function navigate to PDP Product Page for FR locale */
+		public void navigate_To_PDP_Product_Page_fr_Locale(String sProductCode) throws Exception {
+			driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductUrl_Fr() + sProductCode);
+		}
 	
 	   /** This function navigate to PDP Page */
 		public void navigate_to_PDP_Sort_Product_Reviews_Page() throws Exception {
@@ -956,4 +998,5 @@ public class PDP_Page extends PageObject {
 		public void displayMostHelpfulLabel() throws Exception {
 			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Helpful_Reviews_Label()));
 		}
+
 }

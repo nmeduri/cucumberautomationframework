@@ -1127,6 +1127,30 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+	/**
+	 * gets Product Code of Add to cart fly out
+	 * 
+	 */
+	public String get_Add_To_Cart_Product_FlyOut() {
+
+		String getAddToCartProductFlyOut = Property.getProperty(Constant.DATA_FILE, "addToCartFlyOutProduct");
+		if(getAddToCartProductFlyOut != null)
+			return getAddToCartProductFlyOut;
+		else
+			throw new RuntimeException("addToCartFlyOutProduct Code not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product Url for FR locale
+	 * 
+	 */
+	
+	public String getPDPProductUrl_Fr() {
+		String getPDPProductUrlFr = Property.getProperty(Constant.DATA_FILE, "pdpProductUrl_Fr");
+		if (getPDPProductUrlFr != null)
+			return getPDPProductUrlFr;
+		else
+			throw new RuntimeException("pdpProductUrl_Fr not specified in the Configuration.properties file.");
+	}
 
 	/**
 	 * gets PDP Sort Product Reviews URL
@@ -1138,4 +1162,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
 }
+

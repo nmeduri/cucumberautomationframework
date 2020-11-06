@@ -8,11 +8,11 @@ Feature: OCCP_1616: Frequently Bought Together
     		Given Registered user create cart access token is available
     		When user generate token
     		Then user get the token
-    		When user hits the POST api for create cart
-    		Then response JSON should have code
-    		When Authenticated user Add to cart api
-    		When user hits add to Cart api for authenticated user
-    		Then should return 200 ok   	
+    		#When user hits the POST api for create cart
+    		#Then response JSON should have code
+    		#When Authenticated user Add to cart api
+    		#When user hits add to Cart api for authenticated user
+    		#Then should return 200 ok
     		
     		@RegressionTest
     		Scenario: TC-2168 HYB:OCCP-1616: Guest user - Create cart	
@@ -81,4 +81,33 @@ Feature: OCCP_1616: Frequently Bought Together
     		When user hits invalid token	
     	  Then should return 401 unauthorized
     	  
-        
+        @RegressionTest
+				Scenario: TC-2169 HYB:OCCP-1616- OCCP-2448: Guest user - Add to cart
+				Given Guest user create cart access token is available
+   			When guest user hits the POST api for create cart
+    		Then response JSON should have created cart
+    		Then response JSON should have code
+    		Then guid is available in response JSON
+    		When Anonymous user Add to cart api is available
+    		And 2169-user hits add to Cart api for Anonymous user
+    		Then should return 200 ok
+    		When 3994-user hits GET Cart api for Anonymous user
+    		Then should return 200 ok
+    		And recently added product code is available in GET cart response
+    		
+    		@RegressionTest
+				Scenario: TC-2172 HYB:OCCP-1616- OCCP-2448: Authenticated user -  add Varinat product 
+				Given Registered user create cart access token is available
+				When user generate token
+    		Then user get the token
+    		When user hits the POST api for create cart
+    		Then response JSON should have code
+    		When Authenticated user Add to cart api
+    		When 2172-user hits add to Cart api for authenticated user
+    		Then should return 200 ok 
+    		When 2172-user hits GET Cart api for authenticated user
+    		Then should return 200 ok
+    		And recently added product code is available in GET cart authenticateduser response
+    
+   			
+    		

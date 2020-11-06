@@ -369,4 +369,30 @@ public class PDPPageSteps extends BaseClass {
 	public void saved_wishlist_items_are_removed() throws Exception {
 		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).notDisplayAddedItem();
 	}
+	
+	@Then("the added to cart flyout should be displayed")
+	public void the_added_to_cart_flyout_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_Add_To_Cart_FlyOut();
+	}
+	
+	@Then("select variants on pdp page")
+	public void select_variants_on_pdp_page() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).selectAnyVariant();
+	}
+	@And("primary image for the product added should be displayed")
+	public void primary_image_for_the_product_added_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_Add_To_Cart_FlyOut_Image();
+	}
+	@And("product brand should be displayed")
+	public void product_brand_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_Add_To_Cart_FlyOut_Product_Brand();
+	}
+	@And("product title should be displayed")
+	public void product_title_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_Add_To_Cart_FlyOut_Product_Title();
+	}
+	@And("variant Selection should be displayed")
+	public void variant_selection_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_Add_To_Cart_FlyOut_Product_Variants();
+	}
 }
