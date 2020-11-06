@@ -10,7 +10,7 @@ trigger:
     - readme.md
 
 pool:
-  vmImage: 'macOS-latest'
+  vmImage: 'ubuntu-latest'
   demands:
   - run-test-automation -equals true
 

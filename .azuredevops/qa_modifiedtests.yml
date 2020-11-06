@@ -31,11 +31,11 @@ steps:
           filename=$(curl -s -H "Authorization: Bearer ${system_accesstoken}" -H "Content-Type:application/json" "$(System.CollectionUri)/$(projectname)/_apis/git/repositories/$(Build.Repository.ID)/commits/$commitid/changes?api-version=5.1" | jq -r '.changes[] .item.path' | cut -c 21- | grep "\${{ parameters.searchpattern }}$")
           echo ${filename} >> ${{ parameters.filename }}
         done
-        sed -i '' -e '/^$/d' ${{ parameters.filename }}
-        sed -i '' -e 's/[[:blank:]]\+/\n/g' ${{ parameters.filename }}
-        sed -i '' -e 's/^/classpath:/' ${{ parameters.filename }}
-        #featurefilenames=$(cat ${{ parameters.filename }} | paste -s -d " ")
-        featurefilenames=$(paste -s -d " " ${{ parameters.filename }})
+        sed -i '/^$/d' ${{ parameters.filename }}
+        sed -i 's/[[:blank:]]\+/\n/g' ${{ parameters.filename }}
+        sed -i 's/^/classpath:/' ${{ parameters.filename }}
+        featurefilenames=$(cat ${{ parameters.filename }} | paste -s -d " ")
+        #featurefilenames=$(paste -s -d " " ${{ parameters.filename }})
         echo "Modified Tests are : ${featurefilenames}"
         echo "##vso[task.setvariable variable=featurefilenames]$featurefilenames"       
   env:
