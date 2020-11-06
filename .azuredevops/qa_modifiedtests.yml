@@ -34,7 +34,8 @@ steps:
         sed -i '' -e '/^$/d' ${{ parameters.filename }}
         sed -i '' -e 's/[[:blank:]]\+/\n/g' ${{ parameters.filename }}
         sed -i '' -e 's/^/classpath:/' ${{ parameters.filename }}
-        featurefilenames=$(cat ${{ parameters.filename }} | paste -s -d " ")
+        #featurefilenames=$(cat ${{ parameters.filename }} | paste -s -d " ")
+        featurefilenames=paste -s -d " " ${{ parameters.filename }}
         echo "Modified Tests are : ${featurefilenames}"
         echo "##vso[task.setvariable variable=featurefilenames]$featurefilenames"       
   env:
