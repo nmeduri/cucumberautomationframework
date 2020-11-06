@@ -98,8 +98,8 @@ Feature: OCCP_1616: Frequently Bought Together
     		@RegressionTest
 				Scenario: TC-2172 HYB:OCCP-1616- OCCP-2448: Authenticated user -  add Varinat product 
 				Given Registered user create cart access token is available
-				When user generate token
-    		Then user get the token
+				#When user generate token
+    		#Then user get the token
     		When user hits the POST api for create cart
     		Then response JSON should have code
     		When Authenticated user Add to cart api
@@ -109,5 +109,13 @@ Feature: OCCP_1616: Frequently Bought Together
     		Then should return 200 ok
     		And recently added product code is available in GET cart authenticateduser response
     
-   			
+   			@RegressionTest
+        Scenario: TC-2171 HYB:OCCP-1616-OCCP-2448: Authenticated user - add base product which don’t have variants to Cart
+    		Given Registered user create cart access token is available
+    		When user hits the POST api for create cart
+    		Then response JSON should have code
+    		When Authenticated user Add to cart api
+    		When user hits api for base product with no variants to Cart for authenticated user
+    		Then should return 400 ok
+   			And user should not able to add base product to the cart
     		

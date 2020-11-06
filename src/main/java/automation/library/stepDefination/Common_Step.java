@@ -124,7 +124,7 @@ public class Common_Step extends BaseStep {
 	@When("user hit the GET api for user manual")
 	public void user_hit_the_GET_api_for_user_manual() {
 		response = getApiFieldDefault().getAPI_Field_Default(url,
-				FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1365());
+				FileReaderManager.getInstance().getAPIDataReader().product_tc_1335_P());
 	}
 
 	@When("user hits the api")

@@ -124,4 +124,12 @@ public class HYB_OCCP_1616_Frequently_Bought_Together_Step extends BaseStep{
 		String actualprodcut= response.jsonPath().get("entries.ctcProduct.code").toString();
 		actualprodcut.contains(FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2169());
 	}
+	@When("user hits api for base product with no variants to Cart for authenticated user")
+	public void user_hits_api_for_base_product_with_no_variants_to_cart_for_authenticated_user() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI_SingleProd(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2171(), accessToken);
+		Log.message("Response:- " + response.getBody().asString(), true);
+	}
+	
+	
+	
 }

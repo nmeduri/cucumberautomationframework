@@ -1086,6 +1086,8 @@ public class APIDataReader {
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
 	/**
+<<<<<<< HEAD
+=======
 	 * gets product data of TC-1412
 	 * 
 	 */
@@ -1231,6 +1233,7 @@ public class APIDataReader {
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
 	/**
+>>>>>>> branch 'develop' of https://acn-ctc@dev.azure.com/acn-ctc/ODP%20Test%20Automation/_git/ODP%20Test%20Automation
 	 * gets product data of TC-1357
 	 * 
 	 */
@@ -1523,6 +1526,18 @@ public class APIDataReader {
 			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
 	/**
+	 * gets product data of TC-1335_P
+	 * 
+	 */
+	public String product_tc_1335_P() {
+
+		String productInfo = Property.getProperty(Constant.API_DATA, "product_tc_1335_P");
+		if (productInfo != null)
+			return productInfo;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
+	/**
 	 * gets product data of TC-32169
 	 * 
 	 */
@@ -1546,5 +1561,20 @@ public class APIDataReader {
 			return getProduct;
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
+
+	}
+	/**
+	 * gets product data of TC-2171
+	 * 
+	 */
+	
+	public String get_product_tc_2171() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_2171");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("Product Code not specified in the API Data file.");
+
 	}
 }

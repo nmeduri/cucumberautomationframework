@@ -82,7 +82,7 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	@Then("User Manual link is not displayed")
 	public void user_manaul_link_is_not_displayed_in_response() {
 		
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("productManualLink"));
+		Assert.assertNull(response.jsonPath().get("productManualLink"));
 		Log.message("User Manual Link is not Displayed" , true);
 	}
 	
@@ -134,12 +134,27 @@ public class HYB_OCCP_870_PDP_Product_Information_Product_Manual_Product_Returns
 	}
 	
 	@When("user hits GET method with locale as en ca for description")
-	public void user_hits_the_GET_method_with_locale_as_en_ca_for_description() {     
- 
+	public void user_hits_the_GET_method_with_locale_as_en_ca_for_description() {     	
+		response = getHybApiENCA().getAPI_EN_CAURL(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());	
+	}
+	
+	@When("user hit the GET api for Brand Information")
+	public void user_hit_the_GET_api_for_Brand_Information() {
+		response = getApiFieldDefault().getAPI_Field_Default(url,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1334());
+	}
+	@Then("brand title should not displayed")
+	public void brand_title_should_not_displayed() {
+		String brand=response.jsonPath().get("productBrand");
+		Log.message("Brand title is not displayed and value is :" +brand, true);
+	}
+	@When("user hits the GET product API-1491")
+	public void user_hits_GET_the_api_1491() {     
+		response = getHybApiEN().getAPI_EN(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());
 		
+	}
+	@When("user hits the GET method product API for en ca locale")
+	public void user_hits_GET_product_API_for_en_ca_locale() {     
 		response = getHybApiENCA().getAPI_EN_CAURL(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1326());
 		
 	}
-	
-	
 }
