@@ -24,6 +24,12 @@ public class AEM_Link_Card_Page_Locator {
 	String cardInputMasterCard = Property.getProperty(Constant.OR_FILE, "cardInputMasterCard");
 	String errorImagePreview = Property.getProperty(Constant.OR_FILE, "errorImagePreview");
 	String errorImageTextField = Property.getProperty(Constant.OR_FILE, "errorImageTextField");
+	String linkCardTitleAEM = Property.getProperty(Constant.OR_FILE, "linkCardTitleAEM");
+	String lastNameLinkMasterCardAEM = Property.getProperty(Constant.OR_FILE, "lastNameLinkMasterCardAEM");
+	String successscreenTabAEMLinkCard = Property.getProperty(Constant.OR_FILE, "successscreenTabAEMLinkCard");
+	String continueButtonMasterCard = Property.getProperty(Constant.OR_FILE, "continueButtonMasterCard");
+	String cancelButtonMasterCardAEM = Property.getProperty(Constant.OR_FILE, "cancelButtonMasterCardAEM");
+	String errorImageOption = Property.getProperty(Constant.OR_FILE, "errorImageOption");
 
     /**
 	 * gets Locator - Specifications
@@ -151,6 +157,48 @@ public class AEM_Link_Card_Page_Locator {
 	 */
 	public String getErrorImageTextField() {
 		return errorImageTextField;
+	}
+	
+	/**
+	 * get Locator - Link Card Title
+	 */
+	public String getLinkCardTitle() {
+		return linkCardTitleAEM;
+	}
+	
+	/**
+	 * get Locator - Last Name Label
+	 */
+	public String get_Last_Name_Label() {
+		return lastNameLinkMasterCardAEM;
+	}
+	
+	/**
+	 * get Locator - Success Screen Tab
+	 */
+	public String getSuccessScreenTab() {
+		return successscreenTabAEMLinkCard;
+	}
+	
+	/**
+	 * get Locator - Continue Button
+	 */
+	public String getContinueButton() {
+		return continueButtonMasterCard;
+	}
+	
+	/**
+	 * get Locator - Cancel Button
+	 */
+	public String getCancelButton() {
+		return cancelButtonMasterCardAEM;
+	}
+	
+	/**
+	 * get Locator - Error Image Option
+	 */
+	public String getErrorImageOption() {
+		return errorImageOption;
 	}
 	
 	

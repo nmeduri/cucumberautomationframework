@@ -119,6 +119,7 @@ public class OCCP_868_Search_And_SRP_Auto_Corrective_Search extends BaseClass {
 	public void user_click_on_done_button() throws Exception {
 		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).clickDoneButton();
 		PageObject.getDriver().navigate().refresh();
+		Thread.sleep(3000);
 	}
 	
 	

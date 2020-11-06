@@ -46,6 +46,13 @@ public class AEM_Link_Card_Page extends PageObject {
 
 	}
 	
+	/** This function naviget to Link Card Publish Page */
+	public void navigateTo_Link_Card_Publish_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Link_Card_Publish_Url());
+
+	}
+	
 	/** This function clicks on link card pannel */
 	public void clickLinkCardPannel() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardPannel())), 5);
@@ -103,6 +110,83 @@ public class AEM_Link_Card_Page extends PageObject {
 	/** reverse error image text changes */
 	public void reverseErrorImageTextChanges() throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getErrorImageTextField()), FileReaderManager.getInstance().getAEMDataReader().get_Error_Image_Text_Change());
+	}
+	
+	/** update link master card title */
+	public void updateLinkMasterCardTitle() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardTitle())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardTitle()), FileReaderManager.getInstance().getAEMDataReader().get_Link_Card_Title());
+	}
+	
+	/** verify tilte update on screen */
+	public void verifyTitleUpdateOnScreen() throws Exception {
+		String expectedResult = $getText($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Link_MasterCard_Title()));
+		Assert.assertEquals(expectedResult, FileReaderManager.getInstance().getAEMDataReader().get_Link_Card_Title());
+	}
+	
+	/** revert link master card changes */
+	public void revertLinkMasterCardChanges() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardTitle())), 15);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardTitle()), FileReaderManager.getInstance().getAEMDataReader().get_Link_Card_Title_Change());
+	}
+	
+	/** update last name label */
+	public void updateLastNameLabelMasterCard() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().get_Last_Name_Label())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().get_Last_Name_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Last_Name_Label());
+	}
+	
+	/** revert last name label */
+	public void revertLastNameLabelMasterCard() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().get_Last_Name_Label())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().get_Last_Name_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Last_Name_Label_Change());
+	}
+	
+	/** verify last name update on screen */
+	public void verifyLastNameLabelUpdateOnScreen() throws Exception {
+		String expectedResult = $getText($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().getLastNameLabel()));
+		Assert.assertEquals(expectedResult, FileReaderManager.getInstance().getAEMDataReader().get_Last_Name_Label());
+	}
+	
+	/** click on success screen tab */
+	public void clickSuccessScreenTab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getSuccessScreenTab())), 10);
+	}
+	
+	/** update continue button label */
+	public void updateContinueButtonLabelMasterCard() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getContinueButton())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getContinueButton()), FileReaderManager.getInstance().getAEMDataReader().get_Continue_Button_Success_Screen());
+	}
+	
+	/** revert continue button label */
+	public void revertContinueButtonLabelMasterCard() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getContinueButton())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getContinueButton()), FileReaderManager.getInstance().getAEMDataReader().get_Continue_Button_Success_Screen_Change());
+	}
+	
+	/** verify continue button lable update on screen */
+	public void verifyContinueButtonLabelUpdateOnScreen() throws Exception {
+		String expectedResult = $getText($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().getContinueButtonLabel()));
+		Assert.assertEquals(expectedResult, FileReaderManager.getInstance().getAEMDataReader().get_Continue_Button_Success_Screen());
+	}
+	
+	/** update cancel button label */
+	public void updateCancelButtonLabelMasterCard() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getCancelButton())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getCancelButton()), FileReaderManager.getInstance().getAEMDataReader().get_Cancel_Button_Master_Card());
+	}
+	
+	/** revert cancel button label */
+	public void revertCancelButtonLabelMasterCard() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getCancelButton())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getCancelButton()), FileReaderManager.getInstance().getAEMDataReader().get_Cancel_Button_Master_Card_Change());
+	}
+	
+	/** verify continue button lable update on screen */
+	public void verifyCancelButtonLabelUpdateOnScreen() throws Exception {
+		String expectedResult = $getText($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().getCancelButtonMasterCard()));
+		Assert.assertEquals(expectedResult, FileReaderManager.getInstance().getAEMDataReader().get_Cancel_Button_Master_Card());
 	}
 	
 	

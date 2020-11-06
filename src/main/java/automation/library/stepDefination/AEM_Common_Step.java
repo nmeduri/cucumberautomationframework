@@ -53,6 +53,12 @@ public class AEM_Common_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPageInformation();
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPublishPage();
 	}
+	
+	@And("click on the publish")
+	public void click_on_publish() throws Exception {
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPageInformation();
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPublishButton();
+	}
 
 
 }

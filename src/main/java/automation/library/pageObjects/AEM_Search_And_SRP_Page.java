@@ -162,8 +162,8 @@ public class AEM_Search_And_SRP_Page extends PageObject {
 	
 	/** user clicks on done button */
 	public void clickDoneButton() throws Exception {
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCheckButton())));
-		//$click($(Loc.CLASSNAME.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCheckButton()));
+		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCheckButton())));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCheckButton()));
 	}
 	
 	/** This function clicks on Search Bar */

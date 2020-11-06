@@ -1,9 +1,9 @@
-Feature: OCCP-1037 :Simple Header  | Checkout Flow | Desktop 
+Feature: OCCP-1037 :Simple Header   Checkout Flow  Desktop 
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1037
 	
 	
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen @TC-3667
 	Scenario: TC-3667 OCCP-1037 :Simple Header|Checkout Flow|Desktop-Verify Options available on the Simple header in Checkout flow|Desktop, Desktop Wide
 	Given open browser
 	When checkout url is available

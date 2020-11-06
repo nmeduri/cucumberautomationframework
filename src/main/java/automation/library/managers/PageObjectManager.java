@@ -16,6 +16,7 @@ import automation.library.locator.AEM_Login_Page_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
+import automation.library.locator.AEM_Privacy_Charter_Page_Locator;
 import automation.library.locator.AEM_Registration_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
@@ -60,6 +61,7 @@ import automation.library.pageObjects.AEM_Login_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
+import automation.library.pageObjects.AEM_Privacy_Charter_Page;
 import automation.library.pageObjects.AEM_Registration_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
@@ -195,6 +197,8 @@ public class PageObjectManager {
 	private Customer_Service_Page_Locator getCustomerServicePageLocator;  
 	private AEM_Customer_Service_Informational_Copy_Page getAEMCustomerServiceInformationalCopyPage;
 	private AEM_Customer_Service_Informational_Copy_Page_Locator getAEMCustomerServiceInformationalCopyPageLocator;
+	private AEM_Privacy_Charter_Page getAEMPrivacyCharterPage;
+	private AEM_Privacy_Charter_Page_Locator getAEMPrivacyCharterPageLocator;
 	
 	public PageObjectManager() {
 		
@@ -677,5 +681,15 @@ public class PageObjectManager {
 	/** Return Instance of AEM Footer Locator Page */
 	public AEM_Customer_Service_Informational_Copy_Page_Locator getAEMCustomerServiceInformationalCopyPageLocator() {
 		return (getAEMCustomerServiceInformationalCopyPageLocator == null) ? getAEMCustomerServiceInformationalCopyPageLocator = new AEM_Customer_Service_Informational_Copy_Page_Locator() : getAEMCustomerServiceInformationalCopyPageLocator;
+	}
+	
+	/** Return Instance of AEM Privacy Charter Page */
+	public AEM_Privacy_Charter_Page getAEMPrivacyCharterPage(WebDriver driver) {
+		return (getAEMPrivacyCharterPage == null) ? getAEMPrivacyCharterPage = new AEM_Privacy_Charter_Page(driver) : getAEMPrivacyCharterPage;
+	}
+	
+	/** Return Instance of AEM Privacy Charter Page Locator */
+	public AEM_Privacy_Charter_Page_Locator getAEMPrivacyCharterPageLocator() {
+		return (getAEMPrivacyCharterPageLocator == null) ? getAEMPrivacyCharterPageLocator = new AEM_Privacy_Charter_Page_Locator() : getAEMPrivacyCharterPageLocator;
 	}
 }

@@ -27,4 +27,3 @@ Feature: OCCP-1561 PLP Breadcrumb
     And scroll up to page
     Then breadcrumb is displayed
     And last breadcrumb is not clickable
-    And close browser

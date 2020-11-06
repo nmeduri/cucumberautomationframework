@@ -10,7 +10,7 @@ import automation.library.cucumber.Constant;
 
 public class Primary_Navigation_Page_Locator {
 	
-	String primaryNavigation = Property.getProperty(Constant.OR_FILE, "primaryNavigation").replace("=", ",");
+	String primaryNavigation = Property.getProperty(Constant.OR_FILE, "primaryNavigation");
 	String primaryNavigationAfterPencilBanner = Property.getProperty(Constant.OR_FILE, "primaryNavigationAfterPencilBanner");
 	
 	/**

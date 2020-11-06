@@ -55,6 +55,11 @@ public class AEM_Link_Existing_Card_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Link_Existing_Card_Url());
 	}
 	
+	/** This function navigate to Link Existing Card Page */
+	public void navigateToLinkExistingCardScreenPage() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Existing_Card_Url());
+	}
+	
 	/** This function clicks on AEM Link Existing Card title */
 	public void clickOnAemLinkExistingCardTitle() throws Exception {
 		$click(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().get_Link_Existing_Card_Title())),40);
@@ -256,5 +261,44 @@ public class AEM_Link_Existing_Card_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 40);
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_NonExisting_Card_Number());
+	}
+	
+	/** update error already link card image */
+	public void updateErrorAlreadyLinkCardImage() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getErrorImageAlreadyLinkCard())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getErrorImageAlreadyLinkCard()), FileReaderManager.getInstance().getAEMDataReader().get_Error_Image_Already_Linked());
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getErrorImageOption())), 5);
+	}
+	
+	/** revert error already link card image */
+	public void revertErrorAlreadyLinkCardImage() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getErrorImageAlreadyLinkCard())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getErrorImageAlreadyLinkCard()), FileReaderManager.getInstance().getAEMDataReader().get_Error_Image_Already_Linked_Change());
+	}
+	
+	/** update try again button for already link card image */
+	public void updateTryAgainButtonAlreadyCardLink() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getTryAgainButtonAlreadyLinkCard())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getTryAgainButtonAlreadyLinkCard()), FileReaderManager.getInstance().getAEMDataReader().get_Try_Again_Button_Already_Linked());
+	}
+	
+	/** revert try again button label for already link card image */
+	public void revertTryAgainButtonAlreadyCardLink() throws Exception {
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getTryAgainButtonAlreadyLinkCard())), 10);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkExistingCardLocatorPage().getTryAgainButtonAlreadyLinkCard()), FileReaderManager.getInstance().getAEMDataReader().get_Try_Again_Button_Already_Linked_Change());
+	}
+	
+	/** verify error image update on screen for already card linked */
+	public void verifyErrorImageUpdateOnScreenForAlreadyCardLinked() throws Exception {
+		String expectedResult = $getAttributeValue($(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Error_Image())), 10), "src");
+		Log.message("expectedResult:- " + expectedResult, true);
+		Log.message("actualResult:- " + FileReaderManager.getInstance().getAEMDataReader().get_Error_Image_Already_Linked(), true);
+		Assert.assertTrue(expectedResult.contains(FileReaderManager.getInstance().getAEMDataReader().get_Error_Image_Already_Linked()));
+	}
+	
+	/** verify button update on screen for already card linked */
+	public void verifyButtonTextUpdateOnScreenForAlreadyCardLinked() throws Exception {
+		String expectedResult = $getText($(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_TryAgain_Button())), 10));
+		Assert.assertEquals(expectedResult, FileReaderManager.getInstance().getAEMDataReader().get_Try_Again_Button_Already_Linked());
 	}
 }

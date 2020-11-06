@@ -10,7 +10,7 @@ import automation.library.logdetail.Log;
 
 public class Link_MasterCard_Page_Locator {
 	
-	String linkMastercardPageTitle = Property.getProperty(Constant.OR_FILE, "linkMastercardPageTitle").replace("=", ",");
+	String linkMastercardPageTitle = Property.getProperty(Constant.OR_FILE, "linkMastercardPageTitle");
 	String mastercardLastName = Property.getProperty(Constant.OR_FILE, "mastercardLastName");
 	String mastercardYOB = Property.getProperty(Constant.OR_FILE, "mastercardYOB");
 	String mastercardYear = Property.getProperty(Constant.OR_FILE, "mastercardYear");
@@ -22,6 +22,9 @@ public class Link_MasterCard_Page_Locator {
 	String mastercardDate = Property.getProperty(Constant.OR_FILE, "mastercardDate");
 	String incorrectMasterCardError = Property.getProperty(Constant.OR_FILE, "incorrectMasterCardError");
 	String customerCareNo = Property.getProperty(Constant.OR_FILE, "customerCareNo");
+	String lastNameLabel = Property.getProperty(Constant.OR_FILE, "lastNameLabel");
+	String continueButtonLabelMasterCard = Property.getProperty(Constant.OR_FILE, "continueButtonLabelMasterCard");
+	String cancelButtonMasterCard = Property.getProperty(Constant.OR_FILE, "cancelButtonMasterCard");
 	
 	
 	/**
@@ -130,5 +133,26 @@ public class Link_MasterCard_Page_Locator {
 	
 	public String get_Customer_Contact_No() {
 		return customerCareNo;
+	}
+	
+	/**
+	 * get Locator - Last Name Label
+	 */
+	public String getLastNameLabel() {
+		return lastNameLabel;
+	}
+	
+	/**
+	 * get Locator - Continue Button Label
+	 */
+	public String getContinueButtonLabel() {
+		return continueButtonLabelMasterCard;
+	}
+	
+	/**
+	 * get Locator - Cancel Button
+	 */
+	public String getCancelButtonMasterCard() {
+		return cancelButtonMasterCard;
 	}
 }

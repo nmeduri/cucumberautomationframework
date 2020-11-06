@@ -44,7 +44,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then first 3 lines of the authored legal disclaimer text should be displayed in mobile
 	Then view more is displayed
 	
-	@RegressionTest @WideScreen @WebView @MobileView @TabletView
+	@RegressionTest @WideScreen @WebView @MobileView @TabletView @TC-2779
 	Scenario: TC-2779, TC-2778, TC-2777, TC-2780 Verification of display of Footer - Desktop Wide 
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -60,8 +60,8 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then footer is displayed
 	Then copy right information should be displayed on the footer
 	
-	@RegressionTest @WebView @WideScreen
-	Scenario: TC-2795, TC-2857 Verification of hover over a link - Desktop 
+	@RegressionTest @WebView @WideScreen @TC-2795
+	Scenario: TC-2795, TC-2857 Verification of hover over a link - Desktop
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And in footer hover on any link on footer

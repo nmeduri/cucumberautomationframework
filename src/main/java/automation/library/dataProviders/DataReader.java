@@ -1127,6 +1127,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
 	/**
 	 * gets Product Code of Add to cart fly out
 	 * 
@@ -1162,6 +1163,18 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Existing Card Url
+	 * 
+	 */
 
+	public String get_Existing_Card_Url() {
+		String existingLinkCardUrl = Property.getProperty(Constant.DATA_FILE, "existingLinkCardUrl");
+		if(existingLinkCardUrl != null)
+			return existingLinkCardUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
 }
 

@@ -32,6 +32,8 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	String linkExistingCardErrorScreenTab = Property.getProperty(Constant.OR_FILE, "linkExistingCardErrorScreenTab");
 	String linkExistingCardTryAgainCTA = Property.getProperty(Constant.OR_FILE, "linkExistingCardTryAgainCTA");
 	String linkExistingCardCancelCTA = Property.getProperty(Constant.OR_FILE, "linkExistingCardCancelCTA");
+	String errorImageAlreayLinkCard = Property.getProperty(Constant.OR_FILE, "errorImageAlreayLinkCard");
+	String tryAgainBtnAlreadyLinkCard = Property.getProperty(Constant.OR_FILE, "tryAgainBtnAlreadyLinkCard");
 	
 	/**
 	 * gets Locator - Link Existing Card title
@@ -229,6 +231,20 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	
 	public String get_Cancel_CTA_AEM() {
 		return linkExistingCardCancelCTA;
+	}
+	
+	/**
+	 * get Locator - Error Image (Already Link Card)
+	 */
+	public String getErrorImageAlreadyLinkCard() {
+		return errorImageAlreayLinkCard;
+	}
+	
+	/**
+	 * get Locator - Try Again Button
+	 */
+	public String getTryAgainButtonAlreadyLinkCard() {
+		return tryAgainBtnAlreadyLinkCard;
 	}
 	
 }

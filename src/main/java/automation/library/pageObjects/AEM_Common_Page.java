@@ -106,6 +106,13 @@ public class AEM_Common_Page extends PageObject {
         }
     }
     
+
+    /** This function clicks on Publish Page */
+    public void clickOnPublishButton() throws Exception {
+    	$click(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())), 5);
+       
+    }
+    
 	/** This function clicks on preview button */
 	public void clickPreviewButton() throws Exception {
 		Thread.sleep(5000);

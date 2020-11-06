@@ -3306,4 +3306,182 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("weeklySignUpPublishUrl is not specified in the Data file.");
 	}
+	
+	/**
+	 * get Data - Link Card Title
+	 * 
+	 */
+	
+	public String get_Link_Card_Title() {
+		String linkMasterCardTitle = Property.getProperty(Constant.AEM_DATA_FILE, "linkMasterCardTitle");
+		if(linkMasterCardTitle != null)
+			return linkMasterCardTitle;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Link Card Title
+	 * 
+	 */
+	
+	public String get_Link_Card_Title_Change() {
+		String linkMasterCardTitleChange = Property.getProperty(Constant.AEM_DATA_FILE, "linkMasterCardTitleChange");
+		if(linkMasterCardTitleChange != null)
+			return linkMasterCardTitleChange;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Link Card Publish Url
+	 * 
+	 */
+	
+	public String get_Link_Card_Publish_Url() {
+		String linkCardPublishUrl = Property.getProperty(Constant.AEM_DATA_FILE, "linkCardPublishUrl");
+		if(linkCardPublishUrl != null)
+			return linkCardPublishUrl;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Last Name Label
+	 * 
+	 */
+	
+	public String get_Last_Name_Label() {
+		String lastNameLabel = Property.getProperty(Constant.AEM_DATA_FILE, "lastNameLabel");
+		if(lastNameLabel != null)
+			return lastNameLabel;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Last Name Label Change
+	 * 
+	 */
+	
+	public String get_Last_Name_Label_Change() {
+		String lastNameLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "lastNameLabelChange");
+		if(lastNameLabelChange != null)
+			return lastNameLabelChange;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Continue Button
+	 * 
+	 */
+	
+	public String get_Continue_Button_Success_Screen() {
+		String continueButtonSuccessScreen = Property.getProperty(Constant.AEM_DATA_FILE, "continueButtonSuccessScreen");
+		if(continueButtonSuccessScreen != null)
+			return continueButtonSuccessScreen;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Continue Button
+	 * 
+	 */
+	
+	public String get_Continue_Button_Success_Screen_Change() {
+		String continueButtonSuccessScreenChange = Property.getProperty(Constant.AEM_DATA_FILE, "continueButtonSuccessScreenChange");
+		if(continueButtonSuccessScreenChange != null)
+			return continueButtonSuccessScreenChange;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Cancel Button
+	 * 
+	 */
+	
+	public String get_Cancel_Button_Master_Card() {
+		String cancelButtonMasterCard = Property.getProperty(Constant.AEM_DATA_FILE, "cancelButtonMasterCard");
+		if(cancelButtonMasterCard != null)
+			return cancelButtonMasterCard;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	/**
+	 * get Data - Cancel Button
+	 * 
+	 */
+	
+	public String get_Cancel_Button_Master_Card_Change() {
+		String cancelButtonMasterCardChange = Property.getProperty(Constant.AEM_DATA_FILE, "cancelButtonMasterCardChange");
+		if(cancelButtonMasterCardChange != null)
+			return cancelButtonMasterCardChange;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Privacy Charter Url
+	 * 
+	 */
+	
+	public String get_Privacy_Charter_Author_Url() {
+		String privacyCharterUrlAuthor = Property.getProperty(Constant.AEM_DATA_FILE, "privacyCharterUrlAuthor");
+		if(privacyCharterUrlAuthor != null)
+			return privacyCharterUrlAuthor;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Error Image Already Linked
+	 * 
+	 */
+	
+	public String get_Error_Image_Already_Linked() {
+		String errorImageCardAlreadyLinked = Property.getProperty(Constant.AEM_DATA_FILE, "errorImageCardAlreadyLinked");
+		if(errorImageCardAlreadyLinked != null)
+			return errorImageCardAlreadyLinked;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Error Image Already Linked
+	 * 
+	 */
+	
+	public String get_Error_Image_Already_Linked_Change() {
+		String errorImageCardAlreadyLinkedChange = Property.getProperty(Constant.AEM_DATA_FILE, "errorImageCardAlreadyLinkedChange");
+		if(errorImageCardAlreadyLinkedChange != null)
+			return errorImageCardAlreadyLinkedChange;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Try Again Button Already Linked
+	 * 
+	 */
+	
+	public String get_Try_Again_Button_Already_Linked() {
+		String tryAgainButtonAlreadyLinkCard = Property.getProperty(Constant.AEM_DATA_FILE, "tryAgainButtonAlreadyLinkCard");
+		if(tryAgainButtonAlreadyLinkCard != null)
+			return tryAgainButtonAlreadyLinkCard;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Try Again Button Already Linked
+	 * 
+	 */
+	
+	public String get_Try_Again_Button_Already_Linked_Change() {
+		String tryAgainButtonAlreadyLinkCardChange = Property.getProperty(Constant.AEM_DATA_FILE, "tryAgainButtonAlreadyLinkCardChange");
+		if(tryAgainButtonAlreadyLinkCardChange != null)
+			return tryAgainButtonAlreadyLinkCardChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
 }
