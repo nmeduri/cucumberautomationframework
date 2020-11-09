@@ -3484,4 +3484,108 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data Data not specified in the Data file.");
 	}
+	
+	/**
+	 * get Data - Max Suggestion Keywords
+	 * 
+	 */
+	
+	public String get_Max_Keywords() {
+		String maxSuggestionKeywords = Property.getProperty(Constant.AEM_DATA_FILE, "maxNumberKeywords");
+		if(maxSuggestionKeywords != null)
+			return maxSuggestionKeywords;
+		else
+			throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Max Suggestion Keywords
+	 * 
+	 */
+	
+	public String get_Max_Keywords_Change() {
+		String maxSuggestionKeywordsChange = Property.getProperty(Constant.AEM_DATA_FILE, "maxNumberKeywordsChange");
+		if(maxSuggestionKeywordsChange != null)
+			return maxSuggestionKeywordsChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Max Suggestion Keywords Title
+	 * 
+	 */
+	
+	public String get_Keywrods_Suggestion_Title() {
+		String titleKeywordSuggestions = Property.getProperty(Constant.AEM_DATA_FILE, "titleKeywordSuggestions");
+		if(titleKeywordSuggestions != null)
+			return titleKeywordSuggestions;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Max Suggestion Keywords Title
+	 * 
+	 */
+	
+	public String get_Keywrods_Suggestion_Title_Change() {
+		String titleKeywordSuggestionsChange = Property.getProperty(Constant.AEM_DATA_FILE, "titleKeywordSuggestionsChange");
+		if(titleKeywordSuggestionsChange != null)
+			return titleKeywordSuggestionsChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Max Category Keywords Title
+	 * 
+	 */
+	
+	public String get_Keywrods_Category_Title() {
+		String titleCategorySuggestions = Property.getProperty(Constant.AEM_DATA_FILE, "titleCategorySuggestions");
+		if(titleCategorySuggestions != null)
+			return titleCategorySuggestions;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Max Category Keywords Title
+	 * 
+	 */
+	
+	public String get_Keywrods_Category_Title_Change() {
+		String titleCategorySuggestionsChange = Property.getProperty(Constant.AEM_DATA_FILE, "titleCategorySuggestionsChange");
+		if(titleCategorySuggestionsChange != null)
+			return titleCategorySuggestionsChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Max Product Keywords
+	 * 
+	 */
+	
+	public String get_Keywrods_Product_Title() {
+		String titleProductSuggestions = Property.getProperty(Constant.AEM_DATA_FILE, "titleProductSuggestions");
+		if(titleProductSuggestions != null)
+			return titleProductSuggestions;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Max Product Keywords
+	 * 
+	 */
+	
+	public String get_Keywrods_Product_Title_Change() {
+		String titleProductSuggestionsChange = Property.getProperty(Constant.AEM_DATA_FILE, "titleProductSuggestionsChange");
+		if(titleProductSuggestionsChange != null)
+			return titleProductSuggestionsChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
 }

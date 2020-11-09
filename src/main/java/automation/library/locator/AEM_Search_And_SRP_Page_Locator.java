@@ -1,5 +1,6 @@
 package automation.library.locator;
 
+
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
@@ -22,6 +23,14 @@ public class AEM_Search_And_SRP_Page_Locator {
 	String searchBarField = Property.getProperty(Constant.OR_FILE, "searchBarField").replace("=", ",");
 	String desktopPlaceHolderLabel = Property.getProperty(Constant.OR_FILE, "desktopPlaceHolderLabel");
 	String searchLabelAEM = Property.getProperty(Constant.OR_FILE, "searchLabelAEM");
+	String maxNumberSuggestionKeywords = Property.getProperty(Constant.OR_FILE, "maxNumberSuggestionKeywords");
+	String maxNumberCategorySuggestion = Property.getProperty(Constant.OR_FILE, "maxNumberCategorySuggestion");
+	String maxNumberProductSuggestion = Property.getProperty(Constant.OR_FILE, "maxNumberProductSuggestion");
+	String suggestionsLabelAEM = Property.getProperty(Constant.OR_FILE, "suggestionsLabelAEM");
+	String categoryLabelAEM = Property.getProperty(Constant.OR_FILE, "categoryLabelAEM");
+	String productLabelAEM = Property.getProperty(Constant.OR_FILE, "productLabelAEM");
+	String autoCompleteOnAEM = Property.getProperty(Constant.OR_FILE, "autoCompleteOnAEM");
+	String autoCompleteOffAEM = Property.getProperty(Constant.OR_FILE, "autoCompleteOffAEM");
 
     /**
 	 * gets Locator - Search Title
@@ -115,5 +124,61 @@ public class AEM_Search_And_SRP_Page_Locator {
 	 */
 	public String getSearchLabel() {
 		return searchLabelAEM;
+	}
+	
+	/**
+	 * get Locator - Suggestion keyword
+	 */
+	public String getSuggestionKeyword() {
+		return maxNumberSuggestionKeywords;
+	}
+	
+	/**
+	 * get Locator - Category Keyword
+	 */
+	public String getCategoryKeyword() {
+		return maxNumberCategorySuggestion;
+	}
+	
+	/**
+	 * get Locator - Product Suggestion Keyword
+	 */
+	public String getProductSuggestionKeyword() {
+		return maxNumberProductSuggestion;
+	}
+	
+	/**
+	 * get Locator - Suggestion label
+	 */
+	public String getSuggestionLabel() {
+		return suggestionsLabelAEM;
+	}
+	
+	/**
+	 * get Locator - Category Label
+	 */
+	public String getCategoryLabel() {
+		return categoryLabelAEM;
+	}
+	
+	/**
+	 * get Locator - Product Label
+	 */
+	public String getProductLabel() {
+		return productLabelAEM;
+	}
+	
+	/**
+	 * get Locator - Auto Complete ON
+	 */
+	public String getAutoCompleteON() {
+		return autoCompleteOnAEM;
+	}
+	
+	/**
+	 * get Locator - Auto Complete OFF
+	 */
+	public String getAutoCompleteOff() {
+		return autoCompleteOffAEM;
 	}
 }

@@ -189,4 +189,86 @@ public class AEM_Search_And_SRP_Page extends PageObject {
 		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Place_Holder_Label() + "']"));
 		PageObject.getDriver().switchTo().parentFrame();
 	}
+	
+	/** update max number of suggestions keyword */
+	public void updateMaxNumberOfSuggestionsKeyword() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionKeyword())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionKeyword())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Max_Keywords());
+	}
+	
+	/** revert max number of suggestions keyword */
+	public void revertMaxNumberOfSuggestionsKeyword() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionKeyword())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionKeyword())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Max_Keywords_Change());
+	}
+	
+	/** update max number of category keyword */
+	public void updateMaxNumberOfCategoryKeyword() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryKeyword())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryKeyword())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Max_Keywords());
+	}
+	
+	/** revert max number of suggestions keyword */
+	public void revertMaxNumberOfCategoryKeyword() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryKeyword())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryKeyword())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Max_Keywords_Change());
+	}
+	
+	/** update max number of product suggestion keyword */
+	public void updateMaxNumberOfProductSuggestionKeyword() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductSuggestionKeyword())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductSuggestionKeyword())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Max_Keywords());
+	}
+	
+	/** revert max number of suggestions keyword */
+	public void revertMaxNumberOfProductSuggestionKeyword() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductSuggestionKeyword())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductSuggestionKeyword())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Max_Keywords_Change());
+	}
+	
+	/** update keyword suggestions label */
+	public void updateSuggestionsLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionLabel())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Keywrods_Suggestion_Title());
+	}
+	
+	/** revert keyword suggestions label */
+	public void revertSuggestionsLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionLabel())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getSuggestionLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Keywrods_Suggestion_Title_Change());
+	}
+	
+	/** update keyword category label */
+	public void updateCategoryLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryLabel())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Keywrods_Category_Title());
+	}
+	
+	/** revert keyword suggestions label */
+	public void revertCategoryLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryLabel())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getCategoryLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Keywrods_Category_Title_Change());
+	}
+	
+	/** update keyword product label */
+	public void updateProductLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductLabel())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Keywrods_Product_Title());
+	}
+	
+	/** revert keyword suggestions label */
+	public void revertProductLabel() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductLabel())), 10);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getProductLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Keywrods_Product_Title_Change());
+	}
+	
+	/** click on auto complete enable */
+	public void clickOnAutoCompleteEnable() throws Exception {
+         $click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getAutoCompleteON())), 5);
+	}
+	
+	/** click on auto complete disable */
+	public void clickOnAutoCompleteDisable() throws Exception {
+         $click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMSearchAndSRPPageLocator().getAutoCompleteOff())), 5);
+	}
 }

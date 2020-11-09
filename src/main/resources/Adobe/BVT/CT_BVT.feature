@@ -7,7 +7,8 @@ Feature: Health Check BVT
     Given open browser
     When pdp url is available
     When pdp page is displayed for the product
-    Then the product title is displayed on the product 
+#    Then the product title is displayed on the product 
+    
     
     @WebView @MobileView @WideScreen
     Scenario: TC-2591 Verify the product card displays the product primary image on PLP
