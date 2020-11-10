@@ -4,6 +4,7 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
+import automation.library.locator.AEM_Cart_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
 
 import automation.library.locator.AEM_Feature_List_Page_Locator;
@@ -23,6 +24,7 @@ import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
 import automation.library.locator.Banners_Locator;
 import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
+import automation.library.locator.Cart_Page_Locator;
 import automation.library.locator.Checkout_Page_Locator;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Customer_Service_Page_Locator;
@@ -51,6 +53,7 @@ import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
+import automation.library.pageObjects.AEM_Cart_Page;
 import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_Featured_List_Page;
 import automation.library.pageObjects.AEM_Customer_Service_Informational_Copy_Page;
@@ -69,6 +72,7 @@ import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
 import automation.library.pageObjects.Banner_Pages;
 import automation.library.pageObjects.Broad_Promo_Tiles_Page;
+import automation.library.pageObjects.Cart_Page;
 import automation.library.pageObjects.Checkout_Page;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Customer_Service_Page;
@@ -201,6 +205,10 @@ public class PageObjectManager {
 	private Customer_Service_Page_Locator getCustomerServicePageLocator;  
 	private AEM_Customer_Service_Informational_Copy_Page getAEMCustomerServiceInformationalCopyPage;
 	private AEM_Customer_Service_Informational_Copy_Page_Locator getAEMCustomerServiceInformationalCopyPageLocator;
+	private Cart_Page getCartPage;
+	private Cart_Page_Locator getCartPageLocator; 
+	private AEM_Cart_Page getAEMCartPage;
+	private AEM_Cart_Page_Locator getAEMCartPageLocator; 
 	private AEM_Privacy_Charter_Page getAEMPrivacyCharterPage;
 	private AEM_Privacy_Charter_Page_Locator getAEMPrivacyCharterPageLocator;
 	
@@ -698,10 +706,32 @@ public class PageObjectManager {
 		return (getAEMCustomerServiceInformationalCopyPageLocator == null) ? getAEMCustomerServiceInformationalCopyPageLocator = new AEM_Customer_Service_Informational_Copy_Page_Locator() : getAEMCustomerServiceInformationalCopyPageLocator;
 	}
 	
+	/** Return Instance of Cart Page */
+	public Cart_Page getCartPage(WebDriver driver) {
+		return (getCartPage == null) ? getCartPage = new Cart_Page(driver) : getCartPage;
+	}
+	
 	/** Return Instance of AEM Privacy Charter Page */
 	public AEM_Privacy_Charter_Page getAEMPrivacyCharterPage(WebDriver driver) {
 		return (getAEMPrivacyCharterPage == null) ? getAEMPrivacyCharterPage = new AEM_Privacy_Charter_Page(driver) : getAEMPrivacyCharterPage;
 	}
+	
+	/** Return Instance of Cart Locator Page */
+	public Cart_Page_Locator getCartPageLocator() {
+		return (getCartPageLocator == null) ? getCartPageLocator = new Cart_Page_Locator() : getCartPageLocator;
+	}
+	
+	/** Return Instance of AEM Cart Page */
+	public AEM_Cart_Page getAEMCartPage(WebDriver driver) {
+		return (getAEMCartPage == null) ? getAEMCartPage = new AEM_Cart_Page(driver) : getAEMCartPage;
+	}
+	
+	/** Return Instance of AEM Cart Locator Page */
+	public AEM_Cart_Page_Locator getAEMCartPageLocator() {
+		return (getAEMCartPageLocator == null) ? getAEMCartPageLocator = new AEM_Cart_Page_Locator() : getAEMCartPageLocator;
+	}
+	
+	
 	
 	/** Return Instance of AEM Privacy Charter Page Locator */
 	public AEM_Privacy_Charter_Page_Locator getAEMPrivacyCharterPageLocator() {

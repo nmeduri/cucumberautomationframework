@@ -33,8 +33,8 @@ Feature: OCCP-1030 Footer : Simple Footer
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2840, TC-2849 Verification of options present in Simple Footer - Desktop
-	Given pdp url is available
-	When pdp page is displayed for the product
+	Given footer url is available
+	When footer page is displayed
 	Then editable clickable text Terms and conditions is displayed
 	Then editable clickable text privacy and policy is displayed
 	Then editable clickable text site map is displayed

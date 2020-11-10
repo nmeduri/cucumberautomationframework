@@ -40,12 +40,12 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 	}
 	
 	@And("user should enter a loyalty card number that is deactivated")
-	public void user_enter__deactivated_card_number() throws Exception {
+	public void user_enter_deactivated_card_number() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Deactivated_Card_Number();
 	}
 	
 	@And("user enters a loyalty card number")
-	public void user_enter__loyalty_card_number() throws Exception {
+	public void user_enter_loyalty_card_number() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Deactivated_Card_Number();
 	}
 	

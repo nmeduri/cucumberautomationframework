@@ -332,4 +332,17 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("customerServicePageUrl not specified in the Configuration.properties file.");	
 	}
+	
+	/**
+	 * gets Cart page url
+	 * 
+	 */
+	
+	public String getCartUrl() {
+		String url = Property.getProperty(Constant.DATA_FILE, "cartUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("simpleHeaderCheckoutUrl not specified in the Configuration.properties file.");
+	}
 }

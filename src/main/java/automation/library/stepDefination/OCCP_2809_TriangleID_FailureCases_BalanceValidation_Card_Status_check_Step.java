@@ -31,8 +31,8 @@ public class OCCP_2809_TriangleID_FailureCases_BalanceValidation_Card_Status_che
 		loginPage = testContext.getPageObjectManager().getLoginPage(driver);
 		configFileReader = new ConfigFileReader();
 	}
-		@And ("user enters a loyalty card number that is closed")
-		public void user_enter_closed_card_number() throws Exception {
+		@And ("user enters a closed loyalty card number")
+		public void enter_closed_card_number() throws Exception {
 			testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Closed_Card_Number();
 		}
 		@Then ("verify an error message is displayed informing card is closed")

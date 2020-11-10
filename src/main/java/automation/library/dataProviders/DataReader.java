@@ -972,7 +972,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Login Fr locale url not specified in the Data file.");
 	}
-
 	/**
 	 * gets Login Page Publish URL En locale
 	 * 
@@ -1019,7 +1018,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-
 
 	/**
 	 * gets Login Page Publish URL FR locale
@@ -1081,7 +1079,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-	
 
 	/**
 	 * gets App store Url
@@ -1115,7 +1112,6 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-	
 
 	/**
 	 * gets Sign Up Link

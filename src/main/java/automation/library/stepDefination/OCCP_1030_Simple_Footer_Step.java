@@ -502,5 +502,11 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 	public void pdp_page_is_displayed_for_the_product() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).display_Footer_Page();
 	}
+	
+	@Given("footer url is available") 
+	public void footer_url_is_available() throws Exception {
+		
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).navigate_To_Footer_Page();
+	}
 
 }

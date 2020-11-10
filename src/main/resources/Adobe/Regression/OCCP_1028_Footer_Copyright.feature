@@ -44,10 +44,10 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then first 3 lines of the authored legal disclaimer text should be displayed in mobile
 	Then view more is displayed
 	
-	@RegressionTest @WideScreen @WebView @MobileView @TabletView @TC-2779
+	@RegressionTest @WideScreen @WebView @MobileView @TabletView
 	Scenario: TC-2779, TC-2778, TC-2777, TC-2780 Verification of display of Footer - Desktop Wide 
-	Given pdp url is available
-	When pdp page is displayed for the product
+	Given footer url is available
+	When footer page is displayed
 	Then copy right text is displayed
 	And canadian tire logo should be displayed
 	Then copy right label should be displayed

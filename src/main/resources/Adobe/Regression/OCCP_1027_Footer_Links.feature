@@ -158,6 +158,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 		@RegressionTest @WebView @WideView @TC-2101
 		Scenario: TC-2101, 2117 User clicks on the links listed under four sections (Customer Support, Services & Solutions, About Us, Legal)
+	
 		Given pdp url is available
 		When pdp page is displayed for the product
 		And customer support section is displayed

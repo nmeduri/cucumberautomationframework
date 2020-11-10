@@ -1195,6 +1195,7 @@ public class AEM_Footer_Page_Locator {
 	public String get_Accessibility_Logo_Image_AEM() {
 		return accessibilityLogoImageAEM;
 	}
+
 	/**
 	 * gets Locator -Click on Accessibility Link Target
 	 */

@@ -1,3 +1,4 @@
+
 Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 
 	Description: To test the ADOBE Test Cases for the story OCCP-3337
@@ -19,6 +20,11 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	@RegressionTest @WebView
 	Scenario: TC-3414	OCCP-3337:FOOTER:Footer E-mail Sign Up, App Download, Accessibility-Verify when user hovers over a link an underline is displayed
 	When login url is available
+	And login page is displayed
+	Then standard footer is displayed
+	And footer links section should be displayed
+	Then link should be underlined when hovers over any link on the footer links section
+	When fr locale login url is available
 	And login page is displayed
 	Then standard footer is displayed
 	And footer links section should be displayed

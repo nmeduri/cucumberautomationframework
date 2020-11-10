@@ -11,7 +11,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-2809
 	And user click on sign in button
 	Then link card screen should be displayed
 	And user cick on triangle rewards card
-	And user enters a loyalty card number that is closed
+	And user enters a closed loyalty card number
 	And user click on continue button
 	Then verify an error message is displayed informing card is closed
 	And verify when user click on try again button 
@@ -20,9 +20,9 @@ Description: To test the ADOBE Test Cases for the story OCCP-2809
 	And user click on continue button
 	And verify when user click on cancel button
 	Then user should navigate to link cards screen
+	And user cick on triangle rewards card
 	And user enters a Non-Existing card number
 	And user click on continue button
 	Then verify an error message is displayed informing card does not exist 
 	And verify when user click on try again button 
 	Then user should navigate to link existing triangle card screen without prepopulated data
-	Given close Browser

@@ -973,6 +973,13 @@ public class Footer_Page extends PageObject {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
 	}
 	
+	/** This function to display Footer section*/
+	public void displayFooterSection() throws Exception {
+		//By footerSection = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section());
+		//testContext.getPageObjectManager().getPageObject(driver).scrollDown(footerSection, 10);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
+	}
+	
 	/** verify Learn more link is getting navigate on learn more section */
 	public void verifyLearnMoreLinkNavigation() throws Exception {
 		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Learn_More()), "href"), FileReaderManager.getInstance().getDataReader().get_Learn_More_Link());
@@ -997,12 +1004,7 @@ public class Footer_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()));
 	}
 	
-	/** This function to display Footer section*/
-	public void displayFooterSection() throws Exception {
-		//By footerSection = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section());
-		//testContext.getPageObjectManager().getPageObject(driver).scrollDown(footerSection, 10);
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
-	}
+	
 	
 	
 	/** verify App Store Logo link is getting navigate on App Store section on new tab */
@@ -1018,6 +1020,7 @@ public class Footer_Page extends PageObject {
 			fail();
 		}
 	}
+	
 
 	/** This function to display Footer Links section*/
 	public void displayFooterLinksSection() throws Exception {

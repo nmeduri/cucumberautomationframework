@@ -3528,6 +3528,86 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("description4OfLinkListAEM is not specified in the Data file.");
 	}
+
+	/**
+	 * gets Cart Add to Wishlist
+	 * 
+	 */
+	
+	public String get_Add_To_Wishlist_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "addToWishlistAEMUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Wishlist Item Added Message Text
+	 * 
+	 */
+	
+	public String get_Wishlist_Item_Added_Label() {
+		String getText = Property.getProperty(Constant.AEM_DATA_FILE, "wishlistItemAddedLabel");
+		if(getText != null)
+			return getText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets View Wishlist Text
+	 * 
+	 */
+	
+	public String get_View_Wishlist_Label() {
+		String getText = Property.getProperty(Constant.AEM_DATA_FILE, "viewWishlistLabel");
+		if(getText != null)
+			return getText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Wishlist Max Limit Message Text
+	 * 
+	 */
+	
+	public String get_Wishlist_Max_Limit_Message() {
+		String getText = Property.getProperty(Constant.AEM_DATA_FILE, "wishlistMaxLimitMessage");
+		if(getText != null)
+			return getText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Close Text
+	 * 
+	 */
+	
+	public String get_Close_Label() {
+		String getText = Property.getProperty(Constant.AEM_DATA_FILE, "closeLabel");
+		if(getText != null)
+			return getText;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+
+	/**
+	 * gets Services url
+	 * 
+	 */
+	
+	public String get_Services_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "servicesAEMUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
 	/**
 	 * get Data - Description 5 of Link List
 	 * 

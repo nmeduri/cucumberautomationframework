@@ -231,7 +231,9 @@ public class Header_Page extends PageObject {
 	
 	/** This function clicks on Hamburger menu */
 	public void clickOnHamburgerMenu() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hamburger_Menu()));
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hamburger_Menu())),40);
+		//$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hamburger_Menu())),40);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().get_Header_Locator_Page().get_Hamburger_Menu())));
 	}
 	
 	/** This function clicks on Side menu cross */

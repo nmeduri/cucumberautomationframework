@@ -761,6 +761,7 @@ public class PDP_PageLocator {
 	public String get_Resource_Section() {
 		return resourceSection;
 	}
+
 	/**
 	 * gets Locator - Add To Cart Fly out
 	 */
