@@ -70,6 +70,18 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("Url Data not specified in the Data file.");
 	}
+	/**
+	 * gets Header Author Url
+	 * 
+	 */
+	
+	public String get_Header_Author_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "headerAuthorUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
 
 	/**
 	 * gets Search Bar Url
@@ -2591,6 +2603,228 @@ public class AEMDataReader {
 			return pricingPolicyUrlChanges;
 		throw new RuntimeException("Data not specified in the Data file.");
 	}
+	
+	/**
+	 * 
+	 * get Data -brand Image alt Text
+	 * 
+	 */
+	public String get_brand_Image_alt_Text() {
+		String brandImagealtText = Property.getProperty(Constant.AEM_DATA_FILE, "brandImagealtText");
+		if(brandImagealtText != null)
+			return brandImagealtText;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -brand Image area label
+	 * 
+	 */
+	public String get_brand_Image_area_label() {
+		String area_label = Property.getProperty(Constant.AEM_DATA_FILE, "brandImageAriaLabel");
+		if(area_label != null)
+			return area_label;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -brand caption text
+	 * 
+	 */
+	public String get_brand_caption_text() {
+		String brandCaption = Property.getProperty(Constant.AEM_DATA_FILE, "brandCaptionText");
+		if(brandCaption != null)
+			return brandCaption;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Courtesy text
+	 * 
+	 */
+	public String get_Courtesy_text() {
+		String CourtesyText = Property.getProperty(Constant.AEM_DATA_FILE, "CourtesyText");
+		if(CourtesyText != null)
+			return CourtesyText;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Courtesy URL
+	 * 
+	 */
+	public String get_Courtesy_Link() {
+		String CourtesyLink = Property.getProperty(Constant.AEM_DATA_FILE, "CourtesyLinkURL");
+		if(CourtesyLink != null)
+			return CourtesyLink;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -CustomerService Label
+	 * 
+	 */
+	public String get_CustomerService_Label() {
+		String CustomerServiceLabel = Property.getProperty(Constant.AEM_DATA_FILE, "CustomerServiceLabel");
+		if(CustomerServiceLabel != null)
+			return CustomerServiceLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -CustomerService URL
+	 * 
+	 */
+	public String get_CustomerService_URL() {
+		String CustomerService = Property.getProperty(Constant.AEM_DATA_FILE, "CustomerServiceURL");
+		if(CustomerService != null)
+			return CustomerService;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Language Label
+	 * 
+	 */
+	public String get_Language_Label(){
+		String LanguageLabel = Property.getProperty(Constant.AEM_DATA_FILE, "LanguageLabel");
+		if(LanguageLabel != null)
+			return LanguageLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Account Label
+	 * 
+	 */
+	public String get_Account_Label(){
+		String AccountLabel = Property.getProperty(Constant.AEM_DATA_FILE, "AccountsLabel");
+		if(AccountLabel != null)
+			return AccountLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -SignIn Label
+	 * 
+	 */
+	public String get_signin_Label(){
+		String SigninLabel = Property.getProperty(Constant.AEM_DATA_FILE, "SignInLabel");
+		if(SigninLabel != null)
+			return SigninLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -SignIn URL
+	 * 
+	 */
+	public String get_signin_URL(){
+		String SigninURL = Property.getProperty(Constant.AEM_DATA_FILE, "SignInURL");
+		if(SigninURL != null)
+			return SigninURL;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Or Text
+	 * 
+	 */
+	public String get_Or_Text(){
+		String OrText = Property.getProperty(Constant.AEM_DATA_FILE, "OrText");
+		if(OrText != null)
+			return OrText;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Resister Label
+	 * 
+	 */
+	public String get_Resister_Label(){
+		String ResisterLabel = Property.getProperty(Constant.AEM_DATA_FILE, "ResisterLabel");
+		if(ResisterLabel != null)
+			return ResisterLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Register URL
+	 * 
+	 */
+	public String get_ResisterURL(){
+		String RegisterURL = Property.getProperty(Constant.AEM_DATA_FILE, "ResisterURL");
+		if(RegisterURL != null)
+			return RegisterURL;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -TriangleReward Label
+	 * 
+	 */
+	public String get_TriangleReward_Label(){
+		String TriangleRewardLabel = Property.getProperty(Constant.AEM_DATA_FILE, "TriangleRewardLabel");
+		if(TriangleRewardLabel != null)
+			return TriangleRewardLabel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -Greeting Text
+	 * 
+	 */
+	public String get_GreetingText(){
+		String GreetingText = Property.getProperty(Constant.AEM_DATA_FILE, "GreetingText");
+		if(GreetingText != null)
+			return GreetingText;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -SignOut label
+	 * 
+	 */
+	public String get_SignOutText(){
+		String signOut = Property.getProperty(Constant.AEM_DATA_FILE, "Signoutlabel");
+		if(signOut != null)
+			return signOut;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -TriangleRewardsBalance
+	 * 
+	 */
+	public String get_TriangleRewardsBalance(){
+		String TriangleRewardsBalance = Property.getProperty(Constant.AEM_DATA_FILE, "TriangleRewardsBalance");
+		if(TriangleRewardsBalance != null)
+			return TriangleRewardsBalance;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -AccountOption1 label
+	 * 
+	 */
+	public String get_AccountOption1(){
+		String AccountOption1 = Property.getProperty(Constant.AEM_DATA_FILE, "AccountOption1");
+		if(AccountOption1 != null)
+			return AccountOption1;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data -AccountOption1 URL
+	 * 
+	 */
+	public String get_AccountOption1URL(){
+		String AccountOption1URL = Property.getProperty(Constant.AEM_DATA_FILE, "AccountOption1URL");
+		if(AccountOption1URL != null)
+			return AccountOption1URL;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
 	/**
 	 * 
 	 * get Data - Available At Checkout

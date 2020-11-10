@@ -182,6 +182,77 @@ public class OCCP_2847_Header_MainNavigation_PencilBanner_Steps extends BaseClas
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_Registration();
 
 	}
+	@When ("AEM author with access to configure header on the page")
+	public void aem_author_with_access_to_configure_intial_header_on_the_page() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).navigateTo_HeaderComponent_Page();
+	}
+	@And ("click on pencil banner component")
+	public void click_on_pencil_banner_component() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).clickHeaderComponent();
+	}
+	@Then ("configure Brand Value Props")
+	public void configure_Brand_Value_Props() throws Exception {
+		//testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).updateBrandImageOnHeaderComponent();
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).updateBrandImageAltText();
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).updateBrandImageAreaLabel();
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).updateBrandCaptionText();
 
+	}
+	@And ("Value of Brand Value Props is updated on the site")
+	public void Brand_Value_Props_is_updated_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).displayBrandValueProp();
+		}
+	@Then ("Verify the brandvalue prop field is mandatory")
+	public void Brand_Value_Props_is_mandatory() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).doNot_Enter_BrandValueProp_And_Click_Continue();
+		}
+	@Then ("configure Courtesy Text and Link")
+	public void configure_Courtesy_Text_and_Link() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).Update_CourtesyLink();
+		}
+	@And ("Value of Courtesy Text and Link is updated on the site")
+	public void courtesy_Text_and_Link_updated_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).display_configure_courtesy();
+		}
+	@Then ("configure Cutomer Service text and link")
+	public void configure_Account_Customer_Service_and_FR() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).Update_CustomerService_Link();
+	}
+	@And ("Value of Cutomer Service and Languange text and link is updated on the site")
+	public void CustomerService_Language_Text_and_Link_updated_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).display_customerService_language_Link();
+	}
+	@Then ("configure language text and link")
+	public void configure_language_text_link() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).Update_Language_Link();
+	}
+	@And ("click on Account menu component")
+	public void click_accounts_component() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).clickAccountComponent();
+	}
+	@Then ("configure Account options")
+	public void configure_account_option() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).updateAccountOption();
+	}
+	@And ("account option is updated on the site")
+	public void account_option_is_updated_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).displayUpdatedAccountOption();
+	}
+	@Then ("click on account option after author")
+	public void Click_account_option() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).clickUpdatedAccountlink();
+	}
+	@And ("validate the account options are updated on the site")
+	public void validate_the_account_options_are_updated_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).UpdatedAccountOption();
+	}
+	@And ("validate the account options are available for Unauthenticated User")
+	public void validate_the_account_options_are_available_for_unauthenticated_User() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).UpdatedAccountOption();
+	}
+	 @Then ("validate the account options URL link are updated on the site")
+	 public void validate_the_account_options_URL_are_updated_on_the_site() throws Exception {
+			testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).displayUpdatedAccountOptionURLOnSite();
+		}
 }
 

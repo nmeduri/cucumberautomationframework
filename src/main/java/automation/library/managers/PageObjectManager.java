@@ -10,6 +10,7 @@ import automation.library.locator.AEM_Feature_List_Page_Locator;
 import automation.library.locator.AEM_Customer_Service_Informational_Copy_Page_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
+import automation.library.locator.AEM_Header_Page_Locator;
 import automation.library.locator.AEM_Link_Card_Page_Locator;
 import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
 import automation.library.locator.AEM_Login_Page_Locator;
@@ -55,6 +56,7 @@ import automation.library.pageObjects.AEM_Featured_List_Page;
 import automation.library.pageObjects.AEM_Customer_Service_Informational_Copy_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
+import automation.library.pageObjects.AEM_Header_Page;
 import automation.library.pageObjects.AEM_Link_Card_Page;
 import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
 import automation.library.pageObjects.AEM_Login_Page;
@@ -178,6 +180,8 @@ public class PageObjectManager {
 	private AEM_Link_Card_Page_Locator getAEMLInkCardPageLocator;
 	private AEM_Footer_Page_Locator getAEMFooterLocatorPage;
 	private AEM_Footer_Page getAEMFooterPage; 
+	private AEM_Header_Page_Locator getAEMHeaderLocatorPage;
+	private AEM_Header_Page getAEMHeaderPage; 
 	private Checkout_Page getCheckoutPage; 
 	private Checkout_Page_Locator getCheckoutPageLocator;
 	private AEM_Simple_Header_Checkout_Flow_Page getAEMSimpleHeaderCheckoutFlowPage;
@@ -594,6 +598,17 @@ public class PageObjectManager {
 	public AEM_Footer_Page_Locator getAEMFooterLocatorPage() {
 		return (getAEMFooterLocatorPage == null) ? getAEMFooterLocatorPage = new AEM_Footer_Page_Locator() : getAEMFooterLocatorPage;
 	}
+
+	/** Return Instance of AEM Header Page */
+	public AEM_Header_Page getAEMHeaderPage(WebDriver driver) {
+		return (getAEMHeaderPage == null) ? getAEMHeaderPage = new AEM_Header_Page(driver) : getAEMHeaderPage;
+	}
+	
+	/** Return Instance of AEM Header Locator Page */
+	public AEM_Header_Page_Locator getAEMHeaderLocatorPage() {
+		return (getAEMHeaderLocatorPage == null) ? getAEMHeaderLocatorPage = new AEM_Header_Page_Locator() : getAEMHeaderLocatorPage;
+	}
+
 	/** Return Instance of Checkout Page */
 	public Checkout_Page getCheckoutPage(WebDriver driver) {
 		return (getCheckoutPage == null) ? getCheckoutPage = new Checkout_Page(driver) : getCheckoutPage;

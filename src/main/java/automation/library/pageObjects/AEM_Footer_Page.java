@@ -1,15 +1,12 @@
 package automation.library.pageObjects;
 
 import static org.testng.Assert.fail;
-
 import java.util.List;
 import java.util.Set;
-
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import automation.library.cucumber.TestContext;
@@ -33,7 +30,6 @@ import automation.library.selenium.core.Element;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import net.bytebuddy.implementation.bytecode.constant.TextConstant;
-
 /**
  * This file contains the functions of AEM footer
  * 
@@ -50,7 +46,6 @@ public class AEM_Footer_Page extends PageObject {
 		testContext = new TestContext();
 
 	}
-
 	/** This function navigate to footer Component Page */
 	public void navigateTo_FooterComponent_Page() throws Exception {
 
@@ -112,7 +107,7 @@ public class AEM_Footer_Page extends PageObject {
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_LegalURL())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Footer_LegalURL());
 	} 
 	
-	/** This functions verify legal text label is successfully updated on site */
+	/** This functions verify legal url label is successfully updated on site */
 	public void displayUpdatedLegalTextURLOnSite() throws Exception {
 	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Legal()));
@@ -211,8 +206,9 @@ public class AEM_Footer_Page extends PageObject {
 	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy()));
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
-		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_privacyPolicyURL() + "']"));
-		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		$displayFindElement(By.xpath("//*[text()='" + driver.getTitle() + "']"));
+		
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		PageObject.getDriver().switchTo().parentFrame();
 	}
 	/** Update site map text*/
@@ -259,7 +255,7 @@ public class AEM_Footer_Page extends PageObject {
 	    testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Site_Map()));
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
-		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_siteMapURL() + "']"));
+		$displayFindElement(By.xpath("//*[text()='" +   driver.getTitle()+ "']"));
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		PageObject.getDriver().switchTo().parentFrame();
 	}
@@ -307,11 +303,8 @@ public class AEM_Footer_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility()));
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
-		$displayFindElement(By.xpath("//*[text()='" +  FileReaderManager.getInstance().getAEMDataReader().get_Footer_AccessibilityURL() + "']"));
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
-		PageObject.getDriver().switchTo().parentFrame();
-		
-}
+		$displayFindElement(By.xpath("//*[text()='" +   driver.getTitle() + "']"));
+	}		
 	/** Update CopyRight text*/
 	public void updateCopyRightTextOfFooterComponent() throws Exception {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().getFooter_CopyrightLabel()));
