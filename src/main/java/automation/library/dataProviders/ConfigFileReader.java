@@ -345,4 +345,17 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("simpleHeaderCheckoutUrl not specified in the Configuration.properties file.");
 	}
+	/**
+	 * gets Customer Service Page Url (FR)
+	 * 
+	 */
+	
+	public String getCustomerServicePageUrl_FR() {
+		String getCustomerServicePageUrlFR = Property.getProperty(Constant.DATA_FILE, "customerServicePageUrl_Fr");
+		Log.message("URL:- " + getCustomerServicePageUrlFR, true);
+		if (getCustomerServicePageUrlFR != null)
+			return getCustomerServicePageUrlFR;
+		else
+			throw new RuntimeException("customerServicePageUrl not specified in the Configuration.properties file.");	
+	}
 }

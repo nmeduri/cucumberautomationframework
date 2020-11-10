@@ -34,6 +34,11 @@ public class Customer_Service_Page extends PageObject{
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getCustomerServicePageUrl());
 	}
 	
+	/** This function navigate to Customer Service page FR */
+	public void navigateTo_Customer_Service_Page_FR() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getCustomerServicePageUrl_FR());
+	}
+	
 	/** This function is verify that Customer Service Page is displayed */
 	public void display_Customer_Service_Page() throws Exception {
 
@@ -54,6 +59,25 @@ public class Customer_Service_Page extends PageObject{
 	public void display_Accordions_Customer_Service_Page() throws Exception {
 		
 		$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getCustomerServicePageLocator().get_Accordions_Customer_Service_Page());
+	}
+	/** This function verify that Customer Service Accordions + icon are displayed*/
+	public void display_Accordions_Plus_icon() throws Exception {
+		
+		$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getCustomerServicePageLocator().get_accordion_plus_icon());
+	}
+    public void display_Accordions_Minus_icon() throws Exception {
+		
+		$display($(Loc.XPATH,testContext.getPageObjectManager().getCustomerServicePageLocator().get_accordion_minus_icon()));
+	}
+	/** This function click Customer Service Accordions + icon */
+	public void click_Accordion_Plus_icon() throws Exception {
+		
+		$click($(Loc.XPATH,testContext.getPageObjectManager().getCustomerServicePageLocator().get_accordion_plus_icon()));
+	}
+	/** This function click Customer Service Accordions - icon */
+	public void click_Accordion_minus_icon() throws Exception {
+		
+		$click($(Loc.XPATH,testContext.getPageObjectManager().getCustomerServicePageLocator().get_accordion_minus_icon()));
 	}
 	/** This function is verify that Customer Service of Multiple Topics are displayed*/
 	public void display_Multiple_Topics_Customer_Service_Page() throws Exception {

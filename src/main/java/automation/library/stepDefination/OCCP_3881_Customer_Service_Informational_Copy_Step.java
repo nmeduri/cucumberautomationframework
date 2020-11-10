@@ -79,6 +79,10 @@ public class OCCP_3881_Customer_Service_Informational_Copy_Step extends BaseClas
 		public void click_on_title_and_content_component() throws Exception {
 			testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPage(PageObject.getDriver()).clickOnTitleAndContentComponent();
 		}
+		@And("click on Accordion component")
+		public void click_on_Accordion_component() throws Exception {
+			testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPage(PageObject.getDriver()).clickOnAccordionComponent();
+		}
 		@Then("update title of customer service")
 		public void update_title_of_customer_service() throws Exception {
 			testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPage(PageObject.getDriver()).updateTitleOfCustomerService();

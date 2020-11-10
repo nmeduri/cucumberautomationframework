@@ -3468,6 +3468,32 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("title5OfLinkListAEM is not specified in the Data file.");
 	}
+	
+	/**
+	 * get Data - Title of Accordion
+	 * 
+	 */
+	
+	public String get_Accordion_Title() {
+		String getAccordionTitle = Property.getProperty(Constant.AEM_DATA_FILE, "AccordionTitle");
+		if(getAccordionTitle != null)
+			return getAccordionTitle;
+		else
+			throw new RuntimeException("AccordionTitle is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - header of Accordion
+	 * 
+	 */
+	
+	public String get_Accordion_header() {
+		String getAccordionHeader = Property.getProperty(Constant.AEM_DATA_FILE, "AccordionHeader1");
+		if(getAccordionHeader != null)
+			return getAccordionHeader;
+		else
+			throw new RuntimeException("Accordion Header is not specified in the Data file.");
+	}
 	/**
 	 * get Data - Description 1 of Link List
 	 * 

@@ -36,16 +36,46 @@ public class AEM_Customer_Service_Informational_Copy_Page extends PageObject{
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getTitleAndContentComponentAEM())),40);
 		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getTitleAndContentComponentAEM())));
 	}
+	/** This function will scroll down to Accordion page */
+	public void scrollDownToAccordion() throws Exception {
+		By goToAccordion = $By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionComponentAEM());
+		testContext.getPageObjectManager().getPageObject(driver).scrollDown(goToAccordion, 10);
+	}
+	/** This function clicks on Accordion component */
+	public void clickOnAccordionComponent() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionComponentAEM())),40);
+	}
 	
 	/** This function update Title of Customer Service  */
 	public void updateTitleOfCustomerService() throws Exception {
 		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getTitleOfCustomerServiceAEM())), 5);
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getTitleOfCustomerServiceAEM())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Customer_Service_Title());
 	}
+	/** This functions verify Accordion title is successfully updated on site */
+	public void displayUpdatedAccordionTitle() throws Exception {
+
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getUpdatedAccordionTitleAEM())),40);
+		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** This function update the Accordion header */
+	public void UpdateAccordionHeader() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionHeader1AEM())), 5);
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionHeader1AEM())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionHeader1AEM())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Accordion_header());
+	}
+	/** This function display updated the Accordion header */
+	public void displayUpdatedAccordionHeader() throws Exception {
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
+
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getupdatedAccordionHeader1AEM())),40);
+		PageObject.getDriver().switchTo().parentFrame();
+		}
 	/** This function to verify Sub Title should be displayed */
 	public void displaySubTitleOfCustomerService() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getSubTitleOfCustomerService())),40);
 	}
+	
 	/** This function navigate to Author Customer Service Page FR locale */
 	public void navigate_To_Author_Customer_Service_Page_Url_Fr() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Customer_Service_Page_Url_Fr());
@@ -61,6 +91,11 @@ public class AEM_Customer_Service_Informational_Copy_Page extends PageObject{
 	public void clickOnLinkListComponent() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getLinkListComponentAEM())),40);
 		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getLinkListComponentAEM())));
+	}
+	/** This function update the title of accordion panel  */
+	public void updateAccordionTitle() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionTitleAEM())), 20);
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionTitleAEM())), 20, FileReaderManager.getInstance().getAEMDataReader().get_Accordion_Title());
 	}
 	/** This function update Title of Link List  */
 	public void updateTitleOfLinkList() throws Exception {

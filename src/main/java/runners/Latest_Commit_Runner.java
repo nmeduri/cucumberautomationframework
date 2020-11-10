@@ -10,9 +10,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/AEM/Regression/OCCP_2847_Header_Main_Navigation_PencilBanner.feature",
+			"classpath:Adobe/Regression/OCCP_1042_CustomerService_Accordion_Authorable.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@AEM",
+			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

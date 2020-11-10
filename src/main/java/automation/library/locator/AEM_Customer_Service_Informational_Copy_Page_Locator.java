@@ -24,6 +24,11 @@ public class AEM_Customer_Service_Informational_Copy_Page_Locator {
 	String description3OfLinkListAEM = Property.getProperty(Constant.OR_FILE, "description3OfLinkListAEM");
 	String description4OfLinkListAEM = Property.getProperty(Constant.OR_FILE, "description4OfLinkListAEM");
 	String description5OfLinkListAEM = Property.getProperty(Constant.OR_FILE, "description5OfLinkListAEM");
+	String accordionComponentAEM = Property.getProperty(Constant.OR_FILE, "AccordionAEM");
+	String AccordianTitleAEM=Property.getProperty(Constant.OR_FILE, "AccordianTitleAEM");
+	String AccordianTitleDisplayAEM=Property.getProperty(Constant.OR_FILE, "AccordianTitleDisplayAEM");
+	String accordionHeader1AEM=Property.getProperty(Constant.OR_FILE, "accordionHeader1AEM");
+	String updatedAccordionHeader1AEM=Property.getProperty(Constant.OR_FILE, "updatedAccordionHeader1AEM");
 	
 	/**
 	 * gets Locator - AEM Title And Content Component
@@ -35,12 +40,54 @@ public class AEM_Customer_Service_Informational_Copy_Page_Locator {
 	}
 	
 	/**
+	 * gets Locator - AEM accordion Component
+	 * 
+	 */
+
+	public String getAccordionComponentAEM() {
+		return accordionComponentAEM;	
+	}
+	
+	/**
+	 * gets Locator -Accordion AEM Title 
+	 * 
+	 */
+
+	public String getAccordionTitleAEM() {
+		return AccordianTitleAEM;	
+	}
+	/**
+	 * gets Locator - Accordion header1
+	 * 
+	 */
+
+	public String getAccordionHeader1AEM() {
+		return accordionHeader1AEM;	
+	}
+	/**
+	 * gets Locator -updated Accordion header1
+	 * 
+	 */
+
+	public String getupdatedAccordionHeader1AEM() {
+		return updatedAccordionHeader1AEM;	
+	}
+	
+	/**
 	 * gets Locator - AEM Title of customer service
 	 * 
 	 */
 
 	public String getTitleOfCustomerServiceAEM() {
 		return titleOfCustomerServiceAEM;	
+	}
+	/**
+	 * gets Locator - Updated AEM accordion title display
+	 * 
+	 */
+
+	public String getUpdatedAccordionTitleAEM() {
+		return AccordianTitleDisplayAEM;	
 	}
 	
 	/**
