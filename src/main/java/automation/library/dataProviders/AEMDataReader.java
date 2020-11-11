@@ -3928,4 +3928,454 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data Data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Size label
+	 * 
+	 */
+	
+	public String get_Size_Label() {
+		String sizeVariantLabel = Property.getProperty(Constant.AEM_DATA_FILE, "sizeVariantLabel");
+		if(sizeVariantLabel != null)
+			return sizeVariantLabel;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Size label
+	 * 
+	 */
+	
+	public String get_Size_Label_Change() {
+		String sizeVariantLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "sizeVariantLabelChange");
+		if(sizeVariantLabelChange != null)
+			return sizeVariantLabelChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Color label
+	 * 
+	 */
+	
+	public String get_Color_Label() {
+		String colorVariantLabel = Property.getProperty(Constant.AEM_DATA_FILE, "colorVariantLabel");
+		if(colorVariantLabel != null)
+			return colorVariantLabel;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Color label
+	 * 
+	 */
+	
+	public String get_Color_Label_Change() {
+		String colorVariantLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "colorVariantLabelChange");
+		if(colorVariantLabelChange != null)
+			return colorVariantLabelChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets More Sections
+	 * 
+	 */
+	
+	public String get_More_Section_Sticky_TOC() {
+		String moreSectionsStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "moreSectionsStickyTOC");
+		if(moreSectionsStickyTOC != null)
+			return moreSectionsStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Overviews
+	 * 
+	 */
+	
+	public String get_Overviews_TOC() {
+		String overviewStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "overviewStickyTOC");
+		if(overviewStickyTOC != null)
+			return overviewStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Specifications
+	 * 
+	 */
+	
+	public String get_Specifications_TOC() {
+		String specificationsStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "specificationsStickyTOC");
+		if(specificationsStickyTOC != null)
+			return specificationsStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Resources
+	 * 
+	 */
+	
+	public String get_Resources_TOC() {
+		String resourcesStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "resourcesStickyTOC");
+		if(resourcesStickyTOC != null)
+			return resourcesStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Videos
+	 * 
+	 */
+	
+	public String get_Videos_TOC() {
+		String videosStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "videosStickyTOC");
+		if(videosStickyTOC != null)
+			return videosStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Availability
+	 * 
+	 */
+	
+	public String get_Availability_TOC() {
+		String availablityStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "availablityStickyTOC");
+		if(availablityStickyTOC != null)
+			return availablityStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Rating and Reviews
+	 * 
+	 */
+	
+	public String get_Rating_And_Reviews_TOC() {
+		String ratingAndReviewsStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "ratingAndReviewsStickyTOC");
+		if(ratingAndReviewsStickyTOC != null)
+			return ratingAndReviewsStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Questions And Answer
+	 * 
+	 */
+	
+	public String get_Questions_And_Answer_TOC() {
+		String questionAndAnswersStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "questionAndAnswersStickyTOC");
+		if(questionAndAnswersStickyTOC != null)
+			return questionAndAnswersStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	public String get_More_Section_Sticky_TOC_Change() {
+		String moreSectionsStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "moreSectionsStickyTOCChange");
+		if(moreSectionsStickyTOC != null)
+			return moreSectionsStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Overviews
+	 * 
+	 */
+	
+	public String get_Overviews_TOC_Change() {
+		String overviewStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "overviewStickyTOCChange");
+		if(overviewStickyTOC != null)
+			return overviewStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Specifications
+	 * 
+	 */
+	
+	public String get_Specifications_TOC_Change() {
+		String specificationsStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "specificationsStickyTOCChange");
+		if(specificationsStickyTOC != null)
+			return specificationsStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Resources
+	 * 
+	 */
+	
+	public String get_Resources_TOC_Change() {
+		String resourcesStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "resourcesStickyTOCChange");
+		if(resourcesStickyTOC != null)
+			return resourcesStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Videos
+	 * 
+	 */
+	
+	public String get_Videos_TOC_Change() {
+		String videosStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "videosStickyTOCChange");
+		if(videosStickyTOC != null)
+			return videosStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Availability
+	 * 
+	 */
+	
+	public String get_Availability_TOC_Change() {
+		String availablityStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "availablityStickyTOCChange");
+		if(availablityStickyTOC != null)
+			return availablityStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Rating and Reviews
+	 * 
+	 */
+	
+	public String get_Rating_And_Reviews_TOC_Change() {
+		String ratingAndReviewsStickyTOCChange = Property.getProperty(Constant.AEM_DATA_FILE, "ratingAndReviewsStickyTOCChange");
+		if(ratingAndReviewsStickyTOCChange != null)
+			return ratingAndReviewsStickyTOCChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Questions And Answer
+	 * 
+	 */
+	
+	public String get_Qustions_And_Answer_TOC_Change() {
+		String questionAndAnswersStickyTOC = Property.getProperty(Constant.AEM_DATA_FILE, "questionAndAnswersStickyTOCChange");
+		if(questionAndAnswersStickyTOC != null)
+			return questionAndAnswersStickyTOC;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Url - PDP Author
+	 * 
+	 */
+	
+	public String get_Pdp_Product_Author_Url() {
+		String getPDPUrl = Property.getProperty(Constant.AEM_DATA_FILE, "pdpProductAuthorUrl");
+		if(getPDPUrl != null)
+			return getPDPUrl;
+		else
+			throw new RuntimeException("Result Url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Facet Title
+	 * 
+	 */
+	
+	public String get_Facet_Title() {
+		String facetTitle = Property.getProperty(Constant.AEM_DATA_FILE, "facetTitle");
+		if(facetTitle != null)
+			return facetTitle;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Facet Title
+	 * 
+	 */
+	
+	public String get_Selected_Label() {
+		String selectedLabel = Property.getProperty(Constant.AEM_DATA_FILE, "selectedLabel");
+		if(selectedLabel != null)
+			return selectedLabel;
+		else
+			throw new RuntimeException("Result Url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Selected Label
+	 * 
+	 */
+	
+	public String get_Selected_Label_Change() {
+		String selectedLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "selectedLabelChange");
+		if(selectedLabelChange != null)
+			return selectedLabelChange;
+		else
+			throw new RuntimeException("data Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Selected Label
+	 * 
+	 */
+	
+	public String get_Facet_Title_Change() {
+		String facetTitleChange = Property.getProperty(Constant.AEM_DATA_FILE, "facetTitleChange");
+		if(facetTitleChange != null)
+			return facetTitleChange;
+		else
+			throw new RuntimeException("Result Url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Privacy Charter
+	 * 
+	 */
+	
+	public String get_Privacy_Charter() {
+		String privacyCharterHeader = Property.getProperty(Constant.AEM_DATA_FILE, "privacyCharterHeader");
+		if(privacyCharterHeader != null)
+			return privacyCharterHeader;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Privacy Charter
+	 * 
+	 */
+	
+	public String get_Privacy_Charter_Change() {
+		String privacyCharterHeaderChange = Property.getProperty(Constant.AEM_DATA_FILE, "privacyCharterHeaderChange");
+		if(privacyCharterHeaderChange != null)
+			return privacyCharterHeaderChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Privacy Charter
+	 * 
+	 */
+	
+	public String get_Privacy_Charter_Content() {
+		String privacyCharterBodyContent = Property.getProperty(Constant.AEM_DATA_FILE, "privacyCharterBodyContent");
+		if(privacyCharterBodyContent != null)
+			return privacyCharterBodyContent;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Privacy Charter
+	 * 
+	 */
+	
+	public String get_Privacy_Charter__Content_Change() {
+		String privacyCharterBodyContentChange = Property.getProperty(Constant.AEM_DATA_FILE, "privacyCharterBodyContentChange");
+		if(privacyCharterBodyContentChange != null)
+			return privacyCharterBodyContentChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Privacy Charter Label
+	 * 
+	 */
+	
+	public String get_Privacy_Charter_Label() {
+		String privacyCharterLabel = Property.getProperty(Constant.AEM_DATA_FILE, "privacyCharterLabel");
+		if(privacyCharterLabel != null)
+			return privacyCharterLabel;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Privacy Charter Label
+	 * 
+	 */
+	
+	public String get_Privacy_Charter__Label_Change() {
+		String privacyCharterLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "privacyCharterLabelChange");
+		if(privacyCharterLabelChange != null)
+			return privacyCharterLabelChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Add to Cart Desktop
+	 * 
+	 */
+	
+	public String get_Add_To_Cart_Desktop_Label() {
+		String addToCartBtnStickyDesktop = Property.getProperty(Constant.AEM_DATA_FILE, "addToCartBtnStickyDesktop");
+		if(addToCartBtnStickyDesktop != null)
+			return addToCartBtnStickyDesktop;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Add to Cart Desktop
+	 * 
+	 */
+	
+	public String getAdd_To_Cart_Desktop_Label_Change() {
+		String addToCartBtnStickyDesktopChange = Property.getProperty(Constant.AEM_DATA_FILE, "addToCartBtnStickyDesktopChange");
+		if(addToCartBtnStickyDesktopChange != null)
+			return addToCartBtnStickyDesktopChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Add to Cart Mobile
+	 * 
+	 */
+	
+	public String get_Add_To_Cart_Mobile_Label() {
+		String addToCartBtnStickyMobile = Property.getProperty(Constant.AEM_DATA_FILE, "addToCartBtnStickyMobile");
+		if(addToCartBtnStickyMobile != null)
+			return addToCartBtnStickyMobile;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Add to Cart Mobile
+	 * 
+	 */
+	
+	public String getAdd_To_Cart_Mobile_Label_Change() {
+		String addToCartBtnStickyMobileChange = Property.getProperty(Constant.AEM_DATA_FILE, "addToCartBtnStickyMobileChange");
+		if(addToCartBtnStickyMobileChange != null)
+			return addToCartBtnStickyMobileChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

@@ -57,8 +57,11 @@ public class PLP_PageLocator {
 	String endPaginationMessage = Property.getProperty(Constant.OR_FILE, "endPaginationMessage");
 	String backToTopButton = Property.getProperty(Constant.OR_FILE, "backToTopButton");
 	String newArrivalSelectedSort = Property.getProperty(Constant.OR_FILE, "newArrivalSelectedSort");
-			
-			
+	String sortOptionFacet = Property.getProperty(Constant.OR_FILE, "sortOptionFacet");
+	String facetTitle = Property.getProperty(Constant.OR_FILE, "facetTitle");
+	String colorFacetOption = Property.getProperty(Constant.OR_FILE, "colorFacetOption");
+	String selectedLabelFacet = Property.getProperty(Constant.OR_FILE, "selectedLabelFacet");	
+	String toogleInStockMyStore = Property.getProperty(Constant.OR_FILE, "toogleInStockMyStore");
 	
 	/**
 	 * gets Locator - List View
@@ -459,4 +462,39 @@ public class PLP_PageLocator {
 	public String get_New_Arrival_Selected_Sort() {
 		return newArrivalSelectedSort;
 	}
-}
+	
+	/**
+	 * gets Locator - Sort Option
+	 */
+	public String get_Sort_Facet() {
+		return sortOptionFacet;
+	}
+	
+	/**
+	 * get Locator - Facet Title
+	 */
+	public String get_Facet_Title() {
+		return facetTitle;
+	}
+	
+	/**
+	 * get Locator - Color Facet
+	 */
+	public String get_Color_Facet() {
+		return colorFacetOption;
+	}
+	
+	/**
+	 * get Locator - Select label facet
+	 */
+	public String get_Selected_label_facet() {
+		return selectedLabelFacet;
+	}
+	
+	/**
+	 * get Locator - Toggle In Stock 
+	 */
+	public String toggleInStockMyStore() {
+		return toogleInStockMyStore;
+	}
+ }

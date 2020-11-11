@@ -515,4 +515,14 @@ public class PLP_Page extends PageObject {
 	public void displaySortOptionNewArrivalSelected() throws Exception {
 		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_New_Arrival_Selected_Sort())), 4);
 	}
+	
+	/** click on sort facet */
+	public void clickSortFacet() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_Facet())), 4);
+	}
+	
+	/** click on color facet */
+	public void clickColorFacet() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Color_Facet())), 4);
+	}
 }	

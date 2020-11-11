@@ -528,6 +528,26 @@
 						</goals>
 					</execution> 
 					
+					<execution>
+						<id>build-AEM_Regression_Runner</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>runners.AEM_Regression_Runner</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<finalName>AEM_Regression_Runner</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution> 
+					
 					
 				</executions>
 			</plugin>

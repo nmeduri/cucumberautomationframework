@@ -52,6 +52,12 @@ public class AEM_PLP_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getPLPPannel()));
 	}
 	
+	/** This function clicks on facet Pannel */
+	public void clickFacetPannel() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Facet_Panel()), 10);
+        $click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Facet_Panel())), 20);
+	}
+	
 	/** This function update data to Initial Number of Products */
 	public void updateDataIntialNumberOfProducts() throws Exception {
 		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getInitialNumberOfProducts())), 5);
@@ -317,6 +323,76 @@ public class AEM_PLP_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_List_View_Button()));
 		PageObject.getDriver().switchTo().parentFrame();
+	}
+	
+	/** update facet Title on site */
+	public void updateFacetTitleOnSite() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Facet_Title()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Facet_Title()), FileReaderManager.getInstance().getAEMDataReader().get_Facet_Title());
+	}
+	
+	/** revert facet Title on site */
+	public void revertFacetTitleOnSite() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Facet_Title()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Facet_Title()), FileReaderManager.getInstance().getAEMDataReader().get_Facet_Title_Change());
+	}
+	
+	/** verify facet tilte changes update on site */
+	public void verifyFacetTitleUpdateOnSite() throws Exception {
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Title())), FileReaderManager.getInstance().getAEMDataReader().get_Facet_Title());
+	}
+	
+	/** update selected label */
+	public void updateSelectedLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Selected_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Selected_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Selected_Label());
+	}
+	
+	/** revert selected label */
+	public void revertSelectedLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Selected_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Selected_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Selected_Label_Change());
+	}
+	
+	/** verify facet selected label changes update on site */
+	public void verifySelectedLabelUpdateOnSite() throws Exception {
+		$displayFindElement(By.xpath("//*[contains(text(), '"+FileReaderManager.getInstance().getAEMDataReader().get_Selected_Label()+"')]"));
+		
+	}
+	
+	/** click on Premium Filter Tab */
+	public void clickPremiumFilterTab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Premium_Filter_Tab())), 10);
+	}
+	
+	/** click on Off show in stock */
+	public void clickOffShowInStock() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Off_Show_In_Stock())), 10);
+	}
+	
+	/** click on ON show in stock */
+	public void clickONShowInStock() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_On_Show_In_Stock())), 10);
+	}
+	
+	/** click on Off show sale item */
+	public void clickOffShowSaleItem() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Off_Sale_Item())), 10);
+	}
+	
+	/** click on ON show sale item */
+	public void clickONShowSaleItem() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_On_Sale_Item())), 10);
+	}
+	
+	/** verify hide toggle button */
+	public void hideToogleButton() throws Exception {
+		try {
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().toggleInStockMyStore()));
+			fail();
+		}catch(Exception e) {
+			Log.message("Toggle button is not displayed", true);
+		}
 	}
 	
 	

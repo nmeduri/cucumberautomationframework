@@ -1,5 +1,6 @@
 package automation.library.locator;
 
+
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
@@ -43,8 +44,21 @@ public class AEM_PDP_Page_Locator {
 	String downloadUserManualPreview = Property.getProperty(Constant.OR_FILE, "downloadUserManualPreview");
 	String stickyTOCAEM = Property.getProperty(Constant.OR_FILE, "stickyTOCAEM").replace("=", ",");
 
+	String colorVariantPDPAEM = Property.getProperty(Constant.OR_FILE, "colorVariantPDPAEM");
+	String sizeVariantPDPAEM = Property.getProperty(Constant.OR_FILE, "sizeVariantPDPAEM");
 	
+	String moreSectionsStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "moreSectionsStickyTOCAEM");
+	String overviewStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "overviewStickyTOCAEM");
+	String specificationsStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "specificationsStickyTOCAEM");
+	String resourcesStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "resourcesStickyTOCAEM");
+	String videosStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "videosStickyTOCAEM");
+	String availiablityStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "availiablityStickyTOCAEM");
+	String ratingReviewsStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "ratingReviewsStickyTOCAEM");
+	String questionAnswersStickyTOCAEM = Property.getProperty(Constant.OR_FILE, "questionAnswersStickyTOCAEM");
 	
+	String addToCartStickyDesktopAEM = Property.getProperty(Constant.OR_FILE, "addToCartStickyDesktopAEM");
+	String addToCartStickyMobileAEM = Property.getProperty(Constant.OR_FILE, "addToCartStickyMobileAEM");
+	String stickyBuyBoxAEM = Property.getProperty(Constant.OR_FILE, "stickyBuyBoxAEM").replace("=", ",");
 
     /**
 	 * gets Locator - Specifications
@@ -271,6 +285,97 @@ public class AEM_PDP_Page_Locator {
 	 */
 	public String get_Sticky_TOC() {
 		return stickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Color variant
+	 */
+	public String getColorVariant() {
+		return colorVariantPDPAEM;
+	}
+	
+	/**
+	 * get Locator  - Size variant
+	 */
+	public String getSizeVariant() {
+		return sizeVariantPDPAEM;
+	}
+	
+	/**
+	 * get Locator - More Sections Sticky TOC
+	 */
+	public String getMoreSectionsStickyTOC() {
+		return moreSectionsStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Overview Sticky TOC
+	 */
+	public String getOverViewStickyTOC() {
+		return overviewStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Specifications Sticky TOC
+	 */
+	public String getSpecificationsStickyTOC() {
+		return specificationsStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Resources Sticky TOC
+	 */
+	public String getResourcesStickyTOC() {
+		return resourcesStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Videos Sticky TOC
+	 */
+	public String getVideosStickyTOC() {
+		return videosStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Availability Sticky TOC
+	 */
+	public String getAvailabilityStickyTOC() {
+		return availiablityStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Rating Reviews Sticky TOC
+	 */
+	public String getRatingReviewsStickyTOC() {
+		return ratingReviewsStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Questions and Answer
+	 */
+	public String getQuestionsAnswer() {
+		return questionAnswersStickyTOCAEM;
+	}
+	
+	/**
+	 * get Locator - Add To Cart Button (Sticky Desktop)
+	 */
+	public String getAddToCartButtonStickyDesktop() {
+		return addToCartStickyDesktopAEM;
+	}
+	
+	/**
+	 * get Locator - Add To Cart Button (Sticky Mobile)
+	 */
+	public String getAddToCartButtonStickyMobile() {
+		return addToCartStickyMobileAEM;
+	}
+	
+	/**
+	 * get Locator - Sticky box panel
+	 */
+	public String getStickyBoxPanel() {
+		return stickyBuyBoxAEM;
 	}
 	
 }

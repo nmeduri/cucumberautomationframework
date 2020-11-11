@@ -69,4 +69,24 @@ public class OCCP_1574_PDP_Select_Variants_Steps extends BaseClass {
 	public void the_label_of_selected_color_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifySelectedColorLabel();
 	}
+	
+	@And("update the authorable size label")
+	public void update_the_authorable_size_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).udpate_Size_label();
+	}
+	
+	@And("update the authorable color label")
+	public void update_the_authorable_color_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).update_Color_label();
+	}
+	
+	@And("revert the authorable size label")
+	public void revert_the_authorable_size_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).revert_Size_label();
+	}
+	
+	@And("revert the authorable color label")
+	public void revert_the_authorable_color_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).revert_Color_label();
+	}
 }

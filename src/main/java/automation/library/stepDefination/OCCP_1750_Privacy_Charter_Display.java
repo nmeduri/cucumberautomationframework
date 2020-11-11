@@ -48,4 +48,54 @@ public class OCCP_1750_Privacy_Charter_Display extends BaseClass {
 	public void click_on_privacy_charter_panel() throws Exception {
 		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).clickPrivacyCharterPanel();
 	}
+	
+	@And("configue the header of privacy charter")
+	public void configure_the_header_of_privacy_charter() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).updatePricacyCharterHeader();
+	}
+	
+	@And("revert privacy charter details")
+	public void revert_privacy_charter_details() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).revertPricacyCharterHeader();
+	}
+	
+	@And("navigate on privacy charter page")
+	public void navigate_on_privacy_charter_page() throws Exception {
+		testContext.getPageObjectManager().getPrivacyPage(PageObject.getDriver()).navigateToPrivacyCharterPage();
+	}
+	
+	@Then("verify privacy charter header changes update on site")
+	public void verify_privacy_charter_header_changes_update_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).verifyUpdatePrivacyCharterHeaderOnSite();
+	}
+	
+	@And("configue the content of privacy charter")
+	public void configure_the_content_of_privacy_charter_content() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).updatePricacyCharterContent();
+	}
+	
+	@Then("verify privacy charter content changes update on site")
+	public void verify_privacy_charter_content_changes_update_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).verifyUpdatePrivacyCharterContentOnSite();
+	}
+	
+	@And("revert privacy charter header")
+	public void revert_privacy_charter_header() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).revertPricacyCharterContent();
+	}
+	
+	@And("update label of privacy charter desktop")
+	public void update_label_of_privacy_charter_desktop() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).updatePrivacyCharterLabel();
+	}
+	
+	@And("revert label of privacy charter desktop")
+	public void revert_label_of_privacy_charter_desktop() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).updatePrivacyCharterLabel();
+	}
+	
+	@Then("verify privacy charter label changes update on site")
+	public void verify_privacy_charter_label_changes_update_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMPrivacyCharterPage(PageObject.getDriver()).verifyUpdatePrivacyCharterLabelOnSite();
+	}
 }

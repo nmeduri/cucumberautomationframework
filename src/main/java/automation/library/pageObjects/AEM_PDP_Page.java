@@ -46,6 +46,11 @@ public class AEM_PDP_Page extends PageObject {
 
 	}
 	
+	/** This function navigate to PDP Product page */
+	public void navigate_To_PDP_Product_Page() {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Pdp_Product_Author_Url());
+	}
+	
 	/** This function clicks on specifications section */
 	public void clickSpecificationsSection() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSpecificationsSection()), 10);
@@ -206,5 +211,185 @@ public class AEM_PDP_Page extends PageObject {
 	/** click on sticky TOC */
 	public void clickStickyTOC() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Sticky_TOC())), 5); 
+	}
+	
+	/** update size label */
+	public void udpate_Size_label() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSizeVariant()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSizeVariant()), FileReaderManager.getInstance().getAEMDataReader().get_Size_Label());
+	}
+	
+	/** update color label */
+	public void update_Color_label() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getColorVariant()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getColorVariant()), FileReaderManager.getInstance().getAEMDataReader().get_Color_Label());
+	}
+	
+	/** revert size label */
+	public void revert_Size_label() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSizeVariant()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSizeVariant()), FileReaderManager.getInstance().getAEMDataReader().get_Size_Label_Change());
+	}
+	
+	/** update color label */
+	public void revert_Color_label() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getColorVariant()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getColorVariant()), FileReaderManager.getInstance().getAEMDataReader().get_Color_Label_Change());
+	}
+	
+	/** update more sections sticky TOC label */
+	public void update_More_Sections_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getMoreSectionsStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getMoreSectionsStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_More_Section_Sticky_TOC());
+	}
+	
+	/** update overview sticky TOC label */
+	public void update_overview_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getOverViewStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getOverViewStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Overviews_TOC());
+	}
+	
+	/** update specifications sticky TOC label */
+	public void update_specifications_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSpecificationsStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSpecificationsStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Specifications_TOC());
+	}
+	
+	/** update resources sticky TOC label */
+	public void update_resources_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getResourcesStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getResourcesStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Resources_TOC());
+	}
+	
+	/** update videos sticky TOC label */
+	public void update_videos_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getVideosStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getVideosStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Videos_TOC());
+	}
+	
+	/** update rating and reviews sticky TOC label */
+	public void update_rating_and_reviews_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getRatingReviewsStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getRatingReviewsStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Rating_And_Reviews_TOC());
+	}
+	
+	/** update questions and answer sticky TOC label */
+	public void update_questions_and_answer_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getQuestionsAnswer()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getQuestionsAnswer()), FileReaderManager.getInstance().getAEMDataReader().get_Questions_And_Answer_TOC());
+	}
+	
+	/** update availability sticky TOC label */
+	public void update_availability_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAvailabilityStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAvailabilityStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Availability_TOC());
+	}
+	
+	/** revert more sections sticky TOC label */
+	public void revert_More_Sections_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getMoreSectionsStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getMoreSectionsStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_More_Section_Sticky_TOC_Change());
+	}
+	
+	/** revert overview sticky TOC label */
+	public void revert_overview_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getOverViewStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getOverViewStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Overviews_TOC_Change());
+	}
+	
+	/** revert specifications sticky TOC label */
+	public void revert_specifications_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSpecificationsStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getSpecificationsStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Specifications_TOC_Change());
+	}
+	
+	/** revert resources sticky TOC label */
+	public void revert_resources_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getResourcesStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getResourcesStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Resources_TOC_Change());
+	}
+	
+	/** revert videos sticky TOC label */
+	public void revert_videos_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getVideosStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getVideosStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Videos_TOC_Change());
+	}
+	
+	/** revert rating and reviews sticky TOC label */
+	public void revert_rating_and_reviews_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getRatingReviewsStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getRatingReviewsStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Rating_And_Reviews_TOC_Change());
+	}
+	
+	/** revert questions and answer sticky TOC label */
+	public void revert_questions_and_answer_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getQuestionsAnswer()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getQuestionsAnswer()), FileReaderManager.getInstance().getAEMDataReader().get_Qustions_And_Answer_TOC_Change());
+	}
+	
+	/** revert availability sticky TOC label */
+	public void revert_availability_label_Sticky_TOC() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAvailabilityStickyTOC()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAvailabilityStickyTOC()), FileReaderManager.getInstance().getAEMDataReader().get_Availability_TOC_Change());
+	}
+	
+	/** verify overview changes are correctly reflected on publish page */
+	public void verifyOverviewChangesPublish() throws Exception {
+		testContext.getPageObjectManager().getPageObject(driver).scrollDownByCoordinates();
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Overview_Sticky_TOC())), 10), FileReaderManager.getInstance().getAEMDataReader().get_Overviews_TOC());
+	}
+	
+	/** verify specifications changes are correctly reflected on publish page */
+	public void verifySpecificationsChangesPublish() throws Exception {
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Specifications_Sticky_TOC())), 10), FileReaderManager.getInstance().getAEMDataReader().get_Specifications_TOC());
+	}
+	
+	/** verify resources changes are correctly reflected on publish page */
+	public void verifyResourcesChangesPublish() throws Exception {
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Resources_Sticky_TOC())), 10), FileReaderManager.getInstance().getAEMDataReader().get_Resources_TOC());
+	}
+	
+	/** verify rating changes are correctly reflected on publish page */
+	public void verifyRatingReviewChangesPublish() throws Exception {
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Rating_Reviews_Sticky_TOC())), 10), FileReaderManager.getInstance().getAEMDataReader().get_Rating_And_Reviews_TOC());
+	}
+	
+	/** verify question answer changes are correctly reflected on publish page */
+	public void verifyQuestionAnswerChangesPublish() throws Exception {
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Questions_And_Answer_Sticky_TOC())), 10), FileReaderManager.getInstance().getAEMDataReader().get_Questions_And_Answer_TOC());
+	}
+	
+	/** update Add to cart sticky button (desktop) */
+	public void updateAddToCartStickDesktopButtonSticky() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyDesktop()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyDesktop()), FileReaderManager.getInstance().getAEMDataReader().get_Add_To_Cart_Desktop_Label());
+	}
+	
+	/** revert Add to cart sticky button (desktop) */
+	public void revertAddToCartStickDesktopButtonSticky() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyDesktop()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyDesktop()), FileReaderManager.getInstance().getAEMDataReader().getAdd_To_Cart_Desktop_Label_Change());
+	}
+	
+	/** verify add to cart (Desktop) button updated on site */
+	public void verifyAddToCartDesktopButtonStickyUpdatedOnSite() throws Exception {
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().getAddToCartButtonSticky())), 10), FileReaderManager.getInstance().getAEMDataReader().get_Add_To_Cart_Desktop_Label());
+	}
+	
+	/** click on Sticky box panel */
+	public void clickStickyBoxPanel() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getStickyBoxPanel())), 10);
+	}
+	
+	/** update Add to cart sticky button (Mobile) */
+	public void updateAddToCartStickMobileButtonSticky() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyMobile()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyMobile()), FileReaderManager.getInstance().getAEMDataReader().get_Add_To_Cart_Mobile_Label());
+	}
+	
+	/** revert Add to cart sticky button (Mobile) */
+	public void revertAddToCartStickMobileButtonSticky() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyMobile()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyMobile()), FileReaderManager.getInstance().getAEMDataReader().getAdd_To_Cart_Mobile_Label_Change());
 	}
 }

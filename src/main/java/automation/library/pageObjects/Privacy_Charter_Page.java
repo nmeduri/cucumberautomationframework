@@ -38,6 +38,11 @@ public class Privacy_Charter_Page extends PageObject {
 
 	}
 	
+	/** navigate to privacy charter page */
+	public void navigateToPrivacyCharterPage() throws Exception {
+		PageObject.getDriver().navigate().to(FileReaderManager.getInstance().getDataReader().get_Privacy_Charter_Url());
+	}
+	
 	/** This function is verify that Header Privacy Charter is displayed */
 	public void display_Header_Privacy_Charter() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPrivacyPageLocator().get_Header_Privacy_Charter()));

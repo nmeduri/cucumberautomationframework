@@ -47,6 +47,39 @@ public class OCCP_1579_PDP_Sticky_Buy_Box_Step extends BaseClass   {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayStickyAddToCart();
 	}
 	
+	@And("update the label atc cta desktop button")
+	public void update_the_label_atc_ctc_desktop_button() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).updateAddToCartStickDesktopButtonSticky();
+	}
+	
+	@And("update the label atc cta mobile button")
+	public void update_the_label_atc_ctc_mobile_button() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).updateAddToCartStickMobileButtonSticky();
+	}
+	
+	@And("revert the label atc cta desktop button")
+	public void revert_the_label_atc_ctc_desktop_button() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).revertAddToCartStickDesktopButtonSticky();
+	}
+	
+	@Then("verify button cta desktop update on site")
+	public void verify_button_cta_desktop_update_on_site() throws Exception {
+		Thread.sleep(5000);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).verifyAddToCartDesktopButtonStickyUpdatedOnSite();
+	}
+	
+	@And("click on sticky panel")
+	public void clickOnStickyPanel() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).clickStickyBoxPanel();
+	}
+	
+	@And("revert the label atc cta mobile button")
+	public void revert_the_label_atc_ctc_mobile_button() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).revertAddToCartStickMobileButtonSticky();
+	}
+	
 	
 }
 

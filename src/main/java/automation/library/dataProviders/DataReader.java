@@ -1172,5 +1172,18 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Privacy Charter URl
+	 * 
+	 */
+
+	public String get_Privacy_Charter_Url() {
+		String privcacyCharterUrl = Property.getProperty(Constant.DATA_FILE, "privcacyCharterUrl");
+		if(privcacyCharterUrl != null)
+			return privcacyCharterUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
 }
 

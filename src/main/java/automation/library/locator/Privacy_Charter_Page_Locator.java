@@ -14,6 +14,8 @@ public class Privacy_Charter_Page_Locator {
 	String headerPrivacyCharter = Property.getProperty(Constant.OR_FILE, "headerPrivacyCharter");
 	String privacyCharterDowloadLink = Property.getProperty(Constant.OR_FILE, "privacyCharterDowloadLink");
 	String privacyCharterDowloadButtonMobile = Property.getProperty(Constant.OR_FILE, "privacyCharterDowloadButtonMobile");
+	String headerPrivacyCharterPage = Property.getProperty(Constant.OR_FILE, "headerPrivacyCharterPage");
+	String labelPrivacyCharter = Property.getProperty(Constant.OR_FILE, "labelPrivacyCharter");
 	
 	/**
 	 * gets Locator - Header Privacy Charter
@@ -41,5 +43,19 @@ public class Privacy_Charter_Page_Locator {
 	
 	public String get_Privacy_Charter_Button_Mobile() {
 		return privacyCharterDowloadButtonMobile;
+	}
+	
+	/**
+	 * get Locator - Privacy Charter Header
+	 */
+	public String get_Update_Privacy_Charter_Header() {
+		return headerPrivacyCharterPage;
+	}
+	
+	/**
+	 * get Locator - Privacy Charter Label
+	 */
+	public String getLabelPrivacyCharter() {
+		return labelPrivacyCharter;
 	}
 }

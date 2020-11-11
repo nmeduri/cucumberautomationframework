@@ -26,7 +26,15 @@ public class AEM_PLP_Page_Locator {
 	String productListViewOn = Property.getProperty(Constant.OR_FILE, "productListViewOn");
 	String featureHeaderLabelAEM = Property.getProperty(Constant.OR_FILE, "featureHeaderLabelAEM");
 	String featureHeaderLabelPreview = Property.getProperty(Constant.OR_FILE, "featureHeaderLabelPreview");
-			
+	String facetsPanel = Property.getProperty(Constant.OR_FILE, "facetsPanel").replace("=", ",");		
+	String facetTitleAEM = Property.getProperty(Constant.OR_FILE, "facetTitleAEM");
+	String selectedLabelAEM = Property.getProperty(Constant.OR_FILE, "selectedLabelAEM");
+	String premiumFiltersTab = Property.getProperty(Constant.OR_FILE, "premiumFiltersTab");
+	String offShowInStockAtMyStoreAEM = Property.getProperty(Constant.OR_FILE, "offShowInStockAtMyStoreAEM");
+	String onShowInStockAtMyStoreAEM = Property.getProperty(Constant.OR_FILE, "onShowInStockAtMyStoreAEM");
+	String offShowSaleItemAEM = Property.getProperty(Constant.OR_FILE, "offShowSaleItemAEM");
+	String onShowSaleItemAEM = Property.getProperty(Constant.OR_FILE, "onShowSaleItemAEM");
+	
 
     /**
 	 * gets Locator - Specifications
@@ -162,5 +170,61 @@ public class AEM_PLP_Page_Locator {
 	 */
 	public String get_Feature_Header_Preview() {
 		return featureHeaderLabelPreview;
+	}
+	
+	/**
+	 * get Locator - Facet Panel
+	 */
+	public String get_Facet_Panel() {
+		return facetsPanel;
+	}
+	
+	/**
+	 * get Locator - Facet Title
+	 */
+	public String get_Facet_Title() {
+		return facetTitleAEM;
+	}
+	
+	/**
+	 * get Locator - Selected Label
+	 */
+	public String get_Selected_Label() {
+		return selectedLabelAEM;
+	}
+	
+	/**
+	 * get Locator - Premium Filter
+	 */
+	public String get_Premium_Filter_Tab() {
+		return premiumFiltersTab;
+	}
+	
+	/**
+	 * get Locator - Off show in  stock
+	 */
+	public String get_Off_Show_In_Stock() {
+		return offShowInStockAtMyStoreAEM;
+	}
+	
+	/**
+	 * get Locator - On Show in stock
+	 */
+	public String get_On_Show_In_Stock() {
+		return onShowInStockAtMyStoreAEM;
+	}
+	
+	/**
+	 * get Locator - Off sale item
+	 */
+	public String get_Off_Sale_Item() {
+		return offShowSaleItemAEM;
+	}
+	
+	/**
+	 * get Locator - On sale item
+	 */
+	public String get_On_Sale_Item() {
+		return onShowSaleItemAEM;
 	}
 }

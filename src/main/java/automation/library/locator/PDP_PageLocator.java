@@ -111,6 +111,13 @@ public class PDP_PageLocator {
 	String chevronReviewsArrow=Property.getProperty(Constant.OR_FILE, "chevronReviewsArrow");
 	String mostHelpfulReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostHelpfulReviewsLabel");
 	String reviewsSection=Property.getProperty(Constant.OR_FILE, "reviewsSection");
+	
+	String overviewStickyTOC = Property.getProperty(Constant.OR_FILE, "overviewStickyTOC");
+	String resourcesStickyTOC = Property.getProperty(Constant.OR_FILE, "resourcesStickyTOC");
+	String specificationsStickyTOC = Property.getProperty(Constant.OR_FILE, "specificationsStickyTOC");
+	String questionsAndAnswerStickyTOC = Property.getProperty(Constant.OR_FILE, "questionsAndAnswerStickyTOC");
+	String ratingReviewsStickyTOC = Property.getProperty(Constant.OR_FILE, "ratingReviewsStickyTOC");
+	String addToCartButtonSticky = Property.getProperty(Constant.OR_FILE, "addToCartButtonSticky");
 
 	
 	/**
@@ -970,6 +977,48 @@ public class PDP_PageLocator {
 	 */
 	public String get_Reviews_Section_Title() {
 		return reviewsSection;
+	}
+	
+	/**
+	 * gets Locator - Overview Sticky TOC
+	 */
+	public String get_Overview_Sticky_TOC() {
+		return overviewStickyTOC;
+	}
+	
+	/**
+	 * gets Locator - Specifications Sticky TOC
+	 */
+	public String get_Specifications_Sticky_TOC() {
+		return specificationsStickyTOC;
+	}
+	
+	/**
+	 * gets Locator - Rating and Reviews Sticky TOC
+	 */
+	public String get_Rating_Reviews_Sticky_TOC() {
+		return ratingReviewsStickyTOC;
+	}
+	
+	/**
+	 * gets Locator - Questions and Answers Sticky TOC
+	 */
+	public String get_Questions_And_Answer_Sticky_TOC() {
+		return questionsAndAnswerStickyTOC;
+	}
+	
+	/**
+	 * gets Locator - Resources Sticky TOC
+	 */
+	public String get_Resources_Sticky_TOC() {
+		return resourcesStickyTOC;
+	}
+	
+	/**
+	 * get Locator - Add to Cart Button (Sticky)
+	 */
+	public String getAddToCartButtonSticky() {
+		return addToCartButtonSticky;
 	}
 }
 
