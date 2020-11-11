@@ -1,4 +1,5 @@
 package runners;
+
 import java.util.stream.Stream;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.picocontainer.classname.ClassName;
@@ -10,9 +11,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:Adobe/Regression/OCCP_1042_CustomerService_Accordion_Authorable.feature",
+			"classpath:SAP/Regression/OCCP_2503_PLP_SRP_Product_Badges.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@RegressionTest",
+			"--tags", "@RegressionTest1",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

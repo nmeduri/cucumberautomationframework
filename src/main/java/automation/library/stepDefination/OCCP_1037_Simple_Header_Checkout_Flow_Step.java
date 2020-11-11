@@ -50,7 +50,7 @@ public class OCCP_1037_Simple_Header_Checkout_Flow_Step extends BaseClass{
 	}
 	@Then("user should be taken to the home page")
 	public void user_should_be_taken_to_the_home_page() throws Exception {
-		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).display_Home_Page();;
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).display_Home_Page();
 	}
 	@When("AEM author with access to configure simple header checkout component")
 	public void aem_author_with_access_to_configure_simple_header_checkout_component() throws Exception {

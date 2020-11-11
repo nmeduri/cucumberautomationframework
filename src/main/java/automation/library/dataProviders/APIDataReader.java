@@ -1538,6 +1538,20 @@ public class APIDataReader {
 			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
 	/**
+	 * gets product data of TC-1965
+	 * 
+	 */
+	
+	public String get_product_tc_1965() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1965");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-2169
 	 * gets product data of TC-32169
 	 * 
 	 */
@@ -1557,6 +1571,7 @@ public class APIDataReader {
 	public String get_product_tc_1462() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_1462");
+
 		if (getProduct != null)
 			return getProduct;
 		else
@@ -1576,5 +1591,31 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 
+	}
+	/**
+	 * gets product data of TC-2188
+	 * 
+	 */
+	
+	public String get_product_tc_2188() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_2188");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of product list api with 404 status code
+	 * 
+	 */
+	
+	public String get_Product_List_API_404() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "plpProductApi_404");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
 	}
 }

@@ -45,7 +45,7 @@ public class HYB_OCCP_3054_Analytics_Product_Recommendation_Click_Step extends B
 	
 	@When("user hits variant product list api for EN")
 	public void user_hits_variant_productlist_api_En() {
-		response = getHybApiEN().post_HYB_VariantProductList_EN(url,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3099_P1(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3099_P2());
+		response = getHybApiEN().post_HYB_2ProductList_EN(url,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3099_P1(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3099_P2());
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	

@@ -169,4 +169,11 @@ public class Common_Step extends BaseStep {
 		//Thread.sleep(10000);
 		PageObject.getDriver().navigate().refresh();
 	}
+	@Given("plp occ api is available for 404 status")
+	public void plp_occ_api_is_availeble_404() {
+
+		url = getHybApiENCA()
+				.HYB_API_EN_CA(FileReaderManager.getInstance().getAPIDataReader().get_Product_List_API_404());
+
+	}
 }

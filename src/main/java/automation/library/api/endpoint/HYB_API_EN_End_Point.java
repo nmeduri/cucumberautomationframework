@@ -59,10 +59,37 @@ public class HYB_API_EN_End_Point {
 		return response;	
 	}
 	
-	public Response post_HYB_VariantProductList_EN(String url,String product1, String product2) {
+	public Response post_HYB_2ProductList_EN(String url,String product1, String product2) {
 		String bodyvalue="{\n" + 
 				"  \"productCodes\": [\n" + 
 				"    \""+product1+"\""+",\""+product2+"\""+"\n" + 
+				"  ]\n" + 
+				"}";
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("API:- " + url  +"363?fields=FULL&baseStoreId=CTR&lang=en", true);
+		response = request.post(url + "363?fields=FULL&baseStoreId=CTR&lang=en");
+		return response;	
+	}
+	public Response post_HYB_ProductList_EN_Without_BaseStoreID(String url,String product1, String product2) {
+		String bodyvalue="{\n" + 
+				"  \"productCodes\": [\n" + 
+				"    \""+product1+"\""+",\""+product2+"\""+"\n"+
+				"  ]\n" + 
+				"}";
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer ");
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("API:- " + url  +"363?fields=FULL&lang=en", true);
+		response = request.post(url + "363?fields=FULL&lang=en");
+		return response;	
+	}
+	public Response post_HYB_ProductList_EN_SingleProduct(String url,String product1) {
+		String bodyvalue="{\n" + 
+				"  \"productCodes\": [\n" + 
+				"    \""+product1+"\""+"\n" + 
 				"  ]\n" + 
 				"}";
 		request.body(bodyvalue);

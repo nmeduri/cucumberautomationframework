@@ -14,8 +14,8 @@ Feature: OCCP_1616: Frequently Bought Together
     		#When user hits add to Cart api for authenticated user
     		#Then should return 200 ok
     		
-    		@RegressionTest
-    		Scenario: TC-2168 HYB:OCCP-1616: Guest user - Create cart	
+    		@RegressionTest1
+    		Scenario: TC-2168, TC-3121 ,TC-3188 HYB:OCCP-1616: Guest user - Create cart	
     		Given Guest user create cart access token is available
     		When guest user hits the POST api for create cart
     		Then response JSON should have created cart
@@ -23,7 +23,7 @@ Feature: OCCP_1616: Frequently Bought Together
     		Then response JSON should have guid
     		
     		@RegressionTest
-    		Scenario: TC-2170 HYB:OCCP-1616: Registered user - Create cart
+    		Scenario: TC-2170 ,TC-3119, TC-3185 HYB:OCCP-1616: Registered user - Create cart
     		Given Registered user create cart access token is available
     		When user generate token
     		Then user get the token
