@@ -1,4 +1,3 @@
-
 Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 
 	Description: To test the ADOBE Test Cases for the story OCCP-3337

@@ -2,7 +2,6 @@ Feature: OCCP-861 PLP/SRP - Product Card - Regular Products (Non-Variant)
 
 	Description: To test the ADOBE Test Cases for the story OCCP-861
    
-	   
     @RegressionTest @WebView @WideScreen
     Scenario: TC-156 Verify the product card displays the product title on PLP 
     Given quit browser

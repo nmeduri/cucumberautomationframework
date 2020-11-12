@@ -4432,4 +4432,16 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets Two tile component URL
+	 * 
+	 */
+	
+	public String get_Two_Tile_Component_Url_AEM() {
+		String TwoTileURL = Property.getProperty(Constant.AEM_DATA_FILE, "TwoTileComponentAEMURL");
+		if(TwoTileURL != null)
+			return TwoTileURL;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

@@ -1232,6 +1232,31 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	/**
+	 * gets TwofeaturedTile component URL
+	 * 
+	 */
+
+	public String get_Twofeatured_Tile_Url() {
+		String TwofeaturedTileUrl = Property.getProperty(Constant.DATA_FILE, "twoFeaturedTileComponentURL");
+		if(TwofeaturedTileUrl != null)
+			return TwofeaturedTileUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	/**
+	 * gets TwofeaturedTile CTA URL
+	 * 
+	 */
+
+	public String get_Twofeatured_CTALink_Url() {
+		String TwofeaturedTileCTAUrl = Property.getProperty(Constant.DATA_FILE, "CTALink");
+		if(TwofeaturedTileCTAUrl != null)
+			return TwofeaturedTileCTAUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+
 	
 	/**
 	 * gets Featured List URl

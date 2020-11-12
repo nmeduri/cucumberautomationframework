@@ -22,6 +22,7 @@ import automation.library.locator.AEM_Privacy_Charter_Page_Locator;
 import automation.library.locator.AEM_Registration_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
+import automation.library.locator.AEM_Two_Featured_Tiles_Component_Page_Locator;
 import automation.library.locator.Banners_Locator;
 import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.Cart_Page_Locator;
@@ -51,6 +52,7 @@ import automation.library.locator.Privacy_Charter_Page_Locator;
 import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
+import automation.library.locator.Two_Featured_Tile_Component_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Cart_Page;
@@ -70,6 +72,7 @@ import automation.library.pageObjects.AEM_Privacy_Charter_Page;
 import automation.library.pageObjects.AEM_Registration_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
+import automation.library.pageObjects.AEM_Two_Featured_tiles_Component_Page;
 import automation.library.pageObjects.Banner_Pages;
 import automation.library.pageObjects.Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.Cart_Page;
@@ -100,6 +103,7 @@ import automation.library.pageObjects.Registration_Email_Verification_Page;
 import automation.library.pageObjects.Reset_Password_Page;
 import automation.library.pageObjects.Rewards_Terms_Conditions_Page;
 import automation.library.pageObjects.Sign_Up_Page;
+import automation.library.pageObjects.Two_Feature_Tile_Component_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
 
@@ -211,6 +215,10 @@ public class PageObjectManager {
 	private AEM_Cart_Page_Locator getAEMCartPageLocator; 
 	private AEM_Privacy_Charter_Page getAEMPrivacyCharterPage;
 	private AEM_Privacy_Charter_Page_Locator getAEMPrivacyCharterPageLocator;
+	private Two_Feature_Tile_Component_Page getTwoFeatureTileComponentPage;
+	private Two_Featured_Tile_Component_Page_Locator getTwoFeaturedTileComponentPageLocator;
+	private AEM_Two_Featured_tiles_Component_Page getAEMTwoFeatureTileComponentPage;
+	private AEM_Two_Featured_Tiles_Component_Page_Locator getAEMTwoFeaturedTileComponentPageLocator;
 	
 	public PageObjectManager() {
 		
@@ -731,10 +739,24 @@ public class PageObjectManager {
 		return (getAEMCartPageLocator == null) ? getAEMCartPageLocator = new AEM_Cart_Page_Locator() : getAEMCartPageLocator;
 	}
 	
-	
-	
 	/** Return Instance of AEM Privacy Charter Page Locator */
 	public AEM_Privacy_Charter_Page_Locator getAEMPrivacyCharterPageLocator() {
 		return (getAEMPrivacyCharterPageLocator == null) ? getAEMPrivacyCharterPageLocator = new AEM_Privacy_Charter_Page_Locator() : getAEMPrivacyCharterPageLocator;
+	}
+	/** Return Instance of Two feature tile component Page  */
+	public Two_Feature_Tile_Component_Page getTwoFeatureTileComponentPage(WebDriver driver) {
+		return (getTwoFeatureTileComponentPage == null) ? getTwoFeatureTileComponentPage = new Two_Feature_Tile_Component_Page(driver) : getTwoFeatureTileComponentPage;
+	}
+	/** Return Instance of Two feature tile component Page Locator */
+	public Two_Featured_Tile_Component_Page_Locator getTwoFeaturedTileComponentPageLocator() {
+		return (getTwoFeaturedTileComponentPageLocator == null) ? getTwoFeaturedTileComponentPageLocator = new Two_Featured_Tile_Component_Page_Locator() : getTwoFeaturedTileComponentPageLocator;
+	}
+	/** Return Instance of AEM Two feature tile component Page  */
+	public AEM_Two_Featured_tiles_Component_Page getAEMTwoFeatureTileComponentPage(WebDriver driver) {
+		return (getAEMTwoFeatureTileComponentPage == null) ? getAEMTwoFeatureTileComponentPage = new AEM_Two_Featured_tiles_Component_Page(driver) : getAEMTwoFeatureTileComponentPage;
+	}
+	/** Return Instance of AEM Two feature tile component Page Locator */
+	public AEM_Two_Featured_Tiles_Component_Page_Locator getAEMTwoFeaturedTileComponentPageLocator() {
+		return (getAEMTwoFeaturedTileComponentPageLocator == null) ? getAEMTwoFeaturedTileComponentPageLocator = new AEM_Two_Featured_Tiles_Component_Page_Locator() : getAEMTwoFeaturedTileComponentPageLocator;
 	}
 }
