@@ -47,13 +47,11 @@ public class OCCP_1604_Filter_And_Facets_Step extends BaseClass {
 	@And("hide the toogle altogether on plp component")
 	public void hide_the_toogle_altogether_on_plp_component() throws Exception {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickOffShowInStock();
-		//testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickOffShowSaleItem();
 	}
 	
 	@And("show the toogle altogether on plp component")
 	public void show_the_toogle_altogether_on_plp_component() throws Exception {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickONShowInStock();
-		//testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickONShowSaleItem();
 	}
 	
 	@Then("the toogle is not displayed for that particular page")
@@ -61,5 +59,15 @@ public class OCCP_1604_Filter_And_Facets_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).hideToogleButton();
 	}
 	
+	@Then("verify the option to show/hide the toogle altogether is dispalyed on template")
+	public void verify_the_option_to_show_hide_the_toogle_altogether_is_displayed_on_template() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).displayOptionShowHideONPLPTemplate();
+	}
+	
+	
+	@Then("verify the option is dispalyed on template")
+	public void verify_the_option_is_displayed_on_template() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).displayOptionPLPTemplate();
+	}
  
 }

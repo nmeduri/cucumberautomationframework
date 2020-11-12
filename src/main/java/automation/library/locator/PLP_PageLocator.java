@@ -62,6 +62,15 @@ public class PLP_PageLocator {
 	String colorFacetOption = Property.getProperty(Constant.OR_FILE, "colorFacetOption");
 	String selectedLabelFacet = Property.getProperty(Constant.OR_FILE, "selectedLabelFacet");	
 	String toogleInStockMyStore = Property.getProperty(Constant.OR_FILE, "toogleInStockMyStore");
+	String colorSwatchValue = Property.getProperty(Constant.OR_FILE, "colorSwatchValue").replace("=", ",");
+	String colorButtonFacetHorizonatalBar = Property.getProperty(Constant.OR_FILE, "colorButtonFacetHorizonatalBar");
+	String closeButtonFacetPopUp = Property.getProperty(Constant.OR_FILE, "closeButtonFacetPopUp");
+	String moreFilters = Property.getProperty(Constant.OR_FILE, "moreFilters");
+	String sortAndFiltersMobile = Property.getProperty(Constant.OR_FILE, "sortAndFiltersMobile");
+	String selectedColorFacetText = Property.getProperty(Constant.OR_FILE, "selectedColorFacetText");
+	String selectedColorResultsOnPLP = Property.getProperty(Constant.OR_FILE, "selectedColorResultsOnPLP");
+	String colorSwatchAnotherValue = Property.getProperty(Constant.OR_FILE, "colorSwatchAnotherValue").replace("=", ",");
+	String selectedCommaColor = Property.getProperty(Constant.OR_FILE, "selectedCommaColor");
 	
 	/**
 	 * gets Locator - List View
@@ -496,5 +505,68 @@ public class PLP_PageLocator {
 	 */
 	public String toggleInStockMyStore() {
 		return toogleInStockMyStore;
+	}
+	
+	/**
+	 * get Locator - Color Swatches option
+	 */
+	public String getColorSwatchesOption() {
+		return colorSwatchValue;
+	}
+	
+	/**
+	 * get Locator - Color Option in Facet Horizontal Bar
+	 */
+	public String getColorOptionInFacetHorizontalBar() {
+		return colorButtonFacetHorizonatalBar;
+	}
+	
+	/**
+	 * get Locator - Close Button (Facet Popup)
+	 */
+	public String closeButtonFacetPopUp() throws Exception {
+		return closeButtonFacetPopUp;
+	}
+	
+	/**
+	 * get Locator - More Filters
+	 */
+	public String getMoreFilters() throws Exception {
+		return moreFilters;
+	}
+	
+	/**
+	 * get Locator - Sort and Filters
+	 */
+	public String getSortAndFilters() throws Exception {
+		return sortAndFiltersMobile;
+	}
+	
+	/**
+	 * get Locator - Selected color text
+	 */
+	public String getSelectedColorText() throws Exception {
+		return selectedColorFacetText;
+	}
+	
+	/**
+	 * get Locator - Color Result
+	 */
+	public String getColorResults() throws Exception {
+		return selectedColorResultsOnPLP;
+	}
+	
+	/**
+	 * get Locator - Another Color 
+	 */
+	public String getAnotherColorFacet() throws Exception {
+		return colorSwatchAnotherValue;
+	}
+	
+	/**
+	 * get Locator - Select Comma Text
+	 */
+	public String getSelectedCommaText() throws Exception {
+		return selectedCommaColor;
 	}
  }

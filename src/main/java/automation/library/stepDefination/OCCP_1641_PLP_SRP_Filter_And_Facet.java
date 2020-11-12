@@ -79,10 +79,79 @@ public class OCCP_1641_PLP_SRP_Filter_And_Facet extends BaseClass {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifySelectedLabelUpdateOnSite();
 	}
 	
+	@Then("verify color facet is available with in the facet panel modal")
+	public void verify_color_facet_is_available_with_in_the_facet_panel_modal() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displayColorFacet();
+	}
+
 	@And("click on color facet")
 	public void click_on_color_facet() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickColorFacet();
 	}
 	
+	@Then("facet values will displayed as multi select colour swatches")
+	public void facet_values_will_displayed_as_multi_select_colour_swatches() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displayColorSwatchedOptions();
+	}
+	
+	@Then("colour facet button is displayed with in horizontal facet bar that appears above the grid results")
+	public void colour_facet_button_is_displayed_with_in_horizontal_facet_bar() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displayColorOptionInFacetHorizontalBar();
+	}
+	
+	@And("click on close on facet option")
+	public void clickOnCloseOnFacetOption() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickCloseButtonFacetPopup();
+	}
+	
+	@And("click on more filters")
+	public void clickOnMoreFilters() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickMoreFilters();
+	}
+	
+	@And("select color option from facet")
+	public void selectColorOptionFromFacet() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).selectColorSwatchedOptions();
+	}
+	
+	@And("deselect a selected color swatch")
+	public void deselect_a_selected_color_swatch() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).selectColorSwatchedOptions();
+	}
+	
+	@And("select another color option from facet")
+	public void select_another_color_option_from_facet() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).selectAnotherColorSwatchedOptions();
+	}
+	
+	@And("click on sort and filters")
+	public void clickOnSortAndFilters() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickOnSortAndFilters();
+	}
+	
+	@And("facet panel modal has color facet")
+	public void facet_model_has_color_facet() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).selectColorSwatchedOptions();
+	}
+	
+	@Then("selected colour name should get added on to the selected section with in the color facet selected colour name should get added on to the selected section with in the color facet")
+	public void selected_colour_name_should_get_added_on_to_the_selected_section_with_in_the_color_facet_Selected_colour() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displaySelectedColorOnFacet();
+	}
+	
+	@Then("plp shows only the products with the selected colour")
+	public void plp_shows_only_the_products_with_the_selected_colour() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displaySelectedColorsResultOnPLP();
+	}
+	
+	@Then("selected colour should get append in a comma seprated")
+	public void selectedColourShouldGetAppend() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displaySelectColorAppendInComma();
+	}
+	
+	@Then("verify the selected colour name should get removed from the selected section")
+	public void verify_the_selected_colour_name_should_get_removed_from_the_selected_section() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).notDisplaySelectedColorOnFacet();
+	}
  
 }

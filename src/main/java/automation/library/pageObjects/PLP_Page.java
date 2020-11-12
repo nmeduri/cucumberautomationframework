@@ -525,4 +525,87 @@ public class PLP_Page extends PageObject {
 	public void clickColorFacet() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Color_Facet())), 4);
 	}
+	
+	/** display on color facet */
+	public void displayColorFacet() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Color_Facet())), 4);
+	}
+	
+	/** verify color swatches options are displayed */
+	public void displayColorSwatchedOptions() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getColorSwatchesOption())), 4);
+	}
+	
+	/** display on color facet in Horizontal Bar*/
+	public void displayColorOptionInFacetHorizontalBar() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getColorOptionInFacetHorizontalBar())), 4);
+	}
+	
+	/** click on close button */
+	public void clickCloseButtonFacetPopup() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().closeButtonFacetPopUp())), 4);
+	}
+	
+	/** click on more filters */
+	public void clickMoreFilters() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getMoreFilters())), 4);
+	}
+	
+	/** select color option */
+	public void selectColorSwatchedOptions() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getColorSwatchesOption())), 4);
+		String[] getVarintValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getColorSwatchesOption()), "aria-label").split(" ");
+		conf.setProperty("colorSwatchFacetOption", getVarintValue[1].trim());
+	}
+	
+	/** click on sort and filters */
+	public void clickOnSortAndFilters() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSortAndFilters())), 4);
+	}
+	
+	/** selected color name is displayed on facet */
+	public void displaySelectedColorOnFacet() throws Exception {
+		String color = (java.lang.String) conf.getProperty("colorSwatchFacetOption");
+		Thread.sleep(3000);
+		$displayFindElement(By.xpath("//div[text()='"+color+"']"));
+	}
+	
+	/** selected color name is displayed on facet */
+	public void displaySelectColorAppendInComma() throws Exception {
+		Thread.sleep(3000);
+		String colorFirst = (java.lang.String) conf.getProperty("colorSwatchFacetOption");
+		String colorSecond = (java.lang.String) conf.getProperty("colorSwatchFacetAnotherOption");
+		String text = $findElement(By.xpath("//span[@class='nl-filter-section__colour-label']")).getText();
+		Log.message("Text:- " + text, true);
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSelectedCommaText())), 5).trim(), "selected:");
+		$displayFindElement(By.xpath("//div[text() ='"+colorFirst + ", " +colorSecond+"']"));
+	}
+	
+	/** verify selected colors result are showing on plp */
+	public void displaySelectedColorsResultOnPLP() throws Exception {
+		String color = (java.lang.String) conf.getProperty("colorSwatchFacetOption");
+		String selectedColor = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getColorResults()));
+		Assert.assertEquals(selectedColor, color);
+	}
+	
+	/** select another color option */
+	public void selectAnotherColorSwatchedOptions() throws Exception {
+		Thread.sleep(2000);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getAnotherColorFacet())), 10);
+		String[] getVarintValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getAnotherColorFacet()), "aria-label").split(" ");
+		Log.message("Another Color:- " + getVarintValue[1].trim(), true);
+		conf.setProperty("colorSwatchFacetAnotherOption", getVarintValue[1].trim());
+	}
+	
+	/** verify the selected colour removed from the selected section */
+	public void notDisplaySelectedColorOnFacet() throws Exception {
+		String color = (java.lang.String) conf.getProperty("colorSwatchFacetOption");
+		Thread.sleep(3000);
+		try {
+			$displayFindElement(By.xpath("//div[text()='"+color+"']"));
+			fail();
+		}catch(Exception e) {
+			Log.message("Selected colour is removed from the selected section.", true);
+		}
+	}
 }	

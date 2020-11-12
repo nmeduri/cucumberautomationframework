@@ -34,7 +34,9 @@ public class AEM_PLP_Page_Locator {
 	String onShowInStockAtMyStoreAEM = Property.getProperty(Constant.OR_FILE, "onShowInStockAtMyStoreAEM");
 	String offShowSaleItemAEM = Property.getProperty(Constant.OR_FILE, "offShowSaleItemAEM");
 	String onShowSaleItemAEM = Property.getProperty(Constant.OR_FILE, "onShowSaleItemAEM");
-	
+	String showInStockOptionAEM = Property.getProperty(Constant.OR_FILE, "showInStockOptionAEM");
+	String enableRatingReviewsAEM = Property.getProperty(Constant.OR_FILE, "enableRatingReviewsAEM");
+	String disableRatingReviewsAEM = Property.getProperty(Constant.OR_FILE, "disableRatingReviewsAEM");
 
     /**
 	 * gets Locator - Specifications
@@ -226,5 +228,26 @@ public class AEM_PLP_Page_Locator {
 	 */
 	public String get_On_Sale_Item() {
 		return onShowSaleItemAEM;
+	}
+	
+	/**
+	 * get Locator - Show in stock option
+	 */
+	public String getOptionInStock() {
+		return showInStockOptionAEM;
+	}
+	
+	/**
+	 * get Locator - Enable Rating and Review
+	 */
+	public String getEnableRatingAndReview() {
+		return enableRatingReviewsAEM;
+	}
+	
+	/**
+	 * get Locator - Disable Rating and Review
+	 */
+	public String getDisableRatingAndReview() {
+		return disableRatingReviewsAEM;
 	}
 }

@@ -50,6 +50,14 @@ public class Featured_List_Page extends PageObject {
 
 	}
 	
+	/** This function navigate to Featured List Page */
+	public void navigateTo_Featured_List_Page() throws Exception {
+
+		driver.navigate()
+				.to(FileReaderManager.getInstance().getDataReader().get_Featured_List_Url());
+
+	}
+	
 	/** click on learn more */
 	public void clickLearnMoreLinkFirst() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFirst())), 5);
@@ -59,6 +67,23 @@ public class Featured_List_Page extends PageObject {
 	public void verifyLearnMoreLinkNavigateOnDefinedUrl() throws Exception {
 		String expectedUrl = PageObject.getDriver().getCurrentUrl();
 		Assert.assertEquals(expectedUrl, FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Link_One());
+	}
+	
+	/** verify featured list component is displayed */
+	public void dispalyFeaturedListComponent() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListComponent())), 10);
+	}
+	
+	/** verify four products are displayed in carousel view */
+	public void verifyFourProductsAreDisplayedInCarouselView() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()));
+		String getAttribute = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()), "data-analytics");
+		
+		Log.message("Attribute :- " + getAttribute, true);
+		for(int i=0; i<li.size(); i++) {
+			String positionValue = li.get(i).getAttribute("data-analytics");
+			Assert.assertTrue(!positionValue.contains("1.5"));
+		}
 	}
 	
 	

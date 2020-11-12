@@ -395,5 +395,36 @@ public class AEM_PLP_Page extends PageObject {
 		}
 	}
 	
+	/** verify option show/hide is displayed on plp template */
+	public void displayOptionShowHideONPLPTemplate() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_Off_Show_In_Stock())), 10);
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().get_On_Show_In_Stock())), 10);
+	}
+	
+	/** verify option is displayed on PLP template */
+	public void displayOptionPLPTemplate() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getOptionInStock())), 10);
+		
+	}
+	
+	/** click on Enable Rating Review */
+	public void clickEnableRatingReview() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getEnableRatingAndReview())), 10);
+	}
+	
+	/** click on disable Rating Review */
+	public void clickDisableRatingReview() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getDisableRatingAndReview())), 10);
+	}
+	
+	/** verify review section is not displayed */
+	public void verifyNotDisplayReviewSection() throws Exception {
+		try {
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Review()));
+			fail();
+		}catch(Exception e) {
+			Log.message("Toggle button is not displayed", true);
+		}
+	}
 	
 }

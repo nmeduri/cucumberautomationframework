@@ -1232,5 +1232,18 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Featured List URl
+	 * 
+	 */
+
+	public String get_Featured_List_Url() {
+		String featuredListUrl = Property.getProperty(Constant.DATA_FILE, "featuredListUrl");
+		if(featuredListUrl != null)
+			return featuredListUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
 }
 

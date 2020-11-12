@@ -79,4 +79,19 @@ public class OCCP_861_PLP_Product_Card_Step extends BaseClass {
 	public void select_list_view_button() throws Exception {
 		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickOnListViewButton();
 	}
+	
+	@And("click on disable rating and review")
+	public void clickOnDisableRatingAndReview() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickDisableRatingReview();
+	}
+	
+	@And("click on enable rating and review")
+	public void clickOnEnableRatingAndReview() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).clickEnableRatingReview();
+	}
+	
+	@Then("verify the ratings and reviews section should are not displayed on the product card")
+	public void verify_the_rating_and_reviews_section_should_are_not_displayed() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyNotDisplayReviewSection();
+	}
 }
