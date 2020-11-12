@@ -274,4 +274,25 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
    	 testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(emailVaue);
    	    Log.message("Email Value:- " + emailVaue, true);
     }
+    
+    @And("yopmail url is available")
+    public void yopmail_url_is_available() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).navigate_To_Yopmail();
+       }
+    
+    @Then("verify email verification in mobile")
+    public void email_verification_in_mobile() throws Exception {
+    	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInYopmailInbox(emailVaue);
+   	 	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).verifyEmailVerificationMobile();
+    }
+    
+    @Then("in mobile user enter email")
+    public void user_enter_email_mobile() throws Exception {
+    	Random rand = new Random(); 
+    	int number = rand.nextInt();
+    	String value = "test" + Integer.toString(number);
+		emailVaue = value.replace("-", "");
+		Log.message("Email Value:- " + emailVaue, true);
+   	    testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Email_Mobile(emailVaue);
+    }
 }

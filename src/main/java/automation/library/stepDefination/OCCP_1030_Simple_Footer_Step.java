@@ -508,5 +508,81 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).navigate_To_Footer_Page();
 	}
+	
+	//AEM
+	
+	@And("user should be able to author url for text legal")
+	public void user_should_be_able_to_author_legal() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayLegalUrlAEM();
+	}
+	
+	@And("access the property and author url for text legal")
+	public void access_and_author_legal() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterDataLegalUrlAEM();
+	}
+	
+	@Then("legal text label changes are reflected on ctc site")
+	public void legal_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyLegalUrlChangesReflected();
+	}
+	
+	@And("user should be able to author text for terms and conditions")
+	public void user_should_be_able_to_author_terms_and_conditions() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayTermsTextAEM();
+	}
+	
+	@And("access the property and author text for terms and conditions")
+	public void access_and_author_terms_and_conditions() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterDataTermsTextAEM();
+	}
+	
+	@Then("terms and conditions text label changes are reflected on ctc site")
+	public void terms_and_conditions_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyTermsTextChangesReflected();
+	}
+	
+	@And("user should be able to author url for terms and conditions")
+	public void user_should_be_able_to_author_url_for_terms_and_conditions() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayTermsUrlAEM();
+	}
+	
+	@And("access the property and author url for terms and conditions")
+	public void access_and_author_url_for_terms_and_conditions() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterDataTermsUrlAEM();
+	}
+	
+	@Then("terms and conditions url changes are reflected on ctc site")
+	public void terms_and_conditions_url_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyTermsUrlChangesReflected();
+	}
 
+	@And("user should be able to author text for privacy policy")
+	public void user_should_be_able_to_author_text_for_privacy_policy() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayPrivacyPolicyTextAEM();
+	}
+	
+	@And("access the property and author text for privacy policy")
+	public void access_and_author_text_for_privacy_policy() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterDataPrivacyPolicyTextAEM();
+	}
+	
+	@Then("privacy policy text label changes are reflected on ctc site")
+	public void privacy_policy_text_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyPrivacyPolicyTextChangesReflected();
+	}
+
+	@And("user should be able to author url for privacy policy")
+	public void user_should_be_able_to_author_url_for_privacy_policy() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayPrivacyPolicyUrlAEM();
+	}
+	
+	@And("access the property and author url for privacy policy")
+	public void access_and_author_url_for_privacy_policy() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).enterDataPrivacyPolicyUrlAEM();
+	}
+	
+	@Then("privacy policy url changes are reflected on ctc site")
+	public void privacy_policy_url_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).verifyPrivacyPolicyUrlChangesReflected();
+	}	
 }

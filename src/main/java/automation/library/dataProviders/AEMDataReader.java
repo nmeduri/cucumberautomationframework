@@ -3930,6 +3930,60 @@ public class AEMDataReader {
 	}
 	
 	/**
+	 * get Data - Legal author Url
+	 * 
+	 */
+	public String get_Legal_Author_Url() {
+		String getAuthorURL = Property.getProperty(Constant.AEM_DATA_FILE, "legalTextAuthorUrl");
+		if(getAuthorURL != null)
+			return getAuthorURL;
+		throw new RuntimeException("legalTextAuthorUrl data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Terms & Conditions author Url
+	 * 
+	 */
+	public String get_Terms_And_Conditions_Author_Url() {
+		String getAuthorURL = Property.getProperty(Constant.AEM_DATA_FILE, "termsAndConditionsAuthorUrl");
+		if(getAuthorURL != null)
+			return getAuthorURL;
+		throw new RuntimeException("legalTextAuthorUrl data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Legal author Url
+	 * 
+	 */
+	public String get_Privacy_Policy_Author_Url() {
+		String getAuthorURL = Property.getProperty(Constant.AEM_DATA_FILE, "privacyPolicyAuthorUrl");
+		if(getAuthorURL != null)
+			return getAuthorURL;
+		throw new RuntimeException("legalTextAuthorUrl data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Legal author Url
+	 * 
+	 */
+	public String get_SiteMap_Author_Url() {
+		String getAuthorURL = Property.getProperty(Constant.AEM_DATA_FILE, "siteMapTextAuthorUrl");
+		if(getAuthorURL != null)
+			return getAuthorURL;
+		throw new RuntimeException("legalTextAuthorUrl data is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Legal author Url
+	 * 
+	 */
+	public String get_Accessibility_Author_Url() {
+		String getAuthorURL = Property.getProperty(Constant.AEM_DATA_FILE, "accessibilityTextAuthorUrl");
+		if(getAuthorURL != null)
+			return getAuthorURL;
+		throw new RuntimeException("legalTextAuthorUrl data is not specified in the Data file.");
+	}
+	/*
 	 * gets Size label
 	 * 
 	 */

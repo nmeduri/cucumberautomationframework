@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
@@ -140,5 +141,28 @@ public class Mailinator_Page extends PageObject {
 //		Thread.sleep(5000);
 //		PageObject.getDriver().navigate().refresh();
 		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Moment_Ago())), 10);
+	}
+	
+	/** This function navigate to yopmail Page */
+	public void navigate_To_Yopmail() {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Yopmail_Url());
+	}
+	
+	/** This function enter user name */
+	public void enterUserInYopmailInbox(String data) throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Yopmail_Inbox_Field()));
+		 //PageObject.getDriver().navigate().refresh();
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Yopmail_Inbox_Field()), data);
+	}
+
+	
+	/** This function verofy email verification in yop page */
+	 public void verifyEmailVerificationMobile() throws Exception {
+		 $click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Go())), 40);
+		 $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Frame())), 20);
+		 PageObject.getDriver().switchTo().frame("ifinbox");
+		 ((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_verify_Link_In_Yopmail())));
+		 $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email())), 20);
+		 ((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email())));
 	}
 }

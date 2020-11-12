@@ -73,7 +73,9 @@ public class AEM_Common_Page extends PageObject {
 
 	/** This function clicks on edit icon */
 	public void clickEditIcon() throws Exception {
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().getEditIconHeader())));
+		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())));
+		$click(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().getEditButton())), 25);
+
 	}
 	
 	/** This function click on configure Button */

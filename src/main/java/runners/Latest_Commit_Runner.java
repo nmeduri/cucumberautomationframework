@@ -11,8 +11,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-
-			"classpath:SAP/Regression/OCCP_2503_PLP_SRP_Product_Badges.feature",
+			"classpath:Adobe/AEM/Regression/OCCP_1030_Simple_Footer.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@TC-3424",
 			"--plugin", "pretty",

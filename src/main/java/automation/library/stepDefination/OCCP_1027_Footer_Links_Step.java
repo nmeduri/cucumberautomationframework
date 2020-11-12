@@ -58,7 +58,7 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	public void scroll_down_to_footer() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).scrollDownToFooter();	
 	}
-	
+
 	@Then("scroll down to mobile footer")
 	public void scroll_down_to_mobile_footer() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).scrollDownToMobileFooter();	

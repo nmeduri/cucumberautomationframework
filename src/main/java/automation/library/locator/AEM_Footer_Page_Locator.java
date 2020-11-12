@@ -9,7 +9,6 @@ import automation.library.logdetail.Log;
  */
 public class AEM_Footer_Page_Locator {
 	
-
 	String FooterComponent = Property.getProperty(Constant.OR_FILE, "FooterComponent");
 	String LegalTextInput=Property.getProperty(Constant.OR_FILE, "LegalTextInput");
 	String LegalTextURL=Property.getProperty(Constant.OR_FILE, "LegalTextURL");
@@ -66,7 +65,7 @@ public class AEM_Footer_Page_Locator {
 	String accessibilityAEM = Property.getProperty(Constant.OR_FILE, "accessibilityAEM");
 	String pricingPolicyAEM = Property.getProperty(Constant.OR_FILE, "pricingPolicyAEM");
 	String legalSectionUpdate = Property.getProperty(Constant.OR_FILE, "legalSectionUpdate");
-	
+
 	String orderStatusSubUrl = Property.getProperty(Constant.OR_FILE, "orderStatusSubUrl");
 	String pickUpAndDeliverySubUrl = Property.getProperty(Constant.OR_FILE, "pickUpAndDeliverySubUrl");
 	String returnAndExchangeSubUrl = Property.getProperty(Constant.OR_FILE, "returnAndExchangeSubUrl");
@@ -158,6 +157,14 @@ public class AEM_Footer_Page_Locator {
 	String androidPlayAppTargetAEM = Property.getProperty(Constant.OR_FILE, "androidPlayAppTargetAEM");
 	String appleAppStoreTargetAEM = Property.getProperty(Constant.OR_FILE, "appleAppStoreTargetAEM");
 	String weeklyFlyerTargetAEM = Property.getProperty(Constant.OR_FILE, "weeklyFlyerTargetAEM");
+	String legalTextUrlAEM = Property.getProperty(Constant.OR_FILE, "legalTextUrlAEM");
+	String termsAndConditionsAEM = Property.getProperty(Constant.OR_FILE, "termsAndConditionsUrlAEM");
+	String termsAndConditionsUrlAEM = Property.getProperty(Constant.OR_FILE, "learnMoreLabelAEM");
+	String privacyPolicyAEM = Property.getProperty(Constant.OR_FILE, "privacyPolicyAEM");
+	String privacyPolicyUrlAEM = Property.getProperty(Constant.OR_FILE, "privacyPolicyUrlAEM");
+	String siteMapTextUrlAEM = Property.getProperty(Constant.OR_FILE, "siteMapTextUrlAEM");
+	String accessibilityTextAEM = Property.getProperty(Constant.OR_FILE, "accessibilityTextAEM");
+	String accessibilityTextUrlAEM = Property.getProperty(Constant.OR_FILE, "accessibilityTextUrlAEM");
 	
 	/**
 	 * gets Locator - Footer copyright title
@@ -299,6 +306,7 @@ public class AEM_Footer_Page_Locator {
 		return legalOpenURL;
 	}
 	
+
 	/**
 	 * gets Locator - legal same
 	 * 
@@ -1254,4 +1262,83 @@ public class AEM_Footer_Page_Locator {
 	public String get_Weekly_Flyer_Target_AEM() {
 		return weeklyFlyerTargetAEM;
 	}
+	
+	/**
+	 * gets Locator - legal url aem
+	 * 
+	 */
+	public String get_Legal_Url_AEM() {
+		return legalTextUrlAEM;
+	}
+	
+	/**
+	 * gets Locator - terms and conditions text
+	 * 
+	 */
+	public String get_Terms_And_Conditions_AEM() {
+		return termsAndConditionsAEM;
+	}
+	
+	/**
+	 * gets Locator - terms and conditions text url
+	 * 
+	 */
+	public String get_Terms_And_Conditions_Url_AEM() {
+		return termsAndConditionsUrlAEM;
+	}
+	
+	/**
+	 * gets Locator - privacy policy 
+	 * 
+	 */
+	public String get_Privacy_Policy_AEM() {
+		return privacyPolicyAEM;
+	}
+	
+	
+    /**
+	 * gets Locator - privacy policy url
+	 * 
+	 */
+    
+	public String get_Privacy_Policy_Url_AEM() {
+		return privacyPolicyUrlAEM;	
+	}
+	
+	/**
+	 * gets Locator - site map text
+	 * 
+	 */
+	public String get_SiteMap_AEM() {
+		return siteMapAEM;
+	}
+	
+	/**
+	 * gets Locator - sitemap url
+	 * 
+	 */
+	public String get_SiteMap_Url_AEM() {
+		return siteMapTextUrlAEM;
+	}
+	
+	/**
+	 * gets Locator - accessibility
+	 * 
+	 */
+	public String get_Accessibility_AEM() {
+		return accessibilityTextAEM;
+	}
+	
+	
+    /**
+	 * gets Locator - accessibility url
+	 * 
+	 */
+    
+	public String get_Accessibility_Url_AEM() {
+		return accessibilityTextUrlAEM;	
+	}
+	
+	
+	
 }

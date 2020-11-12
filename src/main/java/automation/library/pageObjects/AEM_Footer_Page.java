@@ -1019,7 +1019,7 @@ public class AEM_Footer_Page extends PageObject {
 	
 	/** This function scrolls down to copyright footer */
 	public void scrollDownToSimpleFooter() throws Exception {
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Simple_Footer_AEM_Title()), 2);	
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Simple_Footer_AEM_Title()), 20);	
 	}
 	
 	/** This function verifys redirecting to authored tab option */
@@ -1319,4 +1319,118 @@ public class AEM_Footer_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 	}
+	
+	/** Verify display Legal Text Url field */
+	public void displayLegalUrlAEM() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Url_AEM())), 20);
+	}
+	
+	/** enter data legal url*/
+	public void enterDataLegalUrlAEM() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Legal_Url_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Legal_Url_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Legal_Author_Url());
+	}
+	
+	/** Verify display Legal Text Url field */
+	public void verifyLegalUrlChangesReflected() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview())), 40);
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview()), "href");
+		configuration.setProperty("urlLink", url);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview()), 2);	
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview())));
+		testContext.getPageObjectManager().getPageObject(driver).switchOnChildWindow();
+		String expectedUrl = (java.lang.String)configuration.getProperty("urlLink");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+	}
+	
+	/** Verify display Terms and conditions Text field */
+	public void displayTermsTextAEM() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Terms_And_Conditions_AEM())), 20);
+	}
+	
+	/** enter data Terms and conditions Text url*/
+	public void enterDataTermsTextAEM() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Terms_And_Conditions_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Terms_And_Conditions_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Terms_And_Conditions());
+	}
+	
+	/** Verify terms and conditions changes reflected */
+	public void verifyTermsTextChangesReflected() throws Exception {
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Link())), FileReaderManager.getInstance().getAEMDataReader().get_Terms_And_Conditions());
+	}
+	
+	/** Verify display terms and conditions Text Url field */
+	public void displayTermsUrlAEM() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Terms_And_Conditions_Url_AEM()));
+	}
+	
+	/** enter data terms and conditions url*/
+	public void enterDataTermsUrlAEM() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Terms_And_Conditions_Url_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Terms_And_Conditions_Url_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Terms_And_Conditions_Author_Url());
+	}
+	
+	/** Verify display terms and conditions Text Url field */
+	public void verifyTermsUrlChangesReflected() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Link()), "href");
+		configuration.setProperty("urlTermsAndCondtions", url);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Terms_And_Conditions_Link())));
+		testContext.getPageObjectManager().getPageObject(driver).switchOnChildWindow();
+		String expectedUrl = (java.lang.String) configuration.getProperty("urlTermsAndCondtions");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
+	
+	/** Verify display Privacy Policy Text field */
+	public void displayPrivacyPolicyTextAEM() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Privacy_Policy_AEM())), 20);
+	}
+	
+	/** enter data Privacy Policy Text url*/
+	public void enterDataPrivacyPolicyTextAEM() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Privacy_Policy_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Privacy_Policy_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Privacy_Policy());
+	}
+	
+	/** Verify Privacy Policy changes reflected */
+	public void verifyPrivacyPolicyTextChangesReflected() throws Exception {
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link())), FileReaderManager.getInstance().getAEMDataReader().get_Privacy_Policy());
+	}
+	
+	/** Verify display Privacy Policy URL field */
+	public void displayPrivacyPolicyUrlAEM() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Privacy_Policy_Url_AEM())), 20);
+	}
+	
+	/** enter data Privacy Policy Text url*/
+	public void enterDataPrivacyPolicyUrlAEM() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Privacy_Policy_Url_AEM()));
+		$enterData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Privacy_Policy_Url_AEM())), 10, FileReaderManager.getInstance().getAEMDataReader().get_Privacy_Policy_Author_Url());
+	}
+	
+	/** Verify display terms and conditions Text Url field */
+	public void verifyPrivacyPolicyUrlChangesReflected() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link()), "href");
+		configuration.setProperty("urlPrivacyPolicy", url);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Privacy_Policy_Link())));
+		testContext.getPageObjectManager().getPageObject(driver).switchOnChildWindow();
+		String expectedUrl = (java.lang.String) configuration.getProperty("urlPrivacyPolicy");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+		
+	}
+
 }

@@ -16,22 +16,18 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
     And verify clicks on continue button 
     Then validate inline error displayed when incorrect details are filled
     
-  #@RegressionTest @MobileView  @TabletView
+  @RegressionTest @MobileView  @TabletView 
   Scenario: TC-2138,2142 Verify the T&C and Success screen details on Mobile 
 	Given sign up url is available
 	Then sign up page is displayed
-	And user enter email
+	And in mobile user enter email 
 	And user enter password
 	And user enter retype password
 	And user click on create button
 	And user click on next button
 	And email verification sent confirmation screen is displayed
-	When mailinator url is available
-	Then user enter detail in mailinator inbox
-	And user click on go button
-	Then user has received the verification email on mobile
-	And user tap on verification email on mobile
-	And user click on here to verify email link
+	When yopmail url is available
+	Then verify email verification in mobile
 	Then page your email has been verified displayed
 	And user clicks on continue button
 	Then link card screen should be displayed 

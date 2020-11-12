@@ -20,6 +20,10 @@ public class Mailinator_Page_Locator {
     String clickHereMobile = Property.getProperty(Constant.OR_FILE, "clickHereMobile")  + Property.getProperty(Constant.OR_FILE, "clickHereMobileTwo");
 	String verifyYourMoreEmailAddressOnMobile = Property.getProperty(Constant.OR_FILE, "verifyYourMoreEmailAddressOnMobile");
 	String momentAgo = Property.getProperty(Constant.OR_FILE, "momentAgoOne") + "," + Property.getProperty(Constant.OR_FILE, "momentAgoTwo");
+	String enterPublicYopmailInboxField = Property.getProperty(Constant.OR_FILE, "enterPublicYopmailInboxField");
+	String clickGo = Property.getProperty(Constant.OR_FILE, "clickGo");
+	String verifyYourTriangleId = Property.getProperty(Constant.OR_FILE, "verifyYourTriangleId");
+	String yopmailFrame = Property.getProperty(Constant.OR_FILE, "yopmailFrame");
 	
     /**
 	 * gets Locator - Public Mailinator Inbox Field
@@ -107,5 +111,41 @@ public class Mailinator_Page_Locator {
 	 */
 	public String get_Moment_Ago() {
 		return momentAgo;
+	}
+	
+	/**
+	 * gets Locator - Public yopmail Inbox Field
+	 * 
+	 */
+    
+	public String get_Public_Yopmail_Inbox_Field() {
+		return enterPublicYopmailInboxField;	
+	}
+	
+	/**
+	 * gets Locator - Go
+	 * 
+	 */
+    
+	public String get_Go() {
+		return clickGo;	
+	}
+	
+	/**
+	 * gets Locator - verify your triangle id link
+	 * 
+	 */
+    
+	public String get_verify_Link_In_Yopmail() {
+		return verifyYourTriangleId;	
+	}
+	
+	/**
+	 * gets Locator - get yopmail frame
+	 * 
+	 */
+    
+	public String get_Frame() {
+		return yopmailFrame;	
 	}
 }

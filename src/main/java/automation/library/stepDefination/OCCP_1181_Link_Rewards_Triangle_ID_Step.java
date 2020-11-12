@@ -122,7 +122,7 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 	
 	@Then("user should taken to success screen")
 	public void user_should_taken_to_success_screen() throws Exception {
-		fail();
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).displayNewLoyaltyCardSuccessScreen();
 	}
 	
 	@Then("terms and conditions should open user's browser whether pdf")

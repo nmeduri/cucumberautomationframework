@@ -767,9 +767,6 @@ public class DataReader {
 			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
 	}
 	
-	
-	
-	
 	/**
 	 * gets password
 	 * 
@@ -1197,6 +1194,33 @@ public class DataReader {
 	}
 	
 	/**
+	 * gets yopmail Url
+	 * 
+	 */
+
+	public String get_Yopmail_Url() {
+		String Url = Property.getProperty(Constant.DATA_FILE, "yopmailUrl");
+		if(Url != null)
+			return Url;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Email Detail - Mobile
+	 * 
+	 */
+
+	public String get_Email_Detail_Mobile() {
+		String getEmail = Property.getProperty(Constant.DATA_FILE, "emailDataMobile");
+		if(getEmail != null)
+			return getEmail;
+		else
+			throw new RuntimeException("Email Data not specified in the Data file.");
+
+	}
+	
+	/*
 	 * gets Privacy Charter URl
 	 * 
 	 */
