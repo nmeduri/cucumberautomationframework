@@ -973,16 +973,30 @@ public class Footer_Page extends PageObject {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
 	}
 	
-	/** This function to display Footer section*/
-	public void displayFooterSection() throws Exception {
-		//By footerSection = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section());
-		//testContext.getPageObjectManager().getPageObject(driver).scrollDown(footerSection, 10);
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
-	}
-	
 	/** verify Learn more link is getting navigate on learn more section */
 	public void verifyLearnMoreLinkNavigation() throws Exception {
 		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Learn_More()), "href"), FileReaderManager.getInstance().getDataReader().get_Learn_More_Link());
+	}
+	
+	/** verify Learn more link is displayed on footer */
+	public void verifyLearnMoreLinkdisplayed() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Learn_More()));
+	}
+	/** verify download the app is displayed on footer */
+	public void verifydownloadTheAppLinkdisplayed() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_downloadTheApp()));
+	}
+	/** verify Be the first one to know is displayed on footer */
+	public void verifyBethefirstoneIsdisplayed() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Be_The_First_To_Know()));
+	}
+	/** verify weekly Flyer Email Directly Text is displayed on footer */
+	public void verifyweeklyFlyerEmailDirectlyTextIsdisplayed() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Flyer_Email_Directly()));
+	}
+	/** verify SignUp button is displayed on footer */
+	public void verifySignUpTextIsdisplayed() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Weekly_Sign_Up()));
 	}
 	
 	/** verify Accessibility link is getting navigate on Accesibility section on new tab */
@@ -1004,7 +1018,12 @@ public class Footer_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Accessibility_Logo()));
 	}
 	
-	
+	/** This function to display Footer section*/
+	public void displayFooterSection() throws Exception {
+		//By footerSection = $By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Links_Section());
+		//testContext.getPageObjectManager().getPageObject(driver).scrollDown(footerSection, 10);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
+	}
 	
 	
 	/** verify App Store Logo link is getting navigate on App Store section on new tab */
@@ -1020,7 +1039,6 @@ public class Footer_Page extends PageObject {
 			fail();
 		}
 	}
-	
 
 	/** This function to display Footer Links section*/
 	public void displayFooterLinksSection() throws Exception {
@@ -1032,10 +1050,10 @@ public class Footer_Page extends PageObject {
 	}
 	/** This function to display Google App Store Download */
 	public void displayGoogleAppStoreDownload() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Google_App_Store())), 40);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_appstore_Logo())), 40);
 		String actualUrl = PageObject.getDriver().getCurrentUrl();
 		Log.message("Actual URL: "+actualUrl, true);
-		Assert.assertTrue(actualUrl.contains(FileReaderManager.getInstance().getDataReader().get_Google_App_Store_Url()));
+		Assert.assertTrue(actualUrl.contains(FileReaderManager.getInstance().getDataReader().get_Apple_App_Store_Url()));
 	}
 	
 	/** This function is verify that all links are underlined on hover */
@@ -1061,7 +1079,7 @@ public class Footer_Page extends PageObject {
 	
 	/** This function verify the Apple App Store Url */
 	public void verifyIOSAppStoreURL() throws Exception {
-		Assert.assertEquals(FileReaderManager.getInstance().getDataReader().get_AppStore_Url(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_IOS_AppStore_Logo()), "href"));
+		Assert.assertEquals(FileReaderManager.getInstance().getDataReader().get_appleAppStore_Url(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_IOS_AppStore_Logo()), "href"));
 	}
 	
 	/** This function is verify that Link is successfully navigate to Android Play Store */

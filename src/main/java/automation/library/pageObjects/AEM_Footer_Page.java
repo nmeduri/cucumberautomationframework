@@ -1056,7 +1056,21 @@ public class AEM_Footer_Page extends PageObject {
 		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Logo())), 10);
 		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Select_Aem_Button())), 10);
 	}
+	/** This function uploads apple appstore logo */
+	public void uploadAppleStoreLogo() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Image())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_canadianTier())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_AppleStore_Logo())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Select_Aem_Button())), 10);
+	}
 	
+	/** This function uploads google play store logo */
+	public void uploadgooglePlayStoreLogo() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Image())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_canadianTier())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_googlePlayStore_Logo())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Select_Aem_Button())), 10);
+	}
 	/** This function verify logo is authorable */
 	public void verifyUploadedLogoIsDisplayed() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchFrameByString("ContentFrame");
@@ -1171,6 +1185,17 @@ public class AEM_Footer_Page extends PageObject {
 		
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Learn_More())), 50);
 	}
+	/** Verify display Apple app store logo */
+	public void displayAppleAppstoreLogo() throws Exception {
+		
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_IOS_AppStore_Logo())), 50);
+	}
+	/** Verify display googleplay store logo */
+	public void displayGooglePlaystoreLogo() throws Exception {
+		
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Android_PlayStore_Logo())), 50);
+	}
+
 	/** update the Apple App Store Link */
 	public void updateAppleAppStoreLink() throws Exception {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFooterPageLocator().get_Apple_App_Store_Link_AEM()));

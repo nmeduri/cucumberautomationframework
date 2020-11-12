@@ -232,6 +232,12 @@ public class OCCP_3337_Footer_Email_App_Download extends BaseClass {
 	public void configure_the_android_play_app_targeton_same_page_or_new_tab() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).selectAndroidPlayAppTargetOnSamePageOrNewtab();
 	}
+	@Then("configure the apple app store logo field")
+
+	public void configure_the_apple_app_store() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).selectAndroidPlayAppTargetOnSamePageOrNewtab();
+	}
+	
 	@And("updated android play store link changes should be reflected on the site")
 	public void updated_android_playstore_link_changes_should_be_reflected_on_the_site() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).clickOnPlayStoreLogo();
@@ -252,6 +258,35 @@ public class OCCP_3337_Footer_Email_App_Download extends BaseClass {
 	public void update_weekly_flyer_changes_should_be_reflected_on_the_site() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).clickOnSignUpButton();
 	}
-	
-	
+	@Then("updated apple app store logo changes should be reflected on the site")
+	public void update_apple_appstore_logo_should_be_reflected_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayAppleAppstoreLogo();
+	}
+	@Then("updated google play store logo changes should be reflected on the site")
+	public void update_google_play_store_logo_should_be_reflected_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).displayGooglePlaystoreLogo();
+	}
+	@Then ("verify footer links section is displayed with the required fields")
+	public void FooterLinksSection_displayed() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyBethefirstoneIsdisplayed();
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifydownloadTheAppLinkdisplayed();
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyLearnMoreLinkdisplayed();
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifySignUpTextIsdisplayed();
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyweeklyFlyerEmailDirectlyTextIsdisplayed();
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayclickableAccessability();
+
+
+	}
+	@And ("click on download and accessibility tab")
+	public void clickDownloadAndAccessibilityTab() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).clickDownloadAndAccessibilityTab();
+	}	
+	@Then ("configure the apple app store logo")
+	public void configureAppleAppStoreLogo() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).uploadAppleStoreLogo();
+	}
+	@Then ("configure the google play store logo")
+	public void configureGooglePlayStoreLogo() throws Exception {
+		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).uploadgooglePlayStoreLogo();
+	}
 }

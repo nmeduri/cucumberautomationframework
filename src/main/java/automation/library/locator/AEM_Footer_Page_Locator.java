@@ -126,7 +126,10 @@ public class AEM_Footer_Page_Locator {
 	String legalNewTab = Property.getProperty(Constant.OR_FILE, "legalNewTab");
 	String legalDisclaimerPreview = Property.getProperty(Constant.OR_FILE, "legalDisclaimerPreview");
 	String ctcWebCTR = Property.getProperty(Constant.OR_FILE, "ctcWebCTR");
+	String canadianTier=Property.getProperty(Constant.OR_FILE, "canadianTier");
 	String canadianTireLogo = Property.getProperty(Constant.OR_FILE, "canadianTireLogo");
+	String AppleStoreLogo=Property.getProperty(Constant.OR_FILE, "AppleStoreLogo");
+	String GooglePlayStoreLogo=Property.getProperty(Constant.OR_FILE, "GooglePlayStore");
 	String selectAemButton = Property.getProperty(Constant.OR_FILE, "selectAemButton");
 	String logoField = Property.getProperty(Constant.OR_FILE, "logoField");
 	String logoInPreview = Property.getProperty(Constant.OR_FILE, "logoInPreview");
@@ -181,6 +184,31 @@ public class AEM_Footer_Page_Locator {
 	
 	public String get_Logo_Alt_Text() {
 		return logoAltText;
+	}
+	/**
+	 * gets Locator - canadianTier folder
+	 * 
+	 */
+	
+	public String get_canadianTier() {
+		return canadianTier;
+	}
+		
+	/**
+	 * gets Locator - Apple Store Logo
+	 * 
+	 */
+	
+	public String get_AppleStore_Logo() {
+		return AppleStoreLogo;
+	}
+	/**
+	 * gets Locator - Google play Store Logo
+	 * 
+	 */
+	
+	public String get_googlePlayStore_Logo() {
+		return GooglePlayStoreLogo;
 	}
 	
 	/**

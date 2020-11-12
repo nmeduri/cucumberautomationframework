@@ -209,4 +209,31 @@ Feature: OCCP-3337 Footer Links
 	And click on the preview button
 	Then updated accessibility url changes should be reflected on the site
 	
+	@RegressionTest @AEM @TC-3405
+	Scenario: TC-3405 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility -Verify author is able to configure Apple App store Logo
+	Given open browser
+	When AEM author with access to configure footer load on the page
+	And login to AEM using the credential as mentioned in the test data
+	And click on edit button
+	And click on footer Pannel
+	And click on aem configure button
+	And click on download and accessibility tab
+	Then configure the apple app store logo
+	And user click on done button
+	And click on the preview button
+  Then updated apple app store logo changes should be reflected on the site
+	
+	@RegressionTest @AEM @TC-3408
+	Scenario: TC-3408 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility -Verify author is able to configure Play store Logo
+	Given open browser
+	When AEM author with access to configure footer load on the page
+	And login to AEM using the credential as mentioned in the test data
+	And click on edit button
+	And click on footer Pannel
+	And click on aem configure button
+	And click on download and accessibility tab
+	Then configure the google play store logo
+	And user click on done button
+	And click on the preview button
+  Then updated google play store logo changes should be reflected on the site
 	

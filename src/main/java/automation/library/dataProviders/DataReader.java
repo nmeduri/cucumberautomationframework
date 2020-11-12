@@ -996,6 +996,19 @@ public class DataReader {
 		else 
 			throw new RuntimeException("googleAppStoreUrl locale url not specified in the Data file.");
 	}
+	/**
+	 * gets Apple App Store Url
+	 * 
+	 */
+
+	public String get_Apple_App_Store_Url() {
+		String getLoginPagePublishUrlEn = Property.getProperty(Constant.DATA_FILE, "AppleAppStoreUrl");
+		if(getLoginPagePublishUrlEn != null)
+			return getLoginPagePublishUrlEn;
+		else 
+			throw new RuntimeException("AppleAppStoreUrl locale url not specified in the Data file.");
+	}
+	
 	
 	/**
 	 * gets ProductName (Search Product)
@@ -1084,7 +1097,17 @@ public class DataReader {
 	 * gets App store Url
 	 */
 	public String get_AppStore_Url() {
-		String Url = Property.getProperty(Constant.DATA_FILE, "appStoreUrl");
+		String Url = Property.getProperty(Constant.DATA_FILE, "googleAppStoreUrl");
+		if(Url != null)
+			return Url;
+		else 
+			throw new RuntimeException("Product not specified in the Data file.");
+}
+	/**
+	 * gets apple App store Url
+	 */
+	public String get_appleAppStore_Url() {
+		String Url = Property.getProperty(Constant.DATA_FILE, "AppleAppStoreUrl");
 		if(Url != null)
 			return Url;
 		else 
