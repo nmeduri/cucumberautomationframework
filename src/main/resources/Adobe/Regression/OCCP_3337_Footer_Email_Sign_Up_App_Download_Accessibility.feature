@@ -120,5 +120,3 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	Then android play store should be opened with details on app download
   And in footer links section click on apple app store logo
   And should redirected to a new tab opens with details on App store download
-  
-	

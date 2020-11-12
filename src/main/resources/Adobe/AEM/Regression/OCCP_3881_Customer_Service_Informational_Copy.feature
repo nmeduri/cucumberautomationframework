@@ -92,3 +92,12 @@ Feature: OCCP-3722 : Login/Registration Template
 	And click on the preview button
 	Then description should be displayed
 	
+	@RegressionTest @AEM @TC-3424	
+	Scenario: TC-3424	OCCP-3881 :Customer Service - Informational Copy (Authorable) -Verify that Customer is able to Configure Section Separator
+	Given open browser
+	When AEM author with access to configure customer service page component
+	And Remove Cookies
+	And refresh the page
+	And login to AEM using the credential as mentioned in the test data
+	And verify Separator component is configurable
+	

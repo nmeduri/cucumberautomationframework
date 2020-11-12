@@ -115,5 +115,22 @@ public class OCCP_3881_Customer_Service_Informational_Copy_Step extends BaseClas
 		public void update_description_of_link_list() throws Exception {
 			testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPage(PageObject.getDriver()).updateDescriptionOfLinkList();
 		}
+		@And ("accordions subtitle should be displayed")
+		public void display_accordion_subtitle() throws Exception {
+			testContext.getPageObjectManager().getCustomerServicePage(PageObject.getDriver()).display_accordion_subtitle_Customer_Service_Page();
+		}
+		@Then ("click accordion subtitle")
+		public void click_accordion_subtitle() throws Exception {
+			testContext.getPageObjectManager().getCustomerServicePage(PageObject.getDriver()).clickOnaccordion_subtitle();
+		}
+		@And ("validate the subpage of customerservice page is displayed")
+		public void validate_subpage_customerService() throws Exception {
+			testContext.getPageObjectManager().getCustomerServicePage(PageObject.getDriver()).verifyLinkNavigateOnAccordionSubtitle();
+		}
+		@And ("verify Separator component is configurable")
+		public void click_separator_component() throws Exception {
+			testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPage(PageObject.getDriver()).clickOnSeparatorComponent();
+		}
+
 		
 }

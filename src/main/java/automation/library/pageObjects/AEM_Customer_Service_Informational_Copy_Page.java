@@ -45,7 +45,10 @@ public class AEM_Customer_Service_Informational_Copy_Page extends PageObject{
 	public void clickOnAccordionComponent() throws Exception {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getAccordionComponentAEM())),40);
 	}
-	
+	/** This function clicks on Separator component */
+	public void clickOnSeparatorComponent() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getSeparatorComponentAEM())),40);
+	}
 	/** This function update Title of Customer Service  */
 	public void updateTitleOfCustomerService() throws Exception {
 		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPageLocator().getTitleOfCustomerServiceAEM())), 5);

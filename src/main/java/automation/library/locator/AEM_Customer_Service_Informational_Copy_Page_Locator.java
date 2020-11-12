@@ -29,6 +29,7 @@ public class AEM_Customer_Service_Informational_Copy_Page_Locator {
 	String AccordianTitleDisplayAEM=Property.getProperty(Constant.OR_FILE, "AccordianTitleDisplayAEM");
 	String accordionHeader1AEM=Property.getProperty(Constant.OR_FILE, "accordionHeader1AEM");
 	String updatedAccordionHeader1AEM=Property.getProperty(Constant.OR_FILE, "updatedAccordionHeader1AEM");
+	String SeparatorAEM=Property.getProperty(Constant.OR_FILE, "SeparatorAEM");
 	
 	/**
 	 * gets Locator - AEM Title And Content Component
@@ -195,5 +196,13 @@ public class AEM_Customer_Service_Informational_Copy_Page_Locator {
 
 	public String getDescription5LinkListAEM() {
 		return description5OfLinkListAEM;	
+	}
+	/**
+	 * gets Locator - AEM separator Component
+	 * 
+	 */
+
+	public String getSeparatorComponentAEM() {
+		return SeparatorAEM;	
 	}
 }

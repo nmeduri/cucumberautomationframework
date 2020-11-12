@@ -25,11 +25,30 @@ Feature: OCCP-3881 Customer Service - Informational Copy (Authorable)
 	And clickable title should be displayed
 	Then when clicks on the title,customer should be redirected to the subpage
 	
-	
-	
+	@RegressionTest @WebView  @TC-3415
+	Scenario: TC-3415	OCCP-3881: Customer Service-Informational Copy(Authorable)-Verify that the customer is able to view Customer views Section Separators on the Page
+	Given open browser
+	When customerservice informational copy url is available
+	Then customerservice page is displayed
+	And title of customer service should be displayed
+	And description should be displayed
+	And accordions should be displayed
 
+	@RegressionTest @WebView  @TC-3416
+	Scenario: TC-3416	OCCP-3881:Customer Service - Informational Copy (Authorable) -Verify that the customer is able to view Accordion-Customer views Accordion Sub Title
+	Given open browser
+	When customerservice informational copy url is available
+	Then customerservice page is displayed
+	And accordions should be displayed
+	And accordions subtitle should be displayed
 	
-	
-	
-	
+	@RegressionTest @WebView  @TC-3417
+	Scenario: TC-3417	OCCP-3881:Customer Service - Informational Copy (Authorable) -Verify that the customer is able to view Customer views Link List – Desktop/Widescreen
+	Given open browser
+	When customerservice informational copy url is available
+	Then customerservice page is displayed
+	And accordions should be displayed
+	And accordions subtitle should be displayed
+	Then click accordion subtitle
+	And validate the subpage of customerservice page is displayed
 	

@@ -21,6 +21,10 @@ public class Customer_Service_Page_Locator {
 	String linksTitle = Property.getProperty(Constant.OR_FILE, "linksTitle");
 	String accordionPlusIcon=Property.getProperty(Constant.OR_FILE, "accordionPlusIcon");
 	String accordionMinusIcon=Property.getProperty(Constant.OR_FILE, "accordionMinusIcon");
+	String accordionSubtitle1=Property.getProperty(Constant.OR_FILE, "accordionSubtitle1");
+	String accordionSubtitle2=Property.getProperty(Constant.OR_FILE, "accordionSubtitle2");
+
+	
 	/**
 	 * gets Locator - Title Of Customer Service Page
 	 * 
@@ -29,6 +33,15 @@ public class Customer_Service_Page_Locator {
 	public String get_Title_Customer_Service_Page() {
 		return titleOfCustomerServicePage;
 	}
+	/**
+	 * gets Locator - Sub Title1 Of accordion -Customer Service Page
+	 * 
+	 */
+	
+	public String get_Accordion_subtitleTitle1_Customer_Service_Page() {
+		return accordionSubtitle1;
+	}
+	
 	/**
 	 * gets Locator - Description Of Customer Service Page
 	 * 

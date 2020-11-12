@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -54,6 +55,28 @@ public class Customer_Service_Page extends PageObject{
 	/** This function is verify that Customer Service Description is displayed*/
 	public void display_Description_Customer_Service_Page() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_Description_Customer_Service_Page()));
+	}
+	/** This function is verify that Customer Service accordion subtitle is displayed*/
+	public void display_accordion_subtitle_Customer_Service_Page() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_Accordion_subtitleTitle1_Customer_Service_Page()));
+	}
+	/** This function click accordion subtitle */
+	public void clickOnaccordion_subtitle() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_Accordion_subtitleTitle1_Customer_Service_Page()), "href");
+		configuration.setProperty("urlAccordionSubtitle", url);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getCustomerServicePageLocator().get_Accordion_subtitleTitle1_Customer_Service_Page())));
+	}
+	
+	/** This function is verify that Link is successfully navigate on accordion subtitle */
+	public void verifyLinkNavigateOnAccordionSubtitle() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		String expectedUrl = (java.lang.String) configuration.getProperty("urlAccordionSubtitle");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 	}
 	/** This function is verify that Customer Service Accordions are displayed*/
 	public void display_Accordions_Customer_Service_Page() throws Exception {
