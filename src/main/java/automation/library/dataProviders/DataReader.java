@@ -1232,6 +1232,32 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Featured List URl
+	 * 
+	 */
+
+	public String get_Featured_List_Url() {
+		String featuredListUrl = Property.getProperty(Constant.DATA_FILE, "featuredListUrl");
+		if(featuredListUrl != null)
+			return featuredListUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Featured List URl (More than 4 products)
+	 * 
+	 */
+
+	public String get_Featured_List_More_Than_Four_Product_Url() {
+		String featuredListUrl = Property.getProperty(Constant.DATA_FILE, "featuredListMoreThan4ProductUrl");
+		if(featuredListUrl != null)
+			return featuredListUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
 	/**
 	 * gets TwofeaturedTile component URL
 	 * 
@@ -1253,20 +1279,6 @@ public class DataReader {
 		String TwofeaturedTileCTAUrl = Property.getProperty(Constant.DATA_FILE, "CTALink");
 		if(TwofeaturedTileCTAUrl != null)
 			return TwofeaturedTileCTAUrl;
-		else 
-			throw new RuntimeException("url not specified in the Data file.");
-	}
-
-	
-	/**
-	 * gets Featured List URl
-	 * 
-	 */
-
-	public String get_Featured_List_Url() {
-		String featuredListUrl = Property.getProperty(Constant.DATA_FILE, "featuredListUrl");
-		if(featuredListUrl != null)
-			return featuredListUrl;
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}

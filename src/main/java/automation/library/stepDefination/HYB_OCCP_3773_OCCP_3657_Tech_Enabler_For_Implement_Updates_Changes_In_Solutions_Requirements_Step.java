@@ -19,11 +19,11 @@ public class HYB_OCCP_3773_OCCP_3657_Tech_Enabler_For_Implement_Updates_Changes_
 		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3035());
 	}
 	
-	@Then("mediaType is available in JSON response-3035")
-	public void mediaType_Is_Available_In_JSON_Response_3035() {	
-		Log.message("Response :- "  + response.jsonPath().get("medias.mediaType"), true);
-		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.mediaType"), "LIFESTYLE_IMAGE");
-		
-	}
+//	@Then("mediaType is available in JSON response-3035")
+//	public void mediaType_Is_Available_In_JSON_Response_3035() {	
+//		Log.message("Response :- "  + response.jsonPath().get("medias.mediaType"), true);
+//		PageObject.verifyExpectedResponse(response.jsonPath().get("medias.mediaType"), "LIFESTYLE_IMAGE");
+//		
+//	}
 	
 }
