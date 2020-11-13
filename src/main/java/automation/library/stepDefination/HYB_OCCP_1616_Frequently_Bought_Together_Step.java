@@ -89,7 +89,7 @@ public class HYB_OCCP_1616_Frequently_Bought_Together_Step extends BaseStep{
 	}
 	@When("2169-user hits add to Cart api for Anonymous user")
 	public void user_Hits_Add_To_Cart_Api_Anonymous_2169() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_SingleProd(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2169());
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_STH(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2169());
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	@When("2169-user hits GET Cart api for Anonymous user")
@@ -108,7 +108,7 @@ public class HYB_OCCP_1616_Frequently_Bought_Together_Step extends BaseStep{
 	}
 	@When("2172-user hits add to Cart api for authenticated user")
 	public void user_hits_Add_to_Cart_api_Tc_2172() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI_SingleProd(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2169(), accessToken);
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_BOPIS(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2169(), accessToken);
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	@When("2172-user hits GET Cart api for authenticated user")
@@ -126,7 +126,7 @@ public class HYB_OCCP_1616_Frequently_Bought_Together_Step extends BaseStep{
 	}
 	@When("user hits api for base product with no variants to Cart for authenticated user")
 	public void user_hits_api_for_base_product_with_no_variants_to_cart_for_authenticated_user() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI_SingleProd(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2171(), accessToken);
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_BOPIS(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2171(), accessToken);
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	

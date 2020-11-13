@@ -42,21 +42,29 @@ RequestSpecification request;
 		Assert.assertEquals(sortedlist, actuallist);	
 	}
 	
-	@Then("user should to see sizes variantValueCategory under variantMatrix container")
-	public void user_should_to_see_size_variantValueCategory_under_variantMatrix_container() {
-		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("variantMatrix.elements.variantValueCategory"));
-		Log.message("variantValueCategory-Size :- "  + response.jsonPath().get("variantMatrix.elements.variantValueCategory"), true);
-
+	@Then("user should to see colors under variantValueCategory")
+	public void user_should_to_see_colors_under_variantValueCategory() {
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName"));
+		Log.message("variantValueCategory-Size :- "  + response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName"), true);
+		List<String> colors=response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName");
+		colors.contains("OXFORD");
 	}
 	
 	@And("Sizes are displayed under variantValueCategory container")
 	public void see_sizes_are_displayed_under_variantValueCategory_container() {
 		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName"));
-		Log.message("Sizes:- "  + response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName"), true);	
+		Log.message("Sizes:- "  + response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName"), true);
+		List<String> sizes=response.jsonPath().get("variantMatrix.elements.variantValueCategory.name");
+		sizes.contains("Size");
 	}
 	
 	@When("user hits get method api for product details same colour and different size")
 	public void user_hits_get_method_api_for_product_details_for_same_colour_different_size() {
 		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3112());
+	}
+	@And("displayName should be displayed under variantValueCategory container")
+	public void displayName_should_be_displayed_under_variantValueCategory_container() {
+		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName"));
+		Log.message("Sizes:- "  + response.jsonPath().get("variantMatrix.elements.variantValueCategory.displayName"), true);	
 	}
 }

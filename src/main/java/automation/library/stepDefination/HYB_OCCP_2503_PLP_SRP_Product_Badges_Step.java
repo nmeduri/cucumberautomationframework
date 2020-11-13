@@ -89,5 +89,9 @@ public class HYB_OCCP_2503_PLP_SRP_Product_Badges_Step extends BaseStep{
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	
-	
+	@When("hit product list api for product has variants and badges are applicable only to certain variants")
+	public void user_hits_productlist_api_for_product_has_variants_and_badges_are_applicable_only_to_certain_variants() {
+		response = getHybApiEN().post_HYB_ProductList_EN(url,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3092_P1(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2188(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3092_P2());
+		Log.message("Response:- " + response.getBody().asString(), true);
+	}
 }

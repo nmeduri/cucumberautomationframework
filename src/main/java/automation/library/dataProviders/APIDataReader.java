@@ -1104,7 +1104,7 @@ public class APIDataReader {
 	 * gets Add to Cart API
 	 * 
 	 */
-	public String getAddToCartAnonymousUserI() {
+	public String getAddToCartAnonymousUser() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "AddToCartAnonymousUser");
 		if (productInfo != null)
@@ -1164,7 +1164,7 @@ public class APIDataReader {
 	 * gets product data of TC-3969_P1
 	 * 
 	 */
-	public String product_tc_3969_P1() {
+	public String get_product_tc_3969_P1() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3969_P1");
 		if (getProduct != null)
@@ -1176,7 +1176,7 @@ public class APIDataReader {
 	 * gets product data of TC-3969_P2
 	 * 
 	 */
-	public String product_tc_3969_P2() {
+	public String get_product_tc_3969_P2() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3969_P2");
 		if (getProduct != null)
@@ -1374,12 +1374,11 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
-	
 	/**
 	 * gets product data of TC-3994
 	 * 
 	 */
-	public String product_tc_3994() {
+	public String get_product_tc_3994() {
 
 		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3994");
 		if (getProduct != null)
@@ -1397,8 +1396,9 @@ public class APIDataReader {
 		if (productInfo != null)
 			return productInfo;
 		else
-			throw new RuntimeException("productInfo not specified in the API Data file.");
+			throw new RuntimeException("AddToCartAnonymousUser_400Status Code not specified in the API Data file.");
 	}
+	
 	/**
 	 * gets product data of TC-1476
 	 * 
@@ -1617,5 +1617,31 @@ public class APIDataReader {
 			return getProduct;
 		else
 			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3092_P1
+	 * 
+	 */
+	
+	public String get_product_tc_3092_P1() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3092_P1");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code is not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3092_P1
+	 * 
+	 */
+	
+	public String get_product_tc_3092_P2() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3092_P2");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code is not specified in the API Data file.");
 	}
 }

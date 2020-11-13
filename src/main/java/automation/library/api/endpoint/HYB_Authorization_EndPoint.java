@@ -37,6 +37,7 @@ public class HYB_Authorization_EndPoint {
 				.contentType("application/x-www-form-urlencoded").log().all()
 				.formParam("grant_type", "password")
 				.formParam("username", FileReaderManager.getInstance().getAPIDataReader().get_Authenticated_User())
+				//.formParam("password", "nimda")
 				.formParam("password", FileReaderManager.getInstance().getAPIDataReader().getAuthenticatedUserPassword())
 				.when()
 				.post(url);
@@ -290,7 +291,7 @@ public class HYB_Authorization_EndPoint {
 		response = request.post(url + guid+ "/entries?fields=FULL&baseStoreId=ctr");
 		return response;	
 	}
-	public Response post_HYB_AddToCart_AnonymousUserAPI_SingleProd(String url, String guid, String product1) {
+	public Response post_HYB_AddToCart_AnonymousUserAPI_STH(String url, String guid, String product1) {
 		String bodyvalue="{\n" + 
 				"    \"orderEntries\": [\n" + 
 				"        \n" + 
@@ -404,7 +405,8 @@ public class HYB_Authorization_EndPoint {
 		response = request.patch(url + guid+ "/entri/0?fields=FULL");
 		return response;	
 	}
-	public Response post_HYB_AddToCart_AuthUserAPI_SingleProd(String url, String code, String product1, String accessToken) {
+
+	public Response post_HYB_AddToCart_AuthUserAPI_BOPIS(String url, String code, String product1, String accessToken) {
 		String bodyvalue="{\n" + 
 				"    \"orderEntries\": [\n" + 
 				"        {\n" + 
@@ -435,7 +437,44 @@ public class HYB_Authorization_EndPoint {
 		response = request.post(url + code+ "/entries?fields=FULL&baseStoreId=ctr");
 		return response;	
 	}
-	public Response post_HYB_AddToCart_RegUserAPI_SingleProd(String url, String code, String product1, String accessToken) {
+	public Response post_HYB_AddToCart_AuthUserAPI_STH(String url, String code, String product1, String accessToken) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        \n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \"" +product1 +""+ "\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"STH\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"    ]\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("bodyvalue :"+ bodyvalue, true);
+		Log.message("Add to Cart API Authenticated user :- " + url  + code +"/entries?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + code+ "/entries?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response get_Cart_API_Authenticated_User(String url,String code,String accessToken) {
+		Log.message("Get Cart API AuthenticatedUser :- " + url+ code+"?fields=FULL",  true);
+		request.header("Authorization", "Bearer " + accessToken);
+		response = request.get(url+code+ "?fields=FULL");
+		return response;
+	}
+	public Response post_HYB_AddToCart_AnonymousUserAPI_BOPIS(String url, String guid, String product1) {
 		String bodyvalue="{\n" + 
 				"    \"orderEntries\": [\n" + 
 				"        {\n" + 
@@ -457,19 +496,103 @@ public class HYB_Authorization_EndPoint {
 				"        }\n" + 
 				"        \n" + 
 				"    ]\n" + 
-				"}";
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " );
+		Log.message("Add to Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Add to Cart API:- " + url  + guid +"/entries?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + guid+ "/entries?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response patch_HYB_UpdateCart_AuthenticatedUserAPI_STH(String url, String code, String product1,String accessToken) {
+		String bodyvalue="{\n" + 
+				"    \"storeZoneIds\": {\n" + 
+				"        \"parcelZoneId\": \"QC_BS_PCL\",\n" + 
+				"        \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
+				"        \"storeDistance\": 13\n" + 
+				"    },\n" + 
+				"    \"quantity\": 3,\n" + 
+				"    \"deliveryMode\": {\n" + 
+				"        \"code\": \"STH\"\n" + 
+				"    },\n" + 
+				"    \"product\": {\n" + 
+				"        \"code\": \"" +product1 +""+ "\"\n" + 
+				"    },\n" + 
+				"    \"deliveryPointOfService\": {\n" + 
+				"        \"name\": \"\"\n" + 
+				"    }\n" + 
+				"}";	
 		request.body(bodyvalue);
 		request.header("Content-Type", "application/json");
 		request.header("Authorization", "Bearer " + accessToken);
-		Log.message("bodyvalue :"+ bodyvalue, true);
-		Log.message("Add to Cart API Authenticated user :- " + url  + code +"/entries?fields=FULL&baseStoreId=ctr", true);
-		response = request.post(url + code+ "/entries?fields=FULL&baseStoreId=ctr");
+		Log.message("Update Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Update Cart API Auth :- " + url  + code +"/entries/0?fields=FULL&baseStoreId=ctr", true);
+		response = request.patch(url + code+ "/entries/0?fields=FULL&baseStoreId=ctr");
 		return response;	
 	}
-	public Response get_Cart_API_Authenticated_User(String url,String code,String accessToken) {
-		Log.message("Get Cart API AuthenticatedUser :- " + url+ code+"?fields=FULL",  true);
+	public Response patch_HYB_UpdateCart_AuthenticatedUserAPI_BOPIS(String url, String code, String product1,String accessToken) {
+		String bodyvalue="{\n" + 
+				"	\"storeZoneIds\": { \n" + 
+				"		\"parcelZoneId\": \"AB_BS_PCL\", \n" + 
+				"		\"bulkZoneId\": \"AB_BS_BLK\", \n" + 
+				"		\"storeDistance\": 13 \n" + 
+				"	},\n" + 
+				"	\"quantity\":2 ,\n" + 
+				"	\"deliveryMode\":{\n" + 
+				"	    \"code\": \"BOPIS\" \n" + 
+				"	},\n" + 
+				"	\"product\":{\n" + 
+				"		\"code\": \"" +product1 +""+"\" \n" + 
+				"	},\n" + 
+				"	\"deliveryPointOfService\":{\n" + 
+				"		\"name\": \"363\"   \n" + 
+				"	}\n" + 
+				"	\n" + 
+				"    \n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
 		request.header("Authorization", "Bearer " + accessToken);
-		response = request.get(url+code+ "?fields=FULL");
+		Log.message("Update Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Update Cart API Auth :- " + url  + code +"/entries/0?fields=FULL&baseStoreId=ctr", true);
+		response = request.patch(url + code+ "/entries/0?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response post_HYB_AddToCart_AnonymousUser_Default_API_(String url, String guid, String product1) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \"" +product1 +""+ "\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"BOPIS\"\n" + 
+				"            },\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"        \n" + 
+				"    ]\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " );
+		Log.message("Add to Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Add to Cart API:- " + url  + guid +"/entries?fields=DEFAULT&baseStoreId=ctr", true);
+		response = request.post(url + guid+ "/entries?fields=DEFAULT&baseStoreId=ctr");
+		return response;	
+	}
+	public Response get_Cart_API_AnonymousUser_Default(String url,String guid) {
+		Log.message("Get Cart API AnonymousUser :- " + url+ guid+"?fields=FULL",  true);
+		response = request.get(url+guid+ "?fields=DEFAULT");
 		return response;
 	}
 }

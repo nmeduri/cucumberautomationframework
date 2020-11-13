@@ -25,7 +25,7 @@ RequestSpecification request;
 	}
 	@When("3123-user hits add to Cart api for authenticated user")
 	public void user_hits_Add_to_Cart_api_for_authenticated_user_3123() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_SingleProd(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3123(), accessToken);
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_BOPIS(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3123(), accessToken);
 		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
 	}
 	

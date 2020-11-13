@@ -25,12 +25,12 @@ public class HYB_OCCP_1309_Cart_View_Filled_Cart extends BaseStep{
 	
 	@When("3994-user hits add to Cart api for Anonymous user")
 	public void user_Hits_Add_To_Cart_Api_Anonymous_3994() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_SingleProd(url, guid,FileReaderManager.getInstance().getAPIDataReader().product_tc_3994());
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_STH(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994());
 		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
 	}
 	@When("3994-user hits update Cart api for Anonymous user")
 	public void user_Hits_Update_Cart_Api_Anonymous_3994() {
-		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_STH(url, guid,FileReaderManager.getInstance().getAPIDataReader().product_tc_3994());
+		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_STH(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994());
 		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
 	}
 	@When("3994-user hits GET Cart api for Anonymous user")
@@ -72,7 +72,7 @@ public class HYB_OCCP_1309_Cart_View_Filled_Cart extends BaseStep{
 		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.code"));
 		Log.message("Code2 in deliveryMode container :- " + response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.code").toString(), true);
 	}
-	@And("shiptohome should be displayed In_Get_Response")
+	@And("shiptohome should be displayed in Get Response")
 	public void shipToHome_Should_Be_Displayed_In_Get_Response() {
 		PageObject.verifyExpectedResponse(response.jsonPath().get("entries.deliveryMode.name"),"Ship to home");
 		Log.message("Name1 in deliveryMode container :- " + response.jsonPath().get("entries.deliveryMode.name").toString(), true);
@@ -89,19 +89,92 @@ public class HYB_OCCP_1309_Cart_View_Filled_Cart extends BaseStep{
 	}
 	@When("3999-user hits add to Cart api for Anonymous user")
 	public void user_Hits_Add_To_Cart_Api_Anonymous_3999() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI(url, guid,FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P1(),FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P2());
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P1(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P2());
 		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
 	}
 	@When("3999-user hits update Cart api for Anonymous user")
 	public void user_Hits_Update_Cart_Api_Anonymous_3999() {
 		//url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAddToCartAPI_400Status());	
-		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_STH(getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAddToCartAPI_400Status()), guid,FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P1());
+		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_STH(getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAddToCartAPI_400Status()), guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P1());
 		Log.message("Update Cart Response without base store id :- " + response.getBody().asString(), true);
 	}
 	@When("4000-user hits update Cart api for Anonymous user")
 	public void user_Hits_Update_Cart_Api_Anonymous_4000() {
-		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_404NotFound(url, guid,FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P1());
+		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_404NotFound(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P1());
 		Log.message("404 Response :- " + response.getBody().asString(), true);
 	}
-
+	@When("hits add to Cart api for Anonymous user-BOPIS option")
+	public void Hits_Add_To_Cart_Api_Anonymous_BOPIS_option() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_BOPIS(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994());
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@And("Pick Up Store should be displayed in Get Response")
+	public void Pick_Up_Store_Should_Be_Displayed_In_Get_Response() {
+		PageObject.verifyExpectedResponse(response.jsonPath().get("entries.deliveryMode.name"),"Pick Up Store");
+		Log.message("Name1 in deliveryMode container :- " + response.jsonPath().get("entries.deliveryMode.name").toString(), true);
+		Assert.assertNotEquals(null,response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name"));
+		//PageObject.verifyExpectedResponse(response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name"),"Ship to home");
+		Log.message("Name2 in deliveryMode container :- " + response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name").toString(), true);
+	}
+	@When("user hits update Cart api with base product for authenticated user-STH")
+	public void user_Hits_Update_Cart_Api_With_Base_Product_Authenticated_STH() {
+		response = getAuthorizationUrl().patch_HYB_UpdateCart_AuthenticatedUserAPI_STH(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1415(),accessToken);
+		Log.message("Update Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("user hits add to Cart api with base product for Anonymous user")
+	public void user_Hits_Add_To_Cart_Api_With_Base_Product_Anonymous() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_BOPIS(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1415());
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("user hits add to Cart api with STH for authenticated user")
+	public void user_Hits_Add_To_Cart_Api_with_STH_For_Authenticated() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_STH(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994(),accessToken);
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("hits GET Cart api for authenticated user")
+	public void user_Hits_Get_Cart_Api_Authenticated() {
+		response = getAuthorizationUrl().get_Cart_API_Authenticated_User(url, code,accessToken);
+		Log.message("GET Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("user hits add to Cart api BOPIS for authenticated user")
+	public void user_Hits_Add_To_Cart_Api_BOPIS_For_Authenticated_BOPIS() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_BOPIS(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994(),accessToken);
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("hits add to Cart api with base product for authenticated user")
+	public void hits_Add_To_Cart_Api_With_Base_Product_authenticated() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_BOPIS(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1415(),accessToken);
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("user hits update Cart api with base product for Anonymous user")
+	public void user_Hits_Update_Cart_Api_With_Base_Product_Anonymous() {
+		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_BOPIS(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1415());
+		Log.message("Update Cart Response:- " + response.getBody().asString(), true);
+	}
+	@Then("isServiceProduct should be displayed true or false")
+	public void isServiceProduct_should_be_displayed_true_or_false() {
+		PageObject.notNullAttributeInResponse(response.jsonPath().get("isServiceProduct").toString());
+		if(response.jsonPath().get("isServiceProduct").toString().contains("false")||response.jsonPath().get("isServiceProduct").toString().contains("true")) {
+			Log.message("isServiceProduct is displayed : " +response.jsonPath().get("isServiceProduct") ,true);
+		}else
+			Log.message("isServiceProduct is NOT displayed",true);
+	}
+	@When("user hits add to Cart DEAFULT api for Anonymous user")
+	public void user_Hits_Add_To_Cart_DEAFULT_Api_Anonymous_() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUser_Default_API_(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994());
+		Log.message("Add to Cart Default Response:- " + response.getBody().asString(), true);
+	}
+	@When("user hits GET Cart DEFAULT api for Anonymous user")
+	public void user_Hits_Get_Cart_DEFAULT_Api_Anonymous() {
+		response = getAuthorizationUrl().get_Cart_API_AnonymousUser_Default(url, guid);
+		Log.message("GET Cart Response:- " + response.getBody().asString(), true);
+	}
+	@Then("Add deliveryPointOfService is available in json response")
+	public void add_deliveryPointOfService_Is_Available_In_Response() {
+		PageObject.verifySectionValueResponseNotNull(response.jsonPath().get("pickupOrderGroups.deliveryPointOfService"));
+	}
+	@And("deliveryMode is available in json response")
+	public void deliveryMode_Is_Available_In_Response() {
+		PageObject.verifySectionValueResponseNotNull(response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode"));
+	}
 }

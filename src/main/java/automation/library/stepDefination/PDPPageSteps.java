@@ -395,4 +395,5 @@ public class PDPPageSteps extends BaseClass {
 	public void variant_selection_should_be_displayed() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).display_Add_To_Cart_FlyOut_Product_Variants();
 	}
+	
 }

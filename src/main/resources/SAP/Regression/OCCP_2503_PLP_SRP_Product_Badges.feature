@@ -41,11 +41,19 @@ Feature: OCCP_2503: PLP/SRP - Product Badges
     		When hits the multiple base products list api
     		Then badges that are configured for the multiple products should return in the json response
     		
-    		@RegressionTest1
+    		@RegressionTest
     		Scenario: TC-3089 HYB:OCCP-2503:OCCP-3857: Implement outbound OCC API for Product Badges(PLP) - with multiple variant product
     		Given PLP occ api is available
     		When hits the multiple variant products list api
     		Then badges that are configured for the multiple products should return in the json response
+    		
+    		@RegressionTest1
+    		Scenario: TC-3092 HYB:OCCP-2503:OCCP-3857: Verify Product has variants and badges are applicable only to certain variants
+    		Given PLP occ api is available
+    		When hit product list api for product has variants and badges are applicable only to certain variants
+    		Then badges that are configured for the multiple products should return in the json response
+    		
+    		
     		
     		
     		

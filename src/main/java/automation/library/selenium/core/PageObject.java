@@ -589,7 +589,6 @@ public class PageObject extends BaseClass {
 		return true;
 		
 	}
-
 	/** verify  response not null for Integer value*/
 	public static void notNullAttributeInResponseInInteger(Integer actualValue) {
 		//Integer.parseInt(value)

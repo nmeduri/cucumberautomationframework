@@ -142,6 +142,8 @@ public class PageObjectManager {
 	private Reset_Password_Page getResetPasswordPage;
 	private Reset_Your_Password_Page_Locator getResetPassword_Page_Locator;
 
+	private Gigya_Api_Tool_Page gigyaApiToolPage;
+	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
 
 	private Link_reward_ProfileScreen_page getLink_reward_ProfileScreen_page;
 	private Link_reward_ProfileScreen_page_Locator getLink_reward_ProfileScreen_page_Locator;
@@ -164,10 +166,8 @@ public class PageObjectManager {
 	private AEM_Common_Page_Locator getAEMCommonPageLocator;
 	private AEM_Search_And_SRP_Page_Locator getAEMSearchAndSRPPageLocator;
 	private Link_Rewards_Options_Page getLinkRewardsOptsPage;
-
-	private Gigya_Api_Tool_Page gigyaApiToolPage;
 	private Link_Rewards_Options_Page_Locator getLinkRewardsOptsPageLocator;
-	private Gigya_Api_Tool_Page_Locator gigyaApiToolPage_Locator;
+
 	private AEM_New_Rewards_Card_Screen_Page getAEMNewRewardsCardScreenPage;
 	private AEM_New_Rewards_Card_Screen_Page_Locator getAEMNewRewardsCardScreenPageLocator;
 	private AEM_PDP_Page getAEMPDPPage;
@@ -215,10 +215,12 @@ public class PageObjectManager {
 	private AEM_Cart_Page_Locator getAEMCartPageLocator; 
 	private AEM_Privacy_Charter_Page getAEMPrivacyCharterPage;
 	private AEM_Privacy_Charter_Page_Locator getAEMPrivacyCharterPageLocator;
+
 	private Two_Feature_Tile_Component_Page getTwoFeatureTileComponentPage;
 	private Two_Featured_Tile_Component_Page_Locator getTwoFeaturedTileComponentPageLocator;
 	private AEM_Two_Featured_tiles_Component_Page getAEMTwoFeatureTileComponentPage;
 	private AEM_Two_Featured_Tiles_Component_Page_Locator getAEMTwoFeaturedTileComponentPageLocator;
+
 	
 	public PageObjectManager() {
 		

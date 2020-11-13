@@ -18,7 +18,7 @@ public class HYB_OCCP_1259_PDP_Add_to_Cart_Flyout_Overview extends BaseStep{
 	
 	@When("Anonymous user Add to cart api is available")
 	public void anonymous_User_Add_To_Cart_Api() {
-		url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAddToCartAnonymousUserI());	
+		url = getAuthorizationUrl().HYB_Auth_Url(FileReaderManager.getInstance().getAPIDataReader().getAddToCartAnonymousUser());	
 	}
 	@Then("guid is available in response JSON")
 	public void response_should_have_guid() {
@@ -138,6 +138,7 @@ public class HYB_OCCP_1259_PDP_Add_to_Cart_Flyout_Overview extends BaseStep{
 	public void user_Should_Not_Able_To_Add_BaseProduct_To_The_Cart() {
 		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("errors.message"));
 		Log.message("Error messgae :- " + response.jsonPath().get("errors.message").toString(), true);
+		response.jsonPath().get("errors.message").toString().contains("Choose a variant instead of the base product");
 	}
 	@When("3976-user hits add to Cart api for authenticated user")
 	public void user_hits_Add_to_Cart_api_Tc_3976() {
@@ -146,12 +147,12 @@ public class HYB_OCCP_1259_PDP_Add_to_Cart_Flyout_Overview extends BaseStep{
 	}
 	@When("3969-user hits add to Cart api for Anonymous user")
 	public void user_Hits_Add_To_Cart_Api_Anonymous_3969() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI(url, guid,FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P1(),FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P2());
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P1(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P2());
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	@When("3975-user hits add to Cart api for authenticated user")
 	public void user_hits_Add_to_Cart_api_Tc_3975() {
-		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI(url, code,FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P1(),FileReaderManager.getInstance().getAPIDataReader().product_tc_3969_P2(), accessToken);
+		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P1(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3969_P2(), accessToken);
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
 	@When("3967-user hits add to Cart api for Anonymous user")

@@ -8,13 +8,13 @@ import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
 public final class Latest_Commit_Runner extends BaseClass{
+	
 	public static String name;
 	private static String[] defaultOptions = {
 
-
 			"classpath:Adobe/AEM/Regression/OCCP_1030_Simple_Footer.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@TC-3424",
+			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
