@@ -3,6 +3,7 @@ package automation.library.managers;
 
 import org.openqa.selenium.WebDriver;
 
+import automation.library.locator.AEM_Broad_Banner_Page_Locator;
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Cart_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
@@ -24,6 +25,7 @@ import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
 import automation.library.locator.AEM_Two_Featured_Tiles_Component_Page_Locator;
 import automation.library.locator.Banners_Locator;
+import automation.library.locator.Broad_Banner_Page_Locator;
 import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.Cart_Page_Locator;
 import automation.library.locator.Checkout_Page_Locator;
@@ -54,6 +56,7 @@ import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Two_Featured_Tile_Component_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
+import automation.library.pageObjects.AEM_Broad_Banner_Page;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Cart_Page;
 import automation.library.pageObjects.AEM_Common_Page;
@@ -74,6 +77,7 @@ import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
 import automation.library.pageObjects.AEM_Two_Featured_tiles_Component_Page;
 import automation.library.pageObjects.Banner_Pages;
+import automation.library.pageObjects.Broad_Banner_Page;
 import automation.library.pageObjects.Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.Cart_Page;
 import automation.library.pageObjects.Checkout_Page;
@@ -220,7 +224,11 @@ public class PageObjectManager {
 	private Two_Featured_Tile_Component_Page_Locator getTwoFeaturedTileComponentPageLocator;
 	private AEM_Two_Featured_tiles_Component_Page getAEMTwoFeatureTileComponentPage;
 	private AEM_Two_Featured_Tiles_Component_Page_Locator getAEMTwoFeaturedTileComponentPageLocator;
-
+	private AEM_Broad_Banner_Page getAEMBroadBannerPage;
+	private AEM_Broad_Banner_Page_Locator getAEMBroadBannerPageLocator;
+	private Broad_Banner_Page getBroadBannerPage;
+	private Broad_Banner_Page_Locator getBroadBannerPageLocator;
+	
 	
 	public PageObjectManager() {
 		
@@ -760,5 +768,21 @@ public class PageObjectManager {
 	/** Return Instance of AEM Two feature tile component Page Locator */
 	public AEM_Two_Featured_Tiles_Component_Page_Locator getAEMTwoFeaturedTileComponentPageLocator() {
 		return (getAEMTwoFeaturedTileComponentPageLocator == null) ? getAEMTwoFeaturedTileComponentPageLocator = new AEM_Two_Featured_Tiles_Component_Page_Locator() : getAEMTwoFeaturedTileComponentPageLocator;
+	}
+	/** Return Instance of AEM Broad Banner Page  */
+	public AEM_Broad_Banner_Page getAEMBroadBannerPage(WebDriver driver) {
+		return (getAEMBroadBannerPage == null) ? getAEMBroadBannerPage = new AEM_Broad_Banner_Page(driver) : getAEMBroadBannerPage;
+	}
+	/** Return Instance of AEM Broad Banner Page Locator */
+	public AEM_Broad_Banner_Page_Locator getAEMBroadBannerPageLocator() {
+		return (getAEMBroadBannerPageLocator == null) ? getAEMBroadBannerPageLocator = new AEM_Broad_Banner_Page_Locator() : getAEMBroadBannerPageLocator;
+	}
+	/** Return Instance of Broad Banner Page  */
+	public Broad_Banner_Page getBroadBannerPage(WebDriver driver) {
+		return (getBroadBannerPage == null) ? getBroadBannerPage = new Broad_Banner_Page(driver) : getBroadBannerPage;
+	}
+	/** Return Instance of Broad Banner Page Locator */
+	public Broad_Banner_Page_Locator getBroadBannerPageLocator() {
+		return (getBroadBannerPageLocator == null) ? getBroadBannerPageLocator = new Broad_Banner_Page_Locator() : getBroadBannerPageLocator;
 	}
 }

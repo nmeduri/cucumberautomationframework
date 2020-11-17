@@ -14,11 +14,6 @@ import io.restassured.specification.RequestSpecification;
 public class HYB_OCCP_3657_Add_new_enum_codes_to_CTCMediaTypeEnum_Step extends BaseStep{
 	RequestSpecification request;
 	
-//	@Given("hits GET method for product api-3035")
-//	public void hits_the_product_api_3035() {
-//		response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3035());
-//	}
-	
 	@Then("mediaType is available in JSON response-3035")
 	public void mediaType_Is_Available_In_JSON_Response_3035() {	
 		Log.message("Response :- "  + response.jsonPath().get("medias.mediaType"), true);

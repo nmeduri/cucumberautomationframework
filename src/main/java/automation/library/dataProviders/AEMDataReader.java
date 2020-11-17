@@ -4444,4 +4444,53 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets Broad banner URL AEM
+	 * 
+	 */
+	
+	public String get_Broad_Banner_Url_AEM() {
+		String BroadBannerURL = Property.getProperty(Constant.AEM_DATA_FILE, "BroadBannerAEM");
+		if(BroadBannerURL != null)
+			return BroadBannerURL;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Broad banner URL 
+	 * 
+	 */
+	
+	public String get_Broad_Banner_Url() {
+		String BroadBannerURL = Property.getProperty(Constant.AEM_DATA_FILE, "BroadBanner");
+		if(BroadBannerURL != null)
+			return BroadBannerURL;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets Broad banner background color
+	 * 
+	 */
+	
+	public String get_Broad_Banner_BackGroundColor() {
+		String BroadBannerBackGroundColor = Property.getProperty(Constant.AEM_DATA_FILE, "BroadBannerBackgroundcolor");
+		if(BroadBannerBackGroundColor != null)
+			return BroadBannerBackGroundColor;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Broad banner Title
+	 * 
+	 */
+	
+	public String get_Broad_Banner_Title() {
+		String BroadBannerTitle = Property.getProperty(Constant.AEM_DATA_FILE, "BroadBannerTitle");
+		if(BroadBannerTitle != null)
+			return BroadBannerTitle;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }
