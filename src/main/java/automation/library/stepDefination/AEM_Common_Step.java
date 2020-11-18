@@ -60,9 +60,4 @@ public class AEM_Common_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPublishButton();
 	}
 
-	@And("refresh the page")
-	public void refresh() throws Exception {
-		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).verifyRefresh();
-	}
-
 }
