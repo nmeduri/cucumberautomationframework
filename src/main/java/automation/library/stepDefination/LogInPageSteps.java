@@ -99,6 +99,7 @@ public class LogInPageSteps extends BaseClass{
 	@And("user click on sign in button")
 	public void user_click_on_sign_in_button() throws Exception {
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).click_Sign_In_Button();
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verify2FactorAuthentication();
 	}	
 	
 	@When("user is navigate on login page")

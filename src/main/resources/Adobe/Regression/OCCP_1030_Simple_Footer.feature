@@ -33,7 +33,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2840, TC-2849 Verification of options present in Simple Footer - Desktop
-	Given footer url is available
+	Given the footer page url is available
 	When footer page is displayed
 	Then editable clickable text Terms and conditions is displayed
 	Then editable clickable text privacy and policy is displayed
@@ -80,7 +80,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView @SmokeTest
 	Scenario: TC-2841, TC-2832 TC-2850, TC-2859 Verification of clicking of text Legal 
 	Given open browser
-	Given footer url is available
+	Given the footer page url is available
 	When footer page is displayed
 	And in simple footer access and click on legal text
 	Then user should be navigate on legal information

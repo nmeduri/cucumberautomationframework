@@ -1021,6 +1021,7 @@ public class DataReader {
 	/**
 	 * gets Footer Url
 	 */
+
 	public String get_Footer_Component_Url() {
 		String getUrl = Property.getProperty(Constant.DATA_FILE, "getFooterUrl");
 		if(getUrl != null)

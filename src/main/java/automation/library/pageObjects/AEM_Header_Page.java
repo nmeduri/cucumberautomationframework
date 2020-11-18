@@ -192,4 +192,32 @@ public class AEM_Header_Page extends PageObject {
 		
 		PageObject.getDriver().switchTo().parentFrame();
 	}
+	
+	/** This function navigate to AEM Primary Navigation component page */
+	public void navigateToHeaderAEM() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_AEM_Header_Url());
+	}
+	
+	/** This function click on AEM primary navigation title*/
+	public void clickOnAemPrimaryNavigationTitle() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMHeaderPageLocator().get_Primary_Navigation_Component())),40);
+	}
+	
+	/** This function click on AEM primary navigation title*/
+	public void displayCtcLogo() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMHeaderPageLocator().get_Primary_Navigation_Logo_Field())),20);
+	}
+	
+	/** This function uploads ctc logo */
+	public void enterDataCtcLogo() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Pick_Image())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMHeaderPageLocator().get_Dam_Canadian_Tire())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMHeaderPageLocator().get_ctc_Logo_Thumbnail())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Select_Aem_Button())), 10);
+	}
+	
+	/** This function click on AEM primary navigation title*/
+	public void verifyLogoChangesReflected() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMHeaderPageLocator().get_Ctc_Logo_Preview())),20);
+	}
 }

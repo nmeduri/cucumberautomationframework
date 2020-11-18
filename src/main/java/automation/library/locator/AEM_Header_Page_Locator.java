@@ -50,6 +50,12 @@ public class AEM_Header_Page_Locator {
     String PersonalInformation=Property.getProperty(Constant.OR_FILE, "PersonalInformation");
     String Wishlist=Property.getProperty(Constant.OR_FILE, "Wishlist");
     String Signoutlabel=Property.getProperty(Constant.OR_FILE, "Sign-outlabel");
+    String primaryNavigationComponentAEM = Property.getProperty(Constant.OR_FILE, "primaryNavigationComponentAEM").replace("=", ",");
+	String canadianTire = Property.getProperty(Constant.OR_FILE, "canadianTire");
+	String ctcLogoThumbnail = Property.getProperty(Constant.OR_FILE, "ctcLogoThumbnail");
+	String primaryNavigationLogoField = Property.getProperty(Constant.OR_FILE, "primaryNavigationLogoField");
+	String ctcLogoPreview = Property.getProperty(Constant.OR_FILE, "ctcLogoPreview");
+	
     
     /**
 	 * gets Locator - Account Menu component
@@ -374,6 +380,51 @@ public class AEM_Header_Page_Locator {
     
 	public String get_Wishlist_Author() {
 		return Wishlist;	
+	}
+	
+	/**
+	 * gets Locator - Primary Navigation component
+	 * 
+	 */
+	
+	public String get_Primary_Navigation_Component() {
+		return primaryNavigationComponentAEM;
+	}
+	
+	/**
+	 * gets Locator - canadiantire dam
+	 * 
+	 */
+	
+	public String get_Dam_Canadian_Tire() {
+		return canadianTire;
+	}
+	
+	/**
+	 * gets Locator - canadiantire dam
+	 * 
+	 */
+	
+	public String get_ctc_Logo_Thumbnail() {
+		return ctcLogoThumbnail;
+	}
+	
+	/**
+	 * gets Locator - logo field
+	 * 
+	 */
+	
+	public String get_Primary_Navigation_Logo_Field() {
+		return primaryNavigationLogoField;
+	}
+	
+	/**
+	 * gets Locator - ctc logo preview
+	 * 
+	 */
+	
+	public String get_Ctc_Logo_Preview() {
+		return ctcLogoPreview;
 	}
 	
 }

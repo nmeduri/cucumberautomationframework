@@ -204,6 +204,7 @@ public class PageObjectManager {
 	private AEM_Login_Page_Locator getAEMLoginPageLocator;
 	private AEM_Registration_Page getAEMRegistrationPage;
 	private AEM_Registration_Page_Locator getAEMRegistrationPageLocator;
+	private AEM_Header_Page_Locator getAEMHeaderPageLocator;
 	private AEM_Feature_List_Page_Locator getAEMFeatureListPageLocator;
 	private AEM_Featured_List_Page getAEMFeatureListPage;
 	private Feature_List_Page_Locator getFeatureListPageLocator;
@@ -681,9 +682,14 @@ public class PageObjectManager {
 	/** Return Instance of AEM Footer Locator Page */
 	public AEM_Registration_Page_Locator getAEMRegistrationPageLocator() {
 		return (getAEMRegistrationPageLocator == null) ? getAEMRegistrationPageLocator = new AEM_Registration_Page_Locator() : getAEMRegistrationPageLocator;
-
 	}
 	
+	/** Return Instance of AEM Header Locator Page */
+	public AEM_Header_Page_Locator getAEMHeaderPageLocator() {
+		return (getAEMHeaderPageLocator == null) ? getAEMHeaderPageLocator = new AEM_Header_Page_Locator() : getAEMHeaderPageLocator;
+
+	}
+
 	/** Return Instance of AEM Feature List Page */
 	public AEM_Featured_List_Page getAEMFeatureListPage(WebDriver driver) {
 		return (getAEMFeatureListPage == null) ? getAEMFeatureListPage = new AEM_Featured_List_Page(driver) : getAEMFeatureListPage;

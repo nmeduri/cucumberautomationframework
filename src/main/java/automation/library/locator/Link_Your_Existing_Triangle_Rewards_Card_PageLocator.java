@@ -31,8 +31,12 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String invalidCardErrorMessage = Property.getProperty(Constant.OR_FILE, "invalidCardErrorMessage");
 	String thresholdErrorMessage = Property.getProperty(Constant.OR_FILE, "thresholdErrorMessage");
 	String alreadyEnrolledErrorMessage = Property.getProperty(Constant.OR_FILE, "alreadyEnrolledErrorMessage");
-	String activeOwnershipValidationHeaderText = Property.getProperty(Constant.OR_FILE, "activeOwnershipValidationHeaderText");
+	String activeOwnershipValidationHeaderText = Property.getProperty(Constant.OR_FILE, "activeOwnershipValidationHeaderText").replace("=", ",");
 	String activeOwnershipValidationSubHeaderText = Property.getProperty(Constant.OR_FILE, "activeOwnershipValidationSubHeaderText").replace("=", ",");
+	String activeValidationErrorImg = Property.getProperty(Constant.OR_FILE, "activeValidationErrorImg");
+	String activeValidationErrorText = Property.getProperty(Constant.OR_FILE, "activeValidationErrorText");
+	String activeValidationTryAgain = Property.getProperty(Constant.OR_FILE, "activeValidationTryAgain");
+	String activeValidationCancel = Property.getProperty(Constant.OR_FILE, "activeValidationCancel");
 	
 	/**
 	 * gets Locator - Enter Card number
@@ -173,7 +177,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	}
 	
 	/**
-	 * gets Locator - Tooltip
+	 * gets Locator - generate card link
 	 * 
 	 */
 	public String get_Generate_Card_link() {
@@ -189,7 +193,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	}
 	
 	/**
-	 * gets Locator - Tooltip
+	 * gets Locator - Invalid Card Error
 	 * 
 	 */
 	public String get_Bad_Card_Error() {
@@ -197,7 +201,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	}
 	
 	/**
-	 * gets Locator - Tooltip
+	 * gets Locator - Threshold Card Error
 	 * 
 	 */
 	public String get_Threshold_Card_Error() {
@@ -226,6 +230,38 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	 */
 	public String get_Active_Ownership_Validation_Sub_HeaderText() {
 		return activeOwnershipValidationSubHeaderText;
+	}
+	
+	/**
+	 * gets Locator - Active validation Error Img
+	 * 
+	 */
+	public String get_Active_Error_Img() {
+		return activeValidationErrorImg;
+	}
+	
+	/**
+	 * gets Locator - Active validation Error Text
+	 * 
+	 */
+	public String get_Active_Error_Text() {
+		return activeValidationErrorText;
+	}
+	
+	/**
+	 * gets Locator - Try Again
+	 * 
+	 */
+	public String get_Active_TryAgain() {
+		return activeValidationTryAgain;
+	}
+	
+	/**
+	 * gets Locator - Cancel
+	 * 
+	 */
+	public String get_Active_Cancel() {
+		return activeValidationCancel;
 	}
  }
 

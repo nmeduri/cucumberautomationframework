@@ -40,7 +40,7 @@ Feature: OCCP-1180 Get New Loyalty Card
 	And verify clicks on continue button
 	Then user should be able to see an inline error message below the field
 	
-	@RegressionTest @WideScreen 
+	@RegressionTest @WideScreen  @SmokeTest
 	Scenario: TC-2481 Generate a New Loyalty card for signed in user and Cancel link redirection on Wide Desktop View
 	When login url is available
 	When enter email detail

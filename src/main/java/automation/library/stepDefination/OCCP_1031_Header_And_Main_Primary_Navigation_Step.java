@@ -93,4 +93,31 @@ public class OCCP_1031_Header_And_Main_Primary_Navigation_Step extends BaseClass
 		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).verifyCartRedirectedToConfigurePage();
 	}
 	
+	//AEM
+	
+	@When("aem author with access navigates to header page")
+	public void navigate_to_aem_header_page() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).navigateToHeaderAEM();
+	}
+	
+	@And("click on aem primary navigation card title")
+	public void click_aem_primary_navigation_title() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).clickOnAemPrimaryNavigationTitle();
+	}
+	
+	@And("user should be able to author ctc logo")
+	public void user_should_be_able_to_author_ctc_logo() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).displayCtcLogo();
+	}
+	
+	@And("access and author the ctc logo property")
+	public void author_ctc_logo() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).enterDataCtcLogo();
+	}
+	
+	@Then("the ctc logo changes should be reflected on ctc site")
+	public void ctc_logo_changes_should_be_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).verifyLogoChangesReflected();
+	}
+	
 }

@@ -3216,6 +3216,95 @@ public class AEMDataReader {
 			return getloginPageUrlEn;
 		throw new RuntimeException("loginPageUrl_En not specified in the Data file.");
 	}
+	
+	/**
+	 * get Data - Active Rewards Card Title
+	 */
+	public String get_Active_Rewards_Card_Title_Data() {
+		String activeRewardsCardTitle = Property.getProperty(Constant.AEM_DATA_FILE, "activeRewardsCardTitle");
+		if(activeRewardsCardTitle != null)
+			return activeRewardsCardTitle;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Active Rewards Card SubTitle
+	 */
+	public String get_Active_Rewards_Card_SubTitle_Data() {
+		String activeRewardsCardSubTitle = Property.getProperty(Constant.AEM_DATA_FILE, "activeRewardsCardSubTitle");
+		if(activeRewardsCardSubTitle != null)
+			return activeRewardsCardSubTitle;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - YOB
+	 */
+	public String get_YOB_Input_Data() {
+		String yobInput = Property.getProperty(Constant.AEM_DATA_FILE, "yobInput");
+		if(yobInput != null)
+			return yobInput;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Postal code
+	 */
+	public String get_PostalCode_Input_Data() {
+		String postalCodeInput = Property.getProperty(Constant.AEM_DATA_FILE, "postalCodeInput");
+		if(postalCodeInput != null)
+			return postalCodeInput;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Active card continue
+	 */
+	public String get_Active_Card_Continue_data() {
+		String activeCardContinue = Property.getProperty(Constant.AEM_DATA_FILE, "activeCardContinue");
+		if(activeCardContinue != null)
+			return activeCardContinue;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Active card cancel
+	 */
+	public String get_Active_Card_Cancel_data() {
+		String activeCardCancel = Property.getProperty(Constant.AEM_DATA_FILE, "activeCardCancel");
+		if(activeCardCancel != null)
+			return activeCardCancel;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Active card Error Image
+	 */
+	public String get_Active_Card_Error_Image_data() {
+		String activeValidationErrorImage = Property.getProperty(Constant.AEM_DATA_FILE, "activeValidationErrorImage");
+		if(activeValidationErrorImage != null)
+			return activeValidationErrorImage;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Active card Error Text
+	 */
+	public String get_Active_Card_Error_Text_data() {
+		String errorTextInput = Property.getProperty(Constant.AEM_DATA_FILE, "errorTextInput");
+		if(errorTextInput != null)
+			return errorTextInput;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	public String get_AEM_Header_Url() {
+		String getUrl = Property.getProperty(Constant.AEM_DATA_FILE, "headerPageUrlAEM");
+		if(getUrl != null)
+			return getUrl;
+		else
+			throw new RuntimeException("broadPromoTilesAuthor Url not specified in the Data file.");
+	}
+	
 	/**
 	 * 
 	 * get Data - Login Page author url fr locale

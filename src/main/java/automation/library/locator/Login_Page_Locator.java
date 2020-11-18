@@ -24,6 +24,10 @@ public class Login_Page_Locator {
 	String clearDataButton = Property.getProperty(Constant.OR_FILE, "clearDataButton");
 	String loginPageLogo = Property.getProperty(Constant.OR_FILE, "loginPageLogo");
 	String blueBackgroundColor = Property.getProperty(Constant.OR_FILE, "blueBackgroundColor");
+	String verifyYourTriangleIdTitle = Property.getProperty(Constant.OR_FILE, "verifyYourTriangleIdTitle");
+	String otpInput = Property.getProperty(Constant.OR_FILE, "otpInput");
+	String verifyButton = Property.getProperty(Constant.OR_FILE, "verifyButton");
+	String otpCode = Property.getProperty(Constant.OR_FILE, "otpCode");
 	
 	/**
 	 * gets Locator - Header Get Welcome To Your Triangle
@@ -140,5 +144,40 @@ public class Login_Page_Locator {
 	
 	public String get_Blue_Background() {
 		return blueBackgroundColor;
+	}
+	
+	/**
+	 * gets Locator - Verify Title
+	 * 
+	 */
+	
+	public String get_Verify_Title() {
+		return verifyYourTriangleIdTitle;
+	}
+	
+	/**
+	 * gets Locator - OTP Input
+	 * 
+	 */
+	
+	public String get_OTP_Input() {
+		return otpInput;
+	}
+	
+	/**
+	 * gets Locator - Verify Button
+	 * 
+	 */
+	
+	public String get_Verify_Button() {
+		return verifyButton;
+	}
+	
+	/**
+	 * gets Locator - get OTP code
+	 */
+	
+	public String get_OTP_Code() {
+		return otpCode;
 	}
 }

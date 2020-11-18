@@ -261,5 +261,36 @@ public class Login_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Login_Page_Publish_Url_En());
 
 	}
+	
+	/** This function verify if 2 factor authentication is displayed and submits otp */
+	public void verify2FactorAuthentication() throws Exception {
+		try {
+			if($display($$$$(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Verify_Title(), 10))) {
+				 String parentWindow = driver.getWindowHandle();
+				((JavascriptExecutor) PageObject.getDriver()).executeScript("window.open('');");
+				testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchOnChildWindow();
+				driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Mailinator_Url());
+				//testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).enterUserInMailinatorInbox(emailVaue);
+				//$display($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Mailinator_Inbox_Field()));
+				$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Mailinator_Inbox_Field())), 5, FileReaderManager.getInstance().getDataReader().get_Email_Data());
+				$display($(Loc.ID, testContext.getPageObjectManager().getMailinatorPageLocator().get_Go_Button()));
+				$click($(Loc.ID, testContext.getPageObjectManager().getMailinatorPageLocator().get_Go_Button()));
+				Thread.sleep(2000);
+				$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address())), 40);	
+				((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_Verify_Your_Email_Address())));
+				PageObject.getDriver().switchTo().frame("msg_body");			
+				String code = $getText($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_OTP_Code()));
+				System.out.println(code);
+				configuration.setProperty("otpCode", code);
+				String otpCode = (java.lang.String) configuration.getProperty("otpCode");			
+				testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeTheChildWindow();
+				driver.switchTo().window(parentWindow);	
+				$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLoginPageLocator().get_OTP_Input())), 5, otpCode);
+				$click(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLoginPageLocator().get_Verify_Button())),10);
+				}
+		}
+			catch(Exception e) {
+			}
+	}
 
 }

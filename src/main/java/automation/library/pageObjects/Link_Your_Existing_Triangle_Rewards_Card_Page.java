@@ -278,7 +278,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 
 	/** This function verify that Header Text is displayed */
 	public void displayActiveValidationHeaderText() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Active_Ownership_Validation_HeaderText()));
+		$display(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Active_Ownership_Validation_HeaderText())),40);
 	}
 	
 	/** This function verify that Sub Header Text is displayed */

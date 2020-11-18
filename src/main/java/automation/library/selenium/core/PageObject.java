@@ -331,6 +331,12 @@ public class PageObject extends BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,2000)");
 	}
+	
+	/** scroll down by coordinates */
+	public void scrollDownToEnd() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,10000)");
+	}
 
 	/** click on element */
 	public Element $click(Element element) {
@@ -607,6 +613,22 @@ public class PageObject extends BaseClass {
 		}
         return els;
 	}
+	
+	/** close child window */
+	public void closeTheChildWindow() {
+    Set<String> allWH = driver.getWindowHandles();
+    ArrayList<String> allWHCopy = new ArrayList<String>(allWH);
+    //close the window
+    for(int i=0;i<allWHCopy.size();i++)
+    {
+        if(i==1)
+        {
+            driver.switchTo().window(allWHCopy.get(i));
+            driver.close();
+        }
+        
+	} 
+}
 }
 
 	

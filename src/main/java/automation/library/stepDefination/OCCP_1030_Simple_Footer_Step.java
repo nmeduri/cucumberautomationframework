@@ -497,14 +497,20 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).revertViewLessTextLabelChanges();
 		}
 
+	@Given("footer url is available") 
+	public void footer_url_is_available() throws Exception {
+		
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).navigateTo_Footer_Page();
+	}
 	
 	@When("footer page is displayed")
 	public void pdp_page_is_displayed_for_the_product() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).display_Footer_Page();
 	}
+
 	
-	@Given("footer url is available") 
-	public void footer_url_is_available() throws Exception {
+	@Given("the footer page url is available") 
+	public void footer_page_url_is_available() throws Exception {
 		
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).navigate_To_Footer_Page();
 	}

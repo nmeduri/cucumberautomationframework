@@ -51,19 +51,6 @@ public class Footer_Page extends PageObject {
 	}
 	
 
-	/** This function is verify that Footer Page is displayed */
-	public void display_Footer_Page() throws Exception {
-
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
-
-	}
-	
-	/** This function navigate to Footer Page */
-	public void navigateTo_Footer_Page() throws Exception {
-
-		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Footer_Url());
-
-	}
 	
 	/** This function is verify that Legal Disclaimer is displayed */
 	public void displayLegalDisclaimer() throws Exception {
@@ -1025,6 +1012,17 @@ public class Footer_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Footer_Section())), 40);
 	}
 	
+	/** This function navigate to Footer page*/
+	public void navigateTo_Footer_Page() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Footer_Url());
+	}
+	
+	/** This function is verify that Footer Page is displayed */
+	public void display_Footer_Page() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
+
+	}
+
 	
 	/** verify App Store Logo link is getting navigate on App Store section on new tab */
 	public void verifyAppStoreNavigation() throws Exception {

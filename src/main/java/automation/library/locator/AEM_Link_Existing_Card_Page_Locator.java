@@ -32,6 +32,18 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	String linkExistingCardErrorScreenTab = Property.getProperty(Constant.OR_FILE, "linkExistingCardErrorScreenTab");
 	String linkExistingCardTryAgainCTA = Property.getProperty(Constant.OR_FILE, "linkExistingCardTryAgainCTA");
 	String linkExistingCardCancelCTA = Property.getProperty(Constant.OR_FILE, "linkExistingCardCancelCTA");
+	String activeCardValidationTab = Property.getProperty(Constant.OR_FILE, "activeCardValidationTab");
+	String activeRewardsCardTitle = Property.getProperty(Constant.OR_FILE, "activeRewardsCardTitle");
+	String activeRewardsCardSubTitle = Property.getProperty(Constant.OR_FILE, "activeRewardsCardSubTitle");
+	String yobInput = Property.getProperty(Constant.OR_FILE, "yobInput");
+	String postalCodeInput = Property.getProperty(Constant.OR_FILE, "postalCodeInput");
+	String activeCardContinue = Property.getProperty(Constant.OR_FILE, "activeCardContinue");
+	String activeCardCancel = Property.getProperty(Constant.OR_FILE, "activeCardCancel");
+	String postalCodeLabel = Property.getProperty(Constant.OR_FILE, "postalCodeLabel");
+	String activeValidationErrorImg = Property.getProperty(Constant.OR_FILE, "activeValidationErrorImg");
+	String activeValidationErrorTryAgain = Property.getProperty(Constant.OR_FILE, "activeValidationErrorTryAgain");
+	String activeValidationErrorCancel = Property.getProperty(Constant.OR_FILE, "activeValidationErrorCancel");
+	String activeValidationErrorText = Property.getProperty(Constant.OR_FILE, "activeValidationErrorText");
 	String errorImageAlreayLinkCard = Property.getProperty(Constant.OR_FILE, "errorImageAlreayLinkCard");
 	String tryAgainBtnAlreadyLinkCard = Property.getProperty(Constant.OR_FILE, "tryAgainBtnAlreadyLinkCard");
 	
@@ -233,6 +245,115 @@ public class AEM_Link_Existing_Card_Page_Locator {
 		return linkExistingCardCancelCTA;
 	}
 	
+	/**
+<<<<<<< HEAD
+	 * gets Locator - Get Active validation tab
+	 * 
+	 */
+	
+	public String get_Active_Card_Validation_Tab() {
+		return activeCardValidationTab;
+	}
+	
+	/**
+	 * gets Locator - Get Active_Rewards_Card_Title
+	 * 
+	 */
+	
+	public String get_Active_Rewards_Card_Title() {
+		return activeRewardsCardTitle;
+	}
+	
+	/**
+	 * gets Locator - Active_Rewards_Card_SubTitle
+	 * 
+	 */
+	
+	public String get_Active_Rewards_Card_SubTitle() {
+		return activeRewardsCardSubTitle;
+	}
+	
+	/**
+	 * gets Locator - YOB Input field
+	 * 
+	 */
+	
+	public String get_Yob_Input() {
+		return yobInput;
+	}
+	
+	/**
+	 * gets Locator - Postal code input field
+	 * 
+	 */
+	
+	public String get_Postal_Code_Input() {
+		return postalCodeInput;
+	}
+	
+	/**
+	 * gets Locator - Active card continue
+	 * 
+	 */
+	
+	public String get_Active_Card_Continue() {
+		return activeCardContinue;
+	}
+	
+	/**
+	 * gets Locator - Active card cancel
+	 * 
+	 */
+	
+	public String get_Active_Card_Cancel() {
+		return activeCardCancel;
+	}
+	
+	/**
+	 * gets Locator - postal code label
+	 * 
+	 */
+	
+	public String get_Postal_Code_Label() {
+		return postalCodeLabel;
+	}
+	
+	/**
+	 * gets Locator - Error Image
+	 * 
+	 */
+	
+	public String get_Error_Image() {
+		return activeValidationErrorImg;
+	}
+	
+	/**
+	 * gets Locator - Active card Error TryAgain
+	 * 
+	 */
+	
+	public String get_Active_Error_TryAgain() {
+		return activeValidationErrorTryAgain;
+	}
+	
+	/**
+	 * gets Locator - Active card error cancel
+	 * 
+	 */
+	
+	public String get_Active_Error_Cancel() {
+		return activeValidationErrorCancel;
+	}
+	
+	/**
+	 * gets Locator - Active card error Text
+	 * 
+	 */
+	
+	public String get_Active_Error_Text() {
+		return activeValidationErrorText;
+	}
+
 	/**
 	 * get Locator - Error Image (Already Link Card)
 	 */
