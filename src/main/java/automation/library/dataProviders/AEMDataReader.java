@@ -4676,6 +4676,7 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("URL not specified in the Data file.");
 	}
+
 	/**
 	 * gets PDP Product add to cart URL
 	 * 
@@ -4820,7 +4821,7 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-		
+	
 	/**
 	 * gets Broad banner URL AEM
 	 * 
