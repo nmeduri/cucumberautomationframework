@@ -726,6 +726,6 @@ public class Footer_PageLocator {
 	public String get_IOS_AppStore_Logo() {
 		return iosAppStoreLogo;
 	}
-
+	
 }
 

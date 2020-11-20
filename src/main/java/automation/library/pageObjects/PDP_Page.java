@@ -998,5 +998,57 @@ public class PDP_Page extends PageObject {
 		public void displayMostHelpfulLabel() throws Exception {
 			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Most_Helpful_Reviews_Label()));
 		}
-
+		/** This function will scroll down to Questions and Answers section */
+		public void scrollDownToQuestionsAndAnswersSection() throws Exception {
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Questions_And_Answers_Section()), 3);
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollUpByCoordinates();
+		}
+		/** This function verify Be the first to ask a question is displayed*/
+		public void displayBeTheFirstToAskAQuestion() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Ask_A_Question()));
+		}
+		/** This function to click on Be the first to ask a question link*/
+		public void clickOnBeTheFirstToAskAQuestion() throws Exception {
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Ask_A_Question()));
+		}
+		/** This function verify ask a question form is displayed*/
+		public void displayAskAQuestionForm() throws Exception {
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Ask_A_Question_Form())),30);
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Ask_A_Question_Text_Box())),30);
+			
+		}
+		/** This function verify Ask a Question CTA is displayed*/
+		public void displayAskAQuestionCTA() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Ask_A_Question_CTA()));
+		}
+		
+		/** This function verify Questions list is displayed*/
+		public void displayQuestionsList() throws Exception {
+			$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getPDPPageLocator().get_Questions_List());
+		}
+		/** This function verify Username of questioner list is displayed*/
+		public void displayUsernameOfQuestionerList() throws Exception {
+			$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getPDPPageLocator().get_Username_Questioner_List());
+		}
+		/** This function verify TimeStamp of question is displayed*/
+		public void displayTimeStampOfQuestion() throws Exception {
+			$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getPDPPageLocator().get_Timestamp_Of_Question());
+		}
+		/** This function verify Number Of Answers are displayed*/
+		public void displayNumberOfAnswers() throws Exception {
+			$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getPDPPageLocator().get_Number_Of_Answers());
+		}
+		/** This function verify AnsThisQuestion Button is displayed*/
+		public void displayAnsThisQuestionButton() throws Exception {
+			$display($(Loc.XPATH,testContext.getPageObjectManager().getPDPPageLocator().get_AnsThisQuestion_Button()));
+		}
+		/** This function to click on AnsThisQuestion Button*/
+		public void clickOnAnsThisQuestionCTA() throws Exception {
+			$click($(Loc.XPATH,testContext.getPageObjectManager().getPDPPageLocator().get_AnsThisQuestion_Button()));
+		}
+		/** This function verify Post Answer Model is displayed*/
+		public void displayPostAnswerModel() throws Exception {
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Post_Answer_Model())),40);
+			
+		}
 }

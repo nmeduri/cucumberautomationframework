@@ -91,4 +91,13 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	Then verify the max number of dots on the component
 	Then user should still be able to see the last page with four cards
 	
+	@RegressionTest1 @WebView
+	Scenario: TC-4840 Verfiy the display of key line color on the Promotional image featured list page
+	Given open browser
+	When navigate to featured list page
+	Then user should be able to see featured list component on the page
+	And verify the display of card and related image
+	And user should able to see the key line for all the images displayed on the Image featured list
+
+	
 	

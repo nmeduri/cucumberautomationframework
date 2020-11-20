@@ -118,7 +118,17 @@ public class PDP_PageLocator {
 	String questionsAndAnswerStickyTOC = Property.getProperty(Constant.OR_FILE, "questionsAndAnswerStickyTOC");
 	String ratingReviewsStickyTOC = Property.getProperty(Constant.OR_FILE, "ratingReviewsStickyTOC");
 	String addToCartButtonSticky = Property.getProperty(Constant.OR_FILE, "addToCartButtonSticky");
-
+	String questionsAndAnswersSection = Property.getProperty(Constant.OR_FILE, "questionsAndAnswersSection");
+	String beTheFirstToAskAQuestion = Property.getProperty(Constant.OR_FILE, "beTheFirstToAskAQuestion");
+	String askAQuestionSection = Property.getProperty(Constant.OR_FILE, "askAQuestionSection");
+	String askAQuestionTextBox = Property.getProperty(Constant.OR_FILE, "askAQuestionTextBox");
+	String askAQuestionCTA = Property.getProperty(Constant.OR_FILE, "askAQuestionCTA");
+	String questionsList = Property.getProperty(Constant.OR_FILE, "questionsList");
+	String usernameOfQuestionerList = Property.getProperty(Constant.OR_FILE, "usernameOfQuestionerList");
+	String timestampOfQuestion = Property.getProperty(Constant.OR_FILE, "timestampOfQuestion");
+	String numberOfAnswers = Property.getProperty(Constant.OR_FILE, "numberOfAnswers");
+	String ansThisQuestionButton = Property.getProperty(Constant.OR_FILE, "ansThisQuestionButton");
+	String postAnswerModel = Property.getProperty(Constant.OR_FILE, "postAnswerModel");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -1019,6 +1029,86 @@ public class PDP_PageLocator {
 	 */
 	public String getAddToCartButtonSticky() {
 		return addToCartButtonSticky;
+	}
+	/**
+	 * gets Locator - Q&A section
+	 * 
+	 */
+	public String get_Questions_And_Answers_Section() {
+		return questionsAndAnswersSection;
+	}
+	/**
+	 * gets Locator - Be the first to ask a question link
+	 * 
+	 */
+	public String get_Be_The_First_To_Ask_A_Question() {
+		return beTheFirstToAskAQuestion;
+	}
+	/**
+	 * gets Locator - Ask a question form
+	 * 
+	 */
+	public String get_Ask_A_Question_Form() {
+		return askAQuestionSection;
+	}
+	
+	/**
+	 * gets Locator - Ask a question Text Box
+	 * 
+	 */
+	public String get_Ask_A_Question_Text_Box() {
+		return askAQuestionTextBox;
+	}
+	/**
+	 * gets Locator - Ask a question CTA
+	 * 
+	 */
+	public String get_Ask_A_Question_CTA() {
+		return askAQuestionCTA;
+	}
+	
+	/**
+	 * gets Locator - Questions List
+	 * 
+	 */
+	public String get_Questions_List() {
+		return questionsList;
+	}
+	/**
+	 * gets Locator - Username of questioner List
+	 * 
+	 */
+	public String get_Username_Questioner_List() {
+		return usernameOfQuestionerList;
+	}
+	
+	/**
+	 * gets Locator - Timestamp Of Question
+	 * 
+	 */
+	public String get_Timestamp_Of_Question() {
+		return timestampOfQuestion;
+	}
+	/**
+	 * gets Locator - Number Of Answers
+	 * 
+	 */
+	public String get_Number_Of_Answers() {
+		return numberOfAnswers;
+	}
+	/**
+	 * gets Locator - AnsThisQuestion Button
+	 * 
+	 */
+	public String get_AnsThisQuestion_Button() {
+		return ansThisQuestionButton;
+	}
+	/**
+	 * gets Locator - Post Answer Model
+	 * 
+	 */
+	public String get_Post_Answer_Model() {
+		return postAnswerModel;
 	}
 }
 

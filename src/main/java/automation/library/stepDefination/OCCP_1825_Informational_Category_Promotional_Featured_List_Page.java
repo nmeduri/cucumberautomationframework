@@ -151,5 +151,9 @@ public class OCCP_1825_Informational_Category_Promotional_Featured_List_Page ext
 		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyFourProductsAreDisplayedInCarouselView();
 	}
 	
- 
+	@Then("user should able to see the key line for all the images displayed on the Image featured list")
+	public void verify_the_display_of_key_line_for_all_the_images() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyDisplayOfKeyLineForAllTheImages();
+		
+	}
 }

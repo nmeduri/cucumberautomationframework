@@ -1283,5 +1283,30 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Product Code of Q&A Section in PDP
+	 * 
+	 */
+	public String get_Questions_And_Answers_Section() {
+
+		String getQuestionsAndAnswersSection = Property.getProperty(Constant.DATA_FILE, "questionsAndAnswersSection");
+		if(getQuestionsAndAnswersSection != null)
+			return getQuestionsAndAnswersSection;
+		else
+			throw new RuntimeException("getQuestionsAndAnswersSection Code not specified in the Data file.");
+	}
+	/**
+	 * gets Product Code of Q&A in PDP
+	 * 
+	 */
+	public String get_Questions_And_Answers() {
+
+		String getQuestionsAndAnswersSection = Property.getProperty(Constant.DATA_FILE, "questionsAndAnswers");
+		if(getQuestionsAndAnswersSection != null)
+			return getQuestionsAndAnswersSection;
+		else
+			throw new RuntimeException("getQuestionsAndAnswersSection Code not specified in the Data file.");
+	}
 }
 

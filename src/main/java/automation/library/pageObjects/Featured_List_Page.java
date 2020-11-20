@@ -243,7 +243,13 @@ public class Featured_List_Page extends PageObject {
 		
 		Assert.assertEquals(li.size(), 4);
 	}
-	
+	/** verify display of Key Line for all Images */
+	public void verifyDisplayOfKeyLineForAllTheImages() throws Exception {
+		$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getFeatureListPageLocator().getKeyLineOfImages());
+		
+		
+		//Assert.assertEquals(li.size(), 4);
+	}
 	
 }
 	
