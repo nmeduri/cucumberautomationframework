@@ -4677,6 +4677,151 @@ public class AEMDataReader {
 			throw new RuntimeException("URL not specified in the Data file.");
 	}
 	/**
+	 * gets PDP Product add to cart URL
+	 * 
+	 */
+	
+	public String get_PDP_AddToCart_AEM() {
+		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "pdpProductAuthor");
+		if(PDPAem != null)
+			return PDPAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product cartFlyOut Title_single
+	 * 
+	 */
+	
+	public String get_cartFlyOut_Title_single() {
+		String singleTitle = Property.getProperty(Constant.AEM_DATA_FILE, "AddtocartSingleTitle");
+		if(singleTitle != null)
+			return singleTitle;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product cartFlyOut Title_plural
+	 * 
+	 */
+	
+	public String get_cartFlyOut_Title_plural() {
+		String pluralTitle = Property.getProperty(Constant.AEM_DATA_FILE, "AddtocartPluralTitle");
+		if(pluralTitle != null)
+			return pluralTitle;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product ContinuetoCart CTA link
+	 * 
+	 */
+	
+	public String get_ContinuetoCartCTA() {
+		String CTA = Property.getProperty(Constant.AEM_DATA_FILE, "ContinuetoCartCTA");
+		if(CTA != null)
+			return CTA;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product Cart Link
+	 * 
+	 */
+	
+	public String get_CartLink() {
+		String CartLink = Property.getProperty(Constant.AEM_DATA_FILE, "CartLink");
+		if(CartLink != null)
+			return CartLink;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product Continue Shopping CTA
+	 * 
+	 */
+	
+	public String get_ContinueShopping_CTA() {
+		String ContinueShoppingCTA = Property.getProperty(Constant.AEM_DATA_FILE, "ContinueShoppingCTA");
+		if(ContinueShoppingCTA != null)
+			return ContinueShoppingCTA;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product ServiceAdd-OnLabel
+	 * 
+	 */
+	
+	public String get_ServiceAddOnLabel() {
+		String ServiceAddOnLabel = Property.getProperty(Constant.AEM_DATA_FILE, "ServiceAdd-OnLabel");
+		if(ServiceAddOnLabel != null)
+			return ServiceAddOnLabel;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product ServiceAdd-OnAvailable Label
+	 * 
+	 */
+	
+	public String get_ServiceAddOnAvailableLabel() {
+		String ServiceAddOnAvailableLabel = Property.getProperty(Constant.AEM_DATA_FILE, "ServiceAdd-OnAvailableLabel");
+		if(ServiceAddOnAvailableLabel != null)
+			return ServiceAddOnAvailableLabel;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product multiple Service Add-OnAvailable Label
+	 * 
+	 */
+	
+	public String get_MultipleServiceAddOnAvailableLabel() {
+		String MulServiceAddOnAvailableLabel = Property.getProperty(Constant.AEM_DATA_FILE, "ServiceAdd-OnMultipleAvailableLabel");
+		if(MulServiceAddOnAvailableLabel != null)
+			return MulServiceAddOnAvailableLabel;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product AddServicetoCart Label
+	 * 
+	 */
+	
+	public String get_AddServicetoCartLabel() {
+		String AddServicetoCartLabel = Property.getProperty(Constant.AEM_DATA_FILE, "AddServicetoCartLabel");
+		if(AddServicetoCartLabel != null)
+			return AddServicetoCartLabel;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product ServiceAdd-OnNextSteps label
+	 * 
+	 */
+	
+	public String get_ServiceAddOnNextSteps() {
+		String ServiceAddOnNextSteps = Property.getProperty(Constant.AEM_DATA_FILE, "ServiceAdd-OnNextSteps");
+		if(ServiceAddOnNextSteps != null)
+			return ServiceAddOnNextSteps;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product Service Add-On Error Message
+	 * 
+	 */
+	
+	public String get_ServiceAddOnErrorMessage() {
+		String ServiceAddOnErrorMessage = Property.getProperty(Constant.AEM_DATA_FILE, "ServiceAdd-OnErrorMessage");
+		if(ServiceAddOnErrorMessage != null)
+			return ServiceAddOnErrorMessage;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+		
+	/**
 	 * gets Broad banner URL AEM
 	 * 
 	 */

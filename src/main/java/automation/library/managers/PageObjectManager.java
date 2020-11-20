@@ -11,6 +11,7 @@ import automation.library.locator.AEM_Common_Page_Locator;
 import automation.library.locator.AEM_Feature_List_Page_Locator;
 import automation.library.locator.AEM_Customer_Service_Informational_Copy_Page_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
+import automation.library.locator.AEM_PDP_Add_To_Cart_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
 import automation.library.locator.AEM_Header_Page_Locator;
 import automation.library.locator.AEM_Link_Card_Page_Locator;
@@ -47,6 +48,7 @@ import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
 import automation.library.locator.Link_reward_ProfileScreen_page_Locator;
 import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
+import automation.library.locator.PDP_AddToCart_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
 import automation.library.locator.Primary_Navigation_Page_Locator;
@@ -63,6 +65,7 @@ import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_Featured_List_Page;
 import automation.library.pageObjects.AEM_Customer_Service_Informational_Copy_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
+import automation.library.pageObjects.AEM_PDP_Add_To_Cart_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
 import automation.library.pageObjects.AEM_Header_Page;
 import automation.library.pageObjects.AEM_Link_Card_Page;
@@ -99,6 +102,7 @@ import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
 import automation.library.pageObjects.Link_reward_ProfileScreen_page;
 import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
+import automation.library.pageObjects.PDP_AddToCart_Page;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
 import automation.library.pageObjects.Primary_Navigation_Page;
@@ -225,12 +229,17 @@ public class PageObjectManager {
 	private Two_Featured_Tile_Component_Page_Locator getTwoFeaturedTileComponentPageLocator;
 	private AEM_Two_Featured_tiles_Component_Page getAEMTwoFeatureTileComponentPage;
 	private AEM_Two_Featured_Tiles_Component_Page_Locator getAEMTwoFeaturedTileComponentPageLocator;
+
+	private PDP_AddToCart_Page getPDPAddToCartPage;
+	private PDP_AddToCart_Page_Locator getPDPAddToCartPageLocator;
+	private AEM_PDP_Add_To_Cart_Page getAEMPDPAddToCartPage;
+	private AEM_PDP_Add_To_Cart_Page_Locator getAEMPDPAddToCartPageLocator;
 	private AEM_Broad_Banner_Page getAEMBroadBannerPage;
 	private AEM_Broad_Banner_Page_Locator getAEMBroadBannerPageLocator;
 	private Broad_Banner_Page getBroadBannerPage;
 	private Broad_Banner_Page_Locator getBroadBannerPageLocator;
 	
-	
+
 	public PageObjectManager() {
 		
 	}
@@ -774,6 +783,22 @@ public class PageObjectManager {
 	/** Return Instance of AEM Two feature tile component Page Locator */
 	public AEM_Two_Featured_Tiles_Component_Page_Locator getAEMTwoFeaturedTileComponentPageLocator() {
 		return (getAEMTwoFeaturedTileComponentPageLocator == null) ? getAEMTwoFeaturedTileComponentPageLocator = new AEM_Two_Featured_Tiles_Component_Page_Locator() : getAEMTwoFeaturedTileComponentPageLocator;
+	}
+	/** Return Instance of Add to Cart Page  */
+	public PDP_AddToCart_Page getPDPAddToCartPage(WebDriver driver) {
+		return (getPDPAddToCartPage == null) ? getPDPAddToCartPage = new PDP_AddToCart_Page(driver) : getPDPAddToCartPage;
+	}
+	/** Return Instance of AddToCart Page Locator */
+	public PDP_AddToCart_Page_Locator getPDPAddToCartPageLocator() {
+		return (getPDPAddToCartPageLocator == null) ? getPDPAddToCartPageLocator = new PDP_AddToCart_Page_Locator() : getPDPAddToCartPageLocator;
+	}
+	/** Return Instance of AEM Add to Cart Page  */
+	public AEM_PDP_Add_To_Cart_Page getAEMPDPAddToCartPage(WebDriver driver) {
+		return (getAEMPDPAddToCartPage == null) ? getAEMPDPAddToCartPage = new AEM_PDP_Add_To_Cart_Page(driver) : getAEMPDPAddToCartPage;
+	}
+	/** Return Instance of AEM AddToCart Page Locator */
+	public AEM_PDP_Add_To_Cart_Page_Locator getAEMPDPAddToCartPageLocator() {
+		return (getAEMPDPAddToCartPageLocator == null) ? getAEMPDPAddToCartPageLocator = new AEM_PDP_Add_To_Cart_Page_Locator() : getAEMPDPAddToCartPageLocator;
 	}
 	/** Return Instance of AEM Broad Banner Page  */
 	public AEM_Broad_Banner_Page getAEMBroadBannerPage(WebDriver driver) {

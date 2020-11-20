@@ -1283,7 +1283,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Price Detail Url (PLP)
 	 * 
@@ -1319,6 +1319,18 @@ public class DataReader {
 			return getQuestionsAndAnswersSection;
 		else
 			throw new RuntimeException("getQuestionsAndAnswersSection Code not specified in the Data file.");
+	}
+	/**
+	 * gets PDP Product -Add to Cart URL
+	 * 
+	 */
+
+	public String get_PDP_product_URL() {
+		String pdpAddToCartUrl = Property.getProperty(Constant.DATA_FILE, "pdpAddToCartUrl");
+		if(pdpAddToCartUrl != null)
+			return pdpAddToCartUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
 	}
 }
 

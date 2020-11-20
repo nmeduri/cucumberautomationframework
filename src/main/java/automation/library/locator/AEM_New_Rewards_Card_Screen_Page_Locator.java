@@ -4,7 +4,7 @@ import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.logdetail.Log;
 /**
- * This file contains the locator of Mailinator Page
+ * This file contains the locator of reward Page
  * 
  */
 
