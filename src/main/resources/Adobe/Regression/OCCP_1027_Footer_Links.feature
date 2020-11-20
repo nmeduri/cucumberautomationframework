@@ -12,7 +12,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And about us section is displayed
 	And legal section is displayed
 	
-	@RegressionTest @MobileView @TabletView
+	@RegressionTest @MobileView @TabletView @TC-2119
 	Scenario: TC-2119 User views the links displayed on Footer on Mobile
 	Given open browser
 	When pdp url is available
