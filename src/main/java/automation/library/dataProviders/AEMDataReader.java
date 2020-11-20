@@ -3348,15 +3348,7 @@ public class AEMDataReader {
 			return getDownloadAppTitleField;
 		throw new RuntimeException("downloadAppTitle data is not specified in the Data file.");
 	}
-	/**
-	 * get Data - Learn More Label
-	 */
-	public String get_Learn_More_Label() {
-		String getLearnMoreLabel = Property.getProperty(Constant.AEM_DATA_FILE, "learnMoreLabel");
-		if(getLearnMoreLabel != null)
-			return getLearnMoreLabel;
-		throw new RuntimeException("learnMoreLabel data is not specified in the Data file.");
-	}
+	
 	/**
 	 * get Data - Apple App Store Link
 	 */
@@ -4532,6 +4524,157 @@ public class AEMDataReader {
 			return TwoTileURL;
 		else
 			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Learn More Label
+	 */
+	public String get_Learn_More_Label() {
+		String getLearnMoreLabel = Property.getProperty(Constant.AEM_DATA_FILE, "learnMoreLabel");
+		if(getLearnMoreLabel != null)
+			return getLearnMoreLabel;
+		throw new RuntimeException("learnMoreLabel data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Learn More Label
+	 * 
+	 */
+	
+	public String get_Learn_More_Label_Change() {
+		String learnMoreLabelChange = Property.getProperty(Constant.AEM_DATA_FILE, "learnMoreLabelChange");
+		if(learnMoreLabelChange != null)
+			return learnMoreLabelChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Image (Feature List Page)
+	 */
+	public String get_Image_Feature_List_Product() {
+		String featureListImage = Property.getProperty(Constant.AEM_DATA_FILE, "featureListImage");
+		if(featureListImage != null)
+			return featureListImage;
+		throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Image (Feature List Page)
+	 * 
+	 */
+	
+	public String get_Image_Feature_List_Product_Change() {
+		String featureListImageChange = Property.getProperty(Constant.AEM_DATA_FILE, "featureListImageChange");
+		if(featureListImageChange != null)
+			return featureListImageChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Descriptive Message
+	 */
+	public String get_Descriptive_Message() {
+		String descriptiveMessage = Property.getProperty(Constant.AEM_DATA_FILE, "descriptiveMessage");
+		if(descriptiveMessage != null)
+			return descriptiveMessage;
+		throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Data - Descriptive Message
+	 * 
+	 */
+	
+	public String get_Descriptive_Message_Change() {
+		String descriptiveMessageChange = Property.getProperty(Constant.AEM_DATA_FILE, "descriptiveMessageChange");
+		if(descriptiveMessageChange != null)
+			return descriptiveMessageChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Descriptive Title
+	 */
+	public String get_Descriptive_Title() {
+		String descriptiveTitle = Property.getProperty(Constant.AEM_DATA_FILE, "descriptiveTitle");
+		if(descriptiveTitle != null)
+			return descriptiveTitle;
+		throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Data - Descriptive Message
+	 * 
+	 */
+	
+	public String get_Descriptive_Title_Change() {
+		String descriptiveTitleChange = Property.getProperty(Constant.AEM_DATA_FILE, "descriptiveTitleChange");
+		if(descriptiveTitleChange != null)
+			return descriptiveTitleChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Price Detail Url (PLP)
+	 * 
+	 */
+	
+	public String get_Price_Detail_PLP_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "priceDetailsPLPUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Now Price Label
+	 */
+	public String get_Now_Price_Label() {
+		String nowLabelPrice = Property.getProperty(Constant.AEM_DATA_FILE, "nowLabelPrice");
+		if(nowLabelPrice != null)
+			return nowLabelPrice;
+		throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Data - Now Price Label
+	 * 
+	 */
+	
+	public String get_Now_Price_Label_Change() {
+		String nowLabelPriceChange = Property.getProperty(Constant.AEM_DATA_FILE, "nowLabelPriceChange");
+		if(nowLabelPriceChange != null)
+			return nowLabelPriceChange;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - FL Title
+	 */
+	public String get_Fl_Title() {
+		String titleFl = Property.getProperty(Constant.AEM_DATA_FILE, "titleFl");
+		if(titleFl != null)
+			return titleFl;
+		throw new RuntimeException("data is not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Data - Now Price Label
+	 * 
+	 */
+	
+	public String get_Fl_Title_Change() {
+		String titleFlChange = Property.getProperty(Constant.AEM_DATA_FILE, "titleFlChange");
+		if(titleFlChange != null)
+			return titleFlChange;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
 	}
 	/**
 	 * gets Broad banner URL AEM

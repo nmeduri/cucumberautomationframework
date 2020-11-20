@@ -122,7 +122,17 @@ public class OCCP_1824_Feature_List_Page extends BaseClass {
 	
 	@And("verify the configured image feature list component")
 	public void verify_the_configured_image_featue_list_component() throws Exception {
-		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyFeaturedListImageSubTitle();
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyLearnMoreUrlUpdateOnPage();
+	}
+	
+	@And("configure the url for tile")
+	public void configure_the_url_for_tile() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterLearnMoreLinkDetail();
+	}
+	
+	@And("revert the url for tile")
+	public void revert_the_url_for_tile() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).revertLearnMoreLinkDetail();
 	}
 	
  

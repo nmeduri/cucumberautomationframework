@@ -71,6 +71,8 @@ public class PLP_PageLocator {
 	String selectedColorResultsOnPLP = Property.getProperty(Constant.OR_FILE, "selectedColorResultsOnPLP");
 	String colorSwatchAnotherValue = Property.getProperty(Constant.OR_FILE, "colorSwatchAnotherValue").replace("=", ",");
 	String selectedCommaColor = Property.getProperty(Constant.OR_FILE, "selectedCommaColor");
+	String priceDetailTabAEM = Property.getProperty(Constant.OR_FILE, "priceDetailTabAEM");
+	String priceWasPriceDetail = Property.getProperty(Constant.OR_FILE, "priceWasPriceDetail");
 	
 	/**
 	 * gets Locator - List View
@@ -568,5 +570,19 @@ public class PLP_PageLocator {
 	 */
 	public String getSelectedCommaText() throws Exception {
 		return selectedCommaColor;
+	}
+	
+	/**
+	 * get Locator - Price Detail Tab
+	 */
+	public String getPriceDetailTab() throws Exception {
+		return priceDetailTabAEM;
+	}
+	
+	/**
+	 * get Locator - Price Was Price Detail
+	 */
+	public String getPriceWasPriceDetail() throws Exception {
+		return priceWasPriceDetail;
 	}
  }

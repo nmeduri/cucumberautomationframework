@@ -47,19 +47,8 @@ Feature: OCCP-1824 Featured List: Informational Featured Lists with Icons (Autho
 	
 	@RegressionTest @TC-1811
 	Scenario: TC-1811 Verify the entire FL card is clickable when only URL is authored without Learn More on WideScreen
-	Given open browser
-	When AEM author with access to configure feature list authorable page
-	And login to AEM using the credential as mentioned in the test data
-	And click on edit button
-	And click on feature list panel
-	And click on aem configure button
-	And configure the destination url of learn more on featured list
-	And user click on done button
-	And click on the publish button
-	And quit browser
-	When open browser
-	And navigate to feature list page
-	And click on learn more link
+	Given navigate to feature list page
+	When click on learn more link
 	Then user should be redirected to defined destination on same tab
 	
 	

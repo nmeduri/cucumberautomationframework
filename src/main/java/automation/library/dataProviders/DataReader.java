@@ -1285,7 +1285,19 @@ public class DataReader {
 	}
 	
 	/**
-	 * gets Product Code of Q&A Section in PDP
+	 * gets Price Detail Url (PLP)
+	 * 
+	 */
+	
+	public String get_Price_Detail_PLP_Url() {
+		String getURl = Property.getProperty(Constant.DATA_FILE, "priceDetailPLPPage");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	 /**
+	  *  gets Product Code of Q&A Section in PDP
 	 * 
 	 */
 	public String get_Questions_And_Answers_Section() {

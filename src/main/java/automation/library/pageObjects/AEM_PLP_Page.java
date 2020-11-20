@@ -427,4 +427,21 @@ public class AEM_PLP_Page extends PageObject {
 		}
 	}
 	
+	/** enter now price details */
+	public void enterNowPriceDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getNowLabelPriceDetail()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getNowLabelPriceDetail()), FileReaderManager.getInstance().getAEMDataReader().get_Now_Price_Label());
+	}
+	
+	/** revert now price details */
+	public void revertNowPriceDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getNowLabelPriceDetail()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getNowLabelPriceDetail()), FileReaderManager.getInstance().getAEMDataReader().get_Now_Price_Label_Change());
+	}
+	
+	/** verify applied price changes on page */
+	public void appliedLabelNowChangesOnPage() throws Exception {
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Now_Price_Label(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getPriceWasPriceDetail())));
+	}
+	
 }

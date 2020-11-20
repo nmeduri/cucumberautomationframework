@@ -16,7 +16,7 @@ public final class AEM_Regression_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 			
 
-			"classpath:Adobe/AEM/Regression/", 
+			"classpath:Adobe/AEM/Regression/OCCP_1825_Informational_Featured_List.feature", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@AEM",

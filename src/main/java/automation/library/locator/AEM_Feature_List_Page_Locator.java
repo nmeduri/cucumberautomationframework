@@ -11,7 +11,7 @@ public class AEM_Feature_List_Page_Locator {
 	
 
 	 String featureListPannel = Property.getProperty(Constant.OR_FILE, "featureListPannel").replace("=", ",");
-	 String featuredListTitle = Property.getProperty(Constant.OR_FILE, "featuredListTitle");
+	 String featuredListTitleAEM = Property.getProperty(Constant.OR_FILE, "featuredListTitleAEM");
 	 String featureListAltTextOne = Property.getProperty(Constant.OR_FILE, "featureListAltTextOne");
 	 String mandatoryAlert = Property.getProperty(Constant.OR_FILE, "mandatoryAlert");
 	 String selectFeaturedListDropDown = Property.getProperty(Constant.OR_FILE, "selectFeaturedListDropDown");
@@ -19,7 +19,14 @@ public class AEM_Feature_List_Page_Locator {
 	 String learMoreLinkFirst = Property.getProperty(Constant.OR_FILE, "learMoreLinkFirst");
 	 String subTitleFirstFL = Property.getProperty(Constant.OR_FILE, "subTitleFirstFL").replace("=", ",");
 	 String featueListImageSubTitlePage = Property.getProperty(Constant.OR_FILE, "featueListImageSubTitlePage").replace("=", ",");
-			 
+	 String learnMoreLabelFLAEM = Property.getProperty(Constant.OR_FILE, "learnMoreLabelFLAEM");
+	 String imageFeatureListAEM = Property.getProperty(Constant.OR_FILE, "imageFeatureListAEM");
+	 String descriptiveMessageFLAEM = Property.getProperty(Constant.OR_FILE, "descriptiveMessageFLAEM");
+	 String descriptiveMessageToolTip = Property.getProperty(Constant.OR_FILE, "descriptiveMessageToolTip");
+	 String descriptiveMessageToolTipMessage = Property.getProperty(Constant.OR_FILE, "descriptiveMessageToolTipMessage");
+	 String descriptiveTitleFlAEM = Property.getProperty(Constant.OR_FILE, "descriptiveTitleFlAEM");
+	 String descriptiveTitleToolTip = Property.getProperty(Constant.OR_FILE, "descriptiveTitleToolTip");
+	 String titleToolTipFl = Property.getProperty(Constant.OR_FILE, "titleToolTipFl");
 	 
 	 /**
 	  * get Locator = Feature List Panel
@@ -32,7 +39,7 @@ public class AEM_Feature_List_Page_Locator {
 	  * get Locator - Feature List Title
 	  */
 	 public String getFeatureListTitle() {
-		 return featuredListTitle;
+		 return featuredListTitleAEM;
 	 }
 	 
 	 /**
@@ -82,6 +89,62 @@ public class AEM_Feature_List_Page_Locator {
 	 */
 	public String getFeatureListImageSubTitle() {
 		return featueListImageSubTitlePage;
+	}
+	
+	/**
+	 * get Locator - Learn More Label
+	 */
+	public String getLearnMoreLabel() {
+		return learnMoreLabelFLAEM;
+	}
+	
+	/**
+	 * get Locator - Feature List Image
+	 */
+	public String getFeatureListImage() {
+		return imageFeatureListAEM;
+	}
+	
+	/**
+	 * get Locator - Descriptive Message
+	 */
+	public String getDescriptiveMessage() {
+		return descriptiveMessageFLAEM;
+	}
+	
+	/**
+	 * get Locator - Descriptive Message Tool Tip
+	 */
+	public String getDescriptiveMessateToolTip() {
+		return descriptiveMessageToolTip;
+	}
+	
+	/**
+	 * get Locator - Descriptive Message (Tool Tip Message)
+	 */
+	public String getDescriptiveMessageToolTipMessage() {
+		return descriptiveMessageToolTipMessage;
+	}
+	
+	/**
+	 * get Locator - Descriptive Title
+	 */
+	public String getDescriptiveTitle() {
+		return descriptiveTitleFlAEM;
+	}
+	
+	/**
+	 * get Locator - Descriptive Title (Tool Tip)
+	 */
+	public String getDescriptiveTitleToolTip() {
+		return descriptiveTitleToolTip;
+	}
+	
+	/**
+	 * get Locator - Title Tool Tip
+	 */
+	public String getTitleToolTipFl() {
+		return titleToolTipFl;
 	}
  	
 	}

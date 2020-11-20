@@ -1,5 +1,6 @@
 package automation.library.pageObjects;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
 import java.util.List;
@@ -150,5 +151,125 @@ public class AEM_Featured_List_Page extends PageObject {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getSubTitleFirst()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getSubTitleFirst()), FileReaderManager.getInstance().getAEMDataReader().get_FL_Image_Sub_Title_First_Change());
 	}
+	
+	/** verify learn more url is updated on page */
+	public void verifyLearnMoreUrlUpdateOnPage() throws Exception {
+		Log.message("HREF:- " + $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCardOne()), "href"), true);
+		Log.message("URL:- " + FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Link_One(), true);
+		assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCardOne()), "href"), FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Link_One());
+	}
+	
+	/** enter learn more label details */
+	public void enterLearnMoreDetails() throws Exception{
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLabel()), FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Label());
+	}
+	
+	/** reverse the learn more changes */
+	public void reverseLearnMoreChanges() throws Exception{
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLabel()), FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Label_Change());
+	}
+	
+	/** verify Learn more label is updated on the site */
+	public void verifyLearnMorLabelUpdatedOnSite() throws Exception {
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().get_Learn_More_Label())), FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Label());
+	}
+	
+	/** enter feature list image details */
+	public void enterFeatureListImageDetails() throws Exception{
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListImage()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListImage()), FileReaderManager.getInstance().getAEMDataReader().get_Image_Feature_List_Product());
+	}
+	
+	/** revert feature list image details */
+	public void revertFeatureListImageDetails() throws Exception{
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListImage()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListImage()), FileReaderManager.getInstance().getAEMDataReader().get_Image_Feature_List_Product_Change());
+	}
+	
+	/** verify configured image is updated on site */
+	public void verifyConfiguredImagedUpdatedOnSite() throws Exception {
+		assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().get_Feature_List_Image()), "src"), FileReaderManager.getInstance().getAEMDataReader().get_Image_Feature_List_Product());
+	}
+	
+	/** revert learn more link detail */
+	public void revertLearnMoreLinkDetail() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLink()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLink()), FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Label_Change());
+	}
+	
+	/** enter descriptive message detail */
+	public void enterDescriptiveMessageDetail() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessage()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessage()), FileReaderManager.getInstance().getAEMDataReader().get_Descriptive_Message());
+	}
+	
+	/** revert descriptive message detail */
+	public void revertDescriptiveMessageDetail() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessage()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessage()), FileReaderManager.getInstance().getAEMDataReader().get_Descriptive_Message_Change());
+	}
+	
+	/** verify descriptive tool tip is displayed */
+	public void displayDescriptiveToolTip() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessateToolTip()));
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessageToolTipMessage())), "Add the content in this field. Please provide the guide to enter approx. 100-140 char Max.");
+	}
+	
+	/** verify configured descriptive message is displayed on page */
+	public void verifyConfiguredDescriptiveMessageOnPage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveMessageFl()));
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveMessageFl())), FileReaderManager.getInstance().getAEMDataReader().get_Descriptive_Message());
+	}
+	
+	/** enter descriptive title detail */
+	public void enterDescriptiveTitleDetail() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveTitle()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveTitle()), FileReaderManager.getInstance().getAEMDataReader().get_Descriptive_Title());
+	}
+	
+	/** revert descriptive title detail */
+	public void revertDescriptiveTitleDetail() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveTitle()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveTitle()), FileReaderManager.getInstance().getAEMDataReader().get_Descriptive_Title_Change());
+	}
+	
+	/** verify descriptive title tool tip is displayed */
+	public void displayDescriptiveTitleToolTip() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveTitleToolTip()));
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessageToolTipMessage())), "This field will be displaying under image. Please follow guide line to enter 40-60 char Max.");
+	}
+	
+	/** verify configured descriptive title is displayed on page */
+	public void verifyConfiguredDescriptivTitleOnPage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveTitle()));
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveTitle())), FileReaderManager.getInstance().getAEMDataReader().get_Descriptive_Title());
+	}
+	
+	/** enter feature title one details */
+	public void enterFeatureTitleDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListTitle()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListTitle()), FileReaderManager.getInstance().getAEMDataReader().get_Fl_Title());
+	}
+	
+	/** reverse feature image one details */
+	public void revertFeatureTitleDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListTitle()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeatureListTitle()), FileReaderManager.getInstance().getAEMDataReader().get_Fl_Title_Change());
+	}
+	
+	/** verify title tool tip is displayed */
+	public void displayTitleToolTip() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getTitleToolTipFl()));
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessageToolTipMessage())), "Title to be displayed on the page. Please follow guideline to enter 40 char Max");
+	}
+	
+	/** verify configured Title is displayed on page */
+	public void verifyConfiguredTitleOnPage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListTitle()));
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListTitle())), FileReaderManager.getInstance().getAEMDataReader().get_Fl_Title());
+	}
+	
 	
 }

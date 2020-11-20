@@ -243,6 +243,101 @@ public class Featured_List_Page extends PageObject {
 		
 		Assert.assertEquals(li.size(), 4);
 	}
+	
+//	/** verify user navigate on last page of pl */
+//	public void verifyNavigateOnLastPageOfPl() throws Exception {
+//		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()));
+//		String getAttribute = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()), "data-slick-index");
+//		//String getClass = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()), "class");
+//	//	String data = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()), "data-analytics");
+//		
+//		Log.message("Attribute :- " + getAttribute, true);
+//		for(int i=0; i<li.size(); i++) {
+//			String positionValue = li.get(i).getAttribute("data-slick-index");
+//			String getClass = li.get(i).getAttribute("class");
+//			String data = li.get(i).getAttribute("data-analytics");
+//			Log.message("position value :- " + i + " -- " + positionValue + " class:- " + getClass + " data:- " + data, true);
+//		}
+//	}
+	
+	/** verify user navigate on last page of pl */
+	public void saveComponentValueOfLastPage() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()));
+		String getAttribute = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()), "data-slick-index");
+		configuration.setProperty("test"+0, "test");
+		Log.message("Attribute :- " + getAttribute, true);
+		for(int i=0; i<li.size(); i++) {
+			String positionValue = li.get(i).getAttribute("data-slick-index");
+			String getClass = li.get(i).getAttribute("class");
+			String data = li.get(i).getAttribute("data-analytics");
+			configuration.setProperty("datAnalytics"+i, data);
+			Log.message("position value :- " + i + " -- " + positionValue + " class:- " + getClass + " data:- " + data, true);
+		}
+	}
+	
+	/** verify user navigate on first page of fl */
+	public void saveComponentValueOfFirstPage() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()));
+		String getAttribute = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListProduct()), "data-slick-index");
+		configuration.setProperty("test"+0, "test");
+		Log.message("Attribute :- " + getAttribute, true);
+		for(int i=0; i<li.size(); i++) {
+			String positionValue = li.get(i).getAttribute("data-slick-index");
+			String getClass = li.get(i).getAttribute("class");
+			String data = li.get(i).getAttribute("data-analytics");
+			configuration.setProperty("datAnalytics"+i, data);
+			Log.message("position value :- " + i + " -- " + positionValue + " class:- " + getClass + " data:- " + data, true);
+		}
+	}
+	
+	/** verify user navigate on last page of pl */
+	public void verifyNavigateOnLastPageOfPl() throws Exception {
+		
+		
+		for(int i=0; i<4; i++) {
+			@SuppressWarnings("unchecked")
+			ArrayList<String> getDataAnalytics =  (ArrayList<String>) configuration.getProperty("datAnalytics"+i);
+			Log.message("Get Data Analytics:- " + getDataAnalytics.get(3).trim(), true);
+			String getAnalyticsDetail = $findElement(By.xpath("//*[contains(@data-analytics,'"+getDataAnalytics.get(3).trim()+"' )]")).getAttribute("data-analytics");
+			Log.message("Get Data Analytics Second:- " + getAnalyticsDetail, true);
+			String getClass = $findElement(By.xpath("//div[@class='nl-card--type2 slick-slide slick-active' and @data-analytics = '"+getAnalyticsDetail+"']")).getAttribute("class");
+			Log.message("class:- " + getClass, true);
+			Assert.assertTrue(getClass.contains("active"));
+		}
+	}
+	
+	/** verify last associated pagination dots */
+	public void verifyLastAssociatedPaginationDotsHighlighted() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDot())), 5);
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDot()));
+		
+		String className = li.get(li.size()-1).getAttribute("class");
+		Log.message("Class:- " + className, true);
+		Assert.assertTrue(className.contains("active"));
+	}
+	
+	/** verify user navigate on first page of pl */
+	public void verifyNavigateOnFirstPageOfPl() throws Exception {
+		
+		
+		for(int i=4; i<7; i++) {
+			@SuppressWarnings("unchecked")
+			ArrayList<String> getDataAnalytics =  (ArrayList<String>) configuration.getProperty("datAnalytics"+i);
+			Log.message("Get Data Analytics:- " + getDataAnalytics.get(3).trim(), true);
+			String getAnalyticsDetail = $findElement(By.xpath("//*[contains(@data-analytics,'"+getDataAnalytics.get(3).trim()+"' )]")).getAttribute("data-analytics");
+			Log.message("Get Data Analytics Second:- " + getAnalyticsDetail, true);
+			String getClass = $findElement(By.xpath("//div[@class='nl-card--type2 slick-slide slick-active' and @data-analytics = '"+getAnalyticsDetail+"']")).getAttribute("class");
+			Log.message("class:- " + getClass, true);
+			Assert.assertTrue(getClass.contains("active"));
+		}
+	}
+	
+	/** verify number of pages displayed is based on the number of paginations */
+	public void displayNumberOfFlPagesBasedOnPaginationDots() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDot()));
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDot()));
+		Assert.assertEquals(li.size(), 2);
+	}
 	/** verify display of Key Line for all Images */
 	public void verifyDisplayOfKeyLineForAllTheImages() throws Exception {
 		$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getFeatureListPageLocator().getKeyLineOfImages());

@@ -1,5 +1,6 @@
 package automation.library.pageObjects;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.testng.Assert.fail;
 
 import java.util.ArrayList;
@@ -53,6 +54,21 @@ public class PLP_Page extends PageObject {
 
 		driver.navigate()
 				.to(FileReaderManager.getInstance().getConfigReader().getPLPUrl());
+
+	}
+	
+	/** This function navigate to price detail PLP Page */
+	public void navigateTo_price_detail_PLP_Page() throws Exception {
+
+		driver.navigate()
+				.to(FileReaderManager.getInstance().getDataReader().get_Price_Detail_PLP_Url());
+
+	}
+	
+	/** This function navigate to Feature List Author Page Page */
+	public void navigateTo_Price_Detail_PLP_Author_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Price_Detail_PLP_Url());
 
 	}
 	
@@ -607,5 +623,10 @@ public class PLP_Page extends PageObject {
 		}catch(Exception e) {
 			Log.message("Selected colour is removed from the selected section.", true);
 		}
+	}
+	
+	/** click on price details tab */
+	public void clickPriceDetailsTab() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getPriceDetailTab()));
 	}
 }	

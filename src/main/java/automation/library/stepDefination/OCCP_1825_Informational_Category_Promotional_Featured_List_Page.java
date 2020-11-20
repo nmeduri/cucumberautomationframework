@@ -151,9 +151,144 @@ public class OCCP_1825_Informational_Category_Promotional_Featured_List_Page ext
 		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyFourProductsAreDisplayedInCarouselView();
 	}
 	
+	@Then("user should be navigated to the last page of fl carousel")
+	public void user_should_be_navigated_to_the_last_page_of_fl_carousel() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyNavigateOnLastPageOfPl();
+	}
+	
+	@Then("user should be navigated to the first page of fl carousel")
+	public void user_should_be_navigated_to_the_first_page_of_fl_carousel() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyNavigateOnLastPageOfPl();
+	}
+	
+	@And("save data anaytics details of last page")
+	public void save_data_analytics_details_of_last_page() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).saveComponentValueOfLastPage();
+	}
+	
+	@Then("user should be able to see the last pagination dot on the carousel is highlighted")
+	public void user_should_be_able_to_see_the_last_pagination_dot_on_the_carousel_is_highlighted() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyLastAssociatedPaginationDotsHighlighted();
+	}
+	
+	@And("save data anaytics details of first page")
+	public void save_data_analytics_details_of_first_page() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).saveComponentValueOfLastPage();
+	}
+	
+	@Then("verify learn more link should be updated on the page")
+	public void verify_learn_more_link_should_be_updated_on_the_page() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyLearnMoreLinkNavigateOnDefinedUrl();
+	}
+	
+	@And("configure the learn more label")
+	public void configure_the_learn_more_label() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterLearnMoreDetails();
+	}
+	
+	@Then("learn more label should be updated on the page")
+	public void learn_more_label_should_be_updated_on_the_page() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyLearnMorLabelUpdatedOnSite();
+	}
+	
+	@And("reverse the learn more label changes")
+	public void reverse_the_learn_more_label_changes() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).reverseLearnMoreChanges();
+	}
+	
+	@And("configue the image of feature list")
+	public void configure_the_image_of_feature_list() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterFeatureListImageDetails();
+	}
+	
+	@Then("configured image displayed on the fetaured list")
+	public void configured_image_displayed_on_the_featured_list() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfiguredImagedUpdatedOnSite();
+	}
+	
+	@And("reverse the image of feature list")
+	public void reverse_the_image_of_feature_list() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).revertFeatureListImageDetails();
+	}
+	
+	@And("configure descripitve message field on fl")
+	public void configure_descriptive_message_field_on_fl() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterDescriptiveMessageDetail();
+	}
+	
+	@And("revert descriptive message detail")
+	public void revert_descriptive_message_detail() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).revertDescriptiveMessageDetail();
+	}
+	
+	@Then("user should be able to see descriptive message tool tip message")
+	public void user_should_be_able_to_see_descriptive_message_tool_tip_message() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).displayDescriptiveToolTip();
+	}
+	
+	@Then("user should be able to see the updated configured descriptive message on fl")
+	public void user_should_be_able_to_see_the_updated_configured_descriptive_message_on_fl() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfiguredDescriptiveMessageOnPage();
+	}
+	
+	@And("configure descriptive title field on fl")
+	public void configure_descriptive_title_field_on_fl() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterDescriptiveTitleDetail();
+	}
+	
+	@And("revert descriptive title field on fl")
+	public void revert_descriptive_title_field_on_fl() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterDescriptiveTitleDetail();
+	}
+	
+	@And("revert configured component on fl")
+	public void revert_configured_component_on_fl() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterDescriptiveTitleDetail();
+	}
+	
+	@Then("user should be able to see descriptive title tool tip message")
+	public void user_should_be_able_to_see_descriptive_title_tool_tip_message() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).displayDescriptiveTitleToolTip();
+	}
+	
+	@Then("configured descriptive title is displayed on page")
+	public void configured_descriptive_title_is_displayed_on_page() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfiguredDescriptivTitleOnPage();
+	}
+	
+	@Then("verify the pagination dots indicate the number of fl pages")
+	public void verify_the_pagination_dosts_indicate_the_number_of_fl_pages() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).displayNumberOfFlPagesBasedOnPaginationDots();
+	}
+	
+	@And("verify the title field on fl components is configurable")
+	public void verify_the_title_field_on_fl_components_is_configurable() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterFeatureTitleDetails();
+	}
+	
+	@And("revert fl title detail")
+	public void revert_fl_title_detail() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).revertFeatureTitleDetails();
+	}
+	
+	@Then("user should be able to see title tool tip message")
+	public void user_should_be_able_to_see_title_tool_tip_message() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).displayTitleToolTip();
+	}
+	
+	@Then("configured title is displayed on page")
+	public void configured_title_is_displayed_on_page() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfiguredTitleOnPage();
+	}
+ 
 	@Then("user should able to see the key line for all the images displayed on the Image featured list")
 	public void verify_the_display_of_key_line_for_all_the_images() throws Exception {
 		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyDisplayOfKeyLineForAllTheImages();
 		
+	}
+	
+	@Then("configured component is displayed on page")
+	public void configured_component_is_displayed_on_page() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfiguredDescriptivTitleOnPage();
 	}
 }
