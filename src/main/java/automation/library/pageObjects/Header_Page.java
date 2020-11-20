@@ -272,6 +272,30 @@ public class Header_Page extends PageObject {
 	public void clickSearchIcon() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Search_Icon()));
 	}
-
+	
+	/** This function is to verify that Secondry Navigation is not displayed */
+	public void notDisplaySecondaryNavigation() throws Exception {
+		$notDisplay($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Secondary_Navigation()));
+	}
+	
+	/** This function is verify that Secondary Navigation is displayed */
+	public void displaySecondaryNavigation() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Secondary_Navigation()));
+	}
+	
+	/** This function is verify that Pencil Banner is displayed */
+	public void displayPencilBanner() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Standard_Header()));
+	}
+	
+	/** This function scrolls down to size label */
+	public void scrollDownToSize() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Size_Label()), 5);
+	}
+	
+	/** This function is to verify that pencil banner is not displayed */
+	public void notDisplayPencilBannerInHeader() throws Exception {
+		$notDisplay($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Pencil_Banner()));
+	}
 
 }

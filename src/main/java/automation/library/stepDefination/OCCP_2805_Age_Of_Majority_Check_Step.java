@@ -179,6 +179,6 @@ public class OCCP_2805_Age_Of_Majority_Check_Step extends BaseClass{
 	public void navigate_to_complete_your_profile_screen() throws Exception {
 		testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).navigateToCompleteYourProfileScreen();
 	}
-	
+
 }
 		

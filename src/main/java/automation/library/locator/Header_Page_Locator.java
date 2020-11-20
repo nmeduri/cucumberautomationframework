@@ -42,6 +42,7 @@ public class Header_Page_Locator {
 	String SearchResult=Property.getProperty(Constant.OR_FILE, "SearchResult");
 	String InformationBanner=Property.getProperty(Constant.OR_FILE, "InformationBanner");
 	String standardHeader=Property.getProperty(Constant.OR_FILE, "standardHeader");
+	String secondaryNavigation=Property.getProperty(Constant.OR_FILE, "secondaryNavigation");
 	
 	/**
 	 * gets Locator - Account
@@ -277,5 +278,13 @@ public class Header_Page_Locator {
 	 */
 	public String get_Standard_Header() {
 		return standardHeader;
+	}
+	
+	/**
+	 * gets Locator - Secondary Navigation
+	 * 
+	 */
+	public String get_Secondary_Navigation() {
+		return secondaryNavigation;
 	}
 }

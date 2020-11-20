@@ -18,7 +18,6 @@ public final class Adobe_Regression_Mobile_Runner extends BaseClass {
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@MobileView",
-			//"--tags", "@TC-2138",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

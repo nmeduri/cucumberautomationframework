@@ -55,7 +55,8 @@ public class AEM_Link_Card_Page extends PageObject {
 	
 	/** This function clicks on link card pannel */
 	public void clickLinkCardPannel() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardPannel())), 5);
+		$clickFindElement(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardPannel())), 40);
+		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMLinkCardPageLocator().getLinkCardPannel())));
 	}
 	
 	/** This function clicks on Error Screen Tab */

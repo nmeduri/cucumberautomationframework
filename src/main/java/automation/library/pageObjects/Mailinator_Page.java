@@ -140,7 +140,7 @@ public class Mailinator_Page extends PageObject {
 	public void displayMomentAgo() throws Exception {
 //		Thread.sleep(5000);
 //		PageObject.getDriver().navigate().refresh();
-		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Moment_Ago())), 10);
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Moment_Ago())), 20);
 	}
 	
 	/** This function navigate to yopmail Page */
@@ -152,6 +152,7 @@ public class Mailinator_Page extends PageObject {
 	public void enterUserInYopmailInbox(String data) throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Yopmail_Inbox_Field()));
 		 //PageObject.getDriver().navigate().refresh();
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Yopmail_Inbox_Field()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Public_Yopmail_Inbox_Field()), data);
 	}
 

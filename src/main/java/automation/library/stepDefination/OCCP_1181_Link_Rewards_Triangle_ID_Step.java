@@ -134,5 +134,10 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 	public void user_2488_enter_detail_email() throws Exception {
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_UserName_2488());
 	}
+	
+	@And("new triangle rewards card number should be dislayed")
+	public void new_triangle_card_no_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).displayNewTriangleLoyaltyCardNo();
+	}
 }
 	

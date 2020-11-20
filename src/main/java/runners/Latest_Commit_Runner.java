@@ -12,9 +12,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-			"classpath:SAP/Regression/OCCP_3588_Cart_Order_Summary_Shipping_Fees.feature",
+			"classpath:Adobe/AEM/Regression/OCCP_2722_Link_Rewards_Successful_Linking.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@RegressionTest1",
+			"--tags", "@WebView",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

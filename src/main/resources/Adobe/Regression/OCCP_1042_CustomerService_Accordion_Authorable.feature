@@ -51,3 +51,25 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	Then scroll down to accordion pannel
 	And click on the preview button
 	Then validate the accordion header change is displayed on site
+	
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	Scenario: TC-3264 Verify that the customer is able to expand Accordion
+	When customerservice informational copy url is available
+	Then customerservice page is displayed	
+	And accordions should be displayed
+	Then validate the accordion plus icon is displayed
+	Then click on accordion plus icon
+	Then validate the accordion Minus icon is displayed
+	When customerservice informational url for FR locale is available
+	And accordions should be displayed
+	Then validate the accordion plus icon is displayed
+	Then click on accordion plus icon
+	Then validate the accordion Minus icon is displayed
+	
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	Scenario: TC-3263 Verify that the customer is able to view Accordion Header
+	When customerservice informational copy url is available
+	Then customerservice page is displayed	
+	And accordions should be displayed
+	When customerservice informational url for FR locale is available
+	And accordions should be displayed

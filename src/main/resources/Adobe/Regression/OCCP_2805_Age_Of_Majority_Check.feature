@@ -2,16 +2,16 @@ Feature: 	OCCP-2805 Account/Triangle ID - Link Rewards / Age of Majority Check
   
   Description: To test the ADOBE Test Cases for the story OCCP-2805
 
-    #@Regression @MobileView @WebView @SmokeTest
-    Scenario: TC-2593,TC-2602, TC-2607 Verfiy Age of Majority Reached on Complete Your Profile screen on Desktop
-    Given login url is available
-	When enter detail email
-	And user enter password
+  @Regression @MobileView @WebView 
+  Scenario: TC-2593,TC-2602, TC-2607 Verfiy Age of Majority Reached on Complete Your Profile screen on Desktop
+  Given login url is available
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And verify when user clicks on the get a new triangle rewards card link
 	Then user should redirect to the get a new triangle rewards card screen
-	And verify when user enter valid information and select year of birth for age majority check
+	And verify when user enter valid information on complete your profile screen
 	And verify clicks on continue button
 	Then rewards terms and conditions should be displayed
 	

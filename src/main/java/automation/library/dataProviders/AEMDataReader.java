@@ -4871,4 +4871,17 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets data Continue
+	 * 
+	 */
+	
+	public String get_Success_Screen_Continue_Data() {
+		String successScreenContinue = Property.getProperty(Constant.AEM_DATA_FILE, "successScreenContinue");
+		if(successScreenContinue != null)
+			return successScreenContinue;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

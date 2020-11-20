@@ -41,7 +41,7 @@ public class OCCP_1680_User_Logging_In_From_Email_Verification extends BaseClass
 	
 	@And("user click on verification email")
     public void user_click_on_verification_email() throws Exception {
-		testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayMomentAgo();
+		//testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).displayMomentAgo();
     	testContext.getPageObjectManager().getMailinatorPage(PageObject.getDriver()).clickVerifyEmailAddress();
     }
 	

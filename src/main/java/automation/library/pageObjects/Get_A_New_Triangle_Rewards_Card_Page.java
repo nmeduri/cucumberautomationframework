@@ -81,9 +81,10 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enter province detail */
 	public void enterDataProvince() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())), 3);
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())));
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.id(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province_Value())));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Address_Rewards())), 15);
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())), 30);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())), 15);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province_Value())), 15);
 	}
 	
 	/** This function enter postal code */
@@ -104,11 +105,9 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enter year of birth */
 	public void enterYearOfBirth() throws Exception {
-		Thread.sleep(2000);
-		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 5);
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())));
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value())));
-	
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 15);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 15);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value())), 15);
 	
 	}
 	/** This function enter year of birth with age majority */
@@ -180,6 +179,11 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	public void displayPhoneNoInlineError() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Phone_Error())),20);
 		
+	}
+	
+	/** This function verify new triangle card no is displayed */
+	public void displayNewTriangleLoyaltyCardNo() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Success_CardNo()));
 	}
 
 }
