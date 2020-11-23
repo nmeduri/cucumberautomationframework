@@ -27,7 +27,8 @@ public class PDP_AddToCart_Page_Locator {
 	String ContinuetoCartCTA=Property.getProperty(Constant.OR_FILE, "ContinuetoCartCTA");
 	String AddToCartTitle=Property.getProperty(Constant.OR_FILE, "AddToCartTitle");
 	String nextStepText=Property.getProperty(Constant.OR_FILE, "nextStepText");
-	
+	String CartQuantity=Property.getProperty(Constant.OR_FILE, "CartQuantity");
+
 	/**
 	 * gets Locator - Service Expand Sign
 	 * 
@@ -36,6 +37,15 @@ public class PDP_AddToCart_Page_Locator {
 	public String get_ServiceExpandSign() {
 		
 		return ServiceExpandSign;
+	}
+	/**
+	 * gets Locator - CartQuantity
+	 * 
+	 */
+	
+	public String get_CartQuantity() {
+		
+		return CartQuantity;
 	}
 	/**
 	 * gets Locator - Success text

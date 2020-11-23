@@ -158,5 +158,6 @@ public class OCCP_3516_PDP_Add_to_Cart_Flyout_Service_Installations_Step extends
 	 	public void validate_the_success_message_displayed() throws Exception {
 			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_success_message();
 		}
+	 	
 
 }

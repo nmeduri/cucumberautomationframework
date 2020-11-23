@@ -25,7 +25,9 @@ public class AEM_PDP_Add_To_Cart_Page_Locator {
 	String serviceAddOnIcon = Property.getProperty(Constant.OR_FILE, "serviceAddOnIcon");
 	String serviceAddOnIconTool = Property.getProperty(Constant.OR_FILE, "serviceAddOnIconTool");
 	String SeviceInstallationTab= Property.getProperty(Constant.OR_FILE, "SeviceInstallationTab");
-	
+	String ErrorMessage= Property.getProperty(Constant.OR_FILE, "ErrorMessage");
+	String PostalTab= Property.getProperty(Constant.OR_FILE, "PostalTab");
+
 	/**
 	 * gets Locator - Cart Fly out
 	 * 
@@ -146,6 +148,21 @@ public class AEM_PDP_Add_To_Cart_Page_Locator {
 	public String get_serviceAddOnIconTool() {
 		return serviceAddOnIconTool;	
 	}
-	
+	/**
+	 * gets Locator - Error Message- cart page
+	 * 
+	 */
+    
+	public String get_Errormsg_cartpage() {
+		return ErrorMessage;	
+	}
+	/**
+	 * gets Locator -postal tab-cart page
+	 * 
+	 */
+    
+	public String get_postalTab() {
+		return PostalTab;	
+	}
 	
 }

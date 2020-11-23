@@ -136,4 +136,16 @@ public class PDP_AddToCart_Page extends PageObject {
 	public void display_success_message() throws Exception {
 		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPAddToCartPageLocator().get_nextStepText())), 40);
 	}
+	/** This function display product quantity in cart */
+	public void display_product_quantity_Cart() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPAddToCartPageLocator().get_CartQuantity())), 40);
+	}
+	/** This function display + CTA button for quantity in cart */
+	public void display_Plus_CTA_Cart_quantity() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPAddToCartPageLocator().get_QuantityPlus())), 40);
+	}
+	/** This function display - CTA button for quantity in cart */
+	public void display_minus_CTA_Cart_quantity() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPAddToCartPageLocator().get_QuantityMinus())), 40);
+	}
 }

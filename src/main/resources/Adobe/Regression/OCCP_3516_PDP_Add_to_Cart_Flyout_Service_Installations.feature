@@ -1,14 +1,3 @@
-Feature: OCCP-3516 PDP Add to Cart Flyout: Service Installations
-
-	Description: To test the ADOBE Test Cases for the story OCCP-3516
-	
-	@RegressionTest @WebView @TC-3520
-	Scenario: TC-3520	OCCP-3516 PDP Add to Cart Flyout: Service Installations- Verify Customer views Applicable Service Add-Ons (Single Option)
-	Given open browser
-	When PDP product page is available
-	Then select specefications and click on add to cart
-	Then add to cart screen displayed
-  Then Service Add-On Available box is displayed
 	And Available Service description is displayed
 	And Available Service price is displayed
 	And Add Service to Cart” CTA is displayed
