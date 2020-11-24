@@ -51,6 +51,40 @@ Feature: OCCP-1824 Featured List: Informational Featured Lists with Icons (Autho
 	When click on learn more link
 	Then user should be redirected to defined destination on same tab
 	
+	@RegressionTest @AEM @TC-3756
+	Scenario: TC-3756 Verfiy the display of details on the Informational featured list page- when few of the fields on the card are not authored
+	Given open browser
+	When AEM author with access to configure informational feature list authorable page
+	And login to AEM using the credential as mentioned in the test data
+	And click on edit button
+	And click on feature list panel
+	And click on aem configure button
+	Then verify title on the card when field is not authored in AEM
+	Then verify description on the card when field is not authored in AEM
+	Then verify learn more CTA on the card when field is not authored in AEM
+	And user click on check button
+	And click on the preview button
+	And verify title on the card is not displayed when field is not authored
+	And verify description on the card is not displayed when field is not authored
+	And verify learn more CTA Text on the card is not displayed when field is not authored
+	
+	@RegressionTest @AEM @TC-3760
+	Scenario: TC-3760 Verfiy the display of details on the Informational featured list page- when few of the fields on the card are not authored
+	Given open browser
+	When AEM author with access to configure informational feature list authorable page
+	And login to AEM using the credential as mentioned in the test data
+	And click on edit button
+	And click on feature list panel
+	And click on aem configure button
+	Then verify title on the card when field is authored in AEM
+	Then verify description on the card when field is not authored in AEM
+	Then verify learn more CTA on the card when field is not authored in AEM
+	And user click on check button
+	And click on the preview button
+	#And verify title on the card is displayed when field is authored
+	And verify description on the card is not displayed when field is not authored
+	And verify learn more CTA Text on the card is not displayed when field is not authored
+	
 	
 	
 

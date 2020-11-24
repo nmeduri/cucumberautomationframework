@@ -27,12 +27,18 @@ public class AEM_Feature_List_Page_Locator {
 	 String descriptiveTitleFlAEM = Property.getProperty(Constant.OR_FILE, "descriptiveTitleFlAEM");
 	 String descriptiveTitleToolTip = Property.getProperty(Constant.OR_FILE, "descriptiveTitleToolTip");
 	 String titleToolTipFl = Property.getProperty(Constant.OR_FILE, "titleToolTipFl");
-	 
+	 String learnMoreaccessibility=Property.getProperty(Constant.OR_FILE, "learnMoreaccessibility");
 	 /**
 	  * get Locator = Feature List Panel
 	  */
 	 public String getFeatureListPanel() {
 		 return featureListPannel;
+	 }
+	 /**
+	  * get Locator -learn More accessibility
+	  */
+	 public String getLearnMoreaccessibility() {
+		 return learnMoreaccessibility;
 	 }
 	 
 	 /**

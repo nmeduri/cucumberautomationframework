@@ -21,7 +21,7 @@ public class Cart_Page_Locator {
 	String wishListBadge = Property.getProperty(Constant.OR_FILE, "wishListBadge");
 	String productBrandTitle = Property.getProperty(Constant.OR_FILE, "productBrandTitle");
 	String itemAddedToWishlistMessage = Property.getProperty(Constant.OR_FILE, "itemAddedToWishlistMessage");
-	String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
+	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 	
 	/**
 	 * gets Locator - Wishlist icon 4
@@ -113,7 +113,7 @@ public class Cart_Page_Locator {
 	 * gets Locator - wishlist max limit text
 	 * 
 	 */	
-	public String get_Wishlist_Max_Limit_Text() {
+	/*public String get_Wishlist_Max_Limit_Text() {
 		return wishlistMaxLimitText;
-	}
+	}*/
 }

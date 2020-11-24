@@ -111,6 +111,19 @@ public class Cart_Page extends PageObject{
 	public void displayViewWishlist() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_View_Wishlist())), 40);
 	}
-	
+	/** This function click view Wishlist link*/
+	public void clickViewWishlist() throws Exception {
+			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_View_Wishlist()), "href");
+			configuration.setProperty("urlViewWishlist", url);
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_View_Wishlist())));
+			}
+	/** This function verify user is on Wishlist page*/
+	public void displayWishListPage() throws Exception {
+			String expectedUrl = (java.lang.String) configuration.getProperty("urlViewWishlist");
+			Log.message("Expected Url:- " + expectedUrl, true);
+			String actualUrl = PageObject.getDriver().getCurrentUrl();
+			Log.message("Actual Url:- " + actualUrl, true);
+			Assert.assertEquals(expectedUrl, actualUrl);
+			}
 	
 }

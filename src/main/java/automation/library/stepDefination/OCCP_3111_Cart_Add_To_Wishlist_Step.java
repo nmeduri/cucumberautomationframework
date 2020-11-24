@@ -167,5 +167,12 @@ public class OCCP_3111_Cart_Add_To_Wishlist_Step extends BaseClass {
 	public void verify_wishlist_max_limit_text_changes() throws Exception {
 		testContext.getPageObjectManager().getAEMCartPage(PageObject.getDriver()).verifyWishlistMaxLimitTextChangesReflected();
 	}
-			
+	@Then ("click on the view Wishlist link")
+	public void click_on_the_view_Wishlist_link() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).clickViewWishlist();
+	}
+	@And ("user is directed to the Wishlist page")
+	public void user_is_directed_to_the_Wishlist_page() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).displayWishListPage();
+	}
 }

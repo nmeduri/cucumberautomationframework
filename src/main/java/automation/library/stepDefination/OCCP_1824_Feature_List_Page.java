@@ -134,6 +134,40 @@ public class OCCP_1824_Feature_List_Page extends BaseClass {
 	public void revert_the_url_for_tile() throws Exception {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).revertLearnMoreLinkDetail();
 	}
-	
- 
+	@Then ("verify title on the card when field is not authored in AEM")
+	public void Title_not_authored() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyTitlenotauthored();
+	}
+	@Then ("verify description on the card when field is not authored in AEM")
+	public void description_not_authored() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyDescriptionnotauthored();
+	}
+	@Then ("verify learn more CTA on the card when field is not authored in AEM")
+	public void LearnMore_CTA_not_authored() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyLearnMorenotauthored();
+	}
+	@Then ("verify destination URL on the card when field is not authored in AEM")
+	public void destinationURL_not_authored() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyLearnmoreLinknotauthored();
+	}
+	@And  ("verify title on the card is not displayed when field is not authored")
+	public void TitleNotDisplayed() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).titletextnotdisplayedWhenNotAuthored();
+	}	
+	@And  ("verify description on the card is not displayed when field is not authored")
+	public void descriptionNotDisplayed() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).descriptiontextnotdisplayedWhenNotAuthored();
+	}
+	@And  ("verify learn more CTA Text on the card is not displayed when field is not authored")
+	public void CTANotDisplayed() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).LearnmoretextnotdisplayedWhenNotAuthored();
+	}
+	@Then ("verify title on the card when field is authored in AEM")
+	public void titleOnCardAuthored() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterDescriptiveTitleDetail();
+	}
+	@And ("verify title on the card is displayed when field is authored")
+	public void titleOnCardDisplayed() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).titletextdisplayedWhenAuthored();
+	}
 }

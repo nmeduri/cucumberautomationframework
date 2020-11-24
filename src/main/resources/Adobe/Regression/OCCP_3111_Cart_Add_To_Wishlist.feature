@@ -71,6 +71,32 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
   Then item has been added to wishlist message should be displayed
   And a link should be displayed to view wishlist 
   
+  @RegressionTest @WebView @WideScreen @TC-3761
+	Scenario: TC-3761 Verification of Clicking 'View Wishlist' link on the displayed message when item is added to wishlist from cart (product not already in wishlist)
+	Given open browser
+	Given cart url is available
+  When cart page is displayed for the product
+  And in the cart page wishlist icon should be displayed next to the product
+  Then access the product item and click on respective wishlist icon
+  Then item has been added to wishlist message should be displayed
+  And a link should be displayed to view wishlist 
+  Then click on the view Wishlist link
+  And user is directed to the Wishlist page
   
-  
+  @RegressionTest @WebView @WideScreen @TC-3762
+	Scenario: TC-3762 Verification of Clicking 'View Wishlist' link on the displayed message when item is added to wishlist from cart (product already in wishlist)
+	Given open browser
+	Given cart url is available
+  When cart page is displayed for the product
+  And in the cart page wishlist icon should be displayed next to the product
+  Then access the product item and click on respective wishlist icon
+  And on clicking product item should be added and moved successfully to wishlist
+  And refresh the page
+  Then access the product item and click on respective wishlist icon
+  And on clicking product item should be not be added to wishlist as it is already present
+  And the item should be deleted or not displayed in the cart page
+  Then item has been added to wishlist message should be displayed
+  And a link should be displayed to view wishlist 
+  Then click on the view Wishlist link
+  And user is directed to the Wishlist page
   

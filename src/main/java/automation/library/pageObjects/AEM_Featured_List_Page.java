@@ -270,6 +270,61 @@ public class AEM_Featured_List_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListTitle()));
 		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getFeaturedListTitle())), FileReaderManager.getInstance().getAEMDataReader().get_Fl_Title());
 	}
-	
-	
-}
+	/** verify Title is not authored  on page */
+	public void verifyTitlenotauthored() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveTitle()));
+
+		$clearData($(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveTitle())), 5));
+
+	}
+	/** verify description is not authored  on page */
+	public void verifyDescriptionnotauthored() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessage()));
+
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getDescriptiveMessage()));
+	}
+	/** verify LearnMore is not authored  on page */
+	public void verifyLearnMorenotauthored() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLabel()));
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreaccessibility()));
+
+	}
+	/** verify LearnMore link is not authored  on page */
+	public void verifyLearnmoreLinknotauthored() throws Exception {
+		$clearData($(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getLearnMoreLink())), 5));
+
+	}
+
+	/** verify descriptive title text not displayed  */
+	public void titletextnotdisplayedWhenNotAuthored() throws Exception {
+		try {
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveTitle()));
+			fail();
+		}catch(Exception e) {
+			Log.message("descriptive title is not displayed", true);
+		}
+	}
+	/** verify descriptive message text not displayed  */
+	public void descriptiontextnotdisplayedWhenNotAuthored() throws Exception {
+		try {
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveMessageFl()));
+			fail();
+		}catch(Exception e) {
+			Log.message("descriptive message is not displayed", true);
+		}
+	}
+	/** verify learnMore CTA text not displayed  */
+	public void LearnmoretextnotdisplayedWhenNotAuthored() throws Exception {
+		try {
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFirst()));
+			fail();
+		}catch(Exception e) {
+			Log.message("CTA text is not displayed", true);
+		}
+	}
+	/** verify descriptive title text displayed  */
+	public void titletextdisplayedWhenAuthored() throws Exception {
+		$displayFindElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveTitle()));
+		}
+	}
+
