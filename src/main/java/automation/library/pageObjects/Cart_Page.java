@@ -111,6 +111,35 @@ public class Cart_Page extends PageObject{
 	public void displayViewWishlist() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_View_Wishlist())), 40);
 	}
+	/** This function click product quantity increase button*/
+	public void click_increment_productQuantity() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Cart_product_quantity())), 40);
+	}
+	/** This function click ToolTip button in Core Charges */
+	public void click_ToolTip_coreCharges() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ToolTip_CoreCharges())), 40);
+	}
+	/** This function validate Tool tip title */
+	public void validateToolTip_CoreCharges_Title() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ToolTip_CoreCharges())), 40);
+	}
+	/** This function validate Tool tip message text */
+	public void validateToolTip_Message_CoreCharges() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ToolTip_CoreCharges())), 40);
+	}
+	/** This function click ToolTip close button in Core Charges */
+	public void click_ToolTip_close_coreCharges() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ToolTipClose_Icon())), 40);
+	}
+	/** This function validate tooltip message is not displayed after clicking on close icon */
+	public void validatenotDisplaytooltipMessage() throws Exception {
+		try {
+			$display($$$$(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ToolTip_Message(),1));
+			fail();
+		}catch(Exception e) {
+			Log.message("tool tip message are not displayed when close button is clicked", true);
+		}
+	}
 	/** This function click view Wishlist link*/
 	public void clickViewWishlist() throws Exception {
 			String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_View_Wishlist()), "href");

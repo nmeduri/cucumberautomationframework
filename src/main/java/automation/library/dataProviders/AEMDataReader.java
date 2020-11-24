@@ -4972,4 +4972,76 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets incl core Carges label
+	 * 
+	 */
+	
+	public String get_incl_CoreCharges_label() {
+		String inclCoreCharges = Property.getProperty(Constant.AEM_DATA_FILE, "IncludeCoreChargeLabel");
+		if(inclCoreCharges != null)
+			return inclCoreCharges;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets content fragment URL
+	 * 
+	 */
+	
+	public String get_ContenFragment_URL() {
+		String ContenFragment_URL = Property.getProperty(Constant.AEM_DATA_FILE, "ContentFragmentURL");
+		if(ContenFragment_URL != null)
+			return ContenFragment_URL;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets content fragment URL
+	 * 
+	 */
+	
+	public String get_CommonContent_URL() {
+		String CommonContentURL = Property.getProperty(Constant.AEM_DATA_FILE, "CommonContentURL");
+		if(CommonContentURL != null)
+			return CommonContentURL;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets plus core Carges label
+	 * 
+	 */
+	
+	public String get_plus_CoreCharges_label() {
+		String plusCoreCharges = Property.getProperty(Constant.AEM_DATA_FILE, "PlusCoreChargesLabel");
+		if(plusCoreCharges != null)
+			return plusCoreCharges;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets CoreCharges Tooltip Title label
+	 * 
+	 */
+	
+	public String get_CoreChargesTooltipTitle_label() {
+		String CoreChargesTooltipTitle = Property.getProperty(Constant.AEM_DATA_FILE, "CoreChargesTooltipTitle");
+		if(CoreChargesTooltipTitle != null)
+			return CoreChargesTooltipTitle;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets CoreCharges Tooltip message label
+	 * 
+	 */
+	
+	public String get_CoreChargesTooltipmessage() {
+		String CoreChargesTooltipMessage = Property.getProperty(Constant.AEM_DATA_FILE, "CoreChargesTooltipMessage");
+		if(CoreChargesTooltipMessage != null)
+			return CoreChargesTooltipMessage;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

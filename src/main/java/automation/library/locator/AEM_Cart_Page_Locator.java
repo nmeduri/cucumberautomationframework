@@ -23,6 +23,11 @@ public class AEM_Cart_Page_Locator {
 	String services = Property.getProperty(Constant.OR_FILE, "services");
 	String selectAll = Property.getProperty(Constant.OR_FILE, "selectAll");
 	
+	String inclCoreCharges = Property.getProperty(Constant.OR_FILE, "inclCoreCharges");
+	String plusCoreCharges = Property.getProperty(Constant.OR_FILE, "plusCoreCharges");
+	String coreChargesText = Property.getProperty(Constant.OR_FILE, "coreChargesText");
+	String coreChargesToolTipmessage = Property.getProperty(Constant.OR_FILE, "coreChargesToolTipmessage");
+
 	
 	 	/**
 		 * gets Locator - AEM Item Added To wishlist label field
@@ -139,6 +144,42 @@ public class AEM_Cart_Page_Locator {
 	    
 		public String get_Select_All() {
 			return selectAll;	
+		}
+
+		/**
+		 * gets Locator - incl Core Charges(content Fragment)
+		 * 
+		 */
+	    
+		public String get_inclCoreCharges() {
+			return inclCoreCharges;	
+		}
+
+		/**
+		 * gets Locator - plus Core Charges(content Fragment)
+		 * 
+		 */
+	    
+		public String get_plusCoreCharges() {
+			return plusCoreCharges;	
+		}
+
+		/**
+		 * gets Locator - core Charges Text(content Fragment)
+		 * 
+		 */
+	    
+		public String get_coreChargesText() {
+			return coreChargesText;	
+		}
+
+		/**
+		 * gets Locator - core Charges ToolTip message(content Fragment)
+		 * 
+		 */
+	    
+		public String get_coreCharges_ToolTipmessage() {
+			return coreChargesToolTipmessage;	
 		}
 
 }
