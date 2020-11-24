@@ -57,6 +57,7 @@ Feature: OCCP-1641 Footer : Footer Links
 	
 	@RegressionTest @WebView @WideScreen @TC-542
 	Scenario: TC-542 Verify the behavior of the PLP when user selects more than 1 colour swatch 
+	Given open browser
 	When plp url is available
 	When plp is displayed
 	And click on more filters
@@ -73,7 +74,8 @@ Feature: OCCP-1641 Footer : Footer Links
 	Given open browser
 	When plp url is available
 	When plp is displayed
-	And click on sort and filters
+	#And click on sort and filters
+	And click on more filters
 	Then verify color facet is available with in the facet panel modal
 	And click on color facet
 	And select color option from facet

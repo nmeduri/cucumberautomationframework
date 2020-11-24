@@ -1,7 +1,7 @@
 Feature: OCCP-2724 Link Master Card - Error - Incorrect card information or not found
 Description: To test the ADOBE Test Cases for the story OCCP-2724
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @TC-2037
 	Scenario: TC-2037 Card Information is incorrect/not found>
 	Given open browser
 	Given login url is available

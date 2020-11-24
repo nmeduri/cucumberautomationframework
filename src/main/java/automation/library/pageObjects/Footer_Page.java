@@ -1048,10 +1048,10 @@ public class Footer_Page extends PageObject {
 	}
 	/** This function to display Google App Store Download */
 	public void displayGoogleAppStoreDownload() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_appstore_Logo())), 40);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Google_App_Store())), 40);
 		String actualUrl = PageObject.getDriver().getCurrentUrl();
 		Log.message("Actual URL: "+actualUrl, true);
-		Assert.assertTrue(actualUrl.contains(FileReaderManager.getInstance().getDataReader().get_Apple_App_Store_Url()));
+		Assert.assertTrue(actualUrl.contains(FileReaderManager.getInstance().getDataReader().get_AppStore_Url()));
 	}
 	
 	/** This function is verify that all links are underlined on hover */
@@ -1111,6 +1111,7 @@ public class Footer_Page extends PageObject {
 	public void verifySignUpNavigation() throws Exception {
 		testContext.getPageObjectManager().getPageObject(driver).switchWindow();
 		Thread.sleep(2000);
+		Log.message("Url:- " + PageObject.getDriver().getCurrentUrl(), true);
 		if(PageObject.getDriver().getCurrentUrl().equalsIgnoreCase(FileReaderManager.getInstance().getDataReader().get_Sign_Up_Link())) {
 			PageObject.getDriver().close();
 			testContext.getPageObjectManager().getPageObject(driver).parentWindow();

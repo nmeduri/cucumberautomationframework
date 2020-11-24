@@ -2,7 +2,7 @@ Feature: OCCP-869 PDP Specifications
 
 	Description: To test the ADOBE Test Cases for the story OCCP-869
 	  
-    @RegressionTest @WebView @WideScreen
+    @RegressionTest @WebView @WideScreen @TC-101
     Scenario: TC-101 Verify product specifications are displayed on PDP for desktop (less than 8 specifications) 
     When pdp url is available
     When pdp page is displayed for the product
@@ -22,7 +22,7 @@ Feature: OCCP-869 PDP Specifications
     And the specifications are displayed with title and values for each specification as individual rows
     And the specifications are less than 8 on the Desktop  
     
-    @RegressionTest @WideScreen @WebView
+    @RegressionTest @WideScreen @WebView @TC-1383
     Scenario: TC-1383 Verify product specifications are displayed on PDP for Widescreen (less than 8 specifications) 
     Given pdp url is available
     When pdp page is displayed for the product

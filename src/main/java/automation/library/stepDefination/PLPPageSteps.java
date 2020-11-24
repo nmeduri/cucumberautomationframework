@@ -158,4 +158,9 @@ public class PLPPageSteps extends BaseClass {
 	public void quit_browser() throws Exception {
 		PageObject.getDriver().quit();
 	}
+	
+	@And("click see more sorting")
+	public void click_see_more_sorting() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickSeeThreeMore();
+	}
 }

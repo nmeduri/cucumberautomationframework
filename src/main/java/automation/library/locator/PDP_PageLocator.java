@@ -60,6 +60,7 @@ public class PDP_PageLocator {
 	String specialBuy = Property.getProperty(Constant.OR_FILE, "specialBuy");
 	String colorVariant = Property.getProperty(Constant.OR_FILE, "colorVariantPDP").replace("=", ",");
 	String pinkColor = Property.getProperty(Constant.OR_FILE, "pinkColor");
+	String oxfordColor = Property.getProperty(Constant.OR_FILE, "oxfordColor");
 	String scentSweetWater = Property.getProperty(Constant.OR_FILE, "scentSweetWater");
 	String sizeSeven = Property.getProperty(Constant.OR_FILE, "sizeSeven");
 	String itemAddedWishlistMessage = Property.getProperty(Constant.OR_FILE, "itemAddedWishlistMessage");
@@ -90,7 +91,7 @@ public class PDP_PageLocator {
 	String colorVariantGray = Property.getProperty(Constant.OR_FILE, "colorVariantGray");
 	String badgesPDP = Property.getProperty(Constant.OR_FILE, "badgesPDP").replace("=", ",");
 	String resourceSection = Property.getProperty(Constant.OR_FILE, "resourceSection");
-
+    String assembledLength = Property.getProperty(Constant.OR_FILE, "assembledLength");
 	String addToCartFlyOut = Property.getProperty(Constant.OR_FILE, "addToCartFlyOut");
 	String selectDefaultcolor = Property.getProperty(Constant.OR_FILE, "selectDefaultcolor");
 	String addToCartFlyoutImage = Property.getProperty(Constant.OR_FILE, "addToCartFlyoutImage");
@@ -99,7 +100,7 @@ public class PDP_PageLocator {
 	String addToCartFlyoutProductVariants = Property.getProperty(Constant.OR_FILE, "addToCartFlyoutProductVariants");
 	String continueButtonOnSafetyModel = Property.getProperty(Constant.OR_FILE, "continueButtonOnSafetyModel");
 	String lengthVariant = Property.getProperty(Constant.OR_FILE, "lengthVariant");
-
+    
 	String sortBySection=Property.getProperty(Constant.OR_FILE, "sortBySection");
 	String sortByReviewsLabel=Property.getProperty(Constant.OR_FILE, "sortByReviewsLabel");
 	String mostRecentReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostRecentReviewsLabel");
@@ -1110,6 +1111,22 @@ public class PDP_PageLocator {
 	public String get_Post_Answer_Model() {
 		return postAnswerModel;
 	}
+	
+	/**
+	 * gets Locator - Oxford color
+	 */
+	public String get_Oxford_Color() {
+		return oxfordColor;
+	}
+	
+	/**
+	 * gets Locator - Assembled Length
+	 */
+	public String get_Assembled_Length() {
+		return assembledLength;
+	}
+	
+	
 }
 
 

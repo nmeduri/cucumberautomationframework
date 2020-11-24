@@ -2,7 +2,7 @@ Feature: OCCP-3722 : Login/Registration Template
 
 	Description: To test the ADOBE Test Cases for the story OCCP-3722
 	
-	@RegressionTest @WebView @WideScreen 
+	@RegressionTest @WebView @WideScreen @TC-3601
 	Scenario: TC-3601	OCCP-3722: Login/Registration Template-Verify User is able to view both static and configured elements on newly created and published login page
 	Given open browser
 	And login url is available
@@ -34,7 +34,7 @@ Feature: OCCP-3722 : Login/Registration Template
 	And logo should be displayed
 	And blue background is displayed in mobile view
 	
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen @TC-4004
 	Scenario: TC-4004	OCCP-3722: Login/Registration Template-Verify User is able to view both static and configured elements on newly created and published registration page
 	When sign up url is available
 	Then sign up page is displayed

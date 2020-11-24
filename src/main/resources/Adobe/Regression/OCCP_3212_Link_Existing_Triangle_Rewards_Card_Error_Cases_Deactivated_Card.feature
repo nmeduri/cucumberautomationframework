@@ -2,9 +2,8 @@ Feature: OCCP-3212 Account/Triangle ID - Link Rewards  Link Existing Triangle Re
 
 Description: To test the ADOBE Test Cases for the story OCCP-3212
 
- @RegressionTest @WebView @WideView
+ @RegressionTest @WebView @WideView @TC-2180
 	Scenario: TC-2180, TC-2181 Verification of display of error message when already linked loyalty card is used for registration - Desktop
-	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data
@@ -21,7 +20,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then user should be able to enter the loyalty card number successfully which is deactivated
 	And user click on continue button
 	And verify when user click on cancel button
-	Then link card screen should be displayed
+    Then link card screen should be displayed
  
   @RegressionTest @WebView @WideScreen
 	Scenario: TC-2396, TC-2385 Verfiy the display of Link Cards screen when Card is Deactivated in Wide Desktop view
@@ -43,7 +42,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And verify when user click on cancel button
 	Then user should navigate to link cards screen
 	
-	@RegressionTest @WebView @WideScreen  
+	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2399, Verify the 'Try Again' button on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email id
@@ -68,8 +67,9 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on continue button
 	Then cancel button should be present in the error screen
 
-	@RegressionTest @WebView @WideScreen 
+	@RegressionTest @WebView @WideScreen @TC-2397
 	Scenario: TC-2397, Verify the Error image on Link Cards screen when Card is Deactivated in Wide Desktop view
+	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data

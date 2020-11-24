@@ -55,7 +55,7 @@ public class Link_MasterCard_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName()), FileReaderManager.getInstance().getDataReader().get_LastName());
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_YOB()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Year()));
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName())), 5);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName())), 5);
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_MOB()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Month()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_DOB()));

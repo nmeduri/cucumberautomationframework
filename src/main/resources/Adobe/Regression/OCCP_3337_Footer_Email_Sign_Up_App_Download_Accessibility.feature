@@ -2,9 +2,8 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 
 	Description: To test the ADOBE Test Cases for the story OCCP-3337
 	
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen @TC-4005
 	Scenario: TC-4005	OCCP-3337: FOOTER:Footer E-mail Sign Up, App Download, Accessibility-Verify the redirection when user clicks on Android App Store Logo - Desktop /Desktop Wide
-	Given open browser
 	When login url is available
 	And login page is displayed
 	Then standard footer is displayed
@@ -16,14 +15,9 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	When click on Android App store logo
 	Then should redirected to a new tab opens with details on App store download
 	
-	@RegressionTest @WebView
+	@RegressionTest @WebView @TC-3414
 	Scenario: TC-3414	OCCP-3337:FOOTER:Footer E-mail Sign Up, App Download, Accessibility-Verify when user hovers over a link an underline is displayed
 	When login url is available
-	And login page is displayed
-	Then standard footer is displayed
-	And footer links section should be displayed
-	Then link should be underlined when hovers over any link on the footer links section
-	When fr locale login url is available
 	And login page is displayed
 	Then standard footer is displayed
 	And footer links section should be displayed
@@ -36,33 +30,34 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	
 	#@RegressionTest @WebScreen @WideScreen @MobileView @TabletView
 	Scenario: TC-3396 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify the User is able to click on Learn More CTA
-	When footre url is available
+	When footer url is available
 	And footer page is displayed for the product
 	Then user should be directed to learn more section
 	
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-3397
 	Scenario: TC-3397 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify that User is able to click on Accessibility Icon
-	When footre url is available
-	And footer page is displayed for the product
+	When footer url is available
+	#And footer page is displayed for the product
 	And click on accessibility logo
 	Then user should be directed to accessibility section on new tab
 
-	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3389
+	#@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-3389
 	Scenario: TC-3389 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify that User is able to clicks on "Sign Up "Link
-	When footre url is available
-	And footer page is displayed for the product
+	Given open browser
+	When footer url is available
+	#And footer page is displayed for the product
 	And click on sign up
 	Then user should be directed to sign up section on new tab
 	
 	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3390
 	Scenario: TC-3390 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify the redirection when user clicks on Apple App Store Logo - Desktop /Desktop Wide
 	Given open browser
-	When footre url is available
-	And footer page is displayed for the product
+	When footer url is available
+	#And footer page is displayed for the product
 	And click on apple store logo
 	Then user should be directed to app store section on new tab
 	
-	@RegressionTest @WebScreen @WideScreen @MobileView @SmokeTest @TC-3394
+	@RegressionTest @WebView @WideScreen @MobileView @SmokeTest @TC-3394
 	Scenario: TC-3394 Verify that User is able to click on Android Play Store- Mobile- Device is an Android device
 	Given open browser
 	Given footer url is available
@@ -88,15 +83,15 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	
 	@RegressionTest @MobileView @SmokeTest @TC-3392
 	Scenario: TC-3392 Verify that User is able to clicks on Apple App Store- Mobile- Device is an apple device/mobile
-		Given open browser
-		Given footer url is available
+	Given open browser
+	Given footer url is available
 	When footer page is displayed
 	And in footer links section access the apple app store logo and verify the url
 	
 
 	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3389
 	Scenario: TC-3389 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify that User is able to clicks on "Sign Up "Link
-	When footre url is available
+	When footer url is available
 	And footer page is displayed for the product
 	And click on sign up
 	Then user should be directed to sign up section on new tab
@@ -104,7 +99,7 @@ Feature: OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility
 	@RegressionTest @WebScreen @WideScreen @MobileView @TabletView @TC-3390
 	Scenario: TC-3390 OCCP-3337 FOOTER: Footer E-mail Sign Up, App Download, Accessibility - Verify the redirection when user clicks on Apple App Store Logo - Desktop /Desktop Wide
 	Given open browser
-	When footre url is available
+	When footer url is available
 	And footer page is displayed for the product
 	And click on apple store logo
 	Then user should be directed to app store section on new tab

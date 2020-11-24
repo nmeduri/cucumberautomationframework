@@ -2,7 +2,7 @@ Feature: OCCP-3171 : PDP with no Q&A
 
 Description: To test the ADOBE Test Cases for the story OCCP-3171
 
- @RegressionTest @WebView @WideView @MobileView
+ @RegressionTest @WebView @WideView @MobileView @TC-3171
 	Scenario: TC-3952 OCCP-3171 - Verify user is able to view  Questions & Answers section 
 	Given open browser
 	When pdp url with Q&A section is available
@@ -14,7 +14,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3171
 	And scroll down to Questions and Answers section on PDP
 	And verify the clickable link Be the first to ask a question is displayed
 	
-	@RegressionTest @WebView @WideView @MobileView
+	@RegressionTest @WebView @WideView @MobileView @TC-3953
 	Scenario: TC-3953 OCCP-3171 - Verify user is able to interact with  Questions & Answers section 
 	When pdp url with Q&A section is available
 	Then the product title is displayed on the product

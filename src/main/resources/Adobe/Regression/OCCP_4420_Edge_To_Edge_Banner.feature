@@ -2,7 +2,7 @@ Feature: OCCP-4420 : Edge to Edge Banner
 	Description: To test the ADOBE Test Cases for the story OCCP-4420
 	
 	
-	@RegressionTest @WebView @WideScreen @TabletView
+	@RegressionTest @WebView @WideScreen @TabletView @TC-3576
 	Scenario: TC-3576 OCCP-4420 Edge to Edge Banner- Verify when User is able to view the banner(with image)for EN/FR locale| Desktop/desktop wide/Tablet
 	When edge to edge banner url is available for EN
 	When edge banner page is displayed for the product

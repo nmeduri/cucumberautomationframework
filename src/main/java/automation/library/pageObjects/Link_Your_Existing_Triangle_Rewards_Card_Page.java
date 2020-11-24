@@ -90,7 +90,9 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function clicks on try again button */
 	public void click_TryAgain_Button() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_TryAgain_Button()));
+		Thread.sleep(3000);
+		//$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_TryAgain_Button())), 10);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_TryAgain_Button())));
 	}
 	
 	/** This function verify that user able to enter loyalty number */

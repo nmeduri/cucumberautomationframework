@@ -1,7 +1,7 @@
 Feature: OCCP-2803 Link Existing Active Loyalty card to the account- Active Ownership Validation
 Description: To test the ADOBE Test Cases for the story OCCP-2803
 
-	@RegressionTest @WebView @MobileView
+	@RegressionTest @WebView @MobileView @TC-2501
 	Scenario: TC-2501,TC-2500 View Active Ownership Validation Screen
 	Given open browser
 	Given login url is available

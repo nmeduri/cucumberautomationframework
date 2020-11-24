@@ -1,7 +1,7 @@
 Feature: OCCP-1028 Footer : Footer Copyright
 	Description: To test the ADOBE Test Cases for the story OCCP-1028
 	
-	@RegressionTest @WebView @WideScreen
+	@RegressionTest @WebView @WideScreen @TC-2787
 	Scenario: TC-2787, TC-2786 Verification of clicking of View More - Desktop Wide And Desktop
 	When pdp url is available
 	When pdp page is displayed for the product
@@ -44,8 +44,8 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then first 3 lines of the authored legal disclaimer text should be displayed in mobile
 	Then view more is displayed
 	
-	@RegressionTest @WideScreen @WebView @MobileView @TabletView
-	Scenario: TC-2779, TC-2778, TC-2777, TC-2780 Verification of display of Footer - Desktop Wide 
+	@RegressionTest @WideScreen @WebView @MobileView @TabletView @TC-2779
+	Scenario: TC-2779, TC-2778, TC-2777, TC-2780 Verification of display of Footer - Desktop Wide
 	Given footer url is available
 	When footer page is displayed
 	Then copy right text is displayed

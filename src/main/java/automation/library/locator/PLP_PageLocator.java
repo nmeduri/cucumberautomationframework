@@ -18,7 +18,7 @@ public class PLP_PageLocator {
 	String listViewButton = Property.getProperty(Constant.OR_FILE, "listViewButton");
 	String productCardTitle = Property.getProperty(Constant.OR_FILE, "productCardTitle").replace("=", ",");
 	String pricelowToHigh = Property.getProperty(Constant.OR_FILE, "pricelowToHigh");
-	String sortByOption = Property.getProperty(Constant.OR_FILE, "sortByOption");
+	String sortByOption = Property.getProperty(Constant.OR_FILE, "sortByOption").replace("=", ",");
 	String priceHighToLow = Property.getProperty(Constant.OR_FILE, "priceHighToLow");
 	String prductPrice = Property.getProperty(Constant.OR_FILE, "prductPrice");
 	String closeButtonMobile = Property.getProperty(Constant.OR_FILE, "closeButtonMobile");
@@ -73,6 +73,7 @@ public class PLP_PageLocator {
 	String selectedCommaColor = Property.getProperty(Constant.OR_FILE, "selectedCommaColor");
 	String priceDetailTabAEM = Property.getProperty(Constant.OR_FILE, "priceDetailTabAEM");
 	String priceWasPriceDetail = Property.getProperty(Constant.OR_FILE, "priceWasPriceDetail");
+	String seeMoreSorting = Property.getProperty(Constant.OR_FILE, "seeMoreSorting");
 	
 	/**
 	 * gets Locator - List View
@@ -584,5 +585,12 @@ public class PLP_PageLocator {
 	 */
 	public String getPriceWasPriceDetail() throws Exception {
 		return priceWasPriceDetail;
+	}
+	
+	/**
+	 * gets Locator - See 3 More
+	 */
+	public String get_See_More() {
+		return seeMoreSorting;
 	}
  }

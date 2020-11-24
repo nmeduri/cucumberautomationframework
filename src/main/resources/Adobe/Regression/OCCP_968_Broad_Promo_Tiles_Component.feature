@@ -1,7 +1,7 @@
 Feature: OCCP-968 : Broad Promo Tiles component
 	Description: To test the ADOBE Test Cases for the story OCCP-968
 		
-	@RegressionTest @WebView @WideScreen @MobileView
+	@RegressionTest @WebView @WideScreen @MobileView @TC-3506
 	Scenario: TC-3506 OCCP-968: Verify user is able to view Broad Promo Tiles component 
 	Given open browser
 	When broad promo tiles EN url is available

@@ -140,7 +140,9 @@ public class PLP_Page extends PageObject {
 	public List<Float> productPrice() throws Exception {
 		PageObject.getDriver().navigate().refresh();
 		List<Element> price = $$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Price());
-		for (int i = 0; i < price.size(); i++) {
+		Log.message("Size:- " + price.size(), true);
+		for (int i = 0; i < price.size()-1; i++) {
+			Log.message("Price:- " + i + "--" + price.get(i).getText(), true);
 			productPrice.add(Float.parseFloat(price.get(i).getText().replace("$", "").replace(",", "")));
 		}
 		return productPrice;
@@ -151,8 +153,8 @@ public class PLP_Page extends PageObject {
 		ArrayList<Float> priceFloat = new ArrayList<Float>();
 		priceFloat.addAll(productPrice());
 		Log.message("Size:- " + priceFloat, true);
-		for (int i = 0; i < priceFloat.size() - 1; i++) {
-			Log.message("Number:- " + priceFloat.get(i) + "--" + "--" + priceFloat.get(i + 1), true);
+		for (int i = 0; i < priceFloat.size()-1; i++) {
+			//Log.message("Number:- " + priceFloat.get(i) + "--" + "--" + priceFloat.get(i + 1), true);
 			Assert.assertTrue(priceFloat.get(i) >= priceFloat.get(i + 1));
 		}
 
@@ -593,7 +595,7 @@ public class PLP_Page extends PageObject {
 		String colorSecond = (java.lang.String) conf.getProperty("colorSwatchFacetAnotherOption");
 		String text = $findElement(By.xpath("//span[@class='nl-filter-section__colour-label']")).getText();
 		Log.message("Text:- " + text, true);
-		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSelectedCommaText())), 5).trim(), "selected:");
+		Assert.assertEquals($getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSelectedCommaText())), 5).trim(), "Selected:");
 		$displayFindElement(By.xpath("//div[text() ='"+colorFirst + ", " +colorSecond+"']"));
 	}
 	
@@ -628,5 +630,10 @@ public class PLP_Page extends PageObject {
 	/** click on price details tab */
 	public void clickPriceDetailsTab() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getPriceDetailTab()));
+	}
+	
+	/** click on see 3 more */
+	public void clickSeeThreeMore() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_See_More())), 10);
 	}
 }	

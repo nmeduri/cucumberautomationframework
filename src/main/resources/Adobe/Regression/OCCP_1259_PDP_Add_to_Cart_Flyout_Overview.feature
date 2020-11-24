@@ -2,7 +2,7 @@ Feature: OCCP-1259 PDP Add to Cart Flyout: Overview
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1259
 	
-	@RegressionTest @WebView @WideScreen @MobileView
+	@RegressionTest @WebView @WideScreen @MobileView @TC-3481
 	Scenario: TC-3481 OCCP-1259: PDP Add to Cart Flyout: Overview- Verify when Customer views Product Information on the Added to Cart Flyout
 	Given open browser
 	When pdp add to cart product flyout url is available

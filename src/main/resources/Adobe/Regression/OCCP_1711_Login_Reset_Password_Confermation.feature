@@ -2,7 +2,7 @@ Feature: OCCP-1711 Login Forgot Password
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1711
 	
-    @RegressionTest @WebView @WideScreen
+    @RegressionTest @WebView @WideScreen @TC-635
 	Scenario: TC-635, TC-630 Verify the ability of a user to create a new account from 
 	Given quit browser
 	When open browser

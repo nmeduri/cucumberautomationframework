@@ -289,4 +289,9 @@ public class OCCP_3337_Footer_Email_App_Download extends BaseClass {
 	public void configureGooglePlayStoreLogo() throws Exception {
 		testContext.getPageObjectManager().getAEMFooterPage(PageObject.getDriver()).uploadgooglePlayStoreLogo();
 	}
+	
+	@Then("user should be directed to sign up section on new tab")
+	public void user_should_be_directed_to_sign_up_on_new_tab() throws Exception {
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifySignUpNavigation();
+	}
 }

@@ -28,7 +28,7 @@ Feature: OCCP-1180 Get New Loyalty Card
 	Then rewards terms and conditions should be displayed
 	Then register card button is displayed on terms and conditions page
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-2470
 	Scenario: TC-2470, TC-2478 Verfiy Field level validations on Personal Information on Desktop
 	When login url is available
 	When user 2488 enter detail email
