@@ -1,6 +1,7 @@
 package automation.library.pageObjects;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -36,6 +37,7 @@ public class AEM_Header_Page extends PageObject {
 	}
 	/** This function click Account menu component */
 	public void clickAccountComponent() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getAEMHeaderLocatorPage().get_Primary_Navigation_Component()), 3);
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMHeaderLocatorPage().get_AccountMenu())), 3);
 
 	}
@@ -219,5 +221,21 @@ public class AEM_Header_Page extends PageObject {
 	/** This function click on AEM primary navigation title*/
 	public void verifyLogoChangesReflected() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMHeaderPageLocator().get_Ctc_Logo_Preview())),20);
+	}
+	
+	/** Enter data to Sign out */
+	public void enterDataSignOut() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMHeaderLocatorPage().get_Sign_Out_AEM()));
+		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMHeaderLocatorPage().get_Sign_Out_AEM())), 5, FileReaderManager.getInstance().getAEMDataReader().get_Sign_Out_Data());
+	}
+	
+	/** This function is verify that sign out option data is reflected */
+	public void verifySignOutChangesReflected() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Sign_Out())),15);
+		String expected = FileReaderManager.getInstance().getAEMDataReader().get_Sign_Out_Data();
+		String actual= $getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Sign_Out())),10);
+		System.out.println(expected);
+		System.out.println(actual);
+		Assert.assertEquals(expected,actual);
 	}
 }

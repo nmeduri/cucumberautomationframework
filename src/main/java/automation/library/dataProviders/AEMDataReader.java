@@ -4946,4 +4946,30 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets data Signout
+	 * 
+	 */
+	
+	public String get_Sign_Out_Data() {
+		String getText = Property.getProperty(Constant.AEM_DATA_FILE, "signOutData");
+		if(getText != null)
+			return getText;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets data ctc URL
+	 * 
+	 */
+	
+	public String get_CTC_URL() {
+		String getText = Property.getProperty(Constant.AEM_DATA_FILE, "ctcURL");
+		if(getText != null)
+			return getText;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

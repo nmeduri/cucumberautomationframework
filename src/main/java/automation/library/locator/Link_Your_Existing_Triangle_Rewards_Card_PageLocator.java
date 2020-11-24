@@ -37,6 +37,9 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String activeValidationErrorText = Property.getProperty(Constant.OR_FILE, "activeValidationErrorText");
 	String activeValidationTryAgain = Property.getProperty(Constant.OR_FILE, "activeValidationTryAgain");
 	String activeValidationCancel = Property.getProperty(Constant.OR_FILE, "activeValidationCancel");
+	String defaultErrorImage = Property.getProperty(Constant.OR_FILE, "defaultErrorImage");
+	String defaultErrorContent = Property.getProperty(Constant.OR_FILE, "defaultErrorContent");
+	
 	
 	/**
 	 * gets Locator - Enter Card number
@@ -262,6 +265,22 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	 */
 	public String get_Active_Cancel() {
 		return activeValidationCancel;
+	}
+	
+	/**
+	 * gets Locator - Default Error Image
+	 * 
+	 */
+	public String get_Default_Error_Image() {
+		return defaultErrorImage;
+	}
+	
+	/**
+	 * gets Locator - Default Error Image
+	 * 
+	 */
+	public String get_Default_Error_Text() {
+		return defaultErrorContent;
 	}
  }
 

@@ -18,7 +18,7 @@ Feature: OCCP-3213 Link Existing Triangle Rewards Card | Failure/Error Cases | R
 	Then the tryagain text changes should be reflected on ctc site
 	
 	@RegressionTest @AEM
-	Scenario: TC-2184 Configure label for 'Try Again' CTA
+	Scenario: TC-2185 Configure label for 'Cancel' CTA
 	When aem author with access navigates to link existing card screen
 	And click on edit button
 	And click on aem link existing card title

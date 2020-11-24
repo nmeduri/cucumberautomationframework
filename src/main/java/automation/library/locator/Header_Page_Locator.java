@@ -43,6 +43,14 @@ public class Header_Page_Locator {
 	String InformationBanner=Property.getProperty(Constant.OR_FILE, "InformationBanner");
 	String standardHeader=Property.getProperty(Constant.OR_FILE, "standardHeader");
 	String secondaryNavigation=Property.getProperty(Constant.OR_FILE, "secondaryNavigation");
+	String accountsMenuDropdown = Property.getProperty(Constant.OR_FILE, "accountsMenuDropdown");
+	String registerInfo = Property.getProperty(Constant.OR_FILE, "registerInfo");
+	String orderHistory = Property.getProperty(Constant.OR_FILE, "orderHistory");
+	String paymentInformation = Property.getProperty(Constant.OR_FILE, "paymentInformation");
+	String addresses = Property.getProperty(Constant.OR_FILE, "addresses");
+	String hiOnHeader = Property.getProperty(Constant.OR_FILE, "hiOnHeader");
+	String signOut = Property.getProperty(Constant.OR_FILE, "signOut");
+	
 	
 	/**
 	 * gets Locator - Account
@@ -287,4 +295,61 @@ public class Header_Page_Locator {
 	public String get_Secondary_Navigation() {
 		return secondaryNavigation;
 	}
+	
+	/**
+	 * gets Locator - Accounts Menu dropdown
+	 * 
+	 */
+	public String get_Accounts_Menu_Dropdown() {
+		return accountsMenuDropdown;
+	}
+	
+	/**
+	 * gets Locator - Register info
+	 * 
+	 */
+	public String get_Register_Info() {
+		return registerInfo;
+	}
+	
+	/**
+	 * gets Locator - Order History
+	 * 
+	 */
+	public String get_Order_History() {
+		return orderHistory;
+	}
+	
+	/**
+	 * gets Locator - Payment Information
+	 * 
+	 */
+	public String get_Payment_Information() {
+		return paymentInformation;
+	}
+	
+	/**
+	 * gets Locator - Addresses
+	 * 
+	 */
+	public String get_Addresses() {
+		return addresses;
+	}
+	
+	/**
+	 * gets Locator - Hi
+	 * 
+	 */
+	public String get_Hi() {
+		return hiOnHeader;
+	}
+	
+	/**
+	 * gets Locator - Sign Out
+	 * 
+	 */
+	public String get_Sign_Out() {
+		return signOut;
+	}
+	
 }

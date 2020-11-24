@@ -1332,5 +1332,44 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
+	/**
+	 * gets PDP Product -Add to Cart URL
+	 * 
+	 */
+
+	public String get_Default_Error_Image_Path() {
+		String getPath = Property.getProperty(Constant.DATA_FILE, "defaultErrorImage");
+		if(getPath != null)
+			return getPath;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Hi Text
+	 * 
+	 */
+
+	public String get_Hi() {
+		String getText = Property.getProperty(Constant.DATA_FILE, "hiText");
+		if(getText != null)
+			return getText;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Account Text
+	 * 
+	 */
+
+	public String get_Account_Text() {
+		String getText = Property.getProperty(Constant.DATA_FILE, "accountText");
+		if(getText != null)
+			return getText;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
 }
 

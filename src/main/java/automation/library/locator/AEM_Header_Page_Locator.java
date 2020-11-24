@@ -55,6 +55,7 @@ public class AEM_Header_Page_Locator {
 	String ctcLogoThumbnail = Property.getProperty(Constant.OR_FILE, "ctcLogoThumbnail");
 	String primaryNavigationLogoField = Property.getProperty(Constant.OR_FILE, "primaryNavigationLogoField");
 	String ctcLogoPreview = Property.getProperty(Constant.OR_FILE, "ctcLogoPreview");
+	String signOutAEM = Property.getProperty(Constant.OR_FILE, "signOutAEM");
 	
     
     /**
@@ -425,6 +426,15 @@ public class AEM_Header_Page_Locator {
 	
 	public String get_Ctc_Logo_Preview() {
 		return ctcLogoPreview;
+	}
+	
+	/**
+	 * gets Locator - Signout Field Aem
+	 * 
+	 */
+	
+	public String get_Sign_Out_AEM() {
+		return signOutAEM;
 	}
 	
 }

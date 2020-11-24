@@ -46,6 +46,10 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	String activeValidationErrorText = Property.getProperty(Constant.OR_FILE, "activeValidationErrorText");
 	String errorImageAlreayLinkCard = Property.getProperty(Constant.OR_FILE, "errorImageAlreayLinkCard");
 	String tryAgainBtnAlreadyLinkCard = Property.getProperty(Constant.OR_FILE, "tryAgainBtnAlreadyLinkCard");
+	String defaultErrorImageField = Property.getProperty(Constant.OR_FILE, "defaultErrorImageField");
+	String defaultErrorImageThumbnail = Property.getProperty(Constant.OR_FILE, "defaultErrorImageThumbnail");
+	String pickDefaultImage = Property.getProperty(Constant.OR_FILE, "pickDefaultImage");
+	String defaultErrorMessageAEM = Property.getProperty(Constant.OR_FILE, "defaultErrorMessageAEM");
 	
 	/**
 	 * gets Locator - Link Existing Card title
@@ -366,6 +370,34 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	 */
 	public String getTryAgainButtonAlreadyLinkCard() {
 		return tryAgainBtnAlreadyLinkCard;
+	}
+	
+	/**
+	 * get Locator - Default Error Image Field
+	 */
+	public String get_Default_Error_Image_Field() {
+		return defaultErrorImageField;
+	}
+	
+	/**
+	 * get Locator - Default Error Image Thumbnail
+	 */
+	public String get_Default_Error_Image_Thumbnail() {
+		return defaultErrorImageThumbnail;
+	}
+	
+	/**
+	 * get Locator - Pick Default Image
+	 */
+	public String get_Pick_Default_Image() {
+		return pickDefaultImage;
+	}
+	
+	/**
+	 * get Locator - Default Error Text Field AEM
+	 */
+	public String get_Default_Error_Text_AEM() {
+		return defaultErrorMessageAEM;
 	}
 	
 }

@@ -87,3 +87,23 @@ Feature: OCCP-2847  Header and Main Navigation | Pencil Banner
 	And click on preview button
 	Then click on account option after author
 	And validate the account options are available for Unauthenticated User
+	
+	@Regression @AEM 
+	Scenario: TC-2891 Configure Text for the Sign out on the dropdown
+	When AEM author with access to configure header on the page
+	And login to AEM using the credential as mentioned in the test data
+	And click on edit button
+	And click on Account menu component
+	And click on aem configure button
+	Then user should be able to access and configure signout option
+	And user click on done button
+	And click on the publish button
+	And close Browser
+	And open browser
+	Given login url is available
+	When enter email detail
+	And user enter password
+	And user click on sign in button
+	Then pencil banner should be displayed
+ 	And verify clicking on hi option
+	Then verify signout changes reflected in ctc site

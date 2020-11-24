@@ -252,7 +252,102 @@ public class OCCP_2847_Header_MainNavigation_PencilBanner_Steps extends BaseClas
 	}
 	 @Then ("validate the account options URL link are updated on the site")
 	 public void validate_the_account_options_URL_are_updated_on_the_site() throws Exception {
-			testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).displayUpdatedAccountOptionURLOnSite();
-		}
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).displayUpdatedAccountOptionURLOnSite();
+	 }
+	 
+	 @And("accounts option is displayed in pencil banner")
+	 public void accounts_option_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayAccountsOption();
+	 }
+	 
+	 @And("verify hovering on accounts option")
+	 public void hover_on_accounts_option() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).hoverOnAccountsOption();
+	 }
+	 
+	 @Then("on hover accounts should have an underline")
+	 public void accounts_should_have_underline() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).verifyHoverOnAccountsOption();
+	 }
+	 
+	 @And("verify clicking on accounts option")
+	 public void clicking_on_accounts_option() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnAccountsOption();
+	 }
+	 
+	 @Then("on clicking the dropdown will open up and below option")
+	 public void dropdown_should_open() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayAccountDropdown();
+	 }
+	 
+	 @And("verify and click on signin link")
+	 public void click_on_sign_in() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnSignIn();
+	 }
+	 
+	 @And("verify and click on register link in triangle rewards value prop")
+	 public void click_on_register() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnRegister();
+	 }
+	 
+	 @And("verify and click on register now in triangle rewards value prop")
+	 public void click_on_registerinfo() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnRegisterInfo();
+	 }
+	 
+	 @And("verify and click on option order history in account management links")
+	 public void click_on_order_history() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnOrderHistory();
+	 }
+	
+	 @And("verify and click on option payment information in account management links")
+	 public void click_on_payment_information() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnPaymentInformation();
+	 }
+	 
+	 @And("verify and click on option addresses in account management links")
+	 public void click_on_addresses() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnAddresses();
+	 }
+	 
+	 @And("as user is unauthenticated hi should be displayed instead of account in pencil banner")
+	 public void hi_option_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayHiOption();
+	 }
+	 
+	 @And("verify hovering on hi option")
+	 public void hover_on_hi_option() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).hoverOnHiOption();
+	 }
+	 
+	 @Then("on hover hi should have an underline")
+	 public void hi_should_have_underline() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).verifyHoverOnHiOption();
+	 }
+	 
+	 @And("verify clicking on hi option")
+	 public void clicking_on_hi_option() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnHiOption();
+	 }
+	 
+	 @And("verify and click on sign out button")
+	 public void click_on_sign_out() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnSignOut();
+	 }
+	 
+	 @Then("user should be sign out and account should be displayed instead of hi")
+	 public void user_should_be_sign_out() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).verifyUserSignOut();
+	 }
+	 
+	 @Then("user should be able to access and configure signout option")
+	 public void access_and_configure_sign_out() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).enterDataSignOut();
+	 }
+	 
+	 @Then("verify signout changes reflected in ctc site")
+	 public void sign_out_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).verifySignOutChangesReflected();
+	 }
 }
 

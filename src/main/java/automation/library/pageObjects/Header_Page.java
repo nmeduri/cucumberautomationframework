@@ -297,5 +297,117 @@ public class Header_Page extends PageObject {
 	public void notDisplayPencilBannerInHeader() throws Exception {
 		$notDisplay($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Pencil_Banner()));
 	}
+	
+	/** This function is verify that accounts option is displayed */
+	public void displayAccountsOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account()));
+	}
+	
+	/** This function is verify that accounts option is hovered */
+	public void hoverOnAccountsOption() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().get_Header_Locator_Page().get_Account())));
+	}
+	
+	/** This function is verify that accounts option is underlined */
+	public void verifyHoverOnAccountsOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account()), "text-decoration-line");
+		Log.message("Value:- " + value, true);
+	    Assert.assertTrue(value.contains("underline"));
+	}
+	
+	/** click on Account option */
+	public void clickOnAccountsOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account()));
+	}
+	
+	/** This function is verify that accounts option dropdown is displayed */
+	public void displayAccountDropdown() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Accounts_Menu_Dropdown()));
+	}
+	
+	/** This function click on Sign in */
+	public void clickOnSignIn() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Sign_In_Header()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Sign_In_Header()));
+	}
+	
+	/** This function click on Register */
+	public void clickOnRegister() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Registration_Header()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Registration_Header()));
+	}
+	
+	/** This function click on Register info */
+	public void clickOnRegisterInfo() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Register_Info()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Register_Info()));
+	}
+	
+	/** This function click on Order History */
+	public void clickOnOrderHistory() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Order_History()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Order_History()));
+	}
+	
+	/** This function click on Payment Information */
+	public void clickOnPaymentInformation() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Payment_Information()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Payment_Information()));
+	}
+	
+	/** This function click on Addresses */
+	public void clickOnAddresses() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Addresses()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Addresses()));
+	}
+
+	/** This function is verify that hi option is displayed */
+	public void displayHiOption() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi())),15);
+		String expected = FileReaderManager.getInstance().getDataReader().get_Hi().concat(",");
+		String actual= $getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi())),10);
+		Assert.assertEquals(expected,actual);
+	}
+	
+	/** This function is verify that hi option is hovered */
+	public void hoverOnHiOption() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).$mouseHover($findElement(By.xpath(testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi())));
+	}
+	
+	/** This function is verify that hi option is underlined */
+	public void verifyHoverOnHiOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi()));
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi()), "text-decoration-line");
+		Log.message("Value:- " + value, true);
+	    Assert.assertTrue(value.contains("underline"));
+	}
+	
+	/** click on hi option */
+	public void clickOnHiOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi()));
+	}
+	
+	/** This function click on Sign Out */
+	public void clickOnSignOut() throws Exception {
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Sign_Out()), "href");
+		configuration.setProperty("urlLink", url);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Sign_Out()));
+	}
+	
+	/** This function is verify that hi option is displayed */
+	public void verifyUserSignOut() throws Exception {
+		Thread.sleep(4000);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account())),15);
+		String expected = FileReaderManager.getInstance().getDataReader().get_Account_Text();
+		String actual= $getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account())),10);
+		Assert.assertEquals(expected,actual);
+	}
 
 }
