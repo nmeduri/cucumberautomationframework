@@ -68,5 +68,8 @@ public class OCCP_1037_Simple_Header_Checkout_Flow_Step extends BaseClass{
 	public void update_the_contact_number_label_details() throws Exception {
 		testContext.getPageObjectManager().getAEMSimpleHeaderCheckoutFlowPage(PageObject.getDriver()).enterCustomerServerContactNumberDetails();
 	}
-	
+	@And ("Click on the customer service number")
+	public void Click_on_the_customer_service_number() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).clickCustomerServiceContactNumber();
+	}
 }

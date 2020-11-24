@@ -37,6 +37,7 @@ public class Header_Page extends PageObject {
 
 	}
 	
+	
 	/** This function click on Account */
 	public void clickOnAccount() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account()));

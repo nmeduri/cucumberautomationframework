@@ -49,6 +49,10 @@ public class Checkout_Page extends PageObject{
 	public void displayCustomerServiceContactNumber() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Customer_Service_Contact_Number())), 10);
 	}
+	/** This functionclick on Customer Service Contact Number  */
+	public void clickCustomerServiceContactNumber() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Customer_Service_Contact_Number())), 10);
+	}
 	/** This function is verify that Site Language Selector is displayed */
 	public void displaySiteLanguageSelector() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Site_Language_Selector())), 10);
