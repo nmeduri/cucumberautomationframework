@@ -1644,4 +1644,31 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("product code is not specified in the API Data file.");
 	}
+	/**
+	 * gets product data of TC-4152
+	 * 
+	 */
+	
+	public String get_product_tc_4152() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_4152");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-5117
+	 * 
+	 */
+	
+	public String get_product_tc_5117() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_5117");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code not specified in the API Data file.");
+	}
+	
 }

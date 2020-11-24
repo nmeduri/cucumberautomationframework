@@ -341,9 +341,40 @@ public class Featured_List_Page extends PageObject {
 	/** verify display of Key Line for all Images */
 	public void verifyDisplayOfKeyLineForAllTheImages() throws Exception {
 		$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getFeatureListPageLocator().getKeyLineOfImages());
+	}
+	/** This function navigate to Featured Products List Page */
+	public void navigateTo_Featured_List_Product_List_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Featured_List_Product_List_Url());
+
+	}
+
+	/** This function is verify Product Featured List Page is displayed */
+	public void display_Product_Featured_List_Page() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle().contains("FeaturedPL");
+	}
+	/** verify Product featured list component is displayed */
+	public void dispalyProductFeaturedListComponent() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductFeatureList())), 20);
+	}
+	/** verify click on Product Card */
+	public void clickOnProductCard() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCard())), 20);
 		
+	}
+	/** verify learn more link is navigate on same tab  and defined destination url */
+	public void verifyDestinationURLIsAutoPopulatedBasedOnTheProductCode() throws Exception {
+		String actualurl = PageObject.getDriver().getCurrentUrl();
+		//String expectedUrl = FileReaderManager.getInstance().getDataReader().getPDPProductUrl();
+		//Assert.assertEquals(expectedUrl, FileReaderManager.getInstance().getAEMDataReader().get_Learn_More_Link_One());
+		actualurl.contains(FileReaderManager.getInstance().getDataReader().getPDPProductUrl());
+		Log.message("actualurl :"+ actualurl, true);
+		Log.message("expectedUrl :"+ FileReaderManager.getInstance().getDataReader().getPDPProductUrl().toString(), true);
+	}
+	/** verify click on Product Card Mobile*/
+	public void clickOnProductCardMobile() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCardMobile())), 20);
 		
-		//Assert.assertEquals(li.size(), 4);
 	}
 	
 }

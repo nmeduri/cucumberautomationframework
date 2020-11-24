@@ -4,6 +4,8 @@ import org.junit.Assert;
 
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
+import automation.library.selenium.core.PageObject;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.specification.RequestSpecification;
@@ -51,5 +53,31 @@ public class HYB_OCCP_3588_Cart_Order_Summary_Shipping_Fees_Step extends BaseSte
 	public void user_Hits_Update_Cart_Api_BOPIS_Anonymous_Variant_Product() {
 		response = getAuthorizationUrl().patch_HYB_UpdateCart_AnonymousUserAPI_BOPIS(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994());
 		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("user hits update Cart api STH for Authenticated user-variant Product")
+	public void user_Hits_Update_Cart_Api_STH_Authenticated_Variant_Product() {
+		response = getAuthorizationUrl().patch_HYB_UpdateCart_AuthenticatedUserAPI_STH(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994(),accessToken);
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("user hits update Cart api BOPIS for Authenticated user-variant Product")
+	public void user_Hits_Update_Cart_Api_BOPIS_Authenticated_Variant_Product() {
+		response = getAuthorizationUrl().patch_HYB_UpdateCart_AuthenticatedUserAPI_BOPIS(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994(),accessToken);
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("hits add to Cart api for Anonymous user standalone product-BOPIS option")
+	public void Hits_Add_To_Cart_Api_Anonymous_Standalone_Product_BOPIS_option() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_BOPIS(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_4152());
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@When("hits add to Cart api for Authenticated user standalone product-BOPIS option")
+	public void Hits_Add_To_Cart_Api_Authenticated_Standalone_Product_BOPIS_option() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_BOPIS(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_4152(),accessToken);
+		Log.message("Add to Cart Response:- " + response.getBody().asString(), true);
+	}
+	@And("deliveryMode BOPIS is available in json response")
+	public void deliveryMode_BOPIS_Is_Available_In_Response() {
+		PageObject.verifySectionValueResponseNotNull(response.jsonPath().get("cartModifications.entry.deliveryMode.code"));
+		PageObject.verifyExpectedResponseWithoutList("[BOPIS]", response.jsonPath().get("cartModifications.entry.deliveryMode.code").toString());
+		Log.message("deliveryMode BOPIS Response:- " + response.jsonPath().get("cartModifications.entry.deliveryMode.code").toString(), true);
 	}
 }

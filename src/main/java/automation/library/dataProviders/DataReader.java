@@ -1332,7 +1332,42 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+	/**
+	 * gets Featured List Product List URL
+	 * 
+	 */
+
+	public String get_Featured_List_Product_List_Url() {
+		String featuredProductsListUrl = Property.getProperty(Constant.DATA_FILE, "featuredProductListUrl");
+		if(featuredProductsListUrl != null)
+			return featuredProductsListUrl;
+		else 
+			throw new RuntimeException("featuredProductList url not specified in the Data file.");
+	}
+	/**
+	 * gets Cart Page URL
+	 * 
+	 */
+
+	public String get_Cart_Page_Url() {
+		String cartPageUrl = Property.getProperty(Constant.DATA_FILE, "cartPageUrl");
+		if(cartPageUrl != null)
+			return cartPageUrl;
+		else 
+			throw new RuntimeException("cartPageUrl url not specified in the Data file.");
+	}
+	/**
+	 * gets quantity
+	 * 
+	 */
+
+	public String get_Quantity_4561() {
+		String quantity = Property.getProperty(Constant.DATA_FILE, "quantity_4561");
+		if(quantity != null)
+			return quantity;
+		else
+			throw new RuntimeException("Quantity Data not specified in the Data file.");
+	}
 	/**
 	 * gets PDP Product -Add to Cart URL
 	 * 

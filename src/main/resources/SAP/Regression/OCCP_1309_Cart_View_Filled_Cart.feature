@@ -208,3 +208,30 @@ Feature: OCCP_1309: Cart - View Filled Cart
     Then Add deliveryPointOfService is available in json response
     And deliveryMode is available in json response
     
+    @RegressionTest
+    Scenario: TC-4144 HYB:OCCP-1309-OCCP-2834: Verify when user is on PDP and wants to add same product variant to cart with different fulfillment options
+    Given Guest user create cart access token is available
+    When guest user hits the POST api for create cart
+    Then response JSON should have created cart
+    Then response JSON should have code
+    Then 1309-guid is available in response JSON
+    When Anonymous user Add to cart api is available
+    When 3994-user hits add to Cart api for Anonymous user
+    Then should return 200 ok
+    Then ctcproduct container is available in response
+    And code should be available in ctcproduct container
+    When Anonymous user Add to cart api is available
+    When hits add to Cart api for Anonymous user-BOPIS option
+    Then should return 200 ok
+    Then ctcproduct container is available in response
+    And code should be available in ctcproduct container 
+    When 3994-user hits GET Cart api for Anonymous user
+    Then should return 200 ok
+    Then deliveryMode container is available in GET response
+    And deliveryMode code is available in GET response
+    And shiptohome should be displayed in Get Response
+    And Pick Up Store should be displayed in Get Response
+    And quantity should be displayed in GET cart response
+    
+    
+    

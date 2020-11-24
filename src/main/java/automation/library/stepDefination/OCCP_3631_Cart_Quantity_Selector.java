@@ -66,5 +66,44 @@ public class OCCP_3631_Cart_Quantity_Selector extends BaseClass {
 	public void validate_product_quantity_increase_by_One() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyUpdatedQuantityByOne();
 	}	
-
+	@When ("cart page url is available")
+	public void cart_page_is_available() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).navigate_To_Cart_Page();
+	}
+	
+	@When ("cart page title is displayed")
+	public void cart_page_title_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).display_Cart_Page_Shopping_Cart_Title();
+	}
+	@When ("quantity selector box is displayed")
+	public void quantity_selector_box_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).displayQuantitySelectorBox();
+	}
+	
+	@When ("error message maximum quantity of the product is exceeded is displayed")
+	public void error_message_maximum_quantity_of_the_product_is_exceeded_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).displayErrorMessageForExceededQuantity();
+	}
+	@And("user enters number greater than maximum quantity for product in the quantity selector box")
+	public void user_enters_in_number_greater_than_maximum_quantity_for_product_in_the_quantity_selector_box() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).enterQuantityGreaterThanMaxixmumInCartPage();
+	}
+	@And("The quantity selector box is highlighted")
+	public void quantity_selector_box_is_highlighted() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).enterQuantityGreaterThanMaxixmumInCartPage();
+	}
+	@And("user enters number is greater than 0 and is equal to or lessthan maximum quantity in quantity selector box")
+	public void user_enters_number_in_the_quantity_selector_box() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).enterNumberInQuantitySelectorBox();
+	}
+	@And("verify updated quantity must be number")
+	public void verify_updated_quantity_must_be_number() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).verifyUpdatedQuantityMustBeNumber();
+	}
+	
+	@And("Price of the product updated accordingly")
+	public void price_of_the_product_updated_accordingly() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).verifyUpdatedQuantityMustBeNumber();
+	}
+	
 }

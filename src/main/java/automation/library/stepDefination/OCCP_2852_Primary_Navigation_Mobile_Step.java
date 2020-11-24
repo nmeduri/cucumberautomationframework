@@ -18,7 +18,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.pageObjects.PDP_Page;
-
+/**
+ * This file contains the scenario of user stories OCCP-2852
+ */
 public class OCCP_2852_Primary_Navigation_Mobile_Step extends BaseClass{
 	PDP_Page pdpPage;
 

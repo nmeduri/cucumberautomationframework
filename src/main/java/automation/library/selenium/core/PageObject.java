@@ -305,7 +305,8 @@ public class PageObject extends BaseClass {
 	/** move to cursor */
    public void $moveCursor() {
 	   Actions action = new Actions(driver);
-	   action.moveByOffset(50, 35).perform();
+	   //action.moveByOffset(50, 35).perform();
+	   action.moveByOffset(1, 1).perform();
    }
 	
    /** scroll down by coordinates */

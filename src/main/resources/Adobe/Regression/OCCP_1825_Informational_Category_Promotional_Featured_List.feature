@@ -90,13 +90,21 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	Then verify the max number of dots on the component
 	Then user should still be able to see the last page with four cards
 	
+	@RegressionTest @WebView
+	Scenario: TC-4840 Verfiy the display of key line color on the Promotional image featured list page
+	Given open browser
+	When navigate to featured list page
+	Then user should be able to see featured list component on the page
+	And verify the display of card and related image
+	And user should able to see the key line for all the images displayed on the Image featured list
+
 	@RegressionTest @WebView @WideScreen @TC-1824
 	Scenario: TC-1824 Verify the details when user clicks on pagination dots on FL component on Desktop
 	When fl page  is available for more than four products
 	Then user should be able to see featured list component on the page
 	And click on one of the dot on the carousel
 	Then verify the dot is highlighted upon click
-	
+
 	@RegressionTest @WideScreen @TC-1825
 	Scenario: TC-1825 Verify the details when there is no pagination when there are only 4 tiles on FL component
 	When navigate to featured list page
@@ -185,13 +193,6 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	Then verify the max number of dots on the component
 	Then user should still be able to see the last page with four cards
 	
-	@RegressionTest1 @WebView
-	Scenario: TC-4840 Verfiy the display of key line color on the Promotional image featured list page
-	Given open browser
-	When navigate to featured list page
-	Then user should be able to see featured list component on the page
-	And verify the display of card and related image
-	And user should able to see the key line for all the images displayed on the Image featured list
 
-	
+
 	

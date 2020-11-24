@@ -28,6 +28,7 @@ public class Feature_List_Page_Locator {
 	 String titleProductCardFl = Property.getProperty(Constant.OR_FILE, "titleProductCardFl");
 	 String productCardDescriptionFl = Property.getProperty(Constant.OR_FILE, "productCardDescriptionFl");
 	 String learnMoreProductCardfl = Property.getProperty(Constant.OR_FILE, "learnMoreProductCardfl");
+
 	 String productCardFeatureListOne = Property.getProperty(Constant.OR_FILE, "productCardFeatureListOne");
 	 String learnMoreFL = Property.getProperty(Constant.OR_FILE, "learnMoreFL");
 	 String imageFeatureList = Property.getProperty(Constant.OR_FILE, "imageFeatureList");
@@ -35,6 +36,10 @@ public class Feature_List_Page_Locator {
 	 String descriptiveTitleFl = Property.getProperty(Constant.OR_FILE, "descriptiveTitleFl");
 
 	 String keyLineOfAllImages = Property.getProperty(Constant.OR_FILE, "keyLineOfAllImages");
+	 String productFeatureList = Property.getProperty(Constant.OR_FILE, "productFeatureList");
+	 String productCard = Property.getProperty(Constant.OR_FILE, "productCard");
+	 String productCardMobile = Property.getProperty(Constant.OR_FILE, "productCardMobile");
+	 
 	 /**
 	  * get Locator - Learn More Link First
 	  */
@@ -153,7 +158,6 @@ public class Feature_List_Page_Locator {
 	 public String getLearnMoreProductCard() {
 		 return learnMoreProductCardfl;
 	 }
-
 	 
 	 /**
 	  * get Locator - Product Card One
@@ -196,4 +200,24 @@ public class Feature_List_Page_Locator {
 	 public String getKeyLineOfImages() {
 		 return keyLineOfAllImages;
 	 }
+	 
+	 /**
+	  * get Locator - Product Feature List
+	  */
+	 public String getProductFeatureList() {
+		 return productFeatureList;
+	 }
+	 /**
+	  * get Locator - Product Card
+	  */
+	 public String getProductCard() {
+		 return productCard;
+	 }
+	 /**
+	  * get Locator - Product Card Mobile
+	  */
+	 public String getProductCardMobile() {
+		 return productCardMobile;
+	 }
+	 
 	}

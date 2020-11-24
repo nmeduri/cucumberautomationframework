@@ -21,6 +21,14 @@ public class Cart_Page_Locator {
 	String wishListBadge = Property.getProperty(Constant.OR_FILE, "wishListBadge");
 	String productBrandTitle = Property.getProperty(Constant.OR_FILE, "productBrandTitle");
 	String itemAddedToWishlistMessage = Property.getProperty(Constant.OR_FILE, "itemAddedToWishlistMessage");
+
+	String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
+	String shoppingCartPageTitle = Property.getProperty(Constant.OR_FILE, "shoppingCartPageTitle");
+	String quantitySelectorBox = Property.getProperty(Constant.OR_FILE, "quantitySelectorBox");
+	String errorMessageOfExceededQuantity = Property.getProperty(Constant.OR_FILE, "errorMessageOfExceededQuantity").replace("=", ",");
+	String quantityBoxInCartPage = Property.getProperty(Constant.OR_FILE, "quantityBoxInCartPage");
+	String highlightedQuantitySelectorBox = Property.getProperty(Constant.OR_FILE, "highlightedQuantitySelectorBox");
+
 	String coreChargeLabel = Property.getProperty(Constant.OR_FILE, "coreChargeLabel");
 	String cartProductQuantity=Property.getProperty(Constant.OR_FILE, "cartQuantity");
 	String ToolTipCoreCharges=Property.getProperty(Constant.OR_FILE, "ToolTipCoreCharges");
@@ -154,6 +162,41 @@ public class Cart_Page_Locator {
 		 */
 	public String get_CoreChargemessage() {
 		return coreChargeLabel;
+	}
+	/**
+	 * gets Locator - Product Brand Title
+	 * 
+	 */	
+	public String get_Shopping_Cart_Page_Title() {
+		return shoppingCartPageTitle;
+	}
+	/**
+	 * gets Locator - quantity selector box
+	 * 
+	 */	
+	public String get_Quantity_Selector_Box() {
+		return quantitySelectorBox;
+	}
+	/**
+	 * gets Locator - Error message for exceeded quantity
+	 * 
+	 */	
+	public String get_Error_Message_Exceeded_Quantity() {
+		return errorMessageOfExceededQuantity;
+	}
+	/**
+	 * gets Locator - Quantity Box of cart page
+	 * 
+	 */
+	public String get_Quantity_Box_Cart_Page() {
+		return quantityBoxInCartPage;
+	}
+	/**
+	 * gets Locator - Highlighted Quantity Selector Box
+	 * 
+	 */
+	public String get_Highlighted_Quantity_Selector_Box() {
+		return highlightedQuantitySelectorBox;
 	}
 	/**
 	 * gets Locator - ToolTip message
