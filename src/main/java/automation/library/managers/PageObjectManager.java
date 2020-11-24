@@ -10,6 +10,7 @@ import automation.library.locator.AEM_Common_Page_Locator;
 
 import automation.library.locator.AEM_Feature_List_Page_Locator;
 import automation.library.locator.AEM_Customer_Service_Informational_Copy_Page_Locator;
+import automation.library.locator.AEM_Edge_To_Edge_Banner_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_PDP_Add_To_Cart_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
@@ -65,6 +66,7 @@ import automation.library.pageObjects.AEM_Cart_Page;
 import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_Featured_List_Page;
 import automation.library.pageObjects.AEM_Customer_Service_Informational_Copy_Page;
+import automation.library.pageObjects.AEM_Edge_To_Edge_Banner_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_PDP_Add_To_Cart_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
@@ -240,10 +242,11 @@ public class PageObjectManager {
 	private AEM_Broad_Banner_Page_Locator getAEMBroadBannerPageLocator;
 	private Broad_Banner_Page getBroadBannerPage;
 	private Broad_Banner_Page_Locator getBroadBannerPageLocator;
+	private AEM_Edge_To_Edge_Banner_Locator getAEMEdgeToEdgeBannerLocator;
+	private AEM_Edge_To_Edge_Banner_Page getAEMEdgeToEdgeBannerPage;
 	private AEM_Get_A_New_Triangle_Rewards_Card_Page getAEMANewTriangleRewardsCardPage;
 	private AEM_Get_A_New_Triangle_Rewards_Card_Locator getAEMANewTriangleRewardsCardLocator;
 	
-
 	public PageObjectManager() {
 		
 	}
@@ -820,7 +823,14 @@ public class PageObjectManager {
 	public Broad_Banner_Page_Locator getBroadBannerPageLocator() {
 		return (getBroadBannerPageLocator == null) ? getBroadBannerPageLocator = new Broad_Banner_Page_Locator() : getBroadBannerPageLocator;
 	}
-	
+	/** Return Instance of AEM Edge to edge Banner Page  */
+	public AEM_Edge_To_Edge_Banner_Page getAEMEdgeToEdgeBannerPage(WebDriver driver) {
+		return (getAEMEdgeToEdgeBannerPage == null) ? getAEMEdgeToEdgeBannerPage = new AEM_Edge_To_Edge_Banner_Page(driver) : getAEMEdgeToEdgeBannerPage;
+	}
+	/** Return Instance of AEM Edge to edge Banner Page Locator */
+	public AEM_Edge_To_Edge_Banner_Locator getAEMEdgeToEdgeBannerLocator() {
+		return (getAEMEdgeToEdgeBannerLocator == null) ? getAEMEdgeToEdgeBannerLocator = new AEM_Edge_To_Edge_Banner_Locator() : getAEMEdgeToEdgeBannerLocator;
+	}
 	/** Returns Instance of AEM Get A New Triangle Rewards Card File */
 	public AEM_Get_A_New_Triangle_Rewards_Card_Page getAEMANewTriangleRewardsCardPage(WebDriver driver) {
 		return (getAEMANewTriangleRewardsCardPage == null) ? getAEMANewTriangleRewardsCardPage = new AEM_Get_A_New_Triangle_Rewards_Card_Page(driver) : getAEMANewTriangleRewardsCardPage;

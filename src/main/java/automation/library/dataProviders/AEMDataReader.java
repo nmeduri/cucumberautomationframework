@@ -4871,6 +4871,68 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+
+	/**
+	 * gets Edge to edge Broad banner URL
+	 * 
+	 */
+	
+	public String get_EdgetoEdge_Banner_URL() {
+		String EdgeBannerUrl = Property.getProperty(Constant.AEM_DATA_FILE, "EdgeToEdgeBannerAuthor");
+		if(EdgeBannerUrl != null)
+			return EdgeBannerUrl;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Edge to edge Broad banner Title
+	 * 
+	 */
+	
+	public String get_EdgetoEdge_Banner_Title() {
+		String EdgeBannerTitle = Property.getProperty(Constant.AEM_DATA_FILE, "EdgeToEdgeBannerTitle");
+		if(EdgeBannerTitle != null)
+			return EdgeBannerTitle;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Edge to edge Broad banner description
+	 * 
+	 */
+	
+	public String get_EdgetoEdge_Banner_Description() {
+		String EdgeBannerDesc = Property.getProperty(Constant.AEM_DATA_FILE, "EdgeToEdgeBannerDescription");
+		if(EdgeBannerDesc != null)
+			return EdgeBannerDesc;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Edge to edge Broad banner AltText
+	 * 
+	 */
+	
+	public String get_EdgetoEdge_Banner_Alttext() {
+		String EdgeBannerAltText = Property.getProperty(Constant.AEM_DATA_FILE, "EdgeToEdgeBannerImageAltText");
+		if(EdgeBannerAltText != null)
+			return EdgeBannerAltText;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Edge to edge Broad banner background color
+	 * 
+	 */
+	
+	public String get_EdgetoEdge_Banner_background_color() {
+		String EdgeBannerBG = Property.getProperty(Constant.AEM_DATA_FILE, "EdgEdgeToEdgeBannerbackgroundColoreToEdgeBannerAuthor");
+		if(EdgeBannerBG != null)
+			return EdgeBannerBG;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
 	
 	/**
 	 * gets data Continue
