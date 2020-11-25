@@ -4948,9 +4948,18 @@ public class AEMDataReader {
 	}
 	
 	/**
-	 * gets data Signout
+	 * gets AEm Url
 	 * 
 	 */
+	
+	public String get_AEM_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "aemUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
 	
 	public String get_Sign_Out_Data() {
 		String getText = Property.getProperty(Constant.AEM_DATA_FILE, "signOutData");

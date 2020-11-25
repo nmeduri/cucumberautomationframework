@@ -130,6 +130,8 @@ public class PDP_PageLocator {
 	String numberOfAnswers = Property.getProperty(Constant.OR_FILE, "numberOfAnswers");
 	String ansThisQuestionButton = Property.getProperty(Constant.OR_FILE, "ansThisQuestionButton");
 	String postAnswerModel = Property.getProperty(Constant.OR_FILE, "postAnswerModel");
+	String reportQuestionAnswerButton = Property.getProperty(Constant.OR_FILE, "reportQuestionAnswerButton");
+	String  disableReportedLabel = Property.getProperty(Constant.OR_FILE, "disableReportedLabel");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -1126,6 +1128,19 @@ public class PDP_PageLocator {
 		return assembledLength;
 	}
 	
+	/**
+	 * gets Locator - Report Button
+	 */
+	public String get_Report_Button() {
+		return reportQuestionAnswerButton;
+	}
+	
+	/**
+	 * gets Locator - Disabled Reported Label
+	 */
+	public String get_Disabled_Reported_Label() {
+		return disableReportedLabel;
+	}
 	
 }
 

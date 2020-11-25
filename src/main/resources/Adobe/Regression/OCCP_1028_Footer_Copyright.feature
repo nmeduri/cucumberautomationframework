@@ -3,6 +3,8 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	
 	@RegressionTest @WebView @WideScreen @TC-2787
 	Scenario: TC-2787, TC-2786 Verification of clicking of View More - Desktop Wide And Desktop
+	Given quit browser
+	When open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	And click on view more

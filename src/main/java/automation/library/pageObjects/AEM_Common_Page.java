@@ -150,4 +150,9 @@ public class AEM_Common_Page extends PageObject {
 		PageObject.getDriver().navigate().refresh();
 	}
 	
+	/** This function verify that user loggedIn Icon is displayed */
+	public void displayUserLoggedInIcon() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getUserLoggedInIcon()));
+	}
+	
 }

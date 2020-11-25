@@ -1049,7 +1049,26 @@ public class PDP_Page extends PageObject {
 		/** This function verify Post Answer Model is displayed*/
 		public void displayPostAnswerModel() throws Exception {
 			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Post_Answer_Model())),40);
-			
+		}
+		
+		/** This function verify Report button is displayed */
+		public void displayReportButton() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Report_Button()));
+		}
+		
+		/** click on report button */
+		public void clickReportButton() throws Exception {
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Report_Button()));
+		}
+		
+		/** verify button is changed to reported from report */
+		public void verifyButtonTitleChangedReported() throws Exception {
+			Assert.assertEquals("Reported", $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Disabled_Reported_Label())));
+		}
+		
+		/** verify label reported is not clickable */
+		public void verifyReporedLabelNotClickable() throws Exception {
+			testContext.getPageObjectManager().getPDPPageLocator().get_Disabled_Reported_Label();
 		}
 		
 }

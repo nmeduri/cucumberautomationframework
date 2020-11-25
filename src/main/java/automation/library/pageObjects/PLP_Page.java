@@ -41,7 +41,7 @@ public class PLP_Page extends PageObject {
 	List<Float> productPrice = new ArrayList<Float>();
 	ArrayList<Integer> rating = new ArrayList<Integer>();
 	List<Float> price = new ArrayList<Float>();
-
+    static int j=0;
 	public PLP_Page(WebDriver driver) {
 
 		super(driver);
@@ -54,6 +54,14 @@ public class PLP_Page extends PageObject {
 
 		driver.navigate()
 				.to(FileReaderManager.getInstance().getConfigReader().getPLPUrl());
+
+	}
+	
+	/** This function navigate to PLP FR Page */
+	public void navigateTo_PLP_FR_Page() throws Exception {
+
+		driver.navigate()
+				.to(FileReaderManager.getInstance().getDataReader().get_PLP_Fr_URL());
 
 	}
 	
@@ -635,5 +643,39 @@ public class PLP_Page extends PageObject {
 	/** click on see 3 more */
 	public void clickSeeThreeMore() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_See_More())), 10);
+	}
+	
+	/** verify that delivery and pickup option is displayed */
+	public void displayDeliveryAndPickUpOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Delivery_And_Pickup_Option()));
+	}
+	
+	/** click on delivery and pickup option */
+	public void clickDeliveryAndPickUpOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Delivery_And_Pickup_Option()));
+	}
+	
+	/** verify that pay and pickup option is displayed */
+	public void displayPayAndPickupOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Pay_Pickup_Option()));
+	}
+	
+	/** verify that home delivery is displayed */
+	public void displayHomeDeliveryOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Home_Delivery()));
+	}
+	
+	/** verify that facet option delivery and pickup is in top five */
+	public void devliveryPickupFacetOptionInTopFive() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Name()));
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Name()));
+		for(int i=0; i<5; i++) {
+			if(li.get(i).getText().contains("Delivery")) {
+				Log.message("i:- " + i, true);
+				j=i;
+			}
+			Log.message("J:- " + j, true);
+			Assert.assertTrue(j<5);
+		}
 	}
 }	

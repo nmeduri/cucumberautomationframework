@@ -66,7 +66,7 @@ public class PLP_PageLocator {
 	String colorButtonFacetHorizonatalBar = Property.getProperty(Constant.OR_FILE, "colorButtonFacetHorizonatalBar");
 	String closeButtonFacetPopUp = Property.getProperty(Constant.OR_FILE, "closeButtonFacetPopUp");
 	String moreFilters = Property.getProperty(Constant.OR_FILE, "moreFilters");
-	String sortAndFiltersMobile = Property.getProperty(Constant.OR_FILE, "sortAndFiltersMobile");
+	String sortAndFiltersMobile = Property.getProperty(Constant.OR_FILE, "sortAndFiltersMobile").replace("=", ",");
 	String selectedColorFacetText = Property.getProperty(Constant.OR_FILE, "selectedColorFacetText");
 	String selectedColorResultsOnPLP = Property.getProperty(Constant.OR_FILE, "selectedColorResultsOnPLP");
 	String colorSwatchAnotherValue = Property.getProperty(Constant.OR_FILE, "colorSwatchAnotherValue").replace("=", ",");
@@ -74,6 +74,10 @@ public class PLP_PageLocator {
 	String priceDetailTabAEM = Property.getProperty(Constant.OR_FILE, "priceDetailTabAEM");
 	String priceWasPriceDetail = Property.getProperty(Constant.OR_FILE, "priceWasPriceDetail");
 	String seeMoreSorting = Property.getProperty(Constant.OR_FILE, "seeMoreSorting");
+	String deliveryPickUpOption = Property.getProperty(Constant.OR_FILE, "deliveryPickUpOption").replace("=", ",");
+	String payPickUpOption = Property.getProperty(Constant.OR_FILE, "payPickUpOption").replace("=", ",");
+	String homeDeliveryOption = Property.getProperty(Constant.OR_FILE, "homeDeliveryOption").replace("=", ",");
+	String facetOptionName = Property.getProperty(Constant.OR_FILE, "facetOptionName");
 	
 	/**
 	 * gets Locator - List View
@@ -592,5 +596,33 @@ public class PLP_PageLocator {
 	 */
 	public String get_See_More() {
 		return seeMoreSorting;
+	}
+	
+	/**
+	 * gets Locator - Delivery & Pick Up Option
+	 */
+	public String get_Delivery_And_Pickup_Option() {
+		return deliveryPickUpOption;
+	}
+	
+	/**
+	 * gets Locator - Pay and Pickup option
+	 */
+	public String get_Pay_Pickup_Option() {
+		return payPickUpOption;
+	}
+	
+	/**
+	 * gets Locator - Home Delivery
+	 */
+	public String get_Home_Delivery() {
+		return homeDeliveryOption;
+	}
+	
+	/**
+	 * gets Locator - Facet Name
+	 */
+	public String get_Facet_Name() {
+		return facetOptionName;
 	}
  }

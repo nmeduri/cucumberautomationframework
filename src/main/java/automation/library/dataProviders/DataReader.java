@@ -1332,6 +1332,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
 	/**
 	 * gets Featured List Product List URL
 	 * 
@@ -1368,11 +1369,21 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
+
 	/**
 	 * gets PDP Product -Add to Cart URL
 	 * 
 	 */
 
+
+	public String get_PLP_Fr_URL() {
+		String plpFrUrl = Property.getProperty(Constant.DATA_FILE, "plpFrUrl");
+		if(plpFrUrl != null)
+			return plpFrUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	
 	public String get_Default_Error_Image_Path() {
 		String getPath = Property.getProperty(Constant.DATA_FILE, "defaultErrorImage");
 		if(getPath != null)

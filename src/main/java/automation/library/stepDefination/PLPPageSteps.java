@@ -44,6 +44,11 @@ public class PLPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).navigateTo_PLP_Page();
 	}
 	
+	@Given("plp fr url is available")
+	public void plp_fr_url_is_available() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).navigateTo_PLP_FR_Page();
+	}
+	
 	@Given("^price detail plp url is available$")
 	public void price_detail_plp_url_is_availabe() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).navigateTo_price_detail_PLP_Page();
