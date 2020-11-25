@@ -58,6 +58,12 @@ public class AEM_Featured_List_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Feature_List_Author_Page());
 
 	}
+	/** This function navigate to Feature List Author Page Page FR */
+	public void navigateTo_Feature_List_Author_Page_FR1() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Feature_List_Author_Page_FR());
+
+	}
 	
 	/** This function navigate to Informational Feature List Author Page Page */
 	public void navigateTo_informational_Feature_List_Author_Page() throws Exception {
@@ -70,6 +76,12 @@ public class AEM_Featured_List_Page extends PageObject {
 	public void navigateTo_Feature_List_Page() throws Exception {
 
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Feature_List_Url());
+
+	}
+	/** This function navigate to Featured product List Author Page  */
+	public void navigateTo_Featured_product_List_Author_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Featured_ProductList_URL());
 
 	}
 	
@@ -326,5 +338,36 @@ public class AEM_Featured_List_Page extends PageObject {
 	public void titletextdisplayedWhenAuthored() throws Exception {
 		$displayFindElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getDescriptiveTitle()));
 		}
+	/** click on featured product list component  */
+	public void clickFeaturedProductList() throws Exception {
+		$click($(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductListComponent())), 5));
+
+		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductListComponent())));
+	
+	}
+	
+	/** enter Product code detail */
+	public void enterProductCodeDetail() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getproductCode()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getproductCode()), FileReaderManager.getInstance().getAEMDataReader().get_ProductCode());
+	}
+	/** enter Product image detail */
+	public void EnterProductImageDetail() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getproductImage()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getproductImage()), FileReaderManager.getInstance().getAEMDataReader().get_ProductImageURL());
+	}
+	/** click on delete icon in author page */
+	public void click_delete_icon_author() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductFetureDeleteAEM()));
+	}
+	/** This function display error image  */
+	public void displayErrorImage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().get_ErrorImage()));
+
+	}
+	/** This function clear the mandatory field   */
+	public void clear_mandatory_field() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getproductCode()));
+	}
 	}
 

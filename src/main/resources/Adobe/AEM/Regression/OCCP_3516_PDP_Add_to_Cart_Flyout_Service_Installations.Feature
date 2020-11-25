@@ -10,12 +10,22 @@ Feature: OCCP-3516 PDP Add to Cart Flyout: Service Installations
 	And click on aem configure button
 	And update the title of add to cart field
 	And user click on done button
-	And click on the publish
+	And click on the publish button
 	When PDP product page is available
 	Then select specefications and click on add to cart
 	Then add to cart screen displayed
 	Then Add to cart Title is updated on the site
-
+	When AEM PDP product page for FR locale
+And click on Cart fly out component
+And click on aem configure button
+	And update the title of add to cart field
+	And user click on done button
+	And click on the publish button
+	When PDP product page is available
+	Then select specefications and click on add to cart
+	Then add to cart screen displayed
+	Then Add to cart Title is updated on the site
+	
 	@RegressionTest @AEM @TC-3526
 	Scenario: TC-3526 OCCP-3516 PDP Add to Cart Flyout: Service Installations- Verify Service Add-On(s) Available” title on the screen
 	Given open browser

@@ -48,6 +48,10 @@ public class PDP_AddToCart_Page extends PageObject {
 	public void navigate_to_PDP_Product() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_PDP_product_URL());
 	}
+	/** This function navigate to  PDP product page FR locate */
+	public void navigate_to_PDP_Product_fr() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_PDP_product_FR_URL());
+	}
 	/** This function selects required specifications */
 	public void select_Product_Specification() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPAddToCartPageLocator().get_ColorVariant())), 20);

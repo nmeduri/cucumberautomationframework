@@ -528,6 +528,18 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("URL Data not specified in the Data file.");
 	}
+	/**
+	 * 
+	 * get Url - Feature List Author Page FR
+	 * 
+	 */
+	public String get_Feature_List_Author_Page_FR() {
+		String getFeatureListAuthorPageFR = Property.getProperty(Constant.AEM_DATA_FILE, "featureListAuthorFR");
+		if(getFeatureListAuthorPageFR != null)
+			return getFeatureListAuthorPageFR;
+		else
+			throw new RuntimeException("URL Data not specified in the Data file.");
+	}
 	
 	/**
 	 * 
@@ -5050,6 +5062,42 @@ public class AEMDataReader {
 		String CoreChargesTooltipMessage = Property.getProperty(Constant.AEM_DATA_FILE, "CoreChargesTooltipMessage");
 		if(CoreChargesTooltipMessage != null)
 			return CoreChargesTooltipMessage;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets featured product list URL
+	 * 
+	 */
+	
+	public String get_Featured_ProductList_URL() {
+		String FPLURL = Property.getProperty(Constant.AEM_DATA_FILE, "featuredProductListURL");
+		if(FPLURL != null)
+			return FPLURL;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets product code
+	 * 
+	 */
+	
+	public String get_ProductCode() {
+		String pcode = Property.getProperty(Constant.AEM_DATA_FILE, "ProductCode");
+		if(pcode != null)
+			return pcode;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets product image url
+	 * 
+	 */
+	
+	public String get_ProductImageURL() {
+		String pcode = Property.getProperty(Constant.AEM_DATA_FILE, "ProductImageURL");
+		if(pcode != null)
+			return pcode;
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}

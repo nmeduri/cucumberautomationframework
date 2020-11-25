@@ -1334,6 +1334,18 @@ public class DataReader {
 	}
 	
 	/**
+	 * gets PDP Product -Add to Cart URL FR
+	 * 
+	 */
+
+	public String get_PDP_product_FR_URL() {
+		String pdpAddToCartUrlFR = Property.getProperty(Constant.DATA_FILE, "pdpAddToCartUrlFR");
+		if(pdpAddToCartUrlFR != null)
+			return pdpAddToCartUrlFR;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	/**
 	 * gets Featured List Product List URL
 	 * 
 	 */

@@ -39,6 +39,9 @@ public class Feature_List_Page_Locator {
 	 String productFeatureList = Property.getProperty(Constant.OR_FILE, "productFeatureList");
 	 String productCard = Property.getProperty(Constant.OR_FILE, "productCard");
 	 String productCardMobile = Property.getProperty(Constant.OR_FILE, "productCardMobile");
+	 String ProductListTitle = Property.getProperty(Constant.OR_FILE, "ProductListTitle");
+	 String ProductListImage = Property.getProperty(Constant.OR_FILE, "ProductListImage");
+
 	 
 	 /**
 	  * get Locator - Learn More Link First
@@ -219,5 +222,17 @@ public class Feature_List_Page_Locator {
 	 public String getProductCardMobile() {
 		 return productCardMobile;
 	 }
+	 /**
+	  * get Locator - Product List Title
+	  */
+	 public String getproductlist_Title() {
+		 return ProductListTitle;
+	 }
 	 
+	 /**
+	  * get Locator - Product List Image
+	  */
+	 public String getProductListImage() {
+		 return ProductListImage;
+	 }
 	}

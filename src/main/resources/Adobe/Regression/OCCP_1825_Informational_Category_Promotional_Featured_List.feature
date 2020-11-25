@@ -115,6 +115,7 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	
 	@RegressionTest @WebView @WideScreen @TC-1827
 	Scenario: TC-1827 Verify the details when user is on first page and there are more than 4 tiles on FL component 
+		Given open browser
 	When fl page  is available for more than four products
 	Then user should be able to see featured list component on the page
 	And save data anaytics details of last page

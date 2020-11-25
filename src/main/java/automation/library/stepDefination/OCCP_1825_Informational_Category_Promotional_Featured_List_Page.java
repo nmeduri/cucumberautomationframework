@@ -158,7 +158,7 @@ public class OCCP_1825_Informational_Category_Promotional_Featured_List_Page ext
 	
 	@Then("user should be navigated to the first page of fl carousel")
 	public void user_should_be_navigated_to_the_first_page_of_fl_carousel() throws Exception {
-		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyNavigateOnLastPageOfPl();
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyNavigateOnFirstPageOfPl();
 	}
 	
 	@And("save data anaytics details of last page")

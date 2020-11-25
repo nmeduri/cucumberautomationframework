@@ -38,6 +38,17 @@ public class OCCP_3516_PDP_Add_to_Cart_Flyout_Service_Installations_Step extends
 	public void PDP_page_is_displayed_for_the_product() throws Exception {
 		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).navigate_to_PDP_Product();
 	}
+	@When ("PDP product page for FR locale")
+
+	public void PDP_page_is_displayed_for_the_product_FR() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).navigate_to_PDP_Product_fr();
+	}
+	@When ("AEM PDP product page for FR locale")
+
+	public void AEM_PDP_page_is_displayed_for_the_product_FR() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).navigateTo_Feature_List_Author_Page_FR1();
+	}
+	
 	@Then ("select specefications and click on add to cart")
 	public void select_specefications_and_click_add_to_cart() throws Exception {
 		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).select_Product_Specification();

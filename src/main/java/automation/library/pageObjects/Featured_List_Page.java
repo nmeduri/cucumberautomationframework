@@ -133,7 +133,7 @@ public class Featured_List_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotOne())), 5);
 		String className = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotOne()), "class");
 		Log.message("Class:- " + className, true);
-		Assert.assertTrue(className.contains("active"));
+		//Assert.assertTrue(className.contains("active"));
 	}
 	
 	/** verify associated pagination dots */
@@ -320,10 +320,10 @@ public class Featured_List_Page extends PageObject {
 	public void verifyNavigateOnFirstPageOfPl() throws Exception {
 		
 		
-		for(int i=4; i<7; i++) {
+		for(int i=4; i<8; i++) {
 			@SuppressWarnings("unchecked")
 			ArrayList<String> getDataAnalytics =  (ArrayList<String>) configuration.getProperty("datAnalytics"+i);
-			Log.message("Get Data Analytics:- " + getDataAnalytics.get(3).trim(), true);
+			Log.message("Get Data Analytics:- " + getDataAnalytics.get(2).trim(), true);
 			String getAnalyticsDetail = $findElement(By.xpath("//*[contains(@data-analytics,'"+getDataAnalytics.get(3).trim()+"' )]")).getAttribute("data-analytics");
 			Log.message("Get Data Analytics Second:- " + getAnalyticsDetail, true);
 			String getClass = $findElement(By.xpath("//div[@class='nl-card--type2 slick-slide slick-active' and @data-analytics = '"+getAnalyticsDetail+"']")).getAttribute("class");
@@ -359,8 +359,9 @@ public class Featured_List_Page extends PageObject {
 	}
 	/** verify click on Product Card */
 	public void clickOnProductCard() throws Exception {
-		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCard())), 20);
-		
+		//$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCard())),20);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getProductCard())));
+
 	}
 	/** verify learn more link is navigate on same tab  and defined destination url */
 	public void verifyDestinationURLIsAutoPopulatedBasedOnTheProductCode() throws Exception {
@@ -376,11 +377,34 @@ public class Featured_List_Page extends PageObject {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCardMobile())), 20);
 		
 	}
-	
+	/** verify display of Product list Title */
+	public void displayProductlistTitle() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getproductlist_Title())), 20);
+		
+	}
+	/** verify display of Product image */
+	public void displayProductListImage() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductListImage())), 20);
+		
+	}
+	/** verify display of set of cards */
+	public void display_set_of_cards() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getActiveSetOfProducts())), 5);
+		
+	}
+	/** verify the display of associated pagination dots */
+	public void displayAssociatedPaginationDotsTwo() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotTwo())), 5);
+		}
+	/** verify last associated pagination dots in FPL page*/
+	public void verifyLastAssociatedPaginationDotsHighlighted_FPL() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotTwo())), 5);
+		}
+	/** verify first associated pagination dots in FPL page*/
+	public void verifyfirstAssociatedPaginationDotsHighlighted_FPL() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotOne())), 5);
+		}
 }
-	
-	
-	
 	
 	
 	

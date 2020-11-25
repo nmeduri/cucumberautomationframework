@@ -28,11 +28,31 @@ public class AEM_Feature_List_Page_Locator {
 	 String descriptiveTitleToolTip = Property.getProperty(Constant.OR_FILE, "descriptiveTitleToolTip");
 	 String titleToolTipFl = Property.getProperty(Constant.OR_FILE, "titleToolTipFl");
 	 String learnMoreaccessibility=Property.getProperty(Constant.OR_FILE, "learnMoreaccessibility");
+	 String ProductListComponent=Property.getProperty(Constant.OR_FILE, "ProductListComponent");
+	 String productCode=Property.getProperty(Constant.OR_FILE, "productCodeAEM");
+	 String productImage=Property.getProperty(Constant.OR_FILE, "productImageAEM");
+	 String ProductFetureDeleteAEM=Property.getProperty(Constant.OR_FILE, "ProductFetureDeleteAEM");
+	 String ErrorImage=Property.getProperty(Constant.OR_FILE, "ErrorImage");
+
+	 
+	 
 	 /**
 	  * get Locator = Feature List Panel
 	  */
 	 public String getFeatureListPanel() {
 		 return featureListPannel;
+	 }
+	 /**
+	  * get Locator _ error image_author
+	  */
+	 public String getErrorImage() {
+		 return ErrorImage;
+	 }
+	 /**
+	  * get Locator _ Feature List _product list_delete icon_ AEM
+	  */
+	 public String getProductFetureDeleteAEM() {
+		 return ProductFetureDeleteAEM;
 	 }
 	 /**
 	  * get Locator -learn More accessibility
@@ -152,5 +172,28 @@ public class AEM_Feature_List_Page_Locator {
 	public String getTitleToolTipFl() {
 		return titleToolTipFl;
 	}
- 	
+	/**
+	 * get Locator - ProductListComponent
+	 */
+	public String getProductListComponent() {
+		return ProductListComponent;
+	}
+	/**
+	 * get Locator - productCode
+	 */
+	public String getproductCode() {
+		return productCode;
+	}
+	/**
+	 * get Locator - productImage
+	 */
+	public String getproductImage() {
+		return productImage;
+	}
+	/**
+	 * get Locator - ErrorImage
+	 */
+	public String get_ErrorImage() {
+		return ErrorImage;
+	}
 	}
