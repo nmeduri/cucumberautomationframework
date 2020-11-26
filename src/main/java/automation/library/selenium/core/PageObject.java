@@ -536,7 +536,27 @@ public class PageObject extends BaseClass {
 
 		
 		String[] hexValue = actualColor.replace("rgba(", "").replace(")", "").split(",");
+        
+		int hexValue1=Integer.parseInt(hexValue[0]);
+		hexValue[1] = hexValue[1].trim();
+		int hexValue2=Integer.parseInt(hexValue[1]);
+		hexValue[2] = hexValue[2].trim();
+		int hexValue3=Integer.parseInt(hexValue[2]);
 
+		String color = String.format("#%02x%02x%02x", hexValue1, hexValue2, hexValue3);
+        Log.message("Actual Color:- " + color, true);
+        Log.message("Expected Color:- " + expectedColor, true);
+		Assert.assertEquals(expectedColor, color);
+		}
+	
+	/** verify  color code */
+	public void verifyBorderColorCode(String expectedColor, String actualColor) throws Exception{
+
+		
+		String[] hexValue = actualColor.replace("rgb(", "").replace(")", "").split(",");
+		Log.message("Value:- " + hexValue[0], true);
+		Log.message("Value:- " + hexValue[1], true);
+		Log.message("Value:- " + hexValue[2], true);
 		int hexValue1=Integer.parseInt(hexValue[0]);
 		hexValue[1] = hexValue[1].trim();
 		int hexValue2=Integer.parseInt(hexValue[1]);

@@ -4961,7 +4961,11 @@ public class AEMDataReader {
 	}
 
 	/**
+<<<<<<< HEAD
+	 * gets AEm Url
+=======
 	 * gets slim banner URL
+>>>>>>> 6f68bc3333cb1b24aad28ce2524c2ee71f867f21
 	 * 
 	 */
 	public String get_slim_banner_URL() {

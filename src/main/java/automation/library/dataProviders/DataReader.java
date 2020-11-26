@@ -1345,6 +1345,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
 	/**
 	 * gets Featured List Product List URL
 	 * 

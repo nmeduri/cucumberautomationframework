@@ -78,6 +78,13 @@ public class PLP_PageLocator {
 	String payPickUpOption = Property.getProperty(Constant.OR_FILE, "payPickUpOption").replace("=", ",");
 	String homeDeliveryOption = Property.getProperty(Constant.OR_FILE, "homeDeliveryOption").replace("=", ",");
 	String facetOptionName = Property.getProperty(Constant.OR_FILE, "facetOptionName");
+	String brandFacetOption = Property.getProperty(Constant.OR_FILE, "brandFacetOption").replace("=", ",");
+	String brandFacetName = Property.getProperty(Constant.OR_FILE, "brandFacetName");
+	String brandFacetResultValue = Property.getProperty(Constant.OR_FILE, "brandFacetResultValue");
+	String bransShowMoreLink = Property.getProperty(Constant.OR_FILE, "bransShowMoreLink");
+	String brandFacetItem = Property.getProperty(Constant.OR_FILE, "brandFacetItem");
+	String brandItemCheckBox = Property.getProperty(Constant.OR_FILE, "brandItemCheckBox");
+	String brandShowMoreText = Property.getProperty(Constant.OR_FILE, "brandShowMoreText");	
 	
 	/**
 	 * gets Locator - List View
@@ -559,7 +566,7 @@ public class PLP_PageLocator {
 	/**
 	 * get Locator - Color Result
 	 */
-	public String getColorResults() throws Exception {
+	public String getFacetResults() throws Exception {
 		return selectedColorResultsOnPLP;
 	}
 	
@@ -624,5 +631,51 @@ public class PLP_PageLocator {
 	 */
 	public String get_Facet_Name() {
 		return facetOptionName;
+	}
+	
+	/**
+	 * gets Locator - Brand 
+	 */
+	public String get_Brand_Facet() {
+		return brandFacetOption;
+	}
+	
+	/**
+	 * gets Locator - Brand Name
+	 */
+	public String get_Brand_Name() {
+		return brandFacetName;
+	}
+	
+	/**
+	 * gets Locator - Brand Value
+	 */
+	public String get_Brand_Result_Value() {
+		return brandFacetResultValue;
+	}
+	
+	public String get_Brand_Show_More() {
+		return bransShowMoreLink;
+	}
+	
+	/**
+	 * gets Locator - Brand Show More Text
+	 */
+	public String get_Brand_Show_More_Text() {
+		return brandShowMoreText;
+	}
+	
+	/**
+	 * gets Locator - Brand Facet Item
+	 */
+	public String get_Brand_Facet_Item() {
+		return brandFacetItem;
+	}
+	
+	/**
+	 * gets Locator - Brand Checkbox
+	 */
+	public String get_Brand_Checkbox() {
+		return brandItemCheckBox;
 	}
  }

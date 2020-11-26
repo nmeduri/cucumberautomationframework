@@ -610,7 +610,7 @@ public class PLP_Page extends PageObject {
 	/** verify selected colors result are showing on plp */
 	public void displaySelectedColorsResultOnPLP() throws Exception {
 		String color = (java.lang.String) conf.getProperty("colorSwatchFacetOption");
-		String selectedColor = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getColorResults()));
+		String selectedColor = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
 		Assert.assertEquals(selectedColor, color);
 	}
 	
@@ -678,4 +678,123 @@ public class PLP_Page extends PageObject {
 			Assert.assertTrue(j<5);
 		}
 	}
+	
+	/** verify that Brand option is displayed */
+	public void displayBrandFacetOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Facet()));
+	}
+	
+	/** click on brand option */
+	public void clickOnBrandOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Facet()));
+	}
+	
+	/** verify that brand facet values are displayed with number of result */
+	public void displayBrandFacetValuesWithNumberOfResult() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Name()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Result_Value()));
+	}
+	
+	/** click on brand show more */
+	public void clickBrandShowMore() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Facet_Item()));
+		int size = li.size();
+		conf.setProperty("brandItemSize", Integer.toString(size));
+		String showMoreText[] = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Show_More_Text())).split(" ");
+		conf.setProperty("seeMoreBrandItem", showMoreText[1].trim());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Show_More()));
+	}
+	
+	/** verify that remaining items are displayed on show more */
+	public void displayRemainingItemsAreDisplayedOnShowMore() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Facet_Item()));
+		int expectedSize = li.size();
+		String brandItemSize = (java.lang.String) conf.getProperty("brandItemSize");
+		String seeMoreBrandItem = (java.lang.String) conf.getProperty("seeMoreBrandItem");
+		int brandItemSizeActual = Integer.parseInt(brandItemSize);
+		int seeMoreBrandItemActual = Integer.parseInt(seeMoreBrandItem);
+		Assert.assertEquals(expectedSize, brandItemSizeActual + seeMoreBrandItemActual);
+	}
+	
+	/** click on single check box */
+	public void clickOnSingleCheckbox() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Name()));
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Checkbox()));
+		conf.setProperty("brandItemName", li.get(1).getText());
+		li_checkbox.get(1).click();
+	}
+	
+	/** verify selected Single Brand result are showing on plp */
+	public void displaySelectedSingleBrandResultOnPLP() throws Exception {
+		String brand = (java.lang.String) conf.getProperty("brandItemName");
+		String selectedBrand = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		Log.message("selectedBrand:- " + selectedBrand, true);
+		Log.message("brand:- " + brand, true);
+		Assert.assertTrue(brand.toLowerCase().contains(selectedBrand.toLowerCase()));
+	}
+	
+	/** verify that indication of success is displayed for Single Brand Item */
+	public void displayIndicationSuccessForSingleBrand() throws Exception {
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Checkbox()));
+		String colorValue = li_checkbox.get(1).getCssValue("border-color"); 
+		Log.message("color:- " +  li_checkbox.get(1).getCssValue("border-color"), true);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyBorderColorCode("#0a6e3b", colorValue);
+	}
+	
+	/** select multiple brands from the facet value */
+	public void selecteMultipleBrands() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Name()));
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Checkbox()));
+		conf.setProperty("brandItemNameOne", li.get(1).getText());
+		conf.setProperty("brandItemNameTwo", li.get(2).getText());
+		li_checkbox.get(1).click();
+		li_checkbox.get(2).click();
+	}
+	
+	/** verify that indication of success is displayed for Multiple Brand Item */
+	public void displayIndicationSuccessForMultipleBrand() throws Exception {
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Checkbox()));
+		String colorValueOne = li_checkbox.get(1).getCssValue("border-color");
+		String colorValueTwo = li_checkbox.get(2).getCssValue("border-color");
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyBorderColorCode("#0a6e3b", colorValueOne);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyBorderColorCode("#0a6e3b", colorValueTwo);
+	}
+	
+	/** verify selected multiple Brand result are showing on plp */
+	public void displaySelectedMultipleBrandResultOnPLP() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		String brandOne = (java.lang.String) conf.getProperty("brandItemNameOne");
+		String brandTwo = (java.lang.String) conf.getProperty("brandItemNameTwo");
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		Log.message("Size:- " + li.size(), true);
+		String selectedBrandOne = li.get(0).getText().trim();
+		String selectedBrandTwo = li.get(1).getText().trim();
+		Log.message("selectedBrandOne:- " + selectedBrandOne, true);
+		Log.message("brandOne:- " + brandOne, true);
+		Log.message("selectedBrandTwo:- " + selectedBrandTwo, true);
+		Log.message("brandTwo:- " + brandTwo, true);
+		Assert.assertTrue(brandOne.toLowerCase().contains(selectedBrandOne.toLowerCase()));
+		Assert.assertTrue(brandTwo.toLowerCase().contains(selectedBrandTwo.toLowerCase()));
+	}
+	
+	/** Deselect brand from selection */
+	public void deselectBrandFromSelection() throws Exception {
+		Thread.sleep(5000);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Checkbox())), 10);
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Checkbox()));
+		Log.message("li_checkbox:- " + li_checkbox.size(), true);
+		li_checkbox.get(1).click();
+		//li_checkbox.get(2).click();
+	}
+	
+	/** verify that products are refreshed */
+	public void verifyProductRefresh() throws Exception {
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Checkbox()));
+		String colorValueOne = li_checkbox.get(1).getCssValue("border-color");
+		String colorValueTwo = li_checkbox.get(2).getCssValue("border-color");
+		Log.message("ColorValueOne:- " + colorValueOne, true);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyBorderColorCode("#737373", colorValueOne);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#FFF", colorValueTwo);
+	}
+	
 }	
