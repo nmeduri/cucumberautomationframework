@@ -4,7 +4,6 @@ Feature: OCCP-1613 Filters and Facets : Delivery & Pick up Option
 	
 	@RegressionTest @WebView @WideScreen @TC-203
     Scenario: TC-203 Verify the Brand facet is properly displayed on SRP on Desktop/Desktop wide
-    Given open browser
     When plp url is available
     When plp is displayed
     And click on more filters
@@ -33,7 +32,6 @@ Feature: OCCP-1613 Filters and Facets : Delivery & Pick up Option
     
     @RegressionTest @WebView @WideScreen @TC-204
     Scenario: TC-204 Verify the Brand facet is properly displayed on a PLP on mobile 
-    Given open browser
     When plp url is available
     When plp is displayed
     And click on sort and filters

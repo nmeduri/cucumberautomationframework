@@ -57,7 +57,6 @@ Feature: OCCP-1641 Footer : Footer Links
 	
 	@RegressionTest @WebView @WideScreen @TC-542
 	Scenario: TC-542 Verify the behavior of the PLP when user selects more than 1 colour swatch 
-	Given open browser
 	When plp url is available
 	When plp is displayed
 	And click on more filters
@@ -71,7 +70,6 @@ Feature: OCCP-1641 Footer : Footer Links
 	
 	@RegressionTest @WebView @WideScreen @TC-542M
 	Scenario: TC-542 Verify the behavior of the PLP when user selects more than 1 colour swatch 
-	Given open browser
 	When plp url is available
 	When plp is displayed
 	#And click on sort and filters
@@ -84,7 +82,6 @@ Feature: OCCP-1641 Footer : Footer Links
 	
 	@RegressionTest @WebView @WideScreen @TC-544
 	Scenario: TC-544 Verify the behaviour when user deselects a color swatch that has been selected in PLP
-	Given open browser
 	When plp url is available
 	When plp is displayed
 	And click on more filters
@@ -97,7 +94,6 @@ Feature: OCCP-1641 Footer : Footer Links
 	
 	@RegressionTest @MobileView @TabletView @TC-544M
 	Scenario: TC-544 Verify the behaviour when user deselects a color swatch that has been selected in PLP
-	Given open browser
 	When plp url is available
 	When plp is displayed
 	And click on sort and filters

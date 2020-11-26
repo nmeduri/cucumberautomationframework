@@ -59,7 +59,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-2722
 	
 	@RegressionTest @WebView @WideScreen @TC-2210
 	Scenario: TC-2210, TC-2211 Generate a new Loyalty Rewards Card
-	Given open browser
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email

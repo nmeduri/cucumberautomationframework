@@ -90,7 +90,6 @@ Feature: OCCP-862 PLP Sorting
     
     @RegressionTest @WebView @WideView @TC-44
     Scenario: TC-44 Verify the previously selected sorting option is displayed when the user clicks 'Back' from a product detail page
-    Given open browser
     Given plp url is available
     When plp is displayed
 	And scroll up to page

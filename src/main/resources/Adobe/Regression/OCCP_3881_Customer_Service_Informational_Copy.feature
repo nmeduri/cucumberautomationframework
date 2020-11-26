@@ -5,7 +5,6 @@ Feature: OCCP-3881 Customer Service - Informational Copy (Authorable)
 	
 	@RegressionTest @WebView
 	Scenario: TC-3419	OCCP-3881: Customer Service-Informational Copy(Authorable)-Verify that the customer is able to view Customer views Section Separators on the Page
-	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed
 	And title of customer service should be displayed
@@ -16,7 +15,6 @@ Feature: OCCP-3881 Customer Service - Informational Copy (Authorable)
 	
 	@RegressionTest @MobileView
 	Scenario: TC-3418	OCCP-3881 :Customer Service-Informational Copy(Authorable)-Verify that the customer is able to view Customer views Link List – Mobile
-	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed
 	And title of customer service should be displayed
@@ -27,7 +25,6 @@ Feature: OCCP-3881 Customer Service - Informational Copy (Authorable)
 	
 	@RegressionTest @WebView  @TC-3415
 	Scenario: TC-3415	OCCP-3881: Customer Service-Informational Copy(Authorable)-Verify that the customer is able to view Customer views Section Separators on the Page
-	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed
 	And title of customer service should be displayed
@@ -36,7 +33,6 @@ Feature: OCCP-3881 Customer Service - Informational Copy (Authorable)
 
 	@RegressionTest @WebView  @TC-3416
 	Scenario: TC-3416	OCCP-3881:Customer Service - Informational Copy (Authorable) -Verify that the customer is able to view Accordion-Customer views Accordion Sub Title
-	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed
 	And accordions should be displayed
@@ -44,7 +40,6 @@ Feature: OCCP-3881 Customer Service - Informational Copy (Authorable)
 	
 	@RegressionTest @WebView  @TC-3417
 	Scenario: TC-3417	OCCP-3881:Customer Service - Informational Copy (Authorable) -Verify that the customer is able to view Customer views Link List – Desktop/Widescreen
-	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed
 	And accordions should be displayed

@@ -4,7 +4,6 @@ Feature: OCCP-1643 Filters and Facets : Delivery & Pick up Option
 
 	@RegressionTest @WebView @WideScreen @TC-4720
     Scenario: TC-4720 OCCP-1643 - Verify the display of Delivery & Pick-Up Facet within Facet Panel modal-Desktop/Desktop wide
-    Given open browser
     When plp url is available
     When plp is displayed
     And click on more filters
@@ -24,7 +23,6 @@ Feature: OCCP-1643 Filters and Facets : Delivery & Pick up Option
     
     @RegressionTest @MobileView @TabletView @TC-4722
     Scenario: OCCP-1643 - Verify the display of  Delivery & Pick-Up facet within Facet Panel modal-Mobile
-    Given open browser 
     When plp url is available
     When plp is displayed
     And click on sort and filters

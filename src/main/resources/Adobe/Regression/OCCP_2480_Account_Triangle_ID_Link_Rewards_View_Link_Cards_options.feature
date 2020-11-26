@@ -4,7 +4,7 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	
 	@RegressionTest @WideScreen
 	Scenario: TC-2003,2011,1989 Verify the display of details when user logins with Triangle ID for the first time on Widescreen
-	#Given quit browser
+	Given quit browser
 	When open browser
 	When login url is available
 	When 2480-enter email detail
@@ -62,8 +62,7 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	
 	@RegressionTest @WebView @WideScreen @MobileView @RegressionT
 	Scenario: TC-1995,TC-2009,2017 Verify the display of tool tip for the "Do not show me this again" toggle button
-	When open browser
-  Given login url is available
+    Given login url is available
 	When 2480-enter email detail
 	And user enter password
 	And user click on sign in button
@@ -106,7 +105,6 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	
 	#@RegressionTest @WideScreen @WebView
 	Scenario: TC-2008,TC-1994 Verify hide the link screen option on the Link Card screen when -Email Validation screen- New browser on Widescreen and Webview
-	Given open browser
 	When sign up url is available
 	Then sign up page is displayed
 	And user enter email

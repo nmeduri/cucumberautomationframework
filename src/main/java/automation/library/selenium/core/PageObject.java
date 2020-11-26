@@ -594,6 +594,7 @@ public class PageObject extends BaseClass {
 	/** switch on parent window */
 	public void parentWindow() throws Exception {
 		String String = (java.lang.String) configuration.getProperty("parentWindow");
+		Log.message("Parent Window :- " + String, true);
 		PageObject.getDriver().switchTo().window(String);
 	}
 

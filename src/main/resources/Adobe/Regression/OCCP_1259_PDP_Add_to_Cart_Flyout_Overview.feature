@@ -4,7 +4,6 @@ Feature: OCCP-1259 PDP Add to Cart Flyout: Overview
 	
 	@RegressionTest @WebView @WideScreen @MobileView @TC-3481
 	Scenario: TC-3481 OCCP-1259: PDP Add to Cart Flyout: Overview- Verify when Customer views Product Information on the Added to Cart Flyout
-	Given open browser
 	When pdp add to cart product flyout url is available
 	Then the product title is displayed on the product
 	And select variants on pdp page

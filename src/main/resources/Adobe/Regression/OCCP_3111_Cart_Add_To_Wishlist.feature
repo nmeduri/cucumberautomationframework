@@ -3,7 +3,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
 
 	@RegressionTest @WebView @MobileView @WideScreen @TabletView @TC-2983
 	Scenario: TC-2983, TC-2980, TC-2986, Tc-2989 Display of message when Wishlist limit is reached
-	Given open browser
 	Given cart url is available
     When cart page is displayed for the product
     And click on add to wishlist when user reached maximum no of items permitted in wishlist 
@@ -15,7 +14,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
   
     @RegressionTest @WebView @WideScreen @TC-2981
 	Scenario: TC-2981, TC-2984 Item is added to wishlist from cart (product not already in wishlist)
-	Given open browser
 	Given cart url is available
     When cart page is displayed for the product
     And in the cart page wishlist icon should be displayed next to the product
@@ -28,7 +26,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
   
     @RegressionTest @MobileView @TabletView
 	Scenario: TC-2978, TC-2987 Item is added to wishlist from cart (product not already in wishlist)
-	Given open browser
 	Given cart url is available
     When cart page is displayed for the product
     And in the cart page wishlist icon should be displayed next to the product
@@ -42,7 +39,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
   
     @RegressionTest @WebView @WideScreen
 	Scenario: TC-2982 Item is added to wishlist from cart (product already in wishlist)
-	Given open browser
 	Given cart url is available
     When cart page is displayed for the product
     And in the cart page wishlist icon should be displayed next to the product
@@ -56,7 +52,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
   
     @RegressionTest @MobileView @TabletView
 	Scenario: TC-2979, TC-2988 Item is added to wishlist from cart (product not already in wishlist)
-	Given open browser
 	Given cart url is available
     When cart page is displayed for the product
     And in the cart page wishlist icon should be displayed next to the product
@@ -73,7 +68,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
   
   @RegressionTest @WebView @WideScreen @TC-3761
 	Scenario: TC-3761 Verification of Clicking 'View Wishlist' link on the displayed message when item is added to wishlist from cart (product not already in wishlist)
-	Given open browser
 	Given cart url is available
   When cart page is displayed for the product
   And in the cart page wishlist icon should be displayed next to the product
@@ -85,7 +79,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3111
   
   @RegressionTest @WebView @WideScreen @TC-3762
 	Scenario: TC-3762 Verification of Clicking 'View Wishlist' link on the displayed message when item is added to wishlist from cart (product already in wishlist)
-	Given open browser
 	Given cart url is available
   When cart page is displayed for the product
   And in the cart page wishlist icon should be displayed next to the product

@@ -3,7 +3,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-2724
 	
 	@RegressionTest @WebView @TC-2037
 	Scenario: TC-2037 Card Information is incorrect/not found>
-	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data
@@ -22,7 +21,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-2724
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2282 View Link existing card screen
-	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data

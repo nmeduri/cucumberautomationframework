@@ -4,7 +4,6 @@ Feature: OCCP-3631 Cart - Quantity Selector
 	
 	@RegressionTest @WebView @TC-3556
 	Scenario: TC-3556	OCCP-3631 Cart - Quantity Selector- Verify user views the quantity selector box
-	Given open browser
 	When PDP product page is available
 	Then Current quantity of the product in cart is displayed
 	And Plus CTA to increase the quantity is displayed
@@ -15,7 +14,6 @@ Feature: OCCP-3631 Cart - Quantity Selector
  	
 	@RegressionTest @WebView @TC-3557
 	Scenario: TC-3557	OCCP-3631 Cart - Quantity Selector- Verify user updates quantity
-	Given open browser
 	When PDP product page is available
 	Then Current quantity of the product in cart is displayed
 	And Plus CTA to increase the quantity is displayed
@@ -24,7 +22,6 @@ Feature: OCCP-3631 Cart - Quantity Selector
  
  	@RegressionTest @WebView @WideScreen @MobileView
 	Scenario: TC-4564	OCCP-3631 Cart- Quantity Selector- Verify user enters in number greater than "maximum quantity for product" in the quantity selector box
-	Given open browser
 	When cart page url is available
 	Then cart page title is displayed
 	And quantity selector box is displayed
@@ -38,7 +35,6 @@ Feature: OCCP-3631 Cart - Quantity Selector
 	
 	#@RegressionTest1 @WebView @WideScreen @MobileView
 	Scenario: TC-4561	OCCP-3631 Cart - Quantity Selector- Verify user updates quantity- User enters in number in the quantity selector box
-	Given open browser
 	When cart page url is available
 	Then cart page title is displayed
 	And quantity selector box is displayed

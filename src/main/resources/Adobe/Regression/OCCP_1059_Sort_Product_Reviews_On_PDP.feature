@@ -1,9 +1,8 @@
 Feature: OCCP-1059 :Sort Product Reviews on PDP
 Description: To test the ADOBE Test Cases for the story OCCP-1059
 	
-@RegressionTest @WebView @WideScreen @MobileView
+    @RegressionTest @WebView @WideScreen @MobileView
 	Scenario: TC-3173 :Verify when the user views the Reviews Section
-	Given open browser
 	When pdp sort product reviews url is available
 	Then in reviews section option to sort reviews should be available
 	And the default sorting option with label sort by-most recent should be displayed

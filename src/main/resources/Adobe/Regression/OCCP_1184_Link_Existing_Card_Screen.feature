@@ -3,6 +3,7 @@ Feature: OCCP-1184 Link Existing Card Screen
 	
 	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2282 View Link existing card screen
+	Given quit browser
 	Given open browser
 	Given login url is available
 	When enter email id
@@ -22,7 +23,6 @@ Feature: OCCP-1184 Link Existing Card Screen
 	
 	@RegressionTest @WebView @MobileView @TabletView
 	Scenario: TC-2283 View Link existing card screen
-	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data

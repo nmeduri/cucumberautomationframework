@@ -4,7 +4,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3171
 
  @RegressionTest @WebView @WideView @MobileView @TC-3171
 	Scenario: TC-3952 OCCP-3171 - Verify user is able to view  Questions & Answers section 
-	Given open browser
 	When pdp url with Q&A section is available
 	Then the product title is displayed on the product
 	And scroll down to Questions and Answers section on PDP
@@ -42,7 +41,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-3171
 	
 	@RegressionTest1 @WebView @WideView @MobileView
 	Scenario: TC-3955 OCCP-3171 - Verify user is able to interact with Questions & Answers section having no answers
-	Given open browser
 	When pdp url with questions and answers section is available
 	Then the product title is displayed on the product
 	And scroll down to Questions and Answers section on PDP

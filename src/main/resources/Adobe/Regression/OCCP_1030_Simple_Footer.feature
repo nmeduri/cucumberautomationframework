@@ -77,9 +77,16 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then clickable text site map is displayed
 	Then clickable text accessibility is displayed
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView @SmokeTest
+	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2841, TC-2832 TC-2850, TC-2859 Verification of clicking of text Legal 
 	Given open browser
+	Given the footer page url is available
+	When footer page is displayed
+	And in simple footer access and click on legal text
+	Then user should be navigate on legal information
+	
+	@RegressionTest @MobileView @TabletView @SmokeTest
+	Scenario: TC-2841, TC-2832 TC-2850, TC-2859 Verification of clicking of text Legal
 	Given the footer page url is available
 	When footer page is displayed
 	And in simple footer access and click on legal text

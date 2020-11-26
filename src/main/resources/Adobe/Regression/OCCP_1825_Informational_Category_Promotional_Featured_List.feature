@@ -92,7 +92,6 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	
 	@RegressionTest @WebView
 	Scenario: TC-4840 Verfiy the display of key line color on the Promotional image featured list page
-	Given open browser
 	When navigate to featured list page
 	Then user should be able to see featured list component on the page
 	And verify the display of card and related image
@@ -114,8 +113,7 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	Then user should not be able to see chevron when there are only four tiles available
 	
 	@RegressionTest @WebView @WideScreen @TC-1827
-	Scenario: TC-1827 Verify the details when user is on first page and there are more than 4 tiles on FL component 
-		Given open browser
+	Scenario: TC-1827 Verify the details when user is on first page and there are more than 4 tiles on FL component
 	When fl page  is available for more than four products
 	Then user should be able to see featured list component on the page
 	And save data anaytics details of last page
@@ -140,7 +138,6 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	
 	@RegressionTest @WebView @WideScreen @TC-1815
 	Scenario: TC-1823, TC-1815 Verify the pagination on the featured list component
-	Given open browser
 	When fl page  is available for more than four products
 	Then user should be able to see featured list component on the page
 	And click on right chevron

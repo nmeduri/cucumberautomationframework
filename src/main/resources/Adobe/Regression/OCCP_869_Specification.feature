@@ -34,7 +34,6 @@ Feature: OCCP-869 PDP Specifications
    
     @RegressionTest @MobileView @WideScreen @WebView @TabletView @TC-103
     Scenario: TC-103, TC-104, TC-1384 Verify product specifications are displayed on PDP for desktop (more than 8 specifications) 
-    Given open browser
     Given pdp url is available
     When pdp page is displayed for the product
     Then the specifications section is displayed

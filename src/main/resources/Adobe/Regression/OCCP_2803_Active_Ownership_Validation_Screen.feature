@@ -3,7 +3,6 @@ Description: To test the ADOBE Test Cases for the story OCCP-2803
 
 	@RegressionTest @WebView @MobileView @TC-2501
 	Scenario: TC-2501,TC-2500 View Active Ownership Validation Screen
-	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data

@@ -4,7 +4,6 @@ Feature: OCCP-3722 : Login/Registration Template
 	
 	@RegressionTest @WebView @WideScreen @TC-3601
 	Scenario: TC-3601	OCCP-3722: Login/Registration Template-Verify User is able to view both static and configured elements on newly created and published login page
-	Given open browser
 	And login url is available
 	And login page is displayed
 	Then standard Header should be displayed
@@ -18,9 +17,8 @@ Feature: OCCP-3722 : Login/Registration Template
 	And logo should be displayed
 	And blue background should be displayed
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-3601	OCCP-3722: Login/Registration Template-Verify User is able to view both static and configured elements on newly created and published login page
-	Given open browser
 	And login url is available
 	And login page is displayed
 	Then standard Header should be displayed

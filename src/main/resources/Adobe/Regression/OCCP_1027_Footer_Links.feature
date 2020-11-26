@@ -145,7 +145,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	And clickable text link for accessibility is displayed
 	And clickable text link for pricing policy is displayed
 	
-	@RegressionTest @WebView @WideView @TC-2102
+	    @RegressionTest @WebView @WideView @TC-2102
 		Scenario: TC-2102, 2118 User view the section headers
 		Given open browser
 		Given pdp url is available
