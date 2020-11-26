@@ -4896,6 +4896,7 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
 	/**
 	 * gets Edge to edge Broad banner Title
 	 * 
@@ -4958,7 +4959,41 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-	
+
+	/**
+	 * gets slim banner URL
+	 * 
+	 */
+	public String get_slim_banner_URL() {
+		String slimBannerURL = Property.getProperty(Constant.AEM_DATA_FILE, "slimBannerURLAEM");
+		if(slimBannerURL != null)
+			return slimBannerURL;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets slim banner Title
+	 * 
+	 */
+	public String get_slim_banner_title() {
+		String slimBannerTitle = Property.getProperty(Constant.AEM_DATA_FILE, "slimBannerTitle");
+		if(slimBannerTitle != null)
+			return slimBannerTitle;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets slim banner description
+	 * 
+	 */
+	public String get_slim_banner_desc() {
+		String slimBannerdesc = Property.getProperty(Constant.AEM_DATA_FILE, "slimBannerdesc");
+		if(slimBannerdesc != null)
+			return slimBannerdesc;
+
+			else
+				throw new RuntimeException("data not specified in the Data file.");
+		}	
 	/**
 	 * gets AEm Url
 	 * 

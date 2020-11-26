@@ -26,6 +26,7 @@ import automation.library.locator.AEM_Privacy_Charter_Page_Locator;
 import automation.library.locator.AEM_Registration_Page_Locator;
 import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
+import automation.library.locator.AEM_Slim_Banner_page_Locator;
 import automation.library.locator.AEM_Two_Featured_Tiles_Component_Page_Locator;
 import automation.library.locator.Banners_Locator;
 import automation.library.locator.Broad_Banner_Page_Locator;
@@ -82,6 +83,7 @@ import automation.library.pageObjects.AEM_Privacy_Charter_Page;
 import automation.library.pageObjects.AEM_Registration_Page;
 import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
+import automation.library.pageObjects.AEM_Slim_Banner_Page;
 import automation.library.pageObjects.AEM_Two_Featured_tiles_Component_Page;
 import automation.library.pageObjects.Banner_Pages;
 import automation.library.pageObjects.Broad_Banner_Page;
@@ -246,7 +248,9 @@ public class PageObjectManager {
 	private AEM_Edge_To_Edge_Banner_Page getAEMEdgeToEdgeBannerPage;
 	private AEM_Get_A_New_Triangle_Rewards_Card_Page getAEMANewTriangleRewardsCardPage;
 	private AEM_Get_A_New_Triangle_Rewards_Card_Locator getAEMANewTriangleRewardsCardLocator;
-	
+	private AEM_Slim_Banner_page_Locator getAEMSlimBannerpageLocator;
+	private AEM_Slim_Banner_Page getAEMSlimBannerPage;
+
 	public PageObjectManager() {
 		
 	}
@@ -839,5 +843,14 @@ public class PageObjectManager {
 	/** Returns Instance of AEM Get A New Triangle Rewards Card Locator File */
 	public AEM_Get_A_New_Triangle_Rewards_Card_Locator getAEMANewTriangleRewardsCardLocator() {
 		return (getAEMANewTriangleRewardsCardLocator == null) ? getAEMANewTriangleRewardsCardLocator = new AEM_Get_A_New_Triangle_Rewards_Card_Locator() : getAEMANewTriangleRewardsCardLocator;
+	}
+	/** Returns Instance of AEM slim banner page locator */
+	public AEM_Slim_Banner_page_Locator getAEMSlimBannerpageLocator() {
+		return (getAEMSlimBannerpageLocator == null) ? getAEMSlimBannerpageLocator = new AEM_Slim_Banner_page_Locator() : getAEMSlimBannerpageLocator;
+	}
+	
+	/** Returns Instance of AEM slim banner page */
+	public AEM_Slim_Banner_Page getAEMSlimBannerPage(WebDriver driver) {
+		return (getAEMSlimBannerPage == null) ? getAEMSlimBannerPage = new AEM_Slim_Banner_Page(driver) : getAEMSlimBannerPage;
 	}
 }

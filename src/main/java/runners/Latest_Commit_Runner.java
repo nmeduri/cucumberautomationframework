@@ -13,9 +13,8 @@ public final class Latest_Commit_Runner extends BaseClass{
 	private static String[] defaultOptions = {
 
 
-			"classpath:Adobe/AEM/Regression/OCCP_3516_PDP_Add_to_Cart_Flyout_Service_Installations.Feature",
-			"--glue", "automation.library.stepDefination",
-			"--tags", "@TC-3525",
+			"classpath:Adobe/AEM/Regression/OCCP_4418_Slim_Banner_RegularorPromo.feature",
+			"--tags", "@TC-3497",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
