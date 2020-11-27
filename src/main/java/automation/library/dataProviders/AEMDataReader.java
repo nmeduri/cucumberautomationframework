@@ -5105,6 +5105,65 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	/**
+	 * gets PDP Product add to cart URL for fr locale
+	 * 
+	 */
+	
+	public String get_PDP_AddToCart_AEM_Fr() {
+		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "pdpProductAuthor_Fr");
+		if(PDPAem != null)
+			return PDPAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Featured Product List AEM Url
+	 * 
+	 */
+	
+	public String get_Featured_Product_List_AEM_Url() {
+		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "featuredProductListAEMUrl");
+		if(PDPAem != null)
+			return PDPAem;
+		else
+			throw new RuntimeException("featuredProductListAEMUrl data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - FL Title
+	 *  
+	 */
+	public String get_FL_Title() {
+		String fLTitle = Property.getProperty(Constant.AEM_DATA_FILE, "titleOfFL");
+		if(fLTitle != null)
+			return fLTitle;
+		throw new RuntimeException("titleOfFL not specified in the Data file.");
+	}
+	/**
+	 * gets Featured Product List AEM fr locale Url
+	 * 
+	 */
+	
+	public String get_Featured_Product_List_AEM_Fr_Locale_Url() {
+		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "featuredProductListAEMUrl_Fr");
+		if(PDPAem != null)
+			return PDPAem;
+		else
+			throw new RuntimeException("featuredProductListAEMUrl_Fr data not specified in the Data file.");
+	}
+	/**
+	 * gets Product Code AEM for Featured Product List component
+	 * 
+	 */
+	
+	public String get_Product_Code_AEM() {
+		String ProductCodeAEM = Property.getProperty(Constant.AEM_DATA_FILE, "productCodeOfFeaturedProductListAEM");
+		if(ProductCodeAEM != null)
+			return ProductCodeAEM;
+		else
+			throw new RuntimeException("productCodeOfFeaturedProductListAEM data not specified in the Data file.");
+	}
+	/**
 	 * gets featured product list URL
 	 * 
 	 */

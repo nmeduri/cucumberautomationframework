@@ -170,4 +170,5 @@ public class OCCP_1824_Feature_List_Page extends BaseClass {
 	public void titleOnCardDisplayed() throws Exception {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).titletextdisplayedWhenAuthored();
 	}
+	
 }

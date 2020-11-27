@@ -359,9 +359,8 @@ public class Featured_List_Page extends PageObject {
 	}
 	/** verify click on Product Card */
 	public void clickOnProductCard() throws Exception {
-		//$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCard())),20);
+		//$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCard())), 20);
 		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getProductCard())));
-
 	}
 	/** verify learn more link is navigate on same tab  and defined destination url */
 	public void verifyDestinationURLIsAutoPopulatedBasedOnTheProductCode() throws Exception {
@@ -376,6 +375,12 @@ public class Featured_List_Page extends PageObject {
 	public void clickOnProductCardMobile() throws Exception {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductCardMobile())), 20);
 		
+	}
+	/** This function navigate to Featured Products List Page Fr Locale*/
+	public void navigateTo_Featured_List_Product_List_Page_Fr_Locale() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Featured_List_Product_List_Url_Fr());
+
 	}
 	/** verify display of Product list Title */
 	public void displayProductlistTitle() throws Exception {
@@ -404,6 +409,7 @@ public class Featured_List_Page extends PageObject {
 	public void verifyfirstAssociatedPaginationDotsHighlighted_FPL() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotOne())), 5);
 		}
+
 }
 	
 	

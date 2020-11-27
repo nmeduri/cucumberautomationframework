@@ -101,5 +101,10 @@ public class AEM_PDP_Add_To_Cart_Page extends PageObject {
 		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnLabel())), 5);
 		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnLabel());
 	}
-	
+	/** This function navigate to PDP Page for fr locale */
+	public void navigateTo_PDP_AddToCart_Page_Fr() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_PDP_AddToCart_AEM_Fr());
+
+	}
 }

@@ -1009,7 +1009,9 @@ public class PDP_Page extends PageObject {
 		}
 		/** This function to click on Be the first to ask a question link*/
 		public void clickOnBeTheFirstToAskAQuestion() throws Exception {
-			$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Ask_A_Question()));
+			//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Ask_A_Question()), 1);
+			//$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Ask_A_Question()));
+			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Ask_A_Question())));
 		}
 		/** This function verify ask a question form is displayed*/
 		public void displayAskAQuestionForm() throws Exception {

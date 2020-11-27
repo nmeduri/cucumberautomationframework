@@ -35,9 +35,11 @@ public class Cart_Page_Locator {
 	String ToolTipMessage=Property.getProperty(Constant.OR_FILE, "ToolTipMessage");
 	String ToolTipCloseIcon=Property.getProperty(Constant.OR_FILE, "ToolTipCloseIcon");
 	String ToolTipMessageText=Property.getProperty(Constant.OR_FILE, "ToolTipMessageText");
-
+	String priceValue=Property.getProperty(Constant.OR_FILE, "priceValue");
+	String priceValueOfEachProduct=Property.getProperty(Constant.OR_FILE, "priceValueOfEachProduct");
 
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
+
 	
 	/**
 	 * gets Locator - Wishlist icon 4
@@ -212,5 +214,20 @@ public class Cart_Page_Locator {
 	public String get_ToolTipMessageText() {
 		return ToolTipMessageText;
 	}
+	/**
+	 * gets Locator - Price Value
+	 * 
+	 */
+	public String get_Price_Value() {
+		return priceValue;
+	}
+	/**
+	 * gets Locator - Price Value Of Each Product
+	 * 
+	 */
+	public String get_Price_Value_Of_Each_Product() {
+		return priceValueOfEachProduct;
+	}
 	
+
 }

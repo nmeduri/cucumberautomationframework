@@ -144,24 +144,30 @@ public class Cart_Page extends PageObject{
 	}
 	/** enter number is greater than 0 and is equal to or lessthan maximum quantity in quantity selector box*/
 	public void enterNumberInQuantitySelectorBox() throws Exception {
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()), FileReaderManager.getInstance().getDataReader().get_Quantity_4561());
-		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()));
-		Thread.sleep(3000);
-		//$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()), FileReaderManager.getInstance().getDataReader().get_Quantity());
-		//Thread.sleep(2000);
+		//$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()), FileReaderManager.getInstance().getDataReader().get_Quantity_4561());
+		//Thread.sleep(3000);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Select_Increment_Quantity()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Select_Increment_Quantity()));
 	}
 	/** This function is verify updated quantity must be number */
 	public void verifyUpdatedQuantityMustBeNumber() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Error_Message_Exceeded_Quantity()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()));
 		String value = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()), "value");
 		Assert.assertEquals("2", value);
 	}
 	/** This function is verify Price of the product updated accordingly */
 	public void verifyPriceOfTheProductUpdatedAccordingly() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Error_Message_Exceeded_Quantity()));
-		String value = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()), "value");
-		Assert.assertEquals("2", value);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Price_Value()));
+		String expectedPrice = $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Price_Value_Of_Each_Product())).replace(" each", "").replace("$", "");
+		double expectedPriceValue=Double.parseDouble(expectedPrice)*2;
+		Log.message("expectedvaluePrice: "+ expectedPriceValue, true);
+		  //Thread.sleep(1000);
+		String actualPrice = $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Price_Value())).replace("$", "");
+		double actualPriceValue=Double.parseDouble(actualPrice);
+		Log.message("actualPricevalue: "+ actualPriceValue, true);
+		   Assert.assertEquals(expectedPriceValue, actualPriceValue, expectedPriceValue);
 	}
+
 	/** This function click product quantity increase button*/
 	public void click_increment_productQuantity() throws Exception {
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Cart_product_quantity())), 40);

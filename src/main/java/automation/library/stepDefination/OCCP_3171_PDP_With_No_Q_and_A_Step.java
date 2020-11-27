@@ -88,4 +88,5 @@ public class OCCP_3171_PDP_With_No_Q_and_A_Step extends BaseClass {
 	public void modal_for_answering_the_question_appears_and_user_is_prompted_to_fill_it() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayPostAnswerModel();	
 	}
+	
 }

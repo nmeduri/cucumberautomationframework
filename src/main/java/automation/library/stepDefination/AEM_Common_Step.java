@@ -53,7 +53,10 @@ public class AEM_Common_Step extends BaseClass {
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPageInformation();
 		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickOnPublishPage();
 	}
-	
+	@And("click on the done button")
+	public void click_on_the_done_button_3918() throws Exception {
+		testContext.getPageObjectManager().getAEMSearchAndSRPPage(PageObject.getDriver()).clickDoneButton();
+	}
 	@And("go to aem login page")
 	public void go_to_aem_login_page() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_AEM_Url());

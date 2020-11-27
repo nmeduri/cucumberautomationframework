@@ -10,6 +10,12 @@ Feature: OCCP-3082 : Featured List Product ListAuthorable
 	When click on Product Card
 	Then the product title is displayed on the product
 	And The destination URL is auto populated based on the product code entered by user
+	When product featured list page fr locale url is available
+	Then product featured list page is displayed
+	And user should be able to see product featured list component on the page
+	When click on Product Card
+	Then the product title is displayed on the product
+	And The destination URL is auto populated based on the product code entered by user
 	
 	@RegressionTest @MobileView
 	Scenario: TC-3919 OCCP-3082 Featured List Product List Authorable- Verify Destination URL for product cards
@@ -19,6 +25,13 @@ Feature: OCCP-3082 : Featured List Product ListAuthorable
 	When click on the Product Card mobile
 	Then the product title is displayed on the product
 	And The destination URL is auto populated based on the product code entered by user
+	When product featured list page fr locale url is available
+	Then product featured list page is displayed
+	And user should be able to see product featured list component on the page
+	When click on the Product Card mobile
+	Then the product title is displayed on the product
+	And The destination URL is auto populated based on the product code entered by user
+	
 	
 	@RegressionTest @MobileView @WideScreen @WebView @TC-3898
 	Scenario: TC-3898	OCCP-3082 Featured List Product List Authorable- Verify when User views the Product Featured List in Desktop /Desktop Wide/Mobile
@@ -29,21 +42,21 @@ Feature: OCCP-3082 : Featured List Product ListAuthorable
 	And user is displayed with product card
 	And user is displayed with product image
 	
-    @RegressionTest @MobileView @WideScreen @WebView @TC-3899
+  @RegressionTest @MobileView @WideScreen @WebView @TC-3899
 	Scenario: TC-3899	OCCP-3082 Featured List Product List Authorable- Verify Featured list view in Desktop/desktop wide
 	When product featured list page url is available
 	Then product featured list page is displayed
 	And user should be able to see product featured list component on the page
 	Then validate the number of cards should be displayed
 	
-    @RegressionTest @MobileView @WideScreen @WebView @TC-3900
+  @RegressionTest @MobileView @WideScreen @WebView @TC-3900
 	Scenario: TC-3900	OCCP-3082 Featured List Product List Authorable- Verify Featured list - Carousel Display in Desktop/desktop wide
 	When product featured list page url is available
 	Then product featured list page is displayed
 	And user should be able to see product featured list component on the page
 	And user should be able to see four products in the carousel view by default
 	
-    @RegressionTest @MobileView @WideScreen @WebView @TC-3901
+  @RegressionTest @MobileView @WideScreen @WebView @TC-3901
 	Scenario: TC-3901	OCCP-3082 Featured List Product List Authorable- Verify Featured List View-User clicks on chevron in Desktop/desktop wide
 	When product featured list page url is available
 	Then product featured list page is displayed
@@ -116,3 +129,4 @@ Feature: OCCP-3082 : Featured List Product ListAuthorable
 	And user should be able to see product featured list component on the page
     When click on Product Card
 	Then the product title is displayed on the product
+

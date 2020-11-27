@@ -170,5 +170,8 @@ public class OCCP_3516_PDP_Add_to_Cart_Flyout_Service_Installations_Step extends
 			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_success_message();
 		}
 	 	
-
+	 	@When ("AEM author with access to configure PDP Add To Cart for fr locale on the page")
+		  public void AEM_author_with_access_to_configure_PDP_Add_To_Cart_fr_locale_on_the_page() throws Exception {
+				testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).navigateTo_PDP_AddToCart_Page_Fr();
+			}
 }

@@ -8,7 +8,6 @@ import automation.library.logdetail.Log;
  * 
  */
 public class AEM_Feature_List_Page_Locator {
-	
 
 	 String featureListPannel = Property.getProperty(Constant.OR_FILE, "featureListPannel").replace("=", ",");
 	 String featuredListTitleAEM = Property.getProperty(Constant.OR_FILE, "featuredListTitleAEM");
@@ -34,6 +33,22 @@ public class AEM_Feature_List_Page_Locator {
 	 String ProductFetureDeleteAEM=Property.getProperty(Constant.OR_FILE, "ProductFetureDeleteAEM");
 	 String ErrorImage=Property.getProperty(Constant.OR_FILE, "ErrorImage");
 
+	 String featuredProductListPannel=Property.getProperty(Constant.OR_FILE, "featuredProductListPannel");
+	 String titleOfFL=Property.getProperty(Constant.OR_FILE, "titleOfFL");
+	 String toolTipOfFLTitle=Property.getProperty(Constant.OR_FILE, "toolTipOfFLTitle");
+	 String toolTipMessageOfFLTitle=Property.getProperty(Constant.OR_FILE, "toolTipMessageOfFLTitle").replace("=", ",");
+	 String notMandatoryConfiguration=Property.getProperty(Constant.OR_FILE, "notMandatoryConfiguration");
+	 String titleOfFeaturedProductList=Property.getProperty(Constant.OR_FILE, "titleOfFeaturedProductList");
+	 String redirectionLabel=Property.getProperty(Constant.OR_FILE, "redirectionLabel");
+	 String redirectionLabelThisWindow=Property.getProperty(Constant.OR_FILE, "redirectionLabelThisWindow");
+	 String enableBadgesAEM=Property.getProperty(Constant.OR_FILE, "enableBadgesAEM");
+	 String enableBadgesInPreview =Property.getProperty(Constant.OR_FILE, "enableBadgesInPreview");
+	 String enableSaveStoryAEM =Property.getProperty(Constant.OR_FILE, "enableSaveStoryAEM");
+	 String disableProductDescription =Property.getProperty(Constant.OR_FILE, "disableProductDescription");
+	 String productBrandAEM =Property.getProperty(Constant.OR_FILE, "productBrandAEM");
+	 String productTitleAEM =Property.getProperty(Constant.OR_FILE, "productTitleAEM");
+	 String productCode1AEM =Property.getProperty(Constant.OR_FILE, "productCode1AEM");
+	 String errorAlertForMandatoryFieldAEM =Property.getProperty(Constant.OR_FILE, "errorAlertForMandatoryFieldAEM");
 	 
 	 
 	 /**
@@ -102,75 +117,81 @@ public class AEM_Feature_List_Page_Locator {
 	public String getLearnMoreLink() {
 		return learMoreLinkFirst;
 	}
-	
+
 	/**
 	 * get Locator - Sub Title First 
 	 */
 	public String getSubTitleFirst() {
 		return subTitleFirstFL;
 	}
-	
+
 	/**
 	 * get Locator - Feature List Image Sub Title (First)
 	 */
 	public String getFeatureListImageSubTitle() {
 		return featueListImageSubTitlePage;
 	}
-	
+
 	/**
 	 * get Locator - Learn More Label
 	 */
 	public String getLearnMoreLabel() {
 		return learnMoreLabelFLAEM;
 	}
-	
+
 	/**
 	 * get Locator - Feature List Image
 	 */
 	public String getFeatureListImage() {
 		return imageFeatureListAEM;
 	}
-	
+
 	/**
 	 * get Locator - Descriptive Message
 	 */
 	public String getDescriptiveMessage() {
 		return descriptiveMessageFLAEM;
 	}
-	
+
 	/**
 	 * get Locator - Descriptive Message Tool Tip
 	 */
 	public String getDescriptiveMessateToolTip() {
 		return descriptiveMessageToolTip;
 	}
-	
+
 	/**
 	 * get Locator - Descriptive Message (Tool Tip Message)
 	 */
 	public String getDescriptiveMessageToolTipMessage() {
 		return descriptiveMessageToolTipMessage;
 	}
-	
+
 	/**
 	 * get Locator - Descriptive Title
 	 */
 	public String getDescriptiveTitle() {
 		return descriptiveTitleFlAEM;
 	}
-	
+
 	/**
 	 * get Locator - Descriptive Title (Tool Tip)
 	 */
 	public String getDescriptiveTitleToolTip() {
 		return descriptiveTitleToolTip;
 	}
-	
+
 	/**
 	 * get Locator - Title Tool Tip
 	 */
 	public String getTitleToolTipFl() {
 		return titleToolTipFl;
+	}
+	/**
+	 * get Locator = Featured product List Panel
+	 */
+	public String getFeaturedProductListPanel() {
+		return featuredProductListPannel;
 	}
 	/**
 	 * get Locator - ProductListComponent
@@ -196,4 +217,96 @@ public class AEM_Feature_List_Page_Locator {
 	public String get_ErrorImage() {
 		return ErrorImage;
 	}
+	/**
+	 * get Locator -FL Title
+	 */
+	public String getFLTitle() {
+		return titleOfFL;
 	}
+	/**
+	 * get Locator -Tool tip of FL Title
+	 */
+	public String getToolTipOfFLTitle() {
+		return toolTipOfFLTitle;
+	}
+	/**
+	 * get Locator -Tool tip Message of FL Title
+	 */
+	public String getToolTipMessageOfFLTitle() {
+		return toolTipMessageOfFLTitle;
+	}
+	/**
+	 * get Locator -Not Mandatory Configuration of FL Title
+	 */
+	public String getNotMandatoryConfiguration() {
+		return notMandatoryConfiguration;
+	}
+	
+	/**
+	 * get Locator -Title Of Featured Product List
+	 */
+	public String getTitleOfFeaturedProductList() {
+		return titleOfFeaturedProductList;
+	}
+	/**
+	 * get Locator -Redirection Label
+	 */
+	public String getRedirectionLabel() {
+		return redirectionLabel;
+	}
+	/**
+	 * get Locator -Redirection Label This Window
+	 */
+	public String getRedirectionLabelThisWindow() {
+		return redirectionLabelThisWindow;
+	}
+	/**
+	 * get Locator - Enable Badges
+	 */
+	public String getEnableBadges() {
+		return enableBadgesAEM;
+	}
+	/**
+	 * get Locator - Enable Badges In Preview
+	 */
+	public String getEnableBadgesInPreview() {
+		return enableBadgesInPreview;
+	}
+	/**
+	 * get Locator - Enable Save Story
+	 */
+	public String getEnableSaveStory() {
+		return enableSaveStoryAEM;
+	}
+	/**
+	 * get Locator - Disable Product Description
+	 */
+	public String getDisableProductDescription() {
+		return disableProductDescription;
+	}
+	/**
+	 * get Locator - Product Brand AEM
+	 */
+	public String getProductBrandAEM() {
+		return productBrandAEM;
+	}
+	/**
+	 * get Locator - Product Title AEM
+	 */
+	public String getProductTitleAEM() {
+		return productTitleAEM;
+	}
+	/**
+	 * get Locator - Product Code AEM
+	 */
+	public String getProductCodeAEM() {
+		return productCode1AEM;
+	}
+	/**
+	 * get Locator - Error Alert For Mandatory Field AEM
+	 */
+	public String getErrorAlertForMandatoryFieldAEM() {
+		return errorAlertForMandatoryFieldAEM;
+	}
+	
+}

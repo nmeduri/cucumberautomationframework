@@ -26,6 +26,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3171
 	When clicks on Be the first to ask a question link
 	Then user is navigated to ask a question page and is prompted to fill it
 	
+	
 	@RegressionTest @WebView @WideView @MobileView
 	Scenario: TC-3954 OCCP-3171 - Verify user is able to view  Questions & Answers section having no answers 
 	When pdp url with questions and answers section is available
@@ -39,7 +40,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3171
 	And CTA to answer this question is displayed
 
 	
-	@RegressionTest1 @WebView @WideView @MobileView
+	@RegressionTest @WebView @WideView @MobileView
 	Scenario: TC-3955 OCCP-3171 - Verify user is able to interact with Questions & Answers section having no answers
 	When pdp url with questions and answers section is available
 	Then the product title is displayed on the product

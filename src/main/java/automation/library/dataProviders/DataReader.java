@@ -1445,6 +1445,18 @@ public class DataReader {
 	}
 
 	/**
+	 * gets Featured List Product List Fr URL
+	 * 
+	 */
+
+	public String get_Featured_List_Product_List_Url_Fr() {
+		String featuredProductsListUrlFr = Property.getProperty(Constant.DATA_FILE, "featuredProductListUrl_Fr");
+		if(featuredProductsListUrlFr != null)
+			return featuredProductsListUrlFr;
+		else 
+			throw new RuntimeException("featuredProductListUrl_Fr url not specified in the Data file.");
+	}
+	/**
 	 * gets Account address URL
 	 * 
 	 */
@@ -1478,5 +1490,6 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid password Data not specified in the Data file.");
 	}
+
 }
 

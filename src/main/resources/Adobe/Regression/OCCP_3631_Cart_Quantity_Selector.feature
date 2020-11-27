@@ -33,13 +33,13 @@ Feature: OCCP-3631 Cart - Quantity Selector
 	When user enter number in the quantity box that is greater than maximum quantity
 	Then greater than maximum quantity is not updated in the quantity box
 	
-	#@RegressionTest1 @WebView @WideScreen @MobileView
+	@RegressionTest @WebView @WideScreen @MobileView
 	Scenario: TC-4561	OCCP-3631 Cart - Quantity Selector- Verify user updates quantity- User enters in number in the quantity selector box
 	When cart page url is available
 	Then cart page title is displayed
 	And quantity selector box is displayed
 	When user enters number is greater than 0 and is equal to or lessthan maximum quantity in quantity selector box
-	Then The updated quantity must be number
+	Then verify updated quantity must be number
 	And Price of the product updated accordingly 
 	
 	

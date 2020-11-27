@@ -103,7 +103,7 @@ public class OCCP_3631_Cart_Quantity_Selector extends BaseClass {
 	
 	@And("Price of the product updated accordingly")
 	public void price_of_the_product_updated_accordingly() throws Exception {
-		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).verifyUpdatedQuantityMustBeNumber();
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).verifyPriceOfTheProductUpdatedAccordingly();
 	}
 	
 }
