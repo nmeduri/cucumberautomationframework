@@ -120,6 +120,7 @@ import automation.library.pageObjects.Privacy_Charter_Page;
 import automation.library.pageObjects.Registration_Email_Verification_Page;
 import automation.library.pageObjects.Reset_Password_Page;
 import automation.library.pageObjects.Rewards_Terms_Conditions_Page;
+import automation.library.pageObjects.SRP_Page;
 import automation.library.pageObjects.Sign_Up_Page;
 import automation.library.pageObjects.Two_Feature_Tile_Component_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
@@ -258,7 +259,9 @@ public class PageObjectManager {
 	private Account_Address_Page getAccountAddressPage;
 	private AEM_Slim_Banner_page_Locator getAEMSlimBannerpageLocator;
 	private AEM_Slim_Banner_Page getAEMSlimBannerPage;
-
+	
+	private SRP_Page getSRPPage;
+	
 	public PageObjectManager() {
 		
 	}
@@ -880,4 +883,10 @@ public class PageObjectManager {
 	public AEM_Slim_Banner_Page getAEMSlimBannerPage(WebDriver driver) {
 		return (getAEMSlimBannerPage == null) ? getAEMSlimBannerPage = new AEM_Slim_Banner_Page(driver) : getAEMSlimBannerPage;
 	}
+	
+	/** Returns Instance of SRP Page */
+	public SRP_Page getSRPPage(WebDriver driver) {
+		return(getSRPPage == null) ? getSRPPage = new SRP_Page(driver) : getSRPPage;
+	}
+	
 }

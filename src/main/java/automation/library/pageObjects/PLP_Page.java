@@ -797,4 +797,93 @@ public class PLP_Page extends PageObject {
 		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#FFF", colorValueTwo);
 	}
 	
+	/** click on clear all button facet */
+	public void clickClearAllButtonFacet() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Clear_All_Button_Facet()));
+	}
+	
+	/** Item remove */
+	public void verifyItemRemoved() throws Exception {
+		try {
+			Thread.sleep(3000);
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Brand_Selected_Item_Facet()));
+			fail();
+		}catch(Exception e) {
+		Log.message("Item is successfully removed", true);
+		}
+	}
+	
+	/** verify that ratings option is displayed */
+	public void displayRatingsFacetOption() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Option_Facet()));
+	}
+	
+	/** click on ratings option */
+	public void clickRatingsFacetOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Option_Facet()));
+	}
+	
+	/** click on ratings value */
+	public void selectRatingsValue() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Value_Facet()));
+		List<WebElement> ratingValueLabel = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Value_Label()));
+		conf.setProperty("ratingValueLabel", ratingValueLabel.get(1).getText());
+		li.get(1).click();
+	}
+	
+	/** verify selected ratings result are showing on plp */
+	public void displaySelectedRatingResultOnPLP() throws Exception {
+		$display(($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults())));
+		String ratingResults = (java.lang.String) conf.getProperty("ratingValueLabel");
+		String actualRatingResutls = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		Assert.assertEquals(actualRatingResutls, ratingResults);
+	}
+	
+	/** verify that ratings result is displayed */
+	public void displayRatingValue() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Value_Facet()));
+	}
+	
+	/** ratings pill are removed */
+	public void verifyRatingPillsRemoved() throws Exception {
+		try {
+			Thread.sleep(1000);
+			$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+			fail();
+		}catch(Exception e) {
+			Log.message("Removed Successfully", true);
+		}
+	}
+	
+	/** click on rating plus icon */
+	public void clickRatingPlusIcon() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Plus_Minus_Icon()));
+	}
+	
+	/** click on rating minus icon */
+	public void clickRatingMinusIcon() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Plus_Minus_Icon()));
+	}
+	
+	/** rating filter is displayed */
+	public void displayRatingFilter() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Value_Label()));
+	}
+	
+	/** rating filter is not displayed */
+	public void notDisplayRatingFilter() throws Exception {
+		try {
+			Thread.sleep(1000);
+		$displayFindElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Value_Label()));
+		fail();
+		}catch(Exception e) {
+			Log.message("Rating Filer is not Displayed", true);
+		}
+	}
+	
+	/** rating section is collapsed */
+	public void collapsedRatingSection() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Section_Hide()));
+	}
+	
 }	

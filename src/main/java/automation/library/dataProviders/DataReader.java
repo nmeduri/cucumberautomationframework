@@ -1430,6 +1430,20 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	
+	/**
+	 * gets SRP URl
+	 * 
+	 */
+
+	public String get_SRP_Url() {
+		String getUrl = Property.getProperty(Constant.DATA_FILE, "srpUrl");
+		if(getUrl != null)
+			return getUrl;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+
 	/**
 	 * gets Account address URL
 	 * 
@@ -1464,7 +1478,5 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid password Data not specified in the Data file.");
 	}
-
-	
 }
 

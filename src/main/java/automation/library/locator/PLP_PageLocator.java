@@ -85,7 +85,14 @@ public class PLP_PageLocator {
 	String brandFacetItem = Property.getProperty(Constant.OR_FILE, "brandFacetItem");
 	String brandItemCheckBox = Property.getProperty(Constant.OR_FILE, "brandItemCheckBox");
 	String brandShowMoreText = Property.getProperty(Constant.OR_FILE, "brandShowMoreText");	
-	
+	String clearAllFacetButton = Property.getProperty(Constant.OR_FILE, "clearAllFacetButton");
+	String brandSelectedItemFacet = Property.getProperty(Constant.OR_FILE, "brandSelectedItemFacet");
+	String ratingOptionFacet = Property.getProperty(Constant.OR_FILE, "ratingOptionFacet").replace("=", ",");
+	String ratingsValue = Property.getProperty(Constant.OR_FILE, "ratingsValue");
+	String ratingsValueLabel = Property.getProperty(Constant.OR_FILE, "ratingsValueLabel");
+	String ratingPlusMinusIcon = Property.getProperty(Constant.OR_FILE, "ratingPlusMinusIcon");
+	String hideRatingSection = Property.getProperty(Constant.OR_FILE, "hideRatingSection");
+			
 	/**
 	 * gets Locator - List View
 	 * 
@@ -677,5 +684,54 @@ public class PLP_PageLocator {
 	 */
 	public String get_Brand_Checkbox() {
 		return brandItemCheckBox;
+	}
+	
+	/**
+	 * gets Locator - Clear All Button Facet
+	 */
+	public String get_Clear_All_Button_Facet() {
+		return clearAllFacetButton;
+	}
+	
+	/**
+	 * gets Locator - Brand Selected Item Facet
+	 */
+	public String get_Brand_Selected_Item_Facet() {
+		return brandSelectedItemFacet;
+	}
+	
+	/**
+	 * gets Locator - Rating Option
+	 */
+	public String get_Rating_Option_Facet() {
+		return ratingOptionFacet;
+	}
+	
+	/**
+	 * gets Locator - Rating Value Facet
+	 */
+	public String get_Rating_Value_Facet() {
+		return ratingsValue;
+	}
+	
+	/**
+	 * gets Locator - Rating Value Label
+	 */
+	public String get_Rating_Value_Label() {
+		return ratingsValueLabel;
+	}
+	
+	/**
+	 * gets Locator - Rating Plus Icon
+	 */
+	public String get_Rating_Plus_Minus_Icon() {
+		return ratingPlusMinusIcon;
+	}
+	
+	/**
+	 * gets Locator - Rating Section Hide
+	 */
+	public String get_Rating_Section_Hide() {
+		return hideRatingSection;
 	}
  }

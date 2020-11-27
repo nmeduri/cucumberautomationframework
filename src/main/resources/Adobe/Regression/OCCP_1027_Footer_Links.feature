@@ -147,7 +147,8 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 	    @RegressionTest @WebView @WideView @TC-2102
 		Scenario: TC-2102, 2118 User view the section headers
-		Given open browser
+		Given quit browser
+		When open browser
 		Given pdp url is available
 		When pdp page is displayed for the product
 		Then scroll down to footer

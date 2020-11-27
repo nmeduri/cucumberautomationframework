@@ -19,7 +19,6 @@ Feature: OCCP-1184 Link Existing Card Screen
 	And continue cta should be displayed
 	And action button get one here link to move to generate card flow should be displayed
 	And ability to go back cancel link should  be displayed
-	And close browser
 	
 	@RegressionTest @WebView @MobileView @TabletView
 	Scenario: TC-2283 View Link existing card screen

@@ -79,7 +79,8 @@ Feature: OCCP-1030 Footer : Simple Footer
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2841, TC-2832 TC-2850, TC-2859 Verification of clicking of text Legal 
-	Given open browser
+	Given quit browser
+	When open browser
 	Given the footer page url is available
 	When footer page is displayed
 	And in simple footer access and click on legal text

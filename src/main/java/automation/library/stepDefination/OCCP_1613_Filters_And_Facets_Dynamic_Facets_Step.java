@@ -12,6 +12,7 @@ import automation.library.selenium.base.BaseClass;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 /**
@@ -25,6 +26,11 @@ public class OCCP_1613_Filters_And_Facets_Dynamic_Facets_Step extends BaseClass 
 		testContext = context;
 		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
+	}
+	
+	@Given("^srp url is available$")
+	public void plp_url_is_availabe() throws Exception {
+		testContext.getPageObjectManager().getSRPPage(PageObject.getDriver()).navigateTo_SRP_Page();
 	}
 	
 	@Then("verify the user is able to view the brand facet as generic facet")
@@ -90,6 +96,16 @@ public class OCCP_1613_Filters_And_Facets_Dynamic_Facets_Step extends BaseClass 
 	@Then("product results are refreshed")
 	public void product_results_are_refreshed() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyProductRefresh();
+	}
+	
+	@And("click on clear all facet")
+	public void click_on_clear_all_facet() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickClearAllButtonFacet();
+	}
+	
+	@Then("product result are refreshed")
+	public void product_result_are_refreshed() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyItemRemoved();
 	}
 }
 
