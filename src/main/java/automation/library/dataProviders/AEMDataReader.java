@@ -5140,4 +5140,41 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets account address url
+	 * 
+	 */
+	
+	public String get_account_address_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "AccounAddressAEM");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets account address label
+	 * 
+	 */
+	
+	public String get_account_address_label() {
+		String addressl = Property.getProperty(Constant.AEM_DATA_FILE, "Addresslabel");
+		if(addressl != null)
+			return addressl;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets account shipping info label
+	 * 
+	 */
+	
+	public String get_Shipping_Info_label() {
+		String shippingl = Property.getProperty(Constant.AEM_DATA_FILE, "ShippingInformationLabel");
+		if(shippingl != null)
+			return shippingl;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
 }

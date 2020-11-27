@@ -112,6 +112,10 @@ public class Customer_Service_Page extends PageObject{
 	public void display_Section_Separators_Customer_Service_Page() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_Section_Separators_Customer_Service_Page()));
 	}
+	/** This function is verify that Customer Service accordion description is displayed*/
+	public void display_accordion_description_Customer_Service_Page() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_accordionDescription()));
+	}
 	
 	/** This function is verify that Customer Service of Links Description is displayed*/
 	public void display_Links_Description() throws Exception {

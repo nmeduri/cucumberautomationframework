@@ -116,4 +116,3 @@ Feature: OCCP-3082 : Featured List Product ListAuthorable
 	And user should be able to see product featured list component on the page
     When click on Product Card
 	Then the product title is displayed on the product
-  

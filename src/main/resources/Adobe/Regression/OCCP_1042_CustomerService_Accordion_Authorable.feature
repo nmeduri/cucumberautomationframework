@@ -3,7 +3,7 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	Description: To test the ADOBE Test Cases for the story OCCP-1042
 	
 	
-	#@RegressionTest @WebView @WideScreen @TC-3265
+	@RegressionTest @WebView @WideScreen @TC-3265
 	Scenario: TC-3265 OCCP-1042 -Customer Service - Accordion (Authorable) -Verify that the customer is able to collapse Accordion
 	Given open browser
 	When customerservice informational copy url is available
@@ -22,7 +22,7 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	Then click on accordion minus icon
 	Then validate the accordion plus icon is displayed
 	
-	#@RegressionTest @AEM @TC-3267
+	@RegressionTest @AEM @TC-3267
 	Scenario: TC-3267 OCCP-1042 -Customer Service - Accordion (Authorable) -Verify that the customer is able to view Accordion Title
 	Given open browser
 	When AEM author with access to configure customer service page component
@@ -73,3 +73,12 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	And accordions should be displayed
 	When customerservice informational url for FR locale is available
 	And accordions should be displayed
+	
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-3266
+	Scenario: TC-3266 OCCP-1042 - Customer Service - Accordion (Authorable) -Verify that the customer is able to view Accordion Description
+	Given open browser
+	When customerservice informational copy url is available
+	Then customerservice page is displayed	
+	And accordions should be displayed
+	Then click on accordion plus icon
+	Then validate description is displayed containing text

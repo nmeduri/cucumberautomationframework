@@ -1430,5 +1430,41 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	/**
+	 * gets Account address URL
+	 * 
+	 */
+
+	public String get_Account_Address_URL() {
+		String addressURL = Property.getProperty(Constant.DATA_FILE, "AccountAddressURL");
+		if(addressURL != null)
+			return addressURL;
+		else 
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	/**
+	 * gets Account Email Data_3301
+	 * 
+	 */
+	public String get_Email_Data_3301() {
+		String email = Property.getProperty(Constant.DATA_FILE, "username_3301");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
+	/**
+	 * gets Account Email Data_3301
+	 * 
+	 */
+	public String get_Password_Data_3301() {
+		String email = Property.getProperty(Constant.DATA_FILE, "password_3301");
+		if(email != null) 
+			return email;
+		else
+			throw new RuntimeException("Valid password Data not specified in the Data file.");
+	}
+
+	
 }
 

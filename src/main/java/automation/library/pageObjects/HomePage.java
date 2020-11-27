@@ -32,8 +32,7 @@ public class HomePage extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
 		
 	}
-
-	/** This function click on Product */
+		/** This function click on Product */
 	public void clickOnProduct() throws Exception {
 	    $(Loc.XPATH, testContext.getPageObjectManager().getHomePageLocator().getAutomativeLocator()).click();
 	   
@@ -42,11 +41,16 @@ public class HomePage extends PageObject {
 	/** This function click on Menu Icon */
 	public void clickOnMenuIcon() throws Exception {
 		
-		 $(Loc.XPATH, testContext.getPageObjectManager().getHomePageLocator().getMenuIcon()).click();
-		 
-
-	    
+		 $(Loc.XPATH, testContext.getPageObjectManager().getHomePageLocator().getMenuIcon()).click(); 
 		
 	}
+	
+	/** This function navigate to account address  */
+	public void navigateTo_account_address() throws Exception{
+		
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Account_Address_URL());
+		
+	}
+	
 
 }

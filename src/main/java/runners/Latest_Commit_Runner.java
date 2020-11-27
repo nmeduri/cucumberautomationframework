@@ -12,8 +12,8 @@ public final class Latest_Commit_Runner extends BaseClass{
 	public static String name;
 	private static String[] defaultOptions = {
 
-
 			"classpath:Adobe/AEM/Regression/OCCP_4418_Slim_Banner_RegularorPromo.feature",
+			"--glue", "automation.library.stepDefination",
 			"--tags", "@TC-3497",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",

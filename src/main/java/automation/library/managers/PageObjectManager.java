@@ -3,6 +3,7 @@ package automation.library.managers;
 
 import org.openqa.selenium.WebDriver;
 
+import automation.library.locator.AEM_Account_Address_Page_Locator;
 import automation.library.locator.AEM_Broad_Banner_Page_Locator;
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Cart_Page_Locator;
@@ -28,6 +29,7 @@ import automation.library.locator.AEM_Search_And_SRP_Page_Locator;
 import automation.library.locator.AEM_Simple_Header_Checkout_Flow_Page_Locator;
 import automation.library.locator.AEM_Slim_Banner_page_Locator;
 import automation.library.locator.AEM_Two_Featured_Tiles_Component_Page_Locator;
+import automation.library.locator.Account_Address_Page_Locator;
 import automation.library.locator.Banners_Locator;
 import automation.library.locator.Broad_Banner_Page_Locator;
 import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
@@ -61,6 +63,7 @@ import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
 import automation.library.locator.Two_Featured_Tile_Component_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
+import automation.library.pageObjects.AEM_Account_Address_Page;
 import automation.library.pageObjects.AEM_Broad_Banner_Page;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Cart_Page;
@@ -85,6 +88,7 @@ import automation.library.pageObjects.AEM_Search_And_SRP_Page;
 import automation.library.pageObjects.AEM_Simple_Header_Checkout_Flow_Page;
 import automation.library.pageObjects.AEM_Slim_Banner_Page;
 import automation.library.pageObjects.AEM_Two_Featured_tiles_Component_Page;
+import automation.library.pageObjects.Account_Address_Page;
 import automation.library.pageObjects.Banner_Pages;
 import automation.library.pageObjects.Broad_Banner_Page;
 import automation.library.pageObjects.Broad_Promo_Tiles_Page;
@@ -248,6 +252,10 @@ public class PageObjectManager {
 	private AEM_Edge_To_Edge_Banner_Page getAEMEdgeToEdgeBannerPage;
 	private AEM_Get_A_New_Triangle_Rewards_Card_Page getAEMANewTriangleRewardsCardPage;
 	private AEM_Get_A_New_Triangle_Rewards_Card_Locator getAEMANewTriangleRewardsCardLocator;
+	private AEM_Account_Address_Page getAEMAccountAddressPage;
+	private AEM_Account_Address_Page_Locator getAEMAccountAddressPageLocator;
+	private Account_Address_Page_Locator getAccountAddressPageLocator;
+	private Account_Address_Page getAccountAddressPage;
 	private AEM_Slim_Banner_page_Locator getAEMSlimBannerpageLocator;
 	private AEM_Slim_Banner_Page getAEMSlimBannerPage;
 
@@ -843,6 +851,25 @@ public class PageObjectManager {
 	/** Returns Instance of AEM Get A New Triangle Rewards Card Locator File */
 	public AEM_Get_A_New_Triangle_Rewards_Card_Locator getAEMANewTriangleRewardsCardLocator() {
 		return (getAEMANewTriangleRewardsCardLocator == null) ? getAEMANewTriangleRewardsCardLocator = new AEM_Get_A_New_Triangle_Rewards_Card_Locator() : getAEMANewTriangleRewardsCardLocator;
+	}
+
+	/** Returns Instance of AEM Account Address Page */
+	public AEM_Account_Address_Page getAEMAccountAddressPage(WebDriver driver) {
+		return (getAEMAccountAddressPage == null) ? getAEMAccountAddressPage = new AEM_Account_Address_Page(driver) : getAEMAccountAddressPage;
+	}
+	
+	/** Returns Instance of AEM Account Address Page Locator  */
+	public AEM_Account_Address_Page_Locator getAEMAccountAddressPageLocator() {
+		return (getAEMAccountAddressPageLocator == null) ? getAEMAccountAddressPageLocator = new AEM_Account_Address_Page_Locator() : getAEMAccountAddressPageLocator;
+	}
+	/** Returns Instance of Account Address Page */
+	public Account_Address_Page getAccountAddressPage(WebDriver driver) {
+		return (getAccountAddressPage == null) ? getAccountAddressPage = new Account_Address_Page(driver) : getAccountAddressPage;
+	}
+	
+	/** Returns Instance of Account Address Page Locator  */
+	public Account_Address_Page_Locator getAccountAddressPageLocator() {
+		return (getAccountAddressPageLocator == null) ? getAccountAddressPageLocator = new Account_Address_Page_Locator() : getAccountAddressPageLocator;
 	}
 	/** Returns Instance of AEM slim banner page locator */
 	public AEM_Slim_Banner_page_Locator getAEMSlimBannerpageLocator() {

@@ -67,13 +67,16 @@ public class OCCP_1042_CustomerService_Accordion_Authorable extends BaseClass{
 
 	}
 	
-	  @Then ("validate the accordion header change is displayed on site") public
-	  void accordion_header_is_displayed() throws Exception {
+	  @Then ("validate the accordion header change is displayed on site") 
+	  public void accordion_header_is_displayed() throws Exception {
 	  testContext.getPageObjectManager().getAEMCustomerServiceInformationalCopyPage(PageObject.getDriver()).displayUpdatedAccordionHeader();
 	  
 	 }
-	 
-
+	@Then ("validate description is displayed containing text")
+	public void accordion_description_is_displayed() throws Exception {
+		  testContext.getPageObjectManager().getCustomerServicePage(PageObject.getDriver()).display_accordion_description_Customer_Service_Page();
+		  
+		 }
 	
 
 }
