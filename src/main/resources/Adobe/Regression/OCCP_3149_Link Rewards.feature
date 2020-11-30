@@ -56,7 +56,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	#Then rewards terms and conditions should be displayed
 	
 	#@RegressionTest @MobileView @TabletView
-  Scenario: TC-2130 Verify the T&C and Success screen details on Mobile 
+    Scenario: TC-2130 Verify the T&C and Success screen details on Mobile 
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email
@@ -82,14 +82,3 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	Then register card button is displayed on terms and conditions page
 	And clicks on register card button
 	Then user should taken to success screen
-	
-	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2129 Verify the Field level validations on the Complete Your Profile screen
-	Given login url is available 
-	When enter email id
-	And enter password data 
-	And user click on sign in button 
-	Then link card screen should be displayed 
-	And verify when user clicks on the get a new triangle rewards card link 
-	Then user should redirect to the get a new triangle rewards card screen 
-	And verify clicks on continue button

@@ -68,7 +68,7 @@ public class PLP_PageLocator {
 	String moreFilters = Property.getProperty(Constant.OR_FILE, "moreFilters");
 	String sortAndFiltersMobile = Property.getProperty(Constant.OR_FILE, "sortAndFiltersMobile").replace("=", ",");
 	String selectedColorFacetText = Property.getProperty(Constant.OR_FILE, "selectedColorFacetText");
-	String selectedColorResultsOnPLP = Property.getProperty(Constant.OR_FILE, "selectedColorResultsOnPLP");
+	String selectedResultsOnPLP = Property.getProperty(Constant.OR_FILE, "selectedResultsOnPLP");
 	String colorSwatchAnotherValue = Property.getProperty(Constant.OR_FILE, "colorSwatchAnotherValue").replace("=", ",");
 	String selectedCommaColor = Property.getProperty(Constant.OR_FILE, "selectedCommaColor");
 	String priceDetailTabAEM = Property.getProperty(Constant.OR_FILE, "priceDetailTabAEM");
@@ -92,6 +92,14 @@ public class PLP_PageLocator {
 	String ratingsValueLabel = Property.getProperty(Constant.OR_FILE, "ratingsValueLabel");
 	String ratingPlusMinusIcon = Property.getProperty(Constant.OR_FILE, "ratingPlusMinusIcon");
 	String hideRatingSection = Property.getProperty(Constant.OR_FILE, "hideRatingSection");
+	String priceFacet = Property.getProperty(Constant.OR_FILE, "priceFacet").replace("=", ",");
+	String pricePlusMinusIcon = Property.getProperty(Constant.OR_FILE, "pricePlusMinusIcon").replace("=", ",");
+	String minimumPriceFacet = Property.getProperty(Constant.OR_FILE, "minimumPriceFacet");
+	String maximumPriceFacet = Property.getProperty(Constant.OR_FILE, "maximumPriceFacet");
+	String priceItemCheckbox = Property.getProperty(Constant.OR_FILE, "priceItemCheckbox");
+	String viewButton = Property.getProperty(Constant.OR_FILE, "viewButton").replace("=", ",");
+	String priceItemTextCheckbox = Property.getProperty(Constant.OR_FILE, "priceItemTextCheckbox");
+	String errorMessageMinimumPriceMoreThanMaximum = Property.getProperty(Constant.OR_FILE, "errorMessageMinimumPriceMoreThanMaximum");
 			
 	/**
 	 * gets Locator - List View
@@ -574,7 +582,7 @@ public class PLP_PageLocator {
 	 * get Locator - Color Result
 	 */
 	public String getFacetResults() throws Exception {
-		return selectedColorResultsOnPLP;
+		return selectedResultsOnPLP;
 	}
 	
 	/**
@@ -733,5 +741,61 @@ public class PLP_PageLocator {
 	 */
 	public String get_Rating_Section_Hide() {
 		return hideRatingSection;
+	}
+	
+	/**
+	 * gets Locator - Price Facet
+	 */
+	public String get_Price_Facet() {
+		return priceFacet;
+	}
+	
+	/**
+	 * gets Locator - Price Plus/Minus Icon
+	 */
+	public String get_Price_Plus_Minus_Icon() {
+		return pricePlusMinusIcon;
+	}
+	
+	/**
+	 * gets Locator - Minimum Price
+	 */
+	public String get_Minimum_Price() {
+		return  minimumPriceFacet;
+	}
+	
+	/**
+	 * gets Locator - Maximum Price
+	 */
+	public String get_Maximum_Price() {
+		return maximumPriceFacet;
+	}
+	
+	/**
+	 * gets Locator - Price option Check box Face
+	 */
+	public String get_Price_Checkbox_Option_Facet() {
+		return priceItemCheckbox;
+	}
+	
+	/**
+	 * gets Locator - View Button
+	 */
+	public String get_View_Button() {
+		return viewButton;
+	}
+	
+	/**
+	 * gets Locator - Price Item Text
+	 */
+	public String get_Price_Item_Text() {
+		return priceItemTextCheckbox;
+	}
+	
+	/**
+	 * gets Locator - Error Message (Minimum Price More Than Maximum)
+	 */
+	public String get_Error_Message_Min_Price_More_Than_Max() {
+		return errorMessageMinimumPriceMoreThanMaximum;
 	}
  }

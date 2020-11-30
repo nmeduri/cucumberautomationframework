@@ -1,4 +1,4 @@
-Feature: OCCP-2722 Account/Triangle ID - Link Rewards | Successful linking
+Feature: OCCP-2722 Account/Triangle ID - Link Rewards Successful linking
 Description: To test the AEM Test Cases for the story OCCP-2722
 
 @RegressionTest @AEM

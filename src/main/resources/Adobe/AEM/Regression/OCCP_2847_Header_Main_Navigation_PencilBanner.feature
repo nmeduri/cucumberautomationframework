@@ -1,4 +1,4 @@
-Feature: OCCP-2847  Header and Main Navigation | Pencil Banner
+Feature: OCCP-2847  Header and Main Navigation Pencil Banner
 	Description: To test the ADOBE Test Cases for the story OCCP-2847
 	
 	@AEM

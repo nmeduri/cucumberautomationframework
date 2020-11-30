@@ -1443,7 +1443,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-
+	
 	/**
 	 * gets Featured List Product List Fr URL
 	 * 
@@ -1456,6 +1456,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("featuredProductListUrl_Fr url not specified in the Data file.");
 	}
+	
 	/**
 	 * gets Account address URL
 	 * 
@@ -1490,6 +1491,40 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid password Data not specified in the Data file.");
 	}
-
+	
+	/**
+	 * gets Minimum Price Data
+	 * 
+	 */
+	public String get_Minimum_Price_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "minimumPrice");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * gets Maximum Price Data
+	 * 
+	 */
+	public String get_Maximum_Price_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "maxPrice");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Minimum Price Data
+	 * 
+	 */
+	public String get_Minimum_Price_More_Than_Maximum() {
+		String data = Property.getProperty(Constant.DATA_FILE, "minimumPriceMoreThanMax");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
 }
 

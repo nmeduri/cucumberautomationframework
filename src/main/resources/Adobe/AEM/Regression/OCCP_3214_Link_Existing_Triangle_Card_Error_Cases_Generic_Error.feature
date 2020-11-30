@@ -1,4 +1,4 @@
-Feature: OCCP-3214 OCCP-3214 Account/Triangle ID - Link Rewards | Link Existing Triangle Rewards Card | Failure/Error Cases | Generic Error
+Feature: OCCP-3214 OCCP-3214 Account/Triangle ID - Link Rewards Link Existing Triangle Rewards Card  Failure/Error Cases  Generic Error
 Description: To test the ADOBE AEM Test Cases for the story OCCP-3214
 	
 	@RegressionTest @AEM

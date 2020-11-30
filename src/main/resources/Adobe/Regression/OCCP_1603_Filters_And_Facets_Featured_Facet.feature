@@ -2,8 +2,8 @@ Feature: OCCP-1603 Filters and Facets : Delivery & Pick up Option
 
 	Description: To test the ADOBE Test Cases for the story OCCP-1603
 	
-	@RegressionTest @WebView @WideScreen @TC-374
-    Scenario: TC-374 Verify the dynamic facet is properly displayed on mobile for PLP
+	@RegressionTest @WebView @WideScreen @TC-373
+    Scenario: TC-373 Verify the dynamic facet is properly displayed for PLP
     When plp url is available
     And click on more filters
     Then verify the rating facet is displayed

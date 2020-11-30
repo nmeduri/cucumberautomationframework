@@ -1,8 +1,8 @@
-Feature: OCCP-2722 Account/Triangle ID - Link Rewards | Successful linking
+Feature: OCCP-2722 Account/Triangle ID - Link Rewards  Successful linking
 Description: To test the ADOBE Test Cases for the story OCCP-2722
 
 @RegressionTest @MobileView
-  Scenario: TC-2209 Generate a new Loyalty Rewards Card | Success
+  Scenario: TC-2209 Generate a new Loyalty Rewards Card  Success
 	Given sign up url is available
 	Then sign up page is displayed
 	And in mobile user enter email 

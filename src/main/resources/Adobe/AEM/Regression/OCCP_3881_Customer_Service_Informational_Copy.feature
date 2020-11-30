@@ -1,6 +1,6 @@
-Feature: OCCP-3722 : Login/Registration Template
+Feature: OCCP-3881 : Customer Service
 
-	Description: To test the ADOBE Test Cases for the story OCCP-3722
+	Description: To test the ADOBE Test Cases for the story OCCP-3881
 	
 	@RegressionTest @AEM
 	Scenario: TC-3420	OCCP-3881 :Customer Service - Informational Copy (Authorable) -Verify that Customer is able to Configure title

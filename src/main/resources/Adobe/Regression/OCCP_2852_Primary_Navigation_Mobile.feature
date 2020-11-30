@@ -1,4 +1,4 @@
-Feature: OCCP-2852 Primary Navigation | Mobile
+Feature: OCCP-2852 Primary Navigation  Mobile
   
   Description: To test the ADOBE Test Cases for the story OCCP-2852
 

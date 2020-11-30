@@ -11,6 +11,7 @@ import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -885,5 +886,77 @@ public class PLP_Page extends PageObject {
 	public void collapsedRatingSection() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Section_Hide()));
 	}
+
+	/** Facet Price is displayed */
+	public void displayPriceFacet() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Facet()));
+	}
 	
+	/** click on price plus Icon */
+	public void clickPricePlusIcon() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Plus_Minus_Icon()));
+	}
+	
+	/** verify that user is able to enter minimum price */
+	public void enterMinimumPriceFacetValue() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Minimum_Price()), FileReaderManager.getInstance().getDataReader().get_Minimum_Price_Data());
+	}
+	
+	/** verify that user is able to enter maximum price */
+	public void enterMaximumPriceFacetValue() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Maximum_Price()), FileReaderManager.getInstance().getDataReader().get_Maximum_Price_Data());
+		$findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Maximum_Price())).sendKeys(Keys.TAB);
+		
+	}
+	
+	/** verify selected Single Brand result are showing on plp */
+	public void displaySelectedSinglePriceResultOnPLP() throws Exception {
+		Thread.sleep(3000);
+		$display($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		String priceResult = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		Log.message("priceResult:- " + priceResult, true);
+		Assert.assertTrue(priceResult.contains(FileReaderManager.getInstance().getDataReader().get_Minimum_Price_Data()));
+		Assert.assertTrue(priceResult.contains(FileReaderManager.getInstance().getDataReader().get_Maximum_Price_Data()));
+	}
+	
+	/** verify that indication of success is displayed for Single Brand Item */
+	public void verifyPriceFilterOptionSelected() throws Exception {
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Checkbox_Option_Facet()));
+		String colorValue = li_checkbox.get(0).getCssValue("border-color"); 
+		Log.message("color:- " +  li_checkbox.get(0).getCssValue("border-color"), true);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyBorderColorCode("#0a6e3b", colorValue);
+	}
+	
+	/** click on view button */
+	public void clickViewButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_View_Button()));
+	}
+	
+	/** click on price filter checkbox */
+	public void clickPriceFilterCheckbox() throws Exception {
+		String getPriceOptionText = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Item_Text()));
+		conf.setProperty("getPriceOptionText", getPriceOptionText);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Checkbox_Option_Facet()));
+		Thread.sleep(2000);
+	}
+	
+	/** verify selected price range are showing on plp */
+	public void displaySelectedPriceRangeResultOnPLP() throws Exception {
+		$display(($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults())));
+		String ratingResults = (java.lang.String) conf.getProperty("getPriceOptionText");
+		String actualRatingResutls = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		Log.message("ratingResults:- " + ratingResults, true);
+		Log.message("actualRatingResutls:- " + actualRatingResutls, true);
+		Assert.assertTrue(ratingResults.toLowerCase().contains(actualRatingResutls.toLowerCase()));
+	}
+	
+	/** enter minimum price more than maximum */
+	public void enterMinimumPriceMoreThanMaximum() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Minimum_Price()), FileReaderManager.getInstance().getDataReader().get_Minimum_Price_More_Than_Maximum());
+	}
+	
+	/** error message is displayed when Minimum price is more than maximum, */
+	public void displayErrorMessageMinimumPriceMoreThanMaximum() throws Exception {
+		$display(($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().get_Error_Message_Min_Price_More_Than_Max())));
+	}
 }	
