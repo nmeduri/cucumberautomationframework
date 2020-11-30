@@ -87,8 +87,8 @@ public class AEM_Featured_List_Page extends PageObject {
 	
 	/** this function clicks on feature list panel */
 	public void clickFeatureListPanel() throws Exception {
-		//$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())), 15);
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())), 15);
+		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));
 	}
 
 	/** enter feature sub title title */
@@ -342,11 +342,46 @@ public class AEM_Featured_List_Page extends PageObject {
 	/** click on featured product list component  */
 	public void clickFeaturedProductList() throws Exception {
 		$click($(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductListComponent())), 5));
+	}
 
 		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductListComponent())));
 	
+	/** configure new tab for card or cta */
+	public void selectNewTabFromDropDown() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().get_First_Card_Link_Target()));
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().get_First_Card_Link_Target())), 10);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().get_First_Card_New_Tab())), 10);
 	}
 	
+	/** verify clicking on card will open in new tab */
+	public void verifyCardOpensInNewTab() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductImage())), 40);
+		String url = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getProductImage()), "href");
+		configuration.setProperty("urlLink", url);
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Link_Preview()), 2);	
+		//$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMFooterLocatorPage().get_Legal_Preview())), 10);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getProductImage())));
+		testContext.getPageObjectManager().getPageObject(driver).switchOnChildWindow();
+		String expectedUrl = (java.lang.String)configuration.getProperty("urlLink");
+		Log.message("Expected Url:- " + expectedUrl, true);
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals(expectedUrl, actualUrl);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
+    	testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+	}
+	
+	/** verify clicking on cta will open in new tab */
+	public void verifyCTAOpensInNewTab() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFirst())), 40);
+		//String expectedUrl = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFirst()), "href");
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFirst())));
+		testContext.getPageObjectManager().getPageObject(driver).switchOnChildWindow();
+		String actualUrl = PageObject.getDriver().getCurrentUrl();
+		Log.message("Actual Url:- " + actualUrl, true);
+		Assert.assertEquals("https://www.google.com/", actualUrl);
+	}
+
 	/** enter Product code detail */
 	public void enterProductCodeDetail() throws Exception {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getproductCode()));

@@ -492,4 +492,5 @@ public class AEM_Link_Existing_Card_Page extends PageObject {
 		String expected = (FileReaderManager.getInstance().getAEMDataReader().get_CTC_URL() + FileReaderManager.getInstance().getAEMDataReader().get_Error_Image_Already_Linked_Change());
 		Assert.assertEquals(expected, actual);
 	}
+	
 }

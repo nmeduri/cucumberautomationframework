@@ -4961,11 +4961,7 @@ public class AEMDataReader {
 	}
 
 	/**
-<<<<<<< HEAD
-	 * gets AEm Url
-=======
 	 * gets slim banner URL
->>>>>>> 6f68bc3333cb1b24aad28ce2524c2ee71f867f21
 	 * 
 	 */
 	public String get_slim_banner_URL() {
@@ -5236,4 +5232,17 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+	/**
+	 * gets information banner AEM url
+	 * 
+	 */
+	
+	public String get_Information_Banner_AEM_URL() {
+		String getUrl = Property.getProperty(Constant.AEM_DATA_FILE, "informationBannerUrlAEM");
+		if(getUrl != null)
+			return getUrl;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+
 }

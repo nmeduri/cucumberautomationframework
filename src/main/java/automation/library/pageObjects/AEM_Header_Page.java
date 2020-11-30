@@ -238,4 +238,19 @@ public class AEM_Header_Page extends PageObject {
 		System.out.println(actual);
 		Assert.assertEquals(expected,actual);
 	}
+	
+	/** This function navigate to information banner */
+	public void navigateToInformationBanner() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Information_Banner_AEM_URL());
+	}
+	
+	/** This function click on information banner component*/
+	public void clickOnInformationBanner() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMHeaderPageLocator().get_Information_Banner_Component())),40);
+	}
+	
+	/** do not Enter data to Information Text */
+	public void doNotEnterdataInformationText() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMHeaderLocatorPage().get_Information_Text())),5);
+	}
 }

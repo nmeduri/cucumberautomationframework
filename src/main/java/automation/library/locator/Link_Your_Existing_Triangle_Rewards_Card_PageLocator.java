@@ -39,6 +39,9 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String activeValidationCancel = Property.getProperty(Constant.OR_FILE, "activeValidationCancel");
 	String defaultErrorImage = Property.getProperty(Constant.OR_FILE, "defaultErrorImage");
 	String defaultErrorContent = Property.getProperty(Constant.OR_FILE, "defaultErrorContent");
+	String postalCodeInlineError = Property.getProperty(Constant.OR_FILE, "postalCodeInlineError");
+	String yobInlineError = Property.getProperty(Constant.OR_FILE, "yobInlineError");
+	String incorrectPostalCodeInlineError = Property.getProperty(Constant.OR_FILE, "incorrectPostalCodeInlineError");
 	
 	
 	/**
@@ -281,6 +284,30 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	 */
 	public String get_Default_Error_Text() {
 		return defaultErrorContent;
+	}
+	
+	/**
+	 * gets Locator - Postal code Inline Error
+	 * 
+	 */
+	public String get_Mandatory_Postal_Code_Inline_Error() {
+		return postalCodeInlineError;
+	}
+	
+	/**
+	 * gets Locator - YOB Inline Error
+	 * 
+	 */
+	public String get_Mandatory_YOB_Inline_Error() {
+		return yobInlineError;
+	}
+	
+	/**
+	 * gets Locator - Postal code Incorrect Error
+	 * 
+	 */
+	public String get_Incorrect_Postal_Code_Inline_Error() {
+		return incorrectPostalCodeInlineError;
 	}
  }
 

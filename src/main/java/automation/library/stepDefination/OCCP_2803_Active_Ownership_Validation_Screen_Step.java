@@ -58,12 +58,12 @@ public class OCCP_2803_Active_Ownership_Validation_Screen_Step extends BaseClass
 	
 	@And("postal code property should be present")
 	public void postal_code_should_be_displayed() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayActiveValidationSubHeaderText();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayPostalCodeField();
 	}
 	
 	@And("year of birth property should be present")
 	public void year_of_birth_should_be_displayed() throws Exception {
-		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayActiveValidationSubHeaderText();
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayActiveYearOfBirthField();
 	}
 	
 	@And("user should be able to enter pending activation loyalty card number")
@@ -227,5 +227,19 @@ public class OCCP_2803_Active_Ownership_Validation_Screen_Step extends BaseClass
 	public void verify_error_cancel_changes_should_be_reflected() throws Exception {
 		testContext.getPageObjectManager().getAEMLinkExistingCardPage(PageObject.getDriver()).verifyCancelChangesReflected();
 	}
+	
+	@And("validate the postal code does not enter more than 7 characters")
+	public void validate_postal_code_field_property() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).validatePostalCodeRestrictCharacters();
+	}
 
+	@Then("postal code and yob inline errors should be displayed")
+	public void inline_errors_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayInlineErrors();
+	}
+	
+	@Then("incorrect postal code inline error should be displayed")
+	public void incorrect_inline_error_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).displayIncorrectPostalCodeInlineError();
+	}
 }

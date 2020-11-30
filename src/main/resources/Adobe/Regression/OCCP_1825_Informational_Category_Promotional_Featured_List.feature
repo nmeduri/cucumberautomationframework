@@ -28,7 +28,7 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	Then user should still be able to see the last page with four cards
 	
 	#@RegressionTest @WebView @WideScreen @TC-1815
-	Scenario: TC-1815 Verify the pagination on the featured list component on Widescreen
+	Scenario: TC-1815, TC-1845 Verify the pagination on the featured list component on Widescreen
 	When fl page  is available for more than four products
 	Then user should be able to see featured list component on the page
 	And click on right chevron
@@ -192,5 +192,11 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	Then user should still be able to see the last page with four cards
 	
 
-
+	@RegressionTest @MobileView @1842
+	Scenario: TC-1842 Featured list view
+	When navigate to featured list page
+	Then user should be able to see featured list component on the page
+	And user should be able to see one and half cards displayed in the carousel view by default
+	
+	
 	

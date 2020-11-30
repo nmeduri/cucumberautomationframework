@@ -17,7 +17,7 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	String cityRewards = Property.getProperty(Constant.OR_FILE, "cityRewards");
 	String postalCodeRewards = Property.getProperty(Constant.OR_FILE, "postalCodeRewards");
 	String phoneNumberRewards = Property.getProperty(Constant.OR_FILE, "phoneNumberRewards");
-	String yearOfBirth = Property.getProperty(Constant.OR_FILE, "yearOfBirth");
+	String yearOfBirth = Property.getProperty(Constant.OR_FILE, "yearOfBirth").replace("=", ",");
 	String yearOfBirthValue = Property.getProperty(Constant.OR_FILE, "yearOfBirthValue");
 	String province = Property.getProperty(Constant.OR_FILE, "province");
 	String provinceValue = Property.getProperty(Constant.OR_FILE, "provinceValue");
@@ -33,6 +33,7 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	String monthValue=Property.getProperty(Constant.OR_FILE, "monthValue");
 	String monthValueAfterCurrentdate=Property.getProperty(Constant.OR_FILE, "monthValueAfterCurrentdate");
 	String DOBValue=Property.getProperty(Constant.OR_FILE, "DOBValue");
+	String yearOfBirthCompleteYourProfile=Property.getProperty(Constant.OR_FILE, "yearOfBirthCompleteYourProfile");
 	
 	/**
 	 * gets Locator - Header Get A New Triangle Rewards Card Title
@@ -235,6 +236,15 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	
 	public String get_monthOfBirth_afterCurrentdate() throws Exception {
 		return monthValueAfterCurrentdate;
+	}
+	
+	/**
+	 * gets Locator - complete your profile Province Value
+	 * 
+	 */
+	
+	public String get_YOB_CYP() throws Exception {
+		return yearOfBirthCompleteYourProfile;
 	}
  }
 

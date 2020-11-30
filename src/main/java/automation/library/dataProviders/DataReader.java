@@ -1334,6 +1334,7 @@ public class DataReader {
 	}
 	
 	/**
+
 	 * gets PDP Product -Add to Cart URL FR
 	 * 
 	 */
@@ -1492,6 +1493,18 @@ public class DataReader {
 			throw new RuntimeException("Valid password Data not specified in the Data file.");
 	}
 	
+	/**
+	 * gets Account Email Data_3301
+	 * 
+	 */
+	public String get_Long_Postal_Code() {
+		String getCode = Property.getProperty(Constant.DATA_FILE, "LongPostalCode");
+		if(getCode != null) 
+			return getCode;
+		else
+			throw new RuntimeException("Valid password Data not specified in the Data file.");
+	}
+
 	/**
 	 * gets Minimum Price Data
 	 * 

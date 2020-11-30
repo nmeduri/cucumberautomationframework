@@ -26,6 +26,8 @@ public class AEM_Feature_List_Page_Locator {
 	 String descriptiveTitleFlAEM = Property.getProperty(Constant.OR_FILE, "descriptiveTitleFlAEM");
 	 String descriptiveTitleToolTip = Property.getProperty(Constant.OR_FILE, "descriptiveTitleToolTip");
 	 String titleToolTipFl = Property.getProperty(Constant.OR_FILE, "titleToolTipFl");
+	 String firstCardLinkTarget = Property.getProperty(Constant.OR_FILE, "firstCardLinkTarget");
+	 String firstCardNewTab = Property.getProperty(Constant.OR_FILE, "firstCardNewTab");
 	 String learnMoreaccessibility=Property.getProperty(Constant.OR_FILE, "learnMoreaccessibility");
 	 String ProductListComponent=Property.getProperty(Constant.OR_FILE, "ProductListComponent");
 	 String productCode=Property.getProperty(Constant.OR_FILE, "productCodeAEM");
@@ -33,7 +35,7 @@ public class AEM_Feature_List_Page_Locator {
 	 String ProductFetureDeleteAEM=Property.getProperty(Constant.OR_FILE, "ProductFetureDeleteAEM");
 	 String ErrorImage=Property.getProperty(Constant.OR_FILE, "ErrorImage");
 
-	 String featuredProductListPannel=Property.getProperty(Constant.OR_FILE, "featuredProductListPannel");
+	 String featuredProductListPannel=Property.getProperty(Constant.OR_FILE, "featuredProductListPannel").replace("=", ",");
 	 String titleOfFL=Property.getProperty(Constant.OR_FILE, "titleOfFL");
 	 String toolTipOfFLTitle=Property.getProperty(Constant.OR_FILE, "toolTipOfFLTitle");
 	 String toolTipMessageOfFLTitle=Property.getProperty(Constant.OR_FILE, "toolTipMessageOfFLTitle").replace("=", ",");
@@ -187,12 +189,30 @@ public class AEM_Feature_List_Page_Locator {
 	public String getTitleToolTipFl() {
 		return titleToolTipFl;
 	}
+	
+	/**
+	 * get Locator - First card link target field
+	 */
+	
+	public String get_First_Card_Link_Target() {
+		return firstCardLinkTarget;
+	}
+
 	/**
 	 * get Locator = Featured product List Panel
 	 */
 	public String getFeaturedProductListPanel() {
 		return featuredProductListPannel;
 	}
+	
+	/**
+	 * get Locator - First card new tab
+	 */
+	
+	public String get_First_Card_New_Tab() {
+		return firstCardNewTab;
+	}
+ 	
 	/**
 	 * get Locator - ProductListComponent
 	 */

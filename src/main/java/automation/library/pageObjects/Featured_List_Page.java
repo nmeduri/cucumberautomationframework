@@ -10,10 +10,14 @@ import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.internal.TouchAction;
+import org.openqa.selenium.interactions.touch.TouchActions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -342,6 +346,18 @@ public class Featured_List_Page extends PageObject {
 	public void verifyDisplayOfKeyLineForAllTheImages() throws Exception {
 		$listDisplay(Loc.XPATH,testContext.getPageObjectManager().getFeatureListPageLocator().getKeyLineOfImages());
 	}
+	
+	/** verify one and half card is displayed by default in carousel view */
+	public void verifyOneAndHalfCardIsDisplayed() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getFeatureListPageLocator().getActiveSetOfProducts()));	
+		Assert.assertEquals(li.size(), 1);
+	}
+	
+	/** verify pagination dots display in mobile */
+	public void displayPaginationDots() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().get_Pagination_Dots())), 5);
+	}
+	
 	/** This function navigate to Featured Products List Page */
 	public void navigateTo_Featured_List_Product_List_Page() throws Exception {
 

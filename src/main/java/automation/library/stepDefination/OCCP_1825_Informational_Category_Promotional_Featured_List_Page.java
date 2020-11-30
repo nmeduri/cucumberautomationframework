@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Random;
 
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.api.endpoint.HYB_API_EN_CA_End_Point;
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
+import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
 import automation.library.selenium.base.BaseClass;
@@ -291,4 +293,26 @@ public class OCCP_1825_Informational_Category_Promotional_Featured_List_Page ext
 	public void configured_component_is_displayed_on_page() throws Exception {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfiguredDescriptivTitleOnPage();
 	}
+	
+	@And("verify user can configure whether clicking on card or cta will open a new tab or same tab")
+	public void configure_card_or_cta_will_open_in_new_tab_or_same_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).selectNewTabFromDropDown();
+	}
+	
+	@Then("verify if fl card opens in new tab or same tab as authored")
+	public void fl_card_pens_in_new_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyCardOpensInNewTab();
+	}
+	
+	@Then("verify if fl cta opens in new tab or same tab as authored")
+	public void fl_cta_opens_in_new_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyCTAOpensInNewTab();
+	}
+	
+	@And("user should be able to see one and half cards displayed in the carousel view by default")
+	public void user_should_be_able_to_see_one_and_half_card_in_the_carousel_view_by_default() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyOneAndHalfCardIsDisplayed();
+	}
+	
+	
 }

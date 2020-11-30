@@ -34,8 +34,10 @@ public class Feature_List_Page_Locator {
 	 String imageFeatureList = Property.getProperty(Constant.OR_FILE, "imageFeatureList");
 	 String descriptiveMessagefl = Property.getProperty(Constant.OR_FILE, "descriptiveMessagefl");
 	 String descriptiveTitleFl = Property.getProperty(Constant.OR_FILE, "descriptiveTitleFl");
-
 	 String keyLineOfAllImages = Property.getProperty(Constant.OR_FILE, "keyLineOfAllImages");
+	 String paginationDots = Property.getProperty(Constant.OR_FILE, "paginationDots");
+	 String activePanel = Property.getProperty(Constant.OR_FILE, "activePanel");
+	
 	 String productFeatureList = Property.getProperty(Constant.OR_FILE, "productFeatureList");
 	 String productCardFeaturedList = Property.getProperty(Constant.OR_FILE, "productCardFeaturedList");
 	 String productCardMobile = Property.getProperty(Constant.OR_FILE, "productCardMobile");
@@ -202,6 +204,22 @@ public class Feature_List_Page_Locator {
 	  */
 	 public String getKeyLineOfImages() {
 		 return keyLineOfAllImages;
+	 }
+	 
+	 /**
+	  * get Locator - pagination dots
+	  */
+	 
+	 public String get_Pagination_Dots() {
+		 return paginationDots;
+	 }
+	 
+	 /**
+	  * get Locator - active panel
+	  */
+	 
+	 public String get_Active_Panel() {
+		 return activePanel;
 	 }
 	 
 	 /**

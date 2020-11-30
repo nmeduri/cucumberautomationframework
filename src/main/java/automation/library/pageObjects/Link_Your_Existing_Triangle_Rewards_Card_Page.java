@@ -304,4 +304,23 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number())), 5, FileReaderManager.getInstance().getDataReader().get_Active_Ownership_Card_Number());
 	}
 	
+	/** This function verify not more than 7 characters are present */
+	public void validatePostalCodeRestrictCharacters() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Postal_Code_Rewards())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Postal_Code_Rewards())), 5, FileReaderManager.getInstance().getDataReader().get_Long_Postal_Code()); 
+		Assert.assertNotEquals(FileReaderManager.getInstance().getDataReader().get_Long_Postal_Code(), $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Postal_Code_Rewards()), "value").replaceAll(" ", ""));
+		Assert.assertTrue("restricted to 7 characters", (($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Postal_Code_Rewards()), "value").replaceAll(" ", "")).length() <=7));
+	}
+	
+	/** This function verify if AEM Input field is present */
+	public void displayInlineErrors() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Mandatory_Postal_Code_Inline_Error()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Mandatory_YOB_Inline_Error()));
+	}
+	
+	/** This function verify if AEM Input field is present */
+	public void displayIncorrectPostalCodeInlineError() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Incorrect_Postal_Code_Inline_Error()));
+	}
+	
 }

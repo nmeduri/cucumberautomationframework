@@ -83,7 +83,7 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	public void enterDataProvince() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Address_Rewards())), 15);
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())), 30);
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())), 15);
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province_Value())), 15);
 	}
@@ -106,8 +106,8 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enter year of birth */
 	public void enterYearOfBirth() throws Exception {
-		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 15);
-		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 15);
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_YOB_CYP())), 15);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_YOB_CYP())), 15);
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value())), 15);
 	
 	}

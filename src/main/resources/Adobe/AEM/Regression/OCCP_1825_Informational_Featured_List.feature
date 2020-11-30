@@ -209,9 +209,22 @@ Feature: OCCP-1825 Featured List: Informational Featured Lists with Icons (Autho
 	And revert fl title detail
 	And user click on done button
 	
-	
-	
-	
+	@AEM @TC1841
+	Scenario: TC-1841 Business User configures that on clicking FL -user is navigated to new tab/same page
+	Given open browser
+	When AEM author with access to configure feature list authorable page
+	And login to AEM using the credential as mentioned in the test data
+	And click on edit icon on header
+	And click on feature list panel
+	And click on aem configure button
+	And verify user can configure whether clicking on card or cta will open a new tab or same tab
+	And user click on check button
+	And click on the publish button
+	And navigate to feature list page
+	Then verify if fl card opens in new tab or same tab as authored
+	And switch on parent frame
+	Then verify if fl cta opens in new tab or same tab as authored
+	And switch on parent frame
 
 	
 	
