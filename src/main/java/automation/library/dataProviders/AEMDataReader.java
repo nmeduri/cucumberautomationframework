@@ -5231,9 +5231,37 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * 
+	 *  Read Data from AEM D2 file
+	 */
+	
+	public String get_descriptionAccoridon() {
+		String shippingl = Property.getProperty(Constant.AEM_DATA_FILE, "descriptionAcordion");
+		if(shippingl != null)
+			return shippingl;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	
 	/**
-	 * gets information banner AEM url
+
+	 * get description revert in author instance
+	 * 
+	 */
+	
+	public String get_descriptionAccoridonRevert() {
+		String shippingl = Property.getProperty(Constant.AEM_DATA_FILE, "descriptionAcordionrevert");
+		if(shippingl != null)
+			return shippingl;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+
+	
+	/**
+
+	 * gets locator driver
 	 * 
 	 */
 	
@@ -5244,5 +5272,6 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+
 
 }

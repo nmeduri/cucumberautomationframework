@@ -24,6 +24,9 @@ public class Customer_Service_Page_Locator {
 	String accordionSubtitle1=Property.getProperty(Constant.OR_FILE, "accordionSubtitle1");
 	String accordionSubtitle2=Property.getProperty(Constant.OR_FILE, "accordionSubtitle2");
 	String accordionDescription=Property.getProperty(Constant.OR_FILE, "accordionDescription");
+	String clickwrench=Property.getProperty(Constant.OR_FILE, "configuredescription");
+	String updateDescription=Property.getProperty(Constant.OR_FILE, "updateDescription");
+	String assertDescriptionPublish=Property.getProperty(Constant.OR_FILE, "assertDescriptionPublish");
 	
 	/**
 	 * gets Locator - Title Of Customer Service Page
@@ -116,5 +119,29 @@ public class Customer_Service_Page_Locator {
 	
 	public String get_accordionDescription() {
 		return accordionDescription;
+	}
+	
+	/**
+	 * gets Locator - click on edit configuraton
+	 * 
+	 */
+	public String get_clickWrenchIcon() {
+		return clickwrench;
+	}
+	
+	/**
+	 * gets Locator - click on edit Description
+	 * 
+	 */
+	public String get_updateDescription() {
+		return updateDescription;
+	}
+	
+	/**
+	 * gets Locator - assertDes
+	 * 
+	 */
+	public String get_assertDescription() {
+		return assertDescriptionPublish;
 	}
 }

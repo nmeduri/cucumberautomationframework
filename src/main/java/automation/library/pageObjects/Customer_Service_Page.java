@@ -14,6 +14,7 @@ import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
 import automation.library.selenium.core.PageObject;
+import groovyjarjarantlr4.v4.runtime.tree.xpath.XPath;
 
 /**
  * This file contains the functions of Customer Service Page
@@ -140,5 +141,30 @@ public class Customer_Service_Page extends PageObject{
 		}	
 	}
 	
+	/** This function click on wrench section */
+	public void clickWrenchToEdit() throws Exception{
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_clickWrenchIcon()));
+	}
 	
+	/** This function click on wrench section */
+	public void updateDescription() throws Exception{
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_updateDescription()));
+	    $enterData($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_updateDescription()),FileReaderManager.getInstance().getAEMDataReader().get_descriptionAccoridon());
+	}
+	
+	/** This function click on wrench section */
+	public void revertDescription() throws Exception{
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_updateDescription()));
+	    $enterData($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_updateDescription()),FileReaderManager.getInstance().getAEMDataReader().get_descriptionAccoridonRevert());
+	}
+	
+	/** verify last name update on screen */
+
+    public void assertDescriptiononPublish() throws Exception {
+
+        String expectedResult = $getText($(Loc.XPATH, testContext.getPageObjectManager().getCustomerServicePageLocator().get_assertDescription()));
+
+        Assert.assertEquals(expectedResult, FileReaderManager.getInstance().getAEMDataReader().get_descriptionAccoridon());
+
+    }
 }
