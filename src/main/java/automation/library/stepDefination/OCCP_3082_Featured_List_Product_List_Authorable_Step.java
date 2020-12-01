@@ -201,4 +201,11 @@ public class OCCP_3082_Featured_List_Product_List_Authorable_Step extends BaseCl
 	public void user_enter_product_code_in_FL() throws Exception {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterTitleInFL();
 	}
+	
+
+	@And ("verify when the author configure for FL")
+	public void verify_when_the_author_configure_for_FL() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfigurePage();
+	}
+
 }

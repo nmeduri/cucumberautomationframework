@@ -56,8 +56,8 @@ public class AEM_Feature_List_Page_Locator {
 	 String titlefrenchlanguage =Property.getProperty(Constant.OR_FILE, "titlefrenchlanguage");
 	 String secondprodcode =Property.getProperty(Constant.OR_FILE, "secondprodcode");
 	 String clearTitle =Property.getProperty(Constant.OR_FILE, "clearTitle");
+	 String titleverification =Property.getProperty(Constant.OR_FILE, "titleverification");
 	 
-	
 	 /**
 	  * get Locator = Feature List Panel
 	  */
@@ -361,5 +361,11 @@ public class AEM_Feature_List_Page_Locator {
 	 */
 	public String getProductCode() {
 		return clearProductCode;
+	}
+	/**
+	 * get Title - ProductCode 
+	 */
+	public String getTitleVerification() {
+		return titleverification;
 	}
 }
