@@ -54,9 +54,9 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	Then cancel button is displayed
 	#And verify clicks on continue button
 	#Then rewards terms and conditions should be displayed
-	
+
 	@RegressionTest @WebView @WideScreen
-  Scenario: TC-2130, TC-2142 T&C and Link Success screen
+   Scenario: TC-2130, TC-2142 T&C and Link Success screen
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email 

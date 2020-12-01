@@ -901,7 +901,7 @@ public class PLP_Page extends PageObject {
 	public void enterMinimumPriceFacetValue() throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Minimum_Price()), FileReaderManager.getInstance().getDataReader().get_Minimum_Price_Data());
 	}
-	
+
 	/** verify that user is able to enter maximum price */
 	public void enterMaximumPriceFacetValue() throws Exception {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Maximum_Price()), FileReaderManager.getInstance().getDataReader().get_Maximum_Price_Data());
@@ -958,5 +958,52 @@ public class PLP_Page extends PageObject {
 	/** error message is displayed when Minimum price is more than maximum, */
 	public void displayErrorMessageMinimumPriceMoreThanMaximum() throws Exception {
 		$display(($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().get_Error_Message_Min_Price_More_Than_Max())));
+	}
+	
+	/** enter minimum price in the range */
+	public void enterMinimumPriceInTheRange() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Minimum_Price()), FileReaderManager.getInstance().getDataReader().get_Minimum_Price_In_Range());
+		$findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Maximum_Price())).sendKeys(Keys.TAB);
+	}
+	
+	/** verify pill is added above the range and more */
+	public void verifyAddedAboveRangeAndMore() throws Exception {
+		String actualResutls = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		String expectedResults = "$" + FileReaderManager.getInstance().getDataReader().get_Minimum_Price_In_Range() + "+";
+		Log.message("Actual Results :- " + actualResutls, true);
+		Log.message("Expected Results :- " + expectedResults, true);
+		Assert.assertEquals(expectedResults, actualResutls);
+	}
+	
+	/** enter minimum price in the below range */
+	public void enterMinimumPriceInTheBelowRange() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Minimum_Price()), FileReaderManager.getInstance().getDataReader().get_Minimum_Price_Below_Range());
+		$findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Maximum_Price())).sendKeys(Keys.TAB);
+	}
+	
+	/** enter maximum price in below range */
+	public void enterMaximumPriceInBelowRange() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Maximum_Price()), FileReaderManager.getInstance().getDataReader().get_Maximum_Price_Below_Range());
+		$findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Maximum_Price())).sendKeys(Keys.TAB);
+	}
+	
+	/** verify the result as '0-123''*/
+	public void verifyTheResultAs0Between123() throws Exception {
+		String actualResutls = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		String expectedResults = "$" + FileReaderManager.getInstance().getDataReader().get_Minimum_Price_Below_Range() + "-" + "$" + FileReaderManager.getInstance().getDataReader().get_Maximum_Price_Below_Range();
+		Log.message("Actual Results :- " + actualResutls, true);
+		Log.message("Expected Results :- " + expectedResults, true);
+		Assert.assertEquals(expectedResults, actualResutls);
+	}
+	
+	/** verify facet value is displayed through rating stars */
+	public void verifyFacetValueDisplayedThroughRatingStars() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Stars_Value()));
+		String[] ratingValue = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Stars_Value())).split(" ");
+		List<WebElement> ratingIcon = PageObject.getDriver().findElements((By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Rating_Stars_Icon())));
+		int ratingIconSize = ratingIcon.size();
+		Log.message("ratingValue[0] " + ratingValue[0], true);
+		Log.message("ratingIconSize " + ratingIconSize, true);
+		Assert.assertEquals(Integer.parseInt(ratingValue[0]), ratingIconSize);
 	}
 }	

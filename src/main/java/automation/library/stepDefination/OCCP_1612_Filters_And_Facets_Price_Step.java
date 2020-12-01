@@ -82,5 +82,26 @@ public class OCCP_1612_Filters_And_Facets_Price_Step extends BaseClass {
 	public void error_is_displayed_when_enter_minimum_price_more_than_maximukm() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displayErrorMessageMinimumPriceMoreThanMaximum();
 	}
+	
+	@And("enter only minimum price in the range")
+	public void enter_only_minimum_price_tn_the_range() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).enterMinimumPriceInTheRange();
+	}
+	
+	@Then("pill is added above the range and more result")
+	public void pill_is_added_above_the_range_and_more_result() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyAddedAboveRangeAndMore();
+	}
+	
+	@And("enter only maximum price in the range")
+	public void enter_only_maximum_price_in_the_range() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).enterMinimumPriceInTheBelowRange();
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).enterMaximumPriceInBelowRange();
+	}
+	
+	@Then("pill is added the range as '0-123'")
+	public void pill_is_added_the_range_as_0_123() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyTheResultAs0Between123();
+	}
 }
 

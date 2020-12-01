@@ -52,5 +52,15 @@ public class OCCP_1614_Filters_And_Facets_Ratings_Step extends BaseClass {
 	public void ratings_pill_are_removed_from_the_top() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyRatingPillsRemoved();
 	}
+	
+	@Then("facet value must be displayed through star icons")
+	public void facet_value_must_be_displayed_through_star_icons() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyFacetValueDisplayedThroughRatingStars();
+	}
+	
+	@Then("rating value can be clicked to collpased using plus icon")
+	public void rating_value_can_be_clicked_to_collpased_using_plus_icon() throws Exception {
+		
+	}
 }
 

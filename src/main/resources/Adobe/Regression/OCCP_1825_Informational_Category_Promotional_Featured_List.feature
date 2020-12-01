@@ -10,6 +10,7 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	
 	@RegressionTest @WebView @WideScreen @TC-1813
 	Scenario: TC-1813 Verify the chevron and carousel when the featured list has more than 4 tiles on Widescreen
+	Given open browser
 	When fl page  is available for more than four products
 	Then user should be able to see featured list component on the page
 	And verify the display of chevron when there are more than 4 product on left and right side
@@ -27,6 +28,7 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	Then verify the max number of dots on the component
 	Then user should still be able to see the last page with four cards
 	
+
 	#@RegressionTest @WebView @WideScreen @TC-1815
 	Scenario: TC-1815, TC-1845 Verify the pagination on the featured list component on Widescreen
 	When fl page  is available for more than four products
@@ -155,16 +157,6 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	And user should be able to see four products in the carousel view by default
 	Then user should not be able to see pagination dots when there are only four tiles available
 	Then user should not be able to see chevron when there are only four tiles available
-	
-	@RegressionTest @WebView @WideScreen @TC-1819
-	Scenario: TC-1819 Verfiy the display of details on the Featured list page
-	When navigate to featured list page
-	Then user should be able to see featured list component on the page
-	Then verify the display of featured list title
-	Then verify the display of card and related image
-	Then verify the display of title on the card
-	Then verify the display of description on the card
-	Then verify the display of learn more on product card
 	
 	@RegressionTest @WebView @TC-1820
 	Scenario: TC-1820 Verfiy the display of default list of products in the carousel view on the Featured list page

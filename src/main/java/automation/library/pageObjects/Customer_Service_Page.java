@@ -77,7 +77,7 @@ public class Customer_Service_Page extends PageObject{
 		Log.message("Actual Url:- " + actualUrl, true);
 		Assert.assertEquals(expectedUrl, actualUrl);
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
-		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 	}
 	/** This function is verify that Customer Service Accordions are displayed*/
 	public void display_Accordions_Customer_Service_Page() throws Exception {

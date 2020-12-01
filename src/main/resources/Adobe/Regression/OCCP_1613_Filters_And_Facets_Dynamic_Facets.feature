@@ -29,7 +29,7 @@ Feature: OCCP-1613 Filters and Facets : Delivery & Pick up Option
     And verify the brand facet can be clicked to expand using plus icon
     Then product results are refreshed
     
-    @RegressionTest @WebView @WideScreen @TC-204
+    @RegressionTest @MobileView @TabletView @TC-204
     Scenario: TC-204 Verify the Brand facet is properly displayed on a PLP on mobile 
     When plp url is available
     When plp is displayed

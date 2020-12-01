@@ -100,7 +100,9 @@ public class PLP_PageLocator {
 	String viewButton = Property.getProperty(Constant.OR_FILE, "viewButton").replace("=", ",");
 	String priceItemTextCheckbox = Property.getProperty(Constant.OR_FILE, "priceItemTextCheckbox");
 	String errorMessageMinimumPriceMoreThanMaximum = Property.getProperty(Constant.OR_FILE, "errorMessageMinimumPriceMoreThanMaximum");
-			
+	String ratingStarsValue = Property.getProperty(Constant.OR_FILE, "ratingStarsValue");
+	String ratingStarsIcon = Property.getProperty(Constant.OR_FILE, "ratingStarsIcon");
+	
 	/**
 	 * gets Locator - List View
 	 * 
@@ -797,5 +799,19 @@ public class PLP_PageLocator {
 	 */
 	public String get_Error_Message_Min_Price_More_Than_Max() {
 		return errorMessageMinimumPriceMoreThanMaximum;
+	}
+	
+	/**
+	 * gets Rating Stars - Value
+	 */
+	public String get_Rating_Stars_Value() {
+		return ratingStarsValue;
+	}
+	
+	/**
+	 * gets Rating Stars Icon
+	 */
+	public String get_Rating_Stars_Icon() {
+		return ratingStarsIcon;
 	}
  }

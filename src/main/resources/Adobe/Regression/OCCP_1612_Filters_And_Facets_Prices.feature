@@ -4,7 +4,6 @@ Feature: OCCP-1612 Filters and Facets : Delivery & Pick up Option
 	
 	@RegressionTest @WebView @WideScreen @TC-185
     Scenario: TC-185 Verify the Price facet is properly displayed on a PLP on Web/Wide Screen
-    Given open browser
     When plp url is available
     And click on more filters
     Then the user views the price facet as generic facet on the panel
@@ -14,10 +13,9 @@ Feature: OCCP-1612 Filters and Facets : Delivery & Pick up Option
     Then product result refreshed abiding to the price range entered and preselected the other filter option
     And click on close on facet option
     Then the number of price matching product result is displayed
-    
-    @RegressionTest @WebView @WideScreen @TC-187
+   
+    @RegressionTest @MobileView @TabletView @TC-187
     Scenario: TC-187 Verify the Price facet is properly displayed on a PLP on Mobile
-    Given open browser
     When plp url is available
     And click on sort and filters
     Then the user views the price facet as generic facet on the panel
@@ -30,7 +28,6 @@ Feature: OCCP-1612 Filters and Facets : Delivery & Pick up Option
     
     @RegressionTest @WebView @WideScreen @TC-189
     Scenario: Verify the selected price range is added as a pill on the top the grid/list on a PLP page
-    Given open browser
     When plp url is available
     And click on more filters
     Then the user views the price facet as generic facet on the panel
@@ -46,7 +43,6 @@ Feature: OCCP-1612 Filters and Facets : Delivery & Pick up Option
     
     @RegressionTest @WebView @WideScreen @TC-191
     Scenario: TC-191 Verify an error message is displayed on a PLP when user enters a max price less than the min price
-    Given open browser
     When plp url is available
     And click on more filters
     Then the user views the price facet as generic facet on the panel
@@ -55,6 +51,29 @@ Feature: OCCP-1612 Filters and Facets : Delivery & Pick up Option
     Then user is able to enter maximum price
     Then error is displayed when enter minimum price more than maximum
     
+    @RegressionTest @WebView @WideScreen @TC-193
+    Scenario: TC-193 Verify the functionality of All values above on a PLP
+    When plp url is available
+    And click on more filters
+    Then the user views the price facet as generic facet on the panel
+    Then the price facet can be clicked to collapse and open using plus icon
+    And enter only minimum price in the range
+    And click on close on facet option
+    Then pill is added above the range and more result
+    And user clicks on list view button
+    Then pill is added above the range and more result
+    
+    @RegressionTest @WebView @WideScreen @TC-195
+    Scenario: TC-195 Verify the functionality of 'All values below' on a PLP
+    When plp url is available
+    And click on more filters
+    Then the user views the price facet as generic facet on the panel
+    Then the price facet can be clicked to collapse and open using plus icon
+    And enter only maximum price in the range
+    And click on close on facet option
+    Then pill is added the range as '0-123'
+    And user clicks on list view button
+    Then pill is added the range as '0-123'
     
     
     

@@ -327,10 +327,11 @@ public class Featured_List_Page extends PageObject {
 		for(int i=4; i<8; i++) {
 			@SuppressWarnings("unchecked")
 			ArrayList<String> getDataAnalytics =  (ArrayList<String>) configuration.getProperty("datAnalytics"+i);
-			Log.message("Get Data Analytics:- " + getDataAnalytics.get(2).trim(), true);
-			String getAnalyticsDetail = $findElement(By.xpath("//*[contains(@data-analytics,'"+getDataAnalytics.get(3).trim()+"' )]")).getAttribute("data-analytics");
+			Log.message("Get Data Analytics:- " + getDataAnalytics.get(3).trim(), true);
+			String getAnalyticsDetail = $findElement(By.xpath("//*[contains(@data-analytics,'"+getDataAnalytics.get(1).trim()+"' )]")).getAttribute("data-analytics");
 			Log.message("Get Data Analytics Second:- " + getAnalyticsDetail, true);
-			String getClass = $findElement(By.xpath("//div[@class='nl-card--type2 slick-slide slick-active' and @data-analytics = '"+getAnalyticsDetail+"']")).getAttribute("class");
+			
+			String getClass = $findElement(By.xpath("//div[@class='nl-card--type2 slick-slide slick-active' and @data-analytics='"+getAnalyticsDetail+"']")).getAttribute("class");
 			Log.message("class:- " + getClass, true);
 			Assert.assertTrue(getClass.contains("active"));
 		}

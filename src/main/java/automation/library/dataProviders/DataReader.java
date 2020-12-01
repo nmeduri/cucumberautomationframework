@@ -1494,6 +1494,8 @@ public class DataReader {
 	}
 	
 	/**
+<<<<<<< HEAD
+=======
 	 * gets Account Email Data_3301
 	 * 
 	 */
@@ -1506,6 +1508,7 @@ public class DataReader {
 	}
 
 	/**
+>>>>>>> 18dac1a96cb421c4412b1e840f21b9139abce20c
 	 * gets Minimum Price Data
 	 * 
 	 */
@@ -1534,6 +1537,42 @@ public class DataReader {
 	 */
 	public String get_Minimum_Price_More_Than_Maximum() {
 		String data = Property.getProperty(Constant.DATA_FILE, "minimumPriceMoreThanMax");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Minimum Price Data (Above Condition)
+	 * 
+	 */
+	public String get_Minimum_Price_In_Range() {
+		String data = Property.getProperty(Constant.DATA_FILE, "minimumPriceInRange");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Minimum Price Data (Below Range)
+	 * 
+	 */
+	public String get_Minimum_Price_Below_Range() {
+		String data = Property.getProperty(Constant.DATA_FILE, "minimumPriceBelowRange");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Maximum Price Data (Below Range)
+	 * 
+	 */
+	public String get_Maximum_Price_Below_Range() {
+		String data = Property.getProperty(Constant.DATA_FILE, "maximiumPriceBelowRange");
 		if(data != null) 
 			return data;
 		else
