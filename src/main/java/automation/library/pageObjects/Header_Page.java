@@ -410,5 +410,25 @@ public class Header_Page extends PageObject {
 		String actual= $getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Account())),10);
 		Assert.assertEquals(expected,actual);
 	}
+	
+	/** This function is verify that Information Banner is displayed */
+	public void displayInformationBanner() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBanner()));
+	}
+	
+	/** This function is verify that Information Banner is displayed */
+	public void displayInformationBannerText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBannerText()));
+	}
 
+	/** This function display  Background in Information Banner*/
+	public void displayInformationBannerBackgroundColor() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBanner()), "color");
+		Assert.assertTrue(value.contains("rgba(38, 38, 38, 1)"));
+	}
+	
+	public void displayInformationBannerHyperlink() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBannerLink()));
+	}
+	
 }

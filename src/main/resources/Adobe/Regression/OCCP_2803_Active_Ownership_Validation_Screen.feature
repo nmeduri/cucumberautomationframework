@@ -19,9 +19,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-2803
 	And continue cta should be displayed
 	And ability to go back cancel link should  be displayed
 	
-	@RegressionTest @WideScreen 
+	@RegressionTest @WideScreen @TabletView
 	Scenario: TC-2510,TC-2511 Entering loyalty data: Field level validations
-	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data

@@ -37,7 +37,7 @@ public class Header_Page_Locator {
 	String bannerLogoMobile = Property.getProperty(Constant.OR_FILE, "bannerLogoMobile");
 	String pencilBanner = Property.getProperty(Constant.OR_FILE, "pencilBanner");
 	String closeSearchPage = Property.getProperty(Constant.OR_FILE, "closeSearchPage");
-	String InformationBannerText = Property.getProperty(Constant.OR_FILE, "InformationBannerText");
+	String InformationBannerText = Property.getProperty(Constant.OR_FILE, "InformationBannerText").replace("=", ",");
 	String InformationBannerLink = Property.getProperty(Constant.OR_FILE, "InformationBannerLink");
 	String SearchResult=Property.getProperty(Constant.OR_FILE, "SearchResult");
 	String InformationBanner=Property.getProperty(Constant.OR_FILE, "InformationBanner");

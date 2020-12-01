@@ -295,7 +295,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function verify that Year of birth is displayed */
 	public void displayActiveYearOfBirthField() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_YOB_CYP()));
 		//$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 5);
 	}
 	

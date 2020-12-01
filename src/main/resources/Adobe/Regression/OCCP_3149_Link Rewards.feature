@@ -55,8 +55,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	#And verify clicks on continue button
 	#Then rewards terms and conditions should be displayed
 	
-	@RegressionTest @WebView 
-  Scenario: TC-2130 T&C and Link Success screen
+	@RegressionTest @WebView @WideScreen
+  Scenario: TC-2130, TC-2142 T&C and Link Success screen
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email 
@@ -84,8 +84,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	Then user should taken to success screen
 	And switch on parent frame
 	
-	@RegressionTest @WebView 
-	Scenario: TC-2129 Entering/Editing the loyalty data: Field level validations
+	@RegressionTest @WebView @WideScreen 
+	Scenario: TC-2129, TC-2141 Entering/Editing the loyalty data: Field level validations
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email 
@@ -107,3 +107,4 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	Then user should redirect to the get a new triangle rewards card screen 
 	And verify clicks on continue button
 	Then user should be able to see an inline error message below the field
+	And switch on parent frame
