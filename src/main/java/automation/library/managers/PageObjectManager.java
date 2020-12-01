@@ -61,6 +61,7 @@ import automation.library.locator.Privacy_Charter_Page_Locator;
 import automation.library.locator.Registration_Email_Verification_Locator;
 import automation.library.locator.Reset_Your_Password_Page_Locator;
 import automation.library.locator.Rewards_Terms_Conditions_Page_Locator;
+import automation.library.locator.Standard_Masthead_Banner_Page_Locator;
 import automation.library.locator.Two_Featured_Tile_Component_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Account_Address_Page;
@@ -122,6 +123,7 @@ import automation.library.pageObjects.Reset_Password_Page;
 import automation.library.pageObjects.Rewards_Terms_Conditions_Page;
 import automation.library.pageObjects.SRP_Page;
 import automation.library.pageObjects.Sign_Up_Page;
+import automation.library.pageObjects.Standard_Masthead_Banner_Page;
 import automation.library.pageObjects.Two_Feature_Tile_Component_Page;
 import automation.library.pageObjects.Your_Email_Has_Been_Verified_Page;
 import automation.library.selenium.core.PageObject;
@@ -261,6 +263,8 @@ public class PageObjectManager {
 	private AEM_Slim_Banner_Page getAEMSlimBannerPage;
 	
 	private SRP_Page getSRPPage;
+	private Standard_Masthead_Banner_Page getStandardMastheadBannerPage;
+	private Standard_Masthead_Banner_Page_Locator getStandardMastheadBannerPageLocator;
 	
 	public PageObjectManager() {
 		
@@ -887,6 +891,16 @@ public class PageObjectManager {
 	/** Returns Instance of SRP Page */
 	public SRP_Page getSRPPage(WebDriver driver) {
 		return(getSRPPage == null) ? getSRPPage = new SRP_Page(driver) : getSRPPage;
+	}
+	
+	/** Returns Instance of Standard Masthead Banner Page */
+	public Standard_Masthead_Banner_Page getStandardMastheadBannerPage(WebDriver driver) {
+		return (getStandardMastheadBannerPage == null) ? getStandardMastheadBannerPage = new Standard_Masthead_Banner_Page(driver) : getStandardMastheadBannerPage;
+	}
+	
+	/** Returns Instance of Standard Masthead Banner Locator Page */
+	public Standard_Masthead_Banner_Page_Locator getStandardMastheadBannerPageLocator() {
+		return (getStandardMastheadBannerPageLocator == null) ? getStandardMastheadBannerPageLocator = new Standard_Masthead_Banner_Page_Locator() : getStandardMastheadBannerPageLocator;
 	}
 	
 }

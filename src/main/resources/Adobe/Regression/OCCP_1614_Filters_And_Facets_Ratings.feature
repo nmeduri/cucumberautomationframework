@@ -41,8 +41,7 @@ Feature: OCCP-1614 Filters and Facets : Delivery & Pick up Option
     Then the filter results is displayed at the grid list
     
      @RegressionTest @MobileView @TabletView @TC-180
-    Scenario: TC-180 Verify the Ratings facet is properly displayed on a PLP on Desktop/Desktop wide
-    Given open browser
+    Scenario: TC-180 Verify the Ratings facet is properly displayed on a PLP
     When plp url is available
     And click on sort and filters
     Then verify the rating facet is displayed

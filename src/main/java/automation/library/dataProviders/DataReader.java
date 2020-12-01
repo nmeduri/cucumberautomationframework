@@ -1578,5 +1578,29 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
+	 
+	 /**
+	  * gets Masthead Banner Url
+	  * 
+	  */
+		public String get_Masthead_Banner_Url() {
+			String data = Property.getProperty(Constant.DATA_FILE, "mastheadBannerUrl");
+			if(data != null) 
+				return data;
+			else
+				throw new RuntimeException("Data not specified in the Data file.");
+		}
+		
+		/**
+		  * gets Masthead Banner Url Fr
+		  * 
+		  */
+			public String get_Masthead_Banner__Fr_Url() {
+				String data = Property.getProperty(Constant.DATA_FILE, "mastheadBannerFrUrl");
+				if(data != null) 
+					return data;
+				else
+					throw new RuntimeException("Data not specified in the Data file.");
+			}
 }
 

@@ -4,7 +4,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 	@RegressionTest @WebView @WideScreen
 	Scenario: TC-2096, TC-2112 User views the links displayed on Footer-desktop/desktop wide
-	Given open browser
+	#Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	And customer support section is displayed
@@ -14,7 +14,7 @@ Feature: OCCP-1027 Footer : Footer Links
 	
 	@RegressionTest @MobileView @TabletView @TC-2119
 	Scenario: TC-2119 User views the links displayed on Footer on Mobile
-	Given open browser
+	#Given open browser
 	When pdp url is available
 	When pdp page is displayed for the product
 	Then scroll down to mobile footer

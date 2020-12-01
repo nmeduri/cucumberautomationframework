@@ -13,7 +13,7 @@ Feature: OCCP-3881 Customer Service - Informational Copy (Authorable)
 	And multiple topics should be displayed on the page
 	And section Separators should be displayed between topics to divide information
 	
-	@RegressionTest @MobileView
+	#@RegressionTest @MobileView @TC-3418
 	Scenario: TC-3418	OCCP-3881 :Customer Service-Informational Copy(Authorable)-Verify that the customer is able to view Customer views Link List – Mobile
 	When customerservice informational copy url is available
 	Then customerservice page is displayed
