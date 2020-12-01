@@ -534,7 +534,7 @@ public class AEMDataReader {
 	 * 
 	 */
 	public String get_Feature_List_Author_Page_FR() {
-		String getFeatureListAuthorPageFR = Property.getProperty(Constant.AEM_DATA_FILE, "featureListAuthorFR");
+		String getFeatureListAuthorPageFR = Property.getProperty(Constant.AEM_DATA_FILE, "featureProductListAuthorFR");
 		if(getFeatureListAuthorPageFR != null)
 			return getFeatureListAuthorPageFR;
 		else
@@ -3476,6 +3476,16 @@ public class AEMDataReader {
 	 */
 	public String get_Sub_Title_First_Change() {
 		String subTitleFirstChange = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleFirstChange");
+		if(subTitleFirstChange != null)
+			return subTitleFirstChange;
+		throw new RuntimeException("Data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Sub Title
+	 */
+	public String get_ProductList_FR() {
+		String subTitleFirstChange = Property.getProperty(Constant.AEM_DATA_FILE, "producercodefr");
 		if(subTitleFirstChange != null)
 			return subTitleFirstChange;
 		throw new RuntimeException("Data not specified in the Data file.");

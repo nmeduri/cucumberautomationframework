@@ -427,7 +427,7 @@ public class Featured_List_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotOne())), 5);
 		}
 
-
+	
 }
 	
 	

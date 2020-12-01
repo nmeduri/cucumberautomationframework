@@ -67,6 +67,13 @@ public class AEM_Featured_List_Page extends PageObject {
 
 	}
 
+	/** This function navigate to Feature List Author Page Page FR */
+	public void navigateTo_Feature_List_Author_Page_FR() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Feature_List_Author_Page_FR());
+
+	}
+
 	/** This function navigate to Informational Feature List Author Page Page */
 	public void navigateTo_informational_Feature_List_Author_Page() throws Exception {
 
@@ -712,14 +719,32 @@ public class AEM_Featured_List_Page extends PageObject {
 	public void navigateTo_Featured_List_Product_List_PageURL() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Featured_ProductList_URL());
 	}
-	
+
 	/** clear Product List */
 	public void clearDataFeaturedProductList() throws Exception {
-		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductCodeToClear()));
+		$clearData($(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductCodeToClear()));
 	}
+
 	/** verify mandatory error icon */
 	public void verifyErroMessage() throws Exception {
-		boolean value = $display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getErrorMessage()));
-		System.out.println("********** DISPLAY VALUE********"+value);
+		boolean value = $display(
+				$(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getErrorMessage()));
+		System.out.println("********** DISPLAY VALUE********" + value);
+	}
+
+	/** Enter Data in first Prod Code */
+	public void enterDatainProductList() throws Exception {
+		$clearData($(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductCodeToClear()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductCode()),
+				FileReaderManager.getInstance().getAEMDataReader().get_ProductList_FR());
+	}
+
+	/** Enter Data in Title */
+	public void enterTitleInFL() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().clearTitle()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getTitle()),
+				FileReaderManager.getInstance().getAEMDataReader().get_ProductList_FR());
 	}
 }

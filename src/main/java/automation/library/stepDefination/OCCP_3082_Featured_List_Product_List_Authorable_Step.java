@@ -191,4 +191,14 @@ public class OCCP_3082_Featured_List_Product_List_Authorable_Step extends BaseCl
 	public void user_verifies_error_display() throws Exception {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyErroMessage();
 	}
+	
+	@Given("AEM author with access to configure feature list FRURL") 
+	public void AEM_author_with_access_to_configure_feature_list_FRURL() throws Exception {
+
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).navigateTo_Feature_List_Author_Page_FR();
+	}
+	@And ("user enter Title in FL")
+	public void user_enter_product_code_in_FL() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterTitleInFL();
+	}
 }

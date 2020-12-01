@@ -15,11 +15,6 @@ public class OCCP_1042_Customer_Service_Accordion_Configure_Description_Step ext
 		configFileReader = new ConfigFileReader();
 	}
 	
-//   @And("click on aem wrench button")
-//   public void click_on_aem_wrench_button() throws Exception{
-//	   testContext.getPageObjectManager().getCustomerServicePage(PageObject.getDriver()).clickWrenchToEdit();
-//   }
-	
 	@Then("update description of customer service")
 	public void update_description_of_customer_service() throws Exception {
 		testContext.getPageObjectManager().getCustomerServicePage(PageObject.getDriver()).updateDescription();
