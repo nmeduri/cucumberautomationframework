@@ -178,5 +178,17 @@ public class OCCP_3082_Featured_List_Product_List_Authorable_Step extends BaseCl
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).displayErrorImage();
 	}
 
-
+	@When("AEM author with access to configure feature list URL")
+	public void AEM_author_with_access_to_configure_feature_list_URL() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).navigateTo_Featured_List_Product_List_PageURL();
+	}
+	@And ("user clear product code")
+	public void user_clear_Product_Code() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).clearDataFeaturedProductList();
+	}
+	
+	@And ("user verifies error display")
+	public void user_verifies_error_display() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyErroMessage();
+	}
 }

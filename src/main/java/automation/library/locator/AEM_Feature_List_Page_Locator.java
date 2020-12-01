@@ -51,7 +51,8 @@ public class AEM_Feature_List_Page_Locator {
 	 String productTitleAEM =Property.getProperty(Constant.OR_FILE, "productTitleAEM");
 	 String productCode1AEM =Property.getProperty(Constant.OR_FILE, "productCode1AEM");
 	 String errorAlertForMandatoryFieldAEM =Property.getProperty(Constant.OR_FILE, "errorAlertForMandatoryFieldAEM");
-	 
+	 String clearProductCode =Property.getProperty(Constant.OR_FILE, "clearProductCode");
+	 String errorMessage =Property.getProperty(Constant.OR_FILE, "errorMessage");
 	 
 	 /**
 	  * get Locator = Feature List Panel
@@ -328,5 +329,13 @@ public class AEM_Feature_List_Page_Locator {
 	public String getErrorAlertForMandatoryFieldAEM() {
 		return errorAlertForMandatoryFieldAEM;
 	}
-	
+	/**
+	 * get Locator - ProductCode 
+	 */
+	public String getProductCodeToClear() {
+		return clearProductCode;
+	}
+	public String getErrorMessage() {
+		return errorMessage;
+	}
 }
