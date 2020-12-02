@@ -68,7 +68,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("UserName Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets User Name - Two
 	 * 
@@ -167,7 +167,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("User Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Product Code
 	 * 
@@ -468,8 +468,8 @@ public class DataReader {
 		else
 			throw new RuntimeException("Last Name Data not specified in the Data file.");
 	}
-	
-	
+
+
 	/**
 	 * gets Address
 	 * 
@@ -481,7 +481,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Address Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Deactivated card number
 	 * 
@@ -510,7 +510,7 @@ public class DataReader {
 	 * gets loyalty card number
 	 * 
 	 */
-	
+
 	public String get_Loyalty_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "loyaltyCardNo");
 		if(cardNo != null)
@@ -518,12 +518,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets loyalty card number
 	 * 
 	 */
-	
+
 	public String get_Pending_Loyalty_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "pendingLoyaltyCardNo");
 		if(cardNo != null)
@@ -531,7 +531,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets closed card number
 	 * 
@@ -547,7 +547,7 @@ public class DataReader {
 	 * gets non existing card number
 	 * 
 	 */
-	
+
 	public String get_NonExisting_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "nonExistingCardNo");
 		if(cardNo != null)
@@ -555,12 +555,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Non existing card Number not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Active Ownership Validation screen loyalty card number
 	 * 
 	 */
-	
+
 	public String get_Active_Ownership_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "activeOwnershipValidationCardNo");
 		if(cardNo != null)
@@ -569,7 +569,7 @@ public class DataReader {
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
 
-		
+
 	/**
 	 * gets Data - Proivnce
 	 * 
@@ -582,7 +582,7 @@ public class DataReader {
 			throw new RuntimeException("Province Data not specified in the Data file.");
 	}
 	/**
-     * gets Valid hide link screen Email Detail
+	 * gets Valid hide link screen Email Detail
 	 * 
 	 */
 	public String get_Hide_Link_Screen_Email_Data() {
@@ -593,12 +593,12 @@ public class DataReader {
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
 
-	
 
-/**
- * gets SearchValue
- * 
- */
+
+	/**
+	 * gets SearchValue
+	 * 
+	 */
 	public String get_Search_Data() {
 		String getsearch = Property.getProperty(Constant.DATA_FILE, "searchValue");
 		if(getsearch != null)
@@ -606,11 +606,11 @@ public class DataReader {
 		else
 			throw new RuntimeException("Search Data not specified in the Data file.");
 	}
-	
-/**
- * gets Valid Email Data for 2480
- * 
- */
+
+	/**
+	 * gets Valid Email Data for 2480
+	 * 
+	 */
 	public String get_Valid_Email_Id_2480() {
 		String email = Property.getProperty(Constant.DATA_FILE, "validEmailId_2480");
 		if(email != null) 
@@ -618,8 +618,8 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
-	
-	
+
+
 	/**
 	 * gets Gigya API Key
 	 * 
@@ -631,7 +631,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("apiKey Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Gigya User Key
 	 * 
@@ -665,7 +665,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("dataCenterEndPoint Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Gigya Parameter Login Name
 	 * 
@@ -754,7 +754,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("SignatureTimestamp Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Gigya Api Tool URL
 	 * 
@@ -766,12 +766,12 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Gigya Tool url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets password
 	 * 
 	 */
-	
+
 	public String get_Password() {
 		String email = Property.getProperty(Constant.DATA_FILE, "getPasswordData");
 		if(email != null) 
@@ -779,12 +779,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid Password Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Incorrect format card number
 	 * 
 	 */
-	
+
 	public String get_Incorrect_Format_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "incorrectFormatCardNo");
 		if(cardNo != null)
@@ -792,12 +792,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets long characters card number
 	 * 
 	 */
-	
+
 	public String get_Long_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "longCharCardNo");
 		if(cardNo != null)
@@ -805,12 +805,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets balance greater than 100$ card number
 	 * 
 	 */
-	
+
 	public String get_Threshold_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "thresholdCardNo");
 		if(cardNo != null)
@@ -818,12 +818,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets bad card number or invalid card no
 	 * 
 	 */
-	
+
 	public String get_Bad_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "badCardNo");
 		if(cardNo != null)
@@ -831,12 +831,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets already kinked to other account card no
 	 * 
 	 */
-	
+
 	public String get_Already_Linked_Card_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedCardNo");
 		if(cardNo != null)
@@ -848,7 +848,7 @@ public class DataReader {
 	 * gets EdgeToEdge Banner url with Image
 	 * 
 	 */
-	
+
 	public String getEdgeToEdgeBannerUrlWithImageEn() {
 		String getEdgeToEdgeBannerUrlWithImageEn = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageEn");
 		if (getEdgeToEdgeBannerUrlWithImageEn != null)
@@ -860,7 +860,7 @@ public class DataReader {
 	 * gets EdgeToEdge Banner url without Image
 	 * 
 	 */
-	
+
 	public String getEdgeToEdgeBannerUrlWithoutImageEn() {
 		String getEdgeToEdgeBannerUrlWithoutImageEn = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageEn");
 		if (getEdgeToEdgeBannerUrlWithoutImageEn != null)
@@ -872,7 +872,7 @@ public class DataReader {
 	 * gets EdgeToEdge Banner url with Image
 	 * 
 	 */
-	
+
 	public String getEdgeToEdgeBannerUrlWithImageFr() {
 		String getEdgeToEdgeBannerUrlWithImageFr = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithImageFr");
 		if (getEdgeToEdgeBannerUrlWithImageFr != null)
@@ -884,7 +884,7 @@ public class DataReader {
 	 * gets EdgeToEdge Banner url without Image
 	 * 
 	 */
-	
+
 	public String getEdgeToEdgeBannerUrlWithoutImageFr() {
 		String getEdgeToEdgeBannerUrlWithoutImageFr = Property.getProperty(Constant.DATA_FILE, "edgeToEdgeBannerUrlWithoutImageFr");
 		if (getEdgeToEdgeBannerUrlWithoutImageFr != null)
@@ -892,12 +892,12 @@ public class DataReader {
 		else
 			throw new RuntimeException("getEdgeToEdgeBannerUrlWithoutImageFr not specified in the Configuration.properties file.");
 	}
-	
+
 	/**
 	 * gets PDP Product Url
 	 * 
 	 */
-	
+
 	public String getPDPProductUrl() {
 		String url = Property.getProperty(Constant.DATA_FILE, "pdpProductUrl");
 		if (url != null)
@@ -905,14 +905,14 @@ public class DataReader {
 		else
 			throw new RuntimeException("pdpProductUrl not specified in the data.properties file.");
 	}
-	
-	
-	
+
+
+
 	/**
 	 * gets No Service Installation
 	 * 
 	 */
-	
+
 	public String getProductCodeForNoServiceInstallation() {
 		String noServiceInstallationProductCode = Property.getProperty(Constant.DATA_FILE, "noServiceInstallationProductCode");
 		if (noServiceInstallationProductCode != null)
@@ -920,10 +920,10 @@ public class DataReader {
 		else
 			throw new RuntimeException("pdp Product Code not specified in the Configuration.properties file.");
 	}
-	 /** gets non existing card number
+	/** gets non existing card number
 	 * 
 	 */
-	
+
 	public String get_Incorrect_MasterCard_Number() {
 		String cardNo = Property.getProperty(Constant.DATA_FILE, "incorrectMasterCardNo");
 		if(cardNo != null)
@@ -1005,8 +1005,8 @@ public class DataReader {
 		else 
 			throw new RuntimeException("AppleAppStoreUrl locale url not specified in the Data file.");
 	}
-	
-	
+
+
 	/**
 	 * gets ProductName (Search Product)
 	 */
@@ -1017,7 +1017,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Footer Url
 	 */
@@ -1042,7 +1042,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("loginPagePublishUrl_Fr locale url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Registration Page Publish URL En locale
 	 * 
@@ -1068,7 +1068,7 @@ public class DataReader {
 			throw new RuntimeException("registrationPagePublishUrl_Fr locale url not specified in the Data file.");
 	}
 
-	
+
 	/**
 	 * gets Learn More Link
 	 */
@@ -1079,7 +1079,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Accessibility Link
 	 */
@@ -1100,7 +1100,7 @@ public class DataReader {
 			return Url;
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
-}
+	}
 	/**
 	 * gets apple App store Url
 	 */
@@ -1110,7 +1110,7 @@ public class DataReader {
 			return Url;
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
-}
+	}
 
 	/**
 	 * gets Sign Up Link
@@ -1122,7 +1122,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Footer Url
 	 */
@@ -1161,7 +1161,7 @@ public class DataReader {
 	 * gets PDP Product Url for FR locale
 	 * 
 	 */
-	
+
 	public String getPDPProductUrl_Fr() {
 		String getPDPProductUrlFr = Property.getProperty(Constant.DATA_FILE, "pdpProductUrl_Fr");
 		if (getPDPProductUrlFr != null)
@@ -1180,7 +1180,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Existing Card Url
 	 * 
@@ -1193,7 +1193,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets yopmail Url
 	 * 
@@ -1206,7 +1206,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Email Detail - Mobile
 	 * 
@@ -1220,7 +1220,7 @@ public class DataReader {
 			throw new RuntimeException("Email Data not specified in the Data file.");
 
 	}
-	
+
 	/*
 	 * gets Privacy Charter URl
 	 * 
@@ -1233,7 +1233,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Featured List URl
 	 * 
@@ -1246,7 +1246,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Featured List URl (More than 4 products)
 	 * 
@@ -1288,7 +1288,7 @@ public class DataReader {
 	 * gets Price Detail Url (PLP)
 	 * 
 	 */
-	
+
 	public String get_Price_Detail_PLP_Url() {
 		String getURl = Property.getProperty(Constant.DATA_FILE, "priceDetailPLPPage");
 		if(getURl != null)
@@ -1296,8 +1296,8 @@ public class DataReader {
 		else
 			throw new RuntimeException("Url Data not specified in the Data file.");
 	}
-	 /**
-	  *  gets Product Code of Q&A Section in PDP
+	/**
+	 *  gets Product Code of Q&A Section in PDP
 	 * 
 	 */
 	public String get_Questions_And_Answers_Section() {
@@ -1332,7 +1332,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 
 	 * gets PDP Product -Add to Cart URL FR
@@ -1346,7 +1346,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Featured List Product List URL
 	 * 
@@ -1397,7 +1397,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	public String get_Default_Error_Image_Path() {
 		String getPath = Property.getProperty(Constant.DATA_FILE, "defaultErrorImage");
 		if(getPath != null)
@@ -1405,7 +1405,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Hi Text
 	 * 
@@ -1418,7 +1418,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Account Text
 	 * 
@@ -1431,7 +1431,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets SRP URl
 	 * 
@@ -1444,7 +1444,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Featured List Product List Fr URL
 	 * 
@@ -1457,7 +1457,7 @@ public class DataReader {
 		else 
 			throw new RuntimeException("featuredProductListUrl_Fr url not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Account address URL
 	 * 
@@ -1492,10 +1492,8 @@ public class DataReader {
 		else
 			throw new RuntimeException("Valid password Data not specified in the Data file.");
 	}
-	
+
 	/**
-<<<<<<< HEAD
-=======
 	 * gets Account Email Data_3301
 	 * 
 	 */
@@ -1508,7 +1506,6 @@ public class DataReader {
 	}
 
 	/**
->>>>>>> 18dac1a96cb421c4412b1e840f21b9139abce20c
 	 * gets Minimum Price Data
 	 * 
 	 */
@@ -1530,7 +1527,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Minimum Price Data
 	 * 
@@ -1542,7 +1539,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Minimum Price Data (Above Condition)
 	 * 
@@ -1554,7 +1551,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Minimum Price Data (Below Range)
 	 * 
@@ -1566,7 +1563,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Maximum Price Data (Below Range)
 	 * 
@@ -1578,29 +1575,30 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	 
-	 /**
-	  * gets Masthead Banner Url
-	  * 
-	  */
-		public String get_Masthead_Banner_Url() {
-			String data = Property.getProperty(Constant.DATA_FILE, "mastheadBannerUrl");
-			if(data != null) 
-				return data;
-			else
-				throw new RuntimeException("Data not specified in the Data file.");
-		}
-		
-		/**
-		  * gets Masthead Banner Url Fr
-		  * 
-		  */
-			public String get_Masthead_Banner__Fr_Url() {
-				String data = Property.getProperty(Constant.DATA_FILE, "mastheadBannerFrUrl");
-				if(data != null) 
-					return data;
-				else
-					throw new RuntimeException("Data not specified in the Data file.");
-			}
+
+	/**
+	 * gets Masthead Banner Url
+	 * 
+	 */
+	public String get_Masthead_Banner_Url() {
+		String data = Property.getProperty(Constant.DATA_FILE, "mastheadBannerUrl");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+
+	/**
+	 * gets Masthead Banner Url Fr
+	 * 
+	 */
+	public String get_Masthead_Banner__Fr_Url() {
+		String data = Property.getProperty(Constant.DATA_FILE, "mastheadBannerFrUrl");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+
 }
 

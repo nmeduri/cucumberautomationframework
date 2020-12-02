@@ -8,7 +8,7 @@ import automation.library.locator.AEM_Broad_Banner_Page_Locator;
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Cart_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
-
+import automation.library.locator.AEM_Contact_Us_Page_Locator;
 import automation.library.locator.AEM_Feature_List_Page_Locator;
 import automation.library.locator.AEM_Customer_Service_Informational_Copy_Page_Locator;
 import automation.library.locator.AEM_Edge_To_Edge_Banner_Locator;
@@ -69,6 +69,7 @@ import automation.library.pageObjects.AEM_Broad_Banner_Page;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Cart_Page;
 import automation.library.pageObjects.AEM_Common_Page;
+import automation.library.pageObjects.AEM_Contact_Us_Page;
 import automation.library.pageObjects.AEM_Featured_List_Page;
 import automation.library.pageObjects.AEM_Customer_Service_Informational_Copy_Page;
 import automation.library.pageObjects.AEM_Edge_To_Edge_Banner_Page;
@@ -261,6 +262,8 @@ public class PageObjectManager {
 	private Account_Address_Page getAccountAddressPage;
 	private AEM_Slim_Banner_page_Locator getAEMSlimBannerpageLocator;
 	private AEM_Slim_Banner_Page getAEMSlimBannerPage;
+	private AEM_Contact_Us_Page getAEMContactUsPage;
+	private AEM_Contact_Us_Page_Locator getAEMContactUsPageLocator;
 	
 	private SRP_Page getSRPPage;
 	private Standard_Masthead_Banner_Page getStandardMastheadBannerPage;
@@ -892,7 +895,16 @@ public class PageObjectManager {
 	public SRP_Page getSRPPage(WebDriver driver) {
 		return(getSRPPage == null) ? getSRPPage = new SRP_Page(driver) : getSRPPage;
 	}
+	/** Return Instance of AEM Contact Us Page */
+	public AEM_Contact_Us_Page getAEMContactUsPage(WebDriver driver) {
+		return (getAEMContactUsPage == null) ? getAEMContactUsPage = new AEM_Contact_Us_Page(driver) : getAEMContactUsPage;
+	}
 	
+	/** Return Instance of AEM Contact Us Page Locator */
+	public AEM_Contact_Us_Page_Locator getAEMContactUsPageLocator() {
+		return (getAEMContactUsPageLocator == null) ? getAEMContactUsPageLocator = new AEM_Contact_Us_Page_Locator() : getAEMContactUsPageLocator;
+	}
+
 	/** Returns Instance of Standard Masthead Banner Page */
 	public Standard_Masthead_Banner_Page getStandardMastheadBannerPage(WebDriver driver) {
 		return (getStandardMastheadBannerPage == null) ? getStandardMastheadBannerPage = new Standard_Masthead_Banner_Page(driver) : getStandardMastheadBannerPage;
@@ -903,4 +915,5 @@ public class PageObjectManager {
 		return (getStandardMastheadBannerPageLocator == null) ? getStandardMastheadBannerPageLocator = new Standard_Masthead_Banner_Page_Locator() : getStandardMastheadBannerPageLocator;
 	}
 	
+
 }

@@ -73,10 +73,13 @@ Feature: OCCP_874_PDP_Warranty.feature
 	    
 	    @RegressionTest
 	    Scenario: TC-1412 HYB:OCCP-874: Verify Warranty - Warranty type is null
-
 	    Given occ api is available
       When user hits the GET api without locale
       Then returned JSON should have warranty section without type and value
       
-
+ 			@RegressionTest
+	    Scenario: TC-1346 HYB:OCCP-874: Verify Warranty - WarrantyMessage is not null
+	    Given occ api is available
+      When user hits the GET api without locale
+      Then returned JSON should have warranty section in en locale
 	

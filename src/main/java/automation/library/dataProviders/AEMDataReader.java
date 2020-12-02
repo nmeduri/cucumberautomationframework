@@ -5242,6 +5242,63 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	/**
+	 * gets Contact Us AEM Url
+	 * 
+	 */
+	
+	public String get_Contact_Us_AEM_Url() {
+		String contactUsAEMURL = Property.getProperty(Constant.AEM_DATA_FILE, "contactUsAEMURL");
+		if(contactUsAEMURL != null)
+			return contactUsAEMURL;
+		else
+			throw new RuntimeException("contactUsAEMURL data not specified in the Data file.");
+	}
+	/**
+	 * gets Contact Us AEM Fr locale Url
+	 * 
+	 */
+	
+	public String get_Contact_Us_AEM_Url_Fr() {
+		String contactUsAEMURLFr = Property.getProperty(Constant.AEM_DATA_FILE, "contactUsAEMURL_Fr");
+		if(contactUsAEMURLFr != null)
+			return contactUsAEMURLFr;
+		else
+			throw new RuntimeException("contactUsAEMURL_Fr data not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Email Title of Contact Us component
+	 *  
+	 */
+	public String get_Email_Title_AEM() {
+		String emailTitle = Property.getProperty(Constant.AEM_DATA_FILE, "emailTitleAEM");
+		if(emailTitle != null)
+			return emailTitle;
+		throw new RuntimeException("emailTitleAEM not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Email Link Label of Contact Us component
+	 *  
+	 */
+	public String get_Email_Link_Label_AEM() {
+		String emailLinkLabel = Property.getProperty(Constant.AEM_DATA_FILE, "emailLinkLabelAEM");
+		if(emailLinkLabel != null)
+			return emailLinkLabel;
+		throw new RuntimeException("emailLinkLabelAEM not specified in the Data file.");
+	}
+	/**
+	 * 
+	 * get Data - Email Link Value of Contact Us component
+	 *  
+	 */
+	public String get_Email_Link_Value_AEM() {
+		String emailLinkValue = Property.getProperty(Constant.AEM_DATA_FILE, "emailLinkValueAEM");
+		if(emailLinkValue != null)
+			return emailLinkValue;
+		throw new RuntimeException("emailLinkValueAEM not specified in the Data file.");
+	}
+	/**
 	 * 
 	 *  Read Data from AEM D2 file
 	 */

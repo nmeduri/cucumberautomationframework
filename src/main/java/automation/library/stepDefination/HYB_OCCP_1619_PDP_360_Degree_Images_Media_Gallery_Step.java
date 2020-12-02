@@ -194,7 +194,7 @@ public class HYB_OCCP_1619_PDP_360_Degree_Images_Media_Gallery_Step extends Base
 	@When("1476-user hits the GET api without locale")
 	public void user_hits_the_GET_api_without_locale_1476() {
 
-		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().product_tc_1476());
+		 response = getApiProduct().getApiProduct(url, FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1476());
 	}
 	@And("response should have medias without order and its value")
 	public void response_should_have_medias_without_order_and_its_value() {

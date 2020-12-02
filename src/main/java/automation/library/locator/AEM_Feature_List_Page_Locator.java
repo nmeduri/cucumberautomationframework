@@ -35,7 +35,8 @@ public class AEM_Feature_List_Page_Locator {
 	 String ProductFetureDeleteAEM=Property.getProperty(Constant.OR_FILE, "ProductFetureDeleteAEM");
 	 String ErrorImage=Property.getProperty(Constant.OR_FILE, "ErrorImage");
 
-	 String featuredProductListPannel=Property.getProperty(Constant.OR_FILE, "featuredProductListPannel").replace("=", ",");
+	 String featuredProductListPannel=Property.getProperty(Constant.OR_FILE, "featuredProductListPannel");
+	 //String featuredProductListPannel=Property.getProperty(Constant.OR_FILE, "featuredProductListPannel").replace("=", ",");
 	 String titleOfFL=Property.getProperty(Constant.OR_FILE, "titleOfFL");
 	 String toolTipOfFLTitle=Property.getProperty(Constant.OR_FILE, "toolTipOfFLTitle");
 	 String toolTipMessageOfFLTitle=Property.getProperty(Constant.OR_FILE, "toolTipMessageOfFLTitle").replace("=", ",");

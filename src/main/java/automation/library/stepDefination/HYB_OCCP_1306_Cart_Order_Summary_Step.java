@@ -41,4 +41,10 @@ public class HYB_OCCP_1306_Cart_Order_Summary_Step extends BaseStep {
 		Assert.assertNotEquals(null,response.jsonPath().get("pickupOrderGroups.entries"));
 		Assert.assertNotEquals(null,response.jsonPath().get("totalTax.priceType"));
 	}
+	@When("5958-user hits add to Cart api for Authenticated user")
+	public void user_Hits_Add_To_Cart_Api_Authenticated_5958() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_2188(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_5117(),accessToken);
+		Log.message("Response:- " + response.getBody().asString(), true);
+	}
+	
 }

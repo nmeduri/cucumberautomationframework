@@ -1403,7 +1403,7 @@ public class APIDataReader {
 	 * gets product data of TC-1476
 	 * 
 	 */
-	public String product_tc_1476() {
+	public String get_product_tc_1476() {
 
 		String productInfo = Property.getProperty(Constant.API_DATA, "product_tc_1476");
 		if (productInfo != null)

@@ -176,7 +176,7 @@ public class HYB_Authorization_EndPoint {
 				"            },\n" + 
 				"            \"quantity\": 1,\n" + 
 				"            \"deliveryPointOfService\": {\n" + 
-				"                \"name\": \"363\"\n" + 
+				"                \"name\": \"323\"\n" + 
 				"            }\n" + 
 				"        },\n" + 
 				"        {\n" + 

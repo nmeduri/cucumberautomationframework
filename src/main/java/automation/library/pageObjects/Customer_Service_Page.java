@@ -136,6 +136,9 @@ public class Customer_Service_Page extends PageObject{
 			li.get(i).click();
 			testContext.getPageObjectManager().getBroadPromoTilesPage(PageObject.getDriver()).switchWindow();
 			testContext.getPageObjectManager().getBroadPromoTilesPage(PageObject.getDriver()).switchOnChildWindow();
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
+			Log.message("Title:- " + testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle(),
+					true);
 			testContext.getPageObjectManager().getBroadPromoTilesPage(PageObject.getDriver()).closeChildWindow();
 			testContext.getPageObjectManager().getBroadPromoTilesPage(PageObject.getDriver()).parentWindow();
 		}	
