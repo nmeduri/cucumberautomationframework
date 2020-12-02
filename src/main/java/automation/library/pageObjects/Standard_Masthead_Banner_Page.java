@@ -58,6 +58,13 @@ public class Standard_Masthead_Banner_Page extends PageObject {
 
 	}
 	
+	/** This function navigate to AEM Masthead Banner Page */
+	public void navigate_to_masthead_banner_page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Masthead_Banner_Url());
+
+	}
+	
 	/** This function navigate to Masthead Banner Page for FR */
 	public void navigateTo_Masthead_Banner_Fr_Page() throws Exception {
 
@@ -101,5 +108,10 @@ public class Standard_Masthead_Banner_Page extends PageObject {
 		int descriptionCharLength= getDescription.length();
 		Log.message("descriptionCharLength:- " + descriptionCharLength, true);
 		Assert.assertTrue(descriptionCharLength <=140 );
+	}
+	
+	/** click on masthead banner panel */
+	public void clickMastheadBannerPanel() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getStandardMastheadBannerPageLocator().get_Masthead_Banner_Panel()));
 	}
 }	

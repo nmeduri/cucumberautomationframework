@@ -5436,5 +5436,17 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 
+	/**
+	 * gets Masthead Banner Url
+	 * 
+	 */
+	
+	public String get_Masthead_Banner_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "mastheadBannerAuthorUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
 
 }

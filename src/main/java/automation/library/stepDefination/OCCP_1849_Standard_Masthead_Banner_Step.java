@@ -40,6 +40,11 @@ public class OCCP_1849_Standard_Masthead_Banner_Step extends BaseClass {
 		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).navigateTo_Masthead_Banner_Page();
 	}
 	
+	@When("navigate to masthead banner authorable url")
+	public void navigate_to_masthead_banner_authorable_url() throws Exception {
+		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).navigate_to_masthead_banner_page();
+	}
+	
 	@Given("masthead banner fr url is available") 
 	public void masthead_banner_fr_url_is_available() throws Exception {
 		
@@ -79,5 +84,10 @@ public class OCCP_1849_Standard_Masthead_Banner_Step extends BaseClass {
 	@Then("description could be up to 140 characters in length")
 	public void description_could_be_up_to_140_characters_in_length() throws Exception {
 		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).veifyDescriptionUpTo60Characters();
+	}
+	
+	@And("click on masthead banner panel")
+	public void click_on_masthead_banner_panel() throws Exception {
+		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).clickMastheadBannerPanel();
 	}
 }
