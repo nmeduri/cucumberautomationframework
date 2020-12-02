@@ -38,6 +38,9 @@ public class AEM_PLP_Page_Locator {
 	String enableRatingReviewsAEM = Property.getProperty(Constant.OR_FILE, "enableRatingReviewsAEM");
 	String disableRatingReviewsAEM = Property.getProperty(Constant.OR_FILE, "disableRatingReviewsAEM");
 	String nowLabelPriceAEM = Property.getProperty(Constant.OR_FILE, "nowLabelPriceAEM");
+	String minPriceLabelAEM = Property.getProperty(Constant.OR_FILE, "minPriceLabelAEM");
+	String maxPriceLabelAEM = Property.getProperty(Constant.OR_FILE, "maxPriceLabelAEM");
+	String errorMessagePriceFacetAEM = Property.getProperty(Constant.OR_FILE, "errorMessagePriceFacetAEM");
 
     /**
 	 * gets Locator - Specifications
@@ -257,5 +260,26 @@ public class AEM_PLP_Page_Locator {
 	 */
 	public String getNowLabelPriceDetail() {
 		return nowLabelPriceAEM;
+	}
+	
+	/**
+	 * gets Locator - Min Price Label
+	 */
+	public String getMinPriceLabel() {
+		return minPriceLabelAEM;
+	}
+	
+	/**
+	 * gets Locator - Max Price Label
+	 */
+	public String getMaxPriceLabel() {
+		return maxPriceLabelAEM;
+	}
+	
+	/**
+	 * gets Locator - Error Message Price Facet
+	 */
+	public String getErrorMessagePriceFacet() {
+		return errorMessagePriceFacetAEM;
 	}
 }

@@ -103,5 +103,42 @@ public class OCCP_1612_Filters_And_Facets_Price_Step extends BaseClass {
 	public void pill_is_added_the_range_as_0_123() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyTheResultAs0Between123();
 	}
+	
+	@And("update the min max price label")
+	public void update_the_min_max_price_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterMinPriceLabelDetails();
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterMaxPriceLabelDetails();
+	}
+	
+	@And("revert the min max price label")
+	public void revert_the_min_max_price_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).revertMinPriceLabelDetails();
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).revertMaxPriceLabelDetails();
+	}
+	
+	@Then("min price and max price changes are update on site")
+	public void min_price_and_max_price_changes_are_update_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyMinMaxPriceLabelUpdateOnSite();
+	}
+	
+	@And("update the label for the price facet")
+	public void update_the_label_for_the_price_facet() throws Exception {
+		
+	}
+	
+	@And("update the content error message regarding the price facet values")
+	public void update_the_content_error_message_regarding_the_price_facet_values() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).enterErrorMessageDetailsForPrice();
+	}
+	
+	@And("revert the content error message regarding the price facet values")
+	public void revert_the_content_error_message_regarding_the_price_facet_values() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).revertErrorMessageDetailsForPrice();
+	}
+	
+	@Then("error message changes are reflect on site")
+	public void error_message_changes_are_reflect_on_site() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).verifyEUpdateOnSite();
+	}
 }
 

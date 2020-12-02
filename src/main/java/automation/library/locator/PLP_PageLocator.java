@@ -102,6 +102,8 @@ public class PLP_PageLocator {
 	String errorMessageMinimumPriceMoreThanMaximum = Property.getProperty(Constant.OR_FILE, "errorMessageMinimumPriceMoreThanMaximum");
 	String ratingStarsValue = Property.getProperty(Constant.OR_FILE, "ratingStarsValue");
 	String ratingStarsIcon = Property.getProperty(Constant.OR_FILE, "ratingStarsIcon");
+	String minPriceLabel = Property.getProperty(Constant.OR_FILE, "minPriceLabel");
+	String maxPriceLabel = Property.getProperty(Constant.OR_FILE, "maxPriceLabel");
 	
 	/**
 	 * gets Locator - List View
@@ -813,5 +815,19 @@ public class PLP_PageLocator {
 	 */
 	public String get_Rating_Stars_Icon() {
 		return ratingStarsIcon;
+	}
+	
+	/**
+	 * gets Locator - Min Price Label
+	 */
+	public String get_Min_Price_Label() {
+		return minPriceLabel;
+	}
+	
+	/**
+	 * gets Locator - Max Price Label
+	 */
+	public String get_Max_Price_Label() {
+		return maxPriceLabel;
 	}
  }

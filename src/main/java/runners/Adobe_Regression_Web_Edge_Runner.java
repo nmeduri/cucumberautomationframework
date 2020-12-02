@@ -19,7 +19,7 @@ public final class Adobe_Regression_Web_Edge_Runner extends BaseClass {
 			"classpath:Adobe/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@Regress",
+			"--tags", "@WebView",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

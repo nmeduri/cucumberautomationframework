@@ -19,8 +19,8 @@ public final class Adobe_Regression_Web_firefox_Runner extends BaseClass {
 			"classpath:Adobe/Regression/",
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@Regress",
-				"--plugin", "json:cucumber.json",
+			"--tags", "@WebView",
+			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html"

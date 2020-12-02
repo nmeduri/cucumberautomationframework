@@ -858,6 +858,21 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("buttonURLOfTile1 not specified in the Data file.");
 	}
+	
+	/**
+
+	 * gets locator driver
+	 * 
+	 */
+	
+	public String get_Information_Banner_AEM_URL() {
+		String getUrl = Property.getProperty(Constant.AEM_DATA_FILE, "informationBannerUrlAEM");
+		if(getUrl != null)
+			return getUrl;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
 	/**
 	 * get Url - Save Story Text Of Broad Promo Tile 2
 	 * 
@@ -5324,18 +5339,99 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-
 	
 	/**
-
-	 * gets locator driver
+	 * 
+	 * get Data - Min Price Label
+	 *  
+	 */
+	public String get_Min_Price_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "minPriceLabel");
+		if(data != null)
+			return data;
+		throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Min Price Label Revert
 	 * 
 	 */
 	
-	public String get_Information_Banner_AEM_URL() {
-		String getUrl = Property.getProperty(Constant.AEM_DATA_FILE, "informationBannerUrlAEM");
-		if(getUrl != null)
-			return getUrl;
+	public String get_Min_Price_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "minPriceLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Max Price Label
+	 *  
+	 */
+	public String get_Max_Price_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "maxPriceLabel");
+		if(data != null)
+			return data;
+		throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Max Price Label Revert
+	 * 
+	 */
+	
+	public String get_Max_Price_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "maxPriceLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data -  Price Label
+	 *  
+	 */
+	public String get_Price_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "priceFacetLabel");
+		if(data != null)
+			return data;
+		throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets  Price Label Revert
+	 * 
+	 */
+	
+	public String get_Price_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "priceFacetLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data -  Error Message Price Facet
+	 *  
+	 */
+	public String get_Error_Message_Price_Facet() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "errorMessagePriceFacet");
+		if(data != null)
+			return data;
+		throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets  Error Message Price Facet(Revert)
+	 * 
+	 */
+	
+	public String get_Error_Message_Price_Facet_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "errorMessagePriceFacetRevert");
+		if(data != null)
+			return data;
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}

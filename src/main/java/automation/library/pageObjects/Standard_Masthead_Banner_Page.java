@@ -86,4 +86,20 @@ public class Standard_Masthead_Banner_Page extends PageObject {
 	public void displayBannerDescription() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getStandardMastheadBannerPageLocator().get_Masthead_Banner_Description()));
 	}
+	
+	/** verify that title could be up to 60 characters */
+	public void veifyTitleUpTo60Characters() throws Exception {
+		String getTitle = $getText($(Loc.XPATH, testContext.getPageObjectManager().getStandardMastheadBannerPageLocator().get_Banner_Title()));
+		int titleCharLength= getTitle.length();
+		Log.message("titleCharLength:- " + titleCharLength, true);
+		Assert.assertTrue(titleCharLength <=60 );
+	}
+	
+	/** verify that description could be up to 60 characters */
+	public void veifyDescriptionUpTo60Characters() throws Exception {
+		String getDescription = $getText($(Loc.XPATH, testContext.getPageObjectManager().getStandardMastheadBannerPageLocator().get_Masthead_Banner_Description()));
+		int descriptionCharLength= getDescription.length();
+		Log.message("descriptionCharLength:- " + descriptionCharLength, true);
+		Assert.assertTrue(descriptionCharLength <=140 );
+	}
 }	

@@ -275,7 +275,6 @@ public class AEM_PLP_Page extends PageObject {
 		PageObject.getDriver().switchTo().parentFrame();
 	}
 	
-	
 	/** option list view is not displayed */
 	public void notDisplayListView() throws Exception {
 		
@@ -443,5 +442,54 @@ public class AEM_PLP_Page extends PageObject {
 	public void appliedLabelNowChangesOnPage() throws Exception {
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Now_Price_Label(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getPriceWasPriceDetail())));
 	}
+	
+	/** enter min price label details */
+	public void enterMinPriceLabelDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMinPriceLabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMinPriceLabel()), FileReaderManager.getInstance().getAEMDataReader().get_Min_Price_Label());
+	}
+	
+	/** revert min price label details */
+	public void revertMinPriceLabelDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMinPriceLabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMinPriceLabel()), FileReaderManager.getInstance().getAEMDataReader().get_Min_Price_Label_Revert());
+	}
+	
+	/** enter max price label details */
+	public void enterMaxPriceLabelDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMaxPriceLabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMaxPriceLabel()), FileReaderManager.getInstance().getAEMDataReader().get_Max_Price_Label());
+	}
+	
+	/** revert min price label details */
+	public void revertMaxPriceLabelDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMaxPriceLabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getMaxPriceLabel()), FileReaderManager.getInstance().getAEMDataReader().get_Max_Price_Label_Revert());
+	}
+	
+	/** verify min max price labels are update on site */
+	public void verifyMinMaxPriceLabelUpdateOnSite() throws Exception {
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Min_Price_Label(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Min_Price_Label())));
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Max_Price_Label(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Max_Price_Label())));
+	}
+	
+	/** enter error message details for price */
+	public void enterErrorMessageDetailsForPrice() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getErrorMessagePriceFacet()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getErrorMessagePriceFacet()), FileReaderManager.getInstance().getAEMDataReader().get_Error_Message_Price_Facet());
+	}
+	
+	/** revert error message details for prife */
+	public void revertErrorMessageDetailsForPrice() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getErrorMessagePriceFacet()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getErrorMessagePriceFacet()), FileReaderManager.getInstance().getAEMDataReader().get_Error_Message_Price_Facet_Revert());
+	}
+	
+	/** verify error message are update on site */
+	public void verifyEUpdateOnSite() throws Exception {
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Error_Message_Price_Facet(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Error_Message_Min_Price_More_Than_Max())));
+	}
+	
+	
 	
 }

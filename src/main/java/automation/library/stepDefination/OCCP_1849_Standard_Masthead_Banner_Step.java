@@ -65,4 +65,19 @@ public class OCCP_1849_Standard_Masthead_Banner_Step extends BaseClass {
 	public void user_able_to_view_description() throws Exception {
 		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).displayBannerDescription();
 	}
+	
+	@Then("title is on left aligned")
+	public void title_is_on_left_aligned() throws Exception {
+		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).displayBannerTitle();
+	}
+	
+	@Then("title could be up to 60 characters in length")
+	public void title_could_be_up_to_60_characters_in_length() throws Exception {
+		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).veifyTitleUpTo60Characters();
+	}
+	
+	@Then("description could be up to 140 characters in length")
+	public void description_could_be_up_to_140_characters_in_length() throws Exception {
+		testContext.getPageObjectManager().getStandardMastheadBannerPage(PageObject.getDriver()).veifyDescriptionUpTo60Characters();
+	}
 }

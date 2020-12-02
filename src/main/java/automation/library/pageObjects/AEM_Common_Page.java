@@ -96,7 +96,7 @@ public class AEM_Common_Page extends PageObject {
 	
 	/** This function clicks on Publish Page */
 	public void clickOnPublishPage() throws Exception {
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())),20);
+		$click(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Page())), 5);
 		try {
 		if($display($$$$(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_SelectAll_Checkbox(), 10))) {
 			$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().get_Publish_Button()));
@@ -154,6 +154,11 @@ public class AEM_Common_Page extends PageObject {
 	/** This function verify that user loggedIn Icon is displayed */
 	public void displayUserLoggedInIcon() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getUserLoggedInIcon()));
+	}
+	
+	/** click on error tab */
+	public void clickErrorTab() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCommonPageLocator().getErrorTab()));
 	}
 	
 }

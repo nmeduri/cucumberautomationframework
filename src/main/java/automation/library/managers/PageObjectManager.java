@@ -914,6 +914,4 @@ public class PageObjectManager {
 	public Standard_Masthead_Banner_Page_Locator getStandardMastheadBannerPageLocator() {
 		return (getStandardMastheadBannerPageLocator == null) ? getStandardMastheadBannerPageLocator = new Standard_Masthead_Banner_Page_Locator() : getStandardMastheadBannerPageLocator;
 	}
-	
-
 }

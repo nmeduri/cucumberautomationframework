@@ -26,6 +26,7 @@ public class AEM_Common_Page_Locator {
 	String previewButton =  Property.getProperty(Constant.OR_FILE, "previewButton");
 	String editButton =  Property.getProperty(Constant.OR_FILE, "editButton");
 	String userLoggedIn = Property.getProperty(Constant.OR_FILE, "userLoggedIn");
+	String errorTab = Property.getProperty(Constant.OR_FILE, "errorTab");
 
     /**
 	 * gets Locator - Arrow Icon Sign In
@@ -161,5 +162,12 @@ public class AEM_Common_Page_Locator {
 	 */
 	public String getUserLoggedInIcon() {
 		return userLoggedIn;
+	}
+	
+	/**
+	 * get Locator - Error Tab
+	 */
+	public String getErrorTab() {
+		return errorTab;
 	}
 }

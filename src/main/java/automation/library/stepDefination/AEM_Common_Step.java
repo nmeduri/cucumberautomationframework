@@ -61,5 +61,10 @@ public class AEM_Common_Step extends BaseClass {
 	public void go_to_aem_login_page() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_AEM_Url());
 	}
+	
+	@And("click on error tab")
+	public void clickOnErrorTab() throws Exception {
+		testContext.getPageObjectManager().getAEMCommonPage(PageObject.getDriver()).clickErrorTab();
+	}
 
 }
