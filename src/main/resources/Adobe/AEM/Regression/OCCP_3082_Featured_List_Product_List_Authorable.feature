@@ -167,9 +167,8 @@ Feature: OCCP-3082 : Featured List |Product List|Authorable
 	And user click on check button
 	Then user should see error message as  mandatory field not entered
 	
-
 	
 	
-
+	
 	
 	

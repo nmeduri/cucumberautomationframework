@@ -132,6 +132,8 @@ public class PDP_PageLocator {
 	String postAnswerModel = Property.getProperty(Constant.OR_FILE, "postAnswerModel");
 	String reportQuestionAnswerButton = Property.getProperty(Constant.OR_FILE, "reportQuestionAnswerButton");
 	String  disableReportedLabel = Property.getProperty(Constant.OR_FILE, "disableReportedLabel");
+	String  perfectGiftBadge= Property.getProperty(Constant.OR_FILE, "perfectGiftBadge");
+	String ColorVariantPerfectGift=Property.getProperty(Constant.OR_FILE, "ColorVariantPerfectGift");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -141,6 +143,24 @@ public class PDP_PageLocator {
 	public String get_Add_To_Cart_Button() {
 		
 		return addToCartButton;
+	}
+	/**
+	 * gets Locator - ColorVariant PerfectGift
+	 * 
+	 */
+	
+	public String get_ColorVariant_PerfectGift() {
+		
+		return ColorVariantPerfectGift;
+	}
+	/**
+	 * gets Locator - perfect Gift Badge
+	 * 
+	 */
+	
+	public String get_perfectGiftBadge() {
+		
+		return perfectGiftBadge;
 	}
 	
 	/**

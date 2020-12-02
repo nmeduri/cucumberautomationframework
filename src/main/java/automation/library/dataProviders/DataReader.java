@@ -1541,6 +1541,17 @@ public class DataReader {
 	}
 
 	/**
+	 *  gets pdp Product Badge URL(PerfectGift)
+	 * 
+	 */
+	public String get_pdpProductBadgeURL() {
+		String data = Property.getProperty(Constant.DATA_FILE, "pdpProductBadgeURL");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+    /**
 	 * gets Minimum Price Data (Above Condition)
 	 * 
 	 */

@@ -66,7 +66,18 @@ public class PDP_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getPDPUrl());
 
 	}
-	
+	/** This function navigate to PDP Page with perfect Gift badge */
+	public void navigateTo_PDP_Page_perfectGift_Badge() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_pdpProductBadgeURL());
+
+	}
+	/** This function display perfect Gift badge */
+	public void display_PDP_Page_perfectGift_Badge() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_perfectGiftBadge()));
+
+	}
 	/** This function navigate to PDP Product Page */
 	public void navigate_To_PDP_Product_Page(String sProductCode) throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductUrl() + sProductCode);
@@ -594,7 +605,16 @@ public class PDP_Page extends PageObject {
 		   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badge_In_Store_Clearnce()));
 	   }
    }
-   
+   /** This function is verify that perfect gift badge is displayed for all variant */
+   public void displayPerfectGiftForAllVariant() throws Exception {
+	  // $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_ColorVariant_PerfectGift()));
+	   List<Element> li = $$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Color_Variant());
+	   for(int i=0; i<li.size(); i++) {
+		   li.get(i).click();
+	
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_perfectGiftBadge()));
+   }
+   }
    /** This function is verify that In store bade is displayed */
    public void verifyInStoreBageColorCode() throws Exception {
 	   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Badge_In_Store_Clearnce()), "background-color"); 
