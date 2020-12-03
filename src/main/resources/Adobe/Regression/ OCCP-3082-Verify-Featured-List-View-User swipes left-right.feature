@@ -4,7 +4,6 @@ Feature: OCCP-3082 FDP: Featured List View-User swipes left/right in Mobile
 
   @RegressionTest @WebView @MobileView @TabletView @TC3909
   Scenario: TC-3909 OCCP-3082 Featured List Product List Authorable- Verify Destination URL for product cards
-    Given open browser
     When featured list page url available
     Then verify user swipes left and right
     

@@ -80,7 +80,7 @@ Feature: OCCP-968 : Broad Promo Tiles component
 	When promotion image is clickable
 	Then user should be on automotive page
 	
-	@RegressionTest @MobileView
+	#@RegressionTest @MobileView
 	Scenario: TC-3508 OCCP-968: Verify user is able to click on a featured tile button/image and navigate to the corresponding page 
 	When broad promo tiles FR url is available
 	When broad promo tiles page is displayed
