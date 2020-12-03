@@ -21,7 +21,7 @@ Feature: OCCP-1184 Link Existing Card Screen
 	And ability to go back cancel link should  be displayed
 	
 	@RegressionTest @WebView @MobileView @TabletView
-	Scenario: TC-2283 View Link existing card screen
+	Scenario: TC-2273, TC-2283 View Link existing card screen field validation
 	Given login url is available
 	When enter email id
 	And enter password data

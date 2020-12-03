@@ -13,7 +13,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	String enterCardNumber = Property.getProperty(Constant.OR_FILE, "enterCardNumber");
 	String continueButton = Property.getProperty(Constant.OR_FILE, "continueButton").replace("=", ",");
 	String tryAgainButton = Property.getProperty(Constant.OR_FILE, "tryAgainButton");
-	String cancelButtonExistingCard = Property.getProperty(Constant.OR_FILE, "cancelButtonExistingCard").replace("=", ",");
+	String cancelButtonExistingCard = Property.getProperty(Constant.OR_FILE, "cancelButtonExistingCard");
 	String deactivatedErrorMessage = Property.getProperty(Constant.OR_FILE, "deactivatedErrorMessage");
 	String closedCardErrorMessage = Property.getProperty(Constant.OR_FILE, "closedCardErrorMessage");
 	String nonExistingErrorMessage = Property.getProperty(Constant.OR_FILE, "nonexistingCardErrorMessage");

@@ -159,7 +159,7 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function verify that Cancel button is displayed */
 	public void display_Cancel_Button() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button())),40);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button()));
 	}
 	
 	/** This function verify that Triangle Reward card is displayed */

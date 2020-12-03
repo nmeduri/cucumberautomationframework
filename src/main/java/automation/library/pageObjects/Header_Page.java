@@ -286,7 +286,7 @@ public class Header_Page extends PageObject {
 	
 	/** This function is verify that Pencil Banner is displayed */
 	public void displayPencilBanner() throws Exception {
-		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Standard_Header()));
+		$display((ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Brand_Value_Props_Text()))),40);
 	}
 	
 	/** This function scrolls down to size label */
@@ -427,8 +427,34 @@ public class Header_Page extends PageObject {
 		Assert.assertTrue(value.contains("rgba(38, 38, 38, 1)"));
 	}
 	
+	/** This function verify Information Banner link is displayed*/
 	public void displayInformationBannerHyperlink() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_informationBannerLink()));
+	}
+	
+	/** This function verify brand value props image link is displayed*/
+	public void displayBrandValuePropsImage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Brand_Value_Props_Image()));
+	}
+	
+	/** This function verify brand value props text link is displayed*/
+	public void displayBrandValuePropsText() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Brand_Value_Props_Text()));
+	}
+	
+	/** This function verify Courtesy Link Credit Offered is displayed*/
+	public void displayCourtesyLinkCreditOffered() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Courtesy_Link_Credit_Offered()));
+	}
+	
+	/** This function verify Courtesy Link Learn more CTA is displayed*/
+	public void displayCourtesyLinkLearnMoreCTA() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Courtesy_Link_Learn_More_CTA()));
+	}
+	
+	/** This function click on Courtesy Link Learn more CTA is displayed*/
+	public void clickOnCourtesyLinkLearnMoreCTA() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Courtesy_Link_Learn_More_CTA()));
 	}
 	
 }

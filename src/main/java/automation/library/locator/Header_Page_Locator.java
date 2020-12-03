@@ -50,6 +50,10 @@ public class Header_Page_Locator {
 	String addresses = Property.getProperty(Constant.OR_FILE, "addresses");
 	String hiOnHeader = Property.getProperty(Constant.OR_FILE, "hiOnHeader");
 	String signOut = Property.getProperty(Constant.OR_FILE, "signOut");
+	String brandValuePropsImage=Property.getProperty(Constant.OR_FILE, "brandValuePropsImage");
+	String brandValuePropsText=Property.getProperty(Constant.OR_FILE, "brandValuePropsText");
+	String courtesyLinkCreditOffered=Property.getProperty(Constant.OR_FILE, "courtesyLinkCreditOffered");
+	String courtesyLinkLearnMoreCTA = Property.getProperty(Constant.OR_FILE, "courtesyLinkLearnMoreCTA");
 	
 	
 	/**
@@ -351,5 +355,40 @@ public class Header_Page_Locator {
 	public String get_Sign_Out() {
 		return signOut;
 	}
+	
+	 /** 
+		 * gets Locator - brand value props image
+		 * 
+		 */
+		public String get_Brand_Value_Props_Image() {
+			return brandValuePropsImage;
+		}
+
+		
+		/**
+		 * gets Locator - brand value props text
+		 * 
+		 */
+		public String get_Brand_Value_Props_Text() {
+			return brandValuePropsText;
+		}
+
+		
+		/**
+		 * gets Locator - credit offered
+		 * 
+		 */
+		public String get_Courtesy_Link_Credit_Offered() {
+			return courtesyLinkCreditOffered;
+		}
+
+		
+		/**
+		 * gets Locator - learn more cta
+		 * 
+		 */
+		public String get_Courtesy_Link_Learn_More_CTA() {
+			return courtesyLinkLearnMoreCTA;
+		}
 	
 }

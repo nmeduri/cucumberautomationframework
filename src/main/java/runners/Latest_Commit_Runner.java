@@ -14,11 +14,8 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 
 			"classpath:Adobe/Regression/OCCP_1650_PDP_Product_Badges_PerfectGift.feature",
-
 			"--glue", "automation.library.stepDefination",
-
 			"--tags", "@TC-311",
-
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

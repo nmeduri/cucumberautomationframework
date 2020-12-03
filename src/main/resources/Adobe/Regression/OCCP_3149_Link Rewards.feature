@@ -40,8 +40,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	And clicks on register card button
 	Then user should taken to success screen
 	
-	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2136 Verify the details on Complete your profile screen on Mobile
+	@RegressionTest @WideScreen @MobileView @TabletView
+	Scenario: TC-2140,TC-2136 View Complete Your Profile screen
 	When login url is available
 	When enter email id
 	And enter password data 
@@ -52,11 +52,15 @@ Description: To test the ADOBE Test Cases for the story OCCP-3149
 	And user click on continue button
 	And verify when user enter valid information on complete your profile screen
 	Then cancel button is displayed
-	#And verify clicks on continue button
-	#Then rewards terms and conditions should be displayed
-
+	And verify clicks on continue button
+	Then rewards terms and conditions should be displayed
+	And verify when click on cancel button
+	When user should be navigated to complete your profile screen
+	And verify when user click on cancel button
+	Then link card screen should be displayed
+	
 	@RegressionTest @WebView @WideScreen
-   Scenario: TC-2130, TC-2142 T&C and Link Success screen
+  Scenario: TC-2130, TC-2142 T&C and Link Success screen
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email 

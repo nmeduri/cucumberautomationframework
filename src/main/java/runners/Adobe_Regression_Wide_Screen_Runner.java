@@ -16,7 +16,7 @@ public final class Adobe_Regression_Wide_Screen_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 
 
-			"classpath:Adobe/Regression/", 
+			"classpath:Adobe/Regression/",
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@WideScreen",

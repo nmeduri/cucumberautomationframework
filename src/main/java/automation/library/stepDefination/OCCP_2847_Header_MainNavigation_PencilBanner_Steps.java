@@ -349,5 +349,32 @@ public class OCCP_2847_Header_MainNavigation_PencilBanner_Steps extends BaseClas
 	 public void sign_out_changes_reflected() throws Exception {
 		testContext.getPageObjectManager().getAEMHeaderPage(PageObject.getDriver()).verifySignOutChangesReflected();
 	 }
+	 
+	 @Then("pencil banner should not be displayed")
+		public void pencil_banner_not_displayed() throws Exception {
+			testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).notDisplayPencilBanner();
+	 }
+	 
+	 @And("scroll down the page")
+	 public void scroll_down_the_page() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDownByCoordinates();
+	 }
+	 
+	 @And("in pencil banner brand value props should be displayed")
+	 public void brand_value_props_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayBrandValuePropsImage();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayBrandValuePropsText();
+	 }
+	 
+	 @And("courtesy link with cta i.e. credit offered with learn more cta should be present")
+	 public void courtesy_link_displayed() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayCourtesyLinkCreditOffered();
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayCourtesyLinkLearnMoreCTA();
+	 }
+	 
+	 @And("clicking on learn more cta should take user to targeted page")
+	 public void click_on_learn_more_cta() throws Exception {
+		testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).clickOnCourtesyLinkLearnMoreCTA();
+	 }
 }
 
