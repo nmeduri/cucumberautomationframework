@@ -33,145 +33,221 @@ public class OCCP_3516_PDP_Add_to_Cart_Flyout_Service_Installations_Step extends
 		configFileReader = new ConfigFileReader();
 
 	}
-	@When ("PDP product page is available")
+
+	@When("PDP product page is available")
 
 	public void PDP_page_is_displayed_for_the_product() throws Exception {
 		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).navigate_to_PDP_Product();
 	}
-	@When ("PDP product page for FR locale")
+
+	@When("PDP product page for FR locale")
 
 	public void PDP_page_is_displayed_for_the_product_FR() throws Exception {
 		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).navigate_to_PDP_Product_fr();
 	}
-	@When ("AEM PDP product page for FR locale")
+
+	@When("AEM PDP product page for FR locale")
 
 	public void AEM_PDP_page_is_displayed_for_the_product_FR() throws Exception {
-		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).navigateTo_Feature_List_Author_Page_FR1();
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver())
+				.navigateTo_Feature_List_Author_Page_FR1();
 	}
-	
-	@Then ("select specefications and click on add to cart")
+
+	@Then("select specefications and click on add to cart")
 	public void select_specefications_and_click_add_to_cart() throws Exception {
 		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).select_Product_Specification();
 		// testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).clickOnAddToCartButton();
 
 	}
-	 @Then ("add to cart screen displayed")
-	 public void add_to_cart_screen_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_AddToCart_screen();
-		} 
-	 @Then ("Service Add-On Available box is displayed")
-	 public void Service_addOn_available_Box_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_Service_addon_Box();
-		}
-	   
-	 @And ("Available Service description is displayed")
-	 public void Service_addOn_description_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_Service_description();
-		}
-	  @And ("Available Service price is displayed")
-	  public void Service_Price_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_Service_price();
-		}
-  
-	  @And ("Add Service to Cart” CTA is displayed")
-	  public void Add_ServiceToCart_CTA_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_AddtoService_CTA();
-		}
-	  @Then ("click on add service to cart button")
-	  public void click_add_service_to_cart_button() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).click_AddtoService_CTA();
-		}
-	  @And ("validate the error message displayed")
-	  public void Validate_error_message() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_ErrorMsg_AddtoService_CTA();
-		}
-	  @When ("AEM author with access to configure PDP Add To Cart on the page")
-	  public void AEM_author_with_access_to_configure_PDP_Add_To_Cart_on_the_page() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).navigateTo_PDP_AddToCart_Page();
-		}
-	  @And ("click on Cart fly out component")
-	  public void click_cart_flyout_Component() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).click_cart_flyout_Component();
-		}
-		@And ("update the title of add to cart field")
-		public void update_the_title_of_add_to_cart_field() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_cart_flyout_Title_Plural();
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_cart_flyout_Title_Single();
 
-		}
-	 	@And ("messaging for number of services available is be displayed")
-	 	public void messaging_for_number_of_services_available_is_be_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_seviceAddon_message();
+	@Then("add to cart screen displayed")
+	public void add_to_cart_screen_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_AddToCart_screen();
+	}
 
-		}
-	 	@And ("clickable expansion chevron is displayed")
-	 	public void clickable_expansion_chevron_is_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_clickable_expansion_chevron();
-		}
-	 	@Then ("click on the expandable chevron")
-	 	public void click_expandable_chevron() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).click_clickable_expansion_chevron();
-		}
-	 	@And ("Service Add-Ons options are displayed")
-	 	public void Service_AddOns_options_are_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_serviceAddOn_Option();
-		}
-	 	@And ("the Service Add-Ons Available box is expanded")
-	 	public void the_Service_AddOns_Available_box_is_expanded() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_clickable_collapse_chevron();
-		}
-		@And ("continue to Cart CTA is displayed")
-		public void continue_to_Cart_CTA_is_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_continue_to_cart_CTA();
-		}
-		@Then ("Add to cart Title is updated on the site")
-		public void Add_to_cart_Title_is_updated_on_the_site() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).verifyAddToCartTitleUpdatedOnSite();
-		}
-		@And ("click on service installation tab")
-		public void click_on_service_installation_tab() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).click_serviceInstallation_Tab();
-		}
-		@And ("update the Service Add-on available title of add to cart field")
-		public void update_the_Service_Addon_available_title_of_add_to_cart_field() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_Serviceaddonavailable_Title();
-		}
-		@Then ("Service Add-on available title is updated on the site")
-		public void Service_Addon_available_title_is_updated_on_the_site() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).verifyServiceAddOnTitleUpdatedOnSite();
-		}
-		@And ("update the Add service to cart CTA field")
-		public void update_the_addservicetocart_CTA_field() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_AddservicetoCartCTA();
-		}
-		@And ("update the Error Message Copy field")
-		public void update_the_Error_Message_Copy_field() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_ErrorMessageCopy();
-		}
-		@And ("update the next step description copy")
-		public void update_the_next_step_description_copy() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_nextstep();
-		}
+	@Then("Service Add-On Available box is displayed")
+	public void Service_addOn_available_Box_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_Service_addon_Box();
+	}
 
-		@And ("user configure the service icon")
-		public void user_configure_the_service_icon() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_serviceIcon();
-		}
-		@And ("user configure Service Add-On title")
-		public void user_configure_Service_AddOn_title() throws Exception {
-			testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_ServiceAddonTitle();
-		}
-	 	@Then ("select the service addon option")
-	 	public void select_service_addon_option() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).click_serviceAddOn_Option();
-		}
-	 	@And ("validate the success message displayed")
-	 	public void validate_the_success_message_displayed() throws Exception {
-			testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_success_message();
-		}
-	 	
-	 	@When ("AEM author with access to configure PDP Add To Cart for fr locale on the page")
-		  public void AEM_author_with_access_to_configure_PDP_Add_To_Cart_fr_locale_on_the_page() throws Exception {
-				testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).navigateTo_PDP_AddToCart_Page_Fr();
-			}
+	@And("Available Service description is displayed")
+	public void Service_addOn_description_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_Service_description();
+	}
+
+	@And("Available Service price is displayed")
+	public void Service_Price_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_Service_price();
+	}
+
+	@And("Add Service to Cart” CTA is displayed")
+	public void Add_ServiceToCart_CTA_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_AddtoService_CTA();
+	}
+
+	@Then("click on add service to cart button")
+	public void click_add_service_to_cart_button() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).click_AddtoService_CTA();
+	}
+
+	@And("validate the error message displayed")
+	public void Validate_error_message() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver())
+				.display_ErrorMsg_AddtoService_CTA();
+	}
+
+	@When("AEM author with access to configure PDP Add To Cart on the page")
+	public void AEM_author_with_access_to_configure_PDP_Add_To_Cart_on_the_page() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.navigateTo_PDP_AddToCart_Page();
+	}
+
+	@And("click on Cart fly out component")
+	public void click_cart_flyout_Component() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).click_cart_flyout_Component();
+	}
+
+	@And("update the title of add to cart field")
+	public void update_the_title_of_add_to_cart_field() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.update_cart_flyout_Title_Plural();
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.update_cart_flyout_Title_Single();
+
+	}
+
+	@And("messaging for number of services available is be displayed")
+	public void messaging_for_number_of_services_available_is_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_seviceAddon_message();
+
+	}
+
+	@And("clickable expansion chevron is displayed")
+	public void clickable_expansion_chevron_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver())
+				.display_clickable_expansion_chevron();
+	}
+
+	@Then("click on the expandable chevron")
+	public void click_expandable_chevron() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver())
+				.click_clickable_expansion_chevron();
+	}
+
+	@And("Service Add-Ons options are displayed")
+	public void Service_AddOns_options_are_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_serviceAddOn_Option();
+	}
+
+	@And("the Service Add-Ons Available box is expanded")
+	public void the_Service_AddOns_Available_box_is_expanded() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver())
+				.display_clickable_collapse_chevron();
+	}
+
+	@And("continue to Cart CTA is displayed")
+	public void continue_to_Cart_CTA_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_continue_to_cart_CTA();
+	}
+
+	@Then("Add to cart Title is updated on the site")
+	public void Add_to_cart_Title_is_updated_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver())
+				.verifyAddToCartTitleUpdatedOnSite();
+	}
+
+	@And("click on service installation tab")
+	public void click_on_service_installation_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.click_serviceInstallation_Tab();
+	}
+
+	@And("update the Service Add-on available title of add to cart field")
+	public void update_the_Service_Addon_available_title_of_add_to_cart_field() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.update_Serviceaddonavailable_Title();
+	}
+
+	@Then("Service Add-on available title is updated on the site")
+	public void Service_Addon_available_title_is_updated_on_the_site() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver())
+				.verifyServiceAddOnTitleUpdatedOnSite();
+	}
+
+	@And("update the Add service to cart CTA field")
+	public void update_the_addservicetocart_CTA_field() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_AddservicetoCartCTA();
+	}
+
+	@And("update the Error Message Copy field")
+	public void update_the_Error_Message_Copy_field() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_ErrorMessageCopy();
+	}
+
+	@And("update the next step description copy")
+	public void update_the_next_step_description_copy() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_nextstep();
+	}
+
+	@And("user configure the service icon")
+	public void user_configure_the_service_icon() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_serviceIcon();
+	}
+
+	@And("user configure Service Add-On title")
+	public void user_configure_Service_AddOn_title() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).update_ServiceAddonTitle();
+	}
+
+	@Then("select the service addon option")
+	public void select_service_addon_option() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).click_serviceAddOn_Option();
+	}
+
+	@And("validate the success message displayed")
+	public void validate_the_success_message_displayed() throws Exception {
+		testContext.getPageObjectManager().getPDPAddToCartPage(PageObject.getDriver()).display_success_message();
+	}
+
+	@When("AEM author with access to configure PDP Add To Cart for fr locale on the page")
+	public void AEM_author_with_access_to_configure_PDP_Add_To_Cart_fr_locale_on_the_page() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.navigateTo_PDP_AddToCart_Page_Fr();
+	}
+
+	@When("AEM author with access to configure PDP Contact Us")
+	public void AEM_author_with_access_to_configure_PDP_Contact_Us() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.navigateTo_PDP_ContactUs_Page();
+	}
+
+	@When("AEM author with access to configure PDP TwoFeatured")
+	public void AEM_author_with_access_to_configure_PDP_TwoFeatured() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.navigateTo_PDP_TwoFeatured_Page();
+	}
+	@When("user clicks on close button")
+	public void user_click_on_close_button() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver())
+				.click_Close_Component();
+	}
+	@And("click on Contact Us component")
+	public void click_on_Contact_Us_component() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).click_ContactUs_Component();
+	}
+	
+	@And("click on Two Featured Tiles")
+	public void click_on_Two_Featured_Tiles() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).click_TwoFeatured_Component();
+	}
+
+	@And("verify author is able to configure email title")
+	public void verify_author_is_able_to_configure_email_title() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).enterdata_emailTitle();
+	}
+
+	@And("verify author is able to configure email label")
+	public void verify_author_is_able_to_configure_email_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPAddToCartPage(PageObject.getDriver()).enterdata_emailLabel();
+	}
 }

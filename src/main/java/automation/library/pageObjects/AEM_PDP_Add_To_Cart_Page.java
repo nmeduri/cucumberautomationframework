@@ -9,7 +9,8 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
@@ -38,73 +39,171 @@ public class AEM_PDP_Add_To_Cart_Page extends PageObject {
 		testContext = new TestContext();
 
 	}
-	
+
 	/** This function navigate to PDP Page */
 	public void navigateTo_PDP_AddToCart_Page() throws Exception {
 
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_PDP_AddToCart_AEM());
 
 	}
+
 	/** This function click on cart flyout */
 	public void click_cart_flyout_Component() throws Exception {
-		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_CartFlyOut())), 5);
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_CartFlyOut())), 5);
+		$display(ExpectedConditions.elementToBeClickable(
+				$By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_CartFlyOut())),
+				5);
+		$click(ExpectedConditions.elementToBeClickable(
+				$By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_CartFlyOut())),
+				5);
 
 	}
+
 	/** This function update title of cart flyout plural */
 	public void update_cart_flyout_Title_Plural() throws Exception {
-		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_AddtoCartTitle_Plural())), 5);
-		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_AddtoCartTitle_Plural())), 5, FileReaderManager.getInstance().getAEMDataReader().get_cartFlyOut_Title_plural());
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_AddtoCartTitle_Plural())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator()
+								.get_AddtoCartTitle_Plural())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_cartFlyOut_Title_plural());
 
 	}
-	/** This function update title of cart flyout single*/
+
+	/** This function update title of cart flyout single */
 	public void update_cart_flyout_Title_Single() throws Exception {
-		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_AddtoCartTitle_Singular())), 5);
-		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_AddtoCartTitle_Singular())), 5, FileReaderManager.getInstance().getAEMDataReader().get_cartFlyOut_Title_single());
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_AddtoCartTitle_Singular())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator()
+								.get_AddtoCartTitle_Singular())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_cartFlyOut_Title_single());
 
 	}
-	/** This function update title of Service add on available*/
+
+	/** This function update title of Service add on available */
 	public void update_Serviceaddonavailable_Title() throws Exception {
-		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnAvailableLabel())), 5);
-		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnAvailableLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnAvailableLabel());
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnAvailableLabel())),
+				5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator()
+								.get_serviceAddOnAvailableLabel())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnAvailableLabel());
 
 	}
-	/** This function click service installation tab*/
+
+	/** This function click service installation tab */
 	public void click_serviceInstallation_Tab() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_SeviceInstallationTab())), 5);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_SeviceInstallationTab())), 5);
 
 	}
-	/** This function update Add service to cart CTA link*/
+
+	/** This function update Add service to cart CTA link */
 	public void update_AddservicetoCartCTA() throws Exception {
-		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_addServiceToCart_Label())), 5);
-		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_addServiceToCart_Label())), 5, FileReaderManager.getInstance().getAEMDataReader().get_AddServicetoCartLabel());
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_addServiceToCart_Label())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator()
+								.get_addServiceToCart_Label())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_AddServicetoCartLabel());
 
 	}
-	/** This function update Error Message Copy field*/
+
+	/** This function update Error Message Copy field */
 	public void update_ErrorMessageCopy() throws Exception {
-		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnErrorMessage())), 5);
-		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnErrorMessage())), 5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnErrorMessage());
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnErrorMessage())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator()
+								.get_serviceAddOnErrorMessage())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnErrorMessage());
 
 	}
-	/** This function update next step Copy field*/
+
+	/** This function update next step Copy field */
 	public void update_nextstep() throws Exception {
-		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnNextSteps())), 5);
-		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnNextSteps())), 5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnNextSteps());
+		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnNextSteps())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator()
+								.get_serviceAddOnNextSteps())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnNextSteps());
 	}
-	/** This function update service icon field*/
+
+	/** This function update service icon field */
 	public void update_serviceIcon() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnIcon())), 5);
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnIconTool())), 5);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnIcon())), 5);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnIconTool())), 5);
 	}
-	/** This function update Service add on title field*/
+
+	/** This function update Service add on title field */
 	public void update_ServiceAddonTitle() throws Exception {
-		$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnLabel())), 5);
-		$enterData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnLabel())), 5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnLabel());
+		$clearData(
+				ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnLabel())),
+				5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_serviceAddOnLabel())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_ServiceAddOnLabel());
 	}
+
 	/** This function navigate to PDP Page for fr locale */
 	public void navigateTo_PDP_AddToCart_Page_Fr() throws Exception {
 
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_PDP_AddToCart_AEM_Fr());
 
+	}
+
+	/** This function navigate to Contact UsPDP Page */
+	public void navigateTo_PDP_ContactUs_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_PDP_ContactUs_AEM());
+	}
+
+	/** This function navigate to Two Featured PDP Page */
+	public void navigateTo_PDP_TwoFeatured_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_PDP_TwoFeatured_AEM());
+	}
+	/** This function click on close */
+	public void click_Close_Component() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable(
+				$By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_Close())), 5);
+	}
+
+	/** This function click on cart flyout */
+	public void click_ContactUs_Component() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable(
+				$By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_ContactUs())), 5);
+	}
+	/** This function click on TwoFeatured Tiles */
+	public void click_TwoFeatured_Component() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable(
+				$By(Loc.XPATH, testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_TwoFeatured())), 5);
+	}
+	/** This function click on email Title */
+	public void enterdata_emailTitle() throws Exception {
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_emailTitle())),
+				20, FileReaderManager.getInstance().getAEMDataReader().get_email_Title());
+	}
+
+	/** This function get email Label */
+	public void enterdata_emailLabel() throws Exception {
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMPDPAddToCartPageLocator().get_emailLabel())),
+				20, FileReaderManager.getInstance().getAEMDataReader().get_email_Label());
 	}
 }

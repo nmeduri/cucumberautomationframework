@@ -3599,7 +3599,31 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("AccordionTitle is not specified in the Data file.");
 	}
+	/**
+	 * get Data - Title of email
+	 * 
+	 */
 	
+	public String get_email_Title() {
+		String getAccordionTitle = Property.getProperty(Constant.AEM_DATA_FILE, "email_Title");
+		if(getAccordionTitle != null)
+			return getAccordionTitle;
+		else
+			throw new RuntimeException("EmailTitle is not specified in the Data file.");
+	}
+	
+	/**
+	 * get Data - Label of email
+	 * 
+	 */
+	
+	public String get_email_Label() {
+		String getAccordionTitle = Property.getProperty(Constant.AEM_DATA_FILE, "email_Label");
+		if(getAccordionTitle != null)
+			return getAccordionTitle;
+		else
+			throw new RuntimeException("EmailLabel is not specified in the Data file.");
+	}
 	/**
 	 * get Data - header of Accordion
 	 * 
@@ -5233,6 +5257,40 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	/**
+	 * gets account addresses url
+	 * 
+	 */
+	public String get_account_Addresses_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "acctaddrtemplateURL");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets account OrderHistory url
+	 * 
+	 */
+	public String get_account_OrderHistory_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "orderhistoryURL");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets account rewards url
+	 * 
+	 */
+	public String get_account_rewards_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "rewardspage");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
 	 * gets account address label
 	 * 
 	 */
@@ -5448,5 +5506,29 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("Url Data not specified in the Data file.");
 	}
-
+	/**
+	 * gets PDP Product add to Contact Us URL
+	 * 
+	 */
+	
+	public String get_PDP_ContactUs_AEM() {
+		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "pdpProductContactUs");
+		if(PDPAem != null)
+			return PDPAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets PDP Product add to Two Featured URL
+	 * 
+	 */
+	
+	public String get_PDP_TwoFeatured_AEM() {
+		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "twofeaturedURL");
+		if(PDPAem != null)
+			return PDPAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

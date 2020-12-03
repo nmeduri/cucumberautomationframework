@@ -4,16 +4,15 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Account_Address_Page_Locator;
+import automation.library.locator.AEM_Account_Rewards_Template_Page_Locator;
 import automation.library.locator.AEM_Broad_Banner_Page_Locator;
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.AEM_Cart_Page_Locator;
 import automation.library.locator.AEM_Common_Page_Locator;
 import automation.library.locator.AEM_Contact_Us_Page_Locator;
-import automation.library.locator.AEM_Feature_List_Page_Locator;
 import automation.library.locator.AEM_Customer_Service_Informational_Copy_Page_Locator;
 import automation.library.locator.AEM_Edge_To_Edge_Banner_Locator;
-import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
-import automation.library.locator.AEM_PDP_Add_To_Cart_Page_Locator;
+import automation.library.locator.AEM_Feature_List_Page_Locator;
 import automation.library.locator.AEM_Footer_Page_Locator;
 import automation.library.locator.AEM_Get_A_New_Triangle_Rewards_Card_Locator;
 import automation.library.locator.AEM_Header_Page_Locator;
@@ -21,6 +20,7 @@ import automation.library.locator.AEM_Link_Card_Page_Locator;
 import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
 import automation.library.locator.AEM_Login_Page_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
+import automation.library.locator.AEM_PDP_Add_To_Cart_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
 import automation.library.locator.AEM_PLP_Page_Locator;
 import automation.library.locator.AEM_Privacy_Charter_Page_Locator;
@@ -65,16 +65,15 @@ import automation.library.locator.Standard_Masthead_Banner_Page_Locator;
 import automation.library.locator.Two_Featured_Tile_Component_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Account_Address_Page;
+import automation.library.pageObjects.AEM_Account_Rewards_Template_Page;
 import automation.library.pageObjects.AEM_Broad_Banner_Page;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.AEM_Cart_Page;
 import automation.library.pageObjects.AEM_Common_Page;
 import automation.library.pageObjects.AEM_Contact_Us_Page;
-import automation.library.pageObjects.AEM_Featured_List_Page;
 import automation.library.pageObjects.AEM_Customer_Service_Informational_Copy_Page;
 import automation.library.pageObjects.AEM_Edge_To_Edge_Banner_Page;
-import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
-import automation.library.pageObjects.AEM_PDP_Add_To_Cart_Page;
+import automation.library.pageObjects.AEM_Featured_List_Page;
 import automation.library.pageObjects.AEM_Footer_Page;
 import automation.library.pageObjects.AEM_Get_A_New_Triangle_Rewards_Card_Page;
 import automation.library.pageObjects.AEM_Header_Page;
@@ -82,6 +81,7 @@ import automation.library.pageObjects.AEM_Link_Card_Page;
 import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
 import automation.library.pageObjects.AEM_Login_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
+import automation.library.pageObjects.AEM_PDP_Add_To_Cart_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
 import automation.library.pageObjects.AEM_PLP_Page;
 import automation.library.pageObjects.AEM_Privacy_Charter_Page;
@@ -268,6 +268,9 @@ public class PageObjectManager {
 	private SRP_Page getSRPPage;
 	private Standard_Masthead_Banner_Page getStandardMastheadBannerPage;
 	private Standard_Masthead_Banner_Page_Locator getStandardMastheadBannerPageLocator;
+	
+	private AEM_Account_Rewards_Template_Page  getAccountRewardsTemplatePage;
+	private AEM_Account_Rewards_Template_Page_Locator getAccountRewardsTemplatePageLocator;
 	
 	public PageObjectManager() {
 		
@@ -913,5 +916,16 @@ public class PageObjectManager {
 	/** Returns Instance of Standard Masthead Banner Locator Page */
 	public Standard_Masthead_Banner_Page_Locator getStandardMastheadBannerPageLocator() {
 		return (getStandardMastheadBannerPageLocator == null) ? getStandardMastheadBannerPageLocator = new Standard_Masthead_Banner_Page_Locator() : getStandardMastheadBannerPageLocator;
+	}
+	
+	
+	/** Returns Instance of Account Rewards Template Page */
+	public AEM_Account_Rewards_Template_Page getAccountRewardsTemplatePage(WebDriver driver) {
+		return (getAccountRewardsTemplatePage == null) ? getAccountRewardsTemplatePage = new AEM_Account_Rewards_Template_Page(driver) : getAccountRewardsTemplatePage;
+	}
+
+	/** Returns Instance of Account Rewards Template Page Locator */
+	public AEM_Account_Rewards_Template_Page_Locator getAccountRewardsTemplatePageLocator() {
+		return (getAccountRewardsTemplatePageLocator == null) ? getAccountRewardsTemplatePageLocator = new AEM_Account_Rewards_Template_Page_Locator() : getAccountRewardsTemplatePageLocator;
 	}
 }

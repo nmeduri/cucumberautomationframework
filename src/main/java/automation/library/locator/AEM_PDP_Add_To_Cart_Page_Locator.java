@@ -27,7 +27,13 @@ public class AEM_PDP_Add_To_Cart_Page_Locator {
 	String SeviceInstallationTab= Property.getProperty(Constant.OR_FILE, "SeviceInstallationTab");
 	String ErrorMessage= Property.getProperty(Constant.OR_FILE, "ErrorMessage");
 	String PostalTab= Property.getProperty(Constant.OR_FILE, "PostalTab");
-
+	String contactus= Property.getProperty(Constant.OR_FILE, "contactus");
+	String emailtitle= Property.getProperty(Constant.OR_FILE, "emailtitle");
+	String emaillabel= Property.getProperty(Constant.OR_FILE, "emaillabel");
+	String closecomp= Property.getProperty(Constant.OR_FILE, "closecomp");
+	String twofeatured= Property.getProperty(Constant.OR_FILE, "twofeatured");
+	
+	
 	/**
 	 * gets Locator - Cart Fly out
 	 * 
@@ -35,6 +41,47 @@ public class AEM_PDP_Add_To_Cart_Page_Locator {
     
 	public String get_CartFlyOut() {
 		return CartFlyOut;	
+	}
+	/**
+	 * gets Locator - Contact Us
+	 * 
+	 */
+    
+	public String get_ContactUs() {
+		return contactus;	
+	}
+	
+	/**
+	 * gets Locator - Two Featured
+	 * 
+	 */
+    
+	public String get_TwoFeatured() {
+		return twofeatured;	
+	}
+	
+	/**
+	 * gets Locator - Close
+	 * 
+	 */
+    
+	public String get_Close() {
+		return closecomp;	
+	}
+	/**
+	 * gets Locator - emailTitle
+	 * 
+	 */
+	public String get_emailTitle() {
+		return emailtitle;	
+	}
+	
+	/**
+	 * gets Locator - emailLabel
+	 * 
+	 */
+	public String get_emailLabel() {
+		return emaillabel;	
 	}
 	/**
 	 * gets Locator -SeviceInstallationTab
