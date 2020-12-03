@@ -203,9 +203,16 @@ public class OCCP_3082_Featured_List_Product_List_Authorable_Step extends BaseCl
 	}
 	
 
+	@And ("user click on show badges checkbox")
+	public void user_click_on_show_badges_checkbox() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).uncheckshowBadges();
+	}
+
+
 	@And ("verify when the author configure for FL")
 	public void verify_when_the_author_configure_for_FL() throws Exception {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfigurePage();
 	}
+
 
 }

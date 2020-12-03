@@ -749,11 +749,19 @@ public class AEM_Featured_List_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getTitle()),
 				FileReaderManager.getInstance().getAEMDataReader().get_ProductList_FR());
 	}
+
+
+	/** Uncheck Show Badges */
+	public void uncheckshowBadges() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getShowBadges())),
+				10);
+	}
+
 	
 
 	/** Verify Configure page displaying on same page or not */
 	public void verifyConfigurePage() throws Exception {
 		boolean displayValue = $display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getTitleVerification()));
 	}
-
 }
