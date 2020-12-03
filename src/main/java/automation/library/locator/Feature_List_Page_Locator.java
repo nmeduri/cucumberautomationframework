@@ -43,7 +43,9 @@ public class Feature_List_Page_Locator {
 	 String productCardMobile = Property.getProperty(Constant.OR_FILE, "productCardMobile");
 	 String ProductListTitle = Property.getProperty(Constant.OR_FILE, "ProductListTitle");
 	 String ProductListImage = Property.getProperty(Constant.OR_FILE, "ProductListImage");
-
+	 String swipepaginationButton = Property.getProperty(Constant.OR_FILE, "swipepaginationButton");
+	 String clickpaginationbuttons = Property.getProperty(Constant.OR_FILE, "clickpaginationbuttons");
+	 String swipefirstbutton = Property.getProperty(Constant.OR_FILE, "clickpaginationbuttons");
 	 
 	 /**
 	  * get Locator - Learn More Link First
@@ -252,5 +254,24 @@ public class Feature_List_Page_Locator {
 	  */
 	 public String getProductListImage() {
 		 return ProductListImage;
+	 }
+	 /**
+	  * get Locator swipeButton -Dot
+	  */
+	 public String validatePaginationButton() {
+		 return swipepaginationButton;
+	 }
+	 
+	 /**
+	  * clickpagination buttons
+	  */
+	 public String swipePaginationButtons() {
+		 return clickpaginationbuttons;
+	 }
+	 /**
+	  * clickpagination buttons
+	  */
+	 public String swipeFirstPaginationButtons() {
+		 return swipefirstbutton;
 	 }
 	}

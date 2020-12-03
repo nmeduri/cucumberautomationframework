@@ -192,7 +192,7 @@ public class OCCP_3082_Featured_List_Product_List_Authorable_Step extends BaseCl
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyErroMessage();
 	}
 	
-	@Given("AEM author with access to configure feature list FRURL") 
+	@When("AEM author with access to configure feature list FRURL") 
 	public void AEM_author_with_access_to_configure_feature_list_FRURL() throws Exception {
 
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).navigateTo_Feature_List_Author_Page_FR();
@@ -201,7 +201,6 @@ public class OCCP_3082_Featured_List_Product_List_Authorable_Step extends BaseCl
 	public void user_enter_product_code_in_FL() throws Exception {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).enterTitleInFL();
 	}
-	
 
 	@And ("user click on show badges checkbox")
 	public void user_click_on_show_badges_checkbox() throws Exception {
@@ -214,5 +213,49 @@ public class OCCP_3082_Featured_List_Product_List_Authorable_Step extends BaseCl
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).verifyConfigurePage();
 	}
 
+	
+	@And ("user click on uncheck or check Hide Production Description checkbox")
+	public void user_click_on_uncheck_or_check_Hide_Production_Description_checkbox() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).uncheckProductcodeDes();
+	}
+	
+	@And ("user verify hiding save story checkbox")
+	public void user_verify_hiding_save_story_checkbox() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).uncheckSaveStory();
+	}
 
+	@When("featured list page url available")
+	public void featured_list_page_url_available() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).navigateTo_Featured_List_Product_List_Page_CA();
+	}
+	
+	@Then ("verify user swipes left and right")
+	public void verify_user_swipes_left_and_right() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyUserSwipesLeftandRight();
+	}
+	
+	@Then ("verify displaying navigation dots")
+	public void verify_displaying_navigation_dots() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyDisplayingPaginationDots();
+	}
+	
+	@And ("select last page and scroll right")
+	public void select_last_page_and_scroll_right() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).clickOnLastDot();
+	}
+	
+	@And ("verify is user is able to see first page")
+	public void verify_is_user_is_able_to_see_first_page() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).clickOnfirstDot();
+	}
+	
+	@And ("select first page and scroll left")
+	public void select_first_page_and_scroll_left() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).selectFirstPageAndClickLastPageDot();
+	}
+	
+	@Then ("verify is user is able to see last page")
+	public void verify_is_user_is_able_to_see_last_page() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).displayLastPage();
+	}
 }

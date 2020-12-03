@@ -62,7 +62,8 @@ public class AEM_Feature_List_Page_Locator {
 
 	 String titleverification =Property.getProperty(Constant.OR_FILE, "titleverification");
 
-	 
+	 String hideproddescheckbox =Property.getProperty(Constant.OR_FILE, "hideproddescheckbox");
+	 String hidesavestory =Property.getProperty(Constant.OR_FILE, "hideproddescheckbox");
 	 /**
 	  * get Locator = Feature List Panel
 	  */
@@ -382,4 +383,18 @@ public class AEM_Feature_List_Page_Locator {
 		return titleverification;
 
 	}
+	/**
+	 * get  - ProductCode Checkbox Uncheck 
+	 */
+	public String getProductCodeChBoxUncheck() {
+		return hideproddescheckbox;
+	}
+	
+	/**
+	 * get  - Save Story Uncheck 
+	 */
+	public String getSaveStoryCheckbox() {
+		return hidesavestory;
+	}
+	
 }

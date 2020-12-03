@@ -365,7 +365,12 @@ public class Featured_List_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Featured_List_Product_List_Url());
 
 	}
+	/** This function navigate to Featured Products List Page for CA*/
+	public void navigateTo_Featured_List_Product_List_Page_CA() throws Exception {
 
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Featured_List_Product_List_Url_CA());
+
+	}
 	/** This function is verify Product Featured List Page is displayed */
 	public void display_Product_Featured_List_Page() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle().contains("FeaturedPL");
@@ -427,7 +432,37 @@ public class Featured_List_Page extends PageObject {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getPaginationDotOne())), 5);
 		}
 
+	/** verify userSwipesLeftandRigh*/
+	public void verifyUserSwipesLeftandRight() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().swipePaginationButtons()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().swipeFirstPaginationButtons()));
+		}
 	
+	/** verify availability of pagination buttons*/
+	public void verifyDisplayingPaginationDots() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().validatePaginationButton())), 5);
+		}
+	
+	/** verify click on last Dot*/
+	public void clickOnLastDot() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().swipePaginationButtons())), 5);
+		}
+	
+
+	/** verify click on first Dot*/
+	public void clickOnfirstDot() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().swipeFirstPaginationButtons())), 5);
+		}
+	
+	/** verify selectFirstPageAndClickLastPageDot*/
+	public void selectFirstPageAndClickLastPageDot() throws Exception {
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().swipePaginationButtons())), 5);
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().swipeFirstPaginationButtons())), 5);
+		}
+	/** verify click on last Dot*/
+	public void displayLastPage() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().swipePaginationButtons())), 5);
+		}
 }
 	
 	

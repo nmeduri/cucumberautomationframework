@@ -1359,6 +1359,19 @@ public class DataReader {
 		else 
 			throw new RuntimeException("featuredProductList url not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Featured List Product List URL
+	 * 
+	 */
+
+	public String get_Featured_List_Product_List_Url_CA() {
+		String featuredProductsListUrl = Property.getProperty(Constant.DATA_FILE, "featuredProductListUrl_ca");
+		if(featuredProductsListUrl != null)
+			return featuredProductsListUrl;
+		else 
+			throw new RuntimeException("featuredProductList url not specified in the Data file.");
+	}
 	/**
 	 * gets Cart Page URL
 	 * 

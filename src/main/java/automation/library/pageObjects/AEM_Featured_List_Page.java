@@ -98,10 +98,14 @@ public class AEM_Featured_List_Page extends PageObject {
 
 	/** this function clicks on feature list panel */
 	public void clickFeatureListPanel() throws Exception {
-		//$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())), 15);
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));
-		//$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
-		//		testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())), 15);
+		// $click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+		// testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())),
+		// 15);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(
+				testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));
+		// $click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+		// testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())),
+		// 15);
 		// ((JavascriptExecutor)
 		// PageObject.getDriver()).executeScript("arguments[0].click();",
 		// $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));
@@ -749,8 +753,6 @@ public class AEM_Featured_List_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getTitle()),
 				FileReaderManager.getInstance().getAEMDataReader().get_ProductList_FR());
 	}
-
-
 	/** Uncheck Show Badges */
 	public void uncheckshowBadges() throws Exception {
 		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By
@@ -760,8 +762,26 @@ public class AEM_Featured_List_Page extends PageObject {
 
 	
 
+
 	/** Verify Configure page displaying on same page or not */
 	public void verifyConfigurePage() throws Exception {
-		boolean displayValue = $display($(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getTitleVerification()));
+		boolean displayValue = $display(
+				$(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getTitleVerification()));
 	}
+
+
+	/** Verify ProductCode Description */
+	public void uncheckProductcodeDes() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getProductCodeChBoxUncheck())),
+				10);
+	}
+	
+	/** Verify save story */
+	public void uncheckSaveStory() throws Exception {
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getSaveStoryCheckbox())),
+				10);
+	}
+	
 }
