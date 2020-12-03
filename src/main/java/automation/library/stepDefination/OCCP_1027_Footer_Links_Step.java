@@ -280,7 +280,6 @@ public class OCCP_1027_Footer_Links_Step extends BaseClass {
 	@And("user clicks on the section headers name Customer Support")
 	public void click_on_custom_support_header_section() throws Exception {
 		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).clickableCustomSupportHeader();
-		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).displayCustomSupportPlusButton();
 	}
 
 	@And("user clicks on the section headers name Services & Solutions")

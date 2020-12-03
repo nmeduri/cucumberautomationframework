@@ -194,7 +194,7 @@ public class OCCP_1030_Simple_Footer_Step extends BaseClass {
 	
 	@Then("user is navigate on site map page where detailed site map information is displayed")
 	public void user_is_navigate_on_site_map_page_where_detailed_site_map_information_is_displayed() throws Exception {
-		
+		testContext.getPageObjectManager().getFooterPage(PageObject.getDriver()).verifyLinkNavigateOnSiteMap();
 	}
 	
 	@Then("clickable text Terms and conditions is displayed")

@@ -14,12 +14,24 @@ Feature: OCCP-1180 Get New Loyalty Card
 	And verify when user click on cancel button
 	Then link card screen should be displayed
 	
-	#@RegressionTest @WebView @WideScreen
-	Scenario: TC-2472 Verfiy Rewards Terms&Conditions screen and screen on Desktop 
-	When login url is available
-	When user 2488 enter detail email
+	@RegressionTest @WebView @WideScreen
+	Scenario: TC-2472, TC-2484 Rewards T&C screen and Link Success screen on Desktop and Wide Desktop View
+	Given sign up url is available
+	Then sign up page is displayed
+	And user enter email
 	And user enter password
-	And user click on sign in button
+	And user enter retype password
+	And user click on create button
+	And user click on next button
+	And email verification sent confirmation screen is displayed
+	When mailinator url is available
+	Then user enter detail in mailinator inbox
+	And user click on go button
+	Then the user has received the verification email
+	And user click on verification email
+	And user click on here to verify email link
+	Then page your email has been verified displayed
+	And user clicks on continue button
 	Then link card screen should be displayed
 	And verify when user clicks on the get a new triangle rewards card link
 	Then user should redirect to the get a new triangle rewards card screen
@@ -27,6 +39,8 @@ Feature: OCCP-1180 Get New Loyalty Card
 	And verify clicks on continue button
 	Then rewards terms and conditions should be displayed
 	Then register card button is displayed on terms and conditions page
+	And clicks on register card button
+	Then user should taken to success screen
 	
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-2470
 	Scenario: TC-2470, TC-2478 Verfiy Field level validations on Personal Information on Desktop
@@ -53,8 +67,8 @@ Feature: OCCP-1180 Get New Loyalty Card
 	And user clicks on cancel link
 	Then user should be returned to initial link cards screen
 	
-	@RegressionTest @MobileView @TabletScreen 
-	Scenario: TC-2480, 2484 Rewards T&C screen and Link Success screen 
+	@RegressionTest @MobileView
+	Scenario: TC-2480 Rewards T&C screen and Link Success screen 
 	Given sign up url is available
 	Then sign up page is displayed
 	And user enter email

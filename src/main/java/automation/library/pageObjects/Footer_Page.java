@@ -474,14 +474,12 @@ public class Footer_Page extends PageObject {
 	
 	/** This function is verify that Link is successfully navigate on Accessibility */
 	public void verifyLinkNavigateOnAccessibility() throws Exception {
-		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchWindow();
 		String expectedUrl = (java.lang.String) configuration.getProperty("urlAccessibility");
 		Log.message("Expected Url:- " + expectedUrl, true);
 		String actualUrl = PageObject.getDriver().getCurrentUrl();
 		Log.message("Actual Url:- " + actualUrl, true);
 		Assert.assertEquals(expectedUrl, actualUrl);
-		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
-	    //testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 	}
 	
 	/** This function click on terms and conditions */
@@ -870,8 +868,6 @@ public class Footer_Page extends PageObject {
 		String actualUrl = PageObject.getDriver().getCurrentUrl();
 		Log.message("Actual Url:- " + actualUrl, true);
 		Assert.assertEquals(expectedUrl, actualUrl);
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeChildWindow();
-		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).parentWindow();
 	}
 	
 	/** This function is verify that all links are underlined on hover */

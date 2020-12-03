@@ -46,7 +46,7 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	/** This function is verify that Header create your triangle is displayed */
 	public void display_Create_Your_Triangle_Header() throws Exception {
-		$display(ExpectedConditions.presenceOfElementLocated(By.xpath(testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header())), 50);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header())), 25);
 	}
 	
 	/** This function enter email detail in the email field */

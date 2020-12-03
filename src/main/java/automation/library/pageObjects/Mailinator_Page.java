@@ -166,4 +166,5 @@ public class Mailinator_Page extends PageObject {
 		 $display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email())), 20);
 		 ((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getMailinatorPageLocator().get_Click_Here_To_Verify_Email())));
 	}
+	
 }
