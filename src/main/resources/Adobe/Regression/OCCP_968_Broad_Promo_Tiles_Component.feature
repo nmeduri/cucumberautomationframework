@@ -3,6 +3,7 @@ Feature: OCCP-968 : Broad Promo Tiles component
 		
 	@RegressionTest @WebView @WideScreen @MobileView @TC-3506
 	Scenario: TC-3506 OCCP-968: Verify user is able to view Broad Promo Tiles component 
+	Given open browser
 	When broad promo tiles EN url is available
 	When broad promo tiles page is displayed
 	Then user scrolls to the broad promo tiles 
@@ -60,7 +61,7 @@ Feature: OCCP-968 : Broad Promo Tiles component
 	And promotion CTA button should display for each tile
 	And promotion key-line should display for each tile
 	
-	@RegressionTest @WebView @WideScreen 
+	#@RegressionTest @WebView @WideScreen 
 	Scenario: TC-3508 OCCP-968: Verify user is able to click on a featured tile button/image and navigate to the corresponding page 
 	When broad promo tiles EN url is available
 	When broad promo tiles page is displayed
