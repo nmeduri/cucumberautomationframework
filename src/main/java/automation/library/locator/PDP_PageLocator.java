@@ -131,9 +131,32 @@ public class PDP_PageLocator {
 	String ansThisQuestionButton = Property.getProperty(Constant.OR_FILE, "ansThisQuestionButton");
 	String postAnswerModel = Property.getProperty(Constant.OR_FILE, "postAnswerModel");
 	String reportQuestionAnswerButton = Property.getProperty(Constant.OR_FILE, "reportQuestionAnswerButton");
-	String  disableReportedLabel = Property.getProperty(Constant.OR_FILE, "disableReportedLabel");
-	String  perfectGiftBadge= Property.getProperty(Constant.OR_FILE, "perfectGiftBadge");
+	String disableReportedLabel = Property.getProperty(Constant.OR_FILE, "disableReportedLabel");
+	String perfectGiftBadge= Property.getProperty(Constant.OR_FILE, "perfectGiftBadge");
 	String ColorVariantPerfectGift=Property.getProperty(Constant.OR_FILE, "ColorVariantPerfectGift");
+	String unfilledStars = Property.getProperty(Constant.OR_FILE, "unfilledStars");
+	String writeReviewsButton = Property.getProperty(Constant.OR_FILE, "writeReviewsButton");
+	String reviewSecion = Property.getProperty(Constant.OR_FILE, "reviewSecion");
+	String reviewsScrollableTitle = Property.getProperty(Constant.OR_FILE, "reviewsScrollableTitle");
+	String unfilledStarsScrollable = Property.getProperty(Constant.OR_FILE, "unfilledStarsScrollable");
+	String beTheFirstToAskQuestion = Property.getProperty(Constant.OR_FILE, "beTheFirstToAskQuestion");
+	String reviewTitle = Property.getProperty(Constant.OR_FILE, "reviewTitle");
+	String beTheFirstToAskQuestionMobile = Property.getProperty(Constant.OR_FILE, "beTheFirstToAskQuestionMobile");
+	String questionAnswerReviewField = Property.getProperty(Constant.OR_FILE, "questionAnswerReviewField");
+	String nickNameReviewField = Property.getProperty(Constant.OR_FILE, "nickNameReviewField");
+	String emailReviewField = Property.getProperty(Constant.OR_FILE, "emailReviewField");
+	String reviewStarPopUp = Property.getProperty(Constant.OR_FILE, "reviewStarPopUp");
+	String reviewTitlePopUp = Property.getProperty(Constant.OR_FILE, "reviewTitlePopUp");
+	String reviewDescriptionPopUp = Property.getProperty(Constant.OR_FILE, "reviewDescriptionPopUp");
+	String canadianTireEmployeeDropDown = Property.getProperty(Constant.OR_FILE, "canadianTireEmployeeDropDown");
+	String canadianTireSupplier = Property.getProperty(Constant.OR_FILE, "canadianTireSupplier");
+	String memberOfTheTestedForLife = Property.getProperty(Constant.OR_FILE, "memberOfTheTestedForLife");
+	String receiveThisProductForFree = Property.getProperty(Constant.OR_FILE, "receiveThisProductForFree");
+	String reviewWrittenAsPartOfCanadianTire = Property.getProperty(Constant.OR_FILE, "reviewWrittenAsPartOfCanadianTire");
+	String termsAndConditionsReviewPopUp = Property.getProperty(Constant.OR_FILE, "termsAndConditionsReviewPopUp");
+	String submitReviewButton = Property.getProperty(Constant.OR_FILE, "submitReviewButton");
+	String filledStars = Property.getProperty(Constant.OR_FILE, "filledStars");
+	String ratingCount = Property.getProperty(Constant.OR_FILE, "ratingCount");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -1162,7 +1185,169 @@ public class PDP_PageLocator {
 		return disableReportedLabel;
 	}
 	
-}
+	/**
+	 * gets Locator - Unfilled Star
+	 */
+	public String get_Unfilled_Star() {
+		return unfilledStars;
+	}
+	
+	/**
+	 * gets Locator - Write A Review
+	 */
+	public String get_Write_A_Review() {
+		return writeReviewsButton;
+	}
+	
+	/**
+	 * gets Locator - Review Section
+	 */
+	public String get_Review_Section() {
+		return reviewSecion;
+	}
+	
+	/**
+	 * gets Locator - Title Reviews Section
+	 */
+	public String get_Title_Reviews_Section_Scrollable() {
+		return reviewsScrollableTitle;
+	}
+	
+	/**
+	 * gets Locator - Unfilled Stars For Scrollable Section
+	 */
+	public String get_Unfilled_Stars_For_Scrollable_Section() {
+		return unfilledStarsScrollable;
+	}
+	
+	/**
+	 * gets Locator - Be the First to write Ask Review
+	 */
+	public String get_Be_The_First_To_Write_Ask_Review() {
+		return beTheFirstToAskQuestion;
+	}
+	
+	/**
+	 * gets Locator - Review Title
+	 */
+	public String get_Review_Title() {
+		return reviewTitle;
+	}
+	
+	/**
+	 * gets Locator - Be the First to write Ask Review (Mobile)
+	 */
+	public String get_Be_The_First_To_Write_Ask_Review_Mobile() {
+		return beTheFirstToAskQuestionMobile;
+	}
+	
+	/**
+	 * gets Locator - Question Answer Field (Review Pop up)
+	 */
+	public String get_Question_Answer_Field_Review_PopUp() {
+		return questionAnswerReviewField;
+	}
+	
+	/**
+	 * gets Locator - Nick Name Field (Review Pop Up)
+	 */
+	public String get_Name_Field_Review_PopUp() {
+		return nickNameReviewField;
+	}
+	
+	/**
+	 * gets Locator - Email Field (Review Pop Up)
+	 */
+	public String get_Email_Field_Review_Pop_Up() {
+		return emailReviewField;
+	}
+	
+	/**
+	 * gets Locator - Review Star (Pop Up)
+	 */
+	public String get_Review_Star_Pop_Up() {
+		return reviewStarPopUp;
+	}
+	
+	/**
+	 * gets Locator - Review Title (Pop Up)
+	 */
+	public String get_Review_Title_Pop_Up() {
+		return reviewTitlePopUp;
+	}
+	
+	/**
+	 * gets Locator - Review Description (Pop Up)
+	 */
+	public String get_Review_Description_Pop_Up() {
+		return reviewDescriptionPopUp;
+	}
+	
+	/**
+	 * gets Locator - Canadian tire employee (Pop Up)
+	 */
+	public String get_Canadian_Tire_Employee() {
+		return canadianTireEmployeeDropDown;
+	}
+	
+	/**
+	 * gets Locator - Canadian Tire Supplier (Pop Up)
+	 */
+	public String get_Canadian_Tire_Supplier() {
+		return canadianTireSupplier;
+	}
+	
+	/**
+	 * gets Locator - Member of the Test for Life in Canada Program
+	 */
+	public String get_Member_Of_The_Test_For_Life_In_Canada_Program() {
+		return memberOfTheTestedForLife;
+	}
+	
+	/**
+	 * gets Locator - Did you receive this product for free
+	 */
+	public String get_Receive_This_Product_For_Free() {
+		return receiveThisProductForFree;
+	}
+	
+	/**
+	 * gets Locator - Is this review written as part of a Canadian Tire contest/promotion?*
+	 */
+	public String get_Review_Written_As_Part_Of_Canadian_Tire() {
+		return reviewWrittenAsPartOfCanadianTire;
+	}
+	
+	/**
+	 * gets Locator - Terms And Conditions Pop Up
+	 * 
+	 */
+	public String get_Terms_And_Conditions_Pop_Up() {
+		return termsAndConditionsReviewPopUp;
+	}
+	
+	/**
+	 * gets Locator - Submit Review Button
+	 */
+	public String get_Submit_Review_Button() {
+		return submitReviewButton;
+	}
+	
+	/**
+	 * gets Locator - Filled Stars
+	 */
+	public String get_Filled_Stars() {
+		return filledStars;
+	}
+	
+	/**
+	 * gets Locator - Rating Count
+	 */
+	public String get_Rating_Count() {
+		return ratingCount;
+	}
+ }
+
 
 
 

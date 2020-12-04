@@ -168,4 +168,9 @@ public class PLPPageSteps extends BaseClass {
 	public void click_see_more_sorting() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickSeeThreeMore();
 	}
+	
+	@And("back from pdp page") 
+	public void back_from_pdp_page() throws Exception {
+		PageObject.getDriver().navigate().back();
+	}
 }

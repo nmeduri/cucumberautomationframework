@@ -47,5 +47,20 @@ public class OCCP_1603_Filters_And_Facets_Featured_Facet_Step extends BaseClass 
 	public void the_rating_filter_collapses_in_the_dynamic_facet() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).collapsedRatingSection();
 	}
+	
+	@And("click on clear all pill")
+	public void clickOnClearAllPill() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickClearAllPill();
+	}
+	
+	@And("click on prodcuct card title")
+	public void click_on_product_card_title() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickProductCardTitle();
+	}
+	
+	@Then("the selected filters are persistant")
+	public void the_selected_filters_are_persistant() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifySelectedFiltersArePersistant();
+	}
 }
 

@@ -124,6 +124,11 @@ public class PLP_Page extends PageObject {
 	public void displayProductCardTitle() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Title()));
 	}
+	
+	/** click on product  ard */
+	public void clickProductCardTitle() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Title()));
+	}
 		
 	/** This function click on price low to high */
 	public void clickOnPriceLowToHigh() throws Exception {
@@ -166,6 +171,8 @@ public class PLP_Page extends PageObject {
 			//Log.message("Number:- " + priceFloat.get(i) + "--" + "--" + priceFloat.get(i + 1), true);
 			Assert.assertTrue(priceFloat.get(i) >= priceFloat.get(i + 1));
 		}
+		String url = PageObject.getDriver().getCurrentUrl();
+		conf.setProperty("currentFilterUrl", url);
 
 	}
 	
@@ -1005,5 +1012,16 @@ public class PLP_Page extends PageObject {
 		Log.message("ratingValue[0] " + ratingValue[0], true);
 		Log.message("ratingIconSize " + ratingIconSize, true);
 		Assert.assertEquals(Integer.parseInt(ratingValue[0]), ratingIconSize);
+	}
+	
+	/** click on clear all (pill)*/
+	public void clickClearAllPill() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Clear_All()));
+	}
+	
+	/** verify that selected filters are persistant */
+	public void verifySelectedFiltersArePersistant() throws Exception {
+		String url = (java.lang.String) conf.getProperty("currentFilterUrl");
+		Assert.assertEquals(url, PageObject.getDriver().getCurrentUrl());
 	}
 }	

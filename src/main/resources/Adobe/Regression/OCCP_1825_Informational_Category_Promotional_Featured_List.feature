@@ -10,7 +10,6 @@ Feature: OCCP-1825 Featured List : Informational Category Promotional Featured L
 	
 	@RegressionTest @WebView @WideScreen @TC-1813
 	Scenario: TC-1813 Verify the chevron and carousel when the featured list has more than 4 tiles on Widescreen
-	Given open browser
 	When fl page  is available for more than four products
 	Then user should be able to see featured list component on the page
 	And verify the display of chevron when there are more than 4 product on left and right side

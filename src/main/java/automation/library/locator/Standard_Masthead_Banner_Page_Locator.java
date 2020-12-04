@@ -15,15 +15,16 @@ public class Standard_Masthead_Banner_Page_Locator {
 	String mastheadBanner = Property.getProperty(Constant.OR_FILE, "mastheadBanner");
 	String mastheadBannerTitle = Property.getProperty(Constant.OR_FILE, "mastheadBannerTitle").replace("=", ",");
 	String mastheadBannerDescription = Property.getProperty(Constant.OR_FILE, "mastheadBannerDescription").replace("=", ",");
-	String mastheadBannerAEM = Property.getProperty(Constant.OR_FILE, "mastheadBannerAEM");
+	String mastheadBannerAEM = Property.getProperty(Constant.OR_FILE, "mastheadBannerAEM").replace("=", ",");
 	String titleFieldAEM = Property.getProperty(Constant.OR_FILE, "titleFieldAEM");
 	String titleToolTipIconAEM = Property.getProperty(Constant.OR_FILE, "titleToolTipIconAEM");
 	String descriptionToolTipIconAEM = Property.getProperty(Constant.OR_FILE, "descriptionToolTipIconAEM");
 	String titleMandatoryFieldAEM = Property.getProperty(Constant.OR_FILE, "titleMandatoryFieldAEM");
-	String backgroundManadatroyAEM = Property.getProperty(Constant.OR_FILE, "backgroundManadatroyAEM");
+	String backgroundManadatroyAEM = Property.getProperty(Constant.OR_FILE, "backgroundManadatroyAEM").replace("=", ",");
 	String backgroundFieldAEM = Property.getProperty(Constant.OR_FILE, "backgroundFieldAEM");
 	String toolTipInfoAEM = Property.getProperty(Constant.OR_FILE, "toolTipInfoAEM");
-			 
+	String descriptionFieldAEM = Property.getProperty(Constant.OR_FILE, "descriptionFieldAEM").replace("=", ",");
+	String breadcumbInsideBanner = Property.getProperty(Constant.OR_FILE, "breadcumbInsideBanner").replace("=", ",");		 
 	
 	/**
 	 * gets Locator - List View
@@ -103,6 +104,20 @@ public class Standard_Masthead_Banner_Page_Locator {
 	 */
 	public String get_Tool_Tip_Info() {
 		return toolTipInfoAEM;
+	}
+	
+	/**
+	 * gets Locator - Description Field (AEM)
+	 */
+	public String get_Description_Field_AEM() {
+		return  descriptionFieldAEM;
+	}
+	
+	/**
+	 * gets Locator - Breadcumbs inside Banner
+	 */
+	public String get_Breadcumb_Inside_Banner() {
+		return breadcumbInsideBanner;
 	}
 	
 	

@@ -5506,6 +5506,98 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("Url Data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Masthead Banner Url
+	 * 
+	 */
+	
+	public String get_Masthead_Banner_Url_Two() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "masteheadBannerAuthorUrlTwo");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Masthead Banner Title
+	 * 
+	 */
+	
+	public String get_Masthead_Banner_Title() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "titleMastheadBanner");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Masthead Banner Title (Revert)
+	 * 
+	 */
+	
+	public String get_Masthead_Banner_Title_Revert() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "titleMastheadBannerRevert");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Masthead Banner Description
+	 * 
+	 */
+	
+	public String get_Masthead_Banner_Description() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "descriptionMastheadBanner");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Masthead Banner Description (Revert)
+	 * 
+	 */
+	
+	public String get_Masthead_Banner_Description_Revert() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "descriptionMastheadBannerRevert");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Background Colour Banner Description
+	 * 
+	 */
+	
+	public String get_Background_Color_Banner() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "backgroundColor");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Masthead Banner Description (Revert)
+	 * 
+	 */
+	
+	public String get_Background_Color_Banner_Revert() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "backgroundColorRevert");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+
 	/**
 	 * gets PDP Product add to Contact Us URL
 	 * 

@@ -104,6 +104,7 @@ public class PLP_PageLocator {
 	String ratingStarsIcon = Property.getProperty(Constant.OR_FILE, "ratingStarsIcon");
 	String minPriceLabel = Property.getProperty(Constant.OR_FILE, "minPriceLabel");
 	String maxPriceLabel = Property.getProperty(Constant.OR_FILE, "maxPriceLabel");
+	String clearAllPill = Property.getProperty(Constant.OR_FILE, "clearAllPill");
 	
 	/**
 	 * gets Locator - List View
@@ -829,5 +830,12 @@ public class PLP_PageLocator {
 	 */
 	public String get_Max_Price_Label() {
 		return maxPriceLabel;
+	}
+	
+	/**
+	 * gets Locator - Clear All (Pill)
+	 */
+	public String get_Clear_All() {
+		return clearAllPill;
 	}
  }

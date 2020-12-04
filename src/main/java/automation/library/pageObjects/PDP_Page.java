@@ -3,6 +3,7 @@ package automation.library.pageObjects;
 import static org.testng.Assert.fail;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -46,6 +47,11 @@ public class PDP_Page extends PageObject {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
 
 	}
+	
+	/** This function is verify that PDP Page is displayed for Zero Review Product. */
+	public void navigate_PDP_Page_Zero_Reviews() throws Exception {
+		PageObject.getDriver().navigate().to(FileReaderManager.getInstance().getDataReader().get_Zero_Url_Url());
+	}
 
 	/** This function is verify that warranty is displayed under resource section */
 	public void display_warranty_Under_Resource() throws Exception {
@@ -81,6 +87,11 @@ public class PDP_Page extends PageObject {
 	/** This function navigate to PDP Product Page */
 	public void navigate_To_PDP_Product_Page(String sProductCode) throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductUrl() + sProductCode);
+	}
+	
+	/** This function navigate to PDP Product FR Page */
+	public void navigate_To_PDP_Product_FR_Page(String sProductCode) throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductFRUrl() + sProductCode);
 	}
 
 	/** This function click on Add to Cart Button */
@@ -1093,4 +1104,103 @@ public class PDP_Page extends PageObject {
 			testContext.getPageObjectManager().getPDPPageLocator().get_Disabled_Reported_Label();
 		}
 		
+		/** verify that five unfilled stars are getting displayed */
+		public void displayFiveUnfilledStars() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Unfilled_Star()));
+		}
+		
+		/** verify that write a reviews is not displayed */
+		public void notDisplayWriteAReviews() throws Exception {
+			try {
+				$findElement(By.xpath(testContext.getPageObjectManager().getPDPPageLocator().get_Write_A_Review()));
+	            fail();
+			}catch(Exception e) {
+				Log.message("Button 'Write A Reviews' is not Displayed", true);
+			}
+		}
+		
+		/** click on unfilled stars */
+		public void clickOnUnfilledStars() throws Exception {
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Unfilled_Star()));
+		}
+		
+		/** review section is displayed */
+		public void displayReviewSection() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Section()));
+		}
+		
+		/** verify that title of section as reviews */
+		public void verifyTitlSectionAsReviews() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Title_Reviews_Section_Scrollable()));
+			Assert.assertEquals("Reviews", $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Title_Reviews_Section_Scrollable())));
+		}
+		
+		/** verify that title of section as reviews for FR */
+		public void verifyTitlSectionAsReviewsForFR() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Title_Reviews_Section_Scrollable()));
+			Assert.assertEquals("Évaluations", $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Title_Reviews_Section_Scrollable())));
+		}
+		
+		/** verify that unfilled stars are displayed for scrollable section */
+		public void displayUnfilledStarsForScrollableSection() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Unfilled_Stars_For_Scrollable_Section()));
+		}
+		
+		/** be the first to ask a question is clickable */
+		public void veifyBeTheFirstAskQuestionIsClickable() throws Exception {
+			$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Write_Ask_Review())), 10);
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Title()));
+		}
+		
+		/** be the first to ask a question is clickable */
+		public void veifyBeTheFirstAskQuestionIsClickableMobile() throws Exception {
+			$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Be_The_First_To_Write_Ask_Review_Mobile())), 10);
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Title()));
+		}
+		
+		/** verify review model appears */
+		public void displayReviewModelAppears() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Title()));
+		}
+		
+		/** enter Question Answer details on pop up */
+		public void enterQuestionAnswerDetailsOnPopUp() throws Exception {
+			$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Question_Answer_Field_Review_PopUp()), FileReaderManager.getInstance().getDataReader().get_Question_Answer_Review());
+			$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Name_Field_Review_PopUp()), FileReaderManager.getInstance().getDataReader().get_Name_Review());
+			$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Email_Field_Review_Pop_Up()), FileReaderManager.getInstance().getDataReader().get_Email_Data());
+		}
+		
+		/** enter review details on pop up */
+		public void enterReviewDetailsOnPopUp() throws Exception {
+			Thread.sleep(3000);
+			Random rand = new Random();
+	    	int number = rand.nextInt();
+	    	String value = Integer.toString(number);
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Star_Pop_Up()));
+			$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Title_Pop_Up()), FileReaderManager.getInstance().getDataReader().get_Review_Title_Pop_Up());
+			$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Description_Pop_Up()), FileReaderManager.getInstance().getDataReader().get_Review_Description_Pop_Up());
+			
+			$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Name_Field_Review_PopUp()), FileReaderManager.getInstance().getDataReader().get_Name_Review() + value);
+			$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Email_Field_Review_Pop_Up()), FileReaderManager.getInstance().getDataReader().get_Email_Review());
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).performDropDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Canadian_Tire_Employee()), "selectByIndex", "1");
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).performDropDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Canadian_Tire_Supplier()), "selectByIndex", "1");
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).performDropDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Member_Of_The_Test_For_Life_In_Canada_Program()), "selectByIndex", "1");
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).performDropDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Receive_This_Product_For_Free()), "selectByIndex", "1");
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).performDropDown($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Review_Written_As_Part_Of_Canadian_Tire()), "selectByIndex", "1");
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Terms_And_Conditions_Pop_Up()));
+			//$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Submit_Review_Button()));
+		}
+		
+		/** click on reviews section on buybox */
+		public void clickReviewsSectionBuyBox() throws Exception {
+			$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Filled_Stars()));
+		}
+		
+		/** verify Zero rating count is displayed in parentheses */
+		public void verifhyZeroRatingCountInParentheses() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Rating_Count()));
+			Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Rating_Count())).contains("("));
+			Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Rating_Count())).contains(")"));
+			Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Rating_Count())).contains("0"));
+		}
 }
