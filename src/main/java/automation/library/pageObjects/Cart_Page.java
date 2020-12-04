@@ -49,7 +49,10 @@ public class Cart_Page extends PageObject{
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Item_Added_To_Wishlist_Message())), 40);
 		$clickFindElement(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Wishlist_Icon4())), 40);	
 	}
-
+	/** This function clicks on change CTA link */
+	public void ClickOnChangeCTA() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Change_CTA())), 40);
+		}
 	/** This function verify display of error message*/
 	public void displayErrorMessageWishlistLimit() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Error_Message_Wishlist_Limit())), 40);
@@ -211,6 +214,77 @@ public class Cart_Page extends PageObject{
 			Log.message("Actual Url:- " + actualUrl, true);
 			Assert.assertEquals(expectedUrl, actualUrl);
 			}
-
+	/** This function click store info ToolTip icon */
+	public void click_storeinfo_ToolTip_icon() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_storeInfoTooltip())), 40);
+	}
+	/** This function click store info details link */
+	public void click_storeinfo_link() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_storedetailsLink())), 40);
+	}
+	/** This function display store info details link */
+	public void display_storeinfo_link() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_storedetailsLink())), 40);
+	}
+	/** This function display store info address details  */
+	public void display_storeinfo_address_detail() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_storedetails_address())), 40);
+	}
+	/** This function display store info tooltip details */
+	public void display_storeinfo_tooltip_details() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_StoreInfo_tooltipdetails())), 40);
+	}
+	/** This function display empty cart title  */
+	public void display_emptyCart_title() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_EmptycartTitle())), 40);
+	}
+	/** This function display order summary title  */
+	public void display_orderSummary_title() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_orderSummaryTitle())), 40);
+	}
+	/** This function display Ship To Home title  */
+	public void display_STH_title() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ShipToHomeTitle())), 40);
+	}
+	/** This function display "ShippingTo" message  */
+	public void display_shipto_message() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ShippingToMsg())), 40);
+	}
+	/** This function display STH Change CTA  */
+	public void display_STH_Change_CTA() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_STHChangeCTA())), 40);
+	}
+	/** This function click STH Change CTA  */
+	public void click_STH_Change_CTA() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_STHChangeCTA())), 40);
+	}
+	/** This function display STH fee  */
+	public void display_STH_fee() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_STHfee())), 40);
+	}
+	/** This function display postal code modal  */
+	public void display_postalCode_Modal() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_postalCodeModal())), 40);
+	}
 	
-}
+	/** This function display pickupatStore Title  */
+	public void display_pickupatStore_Title() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_pickupatStoreTitle())), 40);
+	}
+	/** This function display BOIP Free Fees  */
+	public void display_BOIP_FreeFees() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_BOIPFreeFees())), 40);
+	}
+	/** This function display PickUp at store Change CTA  */
+	public void display_PickUpatStore_ChangeCTA() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_PickUpatHomeChangeCTA())), 40);
+	}
+	/** This function display PickUp at store informational toolTip  */
+	public void display_PickUpatStore_tooltip() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_pickupatstoreToolTip())), 40);
+	}
+	/** This function click PickUp at store informational toolTip  */
+	public void click_PickUpatStore_tooltip() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_pickupatstoreToolTip())), 40);
+	}
+	}

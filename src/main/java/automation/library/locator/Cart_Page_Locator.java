@@ -37,7 +37,25 @@ public class Cart_Page_Locator {
 	String ToolTipMessageText=Property.getProperty(Constant.OR_FILE, "ToolTipMessageText");
 	String priceValue=Property.getProperty(Constant.OR_FILE, "priceValue");
 	String priceValueOfEachProduct=Property.getProperty(Constant.OR_FILE, "priceValueOfEachProduct");
+	String changeCTA=Property.getProperty(Constant.OR_FILE, "changeCTA");
+	String storeInfoTooltip=Property.getProperty(Constant.OR_FILE, "storeInfoTooltip");
+	String tooltipdetails=Property.getProperty(Constant.OR_FILE, "tooltipdetails");
+	String storedetailsLink=Property.getProperty(Constant.OR_FILE, "storedetailsLink");
+	String storedetailsaddress=Property.getProperty(Constant.OR_FILE, "storedetailsaddress");
+	String EmptycartTitle=Property.getProperty(Constant.OR_FILE, "EmplycartTitle");
+	
+	String orderSummaryTitle=Property.getProperty(Constant.OR_FILE, "orderSummaryTitle");
+	String ShipToHomeTitle=Property.getProperty(Constant.OR_FILE, "ShipToHomeTitle");
+	String ShippingToMsg=Property.getProperty(Constant.OR_FILE, "ShippingToMsg");
+	String STHChangeCTA=Property.getProperty(Constant.OR_FILE, "STHChange");
+	String STHfee=Property.getProperty(Constant.OR_FILE, "STHfee");
+	String postalCodeModal=Property.getProperty(Constant.OR_FILE, "postalCodeModal");
+	String pickupatStoreTitle=Property.getProperty(Constant.OR_FILE, "pickupatStore");
+	String BOIPFreeFees=Property.getProperty(Constant.OR_FILE, "BOIPFreeFees");
+	String PickUpatStoreChangeCTA=Property.getProperty(Constant.OR_FILE, "PickUpatStoreChangeCTA");
+	String pickupatstoreToolTip=Property.getProperty(Constant.OR_FILE, "pickupatstoreToolTip");
 
+	
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
 	
@@ -47,6 +65,27 @@ public class Cart_Page_Locator {
 	 */
 	public String get_Wishlist_Icon4() {
 		return wishListIcon4;
+	}
+	/**
+	 * gets Locator - pickup at store ToolTip
+	 * 
+	 */
+	public String get_pickupatstoreToolTip() {
+		return pickupatstoreToolTip;
+	}
+	/**
+	 * gets Locator - Empty cart Title
+	 * 
+	 */
+	public String get_EmptycartTitle() {
+		return EmptycartTitle;
+	}
+	/**
+	 * gets Locator - change CTA
+	 * 
+	 */
+	public String get_Change_CTA() {
+		return changeCTA;
 	}
 	/**
 	 * gets Locator - ToolTip Close Icon
@@ -77,6 +116,13 @@ public class Cart_Page_Locator {
 	 */
 	public String get_Wishlist_Icon5() {
 		return wishListIcon5;
+	}
+	/**
+	 * gets Locator - store info tool tip
+	 * 
+	 */
+	public String get_storeInfoTooltip() {
+		return storeInfoTooltip;
 	}
 
 	/**
@@ -228,6 +274,88 @@ public class Cart_Page_Locator {
 	public String get_Price_Value_Of_Each_Product() {
 		return priceValueOfEachProduct;
 	}
-	
-
+	/**
+	 * gets Locator - store info tool-tip details
+	 * 
+	 */
+	public String get_StoreInfo_tooltipdetails() {
+		return tooltipdetails;
+	}
+	/**
+	 * gets Locator - store details Link
+	 * 
+	 */
+	public String get_storedetailsLink() {
+		return storedetailsLink;
+	}
+	/**
+	 * gets Locator - orderSummary Title
+	 * 
+	 */
+	public String get_orderSummaryTitle() {
+		return orderSummaryTitle;
+	}
+	/**
+	 * gets Locator - Ship To Home Title
+	 * 
+	 */
+	public String get_ShipToHomeTitle() {
+		return ShipToHomeTitle;
+	}
+	/**
+	 * gets Locator - "ShippingTo" message
+	 * 
+	 */
+	public String get_ShippingToMsg() {
+		return ShippingToMsg;
+	}
+	/**
+	 * gets Locator - STH Change CTA
+	 * 
+	 */
+	public String get_STHChangeCTA() {
+		return STHChangeCTA;
+	}
+	/**
+	 * gets Locator - STH fee
+	 * 
+	 */
+	public String get_STHfee() {
+		return STHfee;
+	}
+	/**
+	 * gets Locator - store details address
+	 * 
+	 */
+	public String get_storedetails_address() {
+		return storedetailsaddress;
+	}
+	/**
+	 * gets Locator - postalCode Modal
+	 * 
+	 */
+	public String get_postalCodeModal() {
+		return postalCodeModal;
+	}
+	/**
+	 * gets Locator - pickup at Store Title
+	 * 
+	 */
+	public String get_pickupatStoreTitle() {
+		return pickupatStoreTitle;
+	}
+	/**
+	 * gets Locator - BOIP Free Fees
+	 * 
+	 */
+	public String get_BOIPFreeFees() {
+		return BOIPFreeFees;
+	}
+	/**
+	 * gets Locator - PickUp at store Change CTA
+	 * 
+	 */
+	public String get_PickUpatHomeChangeCTA() {
+		return PickUpatStoreChangeCTA;
+	}
 }
