@@ -1629,10 +1629,22 @@ public class DataReader {
 		if (data != null)
 			return data;
 		else
-			throw new RuntimeException("Data not specified in the Data file.");
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 *  gets pdp exclusive Badge URL
+	 * 
+	 */
+	public String get_pdpExclusiveBadgeURL() {
+		String data = Property.getProperty(Constant.DATA_FILE, "pdpExclusiveBadgeURL");
+		if(data != null) 
+			return data;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
 	}
 
-	/**
+	
+    /**
 	 * gets Minimum Price Data (Above Condition)
 	 * 
 	 */

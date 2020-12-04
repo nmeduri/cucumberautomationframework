@@ -84,6 +84,19 @@ public class PDP_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_perfectGiftBadge()));
 
 	}
+	/** This function display exclusive badge */
+	public void display_PDP_Page_exclusive_Badge() throws Exception {
+
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_exclusiveBadge()));
+
+	}
+	/** This function navigate to PDP Page with exclusive badge */
+	public void navigateTo_PDP_Page_Exclusive_Badge() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_pdpExclusiveBadgeURL());
+
+	}
+	
 	/** This function navigate to PDP Product Page */
 	public void navigate_To_PDP_Product_Page(String sProductCode) throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductUrl() + sProductCode);
@@ -625,6 +638,21 @@ public class PDP_Page extends PageObject {
 	
 	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_perfectGiftBadge()));
    }
+   }
+   /** This function is verify that Exclusive badge is displayed for all variant */
+   public void displayExclusiveBadgeForAllVariant() throws Exception {
+	  // $click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_ColorVariant_PerfectGift()));
+	   List<Element> li = $$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Color_Variant());
+	   for(int i=0; i<li.size(); i++) {
+		   li.get(i).click();
+	
+	   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_exclusiveBadge()));
+   }
+   }
+   /** This function is verify that exclusive badge color */
+   public void verifyExclusiveBadgeColorCode() throws Exception {
+	   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_exclusiveBadge()), "background-color"); 
+	   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#fff6c9", colorValue);
    }
    /** This function is verify that In store bade is displayed */
    public void verifyInStoreBageColorCode() throws Exception {

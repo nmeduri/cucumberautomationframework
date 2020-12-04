@@ -13,7 +13,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 	private static String[] defaultOptions = {
 
 
-			"classpath:Adobe/Regression/",
+			"classpath:Adobe/Regression/OCCP_1648_PDP_Product_Badges_Exclusive.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@WebView",
 			"--plugin", "pretty",

@@ -157,6 +157,7 @@ public class PDP_PageLocator {
 	String submitReviewButton = Property.getProperty(Constant.OR_FILE, "submitReviewButton");
 	String filledStars = Property.getProperty(Constant.OR_FILE, "filledStars");
 	String ratingCount = Property.getProperty(Constant.OR_FILE, "ratingCount");
+	String exclusiveBadge=Property.getProperty(Constant.OR_FILE, "exclusiveBadge");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -185,7 +186,15 @@ public class PDP_PageLocator {
 		
 		return perfectGiftBadge;
 	}
+	/**
+	 * gets Locator - Exclusive Badge
+	 * 
+	 */
 	
+	public String get_exclusiveBadge() {
+		
+		return exclusiveBadge;
+	}
 	/**
 	 * gets Locator - Warranty Under Resource
 	 * 
