@@ -23,7 +23,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 /**
- * This file contains the scenario of user stories OCCP-3516
+ * This file contains the scenario of user stories OCCP-3588
  */
 public class OCCP_3588_Cart_Order_Summary_Shipping_Fees_Step extends BaseClass {
 

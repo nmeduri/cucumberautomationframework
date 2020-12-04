@@ -54,8 +54,12 @@ public class Cart_Page_Locator {
 	String BOIPFreeFees=Property.getProperty(Constant.OR_FILE, "BOIPFreeFees");
 	String PickUpatStoreChangeCTA=Property.getProperty(Constant.OR_FILE, "PickUpatStoreChangeCTA");
 	String pickupatstoreToolTip=Property.getProperty(Constant.OR_FILE, "pickupatstoreToolTip");
-
 	
+	String HSTText=Property.getProperty(Constant.OR_FILE, "HSTText");
+	String HSTFees=Property.getProperty(Constant.OR_FILE, "HSTFees");
+	String TotalText=Property.getProperty(Constant.OR_FILE, "TotalText");
+	String TotalFee=Property.getProperty(Constant.OR_FILE, "TotalFee");
+	String saveMessage=Property.getProperty(Constant.OR_FILE, "saveMessage");
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
 	
@@ -357,5 +361,41 @@ public class Cart_Page_Locator {
 	 */
 	public String get_PickUpatHomeChangeCTA() {
 		return PickUpatStoreChangeCTA;
+	}
+	/**
+	 * gets Locator - HST Text
+	 * 
+	 */
+	public String get_HSTText() {
+		return HSTText;
+	}
+	
+	/**
+	 * gets Locator - HST Fees
+	 * 
+	 */
+	public String get_HSTFees() {
+		return HSTFees;
+	}
+	/**
+	 * gets Locator - Total fees Text
+	 * 
+	 */
+	public String get_TotalText() {
+		return TotalText;
+	}
+	/**
+	 * gets Locator - Total Fee
+	 * 
+	 */
+	public String get_TotalFee() {
+		return TotalFee;
+	}
+	/**
+	 * gets Locator - save message
+	 * 
+	 */
+	public String get_saveMessage() {
+		return saveMessage;
 	}
 }

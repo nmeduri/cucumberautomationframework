@@ -59,8 +59,4 @@ Description: To test the ADOBE Test Cases for the story OCCP-3588
   And click on view store details CTA
   Then user navigated to store information page
   
-  @RegressionTest @WebView 
-	Scenario: TC-3476 OCCP-1306 Cart: Order Summary - Verify Empty Cart
-	When open browser
-	Given cart url is available
- Then verify the empty cart page
+  
