@@ -93,8 +93,8 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	Then verify an error message is displayed informing card is deactivated
 	And user verify's error text present in the error screen
 	
-	#@RegressionTest @WideScreen @WebView
-	Scenario: TC-2401, Verify the UI of Link Cards screen screen when Card is Deactivated in Wide Desktop view
+	@RegressionTest @WideScreen @Mobile
+	Scenario: TC-2401, TC-2395 Verify the UI of Link Cards screen screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email id
 	And enter password data

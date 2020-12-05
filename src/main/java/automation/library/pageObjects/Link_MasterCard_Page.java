@@ -92,4 +92,37 @@ public class Link_MasterCard_Page extends PageObject {
 	public void displayCustomerContactNo() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Customer_Contact_No())), 20);
 	}
+	
+	/** This function enters data for already master card details */
+	public void enterDataForAlreadyLinkedMasterCardDetails() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName()), FileReaderManager.getInstance().getDataReader().get_Already_Linked_Mastercard_LastName_Data());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_YOB()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Already_Linked_MasterCard_Year())), 5);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Already_Linked_MasterCard_Year()));
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName())), 5);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_MOB()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Already_Linked_MasterCard_Month()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_DOB()));
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Already_Linked_MasterCard_Date())), 5);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Already_Linked_MasterCard_Date()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Postal_Code()), FileReaderManager.getInstance().getDataReader().get_Already_Linked_Mastercard_PostalCode_Data());
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Input()), FileReaderManager.getInstance().getDataReader().get_Already_Linked_Mastercard_No_Data());
+	}
+	
+	/** This function verify that master card already enrolled message is displayed */
+	public void displayAlreadyEnrolledErrorMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Already_Linked_MasterCard_Error_Message()));
+	}
+	
+	/** This function scrolls to continue button */
+	public void scrollToContinueButton() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Postal_Code())), 5);
+	}
+	
+	/** This function clicks on Continue button */
+	public void clickOnMastercardContinueButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_ContinueButton()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_ContinueButton()));
+	}
+
 }

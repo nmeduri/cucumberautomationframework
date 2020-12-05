@@ -108,6 +108,7 @@ public class AEM_New_Rewards_Card_Screen_Page extends PageObject {
 		}
 
 		public void enterYearOfBirth2002() throws Exception {
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_City_Rewards()), 5);
 			$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 5);
 			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())));
 			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Year_2002())));

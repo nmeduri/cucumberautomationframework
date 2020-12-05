@@ -40,11 +40,11 @@ Feature: 	OCCP-2805 Account/Triangle ID - Link Rewards / Age of Majority Check
 	And verify when user enter year of birth that equals age of majority
 	Then verify Month of Birth and Date of Birth fields appears 
 	
-	#@Regression @MobileView @WebView @WideScreen
-	Scenario: TC-2596,2605,2610 Verfiy More Information Required User's Birthday is Before Current Date  on Complete Your Profile screen 
-    Given login url is available
-	When enter detail email
-	And user enter password
+	@Regression @MobileView @WebView @WideScreen
+	Scenario: TC-2596,TC-2605,TC-2610 User's Birthday is Before Current Date
+  Given login url is available
+	When enter email id
+	And enter password data
 	And user click on sign in button
 	Then link card screen should be displayed
 	And verify when user clicks on the get a new triangle rewards card link

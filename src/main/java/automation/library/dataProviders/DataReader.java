@@ -1680,6 +1680,43 @@ public class DataReader {
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
 
+
+		/**
+		 * gets Already linked master card last name
+		 * 
+		 */
+		public String get_Already_Linked_Mastercard_LastName_Data() {
+			String data = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardLastName");
+			if(data != null) 
+				return data;
+			else
+				throw new RuntimeException("Data not specified in the Data file.");
+		}
+		
+		/**
+		 * gets Already linked master card last name
+		 * 
+		 */
+		public String get_Already_Linked_Mastercard_PostalCode_Data() {
+			String data = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardPostalCode");
+			if(data != null) 
+				return data;
+			else
+				throw new RuntimeException("Data not specified in the Data file.");
+		}
+		
+		/**
+		 * gets Already linked master card last name
+		 * 
+		 */
+		public String get_Already_Linked_Mastercard_No_Data() {
+			String cardNo = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardNo");
+			if(cardNo != null) 
+				return cardNo;
+			else
+				throw new RuntimeException("Data not specified in the Data file.");
+		}
+
 	/**
 	 * gets Masthead Banner Url
 	 * 

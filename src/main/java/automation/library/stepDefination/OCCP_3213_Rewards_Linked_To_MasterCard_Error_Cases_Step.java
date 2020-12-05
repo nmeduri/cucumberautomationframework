@@ -70,4 +70,24 @@ public class OCCP_3213_Rewards_Linked_To_MasterCard_Error_Cases_Step extends Bas
 	public void user_enter_loyalty_card_number() throws Exception {
 		testContext.getPageObjectManager().getAEMLinkExistingCardPage(PageObject.getDriver()).enterDataIncorrectCardNumber();
 	}
+	
+	@And("enter already linked triangle master card details")
+	public void enter_already_linked_mastercard_details() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).enterDataForAlreadyLinkedMasterCardDetails();
+	}
+	
+	@Then("user should be redirected to error screen informing that card is already enrolled")
+	public void card_is_already_enrolled() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).displayAlreadyEnrolledErrorMessage();
+	}
+	
+	@And("scroll to continue button")
+	public void scroll_to_continue_button() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).scrollToContinueButton();
+	}
+	
+	@And("click on mastercard continue button")
+	public void click_mastercard_continue_button() throws Exception {
+		testContext.getPageObjectManager().getLinkMasterCardPage(PageObject.getDriver()).clickOnMastercardContinueButton();
+	}
 }

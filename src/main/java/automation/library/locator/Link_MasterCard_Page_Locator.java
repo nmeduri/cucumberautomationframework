@@ -25,7 +25,11 @@ public class Link_MasterCard_Page_Locator {
 	String lastNameLabel = Property.getProperty(Constant.OR_FILE, "lastNameLabel");
 	String continueButtonLabelMasterCard = Property.getProperty(Constant.OR_FILE, "continueButtonLabelMasterCard");
 	String cancelButtonMasterCard = Property.getProperty(Constant.OR_FILE, "cancelButtonMasterCard");
-	
+	String alreadyLinkedMastercardYear = Property.getProperty(Constant.OR_FILE, "alreadyLinkedMastercardYear");
+	String alreadyLinkedMastercardMonth = Property.getProperty(Constant.OR_FILE, "alreadyLinkedMastercardMonth");
+	String alreadyLinkedMastercardDate = Property.getProperty(Constant.OR_FILE, "alreadyLinkedMastercardDate");
+	String masterCardAlreadyLinkedErrorMessage = Property.getProperty(Constant.OR_FILE, "masterCardAlreadyLinkedErrorMessage").replace("=", ",");
+	String masterCardContinueButton = Property.getProperty(Constant.OR_FILE, "masterCardContinueButton");
 	
 	/**
 	 * gets Locator - Link MasterCard (Title)
@@ -154,5 +158,44 @@ public class Link_MasterCard_Page_Locator {
 	 */
 	public String getCancelButtonMasterCard() {
 		return cancelButtonMasterCard;
+	}
+	
+	/**
+	 * gets Locator -  Already Linked MasterCard year
+	 * 
+	 */
+	
+	public String get_Already_Linked_MasterCard_Year() {
+		return alreadyLinkedMastercardYear;
+	}
+
+	/**
+	 * gets Locator - Already Linked MasterCard Month
+	 * 
+	 */
+	
+	public String get_Already_Linked_MasterCard_Month() {
+		return alreadyLinkedMastercardMonth;
+	}
+	
+	/**
+	 * get Locator - Already Linked MasterCard Date
+	 */
+	public String get_Already_Linked_MasterCard_Date() {
+		return alreadyLinkedMastercardDate;
+	}
+	
+	/**
+	 * get Locator - Already Linked MasterCard error message
+	 */
+	public String get_Already_Linked_MasterCard_Error_Message() {
+		return masterCardAlreadyLinkedErrorMessage;
+	}
+	
+	/**
+	 * get Locator - MasterCard Continue
+	 */
+	public String get_MasterCard_ContinueButton() {
+		return masterCardContinueButton;
 	}
 }

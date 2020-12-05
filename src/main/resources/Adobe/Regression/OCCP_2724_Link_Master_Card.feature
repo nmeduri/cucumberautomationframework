@@ -33,3 +33,18 @@ Description: To test the ADOBE Test Cases for the story OCCP-2724
 	Then user should be redirected to card information is incorrect or not found error screen
 	And user should see customer care contact number displayed
 	And click on contact number
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2038 Card Information is incorrect/not found>
+	Given login url is available
+	When enter email id
+	And enter password data
+	And user click on sign in button
+	Then link card screen should be displayed
+	And user cick on triangle master card
+	Then link master card screen should be displayed
+	And input all the triangle master card details
+	And user click on continue button
+	Then user should be redirected to card information is incorrect or not found error screen
+	And user should see customer care contact number displayed
+	And click on contact number

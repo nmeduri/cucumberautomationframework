@@ -17,7 +17,7 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	String cityRewards = Property.getProperty(Constant.OR_FILE, "cityRewards");
 	String postalCodeRewards = Property.getProperty(Constant.OR_FILE, "postalCodeRewards");
 	String phoneNumberRewards = Property.getProperty(Constant.OR_FILE, "phoneNumberRewards");
-	String yearOfBirth = Property.getProperty(Constant.OR_FILE, "yearOfBirth").replace("=", ",");
+	String yearOfBirth = Property.getProperty(Constant.OR_FILE, "yearOfBirth");
 	String yearOfBirthValue = Property.getProperty(Constant.OR_FILE, "yearOfBirthValue");
 	String province = Property.getProperty(Constant.OR_FILE, "province");
 	String provinceValue = Property.getProperty(Constant.OR_FILE, "provinceValue");

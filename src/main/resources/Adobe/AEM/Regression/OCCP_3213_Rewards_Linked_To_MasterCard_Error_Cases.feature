@@ -3,7 +3,6 @@ Feature: OCCP-3213 Link Existing Triangle Rewards Card | Failure/Error Cases | R
 	
 	@RegressionTest @AEM
 	Scenario: TC-2184 Configure label for 'Try Again' CTA
-	Given open browser
 	When aem author with access navigates to link existing card screen
 	And login to AEM using the right credentials as mentioned in the test data 
 	And click on edit button
@@ -20,7 +19,7 @@ Feature: OCCP-3213 Link Existing Triangle Rewards Card | Failure/Error Cases | R
 	@RegressionTest @AEM
 	Scenario: TC-2185 Configure label for 'Cancel' CTA
 	When aem author with access navigates to link existing card screen
-	And click on edit button
+	And click on edit icon on header
 	And click on aem link existing card title
 	And click on aem configure button
 	And click on link existing card error tab
