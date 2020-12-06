@@ -5279,6 +5279,41 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets account payment information url
+	 * 	 */
+	public String get_account_PaymentInformation_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "acct_payment_infor_page");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets account payment preferences url
+	 *  
+	 */
+	public String get_account_PaymentPreferences_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "acct_payment_preferences_Page");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets account personal information url
+	 *  
+	 */
+	public String get_account_Personal_Information_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "acctpersonalinformation");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	/**
 	 * gets account rewards url
 	 * 

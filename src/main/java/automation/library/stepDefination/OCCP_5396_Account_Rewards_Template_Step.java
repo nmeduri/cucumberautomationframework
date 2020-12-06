@@ -6,8 +6,6 @@ import automation.library.selenium.base.BaseClass;
 import automation.library.selenium.core.PageObject;
 import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class OCCP_5396_Account_Rewards_Template_Step extends BaseClass{
@@ -35,6 +33,7 @@ public class OCCP_5396_Account_Rewards_Template_Step extends BaseClass{
 		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
 				.navigateTo_Account_OrderHistory_Template_AEM();
 	}
+	
 	@And("click on drag components")
 	public void click_on_drag_components() throws Exception {
 		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
@@ -61,5 +60,46 @@ public class OCCP_5396_Account_Rewards_Template_Step extends BaseClass{
 	public void verify_all_components_are_featured_and_banner_related_in_the_list() throws Exception {
 		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
 				.verifyComponents();
+	}
+	@When("AEM author with access to configure Account Payment Information Page")
+	public void When_AEM_author_with_access_to_configure_Account_Payment_Information_Page() throws Exception{
+		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
+		.navigateTo_Account_PaymentInformation_Template_AEM();
+	}
+	
+	@And("user selects Account Payment Options component to configure")
+	public void user_selects_Account_Payment_Options_component_to_configure() throws Exception {
+		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
+				.selectMyAccountPaymentOptions();
+	}
+	
+	@When("AEM author with access to configure Account Preferences Template Page")
+	public void AEM_author_with_access_to_configure_Account_Preferences_Template_Page() throws Exception{
+		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
+		.navigateTo_Account_PaymentPreferences_Template_AEM();
+	}
+
+   	@And("user selects Account Preferences component to configure")
+	public void use_selects_Account_Preferences_component_to_configure() throws Exception {
+		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
+				.selectMyAccountPreferences();
+	}
+   	
+   	@When("AEM author with access to configure Account Personal Information my account profile page")
+   	public void AEM_author_with_access_to_configure_Account_Personal_Information_my_account_profile_page() throws Exception{
+   		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
+		.navigateTo_Account_Personal_Information_Template_AEM();
+   	}
+     	
+   	@And("click on myaccount profile component")
+	public void click_on_myaccount_profile_component() throws Exception {
+		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
+				.clickonMyAcctProfile();
+	}
+   	
+   	@And("verify user is able to access my profile template")
+	public void verify_user_is_able_to_access_my_profile_template() throws Exception {
+		testContext.getPageObjectManager().getAccountRewardsTemplatePage(PageObject.getDriver())
+				.verifyMyProfilepage();
 	}
 }

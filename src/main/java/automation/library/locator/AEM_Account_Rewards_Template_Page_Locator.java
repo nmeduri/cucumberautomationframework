@@ -8,6 +8,10 @@ public class AEM_Account_Rewards_Template_Page_Locator {
 	String inserticon = Property.getProperty(Constant.OR_FILE, "inserticon");
 	String listelements = Property.getProperty(Constant.OR_FILE, "listelements");
 	String historycomp = Property.getProperty(Constant.OR_FILE, "historycomp");
+	String myacctprofile = Property.getProperty(Constant.OR_FILE, "myacctprofile");
+	String myprofile = Property.getProperty(Constant.OR_FILE, "myprofile");
+	
+	
 	/**
 	 * gets Locator - Shipping Info Label
 	 * 
@@ -40,5 +44,19 @@ public class AEM_Account_Rewards_Template_Page_Locator {
 	public String get_ListElements() {
 		return listelements;
 	}
-	
+	/**
+	 * gets Locator -  My Account Profile
+	 * 
+	 */
+
+	public String get_MyAcctProfile() {
+		return myacctprofile;
+	}
+	/**
+	 * gets Locator -  verify My Account Profile 
+	 * 
+	 */
+	public String get_MyProfilePage(){
+		return myprofile;
+	}
 }

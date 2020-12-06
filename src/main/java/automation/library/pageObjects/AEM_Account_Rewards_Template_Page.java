@@ -26,19 +26,34 @@ public class AEM_Account_Rewards_Template_Page extends PageObject {
 
 	}
 
-	/** This function navigate to Accounts Rewards Page_AEM */   
+	/** This function navigate to Accounts Rewards Page_AEM */
 	public void navigateTo_Account_Rewards_Template_AEM() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_account_rewards_URL());
 	}
 
-	/** This function navigate to Accounts Rewards Page_AEM */   
+	/** This function navigate to Accounts Rewards Page_AEM */
 	public void navigateTo_Account_Addresses_Template_AEM() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_account_Addresses_URL());
 	}
-	
-	/** This function navigate to Accounts OrderHistory Page_AEM */   
+
+	/** This function navigate to Accounts OrderHistory Page_AEM */
 	public void navigateTo_Account_OrderHistory_Template_AEM() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_account_OrderHistory_URL());
+	}
+
+	/** This function navigate to Accounts Payment Information Page_AEM */
+	public void navigateTo_Account_PaymentInformation_Template_AEM() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_account_PaymentInformation_URL());
+	}
+
+	/** This function navigate to Accounts Payment Information Page_AEM */
+	public void navigateTo_Account_PaymentPreferences_Template_AEM() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_account_PaymentPreferences_URL());
+	}
+
+	/** This function navigate to Accounts Personal Information Page_AEM */
+	public void navigateTo_Account_Personal_Information_Template_AEM() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_account_Personal_Information_URL());
 	}
 	/** This function click on drag component */
 	public void clickonDragComponent() throws Exception {
@@ -49,8 +64,10 @@ public class AEM_Account_Rewards_Template_Page extends PageObject {
 	/** This function click on order history component */
 	public void clickonOrderHistory() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
-				testContext.getPageObjectManager().getAccountRewardsTemplatePageLocator().get_orderHistoryComponent())), 5);
+				testContext.getPageObjectManager().getAccountRewardsTemplatePageLocator().get_orderHistoryComponent())),
+				5);
 	}
+
 	/** This function click on insert(+) component */
 	public void clickonInsert() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
@@ -65,6 +82,7 @@ public class AEM_Account_Rewards_Template_Page extends PageObject {
 				10);
 		int size = list.size();
 		for (int i = 0; i < size; i++) {
+			System.out.println("Size of components:" + size);
 			if (list.get(i) != null) {
 				if (list.get(i).getText().equalsIgnoreCase("Transaction History"))
 					;
@@ -72,6 +90,7 @@ public class AEM_Account_Rewards_Template_Page extends PageObject {
 			}
 		}
 	}
+
 	/** This verify components are related to banner and featured */
 	public void verifyComponents() throws Exception {
 		List<Element> list = $findElements(
@@ -80,11 +99,60 @@ public class AEM_Account_Rewards_Template_Page extends PageObject {
 				10);
 		int size = list.size();
 		for (int i = 0; i < size; i++) {
+			System.out.println("Size of components:" + size);
 			if (list.get(i) != null) {
 				if (list.get(i).getText().equalsIgnoreCase("Featured Product List"))
 					;
 				$click(list.get(i));
 			}
 		}
+	}
+
+	/** selects My Account Payment */
+	public void selectMyAccountPaymentOptions() throws Exception {
+		List<Element> list = $findElements(
+				ExpectedConditions.visibilityOfAllElementsLocatedBy($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAccountRewardsTemplatePageLocator().get_ListElements())),
+				10);
+		int size = list.size();
+		for (int i = 0; i < size; i++) {
+			System.out.println("Size of components:" + size);
+			if (list.get(i) != null) {
+				if (list.get(i).getText().equalsIgnoreCase("My Account Payment"))
+					;
+				$click(list.get(i));
+			}
+		}
+	}
+	
+	/** selects My Account Preferences */
+	public void selectMyAccountPreferences() throws Exception {
+		List<Element> list = $findElements(
+				ExpectedConditions.visibilityOfAllElementsLocatedBy($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAccountRewardsTemplatePageLocator().get_ListElements())),
+				10);
+		int size = list.size();
+		for (int i = 0; i < size; i++) {
+			System.out.println("Size of components:" + size);
+			if (list.get(i) != null) {
+				if (list.get(i).getText().equalsIgnoreCase("My Account Preferences"))
+					;
+				$click(list.get(i));
+			}
+		}
+	}
+	
+	/** This function click on My Account Profile */
+	public void clickonMyAcctProfile() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAccountRewardsTemplatePageLocator().get_MyAcctProfile())),
+				5);
+	}
+	
+	/** This function click on My Account Profile Page */
+	public void verifyMyProfilepage() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAccountRewardsTemplatePageLocator().get_MyProfilePage())),
+				5);
 	}
 }
