@@ -31,4 +31,3 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	Then scroll down to accordion pannel
 	And click on the preview button
 	Then validate the accordion header change is displayed on site
-	

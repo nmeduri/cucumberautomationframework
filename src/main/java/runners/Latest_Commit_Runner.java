@@ -16,6 +16,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 			"classpath:SAP/Regression/OCCP_3331_PDP_I&A_Limited_PDP.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@RegressionTest",
+
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
