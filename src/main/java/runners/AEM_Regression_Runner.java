@@ -15,7 +15,7 @@ public final class AEM_Regression_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 			
 
-			"classpath:Adobe/AEM/Regression/OCCP_5244_Order_History_AEM_Template_Add_Components_Account_Order_History_Template.feature", 
+			"classpath:Adobe/AEM/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags",   "@AEM",

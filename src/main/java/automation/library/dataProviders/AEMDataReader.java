@@ -5314,6 +5314,18 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets account personal information url
+	 *  
+	 */
+	public String get_account_Cart_Page_AEM_URL() {
+		String address = Property.getProperty(Constant.AEM_DATA_FILE, "cartpageAEMURL");
+		if(address != null)
+			return address;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	/**
 	 * gets account rewards url
 	 * 

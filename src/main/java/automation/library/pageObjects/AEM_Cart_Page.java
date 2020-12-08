@@ -178,9 +178,10 @@ public class AEM_Cart_Page extends PageObject {
 	}
 	/*
 	*//** This function verifys Wishlist Max limit label changes reflected */
+
 	/*
-	 * public void verifyWishlistMaxLimitTextChangesReflected() throws Exception {
-	 * $display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+	 * public void verifyWishlistMaxLimitTextChangesReflected() throws Exception
+	 * { $display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
 	 * testContext.getPageObjectManager().getCartPageLocator().
 	 * get_Close_Toast_Message())), 40);
 	 * Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().
@@ -188,56 +189,124 @@ public class AEM_Cart_Page extends PageObject {
 	 * testContext.getPageObjectManager().getCartPageLocator().
 	 * get_Wishlist_Max_Limit_Text()))); }
 	 */
-/** This function updates incl core charges label text */
-public void enterDatainclcorechargesAEM() throws Exception {
-	$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-			testContext.getPageObjectManager().getAEMCartPageLocator().get_inclCoreCharges())), 5);
-	$enterData(
-			ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager()
-					.getAEMCartPageLocator().get_inclCoreCharges())),
-			5, FileReaderManager.getInstance().getAEMDataReader().get_incl_CoreCharges_label());
+	/** This function updates incl core charges label text */
+	public void enterDatainclcorechargesAEM() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_inclCoreCharges())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated(
+						By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_inclCoreCharges())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_incl_CoreCharges_label());
 
+	}
+
+	/** This function navigate to content fragment Page */
+	public void navigateTocontentFragmentPageAem() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_ContenFragment_URL());
+
+	}
+
+	/** This function updates plus core charges label text */
+	public void enterDatapluscorechargesAEM() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_plusCoreCharges())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated(
+						By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_plusCoreCharges())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_plus_CoreCharges_label());
+	}
+
+	/** This function updates core charges title text */
+	public void enterDatacorechargesTitleAEM() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_coreChargesText())), 5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated(
+						By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_coreChargesText())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_CoreChargesTooltipTitle_label());
+	}
+
+	/** This function updates core charges tooltip message text */
+	public void enterDatacorechargesToolTipMessageAEM() throws Exception {
+		$clearData(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(
+						testContext.getPageObjectManager().getAEMCartPageLocator().get_coreCharges_ToolTipmessage())),
+				5);
+		$enterData(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(
+						testContext.getPageObjectManager().getAEMCartPageLocator().get_coreCharges_ToolTipmessage())),
+				5, FileReaderManager.getInstance().getAEMDataReader().get_CoreChargesTooltipmessage());
+	}
+
+	/** This function clicks save and publish */
+	public void clickOnSaveAndPublishCntentFragmentChanges() throws Exception {
+		$display(
+				ExpectedConditions.presenceOfElementLocated(
+						$By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Save_Button())),
+				20);
+		$click(ExpectedConditions.elementToBeClickable(
+				$By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Save_Button())), 20);
+	}
+
+	/** This function navigate to Accounts Personal Information Page_AEM */
+	public void navigateTo_cart_Page_AEM() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_account_Cart_Page_AEM_URL());
+	}
+
+	/** This function verify display of drag component */
+	public void verifyDragComponentHere() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated(
+				$By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_drag_component_Here())),
+				20);
+	}
+
+	/** This function verify display of order summary component */
+	public void verifyOrderSummaryComponent() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH,
+				testContext.getPageObjectManager().getAEMCartPageLocator().get_OrderSummary_Component())), 20);
+	}
+
+	/** This function verify display of order summary component */
+	public void verifyRecommendationComponent() throws Exception {
+		$display(
+				ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMCartPageLocator().get_Recommendation_Component())),
+				20);
+	}
+
+	/** This function selects Broad Banner component */
+	public void userSelectBannerComponent() throws Exception {
+		List<Element> list = $findElements(
+				ExpectedConditions.visibilityOfAllElementsLocatedBy($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMCartPageLocator().get_BroadBanner())),
+				10);
+		int size = list.size();
+		for (int i = 0; i < size; i++) {
+			System.out.println("Size of components:" + size);
+			if (list.get(i) != null) {
+				if (list.get(i).getText().equalsIgnoreCase("Broad Banner"))
+					;
+				$click(list.get(i));
+			}
+		}
+	}
 	
-}
-/** This function navigate to content fragment Page */
-public void navigateTocontentFragmentPageAem() throws Exception {
-	driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_ContenFragment_URL());
-
-}
-/** This function updates plus core charges label text */
-public void enterDatapluscorechargesAEM() throws Exception {
-	$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-			testContext.getPageObjectManager().getAEMCartPageLocator().get_plusCoreCharges())), 5);
-	$enterData(
-			ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager()
-					.getAEMCartPageLocator().get_plusCoreCharges())),
-			5, FileReaderManager.getInstance().getAEMDataReader().get_plus_CoreCharges_label());
-	}
-/** This function updates core charges title text */
-public void enterDatacorechargesTitleAEM() throws Exception {
-	$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-			testContext.getPageObjectManager().getAEMCartPageLocator().get_coreChargesText())), 5);
-	$enterData(
-			ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager()
-					.getAEMCartPageLocator().get_coreChargesText())),
-			5, FileReaderManager.getInstance().getAEMDataReader().get_CoreChargesTooltipTitle_label());
-	}
-/** This function updates core charges tooltip message text */
-public void enterDatacorechargesToolTipMessageAEM() throws Exception {
-	$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-			testContext.getPageObjectManager().getAEMCartPageLocator().get_coreCharges_ToolTipmessage())), 5);
-	$enterData(
-			ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager()
-					.getAEMCartPageLocator().get_coreCharges_ToolTipmessage())),
-			5, FileReaderManager.getInstance().getAEMDataReader().get_CoreChargesTooltipmessage());
-	}
-/** This function clicks save and publish */
-public void clickOnSaveAndPublishCntentFragmentChanges() throws Exception {
-	$display(
-			ExpectedConditions.presenceOfElementLocated(
-					$By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Save_Button())),20);
-	$click(ExpectedConditions.elementToBeClickable(
-			$By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Save_Button())), 20);
+	
+	/** This function selects Two Featured component */
+	public void userSelectsTwoFeaturedComponent() throws Exception {
+		List<Element> list = $findElements(
+				ExpectedConditions.visibilityOfAllElementsLocatedBy($By(Loc.XPATH,
+						testContext.getPageObjectManager().getAEMCartPageLocator().get_TwoFeatured())),
+				10);
+		int size = list.size();
+		for (int i = 0; i < size; i++) {
+			System.out.println("Size of components:" + size);
+			if (list.get(i) != null) {
+				if (list.get(i).getText().equalsIgnoreCase("Two Featured Tiles"))
+					;
+				$click(list.get(i));
+			}
+		}
 	}
 /** This function clicks cart item component */
 public void clickCartComponent() throws Exception {

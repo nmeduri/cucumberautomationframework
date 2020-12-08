@@ -2,13 +2,14 @@ package automation.library.locator;
 
 import automation.library.common.Property;
 import automation.library.cucumber.Constant;
+
 /**
  * This file contains the locator of AEM Cart Page
  * 
  */
 
 public class AEM_Cart_Page_Locator {
-	
+
 	String wishlistItemAddedMessageField = Property.getProperty(Constant.OR_FILE, "wishlistItemAddedMessageField");
 	String viewWishlistLabelField = Property.getProperty(Constant.OR_FILE, "viewWishlistLabelField");
 	String wishlistMaxLimitMessageField = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitMessageField");
@@ -22,209 +23,264 @@ public class AEM_Cart_Page_Locator {
 	String publishAlertMessage = Property.getProperty(Constant.OR_FILE, "publishAlertMessage");
 	String services = Property.getProperty(Constant.OR_FILE, "services");
 	String selectAll = Property.getProperty(Constant.OR_FILE, "selectAll");
-	
+
 	String inclCoreCharges = Property.getProperty(Constant.OR_FILE, "inclCoreCharges");
 	String plusCoreCharges = Property.getProperty(Constant.OR_FILE, "plusCoreCharges");
 	String coreChargesText = Property.getProperty(Constant.OR_FILE, "coreChargesText");
 	String coreChargesToolTipmessage = Property.getProperty(Constant.OR_FILE, "coreChargesToolTipmessage");
-	String cartItemsComponent=Property.getProperty(Constant.OR_FILE, "cartItemsComponent");
-	String ToolTipTitle=Property.getProperty(Constant.OR_FILE, "ToolTipTitle");
-	String ToolTipDesc=Property.getProperty(Constant.OR_FILE, "ToolTipDesc");
-	String bulkMessage=Property.getProperty(Constant.OR_FILE, "bulkMessage");
-	String bulkItemsTab=Property.getProperty(Constant.OR_FILE, "bulkItemsTab");
 
-	
-	 	/**
-		 * gets Locator - AEM Item Added To wishlist label field
-		 * 
-		 */
-	    
-		public String get_Item_Added_To_Wishlist_Field() {
-			return wishlistItemAddedMessageField;	
-		}
-		
-		/**
-		 * gets Locator - AEM View wishlist field
-		 * 
-		 */
-	    
-		public String get_View_Wishlist_Field() {
-			return viewWishlistLabelField;	
-		}
-		
-		/**
-		 * gets Locator - AEM Wishlist max limit
-		 * 
-		 */
-	    
-		public String get_Wishlist_Max_Limit_Message_Field() {
-			return wishlistMaxLimitMessageField;	
-		}
-		
-		/**
-		 * gets Locator - AEM Close
-		 * 
-		 */
-	    
-		public String get_Close_Label() {
-			return closeLabelField;	
-		}
-		
-		/**
-		 * gets Locator - AEM Save
-		 * 
-		 */
-	    
-		public String get_Save_Button() {
-			return saveButton;	
-		}
-		
-		/**
-		 * gets Locator - AEM WishList Card
-		 * 
-		 */
-	    
-		public String get_Wishlist_Card() {
-			return wishlistCard;	
-		}
-		
-		/**
-		 * gets Locator - AEM Select
-		 * 
-		 */
-	    
-		public String get_Select_Button() {
-			return selectButton;	
-		}
-		
-		/**
-		 * gets Locator - AEM More
-		 * 
-		 */
-	    
-		public String get_More() {
-			return moreButton;	
-		}
-		
-		/**
-		 * gets Locator - AEM Save
-		 * 
-		 */
-	    
-		public String get_Quick_Publish() {
-			return quickPublish;	
-		}
-		
-		/**
-		 * gets Locator - AEM common Content Thumbnail
-		 * 
-		 */
-	    
-		public String get_Common_Content_Thumbnail() {
-			return commonContentThumbnail;	
-		}
-		
-		/**
-		 * gets Locator - AEM Save
-		 * 
-		 */
-	    
-		public String get_Publish_Alert() {
-			return publishAlertMessage;	
-		}
-		
-		/**
-		 * gets Locator - services
-		 * 
-		 */
-	    
-		public String get_Services() {
-			return services;	
-		}
-		
-		/**
-		 * gets Locator - Select all
-		 * 
-		 */
-	    
-		public String get_Select_All() {
-			return selectAll;	
-		}
+	String dragcomponent_cartpage = Property.getProperty(Constant.OR_FILE, "dragcomponent_cartpage");
+	String ordersummary_cartpage = Property.getProperty(Constant.OR_FILE, "ordersummary_cartpage");
+	String recommendation_cartpage = Property.getProperty(Constant.OR_FILE, "recommendation_cartpage");
+	String selectbroadbanner = Property.getProperty(Constant.OR_FILE, "selectbroadbanner");
+	String twofeatured = Property.getProperty(Constant.OR_FILE, "selectbroadbanner");
 
-		/**
-		 * gets Locator - incl Core Charges(content Fragment)
-		 * 
-		 */
-	    
-		public String get_inclCoreCharges() {
-			return inclCoreCharges;	
-		}
+	String cartItemsComponent = Property.getProperty(Constant.OR_FILE, "cartItemsComponent");
+	String ToolTipTitle = Property.getProperty(Constant.OR_FILE, "ToolTipTitle");
+	String ToolTipDesc = Property.getProperty(Constant.OR_FILE, "ToolTipDesc");
+	String bulkMessage = Property.getProperty(Constant.OR_FILE, "bulkMessage");
+	String bulkItemsTab = Property.getProperty(Constant.OR_FILE, "bulkItemsTab");
 
-		/**
-		 * gets Locator - plus Core Charges(content Fragment)
-		 * 
-		 */
-	    
-		public String get_plusCoreCharges() {
-			return plusCoreCharges;	
-		}
+	/**
+	 * gets Locator - AEM Item Added To wishlist label field
+	 * 
+	 */
 
-		/**
-		 * gets Locator - core Charges Text(content Fragment)
-		 * 
-		 */
-	    
-		public String get_coreChargesText() {
-			return coreChargesText;	
-		}
+	public String get_Item_Added_To_Wishlist_Field() {
+		return wishlistItemAddedMessageField;
+	}
 
-		/**
-		 * gets Locator - core Charges ToolTip message(content Fragment)
-		 * 
-		 */
-	    
-		public String get_coreCharges_ToolTipmessage() {
-			return coreChargesToolTipmessage;	
-		}
-		
-		/**
-		 * gets Locator - cart component
-		 * 
-		 */
-	    
-		public String get_cartcomponent() {
-			return cartItemsComponent;	
-		}
-		/**
-		 * gets Locator - ToolTip Title
-		 * 
-		 */
-	    
-		public String get_ToolTipTitle() {
-			return ToolTipTitle;	
-		}
-		/**
-		 * gets Locator - ToolTip Description
-		 * 
-		 */
-	    
-		public String get_ToolTipDesc() {
-			return ToolTipDesc;	
-		}
-		/**
-		 * gets Locator - bulk Message label
-		 * 
-		 */
-	    
-		public String get_bulkMessage_Text() {
-			return bulkMessage;	
-		}
-		/**
-		 * gets Locator - bulk items tab
-		 * 
-		 */
-	    
-		public String get_bulkItemsTab() {
-			return bulkItemsTab;	
-		}
+	/**
+	 * gets Locator - AEM View wishlist field
+	 * 
+	 */
+
+	public String get_View_Wishlist_Field() {
+		return viewWishlistLabelField;
+	}
+
+	/**
+	 * gets Locator - AEM Wishlist max limit
+	 * 
+	 */
+
+	public String get_Wishlist_Max_Limit_Message_Field() {
+		return wishlistMaxLimitMessageField;
+	}
+
+	/**
+	 * gets Locator - AEM Close
+	 * 
+	 */
+
+	public String get_Close_Label() {
+		return closeLabelField;
+	}
+
+	/**
+	 * gets Locator - AEM Save
+	 * 
+	 */
+
+	public String get_Save_Button() {
+		return saveButton;
+	}
+
+	/**
+	 * gets Locator - AEM WishList Card
+	 * 
+	 */
+
+	public String get_Wishlist_Card() {
+		return wishlistCard;
+	}
+
+	/**
+	 * gets Locator - AEM Select
+	 * 
+	 */
+
+	public String get_Select_Button() {
+		return selectButton;
+	}
+
+	/**
+	 * gets Locator - AEM More
+	 * 
+	 */
+
+	public String get_More() {
+		return moreButton;
+	}
+
+	/**
+	 * gets Locator - AEM Save
+	 * 
+	 */
+
+	public String get_Quick_Publish() {
+		return quickPublish;
+	}
+
+	/**
+	 * gets Locator - AEM common Content Thumbnail
+	 * 
+	 */
+
+	public String get_Common_Content_Thumbnail() {
+		return commonContentThumbnail;
+	}
+
+	/**
+	 * gets Locator - AEM Save
+	 * 
+	 */
+
+	public String get_Publish_Alert() {
+		return publishAlertMessage;
+	}
+
+	/**
+	 * gets Locator - services
+	 * 
+	 */
+
+	public String get_Services() {
+		return services;
+	}
+
+	/**
+	 * gets Locator - Select all
+	 * 
+	 */
+
+	public String get_Select_All() {
+		return selectAll;
+	}
+
+	/**
+	 * gets Locator - incl Core Charges(content Fragment)
+	 * 
+	 */
+
+	public String get_inclCoreCharges() {
+		return inclCoreCharges;
+	}
+
+	/**
+	 * gets Locator - plus Core Charges(content Fragment)
+	 * 
+	 */
+
+	public String get_plusCoreCharges() {
+		return plusCoreCharges;
+	}
+
+	/**
+	 * gets Locator - core Charges Text(content Fragment)
+	 * 
+	 */
+
+	public String get_coreChargesText() {
+		return coreChargesText;
+	}
+
+	/**
+	 * gets Locator - core Charges ToolTip message(content Fragment)
+	 * 
+	 */
+
+	public String get_coreCharges_ToolTipmessage() {
+		return coreChargesToolTipmessage;
+	}
+
+	/**
+	 * gets Locator - drag component here
+	 * 
+	 */
+
+	public String get_drag_component_Here() {
+		return dragcomponent_cartpage;
+	}
+
+	/**
+	 * gets Locator - order summary component here
+	 * 
+	 */
+
+	public String get_OrderSummary_Component() {
+		return ordersummary_cartpage;
+	}
+
+	/**
+	 * gets Locator - Recommendation component here
+	 * 
+	 */
+
+	public String get_Recommendation_Component() {
+		return recommendation_cartpage;
+	}
+
+	/**
+	 * gets Locator - Recommendation component here
+	 * 
+	 */
+
+	public String get_BroadBanner() {
+		return selectbroadbanner;
+	}
+
+	/**
+	 * gets Locator - TwoFeatured
+	 * 
+	 */
+
+	public String get_TwoFeatured() {
+		return twofeatured;
+	}
+
+	/**
+	 * gets Locator - cart component
+	 * 
+	 */
+
+	public String get_cartcomponent() {
+		return cartItemsComponent;
+	}
+
+	/**
+	 * gets Locator - ToolTip Title
+	 * 
+	 */
+
+	public String get_ToolTipTitle() {
+		return ToolTipTitle;
+	}
+
+	/**
+	 * gets Locator - ToolTip Description
+	 * 
+	 */
+
+	public String get_ToolTipDesc() {
+		return ToolTipDesc;
+	}
+
+	/**
+	 * gets Locator - bulk Message label
+	 * 
+	 */
+
+	public String get_bulkMessage_Text() {
+		return bulkMessage;
+	}
+
+	/**
+	 * gets Locator - bulk items tab
+	 * 
+	 */
+
+	public String get_bulkItemsTab() {
+		return bulkItemsTab;
+	}
 }
