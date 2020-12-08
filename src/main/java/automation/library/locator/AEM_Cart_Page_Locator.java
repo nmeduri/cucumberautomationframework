@@ -27,6 +27,11 @@ public class AEM_Cart_Page_Locator {
 	String plusCoreCharges = Property.getProperty(Constant.OR_FILE, "plusCoreCharges");
 	String coreChargesText = Property.getProperty(Constant.OR_FILE, "coreChargesText");
 	String coreChargesToolTipmessage = Property.getProperty(Constant.OR_FILE, "coreChargesToolTipmessage");
+	String cartItemsComponent=Property.getProperty(Constant.OR_FILE, "cartItemsComponent");
+	String ToolTipTitle=Property.getProperty(Constant.OR_FILE, "ToolTipTitle");
+	String ToolTipDesc=Property.getProperty(Constant.OR_FILE, "ToolTipDesc");
+	String bulkMessage=Property.getProperty(Constant.OR_FILE, "bulkMessage");
+	String bulkItemsTab=Property.getProperty(Constant.OR_FILE, "bulkItemsTab");
 
 	
 	 	/**
@@ -181,5 +186,45 @@ public class AEM_Cart_Page_Locator {
 		public String get_coreCharges_ToolTipmessage() {
 			return coreChargesToolTipmessage;	
 		}
-
+		
+		/**
+		 * gets Locator - cart component
+		 * 
+		 */
+	    
+		public String get_cartcomponent() {
+			return cartItemsComponent;	
+		}
+		/**
+		 * gets Locator - ToolTip Title
+		 * 
+		 */
+	    
+		public String get_ToolTipTitle() {
+			return ToolTipTitle;	
+		}
+		/**
+		 * gets Locator - ToolTip Description
+		 * 
+		 */
+	    
+		public String get_ToolTipDesc() {
+			return ToolTipDesc;	
+		}
+		/**
+		 * gets Locator - bulk Message label
+		 * 
+		 */
+	    
+		public String get_bulkMessage_Text() {
+			return bulkMessage;	
+		}
+		/**
+		 * gets Locator - bulk items tab
+		 * 
+		 */
+	    
+		public String get_bulkItemsTab() {
+			return bulkItemsTab;	
+		}
 }

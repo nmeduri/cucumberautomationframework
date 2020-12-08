@@ -132,7 +132,10 @@ public class AEM_Cart_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Add_To_Wishlist_Url());
 
 	}
-
+	/** This function navigate to Cart Page AEM */
+	public void navigateTo_Cart_Page_AEM() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_CartURL_AEM());
+	}
 	/** This function verify display of close label field */
 	public void displayCloseAEM() throws Exception {
 		$display(
@@ -235,5 +238,29 @@ public void clickOnSaveAndPublishCntentFragmentChanges() throws Exception {
 					$By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Save_Button())),20);
 	$click(ExpectedConditions.elementToBeClickable(
 			$By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Save_Button())), 20);
+	}
+/** This function clicks cart item component */
+public void clickCartComponent() throws Exception {
+	$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_cartcomponent())), 20);
+	}
+/** This function bulk item tab */
+public void clickBulkItemTab() throws Exception {
+	$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_bulkItemsTab())), 20);
+	}
+/** This function update tooltip text */
+public void UpdateDEliveryOptionToolTipText() throws Exception {
+	$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_ToolTipDesc())), 20);
+	$enterData(
+			ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager()
+					.getAEMCartPageLocator().get_ToolTipDesc())),
+			5, FileReaderManager.getInstance().getAEMDataReader().get_deliveryOptionToolTip_desc_AEM());
+	}
+/** This function update bulk message text */
+public void UpdateBulkMessageText() throws Exception {
+	$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_bulkMessage_Text())), 20);
+	$enterData(
+			ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager()
+					.getAEMCartPageLocator().get_bulkMessage_Text())),
+			5, FileReaderManager.getInstance().getAEMDataReader().get_deliveryOption_bulkMessage_AEM());
 	}
 }

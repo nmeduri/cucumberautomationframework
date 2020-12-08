@@ -5658,4 +5658,52 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets AEM cart URL
+	 * 
+	 */
+	
+	public String get_CartURL_AEM() {
+		String CARTAem = Property.getProperty(Constant.AEM_DATA_FILE, "CartPageurlAEM");
+		if(CARTAem != null)
+			return CARTAem;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets deliveryOption tooltip Title
+	 * 
+	 */
+	
+	public String get_deliveryOptionToolTip_Title_AEM() {
+		String tooltipAem = Property.getProperty(Constant.AEM_DATA_FILE, "ToolTipTitle");
+		if(tooltipAem != null)
+			return tooltipAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets deliveryOption tooltip message
+	 * 
+	 */
+	
+	public String get_deliveryOptionToolTip_desc_AEM() {
+		String tooltipAem = Property.getProperty(Constant.AEM_DATA_FILE, "ToolTipDesc");
+		if(tooltipAem != null)
+			return tooltipAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets deliveryOption bulk message
+	 * 
+	 */
+	
+	public String get_deliveryOption_bulkMessage_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "BulkMessage");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

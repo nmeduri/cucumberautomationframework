@@ -33,9 +33,8 @@ public class Cart_Page extends PageObject{
 	/** This function navigate to Cart Page */
 	public void navigateTo_Cart_Page() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getCartUrl());
-		//driver.get(FileReaderManager.getInstance().getConfigReader().getCartUrl());
 	}
-
+	
 	/** This function is verify that PDP Page is displayed */
 	public void display_Cart_Page() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
@@ -287,4 +286,31 @@ public class Cart_Page extends PageObject{
 	public void click_PickUpatStore_tooltip() throws Exception {
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_pickupatstoreToolTip())), 40);
 	}
+	/** This function click standard delivery informational toolTip  */
+	public void click_standard_delivery_tooltip() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_stadardDeliveryTooltip())), 40);
+	}
+	/** This function click in-home delivery informational toolTip  */
+	public void click_inHomeDelivery_tooltip() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_homeDeliveryTooltip())), 40);
+	}
+	/** This function click in-home and unpack delivery informational toolTip  */
+	public void click_inHome_unpack_Delivery_tooltip() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_homeDeliveryUnpackTooltip())), 40);
+	}
+	/** This function click toolTip close button */
+	public void click_tooltip_closebtn() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_CloseToolTipIcon())), 40);
+	}
+	/** This function validate the tool tip message is not displayed */
+	public void validateToolTipMessageNotDisplayed() throws Exception {
+		try {
+			$displayFindElement(
+					By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_TooltipBody()));
+			fail();
+		} catch (Exception e) {
+			Log.message("Tool tip message is not displayed", true);
+		}	}
+
+	
 	}

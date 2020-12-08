@@ -43,7 +43,6 @@ public class Cart_Page_Locator {
 	String storedetailsLink=Property.getProperty(Constant.OR_FILE, "storedetailsLink");
 	String storedetailsaddress=Property.getProperty(Constant.OR_FILE, "storedetailsaddress");
 	String EmptycartTitle=Property.getProperty(Constant.OR_FILE, "EmplycartTitle");
-	
 	String orderSummaryTitle=Property.getProperty(Constant.OR_FILE, "orderSummaryTitle");
 	String ShipToHomeTitle=Property.getProperty(Constant.OR_FILE, "ShipToHomeTitle");
 	String ShippingToMsg=Property.getProperty(Constant.OR_FILE, "ShippingToMsg");
@@ -54,12 +53,22 @@ public class Cart_Page_Locator {
 	String BOIPFreeFees=Property.getProperty(Constant.OR_FILE, "BOIPFreeFees");
 	String PickUpatStoreChangeCTA=Property.getProperty(Constant.OR_FILE, "PickUpatStoreChangeCTA");
 	String pickupatstoreToolTip=Property.getProperty(Constant.OR_FILE, "pickupatstoreToolTip");
-	
+	String deliverydialogBox=Property.getProperty(Constant.OR_FILE, "deliverydialogBox");
+	String standardDelivery=Property.getProperty(Constant.OR_FILE, "standardDelivery");
+	String homeDelivery=Property.getProperty(Constant.OR_FILE, "homeDelivery");
+	String homeDeliveryUnpack=Property.getProperty(Constant.OR_FILE, "homeDeliveryUnpack");
+	String stadardDeliveryTooltip=Property.getProperty(Constant.OR_FILE, "stadardDeliveryTooltip");
+	String homeDeliveryTooltip=Property.getProperty(Constant.OR_FILE, "homeDeliveryTooltip");
+	String homeDeliveryUnpackTooltip=Property.getProperty(Constant.OR_FILE, "homeDeliveryUnpackTooltip");
+	String TooltipBody=Property.getProperty(Constant.OR_FILE, "TooltipBody");
+	String CloseToolTip=Property.getProperty(Constant.OR_FILE, "CloseToolTip");
+	String BulkMessage=Property.getProperty(Constant.OR_FILE, "BulkMessage");	
 	String HSTText=Property.getProperty(Constant.OR_FILE, "HSTText");
 	String HSTFees=Property.getProperty(Constant.OR_FILE, "HSTFees");
 	String TotalText=Property.getProperty(Constant.OR_FILE, "TotalText");
 	String TotalFee=Property.getProperty(Constant.OR_FILE, "TotalFee");
 	String saveMessage=Property.getProperty(Constant.OR_FILE, "saveMessage");
+
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
 	
@@ -363,6 +372,76 @@ public class Cart_Page_Locator {
 		return PickUpatStoreChangeCTA;
 	}
 	/**
+	 * gets Locator - standard Delivery option
+	 * 
+	 */
+	public String get_standardDelivery() {
+		return standardDelivery;
+	}
+	/**
+	 * gets Locator - homeDelivery option
+	 * 
+	 */
+	public String get_homeDelivery_option() {
+		return homeDelivery;
+	}
+	/**
+	 * gets Locator - home Delivery Unpack option
+	 * 
+	 */
+	public String get_homeDeliveryUnpack_option() {
+		return homeDeliveryUnpack;
+	}
+	/**
+	 * gets Locator - standard Delivery option Tooltip
+	 * 
+	 */
+	public String get_stadardDeliveryTooltip() {
+		return stadardDeliveryTooltip;
+	}
+	/**
+	 * gets Locator - home Delivery option Tooltip
+	 * 
+	 */
+	public String get_homeDeliveryTooltip() {
+		return homeDeliveryTooltip;
+	}
+	/**
+	 * gets Locator - home Delivery Unpack Tooltip
+	 * 
+	 */
+	public String get_homeDeliveryUnpackTooltip() {
+		return homeDeliveryUnpackTooltip;
+	}
+	/**
+	 * gets Locator - delivery dialog Box
+	 * 
+	 */
+	public String get_deliverydialogBox() {
+		return deliverydialogBox;
+	}
+	/**
+	 * gets Locator - Tool-tip Information
+	 * 
+	 */
+	public String get_TooltipBody() {
+		return TooltipBody;
+	}
+	/**
+	 * gets Locator - tool-tip close icon
+	 * 
+	 */
+	public String get_CloseToolTipIcon() {
+		return CloseToolTip;
+	}
+	/**
+	 * gets Locator -bulk message -delivery option
+	 * 
+	 */
+	public String get_BulkMessage() {
+		return BulkMessage;
+	}
+    /**
 	 * gets Locator - HST Text
 	 * 
 	 */
