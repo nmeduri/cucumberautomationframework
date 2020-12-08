@@ -1670,5 +1670,30 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("product code not specified in the API Data file.");
 	}
+	/**
+	 * gets CTR Store Locator API
+	 * 
+	 */
 	
+	public String get_CTR_Store_Locator_API() {
+
+		String ctrStoreLocator = Property.getProperty(Constant.API_DATA, "ctrStoreLocator");
+		if (ctrStoreLocator != null)
+			return ctrStoreLocator;
+		else
+			throw new RuntimeException("ctrStoreLocator url not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-5670
+	 * 
+	 */
+	
+	public String get_product_tc_5670() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_5670");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product_tc_5670 code not specified in the API Data file.");
+	}
 }

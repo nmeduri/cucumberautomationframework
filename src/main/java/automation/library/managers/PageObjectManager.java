@@ -918,7 +918,6 @@ public class PageObjectManager {
 		return (getStandardMastheadBannerPageLocator == null) ? getStandardMastheadBannerPageLocator = new Standard_Masthead_Banner_Page_Locator() : getStandardMastheadBannerPageLocator;
 	}
 	
-	
 	/** Returns Instance of Account Rewards Template Page */
 	public AEM_Account_Rewards_Template_Page getAccountRewardsTemplatePage(WebDriver driver) {
 		return (getAccountRewardsTemplatePage == null) ? getAccountRewardsTemplatePage = new AEM_Account_Rewards_Template_Page(driver) : getAccountRewardsTemplatePage;
@@ -928,4 +927,5 @@ public class PageObjectManager {
 	public AEM_Account_Rewards_Template_Page_Locator getAccountRewardsTemplatePageLocator() {
 		return (getAccountRewardsTemplatePageLocator == null) ? getAccountRewardsTemplatePageLocator = new AEM_Account_Rewards_Template_Page_Locator() : getAccountRewardsTemplatePageLocator;
 	}
+
 }

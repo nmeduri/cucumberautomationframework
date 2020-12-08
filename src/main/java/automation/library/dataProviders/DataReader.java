@@ -1157,7 +1157,6 @@ public class DataReader {
 		else
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
-
 	/**
 	 * gets apple App store Url
 	 */
@@ -1679,7 +1678,6 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-
 
 		/**
 		 * gets Already linked master card last name

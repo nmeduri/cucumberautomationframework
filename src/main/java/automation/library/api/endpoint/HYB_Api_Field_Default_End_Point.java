@@ -31,5 +31,14 @@ public class HYB_Api_Field_Default_End_Point {
 		return response;
 
 	}
+	public Response get_Store_Locator_API(String url) {
+		//request.header("Authorization", "Bearer " + accessToken);
+		//Log.message("Token 2:- " + accessToken,  true);
+		Log.message("API:- " + url,  true);
+		response = RestAssured.given().get(url);
+		Log.message("Store Locator Response:- " + response.getBody().asString(), true);
+		return response;
+
+	}
 
 }

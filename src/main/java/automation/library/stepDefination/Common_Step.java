@@ -151,7 +151,7 @@ public class Common_Step extends BaseStep {
 	}*/
 
 	@Given("PLP occ api is available")
-	public void plp_occ_api_is_availeble() {
+	public void plp_occ_api_is_available() {
 
 		url = getHybApiENCA()
 				.HYB_API_EN_CA(FileReaderManager.getInstance().getAPIDataReader().get_PLP_ProductInformationAPI());

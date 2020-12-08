@@ -98,14 +98,11 @@ public class AEM_Featured_List_Page extends PageObject {
 
 	/** this function clicks on feature list panel */
 	public void clickFeatureListPanel() throws Exception {
-		// $click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
-		// testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())),
-		// 15);
-		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(
-				testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));
-		// $click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
-		// testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())),
-		// 15);
+		//$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())), 15);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));
+		//$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH,
+		//		testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())), 15);
+
 		// ((JavascriptExecutor)
 		// PageObject.getDriver()).executeScript("arguments[0].click();",
 		// $findElement(By.xpath(testContext.getPageObjectManager().getAEMFeatureListPageLocator().getFeaturedProductListPanel())));

@@ -169,6 +169,3 @@ Feature: OCCP-3082 : Featured List |Product List|Authorable
 	
 	
 	
-	
-	
-	
