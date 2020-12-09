@@ -2,7 +2,7 @@ Feature: TC-4865 TC-4866 TC-4970
   Description: To test the ADOBE Test Cases for the stories
 
   @RegressionTest @AEM
-  Scenario: TC-4865	OCCP-1026:Verify that Author is able to configure the Form Title
+  Scenario: TC-4865	OCCP-1026:Verify Author using components that are pre-configured on the Store Details template to author content
     Given open browser
     When AEM author with access to contact us Page
     And login to AEM using the credential as mentioned in the test data
