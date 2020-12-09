@@ -63,9 +63,9 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	And user click on sign in button
 	Then pdp page is displayed for the product
 	
-	@RegressionTest @WebView @WideScreen @MobileView 
-	Scenario: TC-1995,TC-2009,2017 Verify the display of tool tip for the "Do not show me this again" toggle button
-    Given login url is available
+	@RegressionTest @WebView @WideScreen @MobileView
+	Scenario: TC-1995,TC-2009, TC-2017 Verify the display of tool tip for the "Do not show me this again" toggle button
+  Given login url is available
 	When 2480-enter email detail
 	And user enter password
 	And user click on sign in button
@@ -148,8 +148,8 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	When click on skip link
 	Then pdp page should displayed
 	
-	#@RegressionTest @WideScreen @MobileView
-	Scenario: TC-2010,2018 Verify the skip functionality on the Link card screen on Widescreen
+	#@RegressionTest @WideScreen
+	Scenario: TC-2010 Verify the skip functionality on the Link card screen on Widescreen
 	Given login url is available
 	When enter email detail
 	And user enter password
@@ -157,3 +157,49 @@ Feature: OCCP-2480 Account/Triangle ID / Link Rewards / View Link Cards options
 	Then link card screen should be displayed
 	And Do not show me this again toggle button is available on the link card screen
 	And click on skip link
+
+	@RegressionTest @MobileView
+	Scenario: TC-2018 Verify the skip functionality on the Link card screen on Mobile
+	Given sign up url is available
+	Then sign up page is displayed
+	And in mobile user enter email 
+	And user enter password
+	And user enter retype password
+	And user click on create button
+	And user click on next button
+	And email verification sent confirmation screen is displayed
+	When yopmail url is available
+	Then verify email verification in mobile
+	Then page your email has been verified displayed
+	And user clicks on continue button
+	Then link card screen should be displayed
+	And Do not show me this again toggle button is available on the link card screen
+	And click on skip link
+	Then pdp page should displayed
+	And switch on parent frame
+	
+	@RegressionTest @MobileView
+	Scenario: TC-2016 Verify hide the link screen option on the Link Card screen when -Email Validation
+	Given sign up url is available
+	Then sign up page is displayed
+	And in mobile user enter email 
+	And user enter password
+	And user enter retype password
+	And user click on create button
+	And user click on next button
+	And email verification sent confirmation screen is displayed
+	When yopmail url is available
+	Then verify email verification in mobile
+	Then page your email has been verified displayed
+	And user clicks on continue button
+	Then link card screen should be displayed
+	And Do not show me this again toggle button is available on the link card screen
+	When click on the toggle from left to right
+	And click on skip link
+	Then pdp page should displayed
+	Given login url is available
+	When in mobile user enter the previously registered email
+	And user enter password
+	And user click on sign in button
+	Then pdp page should displayed
+	And switch on parent frame

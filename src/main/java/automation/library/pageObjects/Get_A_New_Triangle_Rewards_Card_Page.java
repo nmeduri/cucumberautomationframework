@@ -186,5 +186,42 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 	public void displayNewTriangleLoyaltyCardNo() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Success_CardNo()));
 	}
+	
+	/** This function display month of birth  */
+	public void displayMonthOfBirthMobile() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_MOB_Mobile())), 3);
+		}
+	
+	/** This function display date of birth */
+	public void displayDateOfBirthMobile() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_DOB_Mobile())), 3);
+		}
 
+	/** This function enter month of birth  */
+	public void enterMonthOfBirthMobile() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_MOB_Mobile())), 3);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_MOB_Mobile()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_monthOfBirthValue()));
+	}
+	
+	/** This function enter date of birth */
+	public void enterDateOfBirthMobile() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_DOB_Mobile())), 3);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_DOB_Mobile()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_dateOfBirthValue()));
+	}
+	
+	/** This function enter month of birth after current date  */
+	public void enterMOBAfterCurrentDateInMobile() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_MOB_Mobile())), 3);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_MOB_Mobile()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_monthOfBirth_afterCurrentdate()));
+	}
+	
+	/** This function enter month of birth after current date  */
+	public void enterDOBAfterCurrentDateInMobile() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_DOB_Mobile())), 3);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_DOB_Mobile()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_DOB_After_Current_Date()));
+	}
 }

@@ -46,7 +46,7 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	
 	/** This function is verify that Header create your triangle is displayed */
 	public void display_Create_Your_Triangle_Header() throws Exception {
-		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header())), 25);
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Create_Your_Triangle_ID_Header())), 50);
 	}
 	
 	/** This function enter email detail in the email field */
@@ -129,6 +129,12 @@ public class Create_Your_Triangle_ID_Page extends PageObject {
 	public void enter_Email_Mobile(String data) throws Exception {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_Email_Field()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail_Mobile());  
+	}
+	
+	/** This function enter email/usename detail in the email field in mobile */
+	public void enter_UserName_Mobile(String data) throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_UserName_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCreateTriangleIDPageLocatorPage().get_UserName_Field()), data + FileReaderManager.getInstance().getDataReader().get_Email_Detail_Mobile());  
 	}
 
 }

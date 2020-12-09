@@ -67,7 +67,7 @@ Description: To test the ADOBE Test Cases for the story OCCP-3212
 	And user click on continue button
 	Then cancel button should be present in the error screen
 
-	@RegressionTest @WebView @WideScreen @TC-2397
+	@RegressionTest @WebView @WideScreen 
 	Scenario: TC-2397, Verify the Error image on Link Cards screen when Card is Deactivated in Wide Desktop view
 	Given login url is available
 	When enter email id

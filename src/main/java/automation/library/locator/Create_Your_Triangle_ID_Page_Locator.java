@@ -28,6 +28,7 @@ public class Create_Your_Triangle_ID_Page_Locator {
 	String joinNow = Property.getProperty(Constant.OR_FILE, "joinNow");
 	String invalidLoginPassword = Property.getProperty(Constant.OR_FILE, "invalidLoginPassword");
 	String createYourTriangleHeaderFr = Property.getProperty(Constant.OR_FILE, "createYourTriangleHeaderFr");
+	String userNameField = Property.getProperty(Constant.OR_FILE, "userNameField");
 	
 	/**
 	 * gets Locator - Create Your Triangle ID Header
@@ -190,5 +191,16 @@ public class Create_Your_Triangle_ID_Page_Locator {
 	
 	public String get_Create_Your_Triangle_Header_Fr() throws Exception {
 		return createYourTriangleHeaderFr;
+	}
+	
+	/**
+	 * gets Locator - Email Field ie username
+	 * 
+	 */
+	
+	public String get_UserName_Field() {
+		
+		return userNameField;
+		
 	}
 }

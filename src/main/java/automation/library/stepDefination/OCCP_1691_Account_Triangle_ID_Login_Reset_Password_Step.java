@@ -295,4 +295,11 @@ public class OCCP_1691_Account_Triangle_ID_Login_Reset_Password_Step extends Bas
 		Log.message("Email Value:- " + emailVaue, true);
    	    testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Email_Mobile(emailVaue);
     }
+    
+    @When("in mobile user enter the previously registered email")
+    public void in_mobile_user_enter_the_previously_registered_email() throws Exception {
+   	    //testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Previously_Registered_Email(emailVaue);
+   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_UserName_Mobile(emailVaue);
+   	    Log.message("Email Value:- " + emailVaue, true);
+    }
 }

@@ -46,6 +46,20 @@ public class OCCP_2805_Age_Of_Majority_Check_Step extends BaseClass{
 			testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterYearOfBirth2002();
 
 	}
+	
+	@And("in mobile verify when user enter valid information and select year of birth for age majority check")
+	public void check_age_majority_in_mobile() throws Exception {
+		 testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_First_Name(FileReaderManager.getInstance().getDataReader().get_FirstName());
+		    testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Last_Name(FileReaderManager.getInstance().getDataReader().get_Last_Name_Rewards());		
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Address(FileReaderManager.getInstance().getDataReader().get_Address_Rewards());		
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_City(FileReaderManager.getInstance().getDataReader().get_City_Rewards());		
+			testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterProvinceOntarioInMobile();
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Postal_Code(FileReaderManager.getInstance().getDataReader().get_Postal_Code_Rewards());		
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Phone_Number(FileReaderManager.getInstance().getDataReader().get_Phone_Number_Rewards());		
+			testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterYearOfBirth2002InMobile();
+
+	}
+	
 	@And("verify when user enter valid information and select year of birth not reached age majority check")
 	public void check_No_Age_Majority() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_First_Name();
@@ -68,18 +82,38 @@ public class OCCP_2805_Age_Of_Majority_Check_Step extends BaseClass{
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).display_DateOfBirth();
 
 	}
+	
+	@Then ("in mobile verify Month of Birth and Date of Birth fields appears")
+	public void in_mobile_verify_Month_dateOfBirth() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).displayMonthOfBirthMobile();;
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).displayDateOfBirthMobile();
+
+	}
+	
 	@Then ("enter birthday before current date")
 	public void Enter_BirthDay_before_CurrentDate() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterMonthOfBirth();
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDateOfBirth();
 	}
 	
+	@Then ("in mobile enter birthday before current date")
+	public void in_mobile_enter_birthDay_before_currentdate() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterMonthOfBirthMobile();;
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDateOfBirthMobile();
+	}
+	
 	@Then ("enter birthday after current date")
 	public void Enter_BirthDay_after_CurrentDate() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterMonthOfBirth_After_currentDate();
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDateOfBirth();
-
 	}
+	
+	@Then ("in mobile enter birthday after current date")
+	public void in_mobile_enter_birthday_after_currentdate() throws Exception {
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterMOBAfterCurrentDateInMobile();
+		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterDOBAfterCurrentDateInMobile();
+	}
+	
 	@Then ("verify user should see an error screen with Age of majority message")
 	public void verify_ageOfMajority_error() throws Exception {
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).dispaly_ageMajorityError();

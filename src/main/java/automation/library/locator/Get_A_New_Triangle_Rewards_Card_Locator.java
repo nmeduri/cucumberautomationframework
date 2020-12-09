@@ -34,6 +34,11 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	String monthValueAfterCurrentdate=Property.getProperty(Constant.OR_FILE, "monthValueAfterCurrentdate");
 	String DOBValue=Property.getProperty(Constant.OR_FILE, "DOBValue");
 	String yearOfBirthCompleteYourProfile=Property.getProperty(Constant.OR_FILE, "yearOfBirthCompleteYourProfile");
+	String provinceMobile=Property.getProperty(Constant.OR_FILE, "provinceMobile");
+	String yearOfBirthMobile = Property.getProperty(Constant.OR_FILE, "yearOfBirthMobile");
+	String monthOfBirthMobile=Property.getProperty(Constant.OR_FILE, "monthOfBirthMobile");
+	String DOBMobile = Property.getProperty(Constant.OR_FILE, "DOBMobile");
+	String DOBValueAfterCurrentDate = Property.getProperty(Constant.OR_FILE, "DOBValueAfterCurrentDate");
 	
 	/**
 	 * gets Locator - Header Get A New Triangle Rewards Card Title
@@ -245,6 +250,50 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	
 	public String get_YOB_CYP() throws Exception {
 		return yearOfBirthCompleteYourProfile;
+	}
+	
+	/**
+	 * gets Locator - Province (Drop Down)
+	 * 
+	 */
+	
+	public String get_Province_Mobile() throws Exception {
+		return provinceMobile;
+	}
+	
+	/**
+	 * gets Locator - Year of Birth (Drop Down)
+	 * 
+	 */
+	
+	public String get_Year_Of_Birth_Mobile() throws Exception {
+		return yearOfBirthMobile;
+	}
+	
+	/**
+	 * gets Locator - Month of birth dropdown
+	 * 
+	 */
+	
+	public String get_MOB_Mobile() throws Exception {
+		return monthOfBirthMobile;
+	}
+	/**
+	 * gets Locator - date of birth dropdown
+	 * 
+	 */
+	
+	public String get_DOB_Mobile() throws Exception {
+		return DOBMobile;
+	}
+	
+	/**
+	 * gets Locator - month of birth value after current date
+	 * 
+	 */
+	
+	public String get_DOB_After_Current_Date() throws Exception {
+		return DOBValueAfterCurrentDate;
 	}
  }
 

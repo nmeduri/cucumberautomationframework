@@ -114,10 +114,29 @@ public class AEM_New_Rewards_Card_Screen_Page extends PageObject {
 			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Year_2002())));
 		}
 		
+		public void enterYearOfBirth2002InMobile() throws Exception {
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_City_Rewards()), 5);
+			$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Mobile())), 5);
+			//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Mobile())));
+			//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Year_2002())));
+			$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Mobile())), 5);
+			$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Year_2002())), 5);
+		}
+		
 		public void enterProvinceOntario() throws Exception {
 			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())), 3);
 			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province())));
 			((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Province_Ontario())));
+		}
+		
+		/** This function selects ontario in province*/
+		public void enterProvinceOntarioInMobile() throws Exception {
+			testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Address_Rewards()), 5);
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province_Mobile())), 3);
+			//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province_Mobile())));
+			//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Province_Ontario())));
+			$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Province_Mobile())), 5);
+			$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMNewRewardsCardScreenPageLocator().get_Province_Ontario())), 5);
 		}
 		
 		/** This function navigate to complete your profile Page */
