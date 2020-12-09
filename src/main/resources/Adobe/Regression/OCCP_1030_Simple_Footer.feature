@@ -7,7 +7,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	When pdp page is displayed for the product
 	Then first three lines of the authored legal disclaimer text should be displayed
 	
-	@RegressionTest @MobileView @TabletView
+	#@RegressionTest @MobileView @TabletView
 	Scenario: TC-2865, TC-2838 Verification of clicking of text "View More" - Desktop Wide
 	When pdp url is available
 	When pdp page is displayed for the product
@@ -16,7 +16,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then legal disclaimer should be expanded and the rest of the text should be displayed
 	Then view less is displayed
 	
-	@RegressionTest @MobileView @TabletView
+	#@RegressionTest @MobileView @TabletView
 	Scenario: TC-2837, TC-2864 Verification of Legal Disclaimer property - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -70,7 +70,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then clickable text site map is displayed
 	Then clickable text accessibility is displayed
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	#@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2841, TC-2832 TC-2850, TC-2859 Verification of clicking of text Legal 
 	Given footer url is available
 	When footer page is displayed
@@ -85,7 +85,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	And click on privacy policy
 	Then user navigate on privacy policy page where detailed privacy policy information is displayed
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	#@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2844, TC-2853, TC-2835, TC-2862 User clicks on text "Site Map" is displayed
 	Given footer url is available
 	When footer page is displayed
@@ -93,7 +93,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then user is navigate on site map page where detailed site map information is displayed
 	And switch on parent frame
 	
-	@RegressionTest @MobileView @TabletView
+	#@RegressionTest @MobileView @TabletView
 	Scenario: TC-2834, TC-2861 Verification of clicking of text "Privacy Policy" - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -101,7 +101,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	And click on privacy policy
 	Then user navigate on privacy policy page where detailed privacy policy information is displayed
 	
-	@RegressionTest @MobileView @TabletView
+	#@RegressionTest @MobileView @TabletView
 	Scenario: TC-2833, TC-2860 Verification of clicking of text "Terms & Conditions"
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -109,7 +109,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	And in footer access and click on text and conditions
 	Then user navigate to the page where detailed terms and conditions information is displayed
 	
-	@RegressionTest @MobileView @TabletView
+	#@RegressionTest @MobileView @TabletView
 	Scenario: TC-2831, TC-2858 Verification of options present in Simple Footer - Mobile
 	Given pdp url is available
 	When pdp page is displayed for the product
@@ -124,7 +124,7 @@ Feature: OCCP-1030 Footer : Simple Footer
 	Then editable clickable text view less is displayed
 	Then copy right text is displayed
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	#@RegressionTest @WebView @WideScreen @MobileView @TabletView
 	Scenario: TC-2845,TC-2854, TC-2836, TC-2863 User clicks on text "Accessibility" is displayed
 	Given footer url is available
 	When footer page is displayed

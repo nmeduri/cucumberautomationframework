@@ -59,5 +59,30 @@ public class OCCP_1643_Filters_And_Facets_Delivery_Pickup_Options_Step extends B
 	public void delivery_and_pickup_facet_is_prioritized_as_one_of_top_five() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).devliveryPickupFacetOptionInTopFive();
 	}
+	
+	@And("select a delivery and pick up value")
+	public void select_a_delivery_and_pickup_value() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).selectDeliveryAndPickUpOptions();
+	}
+	
+	@Then("visiual indicating the same with in the facet via the check mark is displayed")
+	public void visiual_indicating_the_same_with_in_the_facet_via_the_checkmark_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyDisplayCheckmarkedAgainstCheckBox();
+	}
+	
+	@Then("corrosponding pill with the facet value name is added on the pill bar")
+	public void corrosponding_pill_with_the_facet_value_name_is_added_on_the_pill_bar() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displaySelectedDeliveryResultOnPLP();
+	}
+	
+	@And("select more than one delivery and pick up option")
+	public void select_more_than_one_delivery_and_pickup_opiton() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).selectMoreThanDeliveryAndPickUpOptions();
+	}
+	
+	@Then("corrosponding pill delivery and option with the facet value name is removed on the pill bar")
+	public void corrospongind_pill_delivery_and_option_with_facet_value_name_is_removed_on_the_pill_bar() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).notDisplaySelectedDeliveryResultOnPillBar();
+	}
 }
 

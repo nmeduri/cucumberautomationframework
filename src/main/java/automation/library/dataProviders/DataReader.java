@@ -1157,6 +1157,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Product not specified in the Data file.");
 	}
+
 	/**
 	 * gets apple App store Url
 	 */
@@ -1625,7 +1626,7 @@ public class DataReader {
 	 */
 	public String get_pdpProductBadgeURL() {
 		String data = Property.getProperty(Constant.DATA_FILE, "pdpProductBadgeURL");
-		if (data != null)
+		if (data != null) 
 			return data;
 		else
 			throw new RuntimeException("URL not specified in the Data file.");
@@ -1642,8 +1643,7 @@ public class DataReader {
 			throw new RuntimeException("URL not specified in the Data file.");
 	}
 
-	
-    /**
+	/**
 	 * gets Minimum Price Data (Above Condition)
 	 * 
 	 */
@@ -1783,9 +1783,11 @@ public class DataReader {
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
 	
+	
 	/**
 	 * gets Email Review
 	 */
+
 	public String get_Email_Review() {
 		String data = Property.getProperty(Constant.DATA_FILE, "emailReview");
 		if (data != null)
@@ -1828,5 +1830,31 @@ public class DataReader {
 		else
 			throw new RuntimeException("Product Code not specified in the Data file.");
 	}
+	 
+	 /**
+		 * gets Online Badge (Product)
+		 * 
+		 */
+		public String get_Product_Online_Badges() {
+
+			String data = Property.getProperty(Constant.DATA_FILE, "onlineBadgeProduct");
+			if (data != null)
+				return data;
+			else
+				throw new RuntimeException("Product Code not specified in the Data file.");
+		}
+		 
+		 /**
+			 * gets Perfect Gift Badge (Product)
+			 * 
+			 */
+			public String get_Perfect_Gift_Badge() {
+
+				String data = Property.getProperty(Constant.DATA_FILE, "perfectGiftBadgeProduct");
+				if (data != null)
+					return data;
+				else
+					throw new RuntimeException("Product Code not specified in the Data file.");
+			}
 
 }

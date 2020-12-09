@@ -133,6 +133,7 @@ public class PDP_PageLocator {
 	String reportQuestionAnswerButton = Property.getProperty(Constant.OR_FILE, "reportQuestionAnswerButton");
 	String disableReportedLabel = Property.getProperty(Constant.OR_FILE, "disableReportedLabel");
 	String perfectGiftBadge= Property.getProperty(Constant.OR_FILE, "perfectGiftBadge");
+	String perfectGiftBadgeProduct = Property.getProperty(Constant.OR_FILE, "perfectGiftBadgeProduct");
 	String ColorVariantPerfectGift=Property.getProperty(Constant.OR_FILE, "ColorVariantPerfectGift");
 	String unfilledStars = Property.getProperty(Constant.OR_FILE, "unfilledStars");
 	String writeReviewsButton = Property.getProperty(Constant.OR_FILE, "writeReviewsButton");
@@ -157,7 +158,12 @@ public class PDP_PageLocator {
 	String submitReviewButton = Property.getProperty(Constant.OR_FILE, "submitReviewButton");
 	String filledStars = Property.getProperty(Constant.OR_FILE, "filledStars");
 	String ratingCount = Property.getProperty(Constant.OR_FILE, "ratingCount");
+
 	String exclusiveBadge=Property.getProperty(Constant.OR_FILE, "exclusiveBadge");
+	String onlyOnlineBadges = Property.getProperty(Constant.OR_FILE, "onlyOnlineBadges"); 
+	
+	String variantProductPDP = Property.getProperty(Constant.OR_FILE, "variantProductPDP").replace("=", ",");
+	String numberOfRatingStars = Property.getProperty(Constant.OR_FILE, "numberOfRatingStars");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -1355,7 +1361,37 @@ public class PDP_PageLocator {
 	public String get_Rating_Count() {
 		return ratingCount;
 	}
+	
+	/**
+	 * gets Locator - Only Online (Badges)
+	 */
+	public String get_Only_Online_Badges() {
+		return onlyOnlineBadges;
+	}
+	
+	/**
+	 * gets Locator - Variant Product
+	 */
+	public String get_Variant_Product() {
+		return variantProductPDP;
+	}
+	
+	/**
+	 * gets Locator - Perfect Gift (Badge)
+	 */
+	public String get_Perfect_Gift_Badge() {
+		return perfectGiftBadgeProduct;
+	}
+	
+	/** 
+	 * gets Locator - Number of Rating Stars
+	 */
+	public String get_Number_Of_Rating_Stars() {
+		return numberOfRatingStars;
+	}
+	
  }
+
 
 
 

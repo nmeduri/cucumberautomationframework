@@ -597,6 +597,11 @@ public class PLP_Page extends PageObject {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSortAndFilters())), 4);
 	}
 	
+	/** display sort and filters */
+	public void displaySortAndFilters() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getSortAndFilters())), 4);
+	}
+	
 	/** selected color name is displayed on facet */
 	public void displaySelectedColorOnFacet() throws Exception {
 		String color = (java.lang.String) conf.getProperty("colorSwatchFacetOption");
@@ -1023,5 +1028,98 @@ public class PLP_Page extends PageObject {
 	public void verifySelectedFiltersArePersistant() throws Exception {
 		String url = (java.lang.String) conf.getProperty("currentFilterUrl");
 		Assert.assertEquals(url, PageObject.getDriver().getCurrentUrl());
+	}
+	
+	/** select delivery and pick up options */
+	public void selectDeliveryAndPickUpOptions() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
+		String optionValue = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
+		conf.setProperty("optionDelviveyCheckbox", optionValue);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
+	}
+	
+	/** select delivery and pick up options */
+	public void selectMoreThanDeliveryAndPickUpOptions() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
+		String optionValue = $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
+		conf.setProperty("optionDelviveyCheckbox", optionValue);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
+		li.get(1).click();
+	}
+	
+	/** verify checkmark is displayed against checkbox */
+	public void verifyDisplayCheckmarkedAgainstCheckBox() throws Exception {
+		List<WebElement> li_checkbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Delivery_PickUp_Options()));
+		String colorValue = li_checkbox.get(0).getCssValue("border-color"); 
+		Log.message("color:- " +  li_checkbox.get(0).getCssValue("border-color"), true);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyBorderColorCode("#0a6e3b", colorValue);
+	}
+	
+	/** verify selected Delivery result are showing on plp */
+	public void displaySelectedDeliveryResultOnPLP() throws Exception {
+		$display(($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults())));
+		String selectDeliveryCheckbox = (java.lang.String) conf.getProperty("optionDelviveyCheckbox");
+		String actualRatingResutls = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		Log.message("selectDeliveryCheckbox:-  " + selectDeliveryCheckbox, true);
+		Log.message("actualRatingResutls:-  " + actualRatingResutls, true);
+		Assert.assertTrue(selectDeliveryCheckbox.contains(actualRatingResutls));
+	}
+	
+	/** verify selected Delivery result are showing on plp */
+	public void notDisplaySelectedDeliveryResultOnPillBar() throws Exception {
+		try {
+			PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+			fail();
+		}catch(Exception e) {
+			Log.message("pill bar is removed", true);
+		}
+	}
+	
+	/** verify horizontal bar is displayed */
+	public void displayHorizontalFacetPanelBar() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Horizontal_Panel_Bar()));
+	}
+	
+	/** verify all categories drop down is displayed */
+	public void displayAllCategoriesDropDown() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_All_Categories_Drop_Down()));
+	}
+	
+	/** verify five specific buttons are displayed include  sort facet by default as first button */
+	public void displayFiveSpecificButtonsWithSortFacet() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Specific_Buttons()));
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Specific_Buttons()));
+		Assert.assertTrue(li.size() >= 5);
+		Log.message("More Text1:- " + li.get(0).getText(), true);
+		Assert.assertTrue(li.get(0).getText().contains("Sort"));
+	}
+	
+	/** display more filters */
+	public void displayMoreFiltersAtVeryEnd() throws Exception {
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().getMoreFilters())), 4);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Specific_Buttons()));
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Specific_Buttons()));
+		Assert.assertTrue(li.size() >= 5);
+		Log.message("More Text:- " + li.get(li.size()-2).getText(), true);
+		Log.message("Size:- " + (li.size()-2), true);
+		Assert.assertTrue(li.get((li.size()-2)).getText().contains("More"));
+	}
+	
+	/** click on facet on horizontal facet panel */
+	public void clickOnFacetOnHorizontalFacetpanel() throws Exception {
+		List<WebElement> li = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Specific_Buttons()));
+		configuration.setProperty("facetButtonNameOnPanel", li.get(0).getText());
+		li.get(0).click();
+	}
+	
+	/** facet panel is displayed */
+	public void displayFacetPanel() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Title()));
+	}
+	
+	/** verify corresponding facet panel is expand */
+	public void verifyExpandCorrespondingFacetPanel() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_Option_Facet_Panel()));
 	}
 }	

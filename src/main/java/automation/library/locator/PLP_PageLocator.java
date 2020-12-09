@@ -105,6 +105,12 @@ public class PLP_PageLocator {
 	String minPriceLabel = Property.getProperty(Constant.OR_FILE, "minPriceLabel");
 	String maxPriceLabel = Property.getProperty(Constant.OR_FILE, "maxPriceLabel");
 	String clearAllPill = Property.getProperty(Constant.OR_FILE, "clearAllPill");
+	String firstOptionDevileryAndPickUp = Property.getProperty(Constant.OR_FILE, "firstOptionDevileryAndPickUp");
+	String optionsDeliveryAndPickUpChecked = Property.getProperty(Constant.OR_FILE, "optionsDeliveryAndPickUpChecked");
+	String horizontalFacetPanelBar = Property.getProperty(Constant.OR_FILE, "horizontalFacetPanelBar");
+	String allCategoriesDropDown = Property.getProperty(Constant.OR_FILE, "allCategoriesDropDown");
+	String facetSpecificButton = Property.getProperty(Constant.OR_FILE, "facetSpecificButton");
+	String sortOptionFacetPopUp = Property.getProperty(Constant.OR_FILE, "sortOptionFacetPopUp");
 	
 	/**
 	 * gets Locator - List View
@@ -837,5 +843,37 @@ public class PLP_PageLocator {
 	 */
 	public String get_Clear_All() {
 		return clearAllPill;
+	}
+	
+	/**
+	 * gets Locator - check box (Delivery And Pick Up Options)
+	 */
+	public String get_Checkbox_Deleviery_And_PickUp_Options() {
+		return firstOptionDevileryAndPickUp;
+	}
+	
+	/** gets Locator - Checked Delivery Options */
+	public String get_Delivery_PickUp_Options() {
+		return optionsDeliveryAndPickUpChecked;
+	}
+	
+	/** gets Locator - Horizontal Panel Bar */
+	public String get_Horizontal_Panel_Bar() {
+		return horizontalFacetPanelBar;
+	}
+	
+	/** gets Locator - All Categories (Drop Down) */
+	public String get_All_Categories_Drop_Down() throws Exception {
+		return allCategoriesDropDown;
+	}
+	
+	/** gets Locator - Facet Specific Buttons */
+	public String get_Facet_Specific_Buttons() throws Exception {
+		return facetSpecificButton;
+	}
+	
+	/** gets Locator - Sort Option Facet */
+	public String get_Sort_Option_Facet_Panel() throws Exception {
+		return sortOptionFacetPopUp;
 	}
  }

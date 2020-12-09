@@ -52,4 +52,14 @@ public class OCCP_1622_PDP_With_Product_Reviews_Buybox_Steps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifhyZeroRatingCountInParentheses();
 	}
 	
+	@Then("number of stars is displayed to reflect the average product rating")
+	public void number_of_stars_is_displayed_to_reflect_the_average_product_rating() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayAverageProductRating();
+	}
+	
+	@Then("total number of reviews are dispalyed in parentheses")
+	public void total_number_of_reviews_are_displayed_in_parentheses() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyNumberofRevewsInParentheses();
+	}
+	
 }

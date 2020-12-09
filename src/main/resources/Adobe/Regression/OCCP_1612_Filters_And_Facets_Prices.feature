@@ -75,5 +75,16 @@ Feature: OCCP-1612 Filters and Facets : Delivery & Pick up Option
     And user clicks on list view button
     Then pill is added the range as '0-123'
     
+    @RegressionTest @WebView @WideScreen @TC-200
+    Scenario: TC-200 Verify the pills are updated when reapplying price filter with new values on a PLP
+    When plp url is available
+    And click on more filters
+    Then the user views the price facet as generic facet on the panel
+    Then the price facet can be clicked to collapse and open using plus icon
+    Then user is able to enter mininum price
+    Then user is able to enter maximum price
+    And click on close on facet option
+    Then the number of price matching product result is displayed
+    
     
     
