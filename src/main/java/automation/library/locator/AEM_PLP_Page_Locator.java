@@ -41,7 +41,7 @@ public class AEM_PLP_Page_Locator {
 	String minPriceLabelAEM = Property.getProperty(Constant.OR_FILE, "minPriceLabelAEM");
 	String maxPriceLabelAEM = Property.getProperty(Constant.OR_FILE, "maxPriceLabelAEM");
 	String errorMessagePriceFacetAEM = Property.getProperty(Constant.OR_FILE, "errorMessagePriceFacetAEM");
-
+	String facetselected = Property.getProperty(Constant.OR_FILE, "facetselected");
     /**
 	 * gets Locator - Specifications
 	 * 
@@ -282,4 +282,13 @@ public class AEM_PLP_Page_Locator {
 	public String getErrorMessagePriceFacet() {
 		return errorMessagePriceFacetAEM;
 	}
+	
+	
+	/**
+	 * gets Locator - Selected Facet
+	 */
+	public String getSelectedFacet() {
+		return facetselected;
+	}
+	
 }

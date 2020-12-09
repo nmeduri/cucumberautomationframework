@@ -30,9 +30,18 @@ public class AEM_Contact_Us_Page extends PageObject{
 	public void navigateTo_Contact_Us_Author_Page() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_AEM_Url());
 	}
+	/** This function navigate to Contact Us_CN Author Page */
+	public void navigateTo_Contact_Us_CN_Author_Page() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_AEM_Url_CN());
+	}
 	/** this function clicks on Contact Us component */
 	public void clickContactUsComponent() throws Exception {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getcontactUsComponentAEM())), 20);
+	}
+	
+	/** this function clicks on Contact Us component for CN */
+	public void clickContactUsComponentforCN() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getcontactUsComponentCN())), 20);
 	}
 	/** this function clicks select icon for email section on Contact Us component */
 	public void selectIconForEmailSectionContactUsComponent() throws Exception {
@@ -84,7 +93,15 @@ public class AEM_Contact_Us_Page extends PageObject{
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_AEM_Url_Fr());
 	}
 
+	/** this function enter email link value for email section on Contact Us component */
+	public void enterdataContactInfoTitle() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getcontactInfoTitle()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getcontactInfoTitle()), FileReaderManager.getInstance().getAEMDataReader().get_contact_Info_Title());
+	}
 	
-	
-	
+	/** this function enter data subject Label*/
+	public void enterdataSubjectLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getsubjectLabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getsubjectLabel()), FileReaderManager.getInstance().getAEMDataReader().get_subjectLabelField());
+	}
 }

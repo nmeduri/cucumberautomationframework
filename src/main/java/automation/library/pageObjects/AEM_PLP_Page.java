@@ -490,6 +490,10 @@ public class AEM_PLP_Page extends PageObject {
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Error_Message_Price_Facet(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Error_Message_Min_Price_More_Than_Max())));
 	}
 	
-	
+	/** This function update data to Selected Facet */
+	public void updateSelectedFacet() throws Exception {
+		$clearData(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getSelectedFacet())), 5);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMPLPLocatorPage().getSelectedFacet()), FileReaderManager.getInstance().getAEMDataReader().get_FacetSelected());
+	}
 	
 }

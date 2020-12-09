@@ -152,6 +152,9 @@ public class OCCP_1641_PLP_SRP_Filter_And_Facet extends BaseClass {
 	@Then("verify the selected colour name should get removed from the selected section")
 	public void verify_the_selected_colour_name_should_get_removed_from_the_selected_section() throws Exception {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).notDisplaySelectedColorOnFacet();
-	}
- 
+	} 
+	@Then("^configure facet selected field$")
+	public void configure_facet_selected_field() throws Exception {
+		testContext.getPageObjectManager().getAEMPLPPage(PageObject.getDriver()).updateSelectedFacet();
+	} 
 }

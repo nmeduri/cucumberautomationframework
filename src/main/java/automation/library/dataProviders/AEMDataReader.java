@@ -5373,6 +5373,20 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("contactUsAEMURL data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Contact Us AEM Url_CN
+	 * 
+	 */
+	
+	public String get_Contact_Us_AEM_Url_CN() {
+		String contactUsAEMURL = Property.getProperty(Constant.AEM_DATA_FILE, "contactUsAEMURL_CN");
+		if(contactUsAEMURL != null)
+			return contactUsAEMURL;
+		else
+			throw new RuntimeException("contactUsAEMURL data not specified in the Data file.");
+	}
+	/**
 	/**
 	 * gets Contact Us AEM Fr locale Url
 	 * 
@@ -5414,6 +5428,30 @@ public class AEMDataReader {
 	 */
 	public String get_Email_Link_Value_AEM() {
 		String emailLinkValue = Property.getProperty(Constant.AEM_DATA_FILE, "emailLinkValueAEM");
+		if(emailLinkValue != null)
+			return emailLinkValue;
+		throw new RuntimeException("emailLinkValueAEM not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Contact Info Title
+	 *  
+	 */
+	public String get_contact_Info_Title() {
+		String emailLinkValue = Property.getProperty(Constant.AEM_DATA_FILE, "contactinfotitleform");
+		if(emailLinkValue != null)
+			return emailLinkValue;
+		throw new RuntimeException("emailLinkValueAEM not specified in the Data file.");
+	}
+	
+	/**
+	 * 
+	 * get Data - Contact Info Title
+	 *  
+	 */
+	public String get_subjectLabelField() {
+		String emailLinkValue = Property.getProperty(Constant.AEM_DATA_FILE, "sublabel");
 		if(emailLinkValue != null)
 			return emailLinkValue;
 		throw new RuntimeException("emailLinkValueAEM not specified in the Data file.");
@@ -5540,7 +5578,18 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-
+	/**
+	 * gets  Facet Selected
+	 * 
+	 */
+	
+	public String get_FacetSelected() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "facetselectedupdate");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	/**
 	 * gets Masthead Banner Url
 	 * 

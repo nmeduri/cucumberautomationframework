@@ -8,6 +8,7 @@ import automation.library.selenium.exec.driver.factory.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 /**
  * This file contains the scenario of user stories OCCP-3759
@@ -26,7 +27,7 @@ public class OCCP_3759_View_Contact_Us_Page_Part4_Page_Elements_Other_Than_Form_
 	public void aem_author_with_access_to_configure_contact_us_authorable_page() throws Exception {
 		testContext.getPageObjectManager().getAEMContactUsPage(PageObject.getDriver()).navigateTo_Contact_Us_Author_Page();
 	}
-	@And("click on contact us component")
+	@And("^click on contact us component$")
 	public void click_on_contact_us_component() throws Exception {
 		testContext.getPageObjectManager().getAEMContactUsPage(PageObject.getDriver()).clickContactUsComponent();
 	}
@@ -62,8 +63,5 @@ public class OCCP_3759_View_Contact_Us_Page_Part4_Page_Elements_Other_Than_Form_
 	public void aem_author_with_access_to_configure_contact_us_fr_locale_authorable_page() throws Exception {
 		testContext.getPageObjectManager().getAEMContactUsPage(PageObject.getDriver()).navigateTo_Contact_Us_Author_Fr_Locale_Page();
 	}
-	
-	
-	
 	
 }

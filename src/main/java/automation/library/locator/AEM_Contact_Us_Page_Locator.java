@@ -22,13 +22,22 @@ public class AEM_Contact_Us_Page_Locator {
 	String emailIcon = Property.getProperty(Constant.OR_FILE, "emailIcon");
 	String emailText = Property.getProperty(Constant.OR_FILE, "emailText");
 	String completeThisFormText = Property.getProperty(Constant.OR_FILE, "completeThisFormText");
-	
-	
+	String clickcontactus = Property.getProperty(Constant.OR_FILE, "clickcontactus");
+	String contactinfotitle = Property.getProperty(Constant.OR_FILE, "contactinfotitle");
+	String subjectlabel = Property.getProperty(Constant.OR_FILE, "subjectlabel");
+
 	/**
 	 * get Locator Contact Us Component AEM
 	 */
 	public String getcontactUsComponentAEM() {
 		return contactUsComponentAEM;
+	}
+	
+	/**
+	 * get Locator Contact Us Component CN
+	 */
+	public String getcontactUsComponentCN() {
+		return clickcontactus;
 	}
 	/**
 	 * get Locator Select Email Icon AEM
@@ -97,9 +106,23 @@ public class AEM_Contact_Us_Page_Locator {
 		return emailText;
 	}
 	/**
-	 * get Locator Complete This Form Text AEM
+	 * get Locator Complete This Form Text AEM   
 	 */
 	public String getCompleteThisFormTextAEM() {
 		return completeThisFormText;
+	}
+	
+	/**
+	 * get Locator Complete This Form Text AEM   
+	 */
+	public String getcontactInfoTitle() {
+		return contactinfotitle;
+	}
+	
+	/**
+	 * get Locator  subjectlabel
+	 */
+	public String getsubjectLabel() {
+		return subjectlabel;
 	}
 }
