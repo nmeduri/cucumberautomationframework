@@ -953,7 +953,7 @@ public class Footer_Page extends PageObject {
 	
 	/** This function clicks on minus button*/
 	public void clickMinusSection() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 5);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 15);
 	}
 	
 	/** verify Learn more link is getting navigate on learn more section */

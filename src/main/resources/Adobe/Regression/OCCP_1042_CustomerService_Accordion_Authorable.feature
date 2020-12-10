@@ -5,6 +5,7 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	
 	@RegressionTest @WebView @WideScreen @TC-3265
 	Scenario: TC-3265 OCCP-1042 -Customer Service - Accordion (Authorable) -Verify that the customer is able to collapse Accordion
+	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed	
 	And accordions should be displayed

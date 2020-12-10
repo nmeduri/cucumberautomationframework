@@ -17,7 +17,6 @@ Feature: OCCP-1656 PDP : Product Badge (Online only)
     
     @RegressionTest @WebView @MobileView @WideScreen @TabletView @TC-73
     Scenario: TC-73 Verify the Perfect Gift Badge is displayed when applicable
-    Given open browser
     When pdp perfect gift badge product url is available
     When pdp page is displayed for the product
     Then perfect gift badge product is displayed

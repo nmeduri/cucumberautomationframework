@@ -28,7 +28,6 @@ Feature: OCCP-5192 PLP Horizontal Facet Bar
     
     @RegressionTest @MobileView @TabletView @TC-4649
 	Scenario: TC-4649 OCCP-5192 PLP / SRP - Horizontal Facet Bar-  User clicks Sort & Filter button on PLP/SRP on Mobile
-	Given open browser
 	When plp url is available
     When plp is displayed
     Then display the sort and filters button above the product results grid

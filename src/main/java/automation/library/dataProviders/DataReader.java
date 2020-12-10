@@ -1643,13 +1643,14 @@ public class DataReader {
 		else
 			throw new RuntimeException("URL not specified in the Data file.");
 	}
+
 	/**
-	 *  gets pdp exclusive Badge URL
+	 * gets pdp exclusive Badge URL
 	 * 
 	 */
 	public String get_pdpExclusiveBadgeURL() {
 		String data = Property.getProperty(Constant.DATA_FILE, "pdpExclusiveBadgeURL");
-		if(data != null) 
+		if (data != null)
 			return data;
 		else
 			throw new RuntimeException("URL not specified in the Data file.");
@@ -1691,41 +1692,41 @@ public class DataReader {
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
 
-		/**
-		 * gets Already linked master card last name
-		 * 
-		 */
-		public String get_Already_Linked_Mastercard_LastName_Data() {
-			String data = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardLastName");
-			if(data != null) 
-				return data;
-			else
-				throw new RuntimeException("Data not specified in the Data file.");
-		}
-		
-		/**
-		 * gets Already linked master card last name
-		 * 
-		 */
-		public String get_Already_Linked_Mastercard_PostalCode_Data() {
-			String data = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardPostalCode");
-			if(data != null) 
-				return data;
-			else
-				throw new RuntimeException("Data not specified in the Data file.");
-		}
-		
-		/**
-		 * gets Already linked master card last name
-		 * 
-		 */
-		public String get_Already_Linked_Mastercard_No_Data() {
-			String cardNo = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardNo");
-			if(cardNo != null) 
-				return cardNo;
-			else
-				throw new RuntimeException("Data not specified in the Data file.");
-		}
+	/**
+	 * gets Already linked master card last name
+	 * 
+	 */
+	public String get_Already_Linked_Mastercard_LastName_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardLastName");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+
+	/**
+	 * gets Already linked master card last name
+	 * 
+	 */
+	public String get_Already_Linked_Mastercard_PostalCode_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardPostalCode");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+
+	/**
+	 * gets Already linked master card last name
+	 * 
+	 */
+	public String get_Already_Linked_Mastercard_No_Data() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "alreadyLinkedMastercardNo");
+		if (cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
 
 	/**
 	 * gets Masthead Banner Url
@@ -1783,7 +1784,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Name Review
 	 */
@@ -1794,8 +1795,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
-	
+
 	/**
 	 * gets Email Review
 	 */
@@ -1807,7 +1807,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Email Review
 	 */
@@ -1818,7 +1818,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Email Review Description
 	 */
@@ -1829,7 +1829,7 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-	
+
 	/**
 	 * gets Product Code
 	 * 
@@ -1860,7 +1860,7 @@ public class DataReader {
 			 * gets Perfect Gift Badge (Product)
 			 * 
 			 */
-			public String get_Perfect_Gift_Badge() {
+	public String get_Perfect_Gift_Badge() {
 
 				String data = Property.getProperty(Constant.DATA_FILE, "perfectGiftBadgeProduct");
 				if (data != null)
@@ -1869,4 +1869,126 @@ public class DataReader {
 					throw new RuntimeException("Product Code not specified in the Data file.");
 			}
 
+
+	/**
+	 * gets Contact Us URL
+	 * 
+	 */
+
+	public String get_Contact_Us_Url() {
+		String url = Property.getProperty(Constant.DATA_FILE, "contactUsUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Fr URL
+	 * 
+	 */
+
+	public String get_Contact_Us_Fr_Url() {
+		String url = Property.getProperty(Constant.DATA_FILE, "contactUsFrUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+
+	/**
+	 * gets Invalid Detail
+	 */
+	public String get_Invalid_Detail() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "invalidDetail");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - First Name (More than 50 Char)
+	 * 
+	 */
+	public String get_First_Name_More_Than_50_Char() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "firstNameMoreThan50Char");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Last Name (More than 50 Char)
+	 * 
+	 */
+	public String get_Last_Name_More_Than_50_Char() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "lastNameMoreThan50Char");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Email (More than 250 Char)
+	 * 
+	 */
+	public String get_Email_More_Than_250_Char() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "emailMoeThan250Char");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Order Number (More than 16 Char)
+	 * 
+	 */
+	public String get_Order_Number_More_Than_16_Char() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "orderNumberMoreThan16Char");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Additional Information (More than 300 Char)
+	 * 
+	 */
+	public String get_Additonal_Infomration_More_Than_300_Char() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "additonalInformationMoreThan300Char");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Additional Information 
+	 * 
+	 */
+	public String get_Additonal_Infomration_More() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "additionalInformation");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Order Number Detail
+	 * 
+	 */
+	public String get_Order_Number_Detail() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "orderNumberDetails");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

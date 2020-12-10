@@ -35,6 +35,7 @@ import automation.library.locator.Broad_Banner_Page_Locator;
 import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
 import automation.library.locator.Cart_Page_Locator;
 import automation.library.locator.Checkout_Page_Locator;
+import automation.library.locator.Contactus_Locator;
 import automation.library.locator.Create_Your_Triangle_ID_Page_Locator;
 import automation.library.locator.Customer_Service_Page_Locator;
 import automation.library.locator.Email_Sent_Confirmation_Page_Locator;
@@ -96,6 +97,7 @@ import automation.library.pageObjects.Broad_Banner_Page;
 import automation.library.pageObjects.Broad_Promo_Tiles_Page;
 import automation.library.pageObjects.Cart_Page;
 import automation.library.pageObjects.Checkout_Page;
+import automation.library.pageObjects.Contact_Us_Page;
 import automation.library.pageObjects.Create_Your_Triangle_ID_Page;
 import automation.library.pageObjects.Customer_Service_Page;
 import automation.library.pageObjects.Email_Sent_Confirmation_Page;
@@ -271,6 +273,8 @@ public class PageObjectManager {
 	
 	private AEM_Account_Rewards_Template_Page  getAccountRewardsTemplatePage;
 	private AEM_Account_Rewards_Template_Page_Locator getAccountRewardsTemplatePageLocator;
+	private Contact_Us_Page getContactUspage;
+	private Contactus_Locator getContactUsLocator;
 	
 	public PageObjectManager() {
 		
@@ -926,6 +930,16 @@ public class PageObjectManager {
 	/** Returns Instance of Account Rewards Template Page Locator */
 	public AEM_Account_Rewards_Template_Page_Locator getAccountRewardsTemplatePageLocator() {
 		return (getAccountRewardsTemplatePageLocator == null) ? getAccountRewardsTemplatePageLocator = new AEM_Account_Rewards_Template_Page_Locator() : getAccountRewardsTemplatePageLocator;
+	}
+	
+	/** Returns Instance of Contact Us Page */
+	public Contact_Us_Page getContactUspage(WebDriver driver) {
+		return (getContactUspage == null) ? getContactUspage = new Contact_Us_Page(driver) : getContactUspage;
+	}
+	
+	/** Returns Instance of Contact Us Page Locator */
+	public Contactus_Locator getContactUsPageLocator() {
+		return (getContactUsLocator == null) ? getContactUsLocator = new Contactus_Locator() : getContactUsLocator;
 	}
 
 }
