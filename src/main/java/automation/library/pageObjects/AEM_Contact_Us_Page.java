@@ -104,4 +104,30 @@ public class AEM_Contact_Us_Page extends PageObject{
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getsubjectLabel()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getsubjectLabel()), FileReaderManager.getInstance().getAEMDataReader().get_subjectLabelField());
 	}
+	
+	/** This function navigate to Store Details Author CN locale Page */
+	public void navigateTo_Store_Details_CN_Author_Page() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Store_Details_AEM_Url_CN());
+	}	
+	
+	/** this function click store details component*/
+	public void clickonStoreDetails() throws Exception{
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getStoreDetailsAEM())),40);
+	}
+	/** this function verify store details components*/
+	public void verifyStoreDetailsComponents() throws Exception{
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().verifyComponentsAvailabilityInOrder())),40);
+	}
+	
+	/** this function enter data Direction Label*/
+	public void editfield() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getDirectionCTALabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getDirectionCTALabel()), FileReaderManager.getInstance().getAEMDataReader().get_Direction_label_Data());
+	}
+	/** this function enter data Direction Label revert*/
+	public void reverteditfield() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getDirectionCTALabel()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getDirectionCTALabel()), FileReaderManager.getInstance().getAEMDataReader().get_Revert_Direction_label_Data());
+	}
+	
 }

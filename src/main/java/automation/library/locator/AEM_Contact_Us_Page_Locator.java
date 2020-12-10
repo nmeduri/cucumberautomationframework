@@ -25,6 +25,9 @@ public class AEM_Contact_Us_Page_Locator {
 	String clickcontactus = Property.getProperty(Constant.OR_FILE, "clickcontactus");
 	String contactinfotitle = Property.getProperty(Constant.OR_FILE, "contactinfotitle");
 	String subjectlabel = Property.getProperty(Constant.OR_FILE, "subjectlabel");
+	String storedetailsaem = Property.getProperty(Constant.OR_FILE, "storedetailsaem");
+	String compavailability = Property.getProperty(Constant.OR_FILE, "compavailability");
+	String directionlabel = Property.getProperty(Constant.OR_FILE, "directionlabel");
 
 	/**
 	 * get Locator Contact Us Component AEM
@@ -124,5 +127,26 @@ public class AEM_Contact_Us_Page_Locator {
 	 */
 	public String getsubjectLabel() {
 		return subjectlabel;
+	}
+	
+	/**
+	 * get Locator store details AEM   
+	 */
+	public String getStoreDetailsAEM() {
+		return storedetailsaem;
+	}
+	
+	/**
+	 * get Locator verifyComponentsAvailabilityInOrder   
+	 */
+	public String verifyComponentsAvailabilityInOrder() {
+		return compavailability;
+	}
+	
+	/**
+	 * get Locator getDirectionCTALabel   
+	 */
+	public String getDirectionCTALabel() {
+		return directionlabel;
 	}
 }

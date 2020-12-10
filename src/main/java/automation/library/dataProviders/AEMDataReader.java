@@ -5399,6 +5399,20 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("contactUsAEMURL_Fr data not specified in the Data file.");
 	}
+	
+	/**
+	/**
+	 * gets Store Details AEM CN locale Url
+	 * 
+	 */
+	
+	public String get_Store_Details_AEM_Url_CN() {
+		String contactUsAEMURLFr = Property.getProperty(Constant.AEM_DATA_FILE, "storedetails_CN");
+		if(contactUsAEMURLFr != null)
+			return contactUsAEMURLFr;
+		else
+			throw new RuntimeException("contactUsAEMURL_Fr data not specified in the Data file.");
+	}
 	/**
 	 * 
 	 * get Data - Email Title of Contact Us component
@@ -5445,6 +5459,30 @@ public class AEMDataReader {
 		throw new RuntimeException("emailLinkValueAEM not specified in the Data file.");
 	}
 	
+	/**
+	 * 
+	 * get Data -Direction Label Data
+	 *  
+	 */
+	public String get_Direction_label_Data() {
+		String dirlabeldata = Property.getProperty(Constant.AEM_DATA_FILE, "directionlabeldata");
+		if(dirlabeldata != null)
+			return dirlabeldata;
+		throw new RuntimeException("emailLinkValueAEM not specified in the Data file.");
+	}
+	
+	
+	/**
+	 * 
+	 * get Data -RevertDirection Label Data
+	 *  
+	 */
+	public String get_Revert_Direction_label_Data() {
+		String revertdirlabeldata = Property.getProperty(Constant.AEM_DATA_FILE, "revertdirectionlabeldata");
+		if(revertdirlabeldata != null)
+			return revertdirlabeldata;
+		throw new RuntimeException("emailLinkValueAEM not specified in the Data file.");
+	}
 	/**
 	 * 
 	 * get Data - Contact Info Title
