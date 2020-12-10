@@ -1868,7 +1868,19 @@ public class DataReader {
 				else
 					throw new RuntimeException("Product Code not specified in the Data file.");
 			}
+			/**
+			 * gets Account Payment Information URL
+			 * 
+			 */
+			public String get_AccountPaymentInfoURL() {
 
+				String data = Property.getProperty(Constant.DATA_FILE, "AccountPaymentInfoURL");
+				if (data != null)
+					return data;
+				else
+					throw new RuntimeException("URL not specified in the Data file.");
+			}
+			
 
 	/**
 	 * gets Contact Us URL

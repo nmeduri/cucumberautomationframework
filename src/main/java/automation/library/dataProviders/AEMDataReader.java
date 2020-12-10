@@ -5899,4 +5899,113 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets paymentInfoPageTitle
+	 * 
+	 */
+	
+	public String get_paymentInfoPageTitle() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "paymentInfoPageTitle");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets continue Shopping CTA
+	 * 
+	 */
+	
+	public String get_continueShoppingCTA() {
+		String CTAaem = Property.getProperty(Constant.AEM_DATA_FILE, "continueShoppingCTA");
+		if(CTAaem != null)
+			return CTAaem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets continueShopping Link
+	 * 
+	 */
+	
+	public String get_continueShoppingLink() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "continueShoppingLink");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets nopayment Title
+	 * 
+	 */
+	
+	public String get_nopaymentTitle() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "nopaymentTitle");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets no payment Info Msg
+	 * 
+	 */
+	
+	public String get_nopaymentInfoMsg() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "nopaymentInfoMsg");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets ToastBannerSuccessMessage
+	 * 
+	 */
+	
+	public String get_ToastBannerSuccessMessage() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "ToastBannerSuccessMessage");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets ToastBannerErrorMessage
+	 * 
+	 */
+	
+	public String get_ToastBannerErrorMessage() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "ToastBannerErrorMessage");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets card label
+	 * 
+	 */
+	
+	public String get_cardLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "cardlabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets paymentInfoPage component
+	 * 
+	 */
+	
+	public String get_AccountpaymentInfoPagecomponent() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "acct_payment_information_URL");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	
 }

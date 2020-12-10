@@ -23,7 +23,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 /**
- * This file contains the scenario of user stories OCCP-3214
+ * This file contains the scenario of user stories OCCP-3301
  */
 
 public class OCCP_3301_Account_Profile_and_Preferences_Step extends BaseClass{
