@@ -68,7 +68,19 @@ public class Cart_Page_Locator {
 	String TotalText=Property.getProperty(Constant.OR_FILE, "TotalText");
 	String TotalFee=Property.getProperty(Constant.OR_FILE, "TotalFee");
 	String saveMessage=Property.getProperty(Constant.OR_FILE, "saveMessage");
-
+	String ShipDate=Property.getProperty(Constant.OR_FILE, "ShipDate");
+	String AvailableTime=Property.getProperty(Constant.OR_FILE, "AvailbleTime");
+	String curbSiteText=Property.getProperty(Constant.OR_FILE, "curbSiteText");
+	String curbSiteLearnmoreCTA=Property.getProperty(Constant.OR_FILE, "curbSiteLearnmoreCTA");
+	String LimitExceedError=Property.getProperty(Constant.OR_FILE, "LimitExceedError");
+	String IncreaseQuantity=Property.getProperty(Constant.OR_FILE, "IncreaseQuantity");
+	String decreaseQuantity=Property.getProperty(Constant.OR_FILE, "decreaseQuantity");
+	String productLimitmsg=Property.getProperty(Constant.OR_FILE, "productLimitmsg");
+	String checkOutbtn=Property.getProperty(Constant.OR_FILE, "checkOutbtn");
+	String ToastMsgafterCheckout=Property.getProperty(Constant.OR_FILE, "ToastMsgafterCheckout");
+	String WarningToastLabel=Property.getProperty(Constant.OR_FILE, "WarningToastLabel");
+	String ToastmsgCloseBtn=Property.getProperty(Constant.OR_FILE, "ToastmsgCloseBtn");
+	
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
 	
@@ -78,6 +90,41 @@ public class Cart_Page_Locator {
 	 */
 	public String get_Wishlist_Icon4() {
 		return wishListIcon4;
+	}
+	/**
+	 * gets Locator - ToastmsgCloseBtn
+	 * 
+	 */
+	public String get_ToastmsgCloseBtn() {
+		return ToastmsgCloseBtn;
+	}
+	/**
+	 * gets Locator -product Limit msg
+	 * 
+	 */
+	public String get_productLimitmsg() {
+		return productLimitmsg;
+	}
+	/**
+	 * gets Locator - LimitExceed Error
+	 * 
+	 */
+	public String get_LimitExceedError() {
+		return LimitExceedError;
+	}
+	/**
+	 * gets Locator - Increase quantity
+	 * 
+	 */
+	public String get_IncreaseQuantity() {
+		return IncreaseQuantity;
+	}
+	/**
+	 * gets Locator - decrease quantity
+	 * 
+	 */
+	public String get_decreaseQuantity() {
+		return decreaseQuantity;
 	}
 	/**
 	 * gets Locator - pickup at store ToolTip
@@ -476,5 +523,54 @@ public class Cart_Page_Locator {
 	 */
 	public String get_saveMessage() {
 		return saveMessage;
+	}
+	/**
+	 * gets Locator - ship date
+	 * 
+	 */
+	public String get_ShipDate() {
+		return ShipDate;
+	}
+	/**
+	 * gets Locator - Available Time
+	 * 
+	 */
+	public String get_AvailableTime() {
+		return AvailableTime;
+	}
+	/**
+	 * gets Locator - curbSite Text message
+	 * 
+	 */
+	public String get_curbSiteText() {
+		return curbSiteText;
+	}
+	/**
+	 * gets Locator - curbSite CTA
+	 * 
+	 */
+	public String get_curbSiteLearnmoreCTA() {
+		return curbSiteLearnmoreCTA;
+	}
+	/**
+	 * gets Locator - checkOut button
+	 * 
+	 */
+	public String get_checkOutbtn() {
+		return checkOutbtn;
+	}
+	/**
+	 * gets Locator -ToastMsg after Checkout
+	 * 
+	 */
+	public String get_ToastMsgafterCheckout() {
+		return ToastMsgafterCheckout;
+	}
+	/**
+	 * gets Locator - Warning Toast Label
+	 * 
+	 */
+	public String get_WarningToastLabel() {
+		return WarningToastLabel;
 	}
 }

@@ -28,13 +28,24 @@ public class AEM_Cart_Page_Locator {
 	String plusCoreCharges = Property.getProperty(Constant.OR_FILE, "plusCoreCharges");
 	String coreChargesText = Property.getProperty(Constant.OR_FILE, "coreChargesText");
 	String coreChargesToolTipmessage = Property.getProperty(Constant.OR_FILE, "coreChargesToolTipmessage");
-
+	String IandATab=Property.getProperty(Constant.OR_FILE, "I&ATab");
+	String changeInCartMsg=Property.getProperty(Constant.OR_FILE, "changeInCartMsg");
+	String shoppingStoreChangeMsg=Property.getProperty(Constant.OR_FILE, "shoppingStoreChangeMsg");
+	String shippingStoreChangeMsg=Property.getProperty(Constant.OR_FILE, "shippingStoreChangeMsg");
+	String resolveIssueMsg=Property.getProperty(Constant.OR_FILE, "resolveIssueMsg");
+	String outOfStockInStorePickUpMsg=Property.getProperty(Constant.OR_FILE, "outOfStockInStorePickUpMsg");
+	String outOfStockInStoreShipFromMsg=Property.getProperty(Constant.OR_FILE, "outOfStockInStoreShipFromMsg");
+	String tempOutOfStockPickUpMsg=Property.getProperty(Constant.OR_FILE, "tempOutOfStockPickUpMsg");
+	String tempOutOfStockShipFromMsg=Property.getProperty(Constant.OR_FILE, "tempOutOfStockShipFromMsg");
+	String onlySomeInStockMsg=Property.getProperty(Constant.OR_FILE, "onlySomeInStockMsg");
+	String QuantitySelectorTab=Property.getProperty(Constant.OR_FILE, "QuantitySelectorTab");
+	String ExceededMessageToastMsg=Property.getProperty(Constant.OR_FILE, "ExceededMessageToastMsg");
+	String exceededTotalAvailableMsg=Property.getProperty(Constant.OR_FILE, "exceededTotalAvailableMsg");
 	String dragcomponent_cartpage = Property.getProperty(Constant.OR_FILE, "dragcomponent_cartpage");
 	String ordersummary_cartpage = Property.getProperty(Constant.OR_FILE, "ordersummary_cartpage");
 	String recommendation_cartpage = Property.getProperty(Constant.OR_FILE, "recommendation_cartpage");
 	String selectbroadbanner = Property.getProperty(Constant.OR_FILE, "selectbroadbanner");
 	String twofeatured = Property.getProperty(Constant.OR_FILE, "selectbroadbanner");
-
 	String cartItemsComponent = Property.getProperty(Constant.OR_FILE, "cartItemsComponent");
 	String ToolTipTitle = Property.getProperty(Constant.OR_FILE, "ToolTipTitle");
 	String ToolTipDesc = Property.getProperty(Constant.OR_FILE, "ToolTipDesc");
@@ -50,6 +61,103 @@ public class AEM_Cart_Page_Locator {
 		return wishlistItemAddedMessageField;
 	}
 
+		/**
+		 * gets Locator - I and A tab
+		 * 
+		 */
+		public String get_IandATab() {
+			return IandATab;
+		}
+		/**
+		 * gets Locator - change In Cart Msg
+		 * 
+		 */
+		public String get_changeInCartMsg() {
+			return changeInCartMsg;
+		}
+		/**
+		 * gets Locator - shopping Store Change Msg
+		 * 
+		 */
+		public String get_shoppingStoreChangeMsg() {
+			return shoppingStoreChangeMsg;
+		}
+		/**
+		 * gets Locator - shipping Store Change Msg
+		 * 
+		 */
+		public String get_shippingStoreChangeMsg() {
+			return shippingStoreChangeMsg;
+		}
+		/**
+		 * gets Locator - resolve Issue Msg
+		 * 
+		 */
+		public String get_resolveIssueMsg() {
+			return resolveIssueMsg;
+		}
+		/**
+		 * gets Locator - outOfStockInStorePickUp Msg
+		 * 
+		 */
+		public String get_outOfStockInStorePickUpMsg() {
+			return outOfStockInStorePickUpMsg;
+		}
+		/**
+		 * gets Locator - outOfStockInStoreShipFromMsg
+		 * 
+		 */
+		public String get_outOfStockInStoreShipFromMsg() {
+			return outOfStockInStoreShipFromMsg;
+		}
+		/**
+		 * gets Locator - tempOutOfStockPickUp Msg
+		 * 
+		 */
+		public String get_tempOutOfStockPickUpMsg() {
+			return tempOutOfStockPickUpMsg;
+		}
+		/**
+		 * gets Locator - tempOutOfStockShipFromMsg
+		 * 
+		 */
+		public String get_tempOutOfStockShipFromMsg() {
+			return tempOutOfStockShipFromMsg;
+		}
+		/**
+		 * gets Locator - onlySomeInStockMsg
+		 * 
+		 */
+		public String get_onlySomeInStockMsg() {
+			return onlySomeInStockMsg;
+		}
+		/**
+		 * gets Locator - AEM Quantity Selector Tab
+		 * 
+		 */
+	    
+		public String get_QuantitySelectorTab() {
+			return QuantitySelectorTab;	
+		}
+		
+		/**
+		 * gets Locator - AEM Exceeded Message Toast Msg
+		 * 
+		 */
+	    
+		public String get_ExceededMessageToastMsg() {
+			return ExceededMessageToastMsg;	
+		}
+		
+		/**
+		 * gets Locator - AEM exceeded Total Available Msg
+		 * 
+		 */
+	    
+		public String get_exceededTotalAvailableMsg() {
+			return exceededTotalAvailableMsg;	
+		}
+	
 	/**
 	 * gets Locator - AEM View wishlist field
 	 * 

@@ -311,6 +311,22 @@ public class Cart_Page extends PageObject{
 		} catch (Exception e) {
 			Log.message("Tool tip message is not displayed", true);
 		}	}
+	/** enter number 99 and click on increase button*/
+	public void IncreaseQuantityAfterMaxValue() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Box_Cart_Page()), FileReaderManager.getInstance().getDataReader().get_Quantity_3692());
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_IncreaseQuantity())),40);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_IncreaseQuantity()));
 
-	
 	}
+	/** click on checkout button*/
+	public void clickCheckOutBtn() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_checkOutbtn())),40);
+
+	}
+	/** click on close button on the checkout toast msg*/
+	public void clickToastmsgCloseBtn() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ToastmsgCloseBtn())),40);
+
+	}
+	
+}

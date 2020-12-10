@@ -5767,4 +5767,136 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets Changes in your Cart Message
+	 * 
+	 */
+	
+	public String get_changeInCartMsg_AEM() {
+		String MessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "changeInCartMsg");
+		if(MessageAem != null)
+			return MessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Shopping Store has Changed Message
+	 * 
+	 */
+	
+	public String get_shoppingStoreChangeMsg_AEM() {
+		String MessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "shoppingStoreChangeMsg");
+		if(MessageAem != null)
+			return MessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Shipping From Store has Changed Message
+	 * 
+	 */
+	
+	public String get_shippingStoreChangeMsg_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "shippingStoreChangeMsg");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Resolve Issues Before Checkout Message
+	 * 
+	 */
+	
+	public String get_resolveIssueMsg_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "resolveIssueMsg");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Out of Stock in Selected Store for Pick Up Message
+	 * 
+	 */
+	
+	public String get_outOfStockInStorePickUpMsg_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "outOfStockInStorePickUpMsg");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Out of Stock in Selected Store for Ship to Home Message 
+	 * 
+	 */
+	
+	public String get_outOfStockInStoreShipFromMsg_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "outOfStockInStoreShipFromMsg");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Temporarily Out of Stock for Pick Up Message
+	 * 
+	 */
+	
+	public String get_tempOutOfStockPickUpMsg_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "tempOutOfStockPickUpMsg");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Temporarily Out of Stock for Ship to Home Message
+	 * 
+	 */
+	
+	public String get_tempOutOfStockShipFromMsg_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "tempOutOfStockShipFromMsg");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Only Some in Stock Message
+	 * 
+	 */
+	
+	public String get_onlySomeInStockMsg_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "onlySomeInStockMsg");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Exceeded Message Toast Notification
+	 * 
+	 */
+	
+	public String get_ExceededMessageToastNotification_AEM() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "ExceededMessageToastNotification");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets Exceeded Message Total Available
+	 * 
+	 */
+	
+	public String get_ExceededMessageTotalAvailable() {
+		String bulkMessageAem = Property.getProperty(Constant.AEM_DATA_FILE, "ExceededMessageTotalAvailable");
+		if(bulkMessageAem != null)
+			return bulkMessageAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

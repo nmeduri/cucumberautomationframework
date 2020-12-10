@@ -1461,7 +1461,19 @@ public class DataReader {
 		else
 			throw new RuntimeException("Quantity Data not specified in the Data file.");
 	}
+	/**
+	 * gets quantity
+	 * 
+	 */
 
+	public String get_Quantity_3692() {
+		String quantity = Property.getProperty(Constant.DATA_FILE, "quantity_3692");
+		if (quantity != null)
+			return quantity;
+		else
+			throw new RuntimeException("Quantity Data not specified in the Data file.");
+	}
+	
 	/**
 	 * gets PDP Product -Add to Cart URL
 	 * 

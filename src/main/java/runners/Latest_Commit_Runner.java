@@ -14,7 +14,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 
 
-			"classpath:SAP/Regression/OCCP_3331_PDP_I&A_Limited_PDP.feature",
+			"classpath:Adobe/AEM/Regression/OCCP_3908_Cart_Inventory_Availability_I&A.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@RegressionTest",
 			"--plugin", "pretty",

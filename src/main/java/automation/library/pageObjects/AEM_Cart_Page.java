@@ -312,10 +312,16 @@ public class AEM_Cart_Page extends PageObject {
 public void clickCartComponent() throws Exception {
 	$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_cartcomponent())), 20);
 	}
-/** This function bulk item tab */
+/** This function click bulk item tab */
 public void clickBulkItemTab() throws Exception {
 	$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_bulkItemsTab())), 20);
 	}
+
+/** This function click i&A tab */
+public void clickIandATab() throws Exception {
+	$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_IandATab())), 20);
+	} 
+
 /** This function update tooltip text */
 public void UpdateDEliveryOptionToolTipText() throws Exception {
 	$clearData(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_ToolTipDesc())), 20);
@@ -332,4 +338,74 @@ public void UpdateBulkMessageText() throws Exception {
 					.getAEMCartPageLocator().get_bulkMessage_Text())),
 			5, FileReaderManager.getInstance().getAEMDataReader().get_deliveryOption_bulkMessage_AEM());
 	}
+/** update Changes in your Cart Message*/
+public void updateChangesinyourCartMessage() throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_changeInCartMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_changeInCartMsg()), FileReaderManager.getInstance().getAEMDataReader().get_changeInCartMsg_AEM());
+
+}
+/** update Shopping Store has Changed Message*/
+public void updateShoppingStoreChangedMessage() throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_shoppingStoreChangeMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_shoppingStoreChangeMsg()), FileReaderManager.getInstance().getAEMDataReader().get_shoppingStoreChangeMsg_AEM());
+
+}
+/** update Shipping Store has Changed Message*/
+public void updateShippingStoreChangedMessage() throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_shippingStoreChangeMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_shippingStoreChangeMsg()), FileReaderManager.getInstance().getAEMDataReader().get_shippingStoreChangeMsg_AEM());
+
+}
+/** update Resolve Issues Before Checkout Message */
+public void UpdateResolveIssuesBeforeCheckoutMessage () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_resolveIssueMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_resolveIssueMsg()), FileReaderManager.getInstance().getAEMDataReader().get_resolveIssueMsg_AEM());
+
+}
+/** update Out of Stock in Selected Store for Pick Up Message */
+public void UpdateOutofStockStorePickUpMessage () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_outOfStockInStorePickUpMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_outOfStockInStorePickUpMsg()), FileReaderManager.getInstance().getAEMDataReader().get_outOfStockInStorePickUpMsg_AEM());
+
+}
+/** update Out of Stock in Selected Store for Ship to Home Message */
+public void UpdateOutofStockShiptoHomeMessage () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_outOfStockInStoreShipFromMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_outOfStockInStoreShipFromMsg()), FileReaderManager.getInstance().getAEMDataReader().get_outOfStockInStoreShipFromMsg_AEM());
+
+}
+/** update Temporarily Out of Stock for Pick Up Message */
+public void updateTemporarilyOutofStockPickUpMessage () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_tempOutOfStockPickUpMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_tempOutOfStockPickUpMsg()), FileReaderManager.getInstance().getAEMDataReader().get_tempOutOfStockPickUpMsg_AEM());
+
+}
+/** update Temporarily Out of Stock for Ship to Home Message */
+public void updateTemporarilyOutofStockShipToHomeMessage () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_tempOutOfStockShipFromMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_tempOutOfStockShipFromMsg()), FileReaderManager.getInstance().getAEMDataReader().get_tempOutOfStockShipFromMsg_AEM());
+
+}
+/** update Only Some in Stock Message */
+public void updateOnlySomeinStockMessage () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_onlySomeInStockMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_onlySomeInStockMsg()), FileReaderManager.getInstance().getAEMDataReader().get_onlySomeInStockMsg_AEM());
+
+}
+/** click Quantity Selector Tab  */
+public void clickQuantitySelectorTab () throws Exception {
+	$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_QuantitySelectorTab()));
+}
+/** update Exceeded Message Total Available  */
+public void updateExceededMessageTotalAvailable () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_exceededTotalAvailableMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_exceededTotalAvailableMsg()), FileReaderManager.getInstance().getAEMDataReader().get_ExceededMessageTotalAvailable());
+
+}
+/** update Exceeded Message Toast Notification */
+public void updateExceededMessageToastNotification () throws Exception {
+	$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_ExceededMessageToastMsg()));
+	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_ExceededMessageToastMsg()), FileReaderManager.getInstance().getAEMDataReader().get_ExceededMessageToastNotification_AEM());
+}
+
 }
