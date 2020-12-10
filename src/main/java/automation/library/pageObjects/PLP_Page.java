@@ -1030,6 +1030,146 @@ public class PLP_Page extends PageObject {
 		Assert.assertEquals(url, PageObject.getDriver().getCurrentUrl());
 	}
 	
+	/** verify Availability Facet CTA is displayed */
+	public void displayAvailabilityFacetCTA() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet()));
+	}
+	
+	/** click on Availability Facet CTA  */
+	public void clickOnAvailabilityFacetCTA() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet()));
+	}
+	
+	/** verify Availability Accordion is displayed */
+	public void displayAvailabilityAccordion() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Accordion()));
+	}
+	
+	/** verify Availability Facet Accordion is displayed */
+	public void displayAvailabilityFacetAccordion() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Filters_Title()), 10);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Accordion()));
+	}
+	
+	/** click on Availability Facet Accordion */
+	public void clickOnAvailabilityFacetAccordion() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Accordion()));
+	}
+	
+	/** verify Facet values are displayed */
+	public void displayFacetValues() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Filters_Title()), 10);
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Values()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Results_Count()));
+	}
+	
+	/** verify Online only Facet value is displayed */
+	public void displayOnlineOnlyFacetValue() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Online_Only_Facet_Value()));
+	}
+	
+	/** verify Instore only Facet value is displayed */
+	public void displayInstoreOnlyFacetValue() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_InStore_Only_Facet_Value()));
+	}
+	
+	/** verify Facet bar is displayed */
+	public void displayFacetBar() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Bar()));
+	}
+	
+	/** check Online only Facet value */
+	public void clickOnlineCheckbox() throws Exception {
+			List<WebElement> values = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet_Name()));
+			List<WebElement> resultCount = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Results_Count()));		
+			List<WebElement> valuesCheckbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet_Value_Checkbox()));
+			conf.setProperty("availabilityFacetName", values.get(0).getText());
+			conf.setProperty("availabilityFacetResultCount", resultCount.get(0).getText().replace("(", "").replace(")", ""));
+			valuesCheckbox.get(0).click();
+		}
+	
+	/** click on view button*/
+	public void clickOnViewButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_View_Button()));
+	}
+	
+	/** verify products are updated with no of results for facet value filter*/
+	public void verifyProductListUpdated() throws Exception {
+		List<WebElement> noOfProductResults = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Results()));
+		int actualResult = noOfProductResults.size();
+		String availabilityFacetResultCount = (java.lang.String) conf.getProperty("availabilityFacetResultCount");
+		int expectedResult = Integer.parseInt(availabilityFacetResultCount);
+		Assert.assertEquals(expectedResult, actualResult);
+	}
+	
+	/** verify Online only Pill is displayed */
+	public void verifyAvailabilityOnlineOnlyFacetValueReflectedInPill() throws Exception {
+		$display(($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults())));
+		String availabilityFacetName = (java.lang.String) conf.getProperty("availabilityFacetName");
+		String selectedValueInPill = $getText($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		Assert.assertTrue(availabilityFacetName.toLowerCase().contains(selectedValueInPill.toLowerCase()));
+	}
+	
+	/** check Online only and Instore only Facet values */
+	public void clickOnlineAndInstoreCheckbox() throws Exception {
+			List<WebElement> values = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet_Name()));
+			List<WebElement> resultCount = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Results_Count()));		
+			List<WebElement> valuesCheckbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet_Value_Checkbox()));
+			conf.setProperty("onlineOnlyName", values.get(0).getText());
+			conf.setProperty("onlineOnlyResultCount", resultCount.get(0).getText().replace("(", "").replace(")", ""));
+			valuesCheckbox.get(0).click();
+			Thread.sleep(2000);
+			conf.setProperty("instoreOnlyName", values.get(1).getText());
+			conf.setProperty("instoreOnlyResultCount", resultCount.get(1).getText().replace("(", "").replace(")", ""));
+			valuesCheckbox.get(1).click();
+		}
+	
+	/** verify products are updated with no of results for facet value filter*/
+	public void verifyProductListUpdatedForMultipleCheck() throws Exception {
+		PageObject.getDriver().navigate().refresh();
+		List<WebElement> noOfProductResults = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Product_Card_Results()));
+		int actualResult = noOfProductResults.size();
+		String onlineOnlyResultCount = (java.lang.String) conf.getProperty("onlineOnlyResultCount");
+		String instoreOnlyResultCount = (java.lang.String) conf.getProperty("instoreOnlyResultCount");
+		int expectedResult1 = Integer.parseInt(onlineOnlyResultCount);
+		int expectedResult2 = Integer.parseInt(instoreOnlyResultCount);
+		Assert.assertEquals(expectedResult1 + expectedResult2, actualResult);
+	}
+	
+	/** verify Online only and Instore  Pills are displayed */
+	public void verifyBothAvailabilityFacetValuesReflectedInPill() throws Exception {
+		$display(($(Loc.XPATH,  testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults())));
+		String onlineOnlyName = (java.lang.String) conf.getProperty("onlineOnlyName");
+		String instoreOnlyName = (java.lang.String) conf.getProperty("instoreOnlyName");
+		List<WebElement>  pillValues = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		String Pill1 = pillValues.get(0).getText();
+		String Pill2 = pillValues.get(1).getText();
+		Assert.assertTrue(onlineOnlyName.toLowerCase().contains(Pill1.toLowerCase()));
+		Assert.assertTrue(instoreOnlyName.toLowerCase().contains(Pill2.toLowerCase()));
+	}
+	
+	/** uncheck Instore only Facet value */
+	public void unCheckInstoreCheckbox() throws Exception {
+			List<WebElement> values = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet_Name()));		
+			List<WebElement> resultCount = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Results_Count()));		
+			List<WebElement> valuesCheckbox = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().get_Availability_Facet_Value_Checkbox()));
+			conf.setProperty("availabilityFacetResultCount", resultCount.get(0).getText().replace("(", "").replace(")", ""));
+			conf.setProperty("instoreOnlyFacetName", values.get(1).getText());
+			valuesCheckbox.get(1).click();
+		}
+	
+	/** verify instore only facet name is not displayed in pill bar */
+	public void notDisplayInstoreOnlyInPillBar() throws Exception {
+		try {		
+		List<WebElement>  pillValues = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getPLPLocatorPage().getFacetResults()));
+		String Pill2 = pillValues.get(1).getText();
+		$displayFindElement(By.name(Pill2));
+		fail();
+		}catch(Exception e) {
+			Log.message("Instore Only is not Displayed in Pill bar", true);
+		}
+}
+
 	/** select delivery and pick up options */
 	public void selectDeliveryAndPickUpOptions() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Checkbox_Deleviery_And_PickUp_Options()));
@@ -1123,3 +1263,4 @@ public class PLP_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_Option_Facet_Panel()));
 	}
 }	
+

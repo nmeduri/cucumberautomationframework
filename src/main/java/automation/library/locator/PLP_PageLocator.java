@@ -105,6 +105,20 @@ public class PLP_PageLocator {
 	String minPriceLabel = Property.getProperty(Constant.OR_FILE, "minPriceLabel");
 	String maxPriceLabel = Property.getProperty(Constant.OR_FILE, "maxPriceLabel");
 	String clearAllPill = Property.getProperty(Constant.OR_FILE, "clearAllPill");
+	String availabilityFacet = Property.getProperty(Constant.OR_FILE, "availabilityFacet");
+	String availabilityAccordion = Property.getProperty(Constant.OR_FILE, "availabilityAccordion");
+	String facetValues = Property.getProperty(Constant.OR_FILE, "facetValues");
+	String onlineOnlyFacetValue = Property.getProperty(Constant.OR_FILE, "onlineOnlyFacetValue");
+	String inStoreOnlyFacetValue = Property.getProperty(Constant.OR_FILE, "inStoreOnlyFacetValue");
+	String filtersTitle = Property.getProperty(Constant.OR_FILE, "filtersTitle");
+	String facetBar = Property.getProperty(Constant.OR_FILE, "facetBar");
+	String onlineOnlyResultsCount = Property.getProperty(Constant.OR_FILE, "onlineOnlyResultsCount");
+	String onlineOnlyCheckBox = Property.getProperty(Constant.OR_FILE, "onlineOnlyCheckBox");
+	String inStoreOnlyCheckBox = Property.getProperty(Constant.OR_FILE, "inStoreOnlyCheckBox");
+	String availabilityFacetName = Property.getProperty(Constant.OR_FILE, "availabilityFacetName");
+	String availabilityResultsCount = Property.getProperty(Constant.OR_FILE, "availabilityResultsCount");
+	String availabilityFacetValueCheckbox = Property.getProperty(Constant.OR_FILE, "availabilityFacetValueCheckbox");
+	String productCardResults = Property.getProperty(Constant.OR_FILE, "productCardResults");
 	String firstOptionDevileryAndPickUp = Property.getProperty(Constant.OR_FILE, "firstOptionDevileryAndPickUp");
 	String optionsDeliveryAndPickUpChecked = Property.getProperty(Constant.OR_FILE, "optionsDeliveryAndPickUpChecked");
 	String horizontalFacetPanelBar = Property.getProperty(Constant.OR_FILE, "horizontalFacetPanelBar");
@@ -846,6 +860,105 @@ public class PLP_PageLocator {
 	}
 	
 	/**
+	 * gets Locator - Availability Facet
+	 */
+	public String get_Availability_Facet() {
+		return availabilityFacet;
+	}
+	
+	/**
+	 * gets Locator - Availability Accordion
+	 */
+	public String get_Availability_Accordion() {
+		return availabilityAccordion;
+	}
+	
+	/**
+	 * gets Locator - facet Values
+	 */
+	public String get_Facet_Values() {
+		return facetValues;
+	}
+	
+	/**
+	 * gets Locator - Online Only Facet Value
+	 */
+	public String get_Online_Only_Facet_Value() {
+		return onlineOnlyFacetValue;
+	}
+	
+	/**
+	 * gets Locator - Instore only Facet value
+	 */
+	public String get_InStore_Only_Facet_Value() {
+		return inStoreOnlyFacetValue;
+	}
+	
+	/**
+	 * gets Locator - Filters Title in Facet modal
+	 */
+	public String get_Filters_Title() {
+		return filtersTitle;
+	}
+	
+	/**
+	 * gets Locator - Facet Bar
+	 */
+	public String get_Facet_Bar() {
+		return facetBar;
+	}
+	
+	/**
+	 * gets Locator - Online Only Results count
+	 */
+	public String get_Online_Only_Results_Count() {
+		return onlineOnlyResultsCount;
+	}
+	
+	
+	/**
+	 * gets Locator - Online Only checkbox
+	 */
+	public String get_Online_Only_Checkbox() {
+		return onlineOnlyCheckBox;
+	}
+	
+	/**
+	 * gets Locator - Instore only checkbox
+	 */
+	public String get_InStore_Only_Checkbox() {
+		return inStoreOnlyCheckBox;
+	}
+	
+	/**
+	 * gets Locator - Availability Facet Name
+	 */
+	public String get_Availability_Facet_Name() {
+		return availabilityFacetName;
+	}
+	
+	/**
+	 * gets Locator - Availability Facet Result count
+	 */
+	public String get_Availability_Results_Count() {
+		return availabilityResultsCount;
+	}
+	
+	/**
+	 * gets Locator - Availability Facet checkbox
+	 */
+	public String get_Availability_Facet_Value_Checkbox() {
+		return availabilityFacetValueCheckbox;
+	}
+	
+	/**
+	 * gets Locator - product card results
+	 */
+	public String get_Product_Card_Results() {
+		return productCardResults;
+	}
+	
+	/**
 	 * gets Locator - check box (Delivery And Pick Up Options)
 	 */
 	public String get_Checkbox_Deleviery_And_PickUp_Options() {
@@ -877,3 +990,4 @@ public class PLP_PageLocator {
 		return sortOptionFacetPopUp;
 	}
  }
+
