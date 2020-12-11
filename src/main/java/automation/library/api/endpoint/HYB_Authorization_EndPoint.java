@@ -329,7 +329,7 @@ public class HYB_Authorization_EndPoint {
 				"        \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
 				"        \"storeDistance\": 13\n" + 
 				"    },\n" + 
-				"    \"quantity\": 3,\n" + 
+				"    \"quantity\": 1,\n" + 
 				"    \"deliveryMode\": {\n" + 
 				"        \"code\": \"STH\"\n" + 
 				"    },\n" + 
@@ -512,7 +512,7 @@ public class HYB_Authorization_EndPoint {
 				"        \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
 				"        \"storeDistance\": 13\n" + 
 				"    },\n" + 
-				"    \"quantity\": 3,\n" + 
+				"    \"quantity\": 1,\n" + 
 				"    \"deliveryMode\": {\n" + 
 				"        \"code\": \"STH\"\n" + 
 				"    },\n" + 

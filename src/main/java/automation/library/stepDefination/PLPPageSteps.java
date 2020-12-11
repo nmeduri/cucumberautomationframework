@@ -173,4 +173,16 @@ public class PLPPageSteps extends BaseClass {
 	public void back_from_pdp_page() throws Exception {
 		PageObject.getDriver().navigate().back();
 	}
+	@And("^sorting options should available under the Sort menu$")
+	public void sorting_options_should_available_under_the_Sort_menu() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyAllSortingOptionsUnderSortMenu();
+	}
+	@And("^user should be able to select only one sorting option at a time$")
+	public void user_should_be_able_to_select_only_one_sorting_option_at_a_time() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifySelectOnlyOneSortingOptionAtATime();
+	}
+	@And("^click on sort accordion on mobile$")
+	public void click_on_sort_accordion_on_mobile() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickOnSortAccordionOnMobile();
+	}
 }

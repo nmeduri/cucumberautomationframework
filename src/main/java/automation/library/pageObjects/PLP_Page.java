@@ -1262,5 +1262,32 @@ public class PLP_Page extends PageObject {
 	public void verifyExpandCorrespondingFacetPanel() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_Option_Facet_Panel()));
 	}
+	/** verify all sorting options available under sort menu */
+	public void verifyAllSortingOptionsUnderSortMenu() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Relevance()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_High_To_Low()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Price_Low_To_High()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_New_Arrivals()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Customer_Rating_High_To_Low()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Save_Percentage_Option()));
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Best_Seller()));
+	}
+	/** verify user should be able to select only  one sorting option at a time */
+	public void verifySelectOnlyOneSortingOptionAtATime() throws Exception {
+		List<Element> list =$findElements(
+				ExpectedConditions.visibilityOfAllElementsLocatedBy($By(Loc.XPATH,
+						testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_Option_Facet_Panel())),
+				10);
+		Log.message("List Size : "+ list.size(), true);
+		for(int i=0; i<list.size(); i++) {
+			list.get(i).click();
+			$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Selected_Radio_Button())), 15);	
+		}		
+	}
+	
+	/** click on Sort accordion on facet panel on mobile*/
+	public void clickOnSortAccordionOnMobile() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_Accordion()));
+	}
 }	
 

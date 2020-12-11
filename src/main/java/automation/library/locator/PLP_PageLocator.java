@@ -125,7 +125,11 @@ public class PLP_PageLocator {
 	String allCategoriesDropDown = Property.getProperty(Constant.OR_FILE, "allCategoriesDropDown");
 	String facetSpecificButton = Property.getProperty(Constant.OR_FILE, "facetSpecificButton");
 	String sortOptionFacetPopUp = Property.getProperty(Constant.OR_FILE, "sortOptionFacetPopUp");
-	
+	String relevance = Property.getProperty(Constant.OR_FILE, "relevance");
+	String saveOption = Property.getProperty(Constant.OR_FILE, "saveOption").replace("=", ",");
+	String bestSeller = Property.getProperty(Constant.OR_FILE, "bestSeller");
+	String selectedRadioButton = Property.getProperty(Constant.OR_FILE, "selectedRadioButton");
+	String sortAccordion = Property.getProperty(Constant.OR_FILE, "sortAccordion");
 	/**
 	 * gets Locator - List View
 	 * 
@@ -989,5 +993,28 @@ public class PLP_PageLocator {
 	public String get_Sort_Option_Facet_Panel() throws Exception {
 		return sortOptionFacetPopUp;
 	}
+	/** gets Locator - Relevance option*/
+	public String get_Relevance() throws Exception {
+		return relevance;
+	}
+	/** gets Locator - Save % option*/
+	public String get_Save_Percentage_Option() throws Exception {
+		return saveOption;
+	}
+	/** gets Locator - Best Seller option*/
+	public String get_Best_Seller() throws Exception {
+		return bestSeller;
+	}
+	
+	/** gets Locator - Selected Radio Button*/
+	public String get_Selected_Radio_Button() throws Exception {
+		return selectedRadioButton;
+	}
+	
+	/** gets Locator - Sort Accordion on Mobile*/
+	public String get_Sort_Accordion() throws Exception {
+		return sortAccordion;
+	}
+	
  }
 

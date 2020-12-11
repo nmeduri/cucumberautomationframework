@@ -18,7 +18,7 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then view less should not be displayed
 	
 	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2785, TC-2788 Verification of clicking of View More - Mobile 
+	Scenario: TC-2785, TC-2788 Verification of clicking of View More - Mobile
 	When pdp url is available
 	When pdp page is displayed for the product
 	And click on view more

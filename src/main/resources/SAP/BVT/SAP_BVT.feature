@@ -55,7 +55,7 @@ Feature: Health Check BVT API
     Then should return 201 created
     And user hits delete api for guid
     Then should return 200 ok
-   
+  
     Scenario: TC-2092 Add wishlist, delete wishlist - Authenticated user 
     Given access token is available
     When user generate token

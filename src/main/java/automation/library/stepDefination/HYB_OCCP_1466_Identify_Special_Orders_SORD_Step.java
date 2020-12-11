@@ -49,4 +49,14 @@ public class HYB_OCCP_1466_Identify_Special_Orders_SORD_Step extends BaseStep{
 		response = getAuthorizationUrl().post_HYB_AddToCart_RegUserAPI(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_1476(),FileReaderManager.getInstance().getAPIDataReader().get_product_tc_3994(),accessToken);
 		Log.message("Response:- " + response.getBody().asString(), true);
 	}
+	@When("^user hits add to Cart api for Anonymous user products that don’t have variants$")
+	public void user_Hits_Add_To_Cart_Api_Anonymous_products_that_dont_have_variants_product() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AnonymousUserAPI_STH(url, guid,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_4682());
+		Log.message("Response:- " + response.getBody().asString(), true);
+	}
+	@When("^user hits add to Cart api for Authenticated user products that don’t have variants$")
+	public void user_Hits_Add_To_Cart_Api_Authenticated_products_that_dont_have_variants_product() {
+		response = getAuthorizationUrl().post_HYB_AddToCart_AuthUserAPI_STH(url, code,FileReaderManager.getInstance().getAPIDataReader().get_product_tc_4682(),accessToken);
+		Log.message("Response:- " + response.getBody().asString(), true);
+	}
 }

@@ -59,7 +59,9 @@ public class Footer_Page extends PageObject {
 	
 	/** This function click on view more */
 	public void clickViewMore() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More())), 20);
+		//$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_More()));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_View_More())));
 	}
 	
 	/** This function is verify that Reset of Legal Disclaimer is displayed */
@@ -84,7 +86,9 @@ public class Footer_Page extends PageObject {
 	
 	/** This function click on view less */
 	public void clickViewLess() throws Exception {
-		$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less())), 20);
+		//$click($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_View_Less()));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_View_Less())));
 	}
 	
 	/** This function is verify that View More is not displayed */

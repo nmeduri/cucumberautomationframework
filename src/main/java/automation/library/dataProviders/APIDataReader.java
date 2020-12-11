@@ -1696,4 +1696,69 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("product_tc_5670 code not specified in the API Data file.");
 	}
+	/**
+	 * gets product data of TC-4682
+	 * 
+	 */
+	
+	public String get_product_tc_4682() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_4682");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-3120
+	 * 
+	 */
+	
+	public String get_product_tc_3120() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_3120");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-4826
+	 * 
+	 */
+	
+	public String get_product_tc_4826() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_4826");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-4827
+	 * 
+	 */
+	
+	public String get_product_tc_4827() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_4827");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code not specified in the API Data file.");
+	}
+	/**
+	 * gets product data of TC-4829
+	 * 
+	 */
+	
+	public String get_product_tc_4829() {
+
+		String getProduct = Property.getProperty(Constant.API_DATA, "product_tc_4829");
+		if (getProduct != null)
+			return getProduct;
+		else
+			throw new RuntimeException("product code not specified in the API Data file.");
+	}
 }

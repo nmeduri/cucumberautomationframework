@@ -2,9 +2,9 @@ Feature: OCCP-862 PLP Sorting
 
 	Description: To test the ADOBE Test Cases for the story OCCP-862
 	
-	@RegressionTest @WebView @WideScreen @TC-40
-	Scenario: TC-40 Verify the sticky navigation feature of filter menu	
-	When plp url is available
+		@RegressionTest @WebView @WideScreen @TC-40
+		Scenario: TC-40 Verify the sticky navigation feature of filter menu	
+		When plp url is available
     When plp is displayed
     And scroll down the window below the view point
     Then the sorting option remains displayed at the top of the page in the sticky nav
@@ -60,29 +60,29 @@ Feature: OCCP-862 PLP Sorting
     And user click on close button
 
     @RegressionTest @WebView @WideScreen @TC-346
-	Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
-	Given plp url is available
-	And scroll up to page
-	When user clicks on the Sort by 
-	And click see more sorting
-	And user selects Price Low to High as sorting option
-	Then all the product results should be rearranged from lowest to highest price
+		Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
+		Given plp url is available
+		And scroll up to page
+		When user clicks on the Sort by 
+		And click see more sorting
+		And user selects Price Low to High as sorting option
+		Then all the product results should be rearranged from lowest to highest price
 		
-	@RegressionTest @MobileView @TabletView
-	Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
-	Given plp url is available
-	When plp is displayed
-	And scroll up to page
-	When user clicks on the Sort by 
-	And user selects Price Low to High as sorting option
-	And user click on close button
-	Then all the product results should be rearranged from lowest to highest price
+		@RegressionTest @MobileView @TabletView
+		Scenario: TC-346 Verify the functionality of the Price Low to High sorting option on a PLP
+		Given plp url is available
+		When plp is displayed
+		And scroll up to page
+		When user clicks on the Sort by 
+		And user selects Price Low to High as sorting option
+		And user click on close button
+		Then all the product results should be rearranged from lowest to highest price
     
     @RegressionTest @MobileView @TabletView
     Scenario: TC-348 Verify the functionality of the Customer Ratings High to Low sorting option on a PLP
     Given plp url is available
     When plp is displayed
-	And scroll up to page
+		And scroll up to page
     And click on sort by option
     And select the sorting option customer ratings high to low
     And user click on close button
@@ -92,12 +92,39 @@ Feature: OCCP-862 PLP Sorting
     Scenario: TC-44 Verify the previously selected sorting option is displayed when the user clicks 'Back' from a product detail page
     Given plp url is available
     When plp is displayed
-	And scroll up to page
-	And click on sort by option
-	And click see more sorting
-	And select sorting option Newest Arrivals
-	And enter product in search bar
-	And user click on search icon
-	And back from page
-	Then plp is displayed
-	Then the previously selected sorting option is persisted
+		And scroll up to page
+		And click on sort by option
+		And click see more sorting
+		And select sorting option Newest Arrivals
+		And enter product in search bar
+		And user click on search icon
+		And back from page
+		Then plp is displayed
+		Then the previously selected sorting option is persisted
+	
+		@RegressionTest @WebView @WideScreen
+		Scenario: TC-42 Verify the values of the sorting drop-down on a PLP
+		Given plp url is available
+		When plp is displayed
+		And scroll up to page
+		When click on sort by option
+		And click see more sorting
+		Then sorting options should available under the Sort menu
+		
+		@RegressionTest @MobileView
+		Scenario: TC-344 Verify the display of the sorting menu of a PLP on Mobile
+		Given plp url is available
+		When plp is displayed
+		And scroll up to page
+		When click on sort and filters
+		And display the sort and filters button above the product results grid
+		And click on sort accordion on mobile
+		And click see more sorting
+		Then sorting options should available under the Sort menu
+		And user should be able to select only one sorting option at a time
+		And Select sort option price high to low
+    And click on close on facet option
+    Then all products results are rearranged from highest to lowest price
+	
+	
+	
