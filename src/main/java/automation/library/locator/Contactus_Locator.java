@@ -26,6 +26,11 @@ public class Contactus_Locator {
 	String pleaseSelectDropDownOption = Property.getProperty(Constant.OR_FILE, "pleaseSelectDropDownOption");
 	String pleaseSelectDropDownSelectedValue = Property.getProperty(Constant.OR_FILE, "pleaseSelectDropDownSelectedValue");
 	String additionalInformationCharCount = Property.getProperty(Constant.OR_FILE, "additionalInformationCharCount");
+	String labelFirstNameContact = Property.getProperty(Constant.OR_FILE, "labelFirstNameContact");
+	String labelLastNameContact = Property.getProperty(Constant.OR_FILE, "labelLastNameContact");
+	String contactFormSubmitConfirmationMessage = Property.getProperty(Constant.OR_FILE, "contactFormSubmitConfirmationMessage");
+	String continueShoppingButtonContact = Property.getProperty(Constant.OR_FILE, "continueShoppingButtonContact");
+	String candianTireLogoHomePage = Property.getProperty(Constant.OR_FILE, "candianTireLogoHomePage");
 	
 	/**
 	 * gets Locator - First Name
@@ -176,7 +181,41 @@ public class Contactus_Locator {
 	public String get_Additional_Information_Character_Count() throws Exception {
 		return additionalInformationCharCount;
 	}
+	
+	/**
+	 * gets Locator - First Name (Label)
+	 */
+	public String get_First_Name_Label() throws Exception {
+		return labelFirstNameContact;
+	}
+	
+	/**
+	 * gets Locator - Last Name (Label)
+	 */
+ 	public String get_Last_Name_Label() throws Exception {
+ 		return labelLastNameContact;
+ 	}
  	
+ 	/**
+ 	 * gets Locator - Contact Form Submission (Confirmation Message)
+ 	 */
+ 	public String get_Confirmation_Message_Form_Submit() throws Exception {
+ 		return contactFormSubmitConfirmationMessage;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Continue Shopping Button
+ 	 */
+ 	public String get_Continue_Shopping_Button() throws Exception {
+ 		return continueShoppingButtonContact;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Canadian Tire Logo 
+ 	 */
+ 	public String get_Canadian_Tire_Logo() throws Exception {
+ 		return candianTireLogoHomePage;
+ 	}
  }
 
 

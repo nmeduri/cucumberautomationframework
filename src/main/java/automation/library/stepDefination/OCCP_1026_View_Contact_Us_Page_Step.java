@@ -93,4 +93,53 @@ public class OCCP_1026_View_Contact_Us_Page_Step extends BaseClass {
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyUserAbleToEnterOrderNumberDetails();
 	}
 	
+	@And("user click on last name field")
+	public void user_click_on_last_name_field() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickOnLastNameField();
+	}
+	
+	@And("user click on first name field")
+	public void user_click_on_first_name_field() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickOnFirstNameField();
+	}
+	
+	@Then("user is able to view the label in gray shift up from original space")
+	public void user_is_able_to_view_the_label_in_gray_shift_up_from_original_space() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyGrayLabelShiftToUpFromOriginalSpace();
+	}
+	
+	@Then("user is able to view the label in gray shift back to its original space")
+	public void user_is_able_to_view_the_label_in_gray_shift_back_to_its_original_space() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyGrayLabelShiftBackToOriginalSpace();
+	}
+	
+	@And("enter first name detail")
+	public void enterFirstNameDetail() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).enterFirstNameDetail();
+	}
+	
+	@And("enter Last Name Detail")
+	public void ente_last_name_detail() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).enterLastNameDetail();
+	}
+	
+	@And("enter additional information")
+	public void enter_additional_information() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).enterAdditionalInformation();
+	}
+	
+	@Then("confirmation screen is displayed")
+	public void confirmation_screen_is_displayed() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).displayConfirmationScreen();
+	}
+	
+	@And("click on continue shopping button")
+	public void click_on_continue_shopping_button() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickOnContinueShoppingButton();
+	}
+	
+	@Then("user is redirect on canadian tire home page on same tab")
+	public void user_redirect_on_canadian_tire_home_page_on_same_tab() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyNavigateOnCanadianTireSiteInSameTab();
+	}
 }

@@ -282,7 +282,6 @@ public class PageObjectManager {
 	private AEM_Account_Payment_Infromation_Page getAEMAccountPaymentInfromationPage;
 	private Account_Payment_Information_Page_Locator getAccountPaymentInformationPageLocator;
 	private Account_Payment_information_Page getAccountPaymentInformationPage;
-
 	private Contact_Us_Page getContactUspage;
 	private Contactus_Locator getContactUsLocator;
 	
@@ -941,11 +940,6 @@ public class PageObjectManager {
 	public AEM_Account_Rewards_Template_Page_Locator getAccountRewardsTemplatePageLocator() {
 		return (getAccountRewardsTemplatePageLocator == null) ? getAccountRewardsTemplatePageLocator = new AEM_Account_Rewards_Template_Page_Locator() : getAccountRewardsTemplatePageLocator;
 	}
-
-	/** Returns Instance of AEM Account Payment Infromation Page */
-	public AEM_Account_Payment_Infromation_Page getAEMAccountPaymentInfromationPage(WebDriver driver) {
-		return (getAEMAccountPaymentInfromationPage == null) ? getAEMAccountPaymentInfromationPage = new AEM_Account_Payment_Infromation_Page(driver) : getAEMAccountPaymentInfromationPage;
-	}
 	
 	/** Returns Instance of Contact Us Page */
 	public Contact_Us_Page getContactUspage(WebDriver driver) {
@@ -955,6 +949,11 @@ public class PageObjectManager {
 	/** Returns Instance of Contact Us Page Locator */
 	public Contactus_Locator getContactUsPageLocator() {
 		return (getContactUsLocator == null) ? getContactUsLocator = new Contactus_Locator() : getContactUsLocator;
+	}
+
+	/** Returns Instance of AEM Account Payment Infromation Page */
+	public AEM_Account_Payment_Infromation_Page getAEMAccountPaymentInfromationPage(WebDriver driver) {
+		return (getAEMAccountPaymentInfromationPage == null) ? getAEMAccountPaymentInfromationPage = new AEM_Account_Payment_Infromation_Page(driver) : getAEMAccountPaymentInfromationPage;
 	}
 
 	/** Returns Instance of AEM Account Payment Infromation Page locator */

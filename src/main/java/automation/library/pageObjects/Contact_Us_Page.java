@@ -115,6 +115,12 @@ public class Contact_Us_Page extends PageObject {
 		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_First_Name()), "value"), FileReaderManager.getInstance().getDataReader().get_FirstName());
 		Assert.assertEquals($getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Last_Name()), "value"), FileReaderManager.getInstance().getDataReader().get_LastName());
 	}
+
+	/** enter first name */
+	public void enterFirstNameDetail() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_First_Name()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_First_Name()), FileReaderManager.getInstance().getDataReader().get_FirstName());
+	}
 	
 	/** verify user is able to see contact form on contact us page */
 	public void verifyUserAbleToSeeContactFormOnContactUsPage() throws Exception {
@@ -192,5 +198,55 @@ public class Contact_Us_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Order_Number()), FileReaderManager.getInstance().getDataReader().get_Order_Number_Detail());
 		String getValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Order_Number()), "value");
 		Assert.assertEquals(getValue, FileReaderManager.getInstance().getDataReader().get_Order_Number_Detail());
+	}
+	
+	/** click on last name field */
+	public void clickOnLastNameField() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Last_Name()));
+	}
+	
+	/** click on first name field */
+	public void clickOnFirstNameField() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_First_Name()));
+	}
+	
+	/** verify gray label shift to up from original space */
+	public void verifyGrayLabelShiftToUpFromOriginalSpace() throws Exception {
+		String labelPosition = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_First_Name_Label()), "position");
+		Assert.assertEquals("absolute", labelPosition);
+	}
+	
+	/** verify gray label shift back to original space */
+	public void verifyGrayLabelShiftBackToOriginalSpace() throws Exception {
+		String labelPosition = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_First_Name_Label()), "position");
+		Assert.assertEquals("absolute", labelPosition);
+	}
+	
+	/** enter last name */
+	public void enterLastNameDetail() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Last_Name()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Last_Name()), FileReaderManager.getInstance().getDataReader().get_LastName());
+	}
+	
+	/** enter additional information */
+	public void enterAdditionalInformation() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Additional_Information()), FileReaderManager.getInstance().getDataReader().get_Additonal_Infomration_More());
+		String getValue = $getText($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Additional_Information()));
+		Assert.assertEquals(getValue, FileReaderManager.getInstance().getDataReader().get_Additonal_Infomration_More());
+	}
+	
+	/** verify confirmation screen is displayed */
+	public void displayConfirmationScreen() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Confirmation_Message_Form_Submit()));
+	}
+	
+	/** click on continue shopping button */
+	public void clickOnContinueShoppingButton() throws Exception {
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getContactUsPageLocator().get_Continue_Shopping_Button())));
+	}
+	
+	/** link is navigate on canadian tire site */
+	public void verifyNavigateOnCanadianTireSiteInSameTab() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Canadian_Tire_Logo()));
 	}
 }

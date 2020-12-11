@@ -56,5 +56,45 @@ Feature: OCCP-3878 Contact Us Page : Error Scenario
 	When contact us fr url is available
 	And user clicks on order number field
 	Then user able to enter order number information
-    
+	
+	@RegressionTest @WebView @WideScreen @TC-4858
+	Scenario: TC-4858 OCCP-1026View Contact Us page - part 1 (Contact Us Form) - User is able to fill out the Contact us via email form - Verify that User is able to see the label-in-grey 'shift back to it's original state' 	
+	When contact us url is available
+	And user click on first name field
+	Then user is able to view the label in gray shift up from original space
+	And user click on last name field
+	Then user is able to view the label in gray shift back to its original space
+	
+	@RegressionTest @WebView @WideScreen @TC-4857
+	Scenario: TC-4858 OCCP-1026View Contact Us page - part 1 (Contact Us Form) - User is able to fill out the Contact us via email form - Verify that User is able to see the label-in-grey 'shift back to it's original state' 	
+	When contact us url is available
+	And enter first name detail
+	Then user is able to view the label in gray shift up from original space
+	
+	@RegressionTest @WebView @WideScreen @TC-4859
+	Scenario: TC-4859 OCCP-1026View Contact Us page - part 1 (Contact Us Form) - Verify that User is able to submit the form	
+	When contact us url is available
+	And enter first name detail
+	And enter Last Name Detail
+	And user is able to enter valid email address
+	And user clicks on please select drop down field
+	And user is able to view a drop down and select the appropriate subject
+	And enter additional information
+	And click on send message button
+	Then confirmation screen is displayed
+	
+	@RegressionTest @WebView @WideScreen @TC-4862
+	Scenario: TC-4862 OCCP-1026View Contact Us page - part 1 (Contact Us Form) - Verify that User is able to click the CTA on the success screen	
+	Given open browser
+	When contact us url is available
+	And enter first name detail
+	And enter Last Name Detail
+	And user is able to enter valid email address
+	And user clicks on please select drop down field
+	And user is able to view a drop down and select the appropriate subject
+	And enter additional information
+	And click on send message button
+	Then confirmation screen is displayed
+	And click on continue shopping button
+	#Then user is redirect on canadian tire home page on same tab
    

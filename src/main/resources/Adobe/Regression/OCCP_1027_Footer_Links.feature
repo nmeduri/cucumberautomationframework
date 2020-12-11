@@ -249,6 +249,8 @@ Feature: OCCP-1027 Footer : Footer Links
 
 	@RegressionTest @MobileView @TabletView  @TC-2121
 	Scenario: TC-2121, User clicks on "-" on Customer Support section -Mobile
+	Given quit browser
+	When open browser
 	Given pdp url is available
 	When pdp page is displayed for the product
 	And customer support section is displayed

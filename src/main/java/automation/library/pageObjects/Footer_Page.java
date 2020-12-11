@@ -192,6 +192,7 @@ public class Footer_Page extends PageObject {
 	
 	/** This function is verify that Custom Support is displayed */
 	public void displayCustomSupport() throws Exception {
+		Thread.sleep(10000);
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Custom_Support()));
 	}
 	
@@ -953,7 +954,8 @@ public class Footer_Page extends PageObject {
 	
 	/** This function clicks on minus button*/
 	public void clickMinusSection() throws Exception {
-		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())), 15);
+		Thread.sleep(5000);
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getFooterPageLocator().get_Minus_Button())));
 	}
 	
 	/** verify Learn more link is getting navigate on learn more section */
