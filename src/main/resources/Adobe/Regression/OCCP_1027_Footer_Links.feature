@@ -247,6 +247,7 @@ Feature: OCCP-1027 Footer : Footer Links
 		Then user should be navigate to defined associated page
 		And user navigates back to to previous page
 
+
 	@RegressionTest @MobileView @TabletView  @TC-2121
 	Scenario: TC-2121, User clicks on "-" on Customer Support section -Mobile
 	Given quit browser

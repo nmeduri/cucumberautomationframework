@@ -23,8 +23,9 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	Then validate the accordion plus icon is displayed
 	
 	
-	@RegressionTest @WebView @WideScreen @MobileView @TabletView
+	@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-3264
 	Scenario: TC-3264 Verify that the customer is able to expand Accordion
+	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed	
 	And accordions should be displayed
@@ -47,6 +48,7 @@ Feature: OCCP-1042-Customer Service - Accordion (Authorable)
 	
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-3266
 	Scenario: TC-3266 OCCP-1042 - Customer Service - Accordion (Authorable) -Verify that the customer is able to view Accordion Description
+	Given open browser
 	When customerservice informational copy url is available
 	Then customerservice page is displayed	
 	And accordions should be displayed
