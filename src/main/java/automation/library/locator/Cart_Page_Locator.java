@@ -80,6 +80,20 @@ public class Cart_Page_Locator {
 	String ToastMsgafterCheckout=Property.getProperty(Constant.OR_FILE, "ToastMsgafterCheckout");
 	String WarningToastLabel=Property.getProperty(Constant.OR_FILE, "WarningToastLabel");
 	String ToastmsgCloseBtn=Property.getProperty(Constant.OR_FILE, "ToastmsgCloseBtn");
+	String postalCodeModalTitle=Property.getProperty(Constant.OR_FILE, "postalCodeModalTitle");	
+	String postalCodeModalChangeCTA=Property.getProperty(Constant.OR_FILE, "postalCodeModalChangeCTA");
+	String postalCodeModalCancelCTA=Property.getProperty(Constant.OR_FILE, "postalCodeModalCancelCTA");
+	String shipToHomeFulfillmentChange=Property.getProperty(Constant.OR_FILE, "shipToHomeFulfillmentChange");
+	String postalCodeFieldTitle=Property.getProperty(Constant.OR_FILE, "postalCodeFieldTitle");
+	String postalCodeTextInputField=Property.getProperty(Constant.OR_FILE, "postalCodeTextInputField");
+	String postalCodeModalCloseBtn=Property.getProperty(Constant.OR_FILE, "postalCodeModalCloseBtn");
+	String shipToHomeChange=Property.getProperty(Constant.OR_FILE, "shipToHomeChange");
+	String previousPostalCode=Property.getProperty(Constant.OR_FILE, "previousPostalCode");
+	String successToastMessage=Property.getProperty(Constant.OR_FILE, "successToastMessage");
+	String enterPostalCodeData=Property.getProperty(Constant.OR_FILE, "enterPostalCodeData");
+	String postalCodeInvalidErrorToastMessage=Property.getProperty(Constant.OR_FILE, "postalCodeInvalidErrorToastMessage");
+	String invalidInlineErrorMessage=Property.getProperty(Constant.OR_FILE, "invalidInlineErrorMessage");
+	String outOfRangeInlineErrorMessage=Property.getProperty(Constant.OR_FILE, "outOfRangeInlineErrorMessage");
 	
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
@@ -573,4 +587,117 @@ public class Cart_Page_Locator {
 	public String get_WarningToastLabel() {
 		return WarningToastLabel;
 	}
+	
+	 /**
+		 * gets Locator - postal Code Modal Title
+		 * 
+		 */
+		public String get_Postal_Code_Modal_Title() {
+			return postalCodeModalTitle;
+		}
+		
+		/**
+		 * gets Locator - postal Code Modal Change CTA
+		 * 
+		 */
+		public String get_Postal_Code_Modal_Change_CTA() {
+			return postalCodeModalChangeCTA;
+		}
+		
+		/**
+		 * gets Locator - postal Code Modal Cancel CTA
+		 * 
+		 */
+		public String get_Postal_Code_Modal_Cancel_CTA() {
+			return postalCodeModalCancelCTA;
+		}
+		
+		/**
+		 * gets Locator - shipToHomeFulfillmentChange
+		 * 
+		 */
+		public String get_Ship_To_Home_Fulfillment_Change() {
+			return shipToHomeFulfillmentChange;
+		}
+		
+		/**
+		 * gets Locator - postal Code Field Title
+		 * 
+		 */
+		public String get_Postal_Code_Field_Title() {
+			return postalCodeFieldTitle;
+		}
+		
+		/**
+		 * gets Locator - postalCodeTextInputField
+		 * 
+		 */
+		public String get_Postal_Code_Text_Input_Field() {
+			return postalCodeTextInputField;
+		}
+		
+		/**
+		 * gets Locator - Postal Code Modal Close Btn
+		 * 
+		 */
+		public String get_Postal_Code_Modal_Close_Btn() {
+			return postalCodeModalCloseBtn;
+		}
+		
+		/**
+		 * gets Locator - ship To Home Change
+		 * 
+		 */
+		public String get_Ship_To_Home_Change() {
+			return shipToHomeChange;
+		}
+		
+		/**
+		 * gets Locator - Previous Postal Code
+		 * 
+		 */
+		public String get_Previous_Postal_Code() {
+			return previousPostalCode;
+		}
+		
+		/**
+		 * gets Locator - Success Toast Message
+		 * 
+		 */
+		public String get_Success_Toast_Message() {
+			return successToastMessage;
+		}
+		
+		/**
+		 * gets Locator - enter Postal Code Data
+		 * 
+		 */
+		public String get_Enter_Postal_Code_Data() {
+			return enterPostalCodeData;
+		}
+		
+		/**
+		 * gets Locator - Postal Code Invalid Error Toast Message
+		 * 
+		 */
+		public String get_Postal_Code_Invalid_Error_Toast_Message() {
+			return postalCodeInvalidErrorToastMessage;
+		}
+		
+		/**
+		 * gets Locator - Invalid Inline Error Message
+		 * 
+		 */
+		public String get_Invalid_Inline_Error_Message() {
+			return invalidInlineErrorMessage;
+		}
+		
+		/**
+		 * gets Locator - Out Of Range Inline Error Message
+		 * 
+		 */
+		public String get_OutOfRange_Inline_Error_Message() {
+			return outOfRangeInlineErrorMessage;
+		}
+
 }

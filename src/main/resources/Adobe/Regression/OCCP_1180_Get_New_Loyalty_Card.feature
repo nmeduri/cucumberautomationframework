@@ -68,31 +68,28 @@ Feature: OCCP-1180 Get New Loyalty Card
 	Then user should be returned to initial link cards screen
 	
 	@RegressionTest @MobileView
-	Scenario: TC-2480 Rewards T&C screen and Link Success screen 
+	Scenario: TC-2480 Rewards T&C screen and Link Success screen
 	Given sign up url is available
 	Then sign up page is displayed
-	And user enter email
+	And in mobile user enter email 
 	And user enter password
 	And user enter retype password
 	And user click on create button
 	And user click on next button
 	And email verification sent confirmation screen is displayed
-	When mailinator url is available
-	Then user enter detail in mailinator inbox
-	And user click on go button
-	Then the user has received the verification email
-	And user click on verification email
-	And user click on here to verify email link
+	When yopmail url is available
+	Then verify email verification in mobile
 	Then page your email has been verified displayed
 	And user clicks on continue button
-	Then link card screen should be displayed
+	Then link card screen should be displayed 
 	And verify when user clicks on the get a new triangle rewards card link
 	Then user should redirect to the get a new triangle rewards card screen
-	And verify when user enter valid information on complete your profile screen
+	And in mobile verify when user enter valid information on complete your profile screen
 	And verify clicks on continue button
 	Then rewards terms and conditions should be displayed
 	And clicks on register card button
 	Then user should navigate to success screen
+	And switch on parent frame
 	
 	@RegressionTest @MobileView @WideScreen
 	Scenario: TC-2482 Personal Information - Field level validations on Wide Desktop View

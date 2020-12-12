@@ -41,6 +41,7 @@ public class Link_Your_Triangle_Rewards_account_Page extends PageObject {
 	
 	/** This function is verify that Title 'Link Your Triangle Rewards Account' is displayed */
 	public void displayLinkYourTriangleRewardsAccountTitle() throws Exception {
+		Thread.sleep(20000);
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkYourTriangleRewardsAccountLocator().get_Link_Your_Triangle_Rewards_Account_Title())), 30);
 	}
 	

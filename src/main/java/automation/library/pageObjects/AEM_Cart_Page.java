@@ -408,4 +408,34 @@ public void updateExceededMessageToastNotification () throws Exception {
 	$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_ExceededMessageToastMsg()), FileReaderManager.getInstance().getAEMDataReader().get_ExceededMessageToastNotification_AEM());
 }
 
+	/** click Postal Tab  */
+	public void ClickOnPostalTab () throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Postal_Tab_AEM()));
+	}
+		
+	/** Enter Data to Success Toast Message  */
+	public void enterDataSuccessToastMessage () throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Success_Toast_Message_AEM())), 20);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Success_Toast_Message_AEM()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Success_Toast_Message_AEM()), FileReaderManager.getInstance().getAEMDataReader().get_Success_Toast_Message_Data());
+	}
+	
+	/** Enter Data to Error Toast Message  */
+	public void enterDataErrorToastMessage () throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Error_Toast_Message_AEM())), 20);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Error_Toast_Message_AEM()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Error_Toast_Message_AEM()), FileReaderManager.getInstance().getAEMDataReader().get_Error_Toast_Message_Data());
+	}
+
+	/** verify success toast message text changes reflected */
+	public void verifySuccessToastMessageChangesReflected () throws Exception {
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Success_Toast_Message_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Success_Toast_Message())));
+	}
+	
+	/** verify error toast message text changes reflected */
+	public void verifyErrorToastMessageChangesReflected () throws Exception {
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Error_Toast_Message_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Invalid_Error_Toast_Message())));
+	}
+
+
 }

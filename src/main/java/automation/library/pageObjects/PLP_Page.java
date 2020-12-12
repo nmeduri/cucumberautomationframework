@@ -332,6 +332,15 @@ public class PLP_Page extends PageObject {
 		}
 	 
 	 /** return breadcrumbs list */
+		/*
+		 * public ArrayList<String> getBreadcrumbsHeirarchyInMobile() throws Exception {
+		 * ArrayList<String> breadcrumbsList = new ArrayList<String>(); Element
+		 * breadcrumbEle = $$$$(Loc.XPATH,
+		 * testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb(
+		 * ),1); breadcrumbsList.add($getText(breadcrumbEle)); return breadcrumbsList; }
+		 */
+	 
+	 /** return breadcrumbs list */
 	 public ArrayList<String> getBreadcrumbsHeirarchyInMobile() throws Exception {
 		 ArrayList<String> breadcrumbsList = new ArrayList<String>();
 		 Element breadcrumbEle = $$$$(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Mobile_Breadcrumb(),1);
@@ -346,8 +355,15 @@ public class PLP_Page extends PageObject {
 		}
 	 
 	 /** This function is verify that breadcrumbs heirarchy */
+		/*
+		 * public void verifyBreadcrumbsHeirarchyInMobile() throws Exception {
+		 * List<String> expected = Arrays.asList("Home\n" + "Drills & Drivers");
+		 * List<String> actual = getBreadcrumbsHeirarchyInMobile();
+		 * Assert.assertEquals(expected,actual ); }
+		 */
+	 
 	 public void verifyBreadcrumbsHeirarchyInMobile() throws Exception {
-		 List<String> expected =  Arrays.asList("Home\n" + "Drills & Drivers");
+		 List<String> expected=  Arrays.asList(FileReaderManager.getInstance().getDataReader().get_Mobile_Breadcrumb_Data());
 		 List<String> actual = getBreadcrumbsHeirarchyInMobile();
 		 Assert.assertEquals(expected,actual );	
 		}

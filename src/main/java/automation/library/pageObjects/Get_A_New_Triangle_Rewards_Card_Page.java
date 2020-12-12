@@ -111,6 +111,15 @@ public class Get_A_New_Triangle_Rewards_Card_Page extends PageObject {
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value())), 15);
 	
 	}
+	
+	/** This function enter year of birth */
+	public void enterYearOfBirthMobile() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_City_Rewards()), 5);
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Mobile())), 5);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Mobile())), 5);
+		$clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value())), 5);
+	}
+	
 	/** This function enter year of birth with age majority */
 	public void enterYearOfBirth_ageMajority() throws Exception {
 		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth())), 3);

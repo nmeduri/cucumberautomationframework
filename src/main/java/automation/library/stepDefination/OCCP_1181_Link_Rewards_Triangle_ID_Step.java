@@ -80,6 +80,19 @@ public class OCCP_1181_Link_Rewards_Triangle_ID_Step extends BaseClass {
 		
 	}
 	
+	@And("in mobile verify when user enter valid information on complete your profile screen")
+	public void check_age_majority_in_mobile() throws Exception {
+		 testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_First_Name(FileReaderManager.getInstance().getDataReader().get_FirstName());
+		    testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Last_Name(FileReaderManager.getInstance().getDataReader().get_Last_Name_Rewards());		
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Address(FileReaderManager.getInstance().getDataReader().get_Address_Rewards());		
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_City(FileReaderManager.getInstance().getDataReader().get_City_Rewards());		
+			testContext.getPageObjectManager().getAEMNewRewardsCardScreenPage(PageObject.getDriver()).enterProvinceOntarioInMobile();
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Postal_Code(FileReaderManager.getInstance().getDataReader().get_Postal_Code_Rewards());		
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enter_Phone_Number(FileReaderManager.getInstance().getDataReader().get_Phone_Number_Rewards());		
+			testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).enterYearOfBirthMobile();
+
+	}
+	
 	@And("verify clicks on continue button")
 	public void verify_clicks_on_continue_button() throws Exception {
 		testContext.getPageObjectManager().getANewTriangleRewardsCardPage(PageObject.getDriver()).cickContinueButton();

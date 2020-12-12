@@ -5937,7 +5937,33 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-
+	
+	/**
+	 * gets AEM Postal Code Modal - Success Toast Message
+	 * 
+	 */
+	
+	public String get_Success_Toast_Message_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "successToastMessage");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("success message data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets AEM Postal Code Modal - Error Toast Message
+	 * 
+	 */
+	
+	public String get_Error_Toast_Message_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "errorToastMessage");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("error message data not specified in the Data file.");
+	}
+	
 	/**
 	 * gets paymentInfoPageTitle
 	 * 

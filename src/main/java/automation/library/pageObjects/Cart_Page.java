@@ -6,7 +6,9 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
@@ -327,6 +329,133 @@ public class Cart_Page extends PageObject{
 	public void clickToastmsgCloseBtn() throws Exception {
 		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_ToastmsgCloseBtn())),40);
 
+	}
+	
+	/** click on order summary ship to home change*/
+	public void clickOnOrderSummarySTHChange() throws Exception {
+		PageObject.getDriver().navigate().refresh();
+		String code = $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Previous_Postal_Code()));
+		configuration.setProperty("getPostalCode", code);
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Ship_To_Home_Change())),40);
+	}
+	
+	/** click on ship to home fulfillment change*/
+	public void clickOnSTHFulfillmentChange() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Ship_To_Home_Fulfillment_Change())),40);
+	}
+	
+	/** click on Postal Code modal close button*/
+	public void clickOnPostalCodeCloseBtn() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Close_Btn())),40);
+	}
+	
+	/** This function display Postal Code modal  */
+	public void displayPostalCodeModal() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_postalCodeModal())), 40);
+	}
+	
+	/** This function display modal title  */
+	public void displayModalTitle() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Title())), 40);
+	}
+	
+	/** This function display input text field  */
+	public void displayInputTextBoxField() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Text_Input_Field())), 40);
+	}
+	
+	/** This function display field title  */
+	public void displayFieldTitlePostalCode() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Field_Title())), 40);
+	}
+	
+	/** This function verify display of previous postal code  */
+	public void verifyDisplayPreviouslyDefinedPostalCode() throws Exception {
+		String expected = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Text_Input_Field()), "value");
+		String actual = (java.lang.String) configuration.getProperty("getPostalCode");
+		Assert.assertEquals(expected,actual);
+	}
+	
+	/** This function display Change CTA  */
+	public void displayChangeCTA() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Change_CTA())), 40);
+	}
+	
+	/** This function display Cancel CTA  */
+	public void displayCancelCTA() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Cancel_CTA())), 40);
+	}
+	
+	/** This function display cross button  */
+	public void displayCrossButton() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Close_Btn())), 40);
+	}
+	
+	/** click on Postal Code modal Cancel CTA*/
+	public void clickOnCancelCTA() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Cancel_CTA())),40);
+	}
+	
+
+	/** click on Postal Code modal X CTA*/
+	public void clickOnCrossCTA() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Close_Btn())),40);
+	}
+	
+	/** click on Postal Code modal Change cta*/
+	public void clickOnChangeCTA() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Modal_Change_CTA())),40);
+	}
+	
+	/** verify Postal Code Modal is closed and not displayed */
+	public void notDisplayPostalCodeModal() throws Exception {
+		try {
+			PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_postalCodeModal()));
+			fail();
+		}catch(Exception e) {
+			Log.message("Postal Code Modal is closed", true);
+		}
+	}
+	
+	/** enter data to valid postal code in postal code modal */
+	public void enterDataValidPostalCode() throws Exception {
+		WebElement field = PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_Enter_Postal_Code_Data()));
+		field.sendKeys(Keys.CONTROL,"a");
+		field.sendKeys(Keys.DELETE);
+		field.sendKeys(FileReaderManager.getInstance().getDataReader().get_Valid_Postal_Code());
+		//$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Enter_Postal_Code_Data()));
+		//$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Enter_Postal_Code_Data()), FileReaderManager.getInstance().getDataReader().get_Valid_Postal_Code());
+	}
+	
+	/** This function verifys display of success toast message  */
+	public void displaySuccessToastMessage() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Success_Toast_Message())), 15);
+	}
+	
+	/** enter data to out of range postal code in postal code modal */
+	public void enterDataOutOfRangePostalCode() throws Exception {
+		WebElement field = PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_Enter_Postal_Code_Data()));
+		field.sendKeys(Keys.CONTROL,"a");
+		field.sendKeys(Keys.DELETE);
+		field.sendKeys(FileReaderManager.getInstance().getDataReader().get_OutOfRange_Postal_Code());
+	}
+	
+	/** enter data to out of range postal code in postal code modal */
+	public void enterDataInvalidPostalCode() throws Exception {
+		WebElement field = PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_Enter_Postal_Code_Data()));
+		field.sendKeys(Keys.CONTROL,"a");
+		field.sendKeys(Keys.DELETE);
+		field.sendKeys(FileReaderManager.getInstance().getDataReader().get_Invalid_Postal_Code());
+	}
+	
+	/** This function verifys display of success toast message  */
+	public void displayErrorToastMessage() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Invalid_Error_Toast_Message())), 15);
+	}
+	
+	/** This function verifys display of success toast message  */
+	public void displayInlineError() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_OutOfRange_Inline_Error_Message())), 15);
 	}
 	
 }

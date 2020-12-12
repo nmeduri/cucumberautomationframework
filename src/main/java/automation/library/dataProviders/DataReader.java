@@ -1868,6 +1868,59 @@ public class DataReader {
 				else
 					throw new RuntimeException("Product Code not specified in the Data file.");
 			}
+			
+		/**
+		 * gets valid postal code
+		 * 
+		 */
+
+		public String get_Valid_Postal_Code() {
+			String getData = Property.getProperty(Constant.DATA_FILE, "validPostalCode");
+			if (getData != null)
+				return getData;
+			else
+				throw new RuntimeException("Postal code Data not specified in the Data file.");
+		}
+		
+		/**
+		 * gets Invalid postal code
+		 * 
+		 */
+
+		public String get_Invalid_Postal_Code() {
+			String getData = Property.getProperty(Constant.DATA_FILE, "invalidPostalCode");
+			if (getData != null)
+				return getData;
+			else
+				throw new RuntimeException("Invalid Postal code Data not specified in the Data file.");
+		}
+		
+		/**
+		 * gets Out of range postal code
+		 * 
+		 */
+
+		public String get_OutOfRange_Postal_Code() {
+			String getData = Property.getProperty(Constant.DATA_FILE, "outOfRangePostalCode");
+			if (getData != null)
+				return getData;
+			else
+				throw new RuntimeException("Out of Range Postal code Data not specified in the Data file.");
+		}
+		
+		/**
+		 * gets Mobile breadcrumb data
+		 * 
+		 */
+
+		public String get_Mobile_Breadcrumb_Data() {
+			String getData = Property.getProperty(Constant.DATA_FILE, "mobileBreadcrumbData");
+			if (getData != null)
+				return getData;
+			else
+				throw new RuntimeException("Mobile breadcrumb data not specified in the Data file.");
+		}
+
 			/**
 			 * gets Account Payment Information URL
 			 * 

@@ -51,6 +51,9 @@ public class AEM_Cart_Page_Locator {
 	String ToolTipDesc = Property.getProperty(Constant.OR_FILE, "ToolTipDesc");
 	String bulkMessage = Property.getProperty(Constant.OR_FILE, "bulkMessage");
 	String bulkItemsTab = Property.getProperty(Constant.OR_FILE, "bulkItemsTab");
+	String getPostalTab = Property.getProperty(Constant.OR_FILE, "getPostalTab");
+	String successToastMessageAEM = Property.getProperty(Constant.OR_FILE, "successToastMessageAEM");
+	String errorToastMessageAEM = Property.getProperty(Constant.OR_FILE, "errorToastMessageAEM");
 
 	/**
 	 * gets Locator - AEM Item Added To wishlist label field
@@ -391,4 +394,32 @@ public class AEM_Cart_Page_Locator {
 	public String get_bulkItemsTab() {
 		return bulkItemsTab;
 	}
+	
+	/**
+	 * gets Locator - Postal Tab
+	 * 
+	 */
+
+	public String get_Postal_Tab_AEM() {
+		return getPostalTab;
+	}
+
+	/**
+	 * gets Locator - Success Toast Message Field
+	 * 
+	 */
+
+	public String get_Success_Toast_Message_AEM() {
+		return successToastMessageAEM;
+	}
+
+	/**
+	 * gets Locator - Error Toast Message Field
+	 * 
+	 */
+
+	public String get_Error_Toast_Message_AEM() {
+		return errorToastMessageAEM;
+	}
+
 }
