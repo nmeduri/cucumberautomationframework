@@ -66,7 +66,7 @@ Feature: OCCP-3878 Contact Us Page : Error Scenario
 	Then user is able to view the label in gray shift back to its original space
 	
 	@RegressionTest @WebView @WideScreen @TC-4857
-	Scenario: TC-4858 OCCP-1026View Contact Us page - part 1 (Contact Us Form) - User is able to fill out the Contact us via email form - Verify that User is able to see the label-in-grey 'shift back to it's original state' 	
+	Scenario: TC-4857 OCCP-1026View Contact Us page - part 1 (Contact Us Form) - User is able to fill out the Contact us via email form - Verify that User is able to see the label-in-grey 'shift back to it's original state' 	
 	When contact us url is available
 	And enter first name detail
 	Then user is able to view the label in gray shift up from original space

@@ -38,6 +38,13 @@ public class OCCP_1026_View_Contact_Us_Page_Step extends BaseClass {
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyUserAbleToEnterFirstNameAndLastName();
 	}
 	
+	@Given("aem author is able to access configue contact us page")
+	public void aem_author_is_able_to_access_configure_contact_us_page() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).navigateTo_Contact_Us_Authorable_Page();
+	}
+	
+	
+	
 	@Then("user must be able to view the contact us form on the contact us page")
 	public void user_must_be_able_to_view_the_contact_us_form_on_the_contact_us_page() throws Exception {
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyUserAbleToSeeContactFormOnContactUsPage();
@@ -141,5 +148,156 @@ public class OCCP_1026_View_Contact_Us_Page_Step extends BaseClass {
 	@Then("user is redirect on canadian tire home page on same tab")
 	public void user_redirect_on_canadian_tire_home_page_on_same_tab() throws Exception {
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyNavigateOnCanadianTireSiteInSameTab();
+	}
+	
+	@When("click on contact us panel")
+	public void click_on_contact_us_panel() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickContactUsPanel();
+	}
+	
+	@And("author configures the max character count for additional comment field")
+	public void author_configures_the_max_character_count_for_additional_comment_field() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateAdditionalInfoMaxCount();
+	}
+	
+	@And("revert the additonal max count changes")
+	public void revert_the_additional_max_count_changes() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).revertAdditionalInfoMaxCount();
+	}
+	
+	@Then("configured max character is visible to the user on the contact us form")
+	public void configured_max_character_is_visible_to_the_user_on_the_contact_us_form() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).configuredMaxCharVisibleOnPublishPage();
+	}
+	
+	@And("configure the new section title")
+	public void configure_the_new_section_title() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateYourMessageSectionTitle();
+	}
+	
+	@And("revert the new section title")
+	public void revert_the_new_section_title() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).revertYourMessageSectionTitle();
+	}
+	
+	@Then("configured section title is displayed on publish page")
+	public void configured_section_title_is_displayed_on_publish_page() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).configuredYourMessageSectionOnPublishPage();
+	}
+	
+	@And("configure the note field")
+	public void configure_the_note_field() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateAddNoteText();
+	}
+	
+	@And("revert the note field")
+	public void revert_the_note_field() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateAddNoteText();
+	}
+	
+	@Then("configured add note text is displayed on publish page")
+	public void configured_add_note_text_is_displayed_on_publish_page() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).configuredAddNoteTextOnPublishPage();
+	}
+	
+	@Then("author configure cta title")
+	public void author_configure_cta_title() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateCTALabel();
+	}
+	
+	@And("select please select drop down value")
+	public void select_drop_down_Please_Select_value() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).selectPleaseSelectDropDownValue();
+	}
+	
+	@And("revert cta label")
+	public void revert_cta_label() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).revertCTALabel();
+	}
+	
+	@Then("configured cta label is displayed on publish page")
+	public void configured_cta_label_is_displayed_on_publish_page() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).configuredCTALabelOnPublishPage();
+	}
+	
+	@And("click on contact us success screen tab")
+	public void click_on_success_screen_tab() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickOnSuccessScreenTab();
+	}
+	
+	@And("configure success cta label")
+	public void configure_success_cta_label() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateSuccessCTALabel();
+	}
+	
+	@And("revert success cta label")
+	public void revert_success_cta_label() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).revertSuccessCTALabel();
+	}
+	
+	@Then("verify configure success cta label is mandatory")
+	public void verify_configure_success_cta_label_is_mandatory() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).displaySuccessLabelMandatory();
+	}
+	
+	@And("configure target url")
+	public void configure_target_url() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateSuccessPathUrl();
+	}
+	
+	@And("revet target url")
+	public void revert_target_url() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).revertSuccessPathUrl();
+	}
+	
+	@Then("verify configure target url is manadatory")
+	public void verify_configure_target_url_is_mandatory() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).displaySuccessPathMandatory();
+	}
+	
+	@Then("default config to open in same-different tab is applicable")
+	public void default_config_to_open_in_same_different_tab_is_applicable() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyDefaultOpenToSameTab();
+	}
+	
+	@Then("configued success cta label is displayed on publish page")
+	public void configured_success_cta_label_is_displayed_on_publish_page() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).configuredSuccessCTALabelOnPublishPage();
+	}
+	
+	@Then("configured success path is displayed on publish page")
+	public void configured_success_path_is_displayed_on_publish_page() throws Exception {
+		
+	}
+	
+	@And("click on configuration tab")
+	public void clickOnConfigurationTab() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickOnConfigurationTab();
+	}
+	
+	@And("click on add button")
+	public void click_on_add_button() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickOnAddButton();
+	}
+	
+	@And("configure add please select drop down")
+	public void configure_add_please_select_drop() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateLabelDetail();
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).updateIdDetail();
+	}
+	
+	@Then("verify please select drop down option is added")
+	public void verify_please_select_drop_down_option_is_added() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyAddedPleaseSelectDropDownOption();
+	}
+	
+	@And("click on remove drop down option button")
+	public void click_on_remove_drop_down_option_button() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickRemoveDropDownOptionButton();
+	}
+	
+	@Then("verify drop down  option is removed")
+	public void verify_drop_down_option_is_removed() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyRemovedPleaseSelectDropDownOption();
 	}
 }

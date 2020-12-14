@@ -73,4 +73,9 @@ public class OCCP_3878_View_Contact_Us_Page_Error_Scenarios_For_Form_Step extend
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyFieldNotTakingExceedingLimit();
 	}
 	
+	@And("click on form validation tab")
+	public void click_on_form_validation_tab() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickFormValidationMessageTab();
+	}
+	
 }

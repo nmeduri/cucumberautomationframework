@@ -5375,6 +5375,33 @@ public class AEMDataReader {
 	}
 	
 	/**
+	 * gets Contact Us AEM Url
+	 * 
+	 */
+	
+	public String get_Contact_Us_Authorable_Url() {
+		String contactUsAEMURL = Property.getProperty(Constant.AEM_DATA_FILE, "contactUsAuthorableUrl");
+		if(contactUsAEMURL != null)
+			return contactUsAEMURL;
+		else
+			throw new RuntimeException("contactUsAEMURL data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets PDP Product add to Contact Us URL
+	 * 
+	 */
+	
+	public String get_PDP_ContactUs_AEM() {
+		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "pdpProductContactUs");
+		if(PDPAem != null)
+			return PDPAem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	
+	/**
 	 * gets Contact Us AEM Url_CN
 	 * 
 	 */
@@ -5737,7 +5764,7 @@ public class AEMDataReader {
 	 * 
 	 */
 	
-	public String get_PDP_ContactUs_AEM() {
+	public String get_ContactUs_AEM() {
 		String PDPAem = Property.getProperty(Constant.AEM_DATA_FILE, "pdpProductContactUs");
 		if(PDPAem != null)
 			return PDPAem;
@@ -6071,6 +6098,188 @@ public class AEMDataReader {
 			return URLem;
 		else
 			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Max Char for Additional Information
+	 * 
+	 */
+	
+	public String get_max_char_additional_information() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "maxCharAdditonalInformation");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Max Char for Additional Information Revert
+	 * 
+	 */
+	
+	public String get_max_char_additional_information_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "maxCharAdditonalInformationRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Your Message Section
+	 * 
+	 */
+	
+	public String get_Your_Message_Section_Title() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "yourMessageSectionTitle");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Max Char for Additional Information Revert
+	 * 
+	 */
+	
+	public String get_Your_Message_Section_Title_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "yourMessageSectionTitleRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Add Note Text
+	 * 
+	 */
+	
+	public String get_Add_Note_Text() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "addNoteText");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Add Note Text
+	 * 
+	 */
+	
+	public String get_Add_Note_Text_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "addNoteTextRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - CTA Label
+	 * 
+	 */
+	
+	public String get_CTA_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "ctaLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - CTA Label
+	 * 
+	 */
+	
+	public String get_CTA_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "ctaLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Success CTA Label
+	 * 
+	 */
+	
+	public String get_Success_CTA_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "successCTALabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Label Drop Down
+	 * 
+	 */
+	
+	public String get_Label_Drop_Down() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "labelDropDown");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Success CTA Label
+	 * 
+	 */
+	
+	public String get_ID_Drop_Down() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "idDropDown");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Success CTA Label
+	 * 
+	 */
+	
+	public String get_Success_CTA_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "successCTALabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Success CTA Path
+	 * 
+	 */
+	
+	public String get_Success_CTA_Path() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "successCTAPath");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Page - Success CTA Path
+	 * 
+	 */
+	
+	public String get_Success_CTA_Path_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "successCTAPathRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
 }

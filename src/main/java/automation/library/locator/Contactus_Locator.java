@@ -31,6 +31,26 @@ public class Contactus_Locator {
 	String contactFormSubmitConfirmationMessage = Property.getProperty(Constant.OR_FILE, "contactFormSubmitConfirmationMessage");
 	String continueShoppingButtonContact = Property.getProperty(Constant.OR_FILE, "continueShoppingButtonContact");
 	String candianTireLogoHomePage = Property.getProperty(Constant.OR_FILE, "candianTireLogoHomePage");
+	String contactUsPanelAEM = Property.getProperty(Constant.OR_FILE, "contactUsPanelAEM").replace("=", ",");
+	String additionalInfoMaxCountAEM = Property.getProperty(Constant.OR_FILE, "additionalInfoMaxCountAEM");
+	String maxCharAdditonalInfo = Property.getProperty(Constant.OR_FILE, "maxCharAdditonalInfo");
+	String yourMessageSectionTitleAEM = Property.getProperty(Constant.OR_FILE, "yourMessageSectionTitleAEM");
+	String yourMessageSectionTitle = Property.getProperty(Constant.OR_FILE, "yourMessageSectionTitle");
+	String addNoteTextField = Property.getProperty(Constant.OR_FILE, "addNoteTextField");
+	String addNoteText = Property.getProperty(Constant.OR_FILE, "addNoteText");
+	String ctaButtonLabelAEM = Property.getProperty(Constant.OR_FILE, "ctaButtonLabelAEM");
+	String successScreenTabContactAEM = Property.getProperty(Constant.OR_FILE, "successScreenTabContactAEM");
+	String successCTALabelAEM = Property.getProperty(Constant.OR_FILE, "successCTALabelAEM");
+	String mandatorySuccessLabelAEM = Property.getProperty(Constant.OR_FILE, "mandatorySuccessLabelAEM");
+	String successCTAPathAEM = Property.getProperty(Constant.OR_FILE, "successCTAPathAEM");
+	String successPathPabelAEM = Property.getProperty(Constant.OR_FILE, "successPathPabelAEM");
+	String taretTabSameDifferent = Property.getProperty(Constant.OR_FILE, "taretTabSameDifferent");
+	String formValidationMessageTab = Property.getProperty(Constant.OR_FILE, "formValidationMessageTab");
+	String configurationTab = Property.getProperty(Constant.OR_FILE, "configurationTab");
+	String addButtonDropDown = Property.getProperty(Constant.OR_FILE, "addButtonDropDown");
+	String dropDownLabelAEM = Property.getProperty(Constant.OR_FILE, "dropDownLabelAEM");
+	String idDropDownAEM = Property.getProperty(Constant.OR_FILE, "idDropDownAEM");
+	String removeButtonDropDownOption = Property.getProperty(Constant.OR_FILE, "removeButtonDropDownOption");
 	
 	/**
 	 * gets Locator - First Name
@@ -215,6 +235,147 @@ public class Contactus_Locator {
  	 */
  	public String get_Canadian_Tire_Logo() throws Exception {
  		return candianTireLogoHomePage;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Contact Us Panel
+ 	 */
+ 	public String get_Contact_Us_Panel_AEM() throws Exception {
+ 		return contactUsPanelAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Additional Max Count
+ 	 */
+ 	public String get_Additional_Info_Max_Count_AEM() throws Exception {
+ 		return additionalInfoMaxCountAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Max Char Additional Info
+ 	 */
+ 	public String get_Max_Char_Additional_Info() throws Exception {
+ 		return maxCharAdditonalInfo;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Your Message Section Title 
+ 	 */
+ 	public String get_Your_Message_Section_Title_AEM() throws Exception {
+ 		return yourMessageSectionTitleAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Your Message section Title
+ 	 */
+ 	
+ 	public String get_Your_Message_Section_Title() throws Exception {
+ 		return yourMessageSectionTitle;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Add Note Text
+ 	 */
+ 	public String get_Add_Note_Text_AEM() throws Exception {
+ 		return addNoteTextField;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Add Note Text
+ 	 */
+ 	public String get_Add_Note_Text() throws Exception {
+ 		return addNoteText;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - CTA Label
+ 	 */
+ 	public String get_CTA_Label_AEM() throws Exception {
+ 		return ctaButtonLabelAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Success Screen Tab
+ 	 */
+ 	public String get_Success_Screen_Tab() throws Exception {
+ 		return successScreenTabContactAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Success CTA Label
+ 	 */
+ 	public String get_Success_CTA_Label() throws Exception {
+ 		return successCTALabelAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Success Label (Mandatory) 
+ 	 */
+ 	public String get_Success_Label_Mandatory() throws Exception {
+ 		return mandatorySuccessLabelAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Success Path 
+ 	 */
+ 	public String get_Success_Path_AEM() throws Exception {
+ 		return successCTAPathAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Success Path Label
+ 	 */
+ 	public String get_Success_Path_Label() throws Exception {
+ 		return successPathPabelAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Target Tab (Same/Different)
+ 	 */
+ 	public String get_Target_Success_Open_Tab() throws Exception {
+ 		return taretTabSameDifferent;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Form Validation Message Tab
+ 	 */
+ 	public String get_Form_Validation_Message_Tab() throws Exception {
+ 		return formValidationMessageTab;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Configuration Tab
+ 	 */
+ 	public String get_Configuration_Tab() throws Exception {
+ 		return configurationTab;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Add Button
+ 	 */
+ 	public String get_Add_Button() throws Exception {
+ 		return addButtonDropDown;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Label Drop down
+ 	 */
+ 	public String get_Label_Drop_Down_AEM() throws Exception {
+ 		return dropDownLabelAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - ID Drop Down
+ 	 */
+ 	public String get_ID_Drop_Down_AEM() throws Exception {
+ 		return idDropDownAEM;
+ 	}
+ 	
+ 	/**
+ 	 * gets Locator - Remove Button (Drop Down Option)
+ 	 */
+ 	public String get_Remove_Button_Drop_Down_Option() throws Exception {
+ 		return removeButtonDropDownOption;
  	}
  }
 
