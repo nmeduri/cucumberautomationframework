@@ -17,8 +17,8 @@ Feature: OCCP-1028 Footer : Footer Copyright
 	Then editable clickable text view more is displayed
 	Then view less should not be displayed
 	
-	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2785, TC-2788 Verification of clicking of View More - Mobile
+	@RegressionTest @MobileView @TabletView @TC-2785
+	Scenario: TC-2785, TC-2788 Verification of clicking of View More - Mobile 
 	When pdp url is available
 	When pdp page is displayed for the product
 	And click on view more

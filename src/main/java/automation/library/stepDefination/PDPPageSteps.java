@@ -68,6 +68,11 @@ public class PDPPageSteps extends BaseClass {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Product_Page(FileReaderManager.getInstance().getDataReader().get_Product_Not_Feature());
 	}
 	
+	@Given("pdp url product is available")
+	public void pdp_ur_product_is_available() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Page(FileReaderManager.getInstance().getDataReader().get_Product_Not_Feature());
+	}
+	
 	@Given("pdp url for no service installation")
 	public void pdp_url_for_no_service_installaion() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Product_Page(FileReaderManager.getInstance().getDataReader().getProductCodeForNoServiceInstallation());

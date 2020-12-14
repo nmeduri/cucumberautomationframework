@@ -11,8 +11,9 @@ Feature: OCCP-1561 PLP Breadcrumb
     And breadcrumb is based on category hierarchy in Hybris
     And main root homepage is also displayed in the path
 
-    @RegressionTest @MobileView @TabletView
+    @RegressionTest @MobileView @TabletView @TC-121
     Scenario: TC-121 Verify the Breadcrumb display on PLP for mobile view
+    Given open browser
     When plp url is available
     When plp is displayed
     And scroll up to page

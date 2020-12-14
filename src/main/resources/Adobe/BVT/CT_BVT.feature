@@ -35,9 +35,10 @@ Feature: Health Check BVT
     Then plp page is visible in list view
     And product card displays the product card title
 
-   @RegressionTest @WebView @WideScreen @MobileView @TableView
+   @RegressionTest @WebView @WideScreen @MobileView @TableView @TC-320
 	Scenario: TC-320 Verify the features section is not available in Overview section of a PDP when the product doesn't have features available in product catalog
-	When pdp product url is available
+	#When pdp url is available
+	When pdp url product is available
 	And pdp page is displayed for the product
 	Then feature section is not available in overview section
 	

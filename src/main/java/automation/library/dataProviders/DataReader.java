@@ -944,6 +944,19 @@ public class DataReader {
 	}
 
 	/**
+	 * gets PDP Product Url
+	 * 
+	 */
+
+	public String getPDPUrlProduct() {
+		String url = Property.getProperty(Constant.DATA_FILE, "pdpUrlProduct");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("pdpProductUrl not specified in the data.properties file.");
+	}
+	
+	/**
 	 * gets PDP Product Url (FR)
 	 * 
 	 */

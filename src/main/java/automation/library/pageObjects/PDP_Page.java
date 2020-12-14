@@ -102,6 +102,11 @@ public class PDP_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductUrl() + sProductCode);
 	}
 	
+	/** This function navigate to PDP Product Page */
+	public void navigate_To_PDP_Page(String sProductCode) throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPUrlProduct() + sProductCode);
+	}
+	
 	/** This function navigate to PDP Product FR Page */
 	public void navigate_To_PDP_Product_FR_Page(String sProductCode) throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getDataReader().getPDPProductFRUrl() + sProductCode);
