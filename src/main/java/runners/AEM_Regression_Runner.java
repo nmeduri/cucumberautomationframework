@@ -15,10 +15,10 @@ public final class AEM_Regression_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 			
 
-			"classpath:Adobe/AEM/Regression/", 
+			"classpath:Adobe/AEM/Regression/OCCP_3214_Link_Existing_Triangle_Card_Error_Cases_Generic_Error.feature", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags",   "@AEM",
+			"--tags",   "@2641",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

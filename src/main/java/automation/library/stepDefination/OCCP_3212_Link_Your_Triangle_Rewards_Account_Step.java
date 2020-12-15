@@ -119,6 +119,12 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).click_Cancel_Button();
 	}
 	
+	
+	@And("verify user click on cancel button")
+	public void verify_user_click_on_cancel_button() throws Exception {
+		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).click_Cancel_Button_Error();
+	}
+	
 	@And("cancel button is displayed")
 	public void verify_cancel_button_is_displayed() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).display_Cancel_Button();
@@ -161,9 +167,21 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Email_Data());
 	}
 	
+	@When("enter email for OCCP 2803")
+	public void enter_email_detail1() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Email_Data1());
+	}
+	
 	@And("enter password data")
     public void user_enter_password() throws Exception {
    	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Password());
+    }
+	
+	@And("enter password for OCCP 2803")
+    public void user_enter_password2803() throws Exception {
+	 Thread.sleep(3000);	
+   	 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Password2803());
+   	 Thread.sleep(3000);
     }
 
 
@@ -177,5 +195,16 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 	public void user_enter_pending_loyalty_card_number() throws Exception {
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Pending_Card_Number();
 	}
+	
+	
+	
+	
+	@And("in mobile enter year of birth")
+	public void enter_year_of_birth_mobile() throws Exception {
+			Thread.sleep(2000);
+		 	testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterYearOfBirth2002InMobile();
+		 	//testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().enterYearOfBirth2002InMobile();
+	}
+	
 
 }

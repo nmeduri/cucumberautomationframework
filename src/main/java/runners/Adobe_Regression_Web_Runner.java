@@ -15,7 +15,7 @@ public final class Adobe_Regression_Web_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
 			
-			"classpath:Adobe/Regression/", 
+			"classpath:Adobe/Regression/OCCP_2803_Active_Ownership_Validation_Screen.feature", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@WebView",

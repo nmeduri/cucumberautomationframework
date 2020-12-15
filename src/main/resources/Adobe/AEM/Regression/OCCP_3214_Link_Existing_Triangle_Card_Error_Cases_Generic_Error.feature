@@ -41,10 +41,12 @@ Description: To test the ADOBE AEM Test Cases for the story OCCP-3214
 	And user click on continue button
 	Then the tryagain text changes should be reflected on ctc site
 	
-	@RegressionTest @AEM
+	@RegressionTest @AEM @2641
 	Scenario: TC-2641 Configure label for 'Cancel' CTA
+	Given open browser
 	When aem author with access navigates to link existing card screen
-	And click on edit button
+	And login to AEM using the right credentials as mentioned in the test data 
+	#And click on edit button
 	And click on aem link existing card title
 	And click on aem configure button
 	And click on link existing card error tab

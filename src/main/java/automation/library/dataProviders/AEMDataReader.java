@@ -529,6 +529,19 @@ public class AEMDataReader {
 			throw new RuntimeException("URL Data not specified in the Data file.");
 	}
 	/**
+	 * gets test Featured List Url
+	 * 
+	 */
+	
+	public String get_test_FL_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "testflUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+
+	/**
 	 * 
 	 * get Url - Feature List Author Page FR
 	 * 

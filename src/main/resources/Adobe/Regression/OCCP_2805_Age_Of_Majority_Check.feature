@@ -74,7 +74,7 @@ Feature: 	OCCP-2805 Account/Triangle ID - Link Rewards / Age of Majority Check
 	
 	@Regression @MobileView
 	Scenario: TC-2605 User's Birthday is Before Current Date mobile
-  Given login url is available
+    Given login url is available
 	When enter email id
 	And enter password data
 	And user click on sign in button

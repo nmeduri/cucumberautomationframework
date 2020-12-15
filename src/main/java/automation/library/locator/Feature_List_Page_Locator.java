@@ -12,6 +12,8 @@ public class Feature_List_Page_Locator {
 
 	 
 	 String learMoreLinkFLFirst = Property.getProperty(Constant.OR_FILE, "learMoreLinkFLFirst");
+	 
+	 String learMoreLinkFLThird = Property.getProperty(Constant.OR_FILE, "learMoreLinkFLThird");
 	 String featueListSubTitlePage = Property.getProperty(Constant.OR_FILE, "featueListSubTitlePage");
 	 String featuredListComponent = Property.getProperty(Constant.OR_FILE, "featuredListComponent").replace("=", ",");
 	 String featuredListProduct = Property.getProperty(Constant.OR_FILE, "featuredListProduct").replace("=", ",");
@@ -52,6 +54,15 @@ public class Feature_List_Page_Locator {
 	  */
 	 public String getLearnMoreLinkFirst() {
 		 return learMoreLinkFLFirst;
+	 }
+	 
+	 
+	 
+	 /**
+	  * get Locator - Learn More Link First
+	  */
+	 public String getLearnMoreLinkFL() {
+		 return learMoreLinkFLThird;
 	 }
 	 
 	 /**

@@ -45,8 +45,9 @@ Feature: OCCP-1824 Featured List: Informational Featured Lists with Icons (Autho
 	And user click on check button
 	Then user should see error authoring message as the mininum thershold
 	
-	@RegressionTest @TC-1811
+	@RegressionTest @1811
 	Scenario: TC-1811 Verify the entire FL card is clickable when only URL is authored without Learn More on WideScreen
+	Given open browser
 	Given navigate to feature list page
 	When click on learn more link
 	Then user should be redirected to defined destination on same tab
@@ -86,7 +87,12 @@ Feature: OCCP-1824 Featured List: Informational Featured Lists with Icons (Autho
 	And verify learn more CTA Text on the card is not displayed when field is not authored
 	
 	
-	
+	@RegressionTest @AEM 
+	Scenario: TC-1830 Verify the display of text instead of "Learn More" link on the FL card
+	Given open browser
+	When navigate to test feature list page to check learn more link
+	And click on learnmore FL
+	Then user should not be redirected to any new page and Learnmore is not clickable 
 
 	
 	

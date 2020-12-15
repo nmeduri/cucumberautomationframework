@@ -11,9 +11,12 @@ import automation.library.cucumber.Constant;
 public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	
 	String enterCardNumber = Property.getProperty(Constant.OR_FILE, "enterCardNumber");
+	
+	String enterYOB = Property.getProperty(Constant.OR_FILE, "enterYOB");
 	String continueButton = Property.getProperty(Constant.OR_FILE, "continueButton").replace("=", ",");
 	String tryAgainButton = Property.getProperty(Constant.OR_FILE, "tryAgainButton");
 	String cancelButtonExistingCard = Property.getProperty(Constant.OR_FILE, "cancelButtonExistingCard");
+	String cancelButtonErrorScreen = Property.getProperty(Constant.OR_FILE, "cancelButtonErrorScreen");
 	String deactivatedErrorMessage = Property.getProperty(Constant.OR_FILE, "deactivatedErrorMessage");
 	String closedCardErrorMessage = Property.getProperty(Constant.OR_FILE, "closedCardErrorMessage");
 	String nonExistingErrorMessage = Property.getProperty(Constant.OR_FILE, "nonexistingCardErrorMessage");
@@ -53,6 +56,17 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 		return enterCardNumber;
 	}
 	
+
+	
+	/**
+	 * gets Locator - Enter Card number
+	 * 
+	 */
+	
+	public String get_Year_Of_Birth() {
+		return enterYOB;
+	}
+	
 	/**
 	 * gets Locator - Continue button
 	 * 
@@ -78,6 +92,16 @@ public class Link_Your_Existing_Triangle_Rewards_Card_PageLocator {
 	
 	public String get_Cancel_Button() {
 		return cancelButtonExistingCard;
+	}
+	
+	
+	/**
+	 * gets Locator - Cancel button
+	 * 
+	 */
+	
+	public String get_Cancel_Button_error() {
+		return cancelButtonErrorScreen;
 	}
 	
 	/**

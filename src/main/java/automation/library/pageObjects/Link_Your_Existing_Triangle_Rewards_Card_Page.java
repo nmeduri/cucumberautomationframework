@@ -115,6 +115,14 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button()));
 	}
 	
+	
+	/** This function clicks on Cancel button error screen */
+	public void click_Cancel_Button_Error() throws Exception {
+		Thread.sleep(2000);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button_error()));
+		Thread.sleep(2000);
+	}
+	
 	/** This function is verify that click button is displayed */
 	public void displayClickButton() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button()));
@@ -185,6 +193,14 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Enter_Card_Number()), FileReaderManager.getInstance().getDataReader().get_Pending_Loyalty_Card_Number());
 	}
 	
+	
+	
+	/** This function enters pending loyalty card number */
+	public void enterYearOfBirth2002InMobile() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Year_Of_Birth()), FileReaderManager.getInstance().getDataReader().get_Year_Of_Birth_Mobile());
+	}
+	
+		
 	/** This function verify cancel link is displayed */
 	public void displayCancelLink() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Cancel_Button()));

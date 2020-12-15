@@ -254,6 +254,16 @@ public class DataReader {
 			throw new RuntimeException("Valid Email Data not specified in the Data file.");
 	}
 
+	
+	
+	public String get_Email_Data1() {
+		String email = Property.getProperty(Constant.DATA_FILE, "getEmailData1");
+		if (email != null)
+			return email;
+		else
+			throw new RuntimeException("Valid Email Data not specified in the Data file.");
+	}
+
 	/**
 	 * gets Login URL
 	 * 
@@ -549,7 +559,23 @@ public class DataReader {
 		else
 			throw new RuntimeException("Card Number not specified in the Data file.");
 	}
-
+	
+	
+	
+	/**
+	 * get year of birth
+	 * 
+	 */
+	
+	public String get_Year_Of_Birth_Mobile() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "yearOfBirthMobile");
+		if (cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Card Number not specified in the Data file.");
+	}
+	
+	
 	/**
 	 * gets closed card number
 	 * 
@@ -799,6 +825,21 @@ public class DataReader {
 
 	public String get_Password() {
 		String email = Property.getProperty(Constant.DATA_FILE, "getPasswordData");
+		if (email != null)
+			return email;
+		else
+			throw new RuntimeException("Valid Password Data not specified in the Data file.");
+	}
+	
+	
+	
+	/**
+	 * gets password
+	 * 
+	 */
+
+	public String get_Password2803() {
+		String email = Property.getProperty(Constant.DATA_FILE, "getPasswordData2803");
 		if (email != null)
 			return email;
 		else

@@ -74,6 +74,19 @@ public class Featured_List_Page extends PageObject {
 		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFirst())), 5);
 	}
 	
+	/** click on learn more */
+	public void clickLearnMoreLinkFL() throws Exception {
+		
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFL())), 5);
+	}
+	
+	
+	/** click on learn more */
+	public void verifyLearnMoreLinkNotClickable() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getFeatureListPageLocator().getLearnMoreLinkFL())), 5);
+	}
+	
+	
     /** verify learn more link is navigate on same tab  and defined destination url */
 	public void verifyLearnMoreLinkNavigateOnDefinedUrl() throws Exception {
 		String expectedUrl = PageObject.getDriver().getCurrentUrl();

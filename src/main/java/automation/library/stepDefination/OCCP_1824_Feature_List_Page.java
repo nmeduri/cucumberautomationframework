@@ -171,4 +171,20 @@ public class OCCP_1824_Feature_List_Page extends BaseClass {
 		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).titletextdisplayedWhenAuthored();
 	}
 	
+	@When("navigate to test feature list page to check learn more link")
+	public void User_should_navigate_to_test_feature_list_page() throws Exception {
+		testContext.getPageObjectManager().getAEMFeatureListPage(PageObject.getDriver()).navigateTo_test_Feature_List_Page();
+	}
+	
+	@And("click on learnmore FL")
+	public void click_on_learnmore_FL() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).clickLearnMoreLinkFL();
+		
+	}
+	
+	@Then("user should not be redirected to any new page and Learnmore is not clickable")
+	public void user_should_not_be_redirected_to_defined_destination() throws Exception {
+		testContext.getPageObjectManager().getFeatureListPage(PageObject.getDriver()).verifyLearnMoreLinkNotClickable();
+	}
+	
 }

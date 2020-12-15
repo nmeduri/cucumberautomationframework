@@ -59,6 +59,13 @@ public class AEM_Featured_List_Page extends PageObject {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Feature_List_Author_Page());
 
 	}
+	
+	/** This function navigate to test Feature List Page Page */
+	public void navigateTo_test_Feature_List_Page() throws Exception {
+
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_test_FL_Url());
+
+	}
 
 	/** This function navigate to Feature List Author Page Page FR */
 	public void navigateTo_Feature_List_Author_Page_FR1() throws Exception {
