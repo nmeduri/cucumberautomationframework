@@ -595,4 +595,77 @@ public class HYB_Authorization_EndPoint {
 		response = request.get(url+guid+ "?fields=DEFAULT");
 		return response;
 	}
+	public Response post_HYB_AddToCart_AnonymousUserAPI_STH_With_POS(String url, String guid, String product1) {
+		String bodyvalue="{\n" + 
+				"    \"orderEntries\": [\n" + 
+				"        \n" + 
+				"        {\n" + 
+				"            \"product\": {\n" + 
+				"                \"code\": \"" +product1 +""+ "\"\n" + 
+				"            },\n" + 
+				"            \"deliveryMode\": {\n" + 
+				"                \"code\": \"STH\"\n" + 
+				"            },\n" + 
+				"            \"quantity\": 1,\n" + 
+				"            \"storeZoneIds\": {\n" + 
+				"                \"parcelZoneId\": \"ON_BS_PCL\",\n" + 
+				"                \"bulkZoneId\": \"AB1_BS_BLK\",\n" + 
+				"                \"storeDistance\": 13\n" + 
+				"            },\n" + 
+				"            \"deliveryPointOfService\": {\n" + 
+				"                \"name\": \"363\"\n" + 
+				"            }\n" + 
+				"        }\n" + 
+				"    ]\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " );
+		Log.message("Add to Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Add to Cart API:- " + url  + guid +"/entries?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + guid+ "/entries?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response patch_HYB_UpdateCart_AnonymousUserAPI_STH_With_POS(String url, String guid, String product1) {
+		String bodyvalue="{\n" + 
+				"    \"storeZoneIds\": {\n" + 
+				"        \"parcelZoneId\": \"QC_BS_PCL\",\n" + 
+				"        \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
+				"        \"storeDistance\": 13\n" + 
+				"    },\n" + 
+				"    \"quantity\": 1,\n" + 
+				"    \"deliveryMode\": {\n" + 
+				"        \"code\": \"STH\"\n" + 
+				"    },\n" + 
+				"    \"product\": {\n" + 
+				"        \"code\": \"" +product1 +""+ "\"\n" + 
+				"    },\n" + 
+				"    \"deliveryPointOfService\": {\n" + 
+				"        \"name\": \"363\"\n" + 
+				"    }\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " );
+		Log.message("Update Cart Bodyvalue :"+ bodyvalue, true);
+		Log.message("Update Cart API:- " + url  + guid +"/entries/0?fields=FULL&baseStoreId=ctr", true);
+		response = request.patch(url + guid+ "/entries/0?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response post_Update_Cart_API_AnonymousUser_CurbSide_Delivery_Option(String url,String guid) {
+		Log.message("Update Cart API AnonymousUser :- " + url+ guid+"?fields=FULL",  true);
+		response = request.post(url+guid+ "/deliveryOption/CurbSide");
+		return response;
+	}
+	public Response post_Update_Cart_API_AnonymousUser_IN_HOME_DELIVERY_Option(String url,String guid) {
+		Log.message("Update Cart API AnonymousUser :- " + url+ guid+"?fields=FULL",  true);
+		response = request.post(url+guid+ "/deliveryOption/IN_HOME_DELIVERY");
+		return response;
+	}
+	public Response post_Update_Cart_API_AnonymousUser_IN_HOME_DELIVERY_PACKAGING_REMOVAL_Option(String url,String guid) {
+		Log.message("Update Cart API AnonymousUser :- " + url+ guid+"?fields=FULL",  true);
+		response = request.post(url+guid+ "/deliveryOption/IN_HOME_DELIVERY_PACKAGING_REMOVAL");
+		return response;
+	}
+	
 }

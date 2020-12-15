@@ -99,4 +99,13 @@ public class HYB_API_EN_End_Point {
 		response = request.post(url + "363?fields=FULL&baseStoreId=CTR&lang=en");
 		return response;	
 	}
+	public Response getAPI_EN_Without_BaseStoreId(String url, String sProductCode) {
+
+		Log.message("url:- " + url + "/products/" +  sProductCode + "/363?fields=FULL&lang=en", true);
+		response = RestAssured.given().get(url + "/products/" +  sProductCode + "/363?fields=FULL&lang=en");
+
+		Log.message("Response:- " + response.getBody().asString(), true);
+		return response;
+
+	}
 }

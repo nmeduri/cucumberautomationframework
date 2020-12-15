@@ -14,9 +14,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 
 
-			"classpath:Adobe/AEM/Regression/OCCP_3908_Cart_Inventory_Availability_I&A.feature",
+			"classpath:SAP/Regression/OCCP_960_Tires_PDP_Road_Rating_For_Tires.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@WebView",
+			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

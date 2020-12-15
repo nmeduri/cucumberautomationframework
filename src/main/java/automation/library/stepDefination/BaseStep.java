@@ -43,6 +43,7 @@ public class BaseStep {
 	private HYB_Authorization_EndPoint authorizationAPI;
 	private HYB_API_AddToCart_End_Point addToCartAPI;
 	public static String code;
+	public static String deliverycost;
 
 	
 	/** return instance of CTBVT Endpoint */
