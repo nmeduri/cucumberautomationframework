@@ -1909,6 +1909,21 @@ public class DataReader {
 			else
 				throw new RuntimeException("Product Code not specified in the Data file.");
 		}
+		
+		
+		
+		 /**
+		 * gets New Arrival badge (Product)
+		 * 
+		 */
+		public String get_Product_New_Arrival_Badges() {
+
+			String data = Property.getProperty(Constant.DATA_FILE, "newArrivalBadgeProduct");
+			if (data != null)
+				return data;
+			else
+				throw new RuntimeException("Product Code not specified in the Data file.");
+		}
 		 
 		 /**
 			 * gets Perfect Gift Badge (Product)

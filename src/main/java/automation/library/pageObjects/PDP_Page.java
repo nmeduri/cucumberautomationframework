@@ -1242,6 +1242,12 @@ public class PDP_Page extends PageObject {
 			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Only_Online_Badges()));
 		}
 		
+			
+		/** badges 'New Arrival' is displayed */
+		public void displayNewArrivalBadges() throws Exception {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_New_Arrival_Badge()));
+		}
+		
 		/** badges 'Perfect Gift' is displayed */
 		public void displayPerfictGiftBadges() throws Exception {
 			$display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Perfect_Gift_Badge()));
@@ -1257,6 +1263,12 @@ public class PDP_Page extends PageObject {
 		   }
 		   
 		/** verify online badge is displayed in yellow color */
+		   public void verifyNABadgeInYellowColor() throws Exception {
+			   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_New_Arrival_Badge()), "background-color"); 
+			   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#fff6c9", colorValue);
+		   }
+		   
+		   /** verify new arrival  badge is displayed in yellow color */
 		   public void verifyOnlineBadgeInYellowColor() throws Exception {
 			   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Only_Online_Badges()), "background-color"); 
 			   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#fff6c9", colorValue);

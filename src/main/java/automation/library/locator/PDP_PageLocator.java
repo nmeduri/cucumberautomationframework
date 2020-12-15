@@ -161,6 +161,8 @@ public class PDP_PageLocator {
 
 	String exclusiveBadge=Property.getProperty(Constant.OR_FILE, "exclusiveBadge");
 	String onlyOnlineBadges = Property.getProperty(Constant.OR_FILE, "onlyOnlineBadges"); 
+	String newArrivalBadges = Property.getProperty(Constant.OR_FILE, "newArrivalBadges");
+	
 	
 	String variantProductPDP = Property.getProperty(Constant.OR_FILE, "variantProductPDP").replace("=", ",");
 	String numberOfRatingStars = Property.getProperty(Constant.OR_FILE, "numberOfRatingStars");
@@ -1367,6 +1369,14 @@ public class PDP_PageLocator {
 	 */
 	public String get_Only_Online_Badges() {
 		return onlyOnlineBadges;
+	}
+	
+	
+	/**
+	 * gets Locator - Only Online (Badges)
+	 */
+	public String get_New_Arrival_Badge() {
+		return newArrivalBadges;
 	}
 	
 	/**

@@ -37,10 +37,13 @@ public class OCCP_1656_OCCP_1656_PDP_Product_Badge_Online_Badge_Steps extends Ba
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Product_Page(FileReaderManager.getInstance().getDataReader().get_Product_Online_Badges());
 	}
 	
-	@Then("the online badge is displayed at product family level")
+		@Then("the online badge is displayed at product family level")
 	public void the_online_badge_is_displayed_at_product_family_level() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayOnlyOnlineBadges();
 	}
+	
+	
+	
 	
 	@Then("verify the online only badge is displayed for all variants")
 	public void verify_the_online_only_badge_is_displayed_for_all_variants() throws Exception {
@@ -51,6 +54,8 @@ public class OCCP_1656_OCCP_1656_PDP_Product_Badge_Online_Badge_Steps extends Ba
 	public void online_badge_is_displayed_in_yellow_color() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyOnlineBadgeInYellowColor();
 	}
+	
+	
 	
 	@Given("pdp perfect gift badge product url is available")
 	public void pdp_perfect_gift_product_url_is_available() throws Exception {
@@ -66,5 +71,22 @@ public class OCCP_1656_OCCP_1656_PDP_Product_Badge_Online_Badge_Steps extends Ba
 	public void perfect_gift_badge_is_displayed_in_blue_color() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyPerfectGiftBadgeInBLueColor();
 	}
+	
+	
+	@When("pdp new arrival badge product url is available")
+	public void pdp_new_arrival_badge_product_url_is_available() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Product_Page(FileReaderManager.getInstance().getDataReader().get_Product_New_Arrival_Badges());
+	}
+	
+	@Then("new arrival badge is displayed under availability category")
+	public void new_arrival_badge_is_displayed_under_availability_category() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayNewArrivalBadges();
+	}
+	
+	@Then("new arrival badge is displayed in yellow color")
+	public void new_arrival_badge_is_displayed_in_yellow_color() throws Exception {
+		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyNABadgeInYellowColor();
+	}
+
 	
 }
