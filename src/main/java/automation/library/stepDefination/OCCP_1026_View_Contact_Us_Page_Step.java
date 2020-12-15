@@ -150,6 +150,21 @@ public class OCCP_1026_View_Contact_Us_Page_Step extends BaseClass {
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyNavigateOnCanadianTireSiteInSameTab();
 	}
 	
+	@And("access contact us title property and configure the title text")
+	public void author_contact_us_title() throws Exception {
+		testContext.getPageObjectManager().getAEMContactUsPage(PageObject.getDriver()).enterDataContactUsTitle();
+	}
+	
+	@And("click on contact us page title component")
+	public void click_on_contact_us_page_title_component() throws Exception {
+		testContext.getPageObjectManager().getAEMContactUsPage(PageObject.getDriver()).clickOnContactUsTitleComponent();
+	}
+	
+	@Then("verify the contact us title changes are reflected on ctc site")
+	public void contact_usTitle_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMContactUsPage(PageObject.getDriver()).verifyContactUsTitleChangesReflected();
+	}
+
 	@When("click on contact us panel")
 	public void click_on_contact_us_panel() throws Exception {
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).clickContactUsPanel();

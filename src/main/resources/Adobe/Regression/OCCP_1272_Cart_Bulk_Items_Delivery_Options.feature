@@ -44,6 +44,3 @@ Description: To test the ADOBE Test Cases for the story OCCP-1272
   Then verify the in-home and unpack delivery tooltip information is displayed
   Then click on tooltip close button
   Then verify the tool tip information is not displayed
-  
-
-  

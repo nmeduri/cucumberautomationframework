@@ -79,5 +79,46 @@ public class OCCP_870_PDP_Product_Information extends BaseClass {
 		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).reverse_user_manual_changes();
 	}
 	
+	@When("AEM author with access navigates to pdp page")
+	public void aem_author_navigate_to_pdp() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).navigateToPDPPage();
+	}
+	
+	@And("^access the resources heading property and configure the heading$")
+	public void author_resource_heading() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).enterDataResourcesLabel();
+	}
+	
+	@And("^access the returns text property and configure the label$")
+	public void author_returns_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).clickOnProductMerchandiseTab();
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).enterDataReturnsLabel();
+	}
+	
+	@And("^access the return policy description text property and configure the text$")
+	public void author_return_policy_description() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).enterDataReturnPolicyDescription();
+	}
+	
+	@And("^access the return policy link property and configure the label$")
+	public void author_return_policy_link_label() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).enterDataReturnPolicyLinkLabel();
+	}
+	
+	@And("^access the return policy link property and configure the hyperlink in new tab$")
+	public void author_return_policy_link_path() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).enterDataReturnPolicyLinkPath();
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).selectNewTab();
+	}
+	
+	@Then("^the resources component changes should be reflected on ctc site$")
+	public void resources_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).verifyResourcesComponentChangesReflected();
+	}
+	@Then("^verify if page opened in new tab when clicked on return policy link$")
+	public void page_open_in_new_tab() throws Exception {
+		testContext.getPageObjectManager().getAEMPDPPage(PageObject.getDriver()).verifyPageOpenInNewTab();
+	}
+
  
 }

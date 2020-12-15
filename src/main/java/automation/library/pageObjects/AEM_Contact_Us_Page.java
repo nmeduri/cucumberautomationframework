@@ -130,4 +130,20 @@ public class AEM_Contact_Us_Page extends PageObject{
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().getDirectionCTALabel()), FileReaderManager.getInstance().getAEMDataReader().get_Revert_Direction_label_Data());
 	}
 	
+	/** this function clicks on contact us title component*/
+	public void clickOnContactUsTitleComponent() throws Exception{
+		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().get_ContactUs_Page_Title_Component())),40);
+	}
+	
+	/** this function enter data Direction Label*/
+	public void enterDataContactUsTitle() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().get_ContactUs_Title_Field())),40);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().get_ContactUs_Title_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().get_ContactUs_Title_Field()), FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_Title_Data());
+	}
+	
+	/** this function veriify if title changes are reflected*/
+	public void verifyContactUsTitleChangesReflected() throws Exception{
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getAEMContactUsPageLocator().get_ContactUs_Preview())), FileReaderManager.getInstance().getAEMDataReader().get_Contact_Us_Title_Data());
+	}
 }

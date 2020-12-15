@@ -35,7 +35,22 @@ Feature: OCCP-870 PDP Product Information
 	And reverse user manual changes
 	And user click on done button
 	
-	
+	@Regression @AEM @TC114
+	Scenario: TC-114 Verify user is able is able to author resources component on product information
+	Given open browser
+	When AEM author with access navigates to pdp page
+	And login to AEM using the credential as mentioned in the test data
+	And click on resource section
+	And click on aem configure button
+	And access the resources heading property and configure the heading
+	And access the returns text property and configure the label
+	And access the return policy description text property and configure the text
+	And access the return policy link property and configure the label
+	And access the return policy link property and configure the hyperlink in new tab
+	And user click on done button
+	And click on the preview button
+	Then the resources component changes should be reflected on ctc site
+	And verify if page opened in new tab when clicked on return policy link
 	
 	
 	

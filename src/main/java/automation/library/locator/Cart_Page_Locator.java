@@ -94,6 +94,13 @@ public class Cart_Page_Locator {
 	String postalCodeInvalidErrorToastMessage=Property.getProperty(Constant.OR_FILE, "postalCodeInvalidErrorToastMessage");
 	String invalidInlineErrorMessage=Property.getProperty(Constant.OR_FILE, "invalidInlineErrorMessage");
 	String outOfRangeInlineErrorMessage=Property.getProperty(Constant.OR_FILE, "outOfRangeInlineErrorMessage");
+	String deliveryOptionsLabelText=Property.getProperty(Constant.OR_FILE, "deliveryOptionsLabelText");
+	String recommendationCategoryBadge=Property.getProperty(Constant.OR_FILE, "recommendationCategoryBadge");
+	String availabilityCategoryBadge=Property.getProperty(Constant.OR_FILE, "availabilityCategoryBadge");
+	String pricingAndPromoCategoryBadge=Property.getProperty(Constant.OR_FILE, "pricingAndPromoCategoryBadge");
+	String maxBadges=Property.getProperty(Constant.OR_FILE, "maxBadges");
+	String badgesBelowPrice=Property.getProperty(Constant.OR_FILE, "badgesBelowPrice");
+	String uniqueCategoryBadge=Property.getProperty(Constant.OR_FILE, "uniqueCategoryBadge");
 	String shoppingCartZero = Property.getProperty(Constant.OR_FILE, "shoppingCartZero");
 	String emptyCartMessage = Property.getProperty(Constant.OR_FILE, "emptyCartMessage");
     String signInCartButotn = Property.getProperty(Constant.OR_FILE, "signInCartButotn");
@@ -705,6 +712,62 @@ public class Cart_Page_Locator {
 			return outOfRangeInlineErrorMessage;
 		}
 		
+		/**
+		 * gets Locator - Delivery Options Label Text
+		 * 
+		 */
+		public String get_Delivery_Options_Label_Text() {
+			return deliveryOptionsLabelText;
+		}
+		
+		/**
+		 * gets Locator - Recommendation Category Badge
+		 * 
+		 */
+		public String get_Recommendation_Category_Badge() {
+			return recommendationCategoryBadge;
+		}
+		
+		/**
+		 * gets Locator - Availability Category Badge
+		 * 
+		 */
+		public String get_Availability_Category_Badge() {
+			return availabilityCategoryBadge;
+		}
+		
+		/**
+		 * gets Locator - Pricing And Promo Category Badge
+		 * 
+		 */
+		public String get_Pricing_And_Promo_Category_Badge() {
+			return pricingAndPromoCategoryBadge;
+		}
+		
+		/**
+		 * gets Locator - Max badges
+		 * 
+		 */
+		public String get_Maximun_Badges_Displayed() {
+			return maxBadges;
+		}
+		
+		/**
+		 * gets Locator - Badges Below Price
+		 * 
+		 */
+		public String get_Badges_Below_Price() {
+			return badgesBelowPrice;
+		}
+		
+		/**
+		 * gets Locator - Uniqe Category Badge
+		 * 
+		 */
+		public String get_Unique_Category_Badge() {
+			return uniqueCategoryBadge;
+		}
+
 		/**
 		 * gets Locator - Shopping Cart Zero
 		 */

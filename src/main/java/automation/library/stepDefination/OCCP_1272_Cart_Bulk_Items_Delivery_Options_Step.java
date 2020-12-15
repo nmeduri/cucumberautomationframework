@@ -98,5 +98,15 @@ public class OCCP_1272_Cart_Bulk_Items_Delivery_Options_Step extends BaseClass{
 	public void display_bulkMessage_text() throws Exception {
 		testContext.getPageObjectManager().getCartPageLocator().get_BulkMessage();
 	}
+	
+	@And ("access all the delivery options label properties and configure the label text")
+	public void aathor_delivery_options_label_text() throws Exception {
+		testContext.getPageObjectManager().getAEMCartPage(PageObject.getDriver()).enterDataDeliveryOptionsLabelText();
+	}
+	
+	@Then ("verify delivery options label changes are reflected on the ctc site")
+	public void delivery_options_label_changes_reflected() throws Exception {
+		testContext.getPageObjectManager().getAEMCartPage(PageObject.getDriver()).verifyDeliveryLabelChangesReflected();
+	}
 
 }

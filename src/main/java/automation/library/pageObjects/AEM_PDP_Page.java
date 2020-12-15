@@ -392,4 +392,75 @@ public class AEM_PDP_Page extends PageObject {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyMobile()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getAddToCartButtonStickyMobile()), FileReaderManager.getInstance().getAEMDataReader().getAdd_To_Cart_Mobile_Label_Change());
 	}
+	
+	/** This function navigate to PDP Page */
+	public void navigateToPDPPage() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_Automation_PDP_Url());
+	}
+	
+	/** enter data Resources Label */
+	public void enterDataResourcesLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Resources_Heading_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Resources_Heading_Field()), FileReaderManager.getInstance().getAEMDataReader().get_Resources_Section_Label_Data());
+	}
+	
+	/** enter data  Returns Label */
+	public void enterDataReturnsLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Returns_Title_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Returns_Title_Field()), FileReaderManager.getInstance().getAEMDataReader().get_Returns_Title_Data());
+	}
+	
+	/** enter data Return policy description */
+	public void enterDataReturnPolicyDescription() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Return_Policy_Description_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Return_Policy_Description_Field()), FileReaderManager.getInstance().getAEMDataReader().get_Return_Policy_Description_Data());
+	}
+	
+	/** enter data  Return policy link Label */
+	public void enterDataReturnPolicyLinkLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Return_Policy_Link_Label_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Return_Policy_Link_Label_Field()), FileReaderManager.getInstance().getAEMDataReader().get_Return_Policy_Link_Label_Data());
+	}
+	
+	/** enter data  Return policy link path */
+	public void enterDataReturnPolicyLinkPath() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Return_Policy_Link_Path()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Return_Policy_Link_Path()), FileReaderManager.getInstance().getAEMDataReader().get_Return_Policy_Link_Path_Data());
+		Thread.sleep(2000);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Return_Policy_Link_Label_Field())), 10);
+	}
+	
+	/** select New Tab */
+	public void selectNewTab() throws Exception {
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_link_Open_In())), 10);
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_New_Tab())), 10);
+	}
+	
+	/** select Changes Reflected */
+	public void verifyResourcesComponentChangesReflected() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown($By(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_AEM_Resource_Preview()), 10);
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Resources_Section_Label_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Resources_Heading())));
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Returns_Title_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Return_Policty_Under_Resource())));
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Return_Policy_Description_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Return_Policy_Description())));
+		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Return_Policy_Link_Label_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Return_Policy_Link())));
+	}
+	
+	/** verify page open in new tab */
+	public void verifyPageOpenInNewTab() throws Exception {
+		String parentWindow = driver.getWindowHandle();
+		$click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Return_Policy_Link())), 10);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).switchOnChildWindow();
+		String actual = PageObject.getDriver().getCurrentUrl();
+		String expected = FileReaderManager.getInstance().getAEMDataReader().get_Return_Policy_Link_Path_Data();
+		System.out.println(expected);
+		System.out.println(actual);
+		Assert.assertEquals(expected, actual);
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).closeTheChildWindow();
+		PageObject.getDriver().switchTo().window(parentWindow);
+	}
+	
+	/** verify page open in new tab */
+	public void clickOnProductMerchandiseTab() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Product_Merchandise_Tab()));
+	}
 }

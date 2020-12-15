@@ -54,7 +54,10 @@ public class AEM_Cart_Page_Locator {
 	String getPostalTab = Property.getProperty(Constant.OR_FILE, "getPostalTab");
 	String successToastMessageAEM = Property.getProperty(Constant.OR_FILE, "successToastMessageAEM");
 	String errorToastMessageAEM = Property.getProperty(Constant.OR_FILE, "errorToastMessageAEM");
-
+	String standardDeliveryFieldAEM = Property.getProperty(Constant.OR_FILE, "standardDeliveryFieldAEM");
+	String inHomeDeliveryFieldAEM = Property.getProperty(Constant.OR_FILE, "inHomeDeliveryFieldAEM");
+	String inHomeDeliveryAndUnpack = Property.getProperty(Constant.OR_FILE, "inHomeDeliveryAndUnpack");
+	
 	/**
 	 * gets Locator - AEM Item Added To wishlist label field
 	 * 
@@ -420,6 +423,33 @@ public class AEM_Cart_Page_Locator {
 
 	public String get_Error_Toast_Message_AEM() {
 		return errorToastMessageAEM;
+	}
+
+	/**
+	 * gets Locator - Standard Delivery Field AEM
+	 * 
+	 */
+
+	public String get_Standard_Delivery_Field_AEM() {
+		return standardDeliveryFieldAEM;
+	}
+	
+	/**
+	 * gets Locator - InHome Delivery Field AEM
+	 * 
+	 */
+
+	public String get_InHome_Delivery_Field_AEM() {
+		return inHomeDeliveryFieldAEM;
+	}
+
+	/**
+	 * gets Locator - In Home Delivery And Unpack
+	 * 
+	 */
+
+	public String get_InHome_Delivery_And_Unpack() {
+		return inHomeDeliveryAndUnpack;
 	}
 
 }

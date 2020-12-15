@@ -16,10 +16,10 @@ public final class Adobe_Regression_Wide_Screen_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 
 
-			"classpath:Adobe/Regression/OCCP_2803_Active_Ownership_Validation_Screen.feature",
+			"classpath:Adobe/Regression/",
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags", "@2523",
+			"--tags", "@WideScreen", 
 			"--plugin", "json:cucumber.json",
 			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
 			"--plugin", "html:target/selenium-reports",

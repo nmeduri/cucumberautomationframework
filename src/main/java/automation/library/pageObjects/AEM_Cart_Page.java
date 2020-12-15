@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
@@ -437,5 +438,26 @@ public void updateExceededMessageToastNotification () throws Exception {
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Error_Toast_Message_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Invalid_Error_Toast_Message())));
 	}
 
-
+	/** This function updates close label text */
+	public void enterDataDeliveryOptionsLabelText() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Standard_Delivery_Field_AEM())), 20);
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_Standard_Delivery_Field_AEM())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_Standard_Delivery_Field_AEM())),5, FileReaderManager.getInstance().getAEMDataReader().get_Standard_Delivery_Label_Data());
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_InHome_Delivery_Field_AEM())), 20);
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_InHome_Delivery_Field_AEM())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_InHome_Delivery_Field_AEM())),5, FileReaderManager.getInstance().getAEMDataReader().get_InHome_Delivery_Label_Data());
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_InHome_Delivery_And_Unpack())), 20);
+		$clearData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_InHome_Delivery_And_Unpack())), 5);
+		$enterData(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getAEMCartPageLocator().get_InHome_Delivery_And_Unpack())),5, FileReaderManager.getInstance().getAEMDataReader().get_InHome_Delivery_And_Unpack_Label_Data());
+	}
+	
+	/** verify delivery options text changes reflected */
+	public void verifyDeliveryLabelChangesReflected () throws Exception {
+		List<WebElement> delOptions = PageObject.getDriver().findElements(By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_Delivery_Options_Label_Text()));
+		int size = delOptions.size();
+		Log.message("size:-" +size, true);
+		Assert.assertTrue(delOptions.get(0).getText().contains(FileReaderManager.getInstance().getAEMDataReader().get_Standard_Delivery_Label_Without_Price()));
+		Assert.assertTrue(delOptions.get(1).getText().contains(FileReaderManager.getInstance().getAEMDataReader().get_InHome_Delivery_Label_Withot_Price()));
+		Assert.assertTrue(delOptions.get(2).getText().contains(FileReaderManager.getInstance().getAEMDataReader().get_InHome_Delivery_And_Unpack_Label_Without_Price()));
+	}
 }

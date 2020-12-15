@@ -2,6 +2,8 @@ package automation.library.pageObjects;
 
 import static org.testng.Assert.fail;
 
+import java.util.List;
+
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -9,12 +11,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
 import automation.library.enums.Locator.Loc;
 import automation.library.logdetail.Log;
 import automation.library.managers.FileReaderManager;
+import automation.library.selenium.core.Element;
 import automation.library.selenium.core.PageObject;
 
 /**
@@ -461,6 +465,89 @@ public class Cart_Page extends PageObject{
 	/** This function verifys display of success toast message  */
 	public void displayInlineError() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_OutOfRange_Inline_Error_Message())), 15);
+	}
+	
+	/** This function verifys display of recommendation badge  */
+	public void displayRecommendationBadge() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Recommendation_Category_Badge())), 15);
+	}
+	
+	/** This function display Blue Background */
+	public void verifyRecommendationBadgeBackgroundColor() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Recommendation_Category_Badge()), "background-color");
+		Assert.assertTrue(value.contains(FileReaderManager.getInstance().getDataReader().get_Recommendation_Badge_Color()));
+	}
+	
+	/** This function verifys display of Availability badge  */
+	public void displayAvailabilityBadge() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Recommendation_Category_Badge())), 15);
+	}
+	
+	/** This function display Yellow Background */
+	public void verifyAvailabilityBadgeBackgroundColor() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Availability_Category_Badge()), "background-color");
+		Assert.assertTrue(value.contains(FileReaderManager.getInstance().getDataReader().get_Availability_Badge_Color()));
+	}
+	
+	/** This function verifys display of Availability badge  */
+	public void displayUniqueBadge() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Unique_Category_Badge())), 15);
+	}
+	
+	/** This function display Yellow Background */
+	public void verifyUniqueBadgeBackgroundColor() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Unique_Category_Badge()), "background-color");
+		Assert.assertTrue(value.contains(FileReaderManager.getInstance().getDataReader().get_Unique_Badge_Color()));
+	}
+	
+	/** This function display White border */
+	public void verifyUniqueBadgeBorderColor() throws Exception {
+		String bottomBorder = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Unique_Category_Badge()), "border-bottom-color");
+		String leftBorder = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Unique_Category_Badge()), "border-left-color");
+		String rightBorder = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Unique_Category_Badge()), "border-right-color");
+		String topBorder = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Unique_Category_Badge()), "border-top-color");
+		Assert.assertTrue(bottomBorder.contains(FileReaderManager.getInstance().getDataReader().get_Unique_Badge_Border_Color()));
+		Assert.assertTrue(leftBorder.contains(FileReaderManager.getInstance().getDataReader().get_Unique_Badge_Border_Color()));
+		Assert.assertTrue(rightBorder.contains(FileReaderManager.getInstance().getDataReader().get_Unique_Badge_Border_Color()));
+		Assert.assertTrue(topBorder.contains(FileReaderManager.getInstance().getDataReader().get_Unique_Badge_Border_Color()));
+	}
+	
+	/** This function verifys display of Availability badge  */
+	public void displayPricingAndPromoBadge() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Pricing_And_Promo_Category_Badge())), 15);
+	}
+	
+	/** This function display Red Background */
+	public void verifyPricingAndPromoBadgeBackgroundColor() throws Exception {
+		String value = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Pricing_And_Promo_Category_Badge()), "background-color");
+		Assert.assertTrue(value.contains(FileReaderManager.getInstance().getDataReader().get_Pricing_And_Promo_Badge_Color()));
+	}
+	
+	/** This function verifys maximum badges displayed  */
+	public void verifyMaximumBadgesDisplayed() throws Exception {
+		List<Element> maxBadges = $$(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Maximun_Badges_Displayed());
+		Log.message("Size:- " + maxBadges.size(), true);
+		Assert.assertTrue(maxBadges.size() <= 2);
+	}
+	
+	/** This function is verify that badge is not clickable */
+	public void badgesNotClickable() throws Exception {
+       try {
+    	   $click(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Pricing_And_Promo_Category_Badge())),10);
+       }catch(Exception e) {
+    	   fail();
+       }
+	}
+	
+	/** This function verifys display of badges below price  */
+	public void displayBadgesBelowPrice() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Badges_Below_Price())), 15);
+	}
+	
+	/** This function verifys display of badges below price  */
+	public void displayBadges() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Availability_Category_Badge())), 15);
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Unique_Category_Badge())), 15);
 	}
 	
 	/** This function verify that shopping cart is zero */

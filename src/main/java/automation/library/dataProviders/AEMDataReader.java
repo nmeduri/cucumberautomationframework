@@ -2403,7 +2403,6 @@ public class AEMDataReader {
 	
 	/**
 	 * 
-<<<<<<< HEAD
 	 * get Data - Our Brands
 	 * 
 	 */
@@ -6114,6 +6113,175 @@ public class AEMDataReader {
 	}
 	
 	/**
+	 * gets pdp url
+	 * 
+	 */
+	
+	public String get_Automation_PDP_Url() {
+		String getUrl = Property.getProperty(Constant.AEM_DATA_FILE, "automationPDPUrl");
+		if(getUrl != null)
+			return getUrl;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Resource section Label
+	 * 
+	 */
+	
+	public String get_Resources_Section_Label_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "resourcesSectionLabel");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Returns Title
+	 * 
+	 */
+	
+	public String get_Returns_Title_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "returnsTitle");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Return Policy Description
+	 * 
+	 */
+	
+	public String get_Return_Policy_Description_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "returnPolicyDescriptionText");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Return Policy link label
+	 * 
+	 */
+	
+	public String get_Return_Policy_Link_Label_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "returnPolicyLinkLabel");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Return Policy link path
+	 * 
+	 */
+	
+	public String get_Return_Policy_Link_Path_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "returnPolicyLinkPath");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Us Title Data
+	 * 
+	 */
+	
+	public String get_Contact_Us_Title_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "contactUsPageTitle");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Standard Delivery Label Data
+	 * 
+	 */
+	
+	public String get_Standard_Delivery_Label_Data(){
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "standardDeliveryLabel");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets In Home Delivery Label Data
+	 * 
+	 */
+	
+	public String get_InHome_Delivery_Label_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "InHomeDeliveryLabel");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets In Home Delivery Label Data
+	 * 
+	 */
+	
+	public String get_InHome_Delivery_And_Unpack_Label_Data() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "InHomeDeliveryAndUnpackLabel");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets In Home Delivery Label Data
+	 * 
+	 */
+	
+	public String get_InHome_Delivery_Label_Withot_Price() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "InHomeDeliveryLabelWithoutPrice");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets In Home Delivery Label Data
+	 * 
+	 */
+	
+	public String get_InHome_Delivery_And_Unpack_Label_Without_Price() {
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "InHomeDeliveryAndUnpackLabelWithoutPrice");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Standard Delivery Label Data
+	 * 
+	 */
+	
+	public String get_Standard_Delivery_Label_Without_Price(){
+		String getData = Property.getProperty(Constant.AEM_DATA_FILE, "standardDeliveryLabelWithotPrice");
+		if(getData != null)
+			return getData;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
+	/*
 	 * gets Contact Us Page - Max Char for Additional Information
 	 * 
 	 */

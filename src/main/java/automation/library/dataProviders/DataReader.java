@@ -2126,6 +2126,68 @@ public class DataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+	/** gets Data - Recommendation Badge Color
+	 * 
+	 */
+	public String get_Recommendation_Badge_Color() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "recommendationBadgeColor").replace("=", ",");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Availability Badge Color
+	 * 
+	 */
+	public String get_Availability_Badge_Color() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "availabilityBadgeColor").replace("=", ",");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Pricing and Promo badge color
+	 * 
+	 */
+	public String get_Pricing_And_Promo_Badge_Color() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "pricingAndPromoBadgeColor").replace("=", ",");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Unique Badge Color
+	 * 
+	 */
+	public String get_Unique_Badge_Color() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "uniqueBadgeColor").replace("=", ",");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Unique Badge Border Color
+	 * 
+	 */
+	public String get_Unique_Badge_Border_Color() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "uniqueBadgeBorderColor").replace("=", ",");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	
+
 	/** gets Data - Shopping Cart Url
 	 * 
 	 */

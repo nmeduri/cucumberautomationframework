@@ -166,6 +166,7 @@ public class PDP_PageLocator {
 	
 	String variantProductPDP = Property.getProperty(Constant.OR_FILE, "variantProductPDP").replace("=", ",");
 	String numberOfRatingStars = Property.getProperty(Constant.OR_FILE, "numberOfRatingStars");
+	String resourcesSectionHeading = Property.getProperty(Constant.OR_FILE, "resourcesSectionHeading");
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -1398,6 +1399,13 @@ public class PDP_PageLocator {
 	 */
 	public String get_Number_Of_Rating_Stars() {
 		return numberOfRatingStars;
+	}
+	
+	/** 
+	 * gets Locator - Resources Heading
+	 */
+	public String get_Resources_Heading() {
+		return resourcesSectionHeading;
 	}
 	
  }

@@ -60,6 +60,16 @@ public class AEM_PDP_Page_Locator {
 	String addToCartStickyMobileAEM = Property.getProperty(Constant.OR_FILE, "addToCartStickyMobileAEM");
 	String stickyBuyBoxAEM = Property.getProperty(Constant.OR_FILE, "stickyBuyBoxAEM").replace("=", ",");
 
+	String resourcesHeadingField = Property.getProperty(Constant.OR_FILE, "resourcesHeadingField");
+	String returnsTitleField = Property.getProperty(Constant.OR_FILE, "returnsTitleField");
+	String returnPolicyDescriptionField = Property.getProperty(Constant.OR_FILE, "returnPolicyDescriptionField");
+	String returnPolicyLinkLabelField = Property.getProperty(Constant.OR_FILE, "returnPolicyLinkLabelField");
+	String linkOpenInField = Property.getProperty(Constant.OR_FILE, "linkOpenInField");
+	String getNewTab = Property.getProperty(Constant.OR_FILE, "getNewTab");
+	String returnPolicyLinkPath = Property.getProperty(Constant.OR_FILE, "returnPolicyLinkPath");
+	String aemResourcePreview = Property.getProperty(Constant.OR_FILE, "aemResourcePreview");
+	
+	
     /**
 	 * gets Locator - Specifications
 	 * 
@@ -378,4 +388,59 @@ public class AEM_PDP_Page_Locator {
 		return stickyBuyBoxAEM;
 	}
 	
+	/**
+	 * get Locator - Resources Heading Field
+	 */
+	public String get_Resources_Heading_Field() {
+		return resourcesHeadingField;
+	}
+	
+	/**
+	 * get Locator - Returns Title Field
+	 */
+	public String get_Returns_Title_Field() {
+		return returnsTitleField;
+	}
+	
+	/**
+	 * get Locator  - Return Policy Description Field
+	 */
+	public String get_Return_Policy_Description_Field() {
+		return returnPolicyDescriptionField;
+	}
+	
+	/**
+	 * get Locator - Return Policy Link Field
+	 */
+	public String get_Return_Policy_Link_Label_Field() {
+		return returnPolicyLinkLabelField;
+	}
+	
+	/**
+	 * get Locator - Link Open In 
+	 */
+	public String get_link_Open_In() {
+		return linkOpenInField;
+	}
+	
+	/**
+	 * get Locator - get New Tab
+	 */
+	public String get_New_Tab() {
+		return getNewTab;
+	}
+	
+	/**
+	 * get Locator - get Return Policy Link Path
+	 */
+	public String get_Return_Policy_Link_Path() {
+		return returnPolicyLinkPath;
+	}
+	
+	/**
+	 * get Locator - get AEM Resource Preview
+	 */
+	public String get_AEM_Resource_Preview() {
+		return aemResourcePreview;
+	}
 }
