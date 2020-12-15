@@ -94,6 +94,11 @@ public class Cart_Page_Locator {
 	String postalCodeInvalidErrorToastMessage=Property.getProperty(Constant.OR_FILE, "postalCodeInvalidErrorToastMessage");
 	String invalidInlineErrorMessage=Property.getProperty(Constant.OR_FILE, "invalidInlineErrorMessage");
 	String outOfRangeInlineErrorMessage=Property.getProperty(Constant.OR_FILE, "outOfRangeInlineErrorMessage");
+	String shoppingCartZero = Property.getProperty(Constant.OR_FILE, "shoppingCartZero");
+	String emptyCartMessage = Property.getProperty(Constant.OR_FILE, "emptyCartMessage");
+    String signInCartButotn = Property.getProperty(Constant.OR_FILE, "signInCartButotn");
+    String continueShoppingButton = Property.getProperty(Constant.OR_FILE, "continueShoppingButton");
+    String viewWishListButton = Property.getProperty(Constant.OR_FILE, "viewWishListButton");
 	
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
@@ -699,5 +704,39 @@ public class Cart_Page_Locator {
 		public String get_OutOfRange_Inline_Error_Message() {
 			return outOfRangeInlineErrorMessage;
 		}
-
+		
+		/**
+		 * gets Locator - Shopping Cart Zero
+		 */
+       public String get_Shopping_Cart_Zero() {
+    	   return shoppingCartZero;
+       }
+       
+       /**
+        * gets Locator - Empty Shopping Cart Message
+        */
+       public String get_Empty_Shopping_Cart_Message() {
+    	   return emptyCartMessage;
+       }
+       
+       /**
+        * gets Locator - Sign In Button
+        */
+       public String get_Sign_In_Button() {
+    	   return signInCartButotn;
+       }
+       
+       /**
+        * gets Locator - Continue Shopping Button
+        */
+       public String get_Continue_Shopping_Button() {
+    	   return continueShoppingButton;
+       }
+       
+       /**
+        * gets Locator - View Wish list Button
+        */
+       public String get_View_Wish_List_Button() {
+    	   return viewWishListButton;
+       }
 }

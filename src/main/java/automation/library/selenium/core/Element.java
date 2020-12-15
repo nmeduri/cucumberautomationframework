@@ -4,6 +4,7 @@ import static org.junit.Assert.fail;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -75,6 +76,14 @@ public class Element {
      */
 	public Element sendKeys(String val) {
 		this.element().sendKeys(val);
+		return this;
+	}
+	
+	/**
+     * Returns sendkeys Tab
+     */
+	public Element sendKeysTab(Keys tab) {
+		this.element().sendKeys(tab);
 		return this;
 	}
 

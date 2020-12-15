@@ -51,14 +51,16 @@ public class OCCP_3149_Link_Rewards_Step extends BaseClass {
 	
 	@And ("do not enter mandatory fields")
         public void NoInput_ErrorMessage() throws Exception {
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_addressError();
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_CityError();
+		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_pinError();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_YOBerror();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_phnError();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_provinceErr();
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_LastNameError();
-		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_addressError();
-		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_CityError();
+		
 		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_FNError();
-		testContext.getPageObjectManager().getLink_reward_ProfileScreen_page(PageObject.getDriver()).get_pinError();
+		
 
 	}
 	@Then ("enter invalid details for the input fields")

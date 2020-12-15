@@ -73,4 +73,34 @@ public class OCCP_5192_PLP_Horizontal_Facet_Bar_Step extends BaseClass {
 		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).displaySortAndFilters();
 	}
 	
+	@And("click on facet bar tab")
+	public void click_on_facet_bar_tab() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).clickFacetBarTab();
+	}
+	
+	@And("configure more filters label")
+	public void configure_more_filters_label() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).updateMoreFiltersLabel();
+	}
+	
+	@And("configure sort and filters label")
+	public void configure_sort_and_filters_label() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).updateSortAndFiltersLabel();
+	}
+	
+	@And("revert more filters label")
+	public void revert_more_filters_label() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).revertMoreFiltersLabel();
+	}
+	
+	@And("revert sort and filters label")
+	public void revert_sort_and_filters_label() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).revertSortAndFiltersLabel();
+	}
+	
+	@Then("configured more filters label is displayed on publish page")
+	public void configured_more_filters_label_is_displayed_on_publish_page() throws Exception {
+		testContext.getPageObjectManager().getPLPPage(PageObject.getDriver()).verifyConfiguredMoreFiltersLabel();
+	}
+	
 }

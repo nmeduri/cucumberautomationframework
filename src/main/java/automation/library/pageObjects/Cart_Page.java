@@ -37,6 +37,11 @@ public class Cart_Page extends PageObject{
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getCartUrl());
 	}
 	
+	/** This function navigate to Cart Page */
+	public void navigateTo_Authenticate_User_Cart_Page() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Shopping_Cart_Url());
+	}
+	
 	/** This function is verify that PDP Page is displayed */
 	public void display_Cart_Page() throws Exception {
 		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle();
@@ -456,6 +461,50 @@ public class Cart_Page extends PageObject{
 	/** This function verifys display of success toast message  */
 	public void displayInlineError() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_OutOfRange_Inline_Error_Message())), 15);
+	}
+	
+	/** This function verify that shopping cart is zero */
+	public void displayShoppingCartZero() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Shopping_Cart_Zero())), 15);
+	}
+	
+	/** This function verify that empty shopping cart message is displayed */
+	public void displayEmptyShoppingCartMessage() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Empty_Shopping_Cart_Message())), 15);
+	}
+	
+	/** This function verify that sign in is displayed */
+	public void displaySignInButton() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Sign_In_Button())), 15);
+	}
+	
+	/** This function verify that sign in is displayed */
+	public void clickSignInButton() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Sign_In_Button())), 15);
+	}
+	
+	/** This function verify that continue shopping button is displayed */
+	public void dispalyContinueShoppingButton() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Continue_Shopping_Button())), 15);
+		String continueShoppingUrl = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Continue_Shopping_Button()), "href");
+		conf.setProperty("continueShoppingUrl", continueShoppingUrl);
+	}
+	
+	/** This function verify that continue shopping button is displayed */
+	public void clickContinueShoppingButton() throws Exception {
+		$click(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Continue_Shopping_Button())), 15);
+		
+	}
+	
+	/** This function verify that link is landing on main page */
+	public void verifyLinkLandingOnMainPage() throws Exception {
+		String url = (java.lang.String) conf.getProperty("continueShoppingUrl");
+		Assert.assertTrue(PageObject.getDriver().getCurrentUrl().contains(url));
+	}
+	
+	/** This function verify that view wish list button is displayed */
+	public void displayViewListButton() throws Exception {
+		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_View_Wish_List_Button())), 15);
 	}
 	
 }

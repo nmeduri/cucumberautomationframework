@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -245,6 +246,13 @@ public class PageObject extends BaseClass {
 	public void $enterData(Element element, String data) {
 		
 		element.sendKeys(data);
+		
+	}
+	
+	/** enter detail */
+	public void $enterKeyTab(Element element, Keys tab) {
+		
+		element.sendKeysTab(tab);
 		
 	}
 	

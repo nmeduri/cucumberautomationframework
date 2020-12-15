@@ -1305,5 +1305,39 @@ public class PLP_Page extends PageObject {
 	public void clickOnSortAccordionOnMobile() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_Accordion()));
 	}
+	
+	/** click on facet bar tab */
+	public void clickFacetBarTab() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Facet_Bar_Tab()));
+	}
+	
+	/** update more filters label details */
+	public void updateMoreFiltersLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_More_Filters_Label_AEM()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_More_Filters_Label_AEM()), FileReaderManager.getInstance().getAEMDataReader().get_More_Filters());
+	}
+	
+	/** revert more filters label details */
+	public void revertMoreFiltersLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_More_Filters_Label_AEM()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_More_Filters_Label_AEM()), FileReaderManager.getInstance().getAEMDataReader().get_More_Filters_Revert());
+	}
+	
+	/** update sort and filters label details */
+	public void updateSortAndFiltersLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_And_Filters_Mobile_Label_AEM()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_And_Filters_Mobile_Label_AEM()), FileReaderManager.getInstance().getAEMDataReader().get_Sort_And_Filters());
+	}
+	
+	/** revert more filters label details */
+	public void revertSortAndFiltersLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_And_Filters_Mobile_Label_AEM()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_Sort_And_Filters_Mobile_Label_AEM()), FileReaderManager.getInstance().getAEMDataReader().get_Sort_And_Filters_Revert());
+	}
+	
+	/** verify more filters label is update on desktop */
+	public void verifyConfiguredMoreFiltersLabel() throws Exception {
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getPLPLocatorPage().get_More_Filters_Button())), FileReaderManager.getInstance().getAEMDataReader().get_More_Filters());
+	}
 }	
 

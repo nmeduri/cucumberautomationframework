@@ -300,4 +300,9 @@ public class OCCP_1026_View_Contact_Us_Page_Step extends BaseClass {
 	public void verify_drop_down_option_is_removed() throws Exception {
 		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyRemovedPleaseSelectDropDownOption();
 	}
+	
+	@Then("user must be able to perform all the actions mentioned in the above scenarios by tabbing and hit the enter button")
+	public void user_must_be_able_to_perform_all_the_actions_mentioned_in_the_above_scenarios() throws Exception {
+		testContext.getPageObjectManager().getContactUspage(PageObject.getDriver()).verifyScenariosByTabbingAndHitTheEnterButton();
+	}
 }

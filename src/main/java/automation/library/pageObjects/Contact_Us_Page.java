@@ -10,6 +10,7 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -452,5 +453,15 @@ public class Contact_Us_Page extends PageObject {
 		}
 	}
 	
+	/** scenarios by tabbing and hit the enter button */
+	public void verifyScenariosByTabbingAndHitTheEnterButton() throws Exception {
+		$enterKeyTab($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_First_Name()), Keys.TAB);
+		$enterKeyTab($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Last_Name()), Keys.TAB);
+		$enterKeyTab($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Email()), Keys.TAB);
+		$enterKeyTab($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Please_Select_Subject()), Keys.TAB);
+		$enterKeyTab($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Order_Number()), Keys.TAB);
+		$enterKeyTab($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Additional_Information()), Keys.TAB);
+		$enterKeyTab($(Loc.XPATH, testContext.getPageObjectManager().getContactUsPageLocator().get_Send_Message_Button()), Keys.ENTER);
+	}
 	
 }

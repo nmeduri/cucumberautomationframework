@@ -2110,4 +2110,16 @@ public class DataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/** gets Data - Shopping Cart Url
+	 * 
+	 */
+	public String get_Shopping_Cart_Url() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "shoppingCartPage");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

@@ -97,4 +97,10 @@ Feature: OCCP-3878 Contact Us Page : Error Scenario
 	Then confirmation screen is displayed
 	And click on continue shopping button
 	#Then user is redirect on canadian tire home page on same tab
+	
+	@RegressionTest @WebView @WideScreen @TC-4864
+	Scenario: TC-4864 OCCP-1026View Contact Us page - part 1 (Contact Us Form) - Verify that User is able to navigate through the form via tabbing (tab key of the keyboard)
+	Given open browser
+	When contact us url is available
+	And user must be able to perform all the actions mentioned in the above scenarios by tabbing and hit the enter button
    

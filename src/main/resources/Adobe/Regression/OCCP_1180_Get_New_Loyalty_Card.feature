@@ -43,7 +43,7 @@ Feature: OCCP-1180 Get New Loyalty Card
 	Then user should taken to success screen
 	
 	@RegressionTest @WebView @WideScreen @MobileView @TabletView @TC-2470
-	Scenario: TC-2470, TC-2478 Verfiy Field level validations on Personal Information on Desktop
+	Scenario: TC-2470, TC-2478, TC-2482  Verfiy Field level validations on Personal Information on Desktop
 	When login url is available
 	When user 2488 enter detail email
 	And user enter password
@@ -67,7 +67,7 @@ Feature: OCCP-1180 Get New Loyalty Card
 	And user clicks on cancel link
 	Then user should be returned to initial link cards screen
 	
-	@RegressionTest @MobileView
+	@RegressionTest @MobileView @TabletView
 	Scenario: TC-2480 Rewards T&C screen and Link Success screen
 	Given sign up url is available
 	Then sign up page is displayed
@@ -91,14 +91,4 @@ Feature: OCCP-1180 Get New Loyalty Card
 	Then user should navigate to success screen
 	And switch on parent frame
 	
-	@RegressionTest @MobileView @WideScreen
-	Scenario: TC-2482 Personal Information - Field level validations on Wide Desktop View
-	Given login url is available
-	When enter email detail
-	And user enter password
-	And user click on sign in button
-	Then link card screen should be displayed
-	And verify when user clicks on the get a new triangle rewards card link
-	Then user should redirect to the get a new triangle rewards card screen
-	And verify clicks on continue button
-	Then user should be able to see an inline error message below the field
+	

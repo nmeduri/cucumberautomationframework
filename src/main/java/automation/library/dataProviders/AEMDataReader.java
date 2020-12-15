@@ -6295,4 +6295,55 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+	/**
+	 * gets More Filters
+	 * 
+	 */
+	
+	public String get_More_Filters() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "moreFiltersLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets More Filters
+	 * 
+	 */
+	
+	public String get_More_Filters_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "moreFiltersLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Sort and Filters
+	 * 
+	 */
+	
+	public String get_Sort_And_Filters() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "sortAndFiltersLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Sort and Filters
+	 * 
+	 */
+	
+	public String get_Sort_And_Filters_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "sortAndFiltersLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

@@ -130,6 +130,12 @@ public class PLP_PageLocator {
 	String bestSeller = Property.getProperty(Constant.OR_FILE, "bestSeller");
 	String selectedRadioButton = Property.getProperty(Constant.OR_FILE, "selectedRadioButton");
 	String sortAccordion = Property.getProperty(Constant.OR_FILE, "sortAccordion");
+	String facetTab = Property.getProperty(Constant.OR_FILE, "facetTab");
+	String moreFilterLabelAEM = Property.getProperty(Constant.OR_FILE, "moreFilterLabelAEM");
+	String sortAndFilterMobileLabelAEM = Property.getProperty(Constant.OR_FILE, "sortAndFilterMobileLabelAEM"); 
+	String moreButtonLabel = Property.getProperty(Constant.OR_FILE, "moreButtonLabel");
+	
+	
 	/**
 	 * gets Locator - List View
 	 * 
@@ -1014,6 +1020,26 @@ public class PLP_PageLocator {
 	/** gets Locator - Sort Accordion on Mobile*/
 	public String get_Sort_Accordion() throws Exception {
 		return sortAccordion;
+	}
+	
+	/** gets Locator  - Facet Bar */
+	public String get_Facet_Bar_Tab() throws Exception {
+		return facetTab;
+	}
+	
+	/** gets Locator - More Filters Label */
+	public String get_More_Filters_Label_AEM() throws Exception {
+		return moreFilterLabelAEM;
+	}
+	
+	/** gets Locator - Sort and Filters Mobile Label */
+	public String get_Sort_And_Filters_Mobile_Label_AEM() throws Exception {
+		return sortAndFilterMobileLabelAEM;
+	}
+	
+	/** gets Locator - More Filters Button */
+	public String get_More_Filters_Button() {
+		return moreButtonLabel;
 	}
 	
  }
