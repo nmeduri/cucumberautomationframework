@@ -6111,6 +6111,222 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("URL not specified in the Data file.");
 	}
+	/**
+	 * gets profile Info Firstname label
+	 * 
+	 */
+	
+	public String get_Firstnamelabel() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "Firstnamelabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets account profile Info aem URL
+	 * 
+	 */
+	
+	public String get_accountprofileURL() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "AEMaccountProfileURL");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info LastnameLabel
+	 * 
+	 */
+	
+	public String get_LastnameLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "LastnameLabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info Email Label
+	 * 
+	 */
+	
+	public String get_EmailLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "EmailLabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile yearOfBirthLabel
+	 * 
+	 */
+	
+	public String get_yearOfBirthLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "yearOfBirthLabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info monthLabel
+	 * 
+	 */
+	
+	public String get_monthLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "monthLabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info date Label
+	 * 
+	 */
+	
+	public String get_dateLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "dateLabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info SaveCTA
+	 * 
+	 */
+	
+	public String get_SaveCTA() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "SaveCTA");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info Savechangesmodaltitle
+	 * 
+	 */
+	
+	public String get_Savechangesmodaltitle() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "Savechangesmodaltitle");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info Save chnages modal description
+	 * 
+	 */
+	
+	public String get_Savechnagesmodaldescription() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "Savechnagesmodaldescription");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info YesCTA
+	 * 
+	 */
+	
+	public String get_Modal_YesCTA() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "YesCTA");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info noCTA
+	 * 
+	 */
+	
+	public String get_Modal_noCTA() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "noCTA");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info phoneLabel
+	 * 
+	 */
+	
+	public String get_phoneLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "phoneLabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info securityHintText
+	 * 
+	 */
+	
+	public String get_securityHintText() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "securityHintText");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info passwordLabel
+	 * 
+	 */
+	
+	public String get_passwordLabel() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "passwordLabel");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info toastBannerSuccessMessage
+	 * 
+	 */
+	
+	public String get_toastBannerSuccessMessage() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "toastBannerSuccessMessage");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info toastBannerErrorMessage
+	 * 
+	 */
+	
+	public String get_toastBannerErrorMessage() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "toastBannerErrorMessage");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets profile Info EditCTA
+	 * 
+	 */
+	
+	public String get_EditCTA() {
+		String URLem = Property.getProperty(Constant.AEM_DATA_FILE, "EditCTA");
+		if(URLem != null)
+			return URLem;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	
 	/**
 	 * gets pdp url

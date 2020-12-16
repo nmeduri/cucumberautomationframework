@@ -337,7 +337,7 @@ public class PageObject extends BaseClass {
 	/** scroll up by coordinates */
 	public void scrollUp() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,-300)", "");
+		js.executeScript("window.scrollBy(0,-500)", "");
 	}
 	
 	/** scroll down by coordinates */

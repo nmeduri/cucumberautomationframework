@@ -1613,7 +1613,19 @@ public class DataReader {
 		else
 			throw new RuntimeException("url not specified in the Data file.");
 	}
+	/**
+	 * gets Account profile URL
+	 * 
+	 */
 
+	public String get_Account_profile_URL() {
+		String addressURL = Property.getProperty(Constant.DATA_FILE, "AccountProfileURL");
+		if (addressURL != null)
+			return addressURL;
+		else
+			throw new RuntimeException("url not specified in the Data file.");
+	}
+	
 	/**
 	 * gets Account Email Data_3301
 	 * 
@@ -2125,7 +2137,73 @@ public class DataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/** gets Data - first name in account profile
+	 * 
+	 */
+	public String get_firstName_AccntProfile() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "firstNameAccntProfile");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/** gets Data - last name in account profile
+	 * 
+	 */
+	public String get_lastName_AccntProfile() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "lastNameAccntProfile");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/** gets Data - Phone number in account profile
+	 * 
+	 */
+	public String get_phnNo_AccntProfile() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "PhoneNumber");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/** gets Data - current password in account profile
+	 * 
+	 */
+	public String get_currentPwd_AccntProfile() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "currentPwd");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/** gets Data - new password in account profile
+	 * 
+	 */
+	public String get_newPwd_AccntProfile() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "newpwd");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/** gets Data - confirm new password in account profile
+	 * 
+	 */
+	public String get_confirmPwd_AccntProfile() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "confirmnewpwd");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
 	
+	}
 
 	/** gets Data - Recommendation Badge Color
 	 * 

@@ -11,4 +11,5 @@ Feature: OCCP-3631 Cart - Quantity Selector
 	And click on service installation tab
 	And update the Error Message Copy field
 	And user click on done button
-	And click on the publish
+	And click on the publish button
+	

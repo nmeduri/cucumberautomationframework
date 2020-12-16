@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Account_Address_Page_Locator;
 import automation.library.locator.AEM_Account_Payment_Infromation_Page_Locator;
+import automation.library.locator.AEM_Account_Profile_Page_Locator;
 import automation.library.locator.AEM_Account_Rewards_Template_Page_Locator;
 import automation.library.locator.AEM_Broad_Banner_Page_Locator;
 import automation.library.locator.AEM_Broad_Promo_Tiles_Page_Locator;
@@ -32,6 +33,7 @@ import automation.library.locator.AEM_Slim_Banner_page_Locator;
 import automation.library.locator.AEM_Two_Featured_Tiles_Component_Page_Locator;
 import automation.library.locator.Account_Address_Page_Locator;
 import automation.library.locator.Account_Payment_Information_Page_Locator;
+import automation.library.locator.Account_Profile_Page_Locator;
 import automation.library.locator.Banners_Locator;
 import automation.library.locator.Broad_Banner_Page_Locator;
 import automation.library.locator.Broad_Promo_Tiles_Page_Locator;
@@ -69,6 +71,7 @@ import automation.library.locator.Two_Featured_Tile_Component_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Account_Address_Page;
 import automation.library.pageObjects.AEM_Account_Payment_Infromation_Page;
+import automation.library.pageObjects.AEM_Account_Profile_Page;
 import automation.library.pageObjects.AEM_Account_Rewards_Template_Page;
 import automation.library.pageObjects.AEM_Broad_Banner_Page;
 import automation.library.pageObjects.AEM_Broad_Promo_Tiles_Page;
@@ -96,6 +99,7 @@ import automation.library.pageObjects.AEM_Slim_Banner_Page;
 import automation.library.pageObjects.AEM_Two_Featured_tiles_Component_Page;
 import automation.library.pageObjects.Account_Address_Page;
 import automation.library.pageObjects.Account_Payment_information_Page;
+import automation.library.pageObjects.Account_Profile_Page;
 import automation.library.pageObjects.Banner_Pages;
 import automation.library.pageObjects.Broad_Banner_Page;
 import automation.library.pageObjects.Broad_Promo_Tiles_Page;
@@ -274,14 +278,16 @@ public class PageObjectManager {
 	private SRP_Page getSRPPage;
 	private Standard_Masthead_Banner_Page getStandardMastheadBannerPage;
 	private Standard_Masthead_Banner_Page_Locator getStandardMastheadBannerPageLocator;
-	
 	private AEM_Account_Rewards_Template_Page  getAccountRewardsTemplatePage;
 	private AEM_Account_Rewards_Template_Page_Locator getAccountRewardsTemplatePageLocator;
-
 	private AEM_Account_Payment_Infromation_Page_Locator getAEMAccountPaymentInfromationPageLocator;
 	private AEM_Account_Payment_Infromation_Page getAEMAccountPaymentInfromationPage;
 	private Account_Payment_Information_Page_Locator getAccountPaymentInformationPageLocator;
 	private Account_Payment_information_Page getAccountPaymentInformationPage;
+	private Account_Profile_Page getAccountProfilePage;
+	private Account_Profile_Page_Locator getAccountProfilePageLocator;
+	private AEM_Account_Profile_Page_Locator getAEMAccountProfilePageLocator;
+	private AEM_Account_Profile_Page getAEMAccountProfilePage;
 	private Contact_Us_Page getContactUspage;
 	private Contactus_Locator getContactUsLocator;
 	
@@ -968,5 +974,23 @@ public class PageObjectManager {
 	/** Returns Instance of Account Payment Infromation Page locator */
 	public Account_Payment_Information_Page_Locator getAccountPaymentInformationPageLocator() {
 		return (getAccountPaymentInformationPageLocator == null) ? getAccountPaymentInformationPageLocator = new Account_Payment_Information_Page_Locator() : getAccountPaymentInformationPageLocator;
+	}
+	/** Returns Instance of Account profile Information Page */
+	public Account_Profile_Page getAccountProfilePage(WebDriver driver) {
+		return (getAccountProfilePage == null) ? getAccountProfilePage = new Account_Profile_Page(driver) : getAccountProfilePage;
+	}
+
+	/** Returns Instance of Account profile Infromation Page locator */
+	public Account_Profile_Page_Locator getAccountProfilePageLocator() {
+		return (getAccountProfilePageLocator == null) ? getAccountProfilePageLocator = new Account_Profile_Page_Locator() : getAccountProfilePageLocator;
+	}
+	/** Returns Instance of AEM Account profile Information Page */
+	public AEM_Account_Profile_Page getAEMAccountProfilePage(WebDriver driver) {
+		return (getAEMAccountProfilePage == null) ? getAEMAccountProfilePage = new AEM_Account_Profile_Page(driver) : getAEMAccountProfilePage;
+	}
+
+	/** Returns Instance of AEM Account profile Infromation Page locator */
+	public AEM_Account_Profile_Page_Locator getAEMAccountProfilePageLocator() {
+		return (getAEMAccountProfilePageLocator == null) ? getAEMAccountProfilePageLocator = new AEM_Account_Profile_Page_Locator() : getAEMAccountProfilePageLocator;
 	}
 }

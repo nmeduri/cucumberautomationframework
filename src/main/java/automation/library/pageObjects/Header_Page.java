@@ -392,6 +392,7 @@ public class Header_Page extends PageObject {
 	
 	/** click on hi option */
 	public void clickOnHiOption() throws Exception {
+		
 		$click($(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi()));
 	}
 	
