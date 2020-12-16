@@ -106,6 +106,8 @@ public class Cart_Page_Locator {
     String signInCartButotn = Property.getProperty(Constant.OR_FILE, "signInCartButotn");
     String continueShoppingButton = Property.getProperty(Constant.OR_FILE, "continueShoppingButton");
     String viewWishListButton = Property.getProperty(Constant.OR_FILE, "viewWishListButton");
+    String serviceTitleName = Property.getProperty(Constant.OR_FILE, "serviceTitleName");
+    String serviceTitleDescription = Property.getProperty(Constant.OR_FILE, "serviceTitleDescription");
 	
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
@@ -713,6 +715,8 @@ public class Cart_Page_Locator {
 		}
 		
 		/**
+=======
+		/**
 		 * gets Locator - Delivery Options Label Text
 		 * 
 		 */
@@ -769,6 +773,7 @@ public class Cart_Page_Locator {
 		}
 
 		/**
+>>>>>>> d9cea1a71b7a7ee6ac3af8e404e0fcdf3a525210
 		 * gets Locator - Shopping Cart Zero
 		 */
        public String get_Shopping_Cart_Zero() {
@@ -801,5 +806,21 @@ public class Cart_Page_Locator {
         */
        public String get_View_Wish_List_Button() {
     	   return viewWishListButton;
+
        }
+       
+       /**
+        * gets Locator - Service Title Name
+        */
+       public String get_Service_Title_Name() {
+    	   return serviceTitleName;
+       }
+       
+       /**
+        * gets Locator - Service Description Name
+        */
+       public String get_Service_Description_Name() {
+    	   return serviceTitleDescription;
+       }
+       
 }

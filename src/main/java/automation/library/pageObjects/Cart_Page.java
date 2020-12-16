@@ -593,5 +593,6 @@ public class Cart_Page extends PageObject{
 	public void displayViewListButton() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_View_Wish_List_Button())), 15);
 	}
+		
 	
 }

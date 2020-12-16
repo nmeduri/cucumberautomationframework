@@ -437,6 +437,45 @@ public void updateExceededMessageToastNotification () throws Exception {
 	public void verifyErrorToastMessageChangesReflected () throws Exception {
 		Assert.assertEquals(FileReaderManager.getInstance().getAEMDataReader().get_Error_Toast_Message_Data(), $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Postal_Code_Invalid_Error_Toast_Message())));
 	}
+	
+	/** click on Service Tab */
+	public void clickOnSerivceTab() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Service_Tab()));
+	}
+	
+	/** update configure label for service add on */
+	public void updateConfigureLabelForServiceAddOn() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Adds_On_Title()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Adds_On_Title()), FileReaderManager.getInstance().getAEMDataReader().get_Service_Add_On_Label());
+	}
+	
+	/** revert configure label for service add on */
+	public void revertConfigureLabelForServiceAddOn() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Adds_On_Title()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Adds_On_Title()), FileReaderManager.getInstance().getAEMDataReader().get_Service_Add_On_Label_Revert());
+	}
+	
+	/** verify update service label is displayed on publish page */
+	public void displayUpdateServiceLabelOnPublishPage() throws Exception {
+		Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Service_Title_Name())), FileReaderManager.getInstance().getAEMDataReader().get_Service_Add_On_Label());
+	}
+	
+	/** update configure label for service installation available */
+	public void updateConfigureLabelForInstallationServiceAvailable() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Service_Available_Message()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Service_Available_Message()), FileReaderManager.getInstance().getAEMDataReader().get_Installation_Service_Available_Label());
+	}
+	
+	/** revert configure label for service installation available */
+	public void revertConfigureLabelForInstallationServiceAvailable() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Service_Available_Message()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getAEMCartPageLocator().get_Service_Available_Message()), FileReaderManager.getInstance().getAEMDataReader().get_Installation_Service_Available_Label_Revert());
+	}
+	
+	/** verify update installation service available label is displayed on publish page */
+	public void displayUpdatedInstallationServiceAvailableLabelOnPublishPage() throws Exception {
+		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Service_Description_Name())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Installation_Service_Available_Label()));
+	}
 
 	/** This function updates close label text */
 	public void enterDataDeliveryOptionsLabelText() throws Exception {

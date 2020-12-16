@@ -6514,4 +6514,199 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Service Add On Label
+	 * 
+	 */
+	
+	public String get_Service_Add_On_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "serviceAddOnLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Service Add On Label (Revert)
+	 * 
+	 */
+	
+	public String get_Service_Add_On_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "serviceAddOnLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Installation Service Available
+	 * 
+	 */
+	
+	public String get_Installation_Service_Available_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "installationServiceAvailabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Installation Service Available (Revert)
+	 * 
+	 */
+	
+	public String get_Installation_Service_Available_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "installationServiceAvailabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets checkout contact info Url
+	 * 
+	 */
+	
+	public String get_Checkout_Contact_Info_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "checkoutContactInfoAuthorUrl");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Information Title
+	 * 
+	 */
+	
+	public String get_Contact_Information_Title_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "contactInformationTitle");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Contact Information Title (Revert)
+	 * 
+	 */
+	
+	public String get_Contact_Information_Title_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "contactInformationTitleRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Email Field Title
+	 * 
+	 */
+	
+	public String get_Email_Field_Title() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "emailAddressFieldTitle");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Email Field Title (Revert)
+	 * 
+	 */
+	
+	public String get_Email_Field_Title_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "emailAddressFieldTitleRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Phone Number Field Title
+	 * 
+	 */
+	
+	public String get_Phone_Number_Field_Title() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "phoneNumberFieldTitle");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Phone Number Field Title (Revert)
+	 * 
+	 */
+	
+	public String get_Phone_Number_Field_Title_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "phoneNumberFieldTitleRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Next CTA Button
+	 * 
+	 */
+	
+	public String get_Next_Button() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "nextCTAButtonLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Next CTA Button (Revert)
+	 * 
+	 */
+	
+	public String get_Next_Button_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "nextCTAButtonLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool Tip Message Checkout
+	 * 
+	 */
+	
+	public String get_Tool_Tip_Message_Checkout() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipMessageCheckout");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool Tip Message Checkout (Revert)
+	 * 
+	 */
+	
+	public String get_Tool_Tip_Message_Checkout_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipMessageCheckoutRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

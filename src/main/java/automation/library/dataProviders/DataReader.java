@@ -2126,6 +2126,7 @@ public class DataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+
 	/** gets Data - Recommendation Badge Color
 	 * 
 	 */
@@ -2150,6 +2151,18 @@ public class DataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+	/**
+	 * gets Checkout Contact Info Url
+	 * 
+	 */
+
+	public String get_Checkout_Contact_Info_Url() {
+		String url = Property.getProperty(Constant.DATA_FILE, "checkoutContactInfoUrl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Data file.");
+	}
 	/** gets Data - Pricing and Promo badge color
 	 * 
 	 */

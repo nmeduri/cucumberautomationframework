@@ -54,6 +54,9 @@ public class AEM_Cart_Page_Locator {
 	String getPostalTab = Property.getProperty(Constant.OR_FILE, "getPostalTab");
 	String successToastMessageAEM = Property.getProperty(Constant.OR_FILE, "successToastMessageAEM");
 	String errorToastMessageAEM = Property.getProperty(Constant.OR_FILE, "errorToastMessageAEM");
+	String serviceTabAEM = Property.getProperty(Constant.OR_FILE, "serviceTabAEM");
+    String addOnTitleAEM = Property.getProperty(Constant.OR_FILE, "addOnTitleAEM");
+    String serviceAvailableMessageAEM = Property.getProperty(Constant.OR_FILE, "serviceAvailableMessageAEM");
 	String standardDeliveryFieldAEM = Property.getProperty(Constant.OR_FILE, "standardDeliveryFieldAEM");
 	String inHomeDeliveryFieldAEM = Property.getProperty(Constant.OR_FILE, "inHomeDeliveryFieldAEM");
 	String inHomeDeliveryAndUnpack = Property.getProperty(Constant.OR_FILE, "inHomeDeliveryAndUnpack");
@@ -423,6 +426,27 @@ public class AEM_Cart_Page_Locator {
 
 	public String get_Error_Toast_Message_AEM() {
 		return errorToastMessageAEM;
+	}
+	
+	/**
+	 * gets Locator - Service Tab
+	 */
+	public String get_Service_Tab() {
+		return serviceTabAEM;
+	}
+	
+	/**
+	 * gets Locator - Adds on Title
+	 */
+	public String get_Adds_On_Title() {
+		return addOnTitleAEM;
+	}
+	
+	/**
+	 * gets Locator - Service Available Message
+	 */
+	public String get_Service_Available_Message() {
+		return serviceAvailableMessageAEM;
 	}
 
 	/**
