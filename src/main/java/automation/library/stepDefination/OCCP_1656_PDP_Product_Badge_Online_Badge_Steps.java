@@ -24,9 +24,9 @@ import cucumber.api.java.en.When;
  * This file contains the scenario of PDP Page
  */
 
-public class OCCP_1656_OCCP_1656_PDP_Product_Badge_Online_Badge_Steps extends BaseClass {
+public class OCCP_1656_PDP_Product_Badge_Online_Badge_Steps extends BaseClass {
       
-	public OCCP_1656_OCCP_1656_PDP_Product_Badge_Online_Badge_Steps(TestContext context) throws Exception {
+	public OCCP_1656_PDP_Product_Badge_Online_Badge_Steps(TestContext context) throws Exception {
 		testContext = context;
 		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();
@@ -72,21 +72,23 @@ public class OCCP_1656_OCCP_1656_PDP_Product_Badge_Online_Badge_Steps extends Ba
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyPerfectGiftBadgeInBLueColor();
 	}
 	
+	//commented below methods as DuplicateStepDefinitionException is getting
 	
-	@When("pdp new arrival badge product url is available")
+	/*@When("pdp new arrival badge product url is available")
 	public void pdp_new_arrival_badge_product_url_is_available() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).navigate_To_PDP_Product_Page(FileReaderManager.getInstance().getDataReader().get_Product_New_Arrival_Badges());
-	}
+	}*/
 	
-	@Then("new arrival badge is displayed under availability category")
+	
+	/*@Then("new arrival badge is displayed under availability category")
 	public void new_arrival_badge_is_displayed_under_availability_category() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).displayNewArrivalBadges();
-	}
+	}*/
 	
-	@Then("new arrival badge is displayed in yellow color")
+	/*@Then("new arrival badge is displayed in yellow color")
 	public void new_arrival_badge_is_displayed_in_yellow_color() throws Exception {
 		testContext.getPageObjectManager().getPDPPage(PageObject.getDriver()).verifyNABadgeInYellowColor();
-	}
+	}*/
 
 	
 }

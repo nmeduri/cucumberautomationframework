@@ -1800,4 +1800,28 @@ public class APIDataReader {
 		else
 			throw new RuntimeException("product code not specified in the API Data file.");
 	}
+	/**
+	 * gets Update Cart API with delivery Address and Postal code
+	 * 
+	 */
+	public String get_Update_Cart_API_With_DeliveryAddress_PostalCode_Auth_User() {
+
+		String productInfo = Property.getProperty(Constant.API_DATA, "updateCartApiWithDeliveryAddressPostalCodeAuthUser");
+		if (productInfo != null)
+			return productInfo;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
+	/**
+	 * gets Update Cart API with delivery Address and Postal code
+	 * 
+	 */
+	public String get_Update_Cart_API_With_DeliveryAddress_PostalCode_Guest_User() {
+
+		String productInfo = Property.getProperty(Constant.API_DATA, "updateCartApiWithDeliveryAddressPostalCodeGuestUser");
+		if (productInfo != null)
+			return productInfo;
+		else
+			throw new RuntimeException("productInfo not specified in the API Data file.");
+	}
 }

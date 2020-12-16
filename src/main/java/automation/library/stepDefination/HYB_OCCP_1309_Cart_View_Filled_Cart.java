@@ -63,22 +63,16 @@ public class HYB_OCCP_1309_Cart_View_Filled_Cart extends BaseStep{
 		Assert.assertNotEquals(null,response.jsonPath().get("entries.deliveryMode"));
 		Log.message("deliveryMode 1 container :- " + response.jsonPath().get("entries.deliveryMode").toString(), true);
 		Assert.assertNotEquals(null,response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode"));
-		Log.message("deliveryMode 2 container :- " + response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode").toString(), true);
 	}
 	@And("deliveryMode code is available in GET response")
 	public void deliveryMode_Code_Is_Available_In_Get_Response() {
 		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("entries.deliveryMode.code"));
-		Log.message("Code1 in deliveryMode container :- " + response.jsonPath().get("entries.deliveryMode.code").toString(), true);
 		PageObject.notNullAttributeInResponseInList(response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.code"));
-		Log.message("Code2 in deliveryMode container :- " + response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.code").toString(), true);
 	}
 	@And("shiptohome should be displayed in Get Response")
 	public void shipToHome_Should_Be_Displayed_In_Get_Response() {
 		PageObject.verifyExpectedResponse(response.jsonPath().get("entries.deliveryMode.name"),"Ship to home");
-		Log.message("Name1 in deliveryMode container :- " + response.jsonPath().get("entries.deliveryMode.name").toString(), true);
 		Assert.assertNotEquals(null,response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name"));
-		//PageObject.verifyExpectedResponse(response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name"),"Ship to home");
-		Log.message("Name2 in deliveryMode container :- " + response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name").toString(), true);
 	}
 	@And("quantity should be displayed in GET cart response")
 	public void quantity_Should_Be_Displayed_In_Get_Cart_Response() {
@@ -114,7 +108,6 @@ public class HYB_OCCP_1309_Cart_View_Filled_Cart extends BaseStep{
 		Log.message("Name1 in deliveryMode container :- " + response.jsonPath().get("entries.deliveryMode.name").toString(), true);
 		Assert.assertNotEquals(null,response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name"));
 		//PageObject.verifyExpectedResponse(response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name"),"Ship to home");
-		Log.message("Name2 in deliveryMode container :- " + response.jsonPath().get("deliveryOrderGroups.entries.deliveryMode.name").toString(), true);
 	}
 	@When("user hits update Cart api with base product for authenticated user-STH")
 	public void user_Hits_Update_Cart_Api_With_Base_Product_Authenticated_STH() {

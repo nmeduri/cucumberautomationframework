@@ -667,5 +667,32 @@ public class HYB_Authorization_EndPoint {
 		response = request.post(url+guid+ "/deliveryOption/IN_HOME_DELIVERY_PACKAGING_REMOVAL");
 		return response;
 	}
-	
+	public Response post_HYB_Update_Cart_AuthUserAPI_With_DeliveryAddress_PostalCode(String url, String code, String accessToken) {
+		String bodyvalue=
+				"{    \"parcelZoneId\": \"AB_BS_PCL\",\n" + 
+				"    \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
+				"    \"storeDistance\": 15\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Update cart bodyvalue for delivery address :"+ bodyvalue, true);
+		Log.message("Update Cart API for delivery address Authenticated user :- " + url  + code +"/addresses/deliveryPostalCode/515410?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + code+ "/addresses/deliveryPostalCode/515410?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
+	public Response post_HYB_Update_Cart_GuestUserAPI_With_DeliveryAddress_PostalCode(String url, String guid) {
+		String bodyvalue=
+				"{    \"parcelZoneId\": \"AB_BS_PCL\",\n" + 
+				"    \"bulkZoneId\": \"AB_BS_BLK\",\n" + 
+				"    \"storeDistance\": 15\n" + 
+				"}";	
+		request.body(bodyvalue);
+		request.header("Content-Type", "application/json");
+		//request.header("Authorization", "Bearer " + accessToken);
+		Log.message("Update cart bodyvalue for delivery address :"+ bodyvalue, true);
+		Log.message("Update to Cart API for delivery address Guest user :- " + url  + guid +"/addresses/deliveryPostalCode/515410?fields=FULL&baseStoreId=ctr", true);
+		response = request.post(url + guid+ "/addresses/deliveryPostalCode/515410?fields=FULL&baseStoreId=ctr");
+		return response;	
+	}
 }

@@ -23,9 +23,9 @@ import cucumber.api.java.en.When;
  * This file contains the scenario of user stories - 1655
  */
 
-public class OCCP_1655_OCCP_1655_PDP_Product_Badges_Steps extends BaseClass {
+public class OCCP_1655_PDP_Product_Badges_Steps extends BaseClass {
      
-	public OCCP_1655_OCCP_1655_PDP_Product_Badges_Steps(TestContext context) throws Exception {
+	public OCCP_1655_PDP_Product_Badges_Steps(TestContext context) throws Exception {
 		testContext = context;
 		driverFactory = new DriverFactory();
 		configFileReader = new ConfigFileReader();

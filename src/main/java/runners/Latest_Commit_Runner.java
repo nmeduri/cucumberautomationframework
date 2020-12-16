@@ -14,7 +14,7 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 
 
-			"classpath:SAP/Regression/OCCP_960_Tires_PDP_Road_Rating_For_Tires.feature",
+			"classpath:SAP/Regression/OCCP_3755_Fulfillment_Option_Display_For_STH_BOPIS_Both.feature",
 			"--glue", "automation.library.stepDefination",
 			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
