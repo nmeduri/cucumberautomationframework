@@ -25,7 +25,11 @@ public class Checkout_Page_Locator {
     String toolTipMessageCheckoutAEM = Property.getProperty(Constant.OR_FILE, "toolTipMessageCheckoutAEM");
     String toolTipButtonCheckout = Property.getProperty(Constant.OR_FILE, "toolTipButtonCheckout");
     String toolTipMessageCheckout = Property.getProperty(Constant.OR_FILE, "toolTipMessageCheckout");
-	
+    String contactInfoEmailAddressField = Property.getProperty(Constant.OR_FILE, "contactInfoEmailAddressField");
+    String contactInfoPhnNoField = Property.getProperty(Constant.OR_FILE, "contactInfoPhnNoField");
+    String enteredContactInfoPreview = Property.getProperty(Constant.OR_FILE, "enteredContactInfoPreview");
+    String shippingInformationTitle = Property.getProperty(Constant.OR_FILE, "shippingInformationTitle");
+    
 	/**
 	 * gets Locator - Brand Logo
 	 * 
@@ -141,6 +145,34 @@ public class Checkout_Page_Locator {
 	 */
 	public String get_Tool_Tip_Message() {
 		return toolTipMessageCheckout;
+	}
+	
+	/**
+	 * gets Locator - contact Info Email Address Field
+	 */
+	public String get_Contact_Info_Email_Address_Field() {
+		return contactInfoEmailAddressField;
+	}
+	
+	/**
+	 * gets Locator - Contact Info PhnNo Field
+	 */
+	public String get_Contact_Info_PhnNo_Field() {
+		return contactInfoPhnNoField;
+	}
+	
+	/**
+	 * gets Locator - contact Info Drawer
+	 */
+	public String get_Contact_Info_Drawer() {
+		return enteredContactInfoPreview;
+	}
+	
+	/**
+	 * gets Locator - Shipping Information Title
+	 */
+	public String get_Shipping_Information_Title() {
+		return shippingInformationTitle;
 	}
 	
 }

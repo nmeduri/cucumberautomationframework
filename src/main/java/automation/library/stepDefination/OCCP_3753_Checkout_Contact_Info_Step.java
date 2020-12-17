@@ -112,5 +112,70 @@ public class OCCP_3753_Checkout_Contact_Info_Step extends BaseClass {
 	public void configured_tool_tip_message_is_displayed_on_publish_page() throws Exception {
 		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayConfiguredToolTipMessageOnPublishPage();
 	}
+	
+	@Then("in contact information are title - contact information should be displayed")
+	public void contact_information_should_be_displayed() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayContactInformationTitle();
+	}
+	
+	@And("email address field should be displayed")
+	public void disply_email_address() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayEmailAddress();
+	}
+	
+	@And("phone number field should be displayed")
+	public void disply_phone_number() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayPhoneNumber();
+	}
+	
+	@And("tooltip icon next to the phone number should be displayed")
+	public void disply_tooltip_icon() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayTooltipIcon();
+	}
+	
+	@And("cta button 'next' should be displayed")
+	public void display_next_cta_button() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayNextCTAButton();
+	}
+	
+	@When("^the checkout contact info page is displayed$")
+	public void display_checkout_page() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayCheckoutPageTitle();
+	}
+	
+	@Then("user should fill the contact information details - email address and phone number")
+	public void fill_contact_information_details() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).fillContactInfoDetails();
+	}
+	
+	@And("user clicks on the CTA button 'Next' after filling the details")
+	public void click_on_next_cta() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).clickOnNextCTAButton();
+	}
+	
+	@Then("the contact information should move to drawer")
+	public void contact_information_should_moveto_drawer() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayContactInfoDrawer();
+	}
+	
+	@And("the user should move to the next section of the checkout page")
+	public void user_should_move_to_next_section() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayShippingInformationTitle();
+	}
+	
+	@And("^user clicks on the tooltip icon$")
+	public void click_tooltip_icon() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).clickOnTooltipIcon();
+	}
+	
+	@Then("^the tooltip message should be displayed$")
+	public void display_tooltip_message() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayTooltipMessage();
+	}
+	
+	@And("user accepts window alert")
+	public void accept_alert() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).acceptWindowAlert();
+	}
 
 }

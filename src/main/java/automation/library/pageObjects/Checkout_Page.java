@@ -4,6 +4,7 @@ import static org.testng.Assert.fail;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -187,4 +188,80 @@ public class Checkout_Page extends PageObject{
 		//Assert.assertEquals($getText($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Tool_Tip_Message())), FileReaderManager.getInstance().getAEMDataReader().get_Tool_Tip_Message_Checkout());
 		Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Tool_Tip_Message())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Tool_Tip_Message_Checkout()));
 	}
+	
+	/** This function verify contact information title is displayed */
+	public void displayContactInformationTitle() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Information_Title()));
+	}
+	
+	/** This function verify email address is displayed */
+	public void displayEmailAddress() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()));
+	}
+	
+	/** This function verify phone number is displayed */
+	public void displayPhoneNumber() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()));
+	}
+	
+	/** This function verify tooltip is displayed */
+	public void displayTooltipIcon() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Tool_Tip_Button()));
+	}
+	
+	/** This function verify next CTA is displayed */
+	public void displayNextCTAButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Next_Button()));
+	}
+	
+	/** This function is verify that Checkout Page is displayed */
+	public void displayCheckoutPageTitle() throws Exception {
+		
+		if(PageObject.getDriver().getTitle().contains("CheckOutContactInfo")) {
+		Log.message("Checkout page is displayed : "+testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).getTitle(), true);
+		}else {
+			Log.message("Checkout page is not displayed", true);
+			fail();
+		}
+	}
+	
+	/** This function enters contact info details */
+	public void fillContactInfoDetails() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()), FileReaderManager.getInstance().getDataReader().get_Checkout_Email_Address_Data());
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()), FileReaderManager.getInstance().getDataReader().get_Checkout_PhnNo_Data());
+		}
+	
+	/** This function verify next CTA is displayed */
+	public void clickOnNextCTAButton() throws Exception {
+		//$click($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Next_Button()));
+		((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getCheckoutPageLocator().get_Next_Button())));
+	}
+	
+	/** This function verify contact info drawer is displayed */
+	public void displayContactInfoDrawer() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Drawer()));
+	}
+	
+	/** This function verify shipping info title is displayed */
+	public void displayShippingInformationTitle() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Shipping_Information_Title()));
+	}
+	
+	/** This function clicks on tooltip */
+	public void clickOnTooltipIcon() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Tool_Tip_Button()));
+	}
+	
+	/** This function verify tooltip message is displayed */
+	public void displayTooltipMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Tool_Tip_Message()));
+	}
+	
+	/** This function verify tooltip message is displayed */
+	public void acceptWindowAlert() throws Exception {
+		PageObject.getDriver().switchTo().alert().accept();
+	}
+	
 }

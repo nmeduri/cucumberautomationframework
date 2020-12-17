@@ -13,9 +13,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	private static String[] defaultOptions = {
 
 
-			"classpath:SAP/Regression/OCCP_3755_Fulfillment_Option_Display_For_STH_BOPIS_Both.feature",
+			"classpath:Adobe/Regression/OCCP_3753_Checkout_Contact_Info.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@RegressionTest",
+			"--tags", "@WebView",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

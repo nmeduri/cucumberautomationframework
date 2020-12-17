@@ -2290,4 +2290,26 @@ public class DataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/** gets Data - Email address
+	 * 
+	 */
+	public String get_Checkout_Email_Address_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "checkoutEmailAddress");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Phone number
+	 * 
+	 */
+	public String get_Checkout_PhnNo_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "checkoutPhnNo");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }
