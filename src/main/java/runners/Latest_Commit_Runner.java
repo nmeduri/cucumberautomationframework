@@ -13,9 +13,9 @@ public final class Latest_Commit_Runner extends BaseClass{
 	private static String[] defaultOptions = {
 
 
-			"classpath:Adobe/Regression/OCCP_3753_Checkout_Contact_Info.feature",
+			"classpath:Adobe/AEM/Regression/OCCP_3783_Microseason_Landing_Page_AEM_Template.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@WebView",
+			"--tags", "@TC-6884",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

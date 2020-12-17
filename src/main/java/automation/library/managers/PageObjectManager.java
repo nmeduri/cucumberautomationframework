@@ -21,6 +21,7 @@ import automation.library.locator.AEM_Header_Page_Locator;
 import automation.library.locator.AEM_Link_Card_Page_Locator;
 import automation.library.locator.AEM_Link_Existing_Card_Page_Locator;
 import automation.library.locator.AEM_Login_Page_Locator;
+import automation.library.locator.AEM_Microseason_Landing_Page_Locator;
 import automation.library.locator.AEM_New_Rewards_Card_Screen_Page_Locator;
 import automation.library.locator.AEM_PDP_Add_To_Cart_Page_Locator;
 import automation.library.locator.AEM_PDP_Page_Locator;
@@ -87,6 +88,7 @@ import automation.library.pageObjects.AEM_Header_Page;
 import automation.library.pageObjects.AEM_Link_Card_Page;
 import automation.library.pageObjects.AEM_Link_Existing_Card_Page;
 import automation.library.pageObjects.AEM_Login_Page;
+import automation.library.pageObjects.AEM_Microseason_Landing_Page;
 import automation.library.pageObjects.AEM_New_Rewards_Card_Screen_Page;
 import automation.library.pageObjects.AEM_PDP_Add_To_Cart_Page;
 import automation.library.pageObjects.AEM_PDP_Page;
@@ -290,6 +292,8 @@ public class PageObjectManager {
 	private AEM_Account_Profile_Page getAEMAccountProfilePage;
 	private Contact_Us_Page getContactUspage;
 	private Contactus_Locator getContactUsLocator;
+	private AEM_Microseason_Landing_Page_Locator getAEMMicroseasonLandingPageLocator;
+	private AEM_Microseason_Landing_Page getAEMMicroseasonLandingPage;
 	
 	public PageObjectManager() {
 		
@@ -992,5 +996,13 @@ public class PageObjectManager {
 	/** Returns Instance of AEM Account profile Infromation Page locator */
 	public AEM_Account_Profile_Page_Locator getAEMAccountProfilePageLocator() {
 		return (getAEMAccountProfilePageLocator == null) ? getAEMAccountProfilePageLocator = new AEM_Account_Profile_Page_Locator() : getAEMAccountProfilePageLocator;
+	}
+	/** Returns Instance of AEM Microseason LandingPage locator */
+	public AEM_Microseason_Landing_Page_Locator getAEMMicroseasonLandingPageLocator() {
+		return (getAEMMicroseasonLandingPageLocator == null) ? getAEMMicroseasonLandingPageLocator = new AEM_Microseason_Landing_Page_Locator() : getAEMMicroseasonLandingPageLocator;
+	}
+	/** Returns Instance of AEM Microseason LandingPage  */
+	public AEM_Microseason_Landing_Page getAEMMicroseasonLandingPage(WebDriver driver) {
+		return (getAEMMicroseasonLandingPage == null) ? getAEMMicroseasonLandingPage = new AEM_Microseason_Landing_Page(driver) : getAEMMicroseasonLandingPage;
 	}
 }

@@ -6926,6 +6926,18 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	/**
+	 * gets microseason landing page url
+	 * 
+	 */
+	
+	public String get_microseason_landing_Page_URL() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "AEMMicroseasonLandingPageURL");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
 	 * gets get it in store label (fulfillment option)
 	 * 
 	 */
