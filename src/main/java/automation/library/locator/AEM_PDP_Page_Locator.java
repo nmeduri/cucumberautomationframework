@@ -69,6 +69,14 @@ public class AEM_PDP_Page_Locator {
 	String returnPolicyLinkPath = Property.getProperty(Constant.OR_FILE, "returnPolicyLinkPath");
 	String aemResourcePreview = Property.getProperty(Constant.OR_FILE, "aemResourcePreview");
 	
+	String fulfillmentOption = Property.getProperty(Constant.OR_FILE, "fullfillmentOption");
+	String getitInStorelabel = Property.getProperty(Constant.OR_FILE, "getitInStorelabel");
+	String inStockLabel = Property.getProperty(Constant.OR_FILE, "inStockLabel");
+	String freePickUpInStoreLabel = Property.getProperty(Constant.OR_FILE, "freePickUpInStoreLabel");
+	String getinstoreUpdated = Property.getProperty(Constant.OR_FILE, "getinstoreUpdated");
+	String InstockUpdated = Property.getProperty(Constant.OR_FILE, "InstockUpdated");
+	String freePickUpLabelupdated = Property.getProperty(Constant.OR_FILE, "freePickUpLabelupdated");
+
 	
     /**
 	 * gets Locator - Specifications
@@ -442,5 +450,52 @@ public class AEM_PDP_Page_Locator {
 	 */
 	public String get_AEM_Resource_Preview() {
 		return aemResourcePreview;
+	}
+	/**
+	 * get Locator - fulfillment Option
+	 */
+	public String get_fulfillmentOption() {
+		return fulfillmentOption;
+	}
+	
+	/**
+	 * get Locator - get get it In Store label
+	 */
+	public String get_getitInStore_label() {
+		return getitInStorelabel;
+	}
+	
+	/**
+	 * get Locator - get inStock Label
+	 */
+	public String get_inStock_Label() {
+		return inStockLabel;
+	}
+	
+	/**
+	 * get Locator - get freePickUpInStore Label
+	 */
+	public String get_freePickUpInStore_Label() {
+		return freePickUpInStoreLabel;
+	}
+	/**
+	 * get Locator - get get it In Store  updated
+	 */
+	public String get_getitInStore_updated() {
+		return getinstoreUpdated;
+	}
+	
+	/**
+	 * get Locator - get inStock updated
+	 */
+	public String get_inStock_updated() {
+		return InstockUpdated;
+	}
+	
+	/**
+	 * get Locator - get freePickUpInStore updated
+	 */
+	public String get_freePickUpInStore_updated() {
+		return freePickUpLabelupdated;
 	}
 }

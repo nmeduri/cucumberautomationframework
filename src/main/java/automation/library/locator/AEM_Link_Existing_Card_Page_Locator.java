@@ -250,7 +250,6 @@ public class AEM_Link_Existing_Card_Page_Locator {
 	}
 	
 	/**
-<<<<<<< HEAD
 	 * gets Locator - Get Active validation tab
 	 * 
 	 */

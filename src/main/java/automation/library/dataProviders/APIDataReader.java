@@ -1086,8 +1086,6 @@ public class APIDataReader {
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
 	/**
-<<<<<<< HEAD
-=======
 	 * gets product data of TC-1412
 	 * 
 	 */
@@ -1233,7 +1231,6 @@ public class APIDataReader {
 			throw new RuntimeException("Product Code not specified in the API Data file.");
 	}
 	/**
->>>>>>> branch 'develop' of https://acn-ctc@dev.azure.com/acn-ctc/ODP%20Test%20Automation/_git/ODP%20Test%20Automation
 	 * gets product data of TC-1357
 	 * 
 	 */

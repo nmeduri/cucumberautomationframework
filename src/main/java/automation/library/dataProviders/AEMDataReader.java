@@ -6925,4 +6925,40 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets get it in store label (fulfillment option)
+	 * 
+	 */
+	
+	public String get_getItInStore() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "getItInStore");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets in stock label (fulfillment option)
+	 * 
+	 */
+	
+	public String get_InStock_label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "InStock");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets freePickUpInStore label (fulfillment option)
+	 * 
+	 */
+	
+	public String get_freePickUpInStore_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "freePickUpInStore");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 }

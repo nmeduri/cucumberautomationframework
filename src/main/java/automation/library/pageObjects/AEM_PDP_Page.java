@@ -463,4 +463,23 @@ public class AEM_PDP_Page extends PageObject {
 	public void clickOnProductMerchandiseTab() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Product_Merchandise_Tab()));
 	}
+	/** click on fulfillment tab*/
+	public void clickonfulfillmentTab() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_fulfillmentOption()));
+	}
+	/** enter data  get it in store Label */
+	public void configureGetItInStoreLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_getitInStore_label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_getitInStore_label()), FileReaderManager.getInstance().getAEMDataReader().get_getItInStore());
+	}
+	/** enter data  in stock Label */
+	public void configureInStockLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_inStock_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_inStock_Label()), FileReaderManager.getInstance().getAEMDataReader().get_InStock_label());
+	}
+	/** enter data  in stock store Label */
+	public void configurefreePickUpInStoreLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_freePickUpInStore_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_freePickUpInStore_Label()), FileReaderManager.getInstance().getAEMDataReader().get_freePickUpInStore_Label());
+	}
 }

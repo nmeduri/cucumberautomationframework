@@ -714,9 +714,7 @@ public class Cart_Page_Locator {
 			return outOfRangeInlineErrorMessage;
 		}
 		
-		/**
-=======
-		/**
+			/**
 		 * gets Locator - Delivery Options Label Text
 		 * 
 		 */
@@ -773,7 +771,6 @@ public class Cart_Page_Locator {
 		}
 
 		/**
->>>>>>> d9cea1a71b7a7ee6ac3af8e404e0fcdf3a525210
 		 * gets Locator - Shopping Cart Zero
 		 */
        public String get_Shopping_Cart_Zero() {
