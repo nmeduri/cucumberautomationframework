@@ -1,4 +1,4 @@
-Feature: OCCP_874_PDP_Warranty.feature
+Feature: OCCP_874_PDP_Warranty
 
 	Description: To test the HYBRIS Test Cases for the story OCCP-874
        

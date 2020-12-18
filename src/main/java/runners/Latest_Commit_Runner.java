@@ -13,9 +13,10 @@ public final class Latest_Commit_Runner extends BaseClass{
 	private static String[] defaultOptions = {
 
 
-			"classpath:Adobe/AEM/Regression/OCCP_3783_Microseason_Landing_Page_AEM_Template.feature",
+
+			"classpath:SAP/Regression/OCCP_957_Tires_PDP_Tires_With_No_Vehicle_Selected.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@TC-6884",
+			"--tags", "@RegressionTest",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
