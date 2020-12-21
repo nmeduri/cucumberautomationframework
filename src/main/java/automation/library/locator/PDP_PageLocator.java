@@ -100,7 +100,7 @@ public class PDP_PageLocator {
 	String addToCartFlyoutProductVariants = Property.getProperty(Constant.OR_FILE, "addToCartFlyoutProductVariants");
 	String continueButtonOnSafetyModel = Property.getProperty(Constant.OR_FILE, "continueButtonOnSafetyModel");
 	String lengthVariant = Property.getProperty(Constant.OR_FILE, "lengthVariant");
-    
+    String curbSidePickUpAvailabeLabel = Property.getProperty(Constant.OR_FILE, "curbSidePickUpAvailabeLabel");
 	String sortBySection=Property.getProperty(Constant.OR_FILE, "sortBySection");
 	String sortByReviewsLabel=Property.getProperty(Constant.OR_FILE, "sortByReviewsLabel");
 	String mostRecentReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostRecentReviewsLabel");
@@ -112,7 +112,7 @@ public class PDP_PageLocator {
 	String chevronReviewsArrow=Property.getProperty(Constant.OR_FILE, "chevronReviewsArrow");
 	String mostHelpfulReviewsLabel=Property.getProperty(Constant.OR_FILE, "mostHelpfulReviewsLabel");
 	String reviewsSection=Property.getProperty(Constant.OR_FILE, "reviewsSection");
-	
+	String shipToHomeLabel = Property.getProperty(Constant.OR_FILE, "shipToHomeLabel");
 	String overviewStickyTOC = Property.getProperty(Constant.OR_FILE, "overviewStickyTOC");
 	String resourcesStickyTOC = Property.getProperty(Constant.OR_FILE, "resourcesStickyTOC");
 	String specificationsStickyTOC = Property.getProperty(Constant.OR_FILE, "specificationsStickyTOC");
@@ -167,6 +167,11 @@ public class PDP_PageLocator {
 	String variantProductPDP = Property.getProperty(Constant.OR_FILE, "variantProductPDP").replace("=", ",");
 	String numberOfRatingStars = Property.getProperty(Constant.OR_FILE, "numberOfRatingStars");
 	String resourcesSectionHeading = Property.getProperty(Constant.OR_FILE, "resourcesSectionHeading");
+	String checkNearByStoreLabel = Property.getProperty(Constant.OR_FILE, "checkNearByStoreLabel");
+	String availableByLabel = Property.getProperty(Constant.OR_FILE, "availableByLabel");
+	String shipToHomeButton = Property.getProperty(Constant.OR_FILE, "shipToHomeButton");  
+	String changeButtonShipToHome = Property.getProperty(Constant.OR_FILE, "changeButtonShipToHome");
+	
 	
 	/**
 	 * gets Locator - Add to Cart Button
@@ -1407,6 +1412,50 @@ public class PDP_PageLocator {
 	public String get_Resources_Heading() {
 		return resourcesSectionHeading;
 	}
+	
+	/**
+	 * gets Locator - Available By
+	 */
+	public String get_Available_By() {
+		return availableByLabel;
+	}
+	
+	/**
+	 * gets Locator - Curbside Pickup Available
+	 */
+	public String get_Curbside_Pickup_Available() {
+		return curbSidePickUpAvailabeLabel;
+	}
+	
+	/**
+	 * gets Locator - Ship To Home
+	 */
+	public String get_Ship_To_Home() {
+		return shipToHomeLabel;
+	}
+	
+	/**
+	 * gets Locator - Check Near By Store
+	 */
+	public String get_Check_Near_By_Store() {
+		return checkNearByStoreLabel;
+	}
+	
+	/**
+	 * gets Locator - Ship To Home Button
+	 */
+	public String get_Ship_To_Home_Button() {
+		return shipToHomeButton;
+	}
+	
+	/**
+	 * gets Locator - Change Button
+	 */
+	public String get_Change_Button() {
+		return changeButtonShipToHome;
+	}
+	
+	
 	
  }
 

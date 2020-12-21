@@ -69,6 +69,14 @@ public class Login_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()),
 				data + FileReaderManager.getInstance().getDataReader().get_Email_Detail());
 	}
+	
+	/** This function enter email detail */
+	public void enterData_Email(String data) throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page())), 40);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()),
+				data);
+	}
 
 	/** This function clear to email detail */
 	public void clear_Email_Login_Page() throws Exception {
@@ -291,6 +299,11 @@ public class Login_Page extends PageObject {
 		}
 			catch(Exception e) {
 			}
+	}
+	
+	/** verify user is successfully logged in */
+	public void verifyUserLoggedIn() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Hi()));
 	}
 
 }

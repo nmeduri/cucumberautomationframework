@@ -28,6 +28,7 @@ public class Login_Page_Locator {
 	String otpInput = Property.getProperty(Constant.OR_FILE, "otpInput");
 	String verifyButton = Property.getProperty(Constant.OR_FILE, "verifyButton");
 	String otpCode = Property.getProperty(Constant.OR_FILE, "otpCode");
+	String hiLoggedIn = Property.getProperty(Constant.OR_FILE, "hiLoggedIn").replace("=", ",");
 	
 	/**
 	 * gets Locator - Header Get Welcome To Your Triangle
@@ -179,5 +180,12 @@ public class Login_Page_Locator {
 	
 	public String get_OTP_Code() {
 		return otpCode;
+	}
+	
+	/**
+	 * gets Locator - Hi (Locator)
+	 */
+	public String get_Hi() {
+		return hiLoggedIn;
 	}
 }

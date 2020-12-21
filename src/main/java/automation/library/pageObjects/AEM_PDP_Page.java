@@ -463,6 +463,101 @@ public class AEM_PDP_Page extends PageObject {
 	public void clickOnProductMerchandiseTab() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Product_Merchandise_Tab()));
 	}
+	
+	/** update available by label */
+	public void updateAvailableByLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_By_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_By_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Available_By_Label());
+	}
+	
+	/** revert available by label */
+	public void revertAvailableByLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_By_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Available_By_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Available_By_Label_Revert());
+	}
+	
+	/** configured available by displayed on publish page */
+	public void configuredAvailableByDisplayedOnPublishPage() throws Exception {
+		Log.message("Available Text:- " + $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Available_By())), true);
+	    Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Available_By())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Available_By_Label()));
+	}
+	
+	/** click on fulfillment option */
+	public void clickOnFulfillmentOption() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Fulfillment_Option()));
+	}
+	
+	/** update curb side pickup available label */
+	public void updateCurbSidePickupAvailableByLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Curb_Side_Pick_Up_Available()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Curb_Side_Pick_Up_Available()), FileReaderManager.getInstance().getAEMDataReader().get_CurbSide_PickUp_Available_Label());
+	}
+	
+	/** revert curb side pickup available label */
+	public void revertCurbSidePickupAvailableByLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Curb_Side_Pick_Up_Available()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Curb_Side_Pick_Up_Available()), FileReaderManager.getInstance().getAEMDataReader().get_CurbSide_PickUp_Available_Label_Revert());
+	}
+	
+	/** configured curb side pick up available by displayed on publish page */
+	public void configuredCurbSidePickUpAvailableByDisplayedOnPublishPage() throws Exception {
+		Log.message("Available Text:- " + $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Curbside_Pickup_Available())), true);
+	    Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Curbside_Pickup_Available())).contains(FileReaderManager.getInstance().getAEMDataReader().get_CurbSide_PickUp_Available_Label()));
+	}
+	
+	/** update ship to home label */
+	public void updateShipToHomeLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Ship_To_Home()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Ship_To_Home()), FileReaderManager.getInstance().getAEMDataReader().get_Ship_To_Home_Label());
+	}
+	
+	/** revert ship to home label */
+	public void revertShipToHomeLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Ship_To_Home()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Ship_To_Home()), FileReaderManager.getInstance().getAEMDataReader().get_Ship_To_Home_Label_Revert());
+	}
+	
+	/** configured ship to home displayed on publish page */
+	public void configuredShipToHomeDisplayedOnPublishPage() throws Exception {
+	    Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Ship_To_Home())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Ship_To_Home_Label()));
+	}
+	
+	/** update check near by store label */
+	public void updateCheckNearByStoreLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Check_NearBy_Stores()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Check_NearBy_Stores()), FileReaderManager.getInstance().getAEMDataReader().get_Check_NearBy_Store_Label());
+	}
+	
+	/** revert check near by store label */
+	public void revertCheckNearByStoreLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Check_NearBy_Stores()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Check_NearBy_Stores()), FileReaderManager.getInstance().getAEMDataReader().get_Check_NearBy_Store_Label_Revert());
+	}
+	
+	/** configured check nearby store displayed on publish page */
+	public void configuredCheckNearByStoreDisplayedOnPublishPage() throws Exception {
+		Log.message("Check Near By Store Label:- " + $getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Check_Near_By_Store())), true);
+		Log.message("Label:- " + FileReaderManager.getInstance().getAEMDataReader().get_Check_NearBy_Store_Label(), true);
+	    Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Check_Near_By_Store())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Check_NearBy_Store_Label()));
+	}
+	
+	/** update change label */
+	public void updateChangeLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Change_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Change_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Change_Label());
+	}
+	
+	/** revert change label */
+	public void revertChangeLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Change_Label()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_Change_Label()), FileReaderManager.getInstance().getAEMDataReader().get_Change_Label_Revert());
+	}
+	
+	/** configured change button displayed on publish page */
+	public void configuredChangeButtonDisplayedOnPublishPage() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Ship_To_Home_Button()));
+	    Assert.assertTrue($getText($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Change_Button())).contains(FileReaderManager.getInstance().getAEMDataReader().get_Change_Label()));
+	}
 	/** click on fulfillment tab*/
 	public void clickonfulfillmentTab() throws Exception {
 		$click($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_fulfillmentOption()));

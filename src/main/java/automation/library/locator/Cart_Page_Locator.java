@@ -25,12 +25,21 @@ public class Cart_Page_Locator {
 	String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 	String shoppingCartPageTitle = Property.getProperty(Constant.OR_FILE, "shoppingCartPageTitle");
 	String quantitySelectorBox = Property.getProperty(Constant.OR_FILE, "quantitySelectorBox");
-	String errorMessageOfExceededQuantity = Property.getProperty(Constant.OR_FILE, "errorMessageOfExceededQuantity").replace("=", ",");
+	String errorMessageOfExceededQuantity = Property.getProperty(Constant.OR_FILE, "errorMessageOfExceededQuantity")
+			.replace("=", ",");
 	String quantityBoxInCartPage = Property.getProperty(Constant.OR_FILE, "quantityBoxInCartPage");
 	String highlightedQuantitySelectorBox = Property.getProperty(Constant.OR_FILE, "highlightedQuantitySelectorBox");
 
 	String coreChargeLabel = Property.getProperty(Constant.OR_FILE, "coreChargeLabel");
-	String cartProductQuantity=Property.getProperty(Constant.OR_FILE, "cartQuantity");
+	String cartProductQuantity = Property.getProperty(Constant.OR_FILE, "cartQuantity");
+	
+	String quantityFieldShoppingCart = Property.getProperty(Constant.OR_FILE, "quantityFieldShoppingCart");
+	// String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE,
+	// "wishlistMaxLimitText").replace("=", ",");
+	String ecoFeesShoppingCart = Property.getProperty(Constant.OR_FILE, "ecoFeesShoppingCart");
+	String infoIconEcoFees = Property.getProperty(Constant.OR_FILE, "infoIconEcoFees");
+	String toolTipMessageEcoFees = Property.getProperty(Constant.OR_FILE, "toolTipMessageEcoFees");
+	String ecoToolTipCloseButton = Property.getProperty(Constant.OR_FILE, "ecoToolTipCloseButton");
 	String ToolTipCoreCharges=Property.getProperty(Constant.OR_FILE, "ToolTipCoreCharges");
 	String ToolTipMessage=Property.getProperty(Constant.OR_FILE, "ToolTipMessage");
 	String ToolTipCloseIcon=Property.getProperty(Constant.OR_FILE, "ToolTipCloseIcon");
@@ -111,7 +120,6 @@ public class Cart_Page_Locator {
 	
 	//String wishlistMaxLimitText = Property.getProperty(Constant.OR_FILE, "wishlistMaxLimitText").replace("=", ",");
 
-	
 	/**
 	 * gets Locator - Wishlist icon 4
 	 * 
@@ -119,6 +127,7 @@ public class Cart_Page_Locator {
 	public String get_Wishlist_Icon4() {
 		return wishListIcon4;
 	}
+
 	/**
 	 * gets Locator - ToastmsgCloseBtn
 	 * 
@@ -126,6 +135,7 @@ public class Cart_Page_Locator {
 	public String get_ToastmsgCloseBtn() {
 		return ToastmsgCloseBtn;
 	}
+
 	/**
 	 * gets Locator -product Limit msg
 	 * 
@@ -133,6 +143,7 @@ public class Cart_Page_Locator {
 	public String get_productLimitmsg() {
 		return productLimitmsg;
 	}
+
 	/**
 	 * gets Locator - LimitExceed Error
 	 * 
@@ -140,6 +151,7 @@ public class Cart_Page_Locator {
 	public String get_LimitExceedError() {
 		return LimitExceedError;
 	}
+
 	/**
 	 * gets Locator - Increase quantity
 	 * 
@@ -147,6 +159,7 @@ public class Cart_Page_Locator {
 	public String get_IncreaseQuantity() {
 		return IncreaseQuantity;
 	}
+
 	/**
 	 * gets Locator - decrease quantity
 	 * 
@@ -154,6 +167,7 @@ public class Cart_Page_Locator {
 	public String get_decreaseQuantity() {
 		return decreaseQuantity;
 	}
+
 	/**
 	 * gets Locator - pickup at store ToolTip
 	 * 
@@ -161,6 +175,7 @@ public class Cart_Page_Locator {
 	public String get_pickupatstoreToolTip() {
 		return pickupatstoreToolTip;
 	}
+
 	/**
 	 * gets Locator - Empty cart Title
 	 * 
@@ -168,6 +183,7 @@ public class Cart_Page_Locator {
 	public String get_EmptycartTitle() {
 		return EmptycartTitle;
 	}
+
 	/**
 	 * gets Locator - change CTA
 	 * 
@@ -175,6 +191,7 @@ public class Cart_Page_Locator {
 	public String get_Change_CTA() {
 		return changeCTA;
 	}
+
 	/**
 	 * gets Locator - ToolTip Close Icon
 	 * 
@@ -182,14 +199,15 @@ public class Cart_Page_Locator {
 	public String get_ToolTipClose_Icon() {
 		return ToolTipCloseIcon;
 	}
-	
+
 	/**
 	 * gets Locator - ToolTip_CoreCharges
 	 * 
 	 */
 	public String get_ToolTip_CoreCharges() {
 		return ToolTipCoreCharges;
-	} 
+	}
+
 	/**
 	 * gets Locator - cart Product Quantity
 	 * 
@@ -205,6 +223,7 @@ public class Cart_Page_Locator {
 	public String get_Wishlist_Icon5() {
 		return wishListIcon5;
 	}
+
 	/**
 	 * gets Locator - store info tool tip
 	 * 
@@ -291,35 +310,39 @@ public class Cart_Page_Locator {
 	 */
 	/*
 	 * public String get_Wishlist_Max_Limit_Text() { return wishlistMaxLimitText; }
-	 */ 
+	 */
 	/**
-		 * gets Locator - core charge label message
-		 * 
-		 */
+	 * gets Locator - core charge label message
+	 * 
+	 */
 	public String get_CoreChargemessage() {
 		return coreChargeLabel;
 	}
+
 	/**
 	 * gets Locator - Product Brand Title
 	 * 
-	 */	
+	 */
 	public String get_Shopping_Cart_Page_Title() {
 		return shoppingCartPageTitle;
 	}
+
 	/**
 	 * gets Locator - quantity selector box
 	 * 
-	 */	
+	 */
 	public String get_Quantity_Selector_Box() {
 		return quantitySelectorBox;
 	}
+
 	/**
 	 * gets Locator - Error message for exceeded quantity
 	 * 
-	 */	
+	 */
 	public String get_Error_Message_Exceeded_Quantity() {
 		return errorMessageOfExceededQuantity;
 	}
+
 	/**
 	 * gets Locator - Quantity Box of cart page
 	 * 
@@ -327,6 +350,7 @@ public class Cart_Page_Locator {
 	public String get_Quantity_Box_Cart_Page() {
 		return quantityBoxInCartPage;
 	}
+
 	/**
 	 * gets Locator - Highlighted Quantity Selector Box
 	 * 
@@ -334,6 +358,7 @@ public class Cart_Page_Locator {
 	public String get_Highlighted_Quantity_Selector_Box() {
 		return highlightedQuantitySelectorBox;
 	}
+
 	/**
 	 * gets Locator - ToolTip message
 	 * 
@@ -341,6 +366,7 @@ public class Cart_Page_Locator {
 	public String get_ToolTip_Message() {
 		return ToolTipMessage;
 	}
+
 	/**
 	 * gets Locator - ToolTipMessage Text
 	 * 
@@ -348,6 +374,7 @@ public class Cart_Page_Locator {
 	public String get_ToolTipMessageText() {
 		return ToolTipMessageText;
 	}
+
 	/**
 	 * gets Locator - Price Value
 	 * 
@@ -355,6 +382,7 @@ public class Cart_Page_Locator {
 	public String get_Price_Value() {
 		return priceValue;
 	}
+
 	/**
 	 * gets Locator - Price Value Of Each Product
 	 * 
@@ -362,6 +390,7 @@ public class Cart_Page_Locator {
 	public String get_Price_Value_Of_Each_Product() {
 		return priceValueOfEachProduct;
 	}
+
 	/**
 	 * gets Locator - store info tool-tip details
 	 * 
@@ -369,6 +398,7 @@ public class Cart_Page_Locator {
 	public String get_StoreInfo_tooltipdetails() {
 		return tooltipdetails;
 	}
+
 	/**
 	 * gets Locator - store details Link
 	 * 
@@ -376,6 +406,7 @@ public class Cart_Page_Locator {
 	public String get_storedetailsLink() {
 		return storedetailsLink;
 	}
+
 	/**
 	 * gets Locator - orderSummary Title
 	 * 
@@ -383,6 +414,7 @@ public class Cart_Page_Locator {
 	public String get_orderSummaryTitle() {
 		return orderSummaryTitle;
 	}
+
 	/**
 	 * gets Locator - Ship To Home Title
 	 * 
@@ -390,6 +422,7 @@ public class Cart_Page_Locator {
 	public String get_ShipToHomeTitle() {
 		return ShipToHomeTitle;
 	}
+
 	/**
 	 * gets Locator - "ShippingTo" message
 	 * 
@@ -397,6 +430,7 @@ public class Cart_Page_Locator {
 	public String get_ShippingToMsg() {
 		return ShippingToMsg;
 	}
+
 	/**
 	 * gets Locator - STH Change CTA
 	 * 
@@ -404,6 +438,7 @@ public class Cart_Page_Locator {
 	public String get_STHChangeCTA() {
 		return STHChangeCTA;
 	}
+
 	/**
 	 * gets Locator - STH fee
 	 * 
@@ -411,6 +446,7 @@ public class Cart_Page_Locator {
 	public String get_STHfee() {
 		return STHfee;
 	}
+
 	/**
 	 * gets Locator - store details address
 	 * 
@@ -418,6 +454,7 @@ public class Cart_Page_Locator {
 	public String get_storedetails_address() {
 		return storedetailsaddress;
 	}
+
 	/**
 	 * gets Locator - postalCode Modal
 	 * 
@@ -425,6 +462,7 @@ public class Cart_Page_Locator {
 	public String get_postalCodeModal() {
 		return postalCodeModal;
 	}
+
 	/**
 	 * gets Locator - pickup at Store Title
 	 * 
@@ -432,6 +470,7 @@ public class Cart_Page_Locator {
 	public String get_pickupatStoreTitle() {
 		return pickupatStoreTitle;
 	}
+
 	/**
 	 * gets Locator - BOIP Free Fees
 	 * 
@@ -439,6 +478,7 @@ public class Cart_Page_Locator {
 	public String get_BOIPFreeFees() {
 		return BOIPFreeFees;
 	}
+
 	/**
 	 * gets Locator - PickUp at store Change CTA
 	 * 
@@ -446,6 +486,7 @@ public class Cart_Page_Locator {
 	public String get_PickUpatHomeChangeCTA() {
 		return PickUpatStoreChangeCTA;
 	}
+
 	/**
 	 * gets Locator - standard Delivery option
 	 * 
@@ -453,6 +494,7 @@ public class Cart_Page_Locator {
 	public String get_standardDelivery() {
 		return standardDelivery;
 	}
+
 	/**
 	 * gets Locator - homeDelivery option
 	 * 
@@ -460,6 +502,7 @@ public class Cart_Page_Locator {
 	public String get_homeDelivery_option() {
 		return homeDelivery;
 	}
+
 	/**
 	 * gets Locator - home Delivery Unpack option
 	 * 
@@ -467,6 +510,7 @@ public class Cart_Page_Locator {
 	public String get_homeDeliveryUnpack_option() {
 		return homeDeliveryUnpack;
 	}
+
 	/**
 	 * gets Locator - standard Delivery option Tooltip
 	 * 
@@ -474,6 +518,7 @@ public class Cart_Page_Locator {
 	public String get_stadardDeliveryTooltip() {
 		return stadardDeliveryTooltip;
 	}
+
 	/**
 	 * gets Locator - home Delivery option Tooltip
 	 * 
@@ -481,6 +526,7 @@ public class Cart_Page_Locator {
 	public String get_homeDeliveryTooltip() {
 		return homeDeliveryTooltip;
 	}
+
 	/**
 	 * gets Locator - home Delivery Unpack Tooltip
 	 * 
@@ -488,6 +534,7 @@ public class Cart_Page_Locator {
 	public String get_homeDeliveryUnpackTooltip() {
 		return homeDeliveryUnpackTooltip;
 	}
+
 	/**
 	 * gets Locator - delivery dialog Box
 	 * 
@@ -495,6 +542,7 @@ public class Cart_Page_Locator {
 	public String get_deliverydialogBox() {
 		return deliverydialogBox;
 	}
+
 	/**
 	 * gets Locator - Tool-tip Information
 	 * 
@@ -502,6 +550,7 @@ public class Cart_Page_Locator {
 	public String get_TooltipBody() {
 		return TooltipBody;
 	}
+
 	/**
 	 * gets Locator - tool-tip close icon
 	 * 
@@ -509,6 +558,7 @@ public class Cart_Page_Locator {
 	public String get_CloseToolTipIcon() {
 		return CloseToolTip;
 	}
+
 	/**
 	 * gets Locator -bulk message -delivery option
 	 * 
@@ -516,14 +566,15 @@ public class Cart_Page_Locator {
 	public String get_BulkMessage() {
 		return BulkMessage;
 	}
-    /**
+
+	/**
 	 * gets Locator - HST Text
 	 * 
 	 */
 	public String get_HSTText() {
 		return HSTText;
 	}
-	
+
 	/**
 	 * gets Locator - HST Fees
 	 * 
@@ -531,6 +582,7 @@ public class Cart_Page_Locator {
 	public String get_HSTFees() {
 		return HSTFees;
 	}
+
 	/**
 	 * gets Locator - Total fees Text
 	 * 
@@ -538,6 +590,7 @@ public class Cart_Page_Locator {
 	public String get_TotalText() {
 		return TotalText;
 	}
+
 	/**
 	 * gets Locator - Total Fee
 	 * 
@@ -545,6 +598,7 @@ public class Cart_Page_Locator {
 	public String get_TotalFee() {
 		return TotalFee;
 	}
+
 	/**
 	 * gets Locator - save message
 	 * 
@@ -552,6 +606,7 @@ public class Cart_Page_Locator {
 	public String get_saveMessage() {
 		return saveMessage;
 	}
+
 	/**
 	 * gets Locator - ship date
 	 * 
@@ -559,6 +614,7 @@ public class Cart_Page_Locator {
 	public String get_ShipDate() {
 		return ShipDate;
 	}
+
 	/**
 	 * gets Locator - Available Time
 	 * 
@@ -566,6 +622,7 @@ public class Cart_Page_Locator {
 	public String get_AvailableTime() {
 		return AvailableTime;
 	}
+
 	/**
 	 * gets Locator - curbSite Text message
 	 * 
@@ -573,6 +630,7 @@ public class Cart_Page_Locator {
 	public String get_curbSiteText() {
 		return curbSiteText;
 	}
+
 	/**
 	 * gets Locator - curbSite CTA
 	 * 
@@ -580,6 +638,7 @@ public class Cart_Page_Locator {
 	public String get_curbSiteLearnmoreCTA() {
 		return curbSiteLearnmoreCTA;
 	}
+
 	/**
 	 * gets Locator - checkOut button
 	 * 
@@ -587,6 +646,7 @@ public class Cart_Page_Locator {
 	public String get_checkOutbtn() {
 		return checkOutbtn;
 	}
+
 	/**
 	 * gets Locator -ToastMsg after Checkout
 	 * 
@@ -594,6 +654,7 @@ public class Cart_Page_Locator {
 	public String get_ToastMsgafterCheckout() {
 		return ToastMsgafterCheckout;
 	}
+
 	/**
 	 * gets Locator - Warning Toast Label
 	 * 
@@ -601,7 +662,48 @@ public class Cart_Page_Locator {
 	public String get_WarningToastLabel() {
 		return WarningToastLabel;
 	}
+
+	/**
+	 * gets Locator - postal Code Modal Title
+	 * 
+	 */
 	
+
+	/**
+	 * gets Locator - Quantity Field
+	 */
+	public String get_Quantity_Field() {
+		return quantityFieldShoppingCart;
+	}
+
+	/**
+	 * gets Locator - Eco fees
+	 */
+	public String get_Eco_Fees() {
+		return ecoFeesShoppingCart;
+	}
+
+	/**
+	 * gets Locator - Info Icon
+	 */
+	public String get_Info_Icon_Eco_Fees() {
+		return infoIconEcoFees;
+	}
+
+	/**
+	 * gets Locator - Tool tip message
+	 */
+	public String get_Tool_Tip_Message_Eco() {
+		return toolTipMessageEcoFees;
+	}
+	
+	/**
+	 * gets Locator - Close Button (Tool Tip)
+	 */
+	public String get_Close_Button_Eco_Tool_Tip() {
+		return ecoToolTipCloseButton;
+	}
+
 	 /**
 		 * gets Locator - postal Code Modal Title
 		 * 
@@ -819,5 +921,4 @@ public class Cart_Page_Locator {
        public String get_Service_Description_Name() {
     	   return serviceTitleDescription;
        }
-       
 }

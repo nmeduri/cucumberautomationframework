@@ -2202,8 +2202,9 @@ public class DataReader {
 			return data;
 		else
 			throw new RuntimeException("data not specified in the Data file.");
-	
+
 	}
+	
 
 	/** gets Data - Recommendation Badge Color
 	 * 
@@ -2291,17 +2292,54 @@ public class DataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+	/** gets Data - Shopping Cart Url
+	 * 
+	 */
+	public String get_Cart_Url_Fr() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "cartUrlFr");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	/** gets Data - Email address
 	 * 
 	 */
 	public String get_Checkout_Email_Address_Data() {
 		String data = Property.getProperty(Constant.DATA_FILE, "checkoutEmailAddress");
+
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+
+	/** gets Data - My Account Shopping Preferences
+	 * 
+	 */
+	public String get_My_Account_Shopping_Preferences_Url() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "myAccountShoppingPreferencesUrl");
 		if (data != null)
 			return data;
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+	/** gets Data - Quantity = 1
+	 * 
+	 */
+	public String get_One_Quantity() {
+
+		String data = Property.getProperty(Constant.DATA_FILE, "oneQunatity");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	
+		
+	}
 	/** gets Data - Phone number
 	 * 
 	 */
@@ -2312,7 +2350,17 @@ public class DataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-	
+
+	/** gets Data - Merge Rewards (Url)
+	 * 
+	 */
+	public String get_Merge_Rewards_Url() {
+		String data = Property.getProperty(Constant.DATA_FILE, "mergeRewardsUrl");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 
 	/** gets Data - Email id for checkout 
 	 * 
@@ -2324,7 +2372,18 @@ public class DataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-	
+
+	/** gets Data - User Name
+	 * 
+	 */
+	public String get_UserName_6228() {
+		String data = Property.getProperty(Constant.DATA_FILE, "username_occp_6228");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+
 	/** gets Data - Email id for checkout 
 	 * 
 	 */
@@ -2336,6 +2395,18 @@ public class DataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 	
+	/**
+	 * gets My Account Shopping Preferences URl
+	 * 
+	 */
+
+	public String get_Account_Shopping_Preferences_Url() {
+		String getUrl = Property.getProperty(Constant.DATA_FILE, "accountShoppingPreferencesUrl");
+		if (getUrl != null)
+			return getUrl;
+		else
+			throw new RuntimeException("url not specified in the Data file.");
+	}
 	/** gets Data - Email address
 	 * 
 	 */
@@ -2357,5 +2428,4 @@ public class DataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
-	
 }

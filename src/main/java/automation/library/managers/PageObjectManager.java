@@ -59,6 +59,8 @@ import automation.library.locator.Link_Your_Triangle_Rewards_Account_Locator;
 import automation.library.locator.Link_reward_ProfileScreen_page_Locator;
 import automation.library.locator.Login_Page_Locator;
 import automation.library.locator.Mailinator_Page_Locator;
+import automation.library.locator.Merge_Rewards_Locator;
+import automation.library.locator.My_Account_Shopping_Preferences_Locator;
 import automation.library.locator.PDP_AddToCart_Page_Locator;
 import automation.library.locator.PDP_PageLocator;
 import automation.library.locator.PLP_PageLocator;
@@ -126,6 +128,8 @@ import automation.library.pageObjects.Link_Your_Triangle_Rewards_account_Page;
 import automation.library.pageObjects.Link_reward_ProfileScreen_page;
 import automation.library.pageObjects.Login_Page;
 import automation.library.pageObjects.Mailinator_Page;
+import automation.library.pageObjects.Merge_Rewards_Page;
+import automation.library.pageObjects.My_Account_Shopping_Preferences_Page;
 import automation.library.pageObjects.PDP_AddToCart_Page;
 import automation.library.pageObjects.PDP_Page;
 import automation.library.pageObjects.PLP_Page;
@@ -294,6 +298,12 @@ public class PageObjectManager {
 	private Contactus_Locator getContactUsLocator;
 	private AEM_Microseason_Landing_Page_Locator getAEMMicroseasonLandingPageLocator;
 	private AEM_Microseason_Landing_Page getAEMMicroseasonLandingPage;
+	
+	private My_Account_Shopping_Preferences_Locator getMyAccountShoppingPreferencesLocator;
+	private My_Account_Shopping_Preferences_Page getMyAccountShoppingPrefercensPage;
+	
+	private Merge_Rewards_Locator getMergeRewardsLocator;
+	private Merge_Rewards_Page getMergeRewardsPage;
 	
 	public PageObjectManager() {
 		
@@ -979,6 +989,16 @@ public class PageObjectManager {
 	public Account_Payment_Information_Page_Locator getAccountPaymentInformationPageLocator() {
 		return (getAccountPaymentInformationPageLocator == null) ? getAccountPaymentInformationPageLocator = new Account_Payment_Information_Page_Locator() : getAccountPaymentInformationPageLocator;
 	}
+	
+	/** Returns Instance of My Account Shopping Preferences Page */
+	public My_Account_Shopping_Preferences_Page getMyAccountShoppingPreferencesLocator(WebDriver driver) {
+		return (getMyAccountShoppingPrefercensPage == null) ? getMyAccountShoppingPrefercensPage = new My_Account_Shopping_Preferences_Page(driver) : getMyAccountShoppingPrefercensPage;
+	}
+
+	/** Returns Instance of My Account Shopping Preferences Page locator */
+	public My_Account_Shopping_Preferences_Locator getMyAccountShoppingPreferencesLocator() {
+		return (getMyAccountShoppingPreferencesLocator == null) ? getMyAccountShoppingPreferencesLocator = new My_Account_Shopping_Preferences_Locator() : getMyAccountShoppingPreferencesLocator;
+	}
 	/** Returns Instance of Account profile Information Page */
 	public Account_Profile_Page getAccountProfilePage(WebDriver driver) {
 		return (getAccountProfilePage == null) ? getAccountProfilePage = new Account_Profile_Page(driver) : getAccountProfilePage;
@@ -996,6 +1016,16 @@ public class PageObjectManager {
 	/** Returns Instance of AEM Account profile Infromation Page locator */
 	public AEM_Account_Profile_Page_Locator getAEMAccountProfilePageLocator() {
 		return (getAEMAccountProfilePageLocator == null) ? getAEMAccountProfilePageLocator = new AEM_Account_Profile_Page_Locator() : getAEMAccountProfilePageLocator;
+	}
+	
+	/** Returns Instance of Merge Rewards Page */
+	public Merge_Rewards_Page getMergeRewardsPage(WebDriver driver) {
+		return (getMergeRewardsPage == null) ? getMergeRewardsPage = new Merge_Rewards_Page(driver) : getMergeRewardsPage;
+	}
+
+	/** Returns Instance of AEM Account profile Infromation Page locator */
+	public Merge_Rewards_Locator getMergeRewardsLocator() {
+		return (getMergeRewardsLocator == null) ? getMergeRewardsLocator = new Merge_Rewards_Locator() : getMergeRewardsLocator;
 	}
 	/** Returns Instance of AEM Microseason LandingPage locator */
 	public AEM_Microseason_Landing_Page_Locator getAEMMicroseasonLandingPageLocator() {

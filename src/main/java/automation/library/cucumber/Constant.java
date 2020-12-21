@@ -31,7 +31,11 @@ public class Constant {
 			configureFile = "API_Data_D1.properties";
 			Log.message("File:- " + configureFile, true);
 			return configureFile;
-		} else {
+		} else if(sEnvironment.equalsIgnoreCase("UAT")){
+			configureFile = "API_Data_UAT.properties";
+			Log.message("File:- " + configureFile, true);
+			return configureFile;
+		}else {
 			configureFile = "API_Data_D2.properties";
 			Log.message("File:- " + configureFile, true);
 			return configureFile;
@@ -43,6 +47,10 @@ public class Constant {
 		String sEnvironment = System.getenv("environment");
 		if (sEnvironment.equalsIgnoreCase("D1")) {
 			configureFile = "dataFile_D1.properties";
+			Log.message("File:- " + configureFile, true);
+			return configureFile;
+		}else if(sEnvironment.equalsIgnoreCase("UAT")){
+			configureFile = "dataFile_UAT.properties";
 			Log.message("File:- " + configureFile, true);
 			return configureFile;
 		} else {
@@ -57,6 +65,10 @@ public class Constant {
 		String sEnvironment = System.getenv("environment");
 		if (sEnvironment.equalsIgnoreCase("D1")) {
 			configureFile = "AEM_Data_D1.properties";
+			Log.message("File:- " + configureFile, true);
+			return configureFile;
+		}else if(sEnvironment.equalsIgnoreCase("UAT")){
+			configureFile = "AEM_Data_UAT.properties";
 			Log.message("File:- " + configureFile, true);
 			return configureFile;
 		} else {

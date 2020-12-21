@@ -328,6 +328,25 @@
 						</goals>
 					</execution>
 					<execution>
+						<id>build-UAT_BVT_Runner</id>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<archive>
+								<manifest>
+									<mainClass>runners.UAT_BVT_Runner</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<finalName>UAT_BVT_Runner</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+					<execution>
 						<id>build-Last_Commit_Runner</id>
 						<configuration>
 							<appendAssemblyId>false</appendAssemblyId>

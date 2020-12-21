@@ -32,6 +32,11 @@ public class OCCP_3111_Cart_Add_To_Wishlist_Step extends BaseClass {
 		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).navigateTo_Cart_Page();
 	}
 	
+	@Given("fr cart url is available") 
+	public void cart_url_fr_is_available() throws Exception {
+		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).navigateTo_Cart_Page();
+	}
+	
 	@When("cart page is displayed for the product")
 	public void cart_page_is_displayed_for_the_product() throws Exception {
 		testContext.getPageObjectManager().getCartPage(PageObject.getDriver()).display_Cart_Page();

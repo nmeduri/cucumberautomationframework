@@ -38,7 +38,17 @@ public class Cart_Page extends PageObject{
 
 	/** This function navigate to Cart Page */
 	public void navigateTo_Cart_Page() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getDataReader().get_Cart_Url_Fr());
+	}
+	
+	/** This function navigate to Cart Page */
+	public void navigateTo_Cart_Fr_Page() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getConfigReader().getCartUrl());
+	}
+	
+	/** This function navigate to shopping cart page */
+	public void navigate_To_Shopping_Cart_Page() throws Exception {
+		
 	}
 	
 	/** This function navigate to Cart Page */
@@ -594,5 +604,54 @@ public class Cart_Page extends PageObject{
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_View_Wish_List_Button())), 15);
 	}
 		
+	
+	/** enter 1 Quantity for product */
+	public void enterOneQuantityForProduct() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Field()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Quantity_Field()), FileReaderManager.getInstance().getDataReader().get_One_Quantity());;
+	}
+	
+	/** verify eco fess is displayed */
+	public void displayEcoFees() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Eco_Fees()));
+	}
+	
+	/** verify eco message is displayed */
+	public void displayEcoMessage() throws Exception {
+		String getMessage = $getText($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Eco_Fees())).trim();
+		String[] message = getMessage.split(" ");
+		String ecoMessage = message[0] + " " + "$x" + " " + message[2] + " " + message[3];
+		Assert.assertEquals(ecoMessage, "Incl. $x Env. fees");
+	}
+	
+	/** verify info icon is displayed */
+	public void displayInfoIconEcoFees() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Info_Icon_Eco_Fees()));
+	}
+	
+	/** click on info icon */
+	public void clickInfoIconEcoFees() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Info_Icon_Eco_Fees()));
+	}
+	
+	/** verify tool tip message is displayed */
+	public void displayToolTipEcoMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Tool_Tip_Message_Eco()));
+	}
+
+	/** click on close button */
+	public void clickOnCloseEcoToolTipButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCartPageLocator().get_Close_Button_Eco_Tool_Tip()));
+	}
+	
+	/** verify echo tool tip is closed */
+	public void verifyEchoToolTipClosed() throws Exception {
+		try {
+			$findElement(By.xpath(testContext.getPageObjectManager().getCartPageLocator().get_Tool_Tip_Message_Eco()));
+			fail();
+		}catch(Exception e) {
+			Log.message("Echo tool tip is successfully closed", true);
+		}
+	}
 	
 }

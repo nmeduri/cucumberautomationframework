@@ -68,6 +68,12 @@ public class AEM_PDP_Page_Locator {
 	String getNewTab = Property.getProperty(Constant.OR_FILE, "getNewTab");
 	String returnPolicyLinkPath = Property.getProperty(Constant.OR_FILE, "returnPolicyLinkPath");
 	String aemResourcePreview = Property.getProperty(Constant.OR_FILE, "aemResourcePreview");
+	String availableByLabelAEM = Property.getProperty(Constant.OR_FILE, "availableByLabelAEM");
+	String fulfillmentOptionsTab = Property.getProperty(Constant.OR_FILE, "fulfillmentOptionsTab");
+	String curbSidePickUpLabelAEM = Property.getProperty(Constant.OR_FILE, "curbSidePickUpLabelAEM");
+	String shipToHomeLabelAEM = Property.getProperty(Constant.OR_FILE, "shipToHomeLabelAEM");
+	String checkNearByLabelAEM = Property.getProperty(Constant.OR_FILE, "checkNearByLabelAEM");
+	String chagneLabelAEM = Property.getProperty(Constant.OR_FILE, "chagneLabelAEM");
 	
 	String fulfillmentOption = Property.getProperty(Constant.OR_FILE, "fullfillmentOption");
 	String getitInStorelabel = Property.getProperty(Constant.OR_FILE, "getitInStorelabel");
@@ -451,6 +457,49 @@ public class AEM_PDP_Page_Locator {
 	public String get_AEM_Resource_Preview() {
 		return aemResourcePreview;
 	}
+	
+	/**
+	 * get Locator - Available By
+	 */
+	public String get_Available_By_Label() {
+		return availableByLabelAEM;
+	}
+	
+	/**
+	 * gets Locator - Fulfillment Option
+	 */
+	public String get_Fulfillment_Option() {
+		return fulfillmentOptionsTab;
+	}
+	
+	/**
+	 * gets Locator - Curb Side Pick Up Available
+	 */
+	public String get_Curb_Side_Pick_Up_Available() {
+		return curbSidePickUpLabelAEM;
+	}
+
+	/**
+	 * gets Locator - Ship To Home
+	 * */
+	public String get_Ship_To_Home() {
+		return shipToHomeLabelAEM;
+		}
+	
+	/**
+	 * gets Locator - Check NearBy Stores
+	 */
+	public String get_Check_NearBy_Stores() {
+		return checkNearByLabelAEM;
+	}
+	
+	/**
+	 * gets Locator - Change Label
+	 */
+	public String get_Change_Label() {
+		return chagneLabelAEM;
+	}
+	
 	/**
 	 * get Locator - fulfillment Option
 	 */

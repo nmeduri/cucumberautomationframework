@@ -5,29 +5,25 @@ import java.util.stream.Stream;
 
 import automation.library.logdetail.Log;
 import automation.library.selenium.base.BaseClass;
-
 /**
- * This file execute the scenarios of Adobe Regression (Web)
+ * This file execute the scenarios of Adobe BVT
  */
 
-public final class AEM_Regression_Runner extends BaseClass {
+public final class UAT_BVT_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
-			
-
-			"classpath:Adobe/AEM/Regression/", 
+			"classpath:UAT/BVT/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
-			"--tags",   "@AEM",
-			"--plugin", "json:cucumber.json",
-			"--plugin", "junit:target/JunitReports/Adobe_Regression.xml" ,
-			"--plugin", "html:target/selenium-reports",
-			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html"
-
+			"--tags", "@WebView",
+			"--plugin", "json:cucumber.json", 
+			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",
+			"--plugin", "junit:target/JunitReports/Adobe_BVT.xml",
+			"--plugin", "html:target/selenium-reports"
 		};
 
 	public static void main(String[] args) throws Throwable {
-		AEM_Regression_Runner ls = new AEM_Regression_Runner();
+		UAT_BVT_Runner ls = new UAT_BVT_Runner();
 		String className = ls.getClass().getSimpleName();
 		Log.message("Class Name:- " + className, true);
 		conf.setProperty("className", className);

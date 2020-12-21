@@ -80,6 +80,13 @@ public class LogInPageSteps extends BaseClass{
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Valid_Email_Data());
 	}
 	
+	@When("enter link card email detail")
+	public void enter_link_card_email_detail() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email(FileReaderManager.getInstance().getDataReader().get_Checkout_Email_Address_Data());
+	}
+	
+	
+	
 	@And("clear email detail")
 	public void clear_email_detail() throws Exception {
 		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).clear_Email_Login_Page();
@@ -141,6 +148,16 @@ public class LogInPageSteps extends BaseClass{
 	@And("user enter invalid password")
 	public void user_enter_invalid_password() throws Exception {
 		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Incorrect_Retype_Password_Detail());
+	}
+	
+	@And("user enter link acrd email password")
+	public void user_enter_link_card_email_password() throws Exception {
+		testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Incorrect_Retype_Password_Detail());
+	}
+	
+	@And("user is successfully logged in")
+	public void user_is_successfully_logged_in() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).verifyUserLoggedIn();
 	}
 	
 	@Then("message field required is displayed")

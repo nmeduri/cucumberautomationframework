@@ -25,6 +25,7 @@ public class Checkout_Page_Locator {
     String toolTipMessageCheckoutAEM = Property.getProperty(Constant.OR_FILE, "toolTipMessageCheckoutAEM");
     String toolTipButtonCheckout = Property.getProperty(Constant.OR_FILE, "toolTipButtonCheckout");
     String toolTipMessageCheckout = Property.getProperty(Constant.OR_FILE, "toolTipMessageCheckout");
+
     String contactInfoEmailAddressField = Property.getProperty(Constant.OR_FILE, "contactInfoEmailAddressField");
     String contactInfoPhnNoField = Property.getProperty(Constant.OR_FILE, "contactInfoPhnNoField");
     String enteredContactInfoPreview = Property.getProperty(Constant.OR_FILE, "enteredContactInfoPreview");
@@ -35,7 +36,6 @@ public class Checkout_Page_Locator {
     String editLink = Property.getProperty(Constant.OR_FILE, "editLink");
     String expandedContactInfoForm = Property.getProperty(Constant.OR_FILE, "expandedContactInfoForm");
     String errorToastMessage = Property.getProperty(Constant.OR_FILE, "errorToastMessage");
-    
 	/**
 	 * gets Locator - Brand Logo
 	 * 

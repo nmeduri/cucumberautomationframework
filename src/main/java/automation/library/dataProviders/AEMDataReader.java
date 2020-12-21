@@ -6925,6 +6925,32 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Available By
+	 * 
+	 */
+	
+	public String get_Available_By_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "availableByLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Available By (Revert)
+	 * 
+	 */
+	
+	public String get_Available_By_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "availableByLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
 	/**
 	 * gets microseason landing page url
 	 * 
@@ -6949,6 +6975,19 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Curb side pick up available
+	 * 
+	 */
+	
+	public String get_CurbSide_PickUp_Available_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "curbSidePickUpAvailable");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	/**
 	 * gets in stock label (fulfillment option)
 	 * 
@@ -6956,6 +6995,201 @@ public class AEMDataReader {
 	
 	public String get_InStock_label() {
 		String data = Property.getProperty(Constant.AEM_DATA_FILE, "InStock");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Curb side pick up available (Revert)
+	 * 
+	 */
+	
+	public String get_CurbSide_PickUp_Available_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "curbSidePickUpAvailableRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Ship To Home
+	 * 
+	 */
+	
+	public String get_Ship_To_Home_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "shipToHome");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Ship To Home (Revert)
+	 * 
+	 */
+	
+	public String get_Ship_To_Home_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "shipToHomeRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Check NearBy Store
+	 * 
+	 */
+	
+	public String get_Check_NearBy_Store_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "checkNearByStores");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Check NearBy Store (Revert)
+	 * 
+	 */
+	
+	public String get_Check_NearBy_Store_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "checkNearByStoresRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Change Label
+	 * 
+	 */
+	
+	public String get_Change_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "changeLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Change Label (Revert)
+	 * 
+	 */
+	
+	public String get_Change_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "changeLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets My Account Shopping Preferences
+	 * 
+	 */
+	
+	public String get_My_Account_Shopping_Preferences() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "myAccountShoppingPrefercens");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Merge Rewards (Url)
+	 * 
+	 */
+	
+	public String get_Merge_Rewards_Author_Url() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "mergeRewardsAuthorUrl");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Merge Rewards Cards Title
+	 * 
+	 */
+	
+	public String get_Merge_Rewards_Cards_Title() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "mergeRewardsCards");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Merge Rewards Cards Title (Revert)
+	 * 
+	 */
+	
+	public String get_Merge_Rewards_Cards_Title_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "mergeRewardsCardsRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Merge Rewards Cards Sub Title
+	 * 
+	 */
+	
+	public String get_Merge_Rewards_Cards_Sub_Title() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleMergeCards");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Merge Rewards Cards Sub Title (Revert)
+	 * 
+	 */
+	
+	public String get_Merge_Rewards_Cards_Sub_Title_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "subTitleMergeCardsRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets card input label
+	 * 
+	 */
+	
+	public String get_Card_Input_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "cardInputLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets card input label (Revert)
+	 * 
+	 */
+	
+	public String get_Card_Input_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "cardInputLabelRevert");
 		if(data != null)
 			return data;
 		else
@@ -6973,4 +7207,174 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+	/**
+	 * gets Tool Tip Merge Card Field
+	 * 
+	 */
+	
+	public String get_Tool_Tip_Label_Merge_Card() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipDescriptionMergeCard");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool Tip Merge Card Field (Revert)
+	 * 
+	 */
+	
+	public String get_Tool_Tip_Label_Merge_Card_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipDescriptionMergeCardRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool Tip Label Merge Card
+	 * 
+	 */
+	
+	public String get_Tool_Tip_Label_Detail_Merge_Card() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipLabelMergeCard");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Tool Tip Label Merge Card (Revert)
+	 * 
+	 */
+	
+	public String get_Tool_Tip_Label_Detail_Merge_Card_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "toolTipLabelMergeCardRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Merge Card Image
+	 * 
+	 */
+	
+	public String get_Merge_Card_Image() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "mergeImageCardImageText");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Merge Card Image (Revert)
+	 * 
+	 */
+	
+	public String get_Merge_Card_Image_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "mergeImageCardImageTextRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Account and Shopping Preferences
+	 * 
+	 */
+	
+	public String get_Account_And_Shopping_Preferences_Url() {
+		String getURl = Property.getProperty(Constant.AEM_DATA_FILE, "myAccountShoppingPrefencesAuthor");
+		if(getURl != null)
+			return getURl;
+		else
+			throw new RuntimeException("Url Data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Shopping Preferences
+	 * 
+	 */
+	
+	public String get_Shopping_Preferences() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "shoppingPreferencesTitle");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Shopping Preferences (Revert)
+	 * 
+	 */
+	
+	public String get_Shopping_Preferences_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "shoppingPreferencesTitleRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets No Shopping Preferences
+	 * 
+	 */
+	
+	public String get_No_Shopping_Preferences() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "noShoppingPreferences");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets No Shopping Preferences (Revert)
+	 * 
+	 */
+	
+	public String get_No_Shopping_Preferences_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "noShoppingPreferencesRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Edit Button
+	 * 
+	 */
+	
+	public String get_Edit_Button_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "editButtonLabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/**
+	 * gets Edit Button (Revert)
+	 * 
+	 */
+	
+	public String get_Edit_Button_Label_Revert() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "editButtonLabelRevert");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+
 }
