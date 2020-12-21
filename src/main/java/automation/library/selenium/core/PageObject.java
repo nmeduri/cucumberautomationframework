@@ -2,10 +2,13 @@ package automation.library.selenium.core;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -234,6 +237,10 @@ public class PageObject extends BaseClass {
 		return ele.getText();
 	}
 
+	public boolean present(Alert alert) {
+		return ((Element) alert).display();
+	}
+	
 	/** return display condition */
 	public boolean $display(Element element) {
 
@@ -661,11 +668,8 @@ public class PageObject extends BaseClass {
             driver.switchTo().window(allWHCopy.get(i));
             driver.close();
         }
-        
     }
 	}
 }
-	
-
-
-	
+        
+    	

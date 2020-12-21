@@ -2312,4 +2312,50 @@ public class DataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	
+
+	/** gets Data - Email id for checkout 
+	 * 
+	 */
+	public String get_Checkout_EmailId() {
+		String data = Property.getProperty(Constant.DATA_FILE, "getEmailDataCheckout");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Email id for checkout 
+	 * 
+	 */
+	public String get_Checkout_Password() {
+		String data = Property.getProperty(Constant.DATA_FILE, "checkoutPassword");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Email address
+	 * 
+	 */
+	public String get_Checkout_Email_Address_Without_PhNo() {
+		String data = Property.getProperty(Constant.DATA_FILE, "checkoutEmailAddressWithoutPhNo");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
+	/** gets Data - Email id
+	 * 
+	 */
+	public String get_Email_Id() {
+		String data = Property.getProperty(Constant.DATA_FILE, "emailId");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	
 }

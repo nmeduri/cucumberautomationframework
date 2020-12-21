@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import automation.library.cucumber.TestContext;
 import automation.library.dataProviders.ConfigFileReader;
 import automation.library.logdetail.Log;
+import automation.library.managers.FileReaderManager;
 import automation.library.managers.PageObjectManager;
 import automation.library.pageObjects.HomePage;
 import automation.library.pageObjects.PDP_Page;
@@ -155,6 +156,7 @@ public class OCCP_3753_Checkout_Contact_Info_Step extends BaseClass {
 	
 	@Then("the contact information should move to drawer")
 	public void contact_information_should_moveto_drawer() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).waitInMobile();
 		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayContactInfoDrawer();
 	}
 	
@@ -177,5 +179,112 @@ public class OCCP_3753_Checkout_Contact_Info_Step extends BaseClass {
 	public void accept_alert() throws Exception {
 		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).acceptWindowAlert();
 	}
+	
+	@And("^user clicks on close icon x$")
+	public void click_close_icon() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).clickOnCloseIcon();
+	}
+	
+	@Then("^the tooltip message should be closed$")
+	public void tooltip_should_be_closed() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).notdisplayTooltip();
+	}
+	
+	@And("^user clicks outside the tooltip container$")
+	public void click_outside_tooltip_container() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).clickOnContactInfoTitle();
+	}
+	
+	@And("^for checkout page enter email detail$")
+	public void enter_email_detail() throws Exception {
+		testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Checkout_EmailId());
+	}
 
+	@And("^email address should be auto populated$")
+	public void email_address_populated() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).verifyEmailAddressPopulated();
+	}
+	
+	@And("^phone number should be auto populated$")
+	public void phno_populated() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).verifyPhNoPopulated();
+	}
+	
+	@And("^edit button should be displayed to make changes to the saved details$")
+	public void display_edit_button() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayEditLink();
+	}
+	
+	 @And("^for checkout page user enter password$")
+	 public void user_enter_password() throws Exception {
+		 testContext.getPageObjectManager().getCreateTirangleIDPage(PageObject.getDriver()).enter_Password(FileReaderManager.getInstance().getDataReader().get_Checkout_Password());
+	}
+	 
+	 @And("^user should click on edit button$")
+	 public void click_on_edit() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).clickOnEditButton();
+	}
+	 
+	 @Then("^card would open to reveal the initial expanded state with all fields prefilled$")
+	 public void card_expanded_state() throws Exception {
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayCardExpandedState();
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).verifyEmailAddressPrefilled();
+		testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).verifyPhNoPrefilled();
+	}
+	 
+	 @And("^user should be able to make changes to existing details$")
+	 public void make_changes_existing_details() throws Exception {
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).fillContactInfoDetails();
+	}
+	 
+	 @And("^user would be able to save changes by clicking on the cta button next$")
+	 public void save_changes_by_clicking_next() throws Exception {
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).clickOnNextCTAButton();
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayContactInfoDrawer();
+	}
+	 
+	 @And("^for checkout page enter email detail for which phone number is not saved$")
+	 public void enter_another_email_data() throws Exception {
+		 testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Checkout_Email_Address_Without_PhNo());
+	}
+	 
+	 @And("^user should not be able to proceed to the next step without entering the phone number$")
+	 public void display_error_message() throws Exception {
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).displayToastErrorMessage();
+	}
+	 
+	 @And("^email address should be prefilled$")
+	 public void email_address_should_be_prefilled() throws Exception {
+		 testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayHiOption();
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).verifyThatOnlyEmailAddressPrefilled();
+	}
+	 
+	 @And("^in mobile email address should be prefilled$")
+	 public void in_mobile_email_address_should_be_prefilled() throws Exception {
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).waitInMobile();
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).verifyThatOnlyEmailAddressPrefilled();
+	}
+	 
+	 @And("^for checkout page enter email detail for which user enters phone number$")
+	 public void email_for_which_phone_number_is_entered() throws Exception {
+		 testContext.getPageObjectManager().getLoginPage(PageObject.getDriver()).enterData_Email_Login_Page(FileReaderManager.getInstance().getDataReader().get_Email_Id());
+	}
+	 
+	 @And("^user enters the phone number$")
+	 public void enter_PhNo() throws Exception {
+		 testContext.getPageObjectManager().getHeaderPage(PageObject.getDriver()).displayHiOption();
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).enterDataPhNoForEmailId();
+	}
+	 
+	 @And("^in mobile user enters the phone number$")
+	 public void in_mobile_enter_PhNo() throws Exception {
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).waitInMobile();
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).enterDataPhNoForEmailId();
+	}
+	 
+	 @And("^phone number should be saved only for current transaction$")
+	 public void PhNo_should_be_saved() throws Exception {
+		 testContext.getPageObjectManager().getCheckoutPage(PageObject.getDriver()).verifyPhNoPopulated();
+	}
+	  
 }

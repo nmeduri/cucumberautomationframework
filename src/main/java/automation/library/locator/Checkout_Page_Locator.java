@@ -29,6 +29,12 @@ public class Checkout_Page_Locator {
     String contactInfoPhnNoField = Property.getProperty(Constant.OR_FILE, "contactInfoPhnNoField");
     String enteredContactInfoPreview = Property.getProperty(Constant.OR_FILE, "enteredContactInfoPreview");
     String shippingInformationTitle = Property.getProperty(Constant.OR_FILE, "shippingInformationTitle");
+    String toolTipCloseButton = Property.getProperty(Constant.OR_FILE, "toolTipCloseButton");
+    String autopopulatedEmail = Property.getProperty(Constant.OR_FILE, "autopopulatedEmail");
+	String autopopulatedPhNo = Property.getProperty(Constant.OR_FILE, "autopopulatedPhNo");
+    String editLink = Property.getProperty(Constant.OR_FILE, "editLink");
+    String expandedContactInfoForm = Property.getProperty(Constant.OR_FILE, "expandedContactInfoForm");
+    String errorToastMessage = Property.getProperty(Constant.OR_FILE, "errorToastMessage");
     
 	/**
 	 * gets Locator - Brand Logo
@@ -175,5 +181,47 @@ public class Checkout_Page_Locator {
 		return shippingInformationTitle;
 	}
 	
+	/**
+	 * gets Locator - Tooltip close button
+	 */
+	public String get_ToolTip_Close_Button() {
+		return toolTipCloseButton;
+	}
+	
+	/**
+	 * gets Locator - Autopopulated Email
+	 */
+	public String get_Autopopulated_Email() {
+		return autopopulatedEmail;
+	}
+	
+	/**
+	 * gets Locator - Autopopulated PhNo
+	 */
+	
+	public String get_Autopopulated_PhNo() {
+		return autopopulatedPhNo;
+	}
+	
+	/**
+	 * gets Locator - edit Link
+	 */
+	public String get_Edit_Link() {
+		return editLink;
+	}
+	
+	/**
+	 * gets Locator - Expanded Contact InfoForm
+	 */
+	public String get_ExpandedContactInfoForm() {
+		return expandedContactInfoForm;
+	}
+	
+	/**
+	 * gets Locator - Error Toast Message
+	 */
+	public String get_Error_Toast_Message() {
+		return errorToastMessage;
+	}
 }
 

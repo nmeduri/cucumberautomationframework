@@ -7,7 +7,9 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import automation.library.cucumber.TestContext;
@@ -227,9 +229,13 @@ public class Checkout_Page extends PageObject{
 	
 	/** This function enters contact info details */
 	public void fillContactInfoDetails() throws Exception {
-		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()));
+		WebElement emailField = PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()));
+		emailField.sendKeys(Keys.CONTROL,"a");
+		emailField.sendKeys(Keys.DELETE);
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()), FileReaderManager.getInstance().getDataReader().get_Checkout_Email_Address_Data());
-		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()));
+		WebElement phNoField = PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()));
+		phNoField.sendKeys(Keys.CONTROL,"a");
+		phNoField.sendKeys(Keys.DELETE);
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()), FileReaderManager.getInstance().getDataReader().get_Checkout_PhnNo_Data());
 		}
 	
@@ -263,5 +269,120 @@ public class Checkout_Page extends PageObject{
 	public void acceptWindowAlert() throws Exception {
 		PageObject.getDriver().switchTo().alert().accept();
 	}
+
+
+	/** This function clicks on tooltip */
+	public void clickOnCloseIcon() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_ToolTip_Close_Button()));
+		//((JavascriptExecutor) PageObject.getDriver()).executeScript("arguments[0].click();", $findElement(By.xpath(testContext.getPageObjectManager().getCheckoutPageLocator().get_ToolTip_Close_Button())));
+	}
 	
+	 /** This function is verify that view more is not displayed */
+	   public void notdisplayTooltip() throws Exception {
+		   try {
+			   $display($$$$(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_ToolTip_Close_Button(), 5));
+			   Log.message("Tool tip message is displayed.", true); 
+			   fail();
+		   }catch(Exception e) {
+			   Log.message("Tool tip message is not displayed.", true);  
+		   }	      
+	   }
+	/** This function clicks on tooltip */
+	public void clickOnContactInfoTitle() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Information_Title()));
+	}
+	
+	/** This function enter email detail */
+	public void enterDataEmailLoginCheckout(String data) throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page())), 40);
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLoginPageLocator().get_Email_Login_Page()),
+				data + FileReaderManager.getInstance().getDataReader().get_Checkout_EmailId());
+	}
+
+	/** This function is verify that email id is prepopulate */
+	public void verifyEmailAddressPopulated() throws Exception{
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Autopopulated_Email()));
+			String value = $getText($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Autopopulated_Email()));
+			String actualValue = value.toLowerCase();
+			String expectedValue = FileReaderManager.getInstance().getDataReader().get_Checkout_Email_Address_Data().toLowerCase();
+			Assert.assertEquals(actualValue, expectedValue );
+		}
+		
+	/** This function is verify that Ph no is prepopulate  */
+	public void verifyPhNoPopulated() throws Exception  {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Autopopulated_PhNo()));
+			String actualValue = $getText($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Autopopulated_PhNo()));
+			String expectedValue = FileReaderManager.getInstance().getDataReader().get_Checkout_PhnNo_Data();
+			Assert.assertEquals(actualValue, expectedValue );
+		}
+
+	/** This function clicks on tooltip */
+	public void displayEditLink() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Edit_Link()));
+	}
+	
+	/** This function clicks on tooltip */
+	public void clickOnEditButton() throws Exception {
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Edit_Link()));
+	}
+	
+	/** This function is verify that email id is prefilled */
+	public void verifyEmailAddressPrefilled() throws Exception{
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field())),15);
+			String value = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()), "value");
+			System.out.println("value="+value);
+			String actualValue = value.toLowerCase();
+			String expectedValue = FileReaderManager.getInstance().getDataReader().get_Checkout_EmailId() + FileReaderManager.getInstance().getDataReader().get_Email_Detail();
+			Assert.assertEquals(actualValue, expectedValue );
+		}
+	
+	/** This function is verify that email id is prefilled */
+	public void verifyThatOnlyEmailAddressPrefilled() throws Exception{
+			$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field())),15);
+			String value = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()), "value");
+			System.out.println("value="+value);
+			String actualValue = value.toLowerCase();
+			String expectedValue = FileReaderManager.getInstance().getDataReader().get_Checkout_Email_Address_Without_PhNo() + FileReaderManager.getInstance().getDataReader().get_Email_Detail();
+			Assert.assertEquals(actualValue, expectedValue );
+		}
+		
+	/** This function is verify that Ph no is prefilled  */
+	public void verifyPhNoPrefilled() throws Exception  {
+			$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()));
+			String actualValue = $getAttributeValue($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()), "value");
+			String expectedValue = FileReaderManager.getInstance().getDataReader().get_Checkout_PhnNo_Data();
+			Assert.assertEquals(actualValue, expectedValue );
+		}
+	
+	/** This function clicks on tooltip */
+	public void displayCardExpandedState() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_ExpandedContactInfoForm()));
+	}
+	
+	/** This function enters contact info details */
+	public void enterDataAnotherEmail() throws Exception {
+		WebElement emailField = PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()));
+		emailField.sendKeys(Keys.CONTROL,"a");
+		emailField.sendKeys(Keys.DELETE);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_Email_Address_Field()), FileReaderManager.getInstance().getDataReader().get_Checkout_Email_Address_Without_PhNo());
+	}
+
+	/** This function clicks on tooltip */
+	public void displayToastErrorMessage() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Error_Toast_Message()));
+	}
+	
+	/** This function enters contact info details */
+	public void enterDataPhNoForEmailId() throws Exception {
+		WebElement emailField = PageObject.getDriver().findElement(By.xpath(testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()));
+		emailField.sendKeys(Keys.CONTROL,"a");
+		emailField.sendKeys(Keys.DELETE);
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getCheckoutPageLocator().get_Contact_Info_PhnNo_Field()), FileReaderManager.getInstance().getDataReader().get_Checkout_PhnNo_Data());
+	}
+	
+	/** This function waits for the data to load as there is no other element for mobile to wait wrt it */
+	public void waitInMobile() throws Exception {
+		Thread.sleep(5000);
+	}
 }

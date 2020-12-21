@@ -373,8 +373,11 @@ public class Header_Page extends PageObject {
 	public void displayHiOption() throws Exception {
 		$display(ExpectedConditions.presenceOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi())),15);
 		String expected = FileReaderManager.getInstance().getDataReader().get_Hi().concat(",");
+		Thread.sleep(5000);
 		String actual= $getText(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().get_Header_Locator_Page().get_Hi())),10);
-		Assert.assertEquals(expected,actual);
+		System.out.println(expected);
+		System.out.println(actual);
+		Assert.assertTrue(actual.contains(expected));
 	}
 	
 	/** This function is verify that hi option is hovered */
