@@ -30,7 +30,8 @@ public class Local_Chrome_Driver_Manager {
 		  option.addArguments("--test-type");
 		  option.addArguments("--disable-extensions");
 		  //option.addArguments("incognito");
-		WebDriverManager.chromedriver().setup(); 
+		  WebDriverManager.chromedriver().version("87.0.4280.88").setup();
+		  //WebDriverManager.chromedriver().setup(); 
 		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		return driver;
