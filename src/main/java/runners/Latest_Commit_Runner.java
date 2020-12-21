@@ -16,9 +16,10 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 
 
-			"classpath:Adobe/AEM/Regression/OCCP_1182_Account_Merge_Rewards_Active_Ownership_Validation.feature",
+			"classpath:Adobe/AEM/Regression/OCCP_3778_Brand_Landing_Page_AEM_Template.feature",
 			"--glue", "automation.library.stepDefination",
-			"--tags", "@TC-6430",
+
+			"--tags", "@TC-4052",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

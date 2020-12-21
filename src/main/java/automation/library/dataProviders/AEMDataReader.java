@@ -7449,4 +7449,18 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+	/**
+	 * gets AEMBrandlpURL label 
+	 * 
+	 */
+	
+	public String get_AEMBrandlpURL() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "AEMBrandlpURL");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	
+	
+}
 }
