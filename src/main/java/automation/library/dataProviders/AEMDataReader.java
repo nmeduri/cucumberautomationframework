@@ -7219,6 +7219,31 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+
+	/**
+	 * gets InStore purchase
+	 * 
+	 */
+	
+	public String get_inStorePurchase_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "inStorePurchase");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets preferredstoreText label
+	 * 
+	 */
+	
+	public String get_preferredstoreText_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "preferredstoreText");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	
 	/**
 	 * gets Tool Tip Merge Card Field
