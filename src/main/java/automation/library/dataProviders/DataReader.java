@@ -1769,7 +1769,21 @@ public class DataReader {
 		else
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
-
+	
+	
+	
+	/**
+	 * gets Already linked master card last name
+	 * 
+	 */
+	public String get_OMP_Card_LastName_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "ompCardLastName");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
 	/**
 	 * gets Already linked master card last name
 	 * 
@@ -1782,6 +1796,21 @@ public class DataReader {
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
 
+	
+	
+
+	/**
+	 * gets omp card postal code
+	 * 
+	 */
+	public String get_OMP_Card_PostalCode_Data() {
+		String data = Property.getProperty(Constant.DATA_FILE, "ompCardPostalCode");
+		if (data != null)
+			return data;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
 	/**
 	 * gets Already linked master card last name
 	 * 
@@ -1794,6 +1823,19 @@ public class DataReader {
 			throw new RuntimeException("Data not specified in the Data file.");
 	}
 
+	
+	/**
+	 * gets Already linked master card last name
+	 * 
+	 */
+	public String get_OMP_Card_No_Data() {
+		String cardNo = Property.getProperty(Constant.DATA_FILE, "ompCardNo");
+		if (cardNo != null)
+			return cardNo;
+		else
+			throw new RuntimeException("Data not specified in the Data file.");
+	}
+	
 	/**
 	 * gets Masthead Banner Url
 	 * 
@@ -1923,6 +1965,32 @@ public class DataReader {
 		}
 		
 		
+		 /**
+		 * gets Best Seller (Product)
+		 * 
+		 */
+		public String get_Product_Best_Seller_Badges() {
+
+			String data = Property.getProperty(Constant.DATA_FILE, "bestSellerBadgeProduct");
+			if (data != null)
+				return data;
+			else
+				throw new RuntimeException("Product Code not specified in the Data file.");
+		}
+		
+		
+		 /**
+		 * gets Tested for life (Product)
+		 * 
+		 */
+		public String get_Product_Tested_for_Life_Badges() {
+
+			String data = Property.getProperty(Constant.DATA_FILE, "testedForLifeBadgeProduct");
+			if (data != null)
+				return data;
+			else
+				throw new RuntimeException("Product Code not specified in the Data file.");
+		}
 		
 		 /**
 		 * gets New Arrival badge (Product)

@@ -15,7 +15,7 @@ public final class Adobe_Regression_Runner extends BaseClass {
 	private static String[] defaultOptions = {
 
             
-			"classpath:Adobe/Regression/", 
+			"classpath:Adobe/Regression/OCCP_3323_Link_Rewards_By_Triangle_Master_Card_OMP_Cards.feature", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",
 			"--tags", "@WebView",

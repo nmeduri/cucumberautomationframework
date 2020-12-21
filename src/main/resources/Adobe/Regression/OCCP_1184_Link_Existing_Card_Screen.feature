@@ -1,8 +1,8 @@
 Feature: OCCP-1184 Link Existing Card Screen
 	Description: To test the ADOBE Test Cases for the story OCCP-1184
 	
-	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2282 View Link existing card screen
+	@RegressionTest @MobileView @TabletView @WideScreen
+	Scenario: TC-2272, TC-2282, TC-2285 View Link existing card screen
 	Given quit browser
 	Given open browser
 	Given login url is available
@@ -20,8 +20,8 @@ Feature: OCCP-1184 Link Existing Card Screen
 	And action button get one here link to move to generate card flow should be displayed
 	And ability to go back cancel link should  be displayed
 	
-	@RegressionTest @WebView @MobileView @TabletView
-	Scenario: TC-2273, TC-2283 View Link existing card screen field validation
+	@RegressionTest @WebView @MobileView @TabletView @WideScreen
+	Scenario: TC-2273, TC-2283, TC-2286 View Link existing card screen field validation
 	Given login url is available
 	When enter email id
 	And enter password data
@@ -35,8 +35,9 @@ Feature: OCCP-1184 Link Existing Card Screen
 	And enter more than 16 characters including 4 prepopulated
 	Then system should not allow user to enter more than 16 characters including the 4 prepopulated
 	
-	@RegressionTest @MobileView @TabletView
-	Scenario: TC-2284 Link existing card Card Validations
+	@RegressionTest @MobileView @TabletView @WideScreen @WebView @2274
+	Scenario:TC-2274, TC-2284, TC-2287 Link existing card screen Card Validations
+	Given open browser
 	Given login url is available
 	When enter email id
 	And enter password data
