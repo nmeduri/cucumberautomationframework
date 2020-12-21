@@ -6964,6 +6964,18 @@ public class AEMDataReader {
 			throw new RuntimeException("URL not specified in the Data file.");
 	}
 	/**
+	 * gets category landing page url
+	 * 
+	 */
+	
+	public String get_category_landing_Page_URL() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "categoryLPurl");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
 	 * gets get it in store label (fulfillment option)
 	 * 
 	 */

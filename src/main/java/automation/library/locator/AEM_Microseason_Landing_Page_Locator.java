@@ -23,6 +23,8 @@ public class AEM_Microseason_Landing_Page_Locator {
 	String bannerTypeDropDown = Property.getProperty(Constant.OR_FILE, "bannerTypeDropDown");
 	String EdgeToEdgeBannerType = Property.getProperty(Constant.OR_FILE, "EdgeToEdgeBannerType");
 	String EdgeToEdgeBannerdisplayed = Property.getProperty(Constant.OR_FILE, "EdgeToEdgeBannerdisplayed");
+	String SEOcopyblock = Property.getProperty(Constant.OR_FILE, "SEOcopyblock");
+	String FeaturedProductList = Property.getProperty(Constant.OR_FILE, "FeaturedProductList");
 
 	
 	/**
@@ -137,6 +139,21 @@ public class AEM_Microseason_Landing_Page_Locator {
 	public String getAuthoredTextBlock() {
 		return AuthoredTextBlock;	
 	}
-	
+	/**
+	 * gets Locator - AEM SEOcopyblock
+	 * 
+	 */
+
+	public String getSEOcopyblock() {
+		return SEOcopyblock;	
+	}
+	/**
+	 * gets Locator - AEM FeaturedProductList
+	 * 
+	 */
+
+	public String getFeaturedProductList() {
+		return FeaturedProductList;	
+	}
 	
 }
