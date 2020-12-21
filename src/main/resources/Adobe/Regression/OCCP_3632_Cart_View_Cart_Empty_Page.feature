@@ -31,4 +31,26 @@ Feature: OCCP-3632 Cart Page : View Cart Empty
 	Then user click on continue shopping cart page
 	Then user should redirect to main landing page
 	
+	@RegressionTest @WebView @TC-2954
+	Scenario: TC-2954 Verfiy user is an authenticated, when cart is empty on Desktop
+	Given open browser
+	When authenticated cart page is available
+	Then shopping cart - 0 items should be displayed at the top
+	Then message indicating the cart is empty should displayed
+	Then user should prompted to Sign In to their account
+	Then a link to Continue Shopping should displayed
+	Then user click on continue shopping cart page
+	Then user should redirect to main landing page
+	
+	
+	@RegressionTest @WebView @TC-2953
+	Scenario: TC2953 Verify user is an unauthenticated, when cart is empty and "Continue Shopping" link redirection on Desktop View
+	Given open browser
+	When authenticated cart page is available
+	Then shopping cart - 0 items should be displayed at the top
+	Then message indicating the cart is empty should displayed
+	Then user should prompted to Sign In to their account
+	Then a link to Continue Shopping should displayed
+	Then user click on continue shopping cart page
+	Then user should redirect to main landing page
 	

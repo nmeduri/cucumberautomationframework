@@ -15,10 +15,11 @@ public final class Latest_Commit_Runner extends BaseClass{
 
 
 
+
 			"classpath:Adobe/AEM/Regression/OCCP_3775_Category_Landing_Page_AEM_Template.feature",
 			"--glue", "automation.library.stepDefination",
 
-				"--tags", "@TC-4054",
+			"--tags", "@TC-4054",
 			"--plugin", "pretty",
 			"--plugin", "json:cucumber.json",
 			"--plugin", "com.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html",

@@ -15,7 +15,6 @@ public final class Adobe_Regression_Web_Runner extends BaseClass {
 	
 	private static String[] defaultOptions = {
 			
-
 			"classpath:Adobe/Regression/", 
 			"--glue", "automation.library.stepDefination", 
 			"--plugin", "pretty",

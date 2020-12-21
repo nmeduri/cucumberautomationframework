@@ -7219,6 +7219,31 @@ public class AEMDataReader {
 		else
 			throw new RuntimeException("data not specified in the Data file.");
 	}
+
+	/**
+	 * gets InStore purchase
+	 * 
+	 */
+	
+	public String get_inStorePurchase_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "inStorePurchase");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets preferredstoreText label
+	 * 
+	 */
+	
+	public String get_preferredstoreText_Label() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "preferredstoreText");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
 	
 	/**
 	 * gets Tool Tip Merge Card Field
@@ -7389,4 +7414,78 @@ public class AEMDataReader {
 			throw new RuntimeException("data not specified in the Data file.");
 	}
 
+	/**
+	 * gets cart fragment URL
+	 * 
+	 */
+	
+	public String get_cartFragment_URL() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "cartfragmentURL");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets merge reward URL
+	 * 
+	 */
+	
+	public String get_mergeReward_URL() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "mergeRewardURL");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("URL not specified in the Data file.");
+	}
+	/**
+	 * gets cancelCTA Label 
+	 * 
+	 */
+	
+	public String get_cancelCTALabel_cartFragment() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "cancelCTALabel");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets TryAgainCTA label
+	 * 
+	 */
+	
+	public String get_TryAgainCTA_cartFragment() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "TryAgainCTA");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets default error message label
+	 * 
+	 */
+	
+	public String get_ErrorMsgMergeReward() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "ErrorMsgMergeReward");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	}
+	/**
+	 * gets AEMBrandlpURL label 
+	 * 
+	 */
+	
+	public String get_AEMBrandlpURL() {
+		String data = Property.getProperty(Constant.AEM_DATA_FILE, "AEMBrandlpURL");
+		if(data != null)
+			return data;
+		else
+			throw new RuntimeException("data not specified in the Data file.");
+	
+	
+}
 }

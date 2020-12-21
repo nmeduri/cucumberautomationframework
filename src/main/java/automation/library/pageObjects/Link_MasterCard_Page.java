@@ -109,6 +109,42 @@ public class Link_MasterCard_Page extends PageObject {
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_Input()), FileReaderManager.getInstance().getDataReader().get_Already_Linked_Mastercard_No_Data());
 	}
 	
+		/** This function enters data for OMP card details */
+	public void enterDataForOMPCardDetails() throws Exception {
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName()), FileReaderManager.getInstance().getDataReader().get_OMP_Card_LastName_Data());
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_YOB()));
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMP_Card_Year())), 5);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMP_Card_Year()));
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_LastName())), 5);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMPCard_MOB()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMP_Card_Month()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMPCard_DOB()));
+		//testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMP_Card_Date())), 5);
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMP_Card_Date()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMPCard_Postal_Code()), FileReaderManager.getInstance().getDataReader().get_OMP_Card_PostalCode_Data());
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_OMPCard_Input()), FileReaderManager.getInstance().getDataReader().get_OMP_Card_No_Data());
+	}
+	
+	
+	
+	
+	/** This function verify that Error screen with error is displayed */
+	public void displayOMPCardErrorScreen() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_ompCard_Error_Message())), 40);
+	}
+	
+	
+	/** This function verify that Error screen with error is displayed */
+	public void displayCallPopUpScreen() throws Exception {
+		$display(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_call_popup_link())), 40);
+	}
+	
+	
+	/** This function scrolls down to continue button */
+	public void scrollDownToContinue() throws Exception {
+		testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).scrollDown(By.xpath(testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Continue_button_Mobile()), 20);	
+	}
+	
 	/** This function verify that master card already enrolled message is displayed */
 	public void displayAlreadyEnrolledErrorMessage() throws Exception {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_Already_Linked_MasterCard_Error_Message()));
@@ -124,5 +160,25 @@ public class Link_MasterCard_Page extends PageObject {
 		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_ContinueButton()));
 		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_MasterCard_ContinueButton()));
 	}
+	
+	public void callContactNumberPopup() throws Exception {
+	//	$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage(PageObject.getDriver().switchTo().alert().accept();
+	//	PageObject.getDriver().switchTo().alert().accept();
+	
+	}
+	
+	/** This function clicks on contact number */
+	public void clickOnContactNumber() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_ContactNumber()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_ContactNumber()));
+	}
 
+	/** This function clicks on Continue button */
+	public void clickOnOmpCardContinueButton() throws Exception {
+		$display($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_ompCard_ContinueButton()));
+		$click($(Loc.XPATH, testContext.getPageObjectManager().getLinkMasterCardLocatorPage().get_ompCard_ContinueButton()));
+	}
+	
+
+	
 }

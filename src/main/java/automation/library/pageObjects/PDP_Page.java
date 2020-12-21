@@ -1262,6 +1262,18 @@ public class PDP_Page extends PageObject {
 			   }
 		   }
 		   
+		   
+		   
+			/** This function is verify that best seller is displayed for all variant */
+		   public void displayBestSelleryForAllVariant() throws Exception {
+			   List<Element> li = $$(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Variant_Product());
+			   for(int i=0; i<li.size(); i++) {
+				   li.get(i).click();
+				   $display($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Best_Seller_Badge()));
+			   }
+		   }
+		   
+		   
 		/** verify online badge is displayed in yellow color */
 		   public void verifyNABadgeInYellowColor() throws Exception {
 			   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_New_Arrival_Badge()), "background-color"); 
@@ -1273,6 +1285,22 @@ public class PDP_Page extends PageObject {
 			   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Only_Online_Badges()), "background-color"); 
 			   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#fff6c9", colorValue);
 		   }
+		   
+		   
+		   /** verify best seller badge is displayed in blue color */
+		   public void verifyBestSellerBadgeInBlueColor() throws Exception {
+			   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Best_Seller_Badge()), "background-color"); 
+			   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("#daeaf3", colorValue);
+		   }
+		   
+		   /** verify best seller badge is displayed in blue color */
+		   public void verifyTFLBadgeInRedColor() throws Exception {
+			   String colorValue = $getCSSValue($(Loc.XPATH, testContext.getPageObjectManager().getPDPPageLocator().get_Tested_for_Life_Badge()), "background-color"); 
+			   testContext.getPageObjectManager().getPageObject(PageObject.getDriver()).verifyColorCode("##FFF", colorValue);
+			   
+		   }
+		   
+		    
 		   
 		   /** verify perfect gift badge is displayed in blue color */
 		   public void verifyPerfectGiftBadgeInBLueColor() throws Exception {

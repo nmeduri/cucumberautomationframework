@@ -82,6 +82,8 @@ public class AEM_PDP_Page_Locator {
 	String getinstoreUpdated = Property.getProperty(Constant.OR_FILE, "getinstoreUpdated");
 	String InstockUpdated = Property.getProperty(Constant.OR_FILE, "InstockUpdated");
 	String freePickUpLabelupdated = Property.getProperty(Constant.OR_FILE, "freePickUpLabelupdated");
+	String inStorePurchase = Property.getProperty(Constant.OR_FILE, "inStorePurchase");
+	String preferredStoreText = Property.getProperty(Constant.OR_FILE, "preferredStoreText");
 
 	
     /**
@@ -546,5 +548,22 @@ public class AEM_PDP_Page_Locator {
 	 */
 	public String get_freePickUpInStore_updated() {
 		return freePickUpLabelupdated;
+	}
+	/**
+	 * gets Locator - inStorePurchase
+	 * 
+	 */
+    
+	public String getinStorePurchase() {
+		return inStorePurchase;	
+	}
+	
+	/**
+	 * gets Locator - preferredStoreText
+	 * 
+	 */
+    
+	public String getpreferredStoreText() {
+		return preferredStoreText;	
 	}
 }

@@ -36,6 +36,7 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	String yearOfBirthCompleteYourProfile=Property.getProperty(Constant.OR_FILE, "yearOfBirthCompleteYourProfile");
 	String provinceMobile=Property.getProperty(Constant.OR_FILE, "provinceMobile");
 	String yearOfBirthMobile = Property.getProperty(Constant.OR_FILE, "yearOfBirthMobile");
+	String yearOfBirthTablet = Property.getProperty(Constant.OR_FILE, "yearOfBirthTablet");
 	String monthOfBirthMobile=Property.getProperty(Constant.OR_FILE, "monthOfBirthMobile");
 	String DOBMobile = Property.getProperty(Constant.OR_FILE, "DOBMobile");
 	String DOBValueAfterCurrentDate = Property.getProperty(Constant.OR_FILE, "DOBValueAfterCurrentDate");
@@ -268,6 +269,16 @@ public class Get_A_New_Triangle_Rewards_Card_Locator {
 	
 	public String get_Year_Of_Birth_Mobile() throws Exception {
 		return yearOfBirthMobile;
+	}
+	
+	
+	/**
+	 * gets Locator - Year of Birth (Drop Down)
+	 * 
+	 */
+	
+	public String get_Year_Of_Birth_Tablet() throws Exception {
+		return yearOfBirthTablet;
 	}
 	
 	/**

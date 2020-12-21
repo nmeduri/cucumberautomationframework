@@ -196,9 +196,6 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 		testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterData_Pending_Card_Number();
 	}
 	
-	
-	
-	
 	@And("in mobile enter year of birth")
 	public void enter_year_of_birth_mobile() throws Exception {
 			Thread.sleep(2000);
@@ -207,4 +204,11 @@ public class OCCP_3212_Link_Your_Triangle_Rewards_Account_Step  extends BaseClas
 	}
 	
 
+	@And("in tablet enter year of birth")
+	public void enter_year_of_birth_tablet() throws Exception {
+			Thread.sleep(2000);
+		 	testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsCardPage(PageObject.getDriver()).enterYearOfBirth2002InTablet();
+		 	//testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().enterYearOfBirth2002InMobile();
+	}
+	
 }

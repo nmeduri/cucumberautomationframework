@@ -36,6 +36,10 @@ TestContext testContext;
 	public void navigate_To_category_Landing_Page_Url() throws Exception {
 		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_category_landing_Page_URL());
 	}
+	/** This function navigate to brand Landing Page */
+	public void navigate_To_brand_Landing_Page_Url() throws Exception {
+		driver.navigate().to(FileReaderManager.getInstance().getAEMDataReader().get_AEMBrandlpURL());
+	}
 	/** This function click on banner selector component */
 	public void click_bannerSelector_component() throws Exception {
 		$click(ExpectedConditions.visibilityOfElementLocated($By(Loc.XPATH, testContext.getPageObjectManager().getAEMMicroseasonLandingPageLocator().getBannerSelector())), 3);

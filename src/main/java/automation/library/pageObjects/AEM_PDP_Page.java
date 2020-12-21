@@ -572,9 +572,19 @@ public class AEM_PDP_Page extends PageObject {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_inStock_Label()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_inStock_Label()), FileReaderManager.getInstance().getAEMDataReader().get_InStock_label());
 	}
-	/** enter data  in stock store Label */
+	/** enter data free pickup in store Label */
 	public void configurefreePickUpInStoreLabel() throws Exception {
 		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_freePickUpInStore_Label()));
 		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().get_freePickUpInStore_Label()), FileReaderManager.getInstance().getAEMDataReader().get_freePickUpInStore_Label());
+	}
+	/** enter data inStore Purchase Label */
+	public void configureinStorePurchaseLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getinStorePurchase()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getinStorePurchase()), FileReaderManager.getInstance().getAEMDataReader().get_inStorePurchase_Label());
+	}
+	/** enter data free pickup in store Label */
+	public void configurepreferredstoreTextLabel() throws Exception {
+		$clearData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getpreferredStoreText()));
+		$enterData($(Loc.XPATH, testContext.getPageObjectManager().gettAEMPDPPPageLocator().getpreferredStoreText()), FileReaderManager.getInstance().getAEMDataReader().get_preferredstoreText_Label());
 	}
 }

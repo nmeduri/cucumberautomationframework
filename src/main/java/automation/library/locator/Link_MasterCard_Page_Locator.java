@@ -30,6 +30,23 @@ public class Link_MasterCard_Page_Locator {
 	String alreadyLinkedMastercardDate = Property.getProperty(Constant.OR_FILE, "alreadyLinkedMastercardDate");
 	String masterCardAlreadyLinkedErrorMessage = Property.getProperty(Constant.OR_FILE, "masterCardAlreadyLinkedErrorMessage").replace("=", ",");
 	String masterCardContinueButton = Property.getProperty(Constant.OR_FILE, "masterCardContinueButton");
+	String ompCardContinueButton = Property.getProperty(Constant.OR_FILE, "ompCardContinueButton");
+	String contactNumberLink = Property.getProperty(Constant.OR_FILE, "contactNumberLink");
+	String ompCardYOB = Property.getProperty(Constant.OR_FILE, "ompCardYOB");
+	String ompCardLastName = Property.getProperty(Constant.OR_FILE, "ompCardLastName");
+	String ompCardInput = Property.getProperty(Constant.OR_FILE, "ompCardInput");
+	String ompCardMOB = Property.getProperty(Constant.OR_FILE, "ompCardMOB");
+	String ompCardDOB = Property.getProperty(Constant.OR_FILE, "ompCardDOB");
+	String ompCardPostalCode = Property.getProperty(Constant.OR_FILE, "ompCardPostalCode");
+	String ompCardYear = Property.getProperty(Constant.OR_FILE, "ompCardYear");
+	String ompCardMonth = Property.getProperty(Constant.OR_FILE, "ompCardMonth");
+	String ompCardDate = Property.getProperty(Constant.OR_FILE, "ompCardDate");
+	String ompCardNo = Property.getProperty(Constant.OR_FILE, "ompCardNo");
+	String ompCardError = Property.getProperty(Constant.OR_FILE, "ompCardError");
+	String ompCardErrorMessage = Property.getProperty(Constant.OR_FILE, "ompCardErrorMessage");
+	String callpopupMessage = Property.getProperty(Constant.OR_FILE, "callpopupMessage");
+	
+	
 	
 	/**
 	 * gets Locator - Link MasterCard (Title)
@@ -76,6 +93,18 @@ public class Link_MasterCard_Page_Locator {
 		return mastercardMOB;
 	}
 	
+	
+	
+	/**
+	 * gets Locator -  OMPCARD MOB field
+	 * 
+	 */
+	
+	public String get_OMPCard_MOB() {
+		return ompCardMOB;
+	}
+	
+	
 	/**
 	 * gets Locator -  MasterCard Postal code 
 	 * 
@@ -83,6 +112,32 @@ public class Link_MasterCard_Page_Locator {
 	
 	public String get_MasterCard_Postal_Code() {
 		return mastercardPostalCode;
+	}
+	
+	
+	
+	/**
+	 * gets Locator -  MasterCard Postal code 
+	 * 
+	 */
+	
+	public String get_OMPCard_Postal_Code() {
+		return ompCardPostalCode;
+	}
+	
+	
+	/**
+	 * gets Locator -  MasterCard DOB field
+	 * 
+	 */
+	
+	/**
+	 * gets Locator -  MasterCard Postal code 
+	 * 
+	 */
+	
+	public String get_ompCard_Postal_Code() {
+		return ompCardPostalCode;
 	}
 	
 	/**
@@ -94,6 +149,31 @@ public class Link_MasterCard_Page_Locator {
 		return mastercardDOB;
 	}
 	
+	
+	/**
+	 * gets Locator -  OMP card DOB field
+	 * 
+	 */
+	
+	public String get_OMPCard_DOB() {
+		return ompCardDOB;
+	}
+	
+	
+	/**
+	 * gets Locator -  MasterCard Input Field 
+	 * 
+	 */
+	
+	/**
+	 * gets Locator -  MasterCard DOB field
+	 * 
+	 */
+	
+	public String get_ompCard_DOB() {
+		return ompCardDOB;
+	}
+	
 	/**
 	 * gets Locator -  MasterCard Input Field 
 	 * 
@@ -103,6 +183,15 @@ public class Link_MasterCard_Page_Locator {
 		return mastercardCardInput;
 	}
 	
+	
+	/**
+	 * gets Locator -  ompCard Input Field 
+	 * 
+	 */
+	
+	public String get_OMPCard_Input() {
+		return ompCardInput;
+	}
 	/**
 	 * gets Locator -  MasterCard Date
 	 * 
@@ -129,7 +218,20 @@ public class Link_MasterCard_Page_Locator {
 	public String get_MasterCard_Incorrect_Card_Error() {
 		return incorrectMasterCardError;
 	}
-
+	
+	
+	
+	/**
+	 * gets Locator -  ompCard error
+	 * 
+	 */
+	
+	public String get_ompCard_Error() {
+		return ompCardError;
+	}
+	
+	
+	
 	/**
 	 * gets Locator -  Customer care no
 	 * 
@@ -168,7 +270,17 @@ public class Link_MasterCard_Page_Locator {
 	public String get_Already_Linked_MasterCard_Year() {
 		return alreadyLinkedMastercardYear;
 	}
-
+	
+	
+	/**
+	 * gets Locator -  OMPCard year
+	 * 
+	 */
+	
+	public String get_OMP_Card_Year() {
+		return ompCardYear;
+	}
+	
 	/**
 	 * gets Locator - Already Linked MasterCard Month
 	 * 
@@ -178,11 +290,40 @@ public class Link_MasterCard_Page_Locator {
 		return alreadyLinkedMastercardMonth;
 	}
 	
+	
+	
+	
+	/**
+	 * gets Locator - OMPCard Month
+	 * 
+	 */
+	
+	public String get_OMP_Card_Month() {
+		return ompCardMonth;
+	}
+	
+	
 	/**
 	 * get Locator - Already Linked MasterCard Date
 	 */
 	public String get_Already_Linked_MasterCard_Date() {
 		return alreadyLinkedMastercardDate;
+	}
+	
+	
+	/**
+	 * get Locator - ompCard Date
+	 */
+	public String get_OMP_Card_Date() {
+		return ompCardDate;
+	}
+	
+	
+	/**
+	 * get Locator - ompCard Number
+	 */
+	public String get_OMP_Card_Number() {
+		return ompCardNo;
 	}
 	
 	/**
@@ -192,10 +333,66 @@ public class Link_MasterCard_Page_Locator {
 		return masterCardAlreadyLinkedErrorMessage;
 	}
 	
+	
+	
+	/**
+	 * get Locator - Already Linked MasterCard error message
+	 */
+	public String get_ompCard_Error_Message() {
+		return ompCardErrorMessage;
+	}
+	
+	
+	
+	
+	/**
+	 * get Locator - Already Linked MasterCard error message
+	 */
+	public String get_call_popup_link() {
+		return callpopupMessage;
+	}
+	
+	
+	
+	/**
+	 * gets Locator - Continue button mobile
+	 * 
+	 */
+	
+	public String get_Continue_button_Mobile() {
+		return ompCardContinueButton;
+	}
+	
+	/**
+	 * gets Locator - contact number link
+	 * 
+	 */
+	
+	public String get_Contact_Number_Link() {
+		return contactNumberLink;
+	}
+	
 	/**
 	 * get Locator - MasterCard Continue
 	 */
 	public String get_MasterCard_ContinueButton() {
 		return masterCardContinueButton;
 	}
+	
+	
+	
+	/**
+	 * get Locator - ContactNumber 
+	 */
+	public String get_ContactNumber() {
+		return contactNumberLink;
+	}
+	
+	/**
+	 * get Locator - MasterCard Continue
+	 */
+	public String get_ompCard_ContinueButton() {
+		return ompCardContinueButton;
+	}
+	
 }

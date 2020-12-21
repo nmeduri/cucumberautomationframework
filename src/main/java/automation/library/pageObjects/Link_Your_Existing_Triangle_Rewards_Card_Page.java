@@ -197,7 +197,21 @@ public class Link_Your_Existing_Triangle_Rewards_Card_Page extends PageObject {
 	
 	/** This function enters pending loyalty card number */
 	public void enterYearOfBirth2002InMobile() throws Exception {
-		$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Year_Of_Birth()), FileReaderManager.getInstance().getDataReader().get_Year_Of_Birth_Mobile());
+		
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Mobile())), 5);
+        $clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Mobile())), 5);
+        $clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value())), 5);
+		//$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Year_Of_Birth()), FileReaderManager.getInstance().getDataReader().get_Year_Of_Birth_Mobile());
+	}
+	
+	
+	/** This function enters pending loyalty card number */
+	public void enterYearOfBirth2002InTablet() throws Exception {
+		
+		$display(ExpectedConditions.elementToBeClickable($By(Loc.XPATH, testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Tablet())), 5);
+        $clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Tablet())), 5);
+        $clickFindElement(ExpectedConditions.visibilityOfElementLocated(By.xpath(testContext.getPageObjectManager().getANewTriangleRewardsCardLocator().get_Year_Of_Birth_Value())), 5);
+		//$enterData($(Loc.XPATH, testContext.getPageObjectManager().getLinkYourExistingTriangleRewardsAccountLocaoter().get_Year_Of_Birth()), FileReaderManager.getInstance().getDataReader().get_Year_Of_Birth_Mobile());
 	}
 	
 		

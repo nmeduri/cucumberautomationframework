@@ -4,6 +4,7 @@ package automation.library.managers;
 import org.openqa.selenium.WebDriver;
 
 import automation.library.locator.AEM_Account_Address_Page_Locator;
+import automation.library.locator.AEM_Account_Merge_Reward_Page_Locator;
 import automation.library.locator.AEM_Account_Payment_Infromation_Page_Locator;
 import automation.library.locator.AEM_Account_Profile_Page_Locator;
 import automation.library.locator.AEM_Account_Rewards_Template_Page_Locator;
@@ -73,6 +74,7 @@ import automation.library.locator.Standard_Masthead_Banner_Page_Locator;
 import automation.library.locator.Two_Featured_Tile_Component_Page_Locator;
 import automation.library.locator.Your_Email_Has_Been_Verified_PageLocator;
 import automation.library.pageObjects.AEM_Account_Address_Page;
+import automation.library.pageObjects.AEM_Account_Merge_Reward_Page;
 import automation.library.pageObjects.AEM_Account_Payment_Infromation_Page;
 import automation.library.pageObjects.AEM_Account_Profile_Page;
 import automation.library.pageObjects.AEM_Account_Rewards_Template_Page;
@@ -304,6 +306,8 @@ public class PageObjectManager {
 	
 	private Merge_Rewards_Locator getMergeRewardsLocator;
 	private Merge_Rewards_Page getMergeRewardsPage;
+	private AEM_Account_Merge_Reward_Page_Locator getAEMAccountMergeRewardPageLocator;
+	private AEM_Account_Merge_Reward_Page getAEMAccountMergeRewardPage;
 	
 	public PageObjectManager() {
 		
@@ -1035,4 +1039,13 @@ public class PageObjectManager {
 	public AEM_Microseason_Landing_Page getAEMMicroseasonLandingPage(WebDriver driver) {
 		return (getAEMMicroseasonLandingPage == null) ? getAEMMicroseasonLandingPage = new AEM_Microseason_Landing_Page(driver) : getAEMMicroseasonLandingPage;
 	}
+	/** Returns Instance of AEM merge reward Page locator */
+	public AEM_Account_Merge_Reward_Page_Locator getAEMAccountMergeRewardPageLocator() {
+		return (getAEMAccountMergeRewardPageLocator == null) ? getAEMAccountMergeRewardPageLocator = new AEM_Account_Merge_Reward_Page_Locator() : getAEMAccountMergeRewardPageLocator;
+	}
+	/** Returns Instance of AEM merge reward Page*/
+	public AEM_Account_Merge_Reward_Page getAEMAccountMergeRewardPage(WebDriver driver) {
+		return (getAEMAccountMergeRewardPage == null) ? getAEMAccountMergeRewardPage = new AEM_Account_Merge_Reward_Page(driver) : getAEMAccountMergeRewardPage;
+	}
+	
 }

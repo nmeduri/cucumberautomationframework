@@ -162,8 +162,8 @@ public class PDP_PageLocator {
 	String exclusiveBadge=Property.getProperty(Constant.OR_FILE, "exclusiveBadge");
 	String onlyOnlineBadges = Property.getProperty(Constant.OR_FILE, "onlyOnlineBadges"); 
 	String newArrivalBadges = Property.getProperty(Constant.OR_FILE, "newArrivalBadges");
-	
-	
+	String testedForLifeBadges = Property.getProperty(Constant.OR_FILE, "testedForLifeBadges");
+	String bestSellerBadges = Property.getProperty(Constant.OR_FILE, "bestSellerBadges");
 	String variantProductPDP = Property.getProperty(Constant.OR_FILE, "variantProductPDP").replace("=", ",");
 	String numberOfRatingStars = Property.getProperty(Constant.OR_FILE, "numberOfRatingStars");
 	String resourcesSectionHeading = Property.getProperty(Constant.OR_FILE, "resourcesSectionHeading");
@@ -1376,15 +1376,31 @@ public class PDP_PageLocator {
 	public String get_Only_Online_Badges() {
 		return onlyOnlineBadges;
 	}
+		
+	
+	/**
+	 * gets Locator - best seller (Badges)
+	 */
+	public String get_Best_Seller_Badge() {
+		return bestSellerBadges;
+	}
 	
 	
 	/**
-	 * gets Locator - Only Online (Badges)
+	 * gets Locator Tested for life (Badges)
+	 */
+	public String get_Tested_for_Life_Badge() {
+		return testedForLifeBadges;
+	}
+	
+	/**
+	 * gets Locator - New Arrival (Badges)
 	 */
 	public String get_New_Arrival_Badge() {
 		return newArrivalBadges;
 	}
 	
+				
 	/**
 	 * gets Locator - Variant Product
 	 */
@@ -1458,8 +1474,4 @@ public class PDP_PageLocator {
 	
 	
  }
-
-
-
-
 
