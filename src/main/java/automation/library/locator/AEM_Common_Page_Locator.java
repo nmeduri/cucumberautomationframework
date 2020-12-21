@@ -27,6 +27,7 @@ public class AEM_Common_Page_Locator {
 	String editButton =  Property.getProperty(Constant.OR_FILE, "editButton");
 	String userLoggedIn = Property.getProperty(Constant.OR_FILE, "userLoggedIn");
 	String errorTab = Property.getProperty(Constant.OR_FILE, "errorTab");
+	String dropdownbutton= Property.getProperty(Constant.OR_FILE, "dropdownbutton");
 
     /**
 	 * gets Locator - Arrow Icon Sign In
@@ -155,6 +156,14 @@ public class AEM_Common_Page_Locator {
 	 */
 	public String getEditButton() {
 		return editButton;
+	}
+	
+	/**
+	 * get Locator - DropDown Button
+	 * 
+	 */
+	public String getDropDownButton() {
+		return dropdownbutton;
 	}
 	
 	/**

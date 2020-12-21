@@ -10,7 +10,7 @@ Feature: OCCP-882 PDP Installations
 	And click on aem configure button
 	And update the label for text field
 	And user click on check button
-	And click on the publish
+	And click on the publish button
 	And pdp sticky toc url is available
 	Then verify the changes published are correctly reflected
     And quit browser

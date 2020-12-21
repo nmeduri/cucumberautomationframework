@@ -11,7 +11,7 @@ Feature: OCCP-1579 PDP Stickey Box
 	And update the label atc cta desktop button
 	And update the label atc cta mobile button
 	And user click on check button
-	And click on the publish
+	And click on the publish button
 	And pdp sticky toc url is available
 	When pdp page is displayed for the product
 	Then verify button cta desktop update on site

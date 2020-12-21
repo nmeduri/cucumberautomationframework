@@ -10,7 +10,7 @@ Feature: OCCP-1750 Privacy Charter Display
 	And click on aem configure button
 	And configue the header of privacy charter
 	And user click on check button
-	And click on the publish
+	And click on the publish button
 	And navigate on privacy charter page
 	Then verify privacy charter header changes update on site
     And quit browser
@@ -31,7 +31,7 @@ Feature: OCCP-1750 Privacy Charter Display
 	And click on aem configure button
 	And configue the content of privacy charter
 	And user click on check button
-	And click on the publish
+	And click on the publish button
 	And navigate on privacy charter page
 	Then verify privacy charter content changes update on site
     And quit browser
@@ -52,7 +52,7 @@ Feature: OCCP-1750 Privacy Charter Display
 	And click on aem configure button
 	And update label of privacy charter desktop
 	And user click on check button
-	And click on the publish
+	And click on the publish button
 	And navigate on privacy charter page
 	Then verify privacy charter label changes update on site
     And quit browser
